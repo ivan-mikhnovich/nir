@@ -1,0 +1,2201 @@
+{
+  "name": "edas",
+  "namespace": "http://edas",
+  "root_id": "edas#Document",
+  "nodes": {
+    "edas#SlideSet": {
+      "id": "edas#SlideSet",
+      "name": "SlideSet",
+      "parents": [
+        "edas#Document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#Review",
+        "edas#Programme",
+        "edas#Paper",
+        "edas#MealMenu"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#Review": {
+      "id": "edas#Review",
+      "name": "Review",
+      "parents": [
+        "edas#Document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#SlideSet",
+        "edas#Programme",
+        "edas#Paper",
+        "edas#MealMenu"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#Programme": {
+      "id": "edas#Programme",
+      "name": "Programme",
+      "parents": [
+        "edas#Document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#SlideSet",
+        "edas#Review",
+        "edas#Paper",
+        "edas#MealMenu"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#Paper": {
+      "id": "edas#Paper",
+      "name": "Paper",
+      "parents": [
+        "edas#Document"
+      ],
+      "children": [
+        "edas#ActivePaper",
+        "edas#PendingPaper",
+        "edas#WithdrawnPaper",
+        "edas#RejectedPaper",
+        "edas#AcceptedPaper",
+        "edas#PublishedPaper"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#SlideSet",
+        "edas#Review",
+        "edas#Programme",
+        "edas#MealMenu",
+        "edas#Conference"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#MealMenu": {
+      "id": "edas#MealMenu",
+      "name": "MealMenu",
+      "parents": [
+        "edas#Document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#SlideSet",
+        "edas#Review",
+        "edas#Programme",
+        "edas#Paper"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#Document": {
+      "id": "edas#Document",
+      "name": "Document",
+      "parents": [],
+      "children": [
+        "edas#SlideSet",
+        "edas#Review",
+        "edas#Programme",
+        "edas#Paper",
+        "edas#MealMenu"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ConferenceSession",
+        "edas#Person",
+        "edas#Sponsorship",
+        "edas#ReviewQuestion",
+        "edas#Call",
+        "edas#Organization",
+        "edas#ReviewForm",
+        "edas#ContactInformation",
+        "edas#Conference",
+        "edas#ConferenceEvent",
+        "edas#Topic",
+        "edas#PersonalHistory",
+        "edas#Place",
+        "edas#ReviewRating",
+        "edas#Country"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "edas#Topic": {
+      "id": "edas#Topic",
+      "name": "Topic",
+      "parents": [],
+      "children": [
+        "edas#ParallelAndDistributedComputingTopic",
+        "edas#WirelessCommunicationsTopic",
+        "edas#OperatingTopicsystems",
+        "edas#ComputerNetworksTopic",
+        "edas#SatelliteAndSpaceCommunicationsTopic",
+        "edas#CADTopic",
+        "edas#MultimediaTopic",
+        "edas#CommunicationsTopic",
+        "edas#PowerlineTransmissionTopic",
+        "edas#AntennasTopic",
+        "edas#PerformanceTopic",
+        "edas#SignalProcessingTopic",
+        "edas#MicroelectronicsTopic",
+        "edas#TestOnlyTopic",
+        "edas#RadioCommunicationsTopic",
+        "edas#ComputerArchitectureTopic",
+        "edas#MedicineTopic",
+        "edas#SecurityTopic",
+        "edas#MobileComputingTopic",
+        "edas#CryptographyTopic",
+        "edas#CommunicationTheoryTopic"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ConferenceEvent",
+        "edas#Call",
+        "edas#ReviewRating",
+        "edas#Organization",
+        "edas#ReviewForm",
+        "edas#Conference",
+        "edas#PersonalHistory",
+        "edas#Sponsorship",
+        "edas#ReviewQuestion",
+        "edas#Person",
+        "edas#Country",
+        "edas#ConferenceSession",
+        "edas#ContactInformation",
+        "edas#Document",
+        "edas#Place"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "edas#ConferenceEvent": {
+      "id": "edas#ConferenceEvent",
+      "name": "ConferenceEvent",
+      "parents": [],
+      "children": [
+        "edas#NonAcademicEvent",
+        "edas#AcademicEvent"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#Document",
+        "edas#Organization",
+        "edas#ReviewQuestion",
+        "edas#Person",
+        "edas#Sponsorship",
+        "edas#PersonalHistory",
+        "edas#Topic",
+        "edas#ReviewForm",
+        "edas#Place",
+        "edas#Conference",
+        "edas#ConferenceSession",
+        "edas#ReviewRating",
+        "edas#Call",
+        "edas#ContactInformation",
+        "edas#Country"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "edas#Call": {
+      "id": "edas#Call",
+      "name": "Call",
+      "parents": [],
+      "children": [
+        "edas#CallForPapers",
+        "edas#CallForReviews",
+        "edas#CallForManuscripts"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#Place",
+        "edas#Sponsorship",
+        "edas#ReviewRating",
+        "edas#Document",
+        "edas#ReviewQuestion",
+        "edas#Topic",
+        "edas#Country",
+        "edas#ConferenceEvent",
+        "edas#ConferenceSession",
+        "edas#ReviewForm",
+        "edas#Conference",
+        "edas#Organization",
+        "edas#PersonalHistory",
+        "edas#Person",
+        "edas#ContactInformation"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "edas#ReviewRating": {
+      "id": "edas#ReviewRating",
+      "name": "ReviewRating",
+      "parents": [],
+      "children": [
+        "edas#WeekRejectRating",
+        "edas#AcceptRating",
+        "edas#AccpetIfRoomRating",
+        "edas#RejectRating"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#Topic",
+        "edas#Sponsorship",
+        "edas#PersonalHistory",
+        "edas#ReviewForm",
+        "edas#Person",
+        "edas#Conference",
+        "edas#Country",
+        "edas#ConferenceSession",
+        "edas#Organization",
+        "edas#Document",
+        "edas#ConferenceEvent",
+        "edas#ReviewQuestion",
+        "edas#ContactInformation",
+        "edas#Place",
+        "edas#Call"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "edas#Organization": {
+      "id": "edas#Organization",
+      "name": "Organization",
+      "parents": [],
+      "children": [
+        "edas#AcademiaOrganization",
+        "edas#IndustryOrganization",
+        "edas#NGO",
+        "edas#GovernmentOrganization"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ContactInformation",
+        "edas#ReviewQuestion",
+        "edas#ConferenceSession",
+        "edas#ConferenceEvent",
+        "edas#Country",
+        "edas#Call",
+        "edas#Document",
+        "edas#ReviewRating",
+        "edas#ReviewForm",
+        "edas#PersonalHistory",
+        "edas#Place",
+        "edas#Sponsorship",
+        "edas#Person",
+        "edas#Conference",
+        "edas#Topic"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "edas#ReviewForm": {
+      "id": "edas#ReviewForm",
+      "name": "ReviewForm",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#Call",
+        "edas#PersonalHistory",
+        "edas#ReviewRating",
+        "edas#Place",
+        "edas#ContactInformation",
+        "edas#ConferenceEvent",
+        "edas#Conference",
+        "edas#Document",
+        "edas#Person",
+        "edas#ConferenceSession",
+        "edas#Organization",
+        "edas#Country",
+        "edas#Sponsorship",
+        "edas#ReviewQuestion",
+        "edas#Topic"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "edas#Conference": {
+      "id": "edas#Conference",
+      "name": "Conference",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ReviewForm",
+        "edas#Sponsorship",
+        "edas#Topic",
+        "edas#Country",
+        "edas#ReviewQuestion",
+        "edas#Paper",
+        "edas#Document",
+        "edas#Person",
+        "edas#PersonalHistory",
+        "edas#Place",
+        "edas#Call",
+        "edas#ConferenceSession",
+        "edas#ContactInformation",
+        "edas#ConferenceEvent",
+        "edas#ReviewRating",
+        "edas#Organization"
+      ],
+      "comment": "Conference",
+      "depth": 0
+    },
+    "edas#PersonalHistory": {
+      "id": "edas#PersonalHistory",
+      "name": "PersonalHistory",
+      "parents": [],
+      "children": [
+        "edas#PersonalPublicationHistory",
+        "edas#PersonalReviewHistory"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#Sponsorship",
+        "edas#Organization",
+        "edas#ReviewForm",
+        "edas#Place",
+        "edas#Country",
+        "edas#Document",
+        "edas#Person",
+        "edas#ReviewQuestion",
+        "edas#ConferenceEvent",
+        "edas#ConferenceSession",
+        "edas#Topic",
+        "edas#ReviewRating",
+        "edas#Conference",
+        "edas#ContactInformation",
+        "edas#Call"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "edas#Sponsorship": {
+      "id": "edas#Sponsorship",
+      "name": "Sponsorship",
+      "parents": [],
+      "children": [
+        "edas#TravelGrant"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ReviewRating",
+        "edas#Place",
+        "edas#ConferenceEvent",
+        "edas#Country",
+        "edas#Person",
+        "edas#Conference",
+        "edas#ConferenceSession",
+        "edas#PersonalHistory",
+        "edas#Topic",
+        "edas#Organization",
+        "edas#ReviewForm",
+        "edas#ReviewQuestion",
+        "edas#ContactInformation",
+        "edas#Document",
+        "edas#Call"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "edas#ReviewQuestion": {
+      "id": "edas#ReviewQuestion",
+      "name": "ReviewQuestion",
+      "parents": [],
+      "children": [
+        "edas#TextualReviewQuestion",
+        "edas#NumericalReviewQuestion"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#Document",
+        "edas#ConferenceSession",
+        "edas#Place",
+        "edas#Country",
+        "edas#Person",
+        "edas#Sponsorship",
+        "edas#Call",
+        "edas#Organization",
+        "edas#ReviewRating",
+        "edas#ConferenceEvent",
+        "edas#Conference",
+        "edas#PersonalHistory",
+        "edas#ReviewForm",
+        "edas#Topic",
+        "edas#ContactInformation"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "edas#Person": {
+      "id": "edas#Person",
+      "name": "Person",
+      "parents": [],
+      "children": [
+        "edas#ConferenceChair",
+        "edas#Attendee",
+        "edas#SessionChair",
+        "edas#TPCMember"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ReviewQuestion",
+        "edas#ReviewRating",
+        "edas#ConferenceSession",
+        "edas#Conference",
+        "edas#PersonalHistory",
+        "edas#Document",
+        "edas#Country",
+        "edas#Place",
+        "edas#Topic",
+        "edas#ConferenceEvent",
+        "edas#Organization",
+        "edas#ReviewForm",
+        "edas#Sponsorship",
+        "edas#Call"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "edas#Country": {
+      "id": "edas#Country",
+      "name": "Country",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#Topic",
+        "edas#ReviewForm",
+        "edas#Call",
+        "edas#ReviewQuestion",
+        "edas#Sponsorship",
+        "edas#Conference",
+        "edas#ContactInformation",
+        "edas#Document",
+        "edas#ConferenceEvent",
+        "edas#ConferenceSession",
+        "edas#Person",
+        "edas#Organization",
+        "edas#ReviewRating",
+        "edas#PersonalHistory",
+        "edas#Place"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "edas#ConferenceSession": {
+      "id": "edas#ConferenceSession",
+      "name": "ConferenceSession",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ReviewForm",
+        "edas#PersonalHistory",
+        "edas#Document",
+        "edas#Conference",
+        "edas#ReviewRating",
+        "edas#ReviewQuestion",
+        "edas#Country",
+        "edas#ContactInformation",
+        "edas#Topic",
+        "edas#Person",
+        "edas#Call",
+        "edas#Place",
+        "edas#Sponsorship",
+        "edas#Organization",
+        "edas#ConferenceEvent"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "edas#ContactInformation": {
+      "id": "edas#ContactInformation",
+      "name": "ContactInformation",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#PersonalHistory",
+        "edas#ReviewForm",
+        "edas#ConferenceSession",
+        "edas#Document",
+        "edas#ReviewQuestion",
+        "edas#Country",
+        "edas#Conference",
+        "edas#Sponsorship",
+        "edas#Topic",
+        "edas#Call",
+        "edas#Place",
+        "edas#ReviewRating",
+        "edas#ConferenceEvent",
+        "edas#Organization"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "edas#Place": {
+      "id": "edas#Place",
+      "name": "Place",
+      "parents": [],
+      "children": [
+        "edas#DiningPlace",
+        "edas#ConferenceVenuePlace",
+        "edas#MeetingRoomPlace",
+        "edas#AccommodationPlace"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#Document",
+        "edas#Person",
+        "edas#Country",
+        "edas#Organization",
+        "edas#ReviewRating",
+        "edas#Topic",
+        "edas#ConferenceEvent",
+        "edas#ContactInformation",
+        "edas#PersonalHistory",
+        "edas#Sponsorship",
+        "edas#Call",
+        "edas#ReviewForm",
+        "edas#ReviewQuestion",
+        "edas#ConferenceSession",
+        "edas#Conference"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "edas#WeekRejectRating": {
+      "id": "edas#WeekRejectRating",
+      "name": "WeekRejectRating",
+      "parents": [
+        "edas#ReviewRating"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#AcceptRating",
+        "edas#AccpetIfRoomRating",
+        "edas#RejectRating"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#AcceptRating": {
+      "id": "edas#AcceptRating",
+      "name": "AcceptRating",
+      "parents": [
+        "edas#ReviewRating"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#AccpetIfRoomRating",
+        "edas#RejectRating",
+        "edas#WeekRejectRating"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#AccpetIfRoomRating": {
+      "id": "edas#AccpetIfRoomRating",
+      "name": "AccpetIfRoomRating",
+      "parents": [
+        "edas#ReviewRating"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#AcceptRating",
+        "edas#RejectRating",
+        "edas#WeekRejectRating"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#RejectRating": {
+      "id": "edas#RejectRating",
+      "name": "RejectRating",
+      "parents": [
+        "edas#ReviewRating"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#AcceptRating",
+        "edas#AccpetIfRoomRating",
+        "edas#WeekRejectRating"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#MealEvent": {
+      "id": "edas#MealEvent",
+      "name": "MealEvent",
+      "parents": [
+        "edas#NonAcademicEvent"
+      ],
+      "children": [
+        "edas#ConferenceDinner"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#BreakEvent"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "edas#NonAcademicEvent": {
+      "id": "edas#NonAcademicEvent",
+      "name": "NonAcademicEvent",
+      "parents": [
+        "edas#ConferenceEvent"
+      ],
+      "children": [
+        "edas#MealEvent",
+        "edas#BreakEvent",
+        "edas#SocialEvent"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#AcademicEvent"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#BreakEvent": {
+      "id": "edas#BreakEvent",
+      "name": "BreakEvent",
+      "parents": [
+        "edas#NonAcademicEvent"
+      ],
+      "children": [
+        "edas#CoffeeBreak",
+        "edas#FreeTimeBreak",
+        "edas#MealBreak"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#MealEvent"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "edas#ParallelAndDistributedComputingTopic": {
+      "id": "edas#ParallelAndDistributedComputingTopic",
+      "name": "ParallelAndDistributedComputingTopic",
+      "parents": [
+        "edas#Topic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#WirelessCommunicationsTopic",
+        "edas#OperatingTopicsystems",
+        "edas#ComputerNetworksTopic",
+        "edas#SatelliteAndSpaceCommunicationsTopic",
+        "edas#CADTopic",
+        "edas#MultimediaTopic",
+        "edas#CommunicationsTopic",
+        "edas#PowerlineTransmissionTopic",
+        "edas#AntennasTopic",
+        "edas#PerformanceTopic",
+        "edas#SignalProcessingTopic",
+        "edas#MicroelectronicsTopic",
+        "edas#TestOnlyTopic",
+        "edas#RadioCommunicationsTopic",
+        "edas#ComputerArchitectureTopic",
+        "edas#MedicineTopic",
+        "edas#SecurityTopic",
+        "edas#MobileComputingTopic",
+        "edas#CryptographyTopic",
+        "edas#CommunicationTheoryTopic"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#WirelessCommunicationsTopic": {
+      "id": "edas#WirelessCommunicationsTopic",
+      "name": "WirelessCommunicationsTopic",
+      "parents": [
+        "edas#Topic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#OperatingTopicsystems",
+        "edas#PerformanceTopic",
+        "edas#MedicineTopic",
+        "edas#MicroelectronicsTopic",
+        "edas#CommunicationsTopic",
+        "edas#CommunicationTheoryTopic",
+        "edas#CADTopic",
+        "edas#ParallelAndDistributedComputingTopic",
+        "edas#PowerlineTransmissionTopic",
+        "edas#RadioCommunicationsTopic",
+        "edas#TestOnlyTopic",
+        "edas#MobileComputingTopic",
+        "edas#SignalProcessingTopic",
+        "edas#SatelliteAndSpaceCommunicationsTopic",
+        "edas#ComputerNetworksTopic",
+        "edas#SecurityTopic",
+        "edas#AntennasTopic",
+        "edas#ComputerArchitectureTopic",
+        "edas#MultimediaTopic",
+        "edas#CryptographyTopic"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#OperatingTopicsystems": {
+      "id": "edas#OperatingTopicsystems",
+      "name": "OperatingTopicsystems",
+      "parents": [
+        "edas#Topic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#CADTopic",
+        "edas#PerformanceTopic",
+        "edas#MicroelectronicsTopic",
+        "edas#ParallelAndDistributedComputingTopic",
+        "edas#ComputerArchitectureTopic",
+        "edas#MobileComputingTopic",
+        "edas#CommunicationsTopic",
+        "edas#ComputerNetworksTopic",
+        "edas#CryptographyTopic",
+        "edas#WirelessCommunicationsTopic",
+        "edas#SignalProcessingTopic",
+        "edas#TestOnlyTopic",
+        "edas#AntennasTopic",
+        "edas#PowerlineTransmissionTopic",
+        "edas#RadioCommunicationsTopic",
+        "edas#CommunicationTheoryTopic",
+        "edas#MultimediaTopic",
+        "edas#SecurityTopic",
+        "edas#SatelliteAndSpaceCommunicationsTopic",
+        "edas#MedicineTopic"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#ComputerNetworksTopic": {
+      "id": "edas#ComputerNetworksTopic",
+      "name": "ComputerNetworksTopic",
+      "parents": [
+        "edas#Topic"
+      ],
+      "children": [
+        "edas#ComputerNetworksEnterpriseTopic",
+        "edas#ComputerNetworksSwitchingTopic",
+        "edas#ComputerNetworksSensorTopic",
+        "edas#ComputerNetworksSecurityTopic",
+        "edas#ComputerNetworksOpticalTopic",
+        "edas#ComputerNetworksMeasurementsTopic",
+        "edas#ComputerNetworksManagementTopic",
+        "edas#ComputerNetworksAapplicationsTopic"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#AntennasTopic",
+        "edas#RadioCommunicationsTopic",
+        "edas#TestOnlyTopic",
+        "edas#PerformanceTopic",
+        "edas#CommunicationTheoryTopic",
+        "edas#SatelliteAndSpaceCommunicationsTopic",
+        "edas#WirelessCommunicationsTopic",
+        "edas#CryptographyTopic",
+        "edas#SignalProcessingTopic",
+        "edas#MicroelectronicsTopic",
+        "edas#MultimediaTopic",
+        "edas#PowerlineTransmissionTopic",
+        "edas#MedicineTopic",
+        "edas#SecurityTopic",
+        "edas#CommunicationsTopic",
+        "edas#ParallelAndDistributedComputingTopic",
+        "edas#ComputerArchitectureTopic",
+        "edas#OperatingTopicsystems",
+        "edas#CADTopic",
+        "edas#MobileComputingTopic"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#SatelliteAndSpaceCommunicationsTopic": {
+      "id": "edas#SatelliteAndSpaceCommunicationsTopic",
+      "name": "SatelliteAndSpaceCommunicationsTopic",
+      "parents": [
+        "edas#Topic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#AntennasTopic",
+        "edas#TestOnlyTopic",
+        "edas#ComputerArchitectureTopic",
+        "edas#SecurityTopic",
+        "edas#ComputerNetworksTopic",
+        "edas#RadioCommunicationsTopic",
+        "edas#PerformanceTopic",
+        "edas#MedicineTopic",
+        "edas#MobileComputingTopic",
+        "edas#MicroelectronicsTopic",
+        "edas#PowerlineTransmissionTopic",
+        "edas#OperatingTopicsystems",
+        "edas#WirelessCommunicationsTopic",
+        "edas#CommunicationTheoryTopic",
+        "edas#CADTopic",
+        "edas#ParallelAndDistributedComputingTopic",
+        "edas#CryptographyTopic",
+        "edas#SignalProcessingTopic",
+        "edas#MultimediaTopic",
+        "edas#CommunicationsTopic"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#CADTopic": {
+      "id": "edas#CADTopic",
+      "name": "CADTopic",
+      "parents": [
+        "edas#Topic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#MultimediaTopic",
+        "edas#ParallelAndDistributedComputingTopic",
+        "edas#CommunicationsTopic",
+        "edas#PerformanceTopic",
+        "edas#MedicineTopic",
+        "edas#CommunicationTheoryTopic",
+        "edas#SignalProcessingTopic",
+        "edas#OperatingTopicsystems",
+        "edas#AntennasTopic",
+        "edas#RadioCommunicationsTopic",
+        "edas#TestOnlyTopic",
+        "edas#MobileComputingTopic",
+        "edas#ComputerNetworksTopic",
+        "edas#ComputerArchitectureTopic",
+        "edas#MicroelectronicsTopic",
+        "edas#PowerlineTransmissionTopic",
+        "edas#SatelliteAndSpaceCommunicationsTopic",
+        "edas#SecurityTopic",
+        "edas#WirelessCommunicationsTopic",
+        "edas#CryptographyTopic"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#MultimediaTopic": {
+      "id": "edas#MultimediaTopic",
+      "name": "MultimediaTopic",
+      "parents": [
+        "edas#Topic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#MicroelectronicsTopic",
+        "edas#SecurityTopic",
+        "edas#CryptographyTopic",
+        "edas#CommunicationTheoryTopic",
+        "edas#RadioCommunicationsTopic",
+        "edas#TestOnlyTopic",
+        "edas#ComputerNetworksTopic",
+        "edas#OperatingTopicsystems",
+        "edas#SignalProcessingTopic",
+        "edas#AntennasTopic",
+        "edas#CADTopic",
+        "edas#ComputerArchitectureTopic",
+        "edas#CommunicationsTopic",
+        "edas#WirelessCommunicationsTopic",
+        "edas#PowerlineTransmissionTopic",
+        "edas#SatelliteAndSpaceCommunicationsTopic",
+        "edas#MedicineTopic",
+        "edas#ParallelAndDistributedComputingTopic",
+        "edas#PerformanceTopic",
+        "edas#MobileComputingTopic"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#CommunicationsTopic": {
+      "id": "edas#CommunicationsTopic",
+      "name": "CommunicationsTopic",
+      "parents": [
+        "edas#Topic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#PerformanceTopic",
+        "edas#CADTopic",
+        "edas#RadioCommunicationsTopic",
+        "edas#AntennasTopic",
+        "edas#SatelliteAndSpaceCommunicationsTopic",
+        "edas#OperatingTopicsystems",
+        "edas#ComputerArchitectureTopic",
+        "edas#ParallelAndDistributedComputingTopic",
+        "edas#WirelessCommunicationsTopic",
+        "edas#TestOnlyTopic",
+        "edas#MicroelectronicsTopic",
+        "edas#CryptographyTopic",
+        "edas#MedicineTopic",
+        "edas#MultimediaTopic",
+        "edas#PowerlineTransmissionTopic",
+        "edas#CommunicationTheoryTopic",
+        "edas#ComputerNetworksTopic",
+        "edas#SignalProcessingTopic",
+        "edas#MobileComputingTopic",
+        "edas#SecurityTopic"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#PowerlineTransmissionTopic": {
+      "id": "edas#PowerlineTransmissionTopic",
+      "name": "PowerlineTransmissionTopic",
+      "parents": [
+        "edas#Topic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#SecurityTopic",
+        "edas#SignalProcessingTopic",
+        "edas#CommunicationTheoryTopic",
+        "edas#MedicineTopic",
+        "edas#MultimediaTopic",
+        "edas#OperatingTopicsystems",
+        "edas#MobileComputingTopic",
+        "edas#SatelliteAndSpaceCommunicationsTopic",
+        "edas#CommunicationsTopic",
+        "edas#ParallelAndDistributedComputingTopic",
+        "edas#ComputerNetworksTopic",
+        "edas#RadioCommunicationsTopic",
+        "edas#PerformanceTopic",
+        "edas#CADTopic",
+        "edas#MicroelectronicsTopic",
+        "edas#WirelessCommunicationsTopic",
+        "edas#CryptographyTopic",
+        "edas#TestOnlyTopic",
+        "edas#AntennasTopic",
+        "edas#ComputerArchitectureTopic"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#AntennasTopic": {
+      "id": "edas#AntennasTopic",
+      "name": "AntennasTopic",
+      "parents": [
+        "edas#Topic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#RadioCommunicationsTopic",
+        "edas#ComputerArchitectureTopic",
+        "edas#SecurityTopic",
+        "edas#CommunicationTheoryTopic",
+        "edas#MicroelectronicsTopic",
+        "edas#CADTopic",
+        "edas#MedicineTopic",
+        "edas#ComputerNetworksTopic",
+        "edas#SatelliteAndSpaceCommunicationsTopic",
+        "edas#OperatingTopicsystems",
+        "edas#CommunicationsTopic",
+        "edas#PowerlineTransmissionTopic",
+        "edas#PerformanceTopic",
+        "edas#SignalProcessingTopic",
+        "edas#MultimediaTopic",
+        "edas#ParallelAndDistributedComputingTopic",
+        "edas#CryptographyTopic",
+        "edas#TestOnlyTopic",
+        "edas#MobileComputingTopic",
+        "edas#WirelessCommunicationsTopic"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#PerformanceTopic": {
+      "id": "edas#PerformanceTopic",
+      "name": "PerformanceTopic",
+      "parents": [
+        "edas#Topic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ComputerNetworksTopic",
+        "edas#CryptographyTopic",
+        "edas#CommunicationTheoryTopic",
+        "edas#SignalProcessingTopic",
+        "edas#AntennasTopic",
+        "edas#WirelessCommunicationsTopic",
+        "edas#CommunicationsTopic",
+        "edas#TestOnlyTopic",
+        "edas#MicroelectronicsTopic",
+        "edas#SecurityTopic",
+        "edas#OperatingTopicsystems",
+        "edas#RadioCommunicationsTopic",
+        "edas#ParallelAndDistributedComputingTopic",
+        "edas#MobileComputingTopic",
+        "edas#ComputerArchitectureTopic",
+        "edas#PowerlineTransmissionTopic",
+        "edas#CADTopic",
+        "edas#MultimediaTopic",
+        "edas#MedicineTopic",
+        "edas#SatelliteAndSpaceCommunicationsTopic"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#SignalProcessingTopic": {
+      "id": "edas#SignalProcessingTopic",
+      "name": "SignalProcessingTopic",
+      "parents": [
+        "edas#Topic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#MicroelectronicsTopic",
+        "edas#CommunicationsTopic",
+        "edas#OperatingTopicsystems",
+        "edas#ParallelAndDistributedComputingTopic",
+        "edas#RadioCommunicationsTopic",
+        "edas#CryptographyTopic",
+        "edas#WirelessCommunicationsTopic",
+        "edas#PerformanceTopic",
+        "edas#SecurityTopic",
+        "edas#PowerlineTransmissionTopic",
+        "edas#SatelliteAndSpaceCommunicationsTopic",
+        "edas#MedicineTopic",
+        "edas#MobileComputingTopic",
+        "edas#ComputerArchitectureTopic",
+        "edas#CADTopic",
+        "edas#MultimediaTopic",
+        "edas#AntennasTopic",
+        "edas#CommunicationTheoryTopic",
+        "edas#TestOnlyTopic",
+        "edas#ComputerNetworksTopic"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#MicroelectronicsTopic": {
+      "id": "edas#MicroelectronicsTopic",
+      "name": "MicroelectronicsTopic",
+      "parents": [
+        "edas#Topic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#MultimediaTopic",
+        "edas#SecurityTopic",
+        "edas#PowerlineTransmissionTopic",
+        "edas#CADTopic",
+        "edas#MedicineTopic",
+        "edas#OperatingTopicsystems",
+        "edas#TestOnlyTopic",
+        "edas#ComputerNetworksTopic",
+        "edas#WirelessCommunicationsTopic",
+        "edas#RadioCommunicationsTopic",
+        "edas#MobileComputingTopic",
+        "edas#CryptographyTopic",
+        "edas#CommunicationTheoryTopic",
+        "edas#AntennasTopic",
+        "edas#ComputerArchitectureTopic",
+        "edas#SignalProcessingTopic",
+        "edas#SatelliteAndSpaceCommunicationsTopic",
+        "edas#PerformanceTopic",
+        "edas#CommunicationsTopic",
+        "edas#ParallelAndDistributedComputingTopic"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#TestOnlyTopic": {
+      "id": "edas#TestOnlyTopic",
+      "name": "TestOnlyTopic",
+      "parents": [
+        "edas#Topic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ParallelAndDistributedComputingTopic",
+        "edas#MicroelectronicsTopic",
+        "edas#OperatingTopicsystems",
+        "edas#CommunicationTheoryTopic",
+        "edas#MedicineTopic",
+        "edas#ComputerNetworksTopic",
+        "edas#CryptographyTopic",
+        "edas#PowerlineTransmissionTopic",
+        "edas#SatelliteAndSpaceCommunicationsTopic",
+        "edas#CADTopic",
+        "edas#RadioCommunicationsTopic",
+        "edas#MobileComputingTopic",
+        "edas#MultimediaTopic",
+        "edas#AntennasTopic",
+        "edas#CommunicationsTopic",
+        "edas#WirelessCommunicationsTopic",
+        "edas#SecurityTopic",
+        "edas#SignalProcessingTopic",
+        "edas#ComputerArchitectureTopic",
+        "edas#PerformanceTopic"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#RadioCommunicationsTopic": {
+      "id": "edas#RadioCommunicationsTopic",
+      "name": "RadioCommunicationsTopic",
+      "parents": [
+        "edas#Topic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ComputerArchitectureTopic",
+        "edas#MultimediaTopic",
+        "edas#CommunicationTheoryTopic",
+        "edas#AntennasTopic",
+        "edas#OperatingTopicsystems",
+        "edas#WirelessCommunicationsTopic",
+        "edas#PowerlineTransmissionTopic",
+        "edas#CryptographyTopic",
+        "edas#SecurityTopic",
+        "edas#MobileComputingTopic",
+        "edas#SignalProcessingTopic",
+        "edas#CommunicationsTopic",
+        "edas#ComputerNetworksTopic",
+        "edas#PerformanceTopic",
+        "edas#SatelliteAndSpaceCommunicationsTopic",
+        "edas#ParallelAndDistributedComputingTopic",
+        "edas#MicroelectronicsTopic",
+        "edas#MedicineTopic",
+        "edas#CADTopic",
+        "edas#TestOnlyTopic"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#ComputerArchitectureTopic": {
+      "id": "edas#ComputerArchitectureTopic",
+      "name": "ComputerArchitectureTopic",
+      "parents": [
+        "edas#Topic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#MultimediaTopic",
+        "edas#CommunicationsTopic",
+        "edas#CryptographyTopic",
+        "edas#ParallelAndDistributedComputingTopic",
+        "edas#PowerlineTransmissionTopic",
+        "edas#MicroelectronicsTopic",
+        "edas#OperatingTopicsystems",
+        "edas#CommunicationTheoryTopic",
+        "edas#WirelessCommunicationsTopic",
+        "edas#MedicineTopic",
+        "edas#SignalProcessingTopic",
+        "edas#ComputerNetworksTopic",
+        "edas#AntennasTopic",
+        "edas#MobileComputingTopic",
+        "edas#PerformanceTopic",
+        "edas#RadioCommunicationsTopic",
+        "edas#CADTopic",
+        "edas#SatelliteAndSpaceCommunicationsTopic",
+        "edas#TestOnlyTopic",
+        "edas#SecurityTopic"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#MedicineTopic": {
+      "id": "edas#MedicineTopic",
+      "name": "MedicineTopic",
+      "parents": [
+        "edas#Topic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ComputerArchitectureTopic",
+        "edas#CADTopic",
+        "edas#SignalProcessingTopic",
+        "edas#MultimediaTopic",
+        "edas#OperatingTopicsystems",
+        "edas#RadioCommunicationsTopic",
+        "edas#SatelliteAndSpaceCommunicationsTopic",
+        "edas#AntennasTopic",
+        "edas#CommunicationsTopic",
+        "edas#CommunicationTheoryTopic",
+        "edas#TestOnlyTopic",
+        "edas#MobileComputingTopic",
+        "edas#CryptographyTopic",
+        "edas#ComputerNetworksTopic",
+        "edas#WirelessCommunicationsTopic",
+        "edas#PowerlineTransmissionTopic",
+        "edas#SecurityTopic",
+        "edas#MicroelectronicsTopic",
+        "edas#PerformanceTopic",
+        "edas#ParallelAndDistributedComputingTopic"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#SecurityTopic": {
+      "id": "edas#SecurityTopic",
+      "name": "SecurityTopic",
+      "parents": [
+        "edas#Topic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#CommunicationTheoryTopic",
+        "edas#MobileComputingTopic",
+        "edas#MedicineTopic",
+        "edas#MultimediaTopic",
+        "edas#ComputerNetworksTopic",
+        "edas#MicroelectronicsTopic",
+        "edas#RadioCommunicationsTopic",
+        "edas#ParallelAndDistributedComputingTopic",
+        "edas#CommunicationsTopic",
+        "edas#SatelliteAndSpaceCommunicationsTopic",
+        "edas#PowerlineTransmissionTopic",
+        "edas#ComputerArchitectureTopic",
+        "edas#CryptographyTopic",
+        "edas#WirelessCommunicationsTopic",
+        "edas#TestOnlyTopic",
+        "edas#SignalProcessingTopic",
+        "edas#OperatingTopicsystems",
+        "edas#PerformanceTopic",
+        "edas#AntennasTopic",
+        "edas#CADTopic"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#MobileComputingTopic": {
+      "id": "edas#MobileComputingTopic",
+      "name": "MobileComputingTopic",
+      "parents": [
+        "edas#Topic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#RadioCommunicationsTopic",
+        "edas#WirelessCommunicationsTopic",
+        "edas#MicroelectronicsTopic",
+        "edas#CommunicationTheoryTopic",
+        "edas#AntennasTopic",
+        "edas#ComputerArchitectureTopic",
+        "edas#PowerlineTransmissionTopic",
+        "edas#MultimediaTopic",
+        "edas#CryptographyTopic",
+        "edas#PerformanceTopic",
+        "edas#SecurityTopic",
+        "edas#ComputerNetworksTopic",
+        "edas#MedicineTopic",
+        "edas#ParallelAndDistributedComputingTopic",
+        "edas#SatelliteAndSpaceCommunicationsTopic",
+        "edas#CommunicationsTopic",
+        "edas#CADTopic",
+        "edas#SignalProcessingTopic",
+        "edas#OperatingTopicsystems",
+        "edas#TestOnlyTopic"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#CryptographyTopic": {
+      "id": "edas#CryptographyTopic",
+      "name": "CryptographyTopic",
+      "parents": [
+        "edas#Topic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#CommunicationsTopic",
+        "edas#MultimediaTopic",
+        "edas#ComputerArchitectureTopic",
+        "edas#CommunicationTheoryTopic",
+        "edas#PerformanceTopic",
+        "edas#SignalProcessingTopic",
+        "edas#CADTopic",
+        "edas#WirelessCommunicationsTopic",
+        "edas#ComputerNetworksTopic",
+        "edas#TestOnlyTopic",
+        "edas#ParallelAndDistributedComputingTopic",
+        "edas#OperatingTopicsystems",
+        "edas#PowerlineTransmissionTopic",
+        "edas#MedicineTopic",
+        "edas#MobileComputingTopic",
+        "edas#SecurityTopic",
+        "edas#AntennasTopic",
+        "edas#RadioCommunicationsTopic",
+        "edas#MicroelectronicsTopic",
+        "edas#SatelliteAndSpaceCommunicationsTopic"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#CommunicationTheoryTopic": {
+      "id": "edas#CommunicationTheoryTopic",
+      "name": "CommunicationTheoryTopic",
+      "parents": [
+        "edas#Topic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ComputerNetworksTopic",
+        "edas#OperatingTopicsystems",
+        "edas#WirelessCommunicationsTopic",
+        "edas#MultimediaTopic",
+        "edas#CommunicationsTopic",
+        "edas#SatelliteAndSpaceCommunicationsTopic",
+        "edas#SignalProcessingTopic",
+        "edas#MedicineTopic",
+        "edas#CADTopic",
+        "edas#PerformanceTopic",
+        "edas#ComputerArchitectureTopic",
+        "edas#SecurityTopic",
+        "edas#MobileComputingTopic",
+        "edas#PowerlineTransmissionTopic",
+        "edas#MicroelectronicsTopic",
+        "edas#TestOnlyTopic",
+        "edas#CryptographyTopic",
+        "edas#AntennasTopic",
+        "edas#RadioCommunicationsTopic",
+        "edas#ParallelAndDistributedComputingTopic"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#ConferenceChair": {
+      "id": "edas#ConferenceChair",
+      "name": "ConferenceChair",
+      "parents": [
+        "edas#Person"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#Author"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#Author": {
+      "id": "edas#Author",
+      "name": "Author",
+      "parents": [],
+      "children": [
+        "edas#Presenter"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ConferenceChair",
+        "edas#SessionChair",
+        "edas#TPCMember"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "edas#DiningPlace": {
+      "id": "edas#DiningPlace",
+      "name": "DiningPlace",
+      "parents": [
+        "edas#Place"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#Presenter": {
+      "id": "edas#Presenter",
+      "name": "Presenter",
+      "parents": [
+        "edas#Author"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#AcademiaOrganization": {
+      "id": "edas#AcademiaOrganization",
+      "name": "AcademiaOrganization",
+      "parents": [
+        "edas#Organization"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#IndustryOrganization",
+        "edas#NGO",
+        "edas#GovernmentOrganization"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#IndustryOrganization": {
+      "id": "edas#IndustryOrganization",
+      "name": "IndustryOrganization",
+      "parents": [
+        "edas#Organization"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#NGO",
+        "edas#AcademiaOrganization",
+        "edas#GovernmentOrganization"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#NGO": {
+      "id": "edas#NGO",
+      "name": "NGO",
+      "parents": [
+        "edas#Organization"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#IndustryOrganization",
+        "edas#AcademiaOrganization",
+        "edas#GovernmentOrganization"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#GovernmentOrganization": {
+      "id": "edas#GovernmentOrganization",
+      "name": "GovernmentOrganization",
+      "parents": [
+        "edas#Organization"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#NGO",
+        "edas#IndustryOrganization",
+        "edas#AcademiaOrganization"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#ComputerNetworksEnterpriseTopic": {
+      "id": "edas#ComputerNetworksEnterpriseTopic",
+      "name": "ComputerNetworksEnterpriseTopic",
+      "parents": [
+        "edas#ComputerNetworksTopic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ComputerNetworksSwitchingTopic",
+        "edas#ComputerNetworksSensorTopic",
+        "edas#ComputerNetworksSecurityTopic",
+        "edas#ComputerNetworksOpticalTopic",
+        "edas#ComputerNetworksMeasurementsTopic",
+        "edas#ComputerNetworksManagementTopic",
+        "edas#ComputerNetworksAapplicationsTopic"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "edas#ComputerNetworksSwitchingTopic": {
+      "id": "edas#ComputerNetworksSwitchingTopic",
+      "name": "ComputerNetworksSwitchingTopic",
+      "parents": [
+        "edas#ComputerNetworksTopic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ComputerNetworksSensorTopic",
+        "edas#ComputerNetworksSecurityTopic",
+        "edas#ComputerNetworksOpticalTopic",
+        "edas#ComputerNetworksMeasurementsTopic",
+        "edas#ComputerNetworksManagementTopic",
+        "edas#ComputerNetworksEnterpriseTopic",
+        "edas#ComputerNetworksAapplicationsTopic"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "edas#ComputerNetworksSensorTopic": {
+      "id": "edas#ComputerNetworksSensorTopic",
+      "name": "ComputerNetworksSensorTopic",
+      "parents": [
+        "edas#ComputerNetworksTopic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ComputerNetworksSwitchingTopic",
+        "edas#ComputerNetworksSecurityTopic",
+        "edas#ComputerNetworksOpticalTopic",
+        "edas#ComputerNetworksMeasurementsTopic",
+        "edas#ComputerNetworksManagementTopic",
+        "edas#ComputerNetworksEnterpriseTopic",
+        "edas#ComputerNetworksAapplicationsTopic"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "edas#ComputerNetworksSecurityTopic": {
+      "id": "edas#ComputerNetworksSecurityTopic",
+      "name": "ComputerNetworksSecurityTopic",
+      "parents": [
+        "edas#ComputerNetworksTopic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ComputerNetworksSwitchingTopic",
+        "edas#ComputerNetworksSensorTopic",
+        "edas#ComputerNetworksOpticalTopic",
+        "edas#ComputerNetworksMeasurementsTopic",
+        "edas#ComputerNetworksManagementTopic",
+        "edas#ComputerNetworksEnterpriseTopic",
+        "edas#ComputerNetworksAapplicationsTopic"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "edas#ComputerNetworksOpticalTopic": {
+      "id": "edas#ComputerNetworksOpticalTopic",
+      "name": "ComputerNetworksOpticalTopic",
+      "parents": [
+        "edas#ComputerNetworksTopic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ComputerNetworksSwitchingTopic",
+        "edas#ComputerNetworksSensorTopic",
+        "edas#ComputerNetworksSecurityTopic",
+        "edas#ComputerNetworksMeasurementsTopic",
+        "edas#ComputerNetworksManagementTopic",
+        "edas#ComputerNetworksEnterpriseTopic",
+        "edas#ComputerNetworksAapplicationsTopic"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "edas#ComputerNetworksMeasurementsTopic": {
+      "id": "edas#ComputerNetworksMeasurementsTopic",
+      "name": "ComputerNetworksMeasurementsTopic",
+      "parents": [
+        "edas#ComputerNetworksTopic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ComputerNetworksSwitchingTopic",
+        "edas#ComputerNetworksSensorTopic",
+        "edas#ComputerNetworksSecurityTopic",
+        "edas#ComputerNetworksOpticalTopic",
+        "edas#ComputerNetworksManagementTopic",
+        "edas#ComputerNetworksEnterpriseTopic",
+        "edas#ComputerNetworksAapplicationsTopic"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "edas#ComputerNetworksManagementTopic": {
+      "id": "edas#ComputerNetworksManagementTopic",
+      "name": "ComputerNetworksManagementTopic",
+      "parents": [
+        "edas#ComputerNetworksTopic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ComputerNetworksSwitchingTopic",
+        "edas#ComputerNetworksSensorTopic",
+        "edas#ComputerNetworksSecurityTopic",
+        "edas#ComputerNetworksOpticalTopic",
+        "edas#ComputerNetworksMeasurementsTopic",
+        "edas#ComputerNetworksEnterpriseTopic",
+        "edas#ComputerNetworksAapplicationsTopic"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "edas#ComputerNetworksAapplicationsTopic": {
+      "id": "edas#ComputerNetworksAapplicationsTopic",
+      "name": "ComputerNetworksAapplicationsTopic",
+      "parents": [
+        "edas#ComputerNetworksTopic"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ComputerNetworksSwitchingTopic",
+        "edas#ComputerNetworksSensorTopic",
+        "edas#ComputerNetworksSecurityTopic",
+        "edas#ComputerNetworksOpticalTopic",
+        "edas#ComputerNetworksMeasurementsTopic",
+        "edas#ComputerNetworksManagementTopic",
+        "edas#ComputerNetworksEnterpriseTopic"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "edas#ActivePaper": {
+      "id": "edas#ActivePaper",
+      "name": "ActivePaper",
+      "parents": [
+        "edas#Paper"
+      ],
+      "children": [
+        "edas#RatedPapers"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#PendingPaper",
+        "edas#WithdrawnPaper",
+        "edas#RejectedPaper",
+        "edas#AcceptedPaper",
+        "edas#PublishedPaper"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "edas#PendingPaper": {
+      "id": "edas#PendingPaper",
+      "name": "PendingPaper",
+      "parents": [
+        "edas#Paper"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ActivePaper",
+        "edas#WithdrawnPaper",
+        "edas#RejectedPaper",
+        "edas#AcceptedPaper",
+        "edas#PublishedPaper"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "edas#WithdrawnPaper": {
+      "id": "edas#WithdrawnPaper",
+      "name": "WithdrawnPaper",
+      "parents": [
+        "edas#Paper"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#PendingPaper",
+        "edas#ActivePaper",
+        "edas#RejectedPaper",
+        "edas#AcceptedPaper",
+        "edas#PublishedPaper"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "edas#RejectedPaper": {
+      "id": "edas#RejectedPaper",
+      "name": "RejectedPaper",
+      "parents": [
+        "edas#Paper"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#PendingPaper",
+        "edas#ActivePaper",
+        "edas#WithdrawnPaper",
+        "edas#AcceptedPaper",
+        "edas#PublishedPaper"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "edas#AcceptedPaper": {
+      "id": "edas#AcceptedPaper",
+      "name": "AcceptedPaper",
+      "parents": [
+        "edas#Paper"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#PendingPaper",
+        "edas#ActivePaper",
+        "edas#WithdrawnPaper",
+        "edas#RejectedPaper",
+        "edas#PublishedPaper"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "edas#PublishedPaper": {
+      "id": "edas#PublishedPaper",
+      "name": "PublishedPaper",
+      "parents": [
+        "edas#Paper"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#PendingPaper",
+        "edas#ActivePaper",
+        "edas#WithdrawnPaper",
+        "edas#RejectedPaper",
+        "edas#AcceptedPaper"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "edas#Attendee": {
+      "id": "edas#Attendee",
+      "name": "Attendee",
+      "parents": [
+        "edas#Person"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#CoffeeBreak": {
+      "id": "edas#CoffeeBreak",
+      "name": "CoffeeBreak",
+      "parents": [
+        "edas#BreakEvent"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "edas#FreeTimeBreak": {
+      "id": "edas#FreeTimeBreak",
+      "name": "FreeTimeBreak",
+      "parents": [
+        "edas#BreakEvent"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "edas#MealBreak": {
+      "id": "edas#MealBreak",
+      "name": "MealBreak",
+      "parents": [
+        "edas#BreakEvent"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "edas#Reviewer": {
+      "id": "edas#Reviewer",
+      "name": "Reviewer",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "edas#ClosingTalk": {
+      "id": "edas#ClosingTalk",
+      "name": "ClosingTalk",
+      "parents": [
+        "edas#TalkEvent"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#WelcomeTalk"
+      ],
+      "comment": "",
+      "depth": 3
+    },
+    "edas#WelcomeTalk": {
+      "id": "edas#WelcomeTalk",
+      "name": "WelcomeTalk",
+      "parents": [
+        "edas#TalkEvent"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#ClosingTalk"
+      ],
+      "comment": "",
+      "depth": 3
+    },
+    "edas#TalkEvent": {
+      "id": "edas#TalkEvent",
+      "name": "TalkEvent",
+      "parents": [
+        "edas#AcademicEvent"
+      ],
+      "children": [
+        "edas#ClosingTalk",
+        "edas#WelcomeTalk"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#PaperPresentation",
+        "edas#Workshop",
+        "edas#OrganizationalMeeting"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "edas#SessionChair": {
+      "id": "edas#SessionChair",
+      "name": "SessionChair",
+      "parents": [
+        "edas#Person"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#Author"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#TPCMember": {
+      "id": "edas#TPCMember",
+      "name": "TPCMember",
+      "parents": [
+        "edas#Person"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#Author"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#TwoLevelConference": {
+      "id": "edas#TwoLevelConference",
+      "name": "TwoLevelConference",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "edas#CallForPapers": {
+      "id": "edas#CallForPapers",
+      "name": "CallForPapers",
+      "parents": [
+        "edas#Call"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "Call For Papers",
+      "depth": 1
+    },
+    "edas#TextualReviewQuestion": {
+      "id": "edas#TextualReviewQuestion",
+      "name": "TextualReviewQuestion",
+      "parents": [
+        "edas#ReviewQuestion"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#NumericalReviewQuestion": {
+      "id": "edas#NumericalReviewQuestion",
+      "name": "NumericalReviewQuestion",
+      "parents": [
+        "edas#ReviewQuestion"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#OrganizationalMeeting": {
+      "id": "edas#OrganizationalMeeting",
+      "name": "OrganizationalMeeting",
+      "parents": [
+        "edas#AcademicEvent"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#TalkEvent",
+        "edas#PaperPresentation",
+        "edas#Workshop"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "edas#PaperPresentation": {
+      "id": "edas#PaperPresentation",
+      "name": "PaperPresentation",
+      "parents": [
+        "edas#AcademicEvent"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#TalkEvent",
+        "edas#Workshop",
+        "edas#OrganizationalMeeting"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "edas#Workshop": {
+      "id": "edas#Workshop",
+      "name": "Workshop",
+      "parents": [
+        "edas#AcademicEvent"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#TalkEvent",
+        "edas#PaperPresentation",
+        "edas#OrganizationalMeeting"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "edas#AcademicEvent": {
+      "id": "edas#AcademicEvent",
+      "name": "AcademicEvent",
+      "parents": [
+        "edas#ConferenceEvent"
+      ],
+      "children": [
+        "edas#TalkEvent",
+        "edas#OrganizationalMeeting",
+        "edas#PaperPresentation",
+        "edas#Workshop"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "edas#NonAcademicEvent"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#PersonalPublicationHistory": {
+      "id": "edas#PersonalPublicationHistory",
+      "name": "PersonalPublicationHistory",
+      "parents": [
+        "edas#PersonalHistory"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#Excursion": {
+      "id": "edas#Excursion",
+      "name": "Excursion",
+      "parents": [
+        "edas#SocialEvent"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "edas#SocialEvent": {
+      "id": "edas#SocialEvent",
+      "name": "SocialEvent",
+      "parents": [
+        "edas#NonAcademicEvent"
+      ],
+      "children": [
+        "edas#Excursion",
+        "edas#Reception"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "edas#CallForReviews": {
+      "id": "edas#CallForReviews",
+      "name": "CallForReviews",
+      "parents": [
+        "edas#Call"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "Call For Reviews",
+      "depth": 1
+    },
+    "edas#PersonalReviewHistory": {
+      "id": "edas#PersonalReviewHistory",
+      "name": "PersonalReviewHistory",
+      "parents": [
+        "edas#PersonalHistory"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#ConferenceVenuePlace": {
+      "id": "edas#ConferenceVenuePlace",
+      "name": "ConferenceVenuePlace",
+      "parents": [
+        "edas#Place"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#CallForManuscripts": {
+      "id": "edas#CallForManuscripts",
+      "name": "CallForManuscripts",
+      "parents": [
+        "edas#Call"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "Call For Manuscripts",
+      "depth": 1
+    },
+    "edas#Reception": {
+      "id": "edas#Reception",
+      "name": "Reception",
+      "parents": [
+        "edas#SocialEvent"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "edas#SingleLevelConference": {
+      "id": "edas#SingleLevelConference",
+      "name": "SingleLevelConference",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "edas#MeetingRoomPlace": {
+      "id": "edas#MeetingRoomPlace",
+      "name": "MeetingRoomPlace",
+      "parents": [
+        "edas#Place"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#AccommodationPlace": {
+      "id": "edas#AccommodationPlace",
+      "name": "AccommodationPlace",
+      "parents": [
+        "edas#Place"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#RatedPapers": {
+      "id": "edas#RatedPapers",
+      "name": "RatedPapers",
+      "parents": [
+        "edas#ActivePaper"
+      ],
+      "children": [],
+      "attributes": {
+        "hasRating": "ReviewRating"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "edas#TravelGrant": {
+      "id": "edas#TravelGrant",
+      "name": "TravelGrant",
+      "parents": [
+        "edas#Sponsorship"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "edas#ConferenceDinner": {
+      "id": "edas#ConferenceDinner",
+      "name": "ConferenceDinner",
+      "parents": [
+        "edas#MealEvent"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    }
+  }
+}

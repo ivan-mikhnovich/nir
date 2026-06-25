@@ -1,0 +1,811 @@
+{
+  "name": "conference",
+  "namespace": "http://conference",
+  "root_id": "Conference#Person",
+  "nodes": {
+    "Conference#Conference_participant": {
+      "id": "Conference#Conference_participant",
+      "name": "Conference participant",
+      "parents": [
+        "Conference#Person"
+      ],
+      "children": [
+        "Conference#Active_conference_participant",
+        "Conference#Passive_conference_participant"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "Conference#Active_conference_participant": {
+      "id": "Conference#Active_conference_participant",
+      "name": "Active conference participant",
+      "parents": [
+        "Conference#Conference_contributor",
+        "Conference#Conference_participant"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "Conference#Passive_conference_participant"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "Conference#Passive_conference_participant": {
+      "id": "Conference#Passive_conference_participant",
+      "name": "Passive conference participant",
+      "parents": [
+        "Conference#Conference_participant"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "Conference#Active_conference_participant"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "Conference#Person": {
+      "id": "Conference#Person",
+      "name": "Person",
+      "parents": [],
+      "children": [
+        "Conference#Conference_participant",
+        "Conference#Reviewer",
+        "Conference#Conference_contributor",
+        "Conference#Committee_member",
+        "Conference#Conference_applicant",
+        "Conference#Track-workshop_chair"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "Conference#Review_expertise": {
+      "id": "Conference#Review_expertise",
+      "name": "Review expertise",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "Conference#Submitted_contribution": {
+      "id": "Conference#Submitted_contribution",
+      "name": "Submitted contribution",
+      "parents": [
+        "Conference#Written_contribution"
+      ],
+      "children": [
+        "Conference#Reviewed_contribution"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "Conference#Reviewer": {
+      "id": "Conference#Reviewer",
+      "name": "Reviewer",
+      "parents": [
+        "Conference#Person"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "Conference#Regular_author": {
+      "id": "Conference#Regular_author",
+      "name": "Regular author",
+      "parents": [
+        "Conference#Conference_contributor"
+      ],
+      "children": [
+        "Conference#Contribution_1th-author",
+        "Conference#Contribution_co-author"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "Conference#Conference_contributor": {
+      "id": "Conference#Conference_contributor",
+      "name": "Conference contributor",
+      "parents": [
+        "Conference#Person"
+      ],
+      "children": [
+        "Conference#Active_conference_participant",
+        "Conference#Regular_author",
+        "Conference#Invited_speaker"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "Conference#Contribution_1th-author": {
+      "id": "Conference#Contribution_1th-author",
+      "name": "Contribution 1th-author",
+      "parents": [
+        "Conference#Regular_author"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "Conference#Contribution_co-author"
+      ],
+      "comment": "",
+      "depth": 3
+    },
+    "Conference#Contribution_co-author": {
+      "id": "Conference#Contribution_co-author",
+      "name": "Contribution co-author",
+      "parents": [
+        "Conference#Regular_author"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "Conference#Contribution_1th-author"
+      ],
+      "comment": "",
+      "depth": 3
+    },
+    "Conference#Conference_contribution": {
+      "id": "Conference#Conference_contribution",
+      "name": "Conference contribution",
+      "parents": [
+        "Conference#Conference_document"
+      ],
+      "children": [
+        "Conference#Poster",
+        "Conference#Written_contribution",
+        "Conference#Presentation"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "Conference#Co-chair": {
+      "id": "Conference#Co-chair",
+      "name": "Co-chair",
+      "parents": [
+        "Conference#Committee_member"
+      ],
+      "children": [],
+      "attributes": {
+        "was_a_committe_co-chair_of": "Committee"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "Conference#Committee": {
+      "id": "Conference#Committee",
+      "name": "Committee",
+      "parents": [],
+      "children": [
+        "Conference#Program_committee",
+        "Conference#Organizing_committee",
+        "Conference#Steering_committee"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "Conference#Committee_member": {
+      "id": "Conference#Committee_member",
+      "name": "Committee member",
+      "parents": [
+        "Conference#Person"
+      ],
+      "children": [
+        "Conference#Co-chair",
+        "Conference#Chair"
+      ],
+      "attributes": {
+        "was_a_member_of": "Committee"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "Conference#Abstract": {
+      "id": "Conference#Abstract",
+      "name": "Abstract",
+      "parents": [
+        "Conference#Extended_abstract"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 5
+    },
+    "Conference#Extended_abstract": {
+      "id": "Conference#Extended_abstract",
+      "name": "Extended abstract",
+      "parents": [
+        "Conference#Regular_contribution"
+      ],
+      "children": [
+        "Conference#Abstract"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "Conference#Paper"
+      ],
+      "comment": "",
+      "depth": 4
+    },
+    "Conference#Important_dates": {
+      "id": "Conference#Important_dates",
+      "name": "Important dates",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "Conference#Invited_speaker": {
+      "id": "Conference#Invited_speaker",
+      "name": "Invited speaker",
+      "parents": [
+        "Conference#Conference_contributor"
+      ],
+      "children": [],
+      "attributes": {
+        "contributes": "Invited_talk"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "Conference#Conference_proceedings": {
+      "id": "Conference#Conference_proceedings",
+      "name": "Conference proceedings",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "Conference#Information_for_participants": {
+      "id": "Conference#Information_for_participants",
+      "name": "Information for participants",
+      "parents": [
+        "Conference#Conference_document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "Conference#Conference_document": {
+      "id": "Conference#Conference_document",
+      "name": "Conference document",
+      "parents": [],
+      "children": [
+        "Conference#Conference_contribution",
+        "Conference#Information_for_participants",
+        "Conference#Call_for_paper",
+        "Conference#Conference_announcement",
+        "Conference#Review",
+        "Conference#Call_for_participation",
+        "Conference#Conference_www"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "Conference#Organization": {
+      "id": "Conference#Organization",
+      "name": "Organization",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "Conference#Regular_contribution": {
+      "id": "Conference#Regular_contribution",
+      "name": "Regular contribution",
+      "parents": [
+        "Conference#Written_contribution"
+      ],
+      "children": [
+        "Conference#Extended_abstract",
+        "Conference#Paper"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "Conference#Invited_talk",
+        "Conference#Poster"
+      ],
+      "comment": "",
+      "depth": 3
+    },
+    "Conference#Poster": {
+      "id": "Conference#Poster",
+      "name": "Poster",
+      "parents": [
+        "Conference#Conference_contribution"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "Conference#Invited_talk",
+        "Conference#Regular_contribution"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "Conference#Written_contribution": {
+      "id": "Conference#Written_contribution",
+      "name": "Written contribution",
+      "parents": [
+        "Conference#Conference_contribution"
+      ],
+      "children": [
+        "Conference#Submitted_contribution",
+        "Conference#Regular_contribution"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "Conference#Conference_applicant": {
+      "id": "Conference#Conference_applicant",
+      "name": "Conference applicant",
+      "parents": [
+        "Conference#Person"
+      ],
+      "children": [
+        "Conference#Registeered_applicant"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "Conference#Camera_ready_contribution": {
+      "id": "Conference#Camera_ready_contribution",
+      "name": "Camera ready contribution",
+      "parents": [
+        "Conference#Accepted_contribution"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 6
+    },
+    "Conference#Accepted_contribution": {
+      "id": "Conference#Accepted_contribution",
+      "name": "Accepted contribution",
+      "parents": [
+        "Conference#Reviewed_contribution"
+      ],
+      "children": [
+        "Conference#Camera_ready_contribution"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "Conference#Rejected_contribution"
+      ],
+      "comment": "",
+      "depth": 5
+    },
+    "Conference#Program_committee": {
+      "id": "Conference#Program_committee",
+      "name": "Program committee",
+      "parents": [
+        "Conference#Committee"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "Conference#Organizing_committee",
+        "Conference#Steering_committee"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "Conference#Organizing_committee": {
+      "id": "Conference#Organizing_committee",
+      "name": "Organizing committee",
+      "parents": [
+        "Conference#Committee"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "Conference#Program_committee",
+        "Conference#Steering_committee"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "Conference#Steering_committee": {
+      "id": "Conference#Steering_committee",
+      "name": "Steering committee",
+      "parents": [
+        "Conference#Committee"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "Conference#Program_committee",
+        "Conference#Organizing_committee"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "Conference#Conference_volume": {
+      "id": "Conference#Conference_volume",
+      "name": "Conference volume",
+      "parents": [
+        "Conference#Conference"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "Conference#Conference": {
+      "id": "Conference#Conference",
+      "name": "Conference",
+      "parents": [],
+      "children": [
+        "Conference#Conference_volume"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "Conference#Call_for_paper": {
+      "id": "Conference#Call_for_paper",
+      "name": "Call for paper",
+      "parents": [
+        "Conference#Conference_document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "Conference#Conference_announcement": {
+      "id": "Conference#Conference_announcement",
+      "name": "Conference announcement",
+      "parents": [
+        "Conference#Conference_document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "Conference#Paper": {
+      "id": "Conference#Paper",
+      "name": "Paper",
+      "parents": [
+        "Conference#Regular_contribution"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "Conference#Extended_abstract"
+      ],
+      "comment": "",
+      "depth": 4
+    },
+    "Conference#Invited_talk": {
+      "id": "Conference#Invited_talk",
+      "name": "Invited talk",
+      "parents": [
+        "Conference#Presentation"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "Conference#Poster",
+        "Conference#Regular_contribution"
+      ],
+      "comment": "",
+      "depth": 3
+    },
+    "Conference#Conference_part": {
+      "id": "Conference#Conference_part",
+      "name": "Conference part",
+      "parents": [],
+      "children": [
+        "Conference#Track",
+        "Conference#Workshop",
+        "Conference#Tutorial"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "Conference#Presentation": {
+      "id": "Conference#Presentation",
+      "name": "Presentation",
+      "parents": [
+        "Conference#Conference_contribution"
+      ],
+      "children": [
+        "Conference#Invited_talk"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "Conference#Chair": {
+      "id": "Conference#Chair",
+      "name": "Chair",
+      "parents": [
+        "Conference#Committee_member"
+      ],
+      "children": [],
+      "attributes": {
+        "was_a_committee_chair_of": "Committee"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "Conference#Track": {
+      "id": "Conference#Track",
+      "name": "Track",
+      "parents": [
+        "Conference#Conference_part"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "Conference#Workshop",
+        "Conference#Tutorial"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "Conference#Workshop": {
+      "id": "Conference#Workshop",
+      "name": "Workshop",
+      "parents": [
+        "Conference#Conference_part"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "Conference#Tutorial",
+        "Conference#Track"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "Conference#Tutorial": {
+      "id": "Conference#Tutorial",
+      "name": "Tutorial",
+      "parents": [
+        "Conference#Conference_part"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "Conference#Track",
+        "Conference#Workshop"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "Conference#Rejected_contribution": {
+      "id": "Conference#Rejected_contribution",
+      "name": "Rejected contribution",
+      "parents": [
+        "Conference#Reviewed_contribution"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "Conference#Accepted_contribution"
+      ],
+      "comment": "",
+      "depth": 5
+    },
+    "Conference#Reviewed_contribution": {
+      "id": "Conference#Reviewed_contribution",
+      "name": "Reviewed contribution",
+      "parents": [
+        "Conference#Submitted_contribution"
+      ],
+      "children": [
+        "Conference#Accepted_contribution",
+        "Conference#Rejected_contribution"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 4
+    },
+    "Conference#Review": {
+      "id": "Conference#Review",
+      "name": "Review",
+      "parents": [
+        "Conference#Conference_document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "Conference#Topic": {
+      "id": "Conference#Topic",
+      "name": "Topic",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "Conference#Late_paid_applicant": {
+      "id": "Conference#Late_paid_applicant",
+      "name": "Late paid applicant",
+      "parents": [
+        "Conference#Paid_applicant"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "Conference#Early_paid_applicant"
+      ],
+      "comment": "",
+      "depth": 4
+    },
+    "Conference#Paid_applicant": {
+      "id": "Conference#Paid_applicant",
+      "name": "Paid applicant",
+      "parents": [
+        "Conference#Registeered_applicant"
+      ],
+      "children": [
+        "Conference#Late_paid_applicant",
+        "Conference#Early_paid_applicant"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "Conference#Early_paid_applicant": {
+      "id": "Conference#Early_paid_applicant",
+      "name": "Early paid applicant",
+      "parents": [
+        "Conference#Paid_applicant"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "Conference#Late_paid_applicant"
+      ],
+      "comment": "",
+      "depth": 4
+    },
+    "Conference#Organizer": {
+      "id": "Conference#Organizer",
+      "name": "Organizer",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "Conference#Call_for_participation": {
+      "id": "Conference#Call_for_participation",
+      "name": "Call for participation",
+      "parents": [
+        "Conference#Conference_document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "Conference#Publisher": {
+      "id": "Conference#Publisher",
+      "name": "Publisher",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "Conference#Registeered_applicant": {
+      "id": "Conference#Registeered_applicant",
+      "name": "Registeered applicant",
+      "parents": [
+        "Conference#Conference_applicant"
+      ],
+      "children": [
+        "Conference#Paid_applicant"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "Conference#Track-workshop_chair": {
+      "id": "Conference#Track-workshop_chair",
+      "name": "Track-workshop chair",
+      "parents": [
+        "Conference#Person"
+      ],
+      "children": [],
+      "attributes": {
+        "was_a_track-workshop_chair_of": "Conference.Track | Conference.Workshop"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "Conference#Conference_www": {
+      "id": "Conference#Conference_www",
+      "name": "Conference www",
+      "parents": [
+        "Conference#Conference_document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "Conference#Conference_fees": {
+      "id": "Conference#Conference_fees",
+      "name": "Conference fees",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "Conference#Review_preference": {
+      "id": "Conference#Review_preference",
+      "name": "Review preference",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    }
+  }
+}

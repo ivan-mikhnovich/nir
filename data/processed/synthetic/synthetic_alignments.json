@@ -1,0 +1,606 @@
+[
+  {
+    "source": "cmt",
+    "target": "cmt_ATTR",
+    "matches": [
+      {
+        "source_id": "cmt#Acceptance",
+        "target_id": "cmt#Acceptance_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Administrator",
+        "target_id": "cmt#Administrator_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#AssociatedChair",
+        "target_id": "cmt#AssociatedChair_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Author",
+        "target_id": "cmt#Author_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#AuthorNotReviewer",
+        "target_id": "cmt#AuthorNotReviewer_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Bid",
+        "target_id": "cmt#Bid_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Chairman",
+        "target_id": "cmt#Chairman_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Co-author",
+        "target_id": "cmt#Co-author_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Conference",
+        "target_id": "cmt#Conference_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ConferenceChair",
+        "target_id": "cmt#ConferenceChair_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ConferenceMember",
+        "target_id": "cmt#ConferenceMember_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Decision",
+        "target_id": "cmt#Decision_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Document",
+        "target_id": "cmt#Document_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ExternalReviewer",
+        "target_id": "cmt#ExternalReviewer_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Meta-Review",
+        "target_id": "cmt#Meta-Review_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Meta-Reviewer",
+        "target_id": "cmt#Meta-Reviewer_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Paper",
+        "target_id": "cmt#Paper_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#PaperAbstract",
+        "target_id": "cmt#PaperAbstract_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#PaperFullVersion",
+        "target_id": "cmt#PaperFullVersion_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Person",
+        "target_id": "cmt#Person_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Preference",
+        "target_id": "cmt#Preference_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ProgramCommittee",
+        "target_id": "cmt#ProgramCommittee_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ProgramCommitteeChair",
+        "target_id": "cmt#ProgramCommitteeChair_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ProgramCommitteeMember",
+        "target_id": "cmt#ProgramCommitteeMember_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Rejection",
+        "target_id": "cmt#Rejection_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Review",
+        "target_id": "cmt#Review_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Reviewer",
+        "target_id": "cmt#Reviewer_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#SubjectArea",
+        "target_id": "cmt#SubjectArea_ATTR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#User",
+        "target_id": "cmt#User_ATTR",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "source": "cmt",
+    "target": "cmt_V1",
+    "matches": [
+      {
+        "source_id": "cmt#Acceptance",
+        "target_id": "cmt#Acceptance_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Administrator",
+        "target_id": "cmt#Administrator_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#AssociatedChair",
+        "target_id": "cmt#AssociatedChair_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Author",
+        "target_id": "cmt#Author_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#AuthorNotReviewer",
+        "target_id": "cmt#AuthorNotReviewer_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Bid",
+        "target_id": "cmt#Bid_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Chairman",
+        "target_id": "cmt#Chairman_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Co-author",
+        "target_id": "cmt#Co-author_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Conference",
+        "target_id": "cmt#Conference_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ConferenceChair",
+        "target_id": "cmt#ConferenceChair_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ConferenceMember",
+        "target_id": "cmt#ConferenceMember_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Decision",
+        "target_id": "cmt#Decision_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Document",
+        "target_id": "cmt#Document_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ExternalReviewer",
+        "target_id": "cmt#ExternalReviewer_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Meta-Review",
+        "target_id": "cmt#Meta-Review_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Meta-Reviewer",
+        "target_id": "cmt#Meta-Reviewer_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Paper",
+        "target_id": "cmt#Paper_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#PaperAbstract",
+        "target_id": "cmt#PaperAbstract_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#PaperFullVersion",
+        "target_id": "cmt#PaperFullVersion_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Person",
+        "target_id": "cmt#Person_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Preference",
+        "target_id": "cmt#Preference_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ProgramCommittee",
+        "target_id": "cmt#ProgramCommittee_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ProgramCommitteeChair",
+        "target_id": "cmt#ProgramCommitteeChair_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ProgramCommitteeMember",
+        "target_id": "cmt#ProgramCommitteeMember_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Rejection",
+        "target_id": "cmt#Rejection_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Review",
+        "target_id": "cmt#Review_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Reviewer",
+        "target_id": "cmt#Reviewer_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#SubjectArea",
+        "target_id": "cmt#SubjectArea_V1",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#User",
+        "target_id": "cmt#User_V1",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "source": "cmt",
+    "target": "cmt_STR",
+    "matches": [
+      {
+        "source_id": "cmt#Acceptance",
+        "target_id": "cmt#Acceptance_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Administrator",
+        "target_id": "cmt#Administrator_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#AssociatedChair",
+        "target_id": "cmt#AssociatedChair_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Author",
+        "target_id": "cmt#Author_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#AuthorNotReviewer",
+        "target_id": "cmt#AuthorNotReviewer_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Bid",
+        "target_id": "cmt#Bid_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Chairman",
+        "target_id": "cmt#Chairman_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Co-author",
+        "target_id": "cmt#Co-author_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Conference",
+        "target_id": "cmt#Conference_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ConferenceChair",
+        "target_id": "cmt#ConferenceChair_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ConferenceMember",
+        "target_id": "cmt#ConferenceMember_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Decision",
+        "target_id": "cmt#Decision_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Document",
+        "target_id": "cmt#Document_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ExternalReviewer",
+        "target_id": "cmt#ExternalReviewer_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Meta-Review",
+        "target_id": "cmt#Meta-Review_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Meta-Reviewer",
+        "target_id": "cmt#Meta-Reviewer_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Paper",
+        "target_id": "cmt#Paper_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#PaperAbstract",
+        "target_id": "cmt#PaperAbstract_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#PaperFullVersion",
+        "target_id": "cmt#PaperFullVersion_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Person",
+        "target_id": "cmt#Person_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Preference",
+        "target_id": "cmt#Preference_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ProgramCommittee",
+        "target_id": "cmt#ProgramCommittee_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ProgramCommitteeChair",
+        "target_id": "cmt#ProgramCommitteeChair_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ProgramCommitteeMember",
+        "target_id": "cmt#ProgramCommitteeMember_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Rejection",
+        "target_id": "cmt#Rejection_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Review",
+        "target_id": "cmt#Review_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Reviewer",
+        "target_id": "cmt#Reviewer_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#SubjectArea",
+        "target_id": "cmt#SubjectArea_STR",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#User",
+        "target_id": "cmt#User_STR",
+        "confidence": 1.0
+      }
+    ]
+  },
+  {
+    "source": "cmt",
+    "target": "cmt_SYN",
+    "matches": [
+      {
+        "source_id": "cmt#Acceptance",
+        "target_id": "cmt#Acceptance_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Administrator",
+        "target_id": "cmt#Administrator_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#AssociatedChair",
+        "target_id": "cmt#AssociatedChair_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Author",
+        "target_id": "cmt#Author_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#AuthorNotReviewer",
+        "target_id": "cmt#AuthorNotReviewer_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Bid",
+        "target_id": "cmt#Bid_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Chairman",
+        "target_id": "cmt#Chairman_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Co-author",
+        "target_id": "cmt#Co-author_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Conference",
+        "target_id": "cmt#Conference_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ConferenceChair",
+        "target_id": "cmt#ConferenceChair_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ConferenceMember",
+        "target_id": "cmt#ConferenceMember_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Decision",
+        "target_id": "cmt#Decision_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Document",
+        "target_id": "cmt#Document_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ExternalReviewer",
+        "target_id": "cmt#ExternalReviewer_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Meta-Review",
+        "target_id": "cmt#Meta-Review_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Meta-Reviewer",
+        "target_id": "cmt#Meta-Reviewer_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Paper",
+        "target_id": "cmt#Paper_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#PaperAbstract",
+        "target_id": "cmt#PaperAbstract_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#PaperFullVersion",
+        "target_id": "cmt#PaperFullVersion_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Person",
+        "target_id": "cmt#Person_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Preference",
+        "target_id": "cmt#Preference_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ProgramCommittee",
+        "target_id": "cmt#ProgramCommittee_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ProgramCommitteeChair",
+        "target_id": "cmt#ProgramCommitteeChair_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#ProgramCommitteeMember",
+        "target_id": "cmt#ProgramCommitteeMember_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Rejection",
+        "target_id": "cmt#Rejection_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Review",
+        "target_id": "cmt#Review_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#Reviewer",
+        "target_id": "cmt#Reviewer_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#SubjectArea",
+        "target_id": "cmt#SubjectArea_SYN",
+        "confidence": 1.0
+      },
+      {
+        "source_id": "cmt#User",
+        "target_id": "cmt#User_SYN",
+        "confidence": 1.0
+      }
+    ]
+  }
+]

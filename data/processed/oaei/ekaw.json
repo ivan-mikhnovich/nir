@@ -1,0 +1,1164 @@
+{
+  "name": "ekaw",
+  "namespace": "http://ekaw",
+  "root_id": "ekaw#Event",
+  "nodes": {
+    "ekaw#Event": {
+      "id": "ekaw#Event",
+      "name": "Event",
+      "parents": [],
+      "children": [
+        "ekaw#Social_Event",
+        "ekaw#Scientific_Event"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Person"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "ekaw#Person": {
+      "id": "ekaw#Person",
+      "name": "Person",
+      "parents": [],
+      "children": [
+        "ekaw#Paper_Author",
+        "ekaw#Conference_Participant",
+        "ekaw#Agency_Staff_Member",
+        "ekaw#Possible_Reviewer",
+        "ekaw#Student"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Location",
+        "ekaw#Document",
+        "ekaw#Organisation",
+        "ekaw#Event"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "ekaw#Accepted_Paper": {
+      "id": "ekaw#Accepted_Paper",
+      "name": "Accepted Paper",
+      "parents": [
+        "ekaw#Evaluated_Paper"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Rejected_Paper",
+        "ekaw#Camera_Ready_Paper"
+      ],
+      "comment": "Accepted paper to become part of proceedings. \nNote that camera-ready paper is not considered as 'accepted paper', as it was accepted in a different form!",
+      "depth": 5
+    },
+    "ekaw#Rejected_Paper": {
+      "id": "ekaw#Rejected_Paper",
+      "name": "Rejected Paper",
+      "parents": [
+        "ekaw#Evaluated_Paper"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Accepted_Paper"
+      ],
+      "comment": "",
+      "depth": 5
+    },
+    "ekaw#Evaluated_Paper": {
+      "id": "ekaw#Evaluated_Paper",
+      "name": "Evaluated Paper",
+      "parents": [
+        "ekaw#Assigned_Paper"
+      ],
+      "children": [
+        "ekaw#Accepted_Paper",
+        "ekaw#Rejected_Paper"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Camera_Ready_Paper"
+      ],
+      "comment": "",
+      "depth": 4
+    },
+    "ekaw#Camera_Ready_Paper": {
+      "id": "ekaw#Camera_Ready_Paper",
+      "name": "Camera Ready Paper",
+      "parents": [
+        "ekaw#Paper"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Submitted_Paper",
+        "ekaw#Accepted_Paper",
+        "ekaw#Evaluated_Paper"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Positive_Review": {
+      "id": "ekaw#Positive_Review",
+      "name": "Positive Review",
+      "parents": [
+        "ekaw#Review"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Negative_Review",
+        "ekaw#Neutral_Review"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Workshop_Paper": {
+      "id": "ekaw#Workshop_Paper",
+      "name": "Workshop Paper",
+      "parents": [
+        "ekaw#Paper"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Industrial_Paper",
+        "ekaw#Conference_Paper"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Industrial_Paper": {
+      "id": "ekaw#Industrial_Paper",
+      "name": "Industrial Paper",
+      "parents": [
+        "ekaw#Paper"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Poster_Paper",
+        "ekaw#Regular_Paper",
+        "ekaw#Workshop_Paper",
+        "ekaw#Demo_Paper"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Paper": {
+      "id": "ekaw#Paper",
+      "name": "Paper",
+      "parents": [
+        "ekaw#Document"
+      ],
+      "children": [
+        "ekaw#Camera_Ready_Paper",
+        "ekaw#Workshop_Paper",
+        "ekaw#Industrial_Paper",
+        "ekaw#Conference_Paper",
+        "ekaw#Submitted_Paper",
+        "ekaw#Poster_Paper",
+        "ekaw#Regular_Paper",
+        "ekaw#Demo_Paper"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Programme_Brochure",
+        "ekaw#Multi-author_Volume",
+        "ekaw#Flyer",
+        "ekaw#Proceedings",
+        "ekaw#Web_Site",
+        "ekaw#Review"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "ekaw#Conference_Paper": {
+      "id": "ekaw#Conference_Paper",
+      "name": "Conference Paper",
+      "parents": [
+        "ekaw#Paper"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Workshop_Paper"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Industrial_Session": {
+      "id": "ekaw#Industrial_Session",
+      "name": "Industrial Session",
+      "parents": [
+        "ekaw#Conference_Session"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 4
+    },
+    "ekaw#Conference_Session": {
+      "id": "ekaw#Conference_Session",
+      "name": "Conference Session",
+      "parents": [
+        "ekaw#Session"
+      ],
+      "children": [
+        "ekaw#Industrial_Session"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Workshop_Session"
+      ],
+      "comment": "",
+      "depth": 3
+    },
+    "ekaw#Regular_Session": {
+      "id": "ekaw#Regular_Session",
+      "name": "Regular Session",
+      "parents": [
+        "ekaw#Session"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Poster_Session",
+        "ekaw#Demo_Session"
+      ],
+      "comment": "",
+      "depth": 3
+    },
+    "ekaw#Poster_Session": {
+      "id": "ekaw#Poster_Session",
+      "name": "Poster Session",
+      "parents": [
+        "ekaw#Session"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Regular_Session",
+        "ekaw#Demo_Session"
+      ],
+      "comment": "",
+      "depth": 3
+    },
+    "ekaw#Demo_Session": {
+      "id": "ekaw#Demo_Session",
+      "name": "Demo Session",
+      "parents": [
+        "ekaw#Session"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Poster_Session",
+        "ekaw#Regular_Session"
+      ],
+      "comment": "",
+      "depth": 3
+    },
+    "ekaw#Session": {
+      "id": "ekaw#Session",
+      "name": "Session",
+      "parents": [
+        "ekaw#Scientific_Event"
+      ],
+      "children": [
+        "ekaw#Conference_Session",
+        "ekaw#Regular_Session",
+        "ekaw#Poster_Session",
+        "ekaw#Demo_Session",
+        "ekaw#Workshop_Session"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Conference",
+        "ekaw#Contributed_Talk",
+        "ekaw#Invited_Talk",
+        "ekaw#Workshop",
+        "ekaw#Tutorial",
+        "ekaw#Track"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Abstract": {
+      "id": "ekaw#Abstract",
+      "name": "Abstract",
+      "parents": [
+        "ekaw#Document"
+      ],
+      "children": [
+        "ekaw#Tutorial_Abstract",
+        "ekaw#Invited_Talk_Abstract"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "ekaw#Document": {
+      "id": "ekaw#Document",
+      "name": "Document",
+      "parents": [],
+      "children": [
+        "ekaw#Paper",
+        "ekaw#Abstract",
+        "ekaw#Review",
+        "ekaw#Programme_Brochure",
+        "ekaw#Flyer",
+        "ekaw#Web_Site",
+        "ekaw#Multi-author_Volume"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Person"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "ekaw#Paper_Author": {
+      "id": "ekaw#Paper_Author",
+      "name": "Paper Author",
+      "parents": [
+        "ekaw#Person"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "ekaw#Conference_Trip": {
+      "id": "ekaw#Conference_Trip",
+      "name": "Conference Trip",
+      "parents": [
+        "ekaw#Social_Event"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Social_Event": {
+      "id": "ekaw#Social_Event",
+      "name": "Social Event",
+      "parents": [
+        "ekaw#Event"
+      ],
+      "children": [
+        "ekaw#Conference_Trip",
+        "ekaw#Conference_Banquet"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Contributed_Talk",
+        "ekaw#Conference",
+        "ekaw#Invited_Talk",
+        "ekaw#Track",
+        "ekaw#Workshop",
+        "ekaw#Tutorial"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "ekaw#Tutorial_Abstract": {
+      "id": "ekaw#Tutorial_Abstract",
+      "name": "Tutorial Abstract",
+      "parents": [
+        "ekaw#Abstract"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Conference_Participant": {
+      "id": "ekaw#Conference_Participant",
+      "name": "Conference Participant",
+      "parents": [
+        "ekaw#Person"
+      ],
+      "children": [
+        "ekaw#Demo_Chair",
+        "ekaw#Tutorial_Chair",
+        "ekaw#PC_Chair",
+        "ekaw#OC_Member",
+        "ekaw#Workshop_Chair",
+        "ekaw#Session_Chair",
+        "ekaw#Early-Registered_Participant",
+        "ekaw#Late-Registered_Participant",
+        "ekaw#Presenter"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "ekaw#Submitted_Paper": {
+      "id": "ekaw#Submitted_Paper",
+      "name": "Submitted Paper",
+      "parents": [
+        "ekaw#Paper"
+      ],
+      "children": [
+        "ekaw#Assigned_Paper"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Camera_Ready_Paper"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Assigned_Paper": {
+      "id": "ekaw#Assigned_Paper",
+      "name": "Assigned Paper",
+      "parents": [
+        "ekaw#Submitted_Paper"
+      ],
+      "children": [
+        "ekaw#Evaluated_Paper"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "ekaw#Negative_Review": {
+      "id": "ekaw#Negative_Review",
+      "name": "Negative Review",
+      "parents": [
+        "ekaw#Review"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Neutral_Review",
+        "ekaw#Positive_Review"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Review": {
+      "id": "ekaw#Review",
+      "name": "Review",
+      "parents": [
+        "ekaw#Document"
+      ],
+      "children": [
+        "ekaw#Positive_Review",
+        "ekaw#Negative_Review",
+        "ekaw#Neutral_Review"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Paper",
+        "ekaw#Proceedings",
+        "ekaw#Programme_Brochure",
+        "ekaw#Flyer",
+        "ekaw#Web_Site",
+        "ekaw#Multi-author_Volume"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "ekaw#Neutral_Review": {
+      "id": "ekaw#Neutral_Review",
+      "name": "Neutral Review",
+      "parents": [
+        "ekaw#Review"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Negative_Review",
+        "ekaw#Positive_Review"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Research_Topic": {
+      "id": "ekaw#Research_Topic",
+      "name": "Research Topic",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "ekaw#Organising_Agency": {
+      "id": "ekaw#Organising_Agency",
+      "name": "Organising Agency",
+      "parents": [
+        "ekaw#Organisation"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Academic_Institution"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "ekaw#Academic_Institution": {
+      "id": "ekaw#Academic_Institution",
+      "name": "Academic Institution",
+      "parents": [
+        "ekaw#Organisation"
+      ],
+      "children": [
+        "ekaw#Research_Institute",
+        "ekaw#University"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Organising_Agency"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "ekaw#Organisation": {
+      "id": "ekaw#Organisation",
+      "name": "Organisation",
+      "parents": [],
+      "children": [
+        "ekaw#Organising_Agency",
+        "ekaw#Academic_Institution",
+        "ekaw#Proceedings_Publisher"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Person"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "ekaw#Proceedings_Publisher": {
+      "id": "ekaw#Proceedings_Publisher",
+      "name": "Proceedings Publisher",
+      "parents": [
+        "ekaw#Organisation"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "ekaw#Poster_Paper": {
+      "id": "ekaw#Poster_Paper",
+      "name": "Poster Paper",
+      "parents": [
+        "ekaw#Paper"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Industrial_Paper",
+        "ekaw#Regular_Paper",
+        "ekaw#Demo_Paper"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Regular_Paper": {
+      "id": "ekaw#Regular_Paper",
+      "name": "Regular Paper",
+      "parents": [
+        "ekaw#Paper"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Industrial_Paper",
+        "ekaw#Poster_Paper",
+        "ekaw#Demo_Paper"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Demo_Paper": {
+      "id": "ekaw#Demo_Paper",
+      "name": "Demo Paper",
+      "parents": [
+        "ekaw#Paper"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Poster_Paper",
+        "ekaw#Industrial_Paper",
+        "ekaw#Regular_Paper"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Location": {
+      "id": "ekaw#Location",
+      "name": "Location",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Person"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "ekaw#Research_Institute": {
+      "id": "ekaw#Research_Institute",
+      "name": "Research Institute",
+      "parents": [
+        "ekaw#Academic_Institution"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Scientific_Event": {
+      "id": "ekaw#Scientific_Event",
+      "name": "Scientific Event",
+      "parents": [
+        "ekaw#Event"
+      ],
+      "children": [
+        "ekaw#Session",
+        "ekaw#Track",
+        "ekaw#Workshop",
+        "ekaw#Conference",
+        "ekaw#Individual_Presentation"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "ekaw#Invited_Talk_Abstract": {
+      "id": "ekaw#Invited_Talk_Abstract",
+      "name": "Invited Talk Abstract",
+      "parents": [
+        "ekaw#Abstract"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Agency_Staff_Member": {
+      "id": "ekaw#Agency_Staff_Member",
+      "name": "Agency Staff Member",
+      "parents": [
+        "ekaw#Person"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "ekaw#Workshop_Session": {
+      "id": "ekaw#Workshop_Session",
+      "name": "Workshop Session",
+      "parents": [
+        "ekaw#Session"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Conference_Session"
+      ],
+      "comment": "",
+      "depth": 3
+    },
+    "ekaw#Track": {
+      "id": "ekaw#Track",
+      "name": "Track",
+      "parents": [
+        "ekaw#Scientific_Event"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Session",
+        "ekaw#Invited_Talk",
+        "ekaw#Workshop",
+        "ekaw#Tutorial",
+        "ekaw#Social_Event",
+        "ekaw#Contributed_Talk",
+        "ekaw#Conference"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Invited_Talk": {
+      "id": "ekaw#Invited_Talk",
+      "name": "Invited Talk",
+      "parents": [
+        "ekaw#Individual_Presentation"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Workshop",
+        "ekaw#Social_Event",
+        "ekaw#Tutorial",
+        "ekaw#Contributed_Talk",
+        "ekaw#Track",
+        "ekaw#Conference",
+        "ekaw#Session"
+      ],
+      "comment": "",
+      "depth": 3
+    },
+    "ekaw#Workshop": {
+      "id": "ekaw#Workshop",
+      "name": "Workshop",
+      "parents": [
+        "ekaw#Scientific_Event"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Conference",
+        "ekaw#Session",
+        "ekaw#Tutorial",
+        "ekaw#Track",
+        "ekaw#Social_Event",
+        "ekaw#Individual_Presentation",
+        "ekaw#Invited_Talk"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Tutorial": {
+      "id": "ekaw#Tutorial",
+      "name": "Tutorial",
+      "parents": [
+        "ekaw#Individual_Presentation"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Track",
+        "ekaw#Conference",
+        "ekaw#Workshop",
+        "ekaw#Contributed_Talk",
+        "ekaw#Social_Event",
+        "ekaw#Invited_Talk",
+        "ekaw#Session"
+      ],
+      "comment": "",
+      "depth": 3
+    },
+    "ekaw#Contributed_Talk": {
+      "id": "ekaw#Contributed_Talk",
+      "name": "Contributed Talk",
+      "parents": [
+        "ekaw#Individual_Presentation"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Social_Event",
+        "ekaw#Session",
+        "ekaw#Conference",
+        "ekaw#Invited_Talk",
+        "ekaw#Tutorial",
+        "ekaw#Track"
+      ],
+      "comment": "",
+      "depth": 3
+    },
+    "ekaw#Conference": {
+      "id": "ekaw#Conference",
+      "name": "Conference",
+      "parents": [
+        "ekaw#Scientific_Event"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Social_Event",
+        "ekaw#Tutorial",
+        "ekaw#Contributed_Talk",
+        "ekaw#Workshop",
+        "ekaw#Invited_Talk",
+        "ekaw#Session",
+        "ekaw#Track"
+      ],
+      "comment": "One edition of a conference",
+      "depth": 2
+    },
+    "ekaw#Demo_Chair": {
+      "id": "ekaw#Demo_Chair",
+      "name": "Demo Chair",
+      "parents": [
+        "ekaw#Conference_Participant"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Tutorial_Chair": {
+      "id": "ekaw#Tutorial_Chair",
+      "name": "Tutorial Chair",
+      "parents": [
+        "ekaw#Conference_Participant",
+        "ekaw#PC_Member"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#PC_Chair"
+      ],
+      "comment": "",
+      "depth": 3
+    },
+    "ekaw#PC_Chair": {
+      "id": "ekaw#PC_Chair",
+      "name": "PC Chair",
+      "parents": [
+        "ekaw#Conference_Participant",
+        "ekaw#PC_Member"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Tutorial_Chair",
+        "ekaw#Workshop_Chair"
+      ],
+      "comment": "",
+      "depth": 3
+    },
+    "ekaw#PC_Member": {
+      "id": "ekaw#PC_Member",
+      "name": "PC Member",
+      "parents": [
+        "ekaw#Possible_Reviewer"
+      ],
+      "children": [
+        "ekaw#Tutorial_Chair",
+        "ekaw#PC_Chair",
+        "ekaw#Workshop_Chair",
+        "ekaw#Session_Chair",
+        "ekaw#SC_Member"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#OC_Member": {
+      "id": "ekaw#OC_Member",
+      "name": "OC Member",
+      "parents": [
+        "ekaw#Conference_Participant"
+      ],
+      "children": [
+        "ekaw#OC_Chair"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Proceedings": {
+      "id": "ekaw#Proceedings",
+      "name": "Proceedings",
+      "parents": [
+        "ekaw#Multi-author_Volume"
+      ],
+      "children": [
+        "ekaw#Conference_Proceedings"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Web_Site",
+        "ekaw#Paper",
+        "ekaw#Programme_Brochure",
+        "ekaw#Flyer",
+        "ekaw#Review"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Programme_Brochure": {
+      "id": "ekaw#Programme_Brochure",
+      "name": "Programme Brochure",
+      "parents": [
+        "ekaw#Document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Flyer",
+        "ekaw#Web_Site",
+        "ekaw#Paper",
+        "ekaw#Multi-author_Volume",
+        "ekaw#Review",
+        "ekaw#Proceedings"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "ekaw#Flyer": {
+      "id": "ekaw#Flyer",
+      "name": "Flyer",
+      "parents": [
+        "ekaw#Document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Web_Site",
+        "ekaw#Paper",
+        "ekaw#Review",
+        "ekaw#Multi-author_Volume",
+        "ekaw#Proceedings",
+        "ekaw#Programme_Brochure"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "ekaw#Web_Site": {
+      "id": "ekaw#Web_Site",
+      "name": "Web Site",
+      "parents": [
+        "ekaw#Document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Programme_Brochure",
+        "ekaw#Proceedings",
+        "ekaw#Review",
+        "ekaw#Multi-author_Volume",
+        "ekaw#Flyer",
+        "ekaw#Paper"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "ekaw#Multi-author_Volume": {
+      "id": "ekaw#Multi-author_Volume",
+      "name": "Multi-author Volume",
+      "parents": [
+        "ekaw#Document"
+      ],
+      "children": [
+        "ekaw#Proceedings"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Review",
+        "ekaw#Programme_Brochure",
+        "ekaw#Paper",
+        "ekaw#Web_Site",
+        "ekaw#Flyer"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "ekaw#Individual_Presentation": {
+      "id": "ekaw#Individual_Presentation",
+      "name": "Individual Presentation",
+      "parents": [
+        "ekaw#Scientific_Event"
+      ],
+      "children": [
+        "ekaw#Invited_Talk",
+        "ekaw#Tutorial",
+        "ekaw#Contributed_Talk"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Workshop"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#OC_Chair": {
+      "id": "ekaw#OC_Chair",
+      "name": "OC Chair",
+      "parents": [
+        "ekaw#OC_Member"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "ekaw#Conference_Banquet": {
+      "id": "ekaw#Conference_Banquet",
+      "name": "Conference Banquet",
+      "parents": [
+        "ekaw#Social_Event"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Workshop_Chair": {
+      "id": "ekaw#Workshop_Chair",
+      "name": "Workshop Chair",
+      "parents": [
+        "ekaw#Conference_Participant",
+        "ekaw#PC_Member"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#PC_Chair"
+      ],
+      "comment": "",
+      "depth": 3
+    },
+    "ekaw#Conference_Proceedings": {
+      "id": "ekaw#Conference_Proceedings",
+      "name": "Conference Proceedings",
+      "parents": [
+        "ekaw#Proceedings"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "ekaw#Session_Chair": {
+      "id": "ekaw#Session_Chair",
+      "name": "Session Chair",
+      "parents": [
+        "ekaw#PC_Member",
+        "ekaw#Conference_Participant"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "ekaw#Early-Registered_Participant": {
+      "id": "ekaw#Early-Registered_Participant",
+      "name": "Early-Registered Participant",
+      "parents": [
+        "ekaw#Conference_Participant"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Late-Registered_Participant"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Late-Registered_Participant": {
+      "id": "ekaw#Late-Registered_Participant",
+      "name": "Late-Registered Participant",
+      "parents": [
+        "ekaw#Conference_Participant"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "ekaw#Early-Registered_Participant"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#University": {
+      "id": "ekaw#University",
+      "name": "University",
+      "parents": [
+        "ekaw#Academic_Institution"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#Possible_Reviewer": {
+      "id": "ekaw#Possible_Reviewer",
+      "name": "Possible Reviewer",
+      "parents": [
+        "ekaw#Person"
+      ],
+      "children": [
+        "ekaw#PC_Member"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "ekaw#Student": {
+      "id": "ekaw#Student",
+      "name": "Student",
+      "parents": [
+        "ekaw#Person"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "ekaw#Invited_Speaker": {
+      "id": "ekaw#Invited_Speaker",
+      "name": "Invited Speaker",
+      "parents": [
+        "ekaw#Presenter"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "ekaw#Presenter": {
+      "id": "ekaw#Presenter",
+      "name": "Presenter",
+      "parents": [
+        "ekaw#Conference_Participant"
+      ],
+      "children": [
+        "ekaw#Invited_Speaker"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "ekaw#SC_Member": {
+      "id": "ekaw#SC_Member",
+      "name": "SC Member",
+      "parents": [
+        "ekaw#PC_Member"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    }
+  }
+}

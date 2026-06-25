@@ -1,0 +1,1868 @@
+{
+  "name": "iasted",
+  "namespace": "http://iasted",
+  "root_id": "iasted#Activity",
+  "nodes": {
+    "iasted#Presenter_house": {
+      "id": "iasted#Presenter_house",
+      "name": "Presenter house",
+      "parents": [
+        "iasted#Building"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Building": {
+      "id": "iasted#Building",
+      "name": "Building",
+      "parents": [
+        "iasted#Place"
+      ],
+      "children": [
+        "iasted#Presenter_house",
+        "iasted#Conference_restaurant",
+        "iasted#Conference_building",
+        "iasted#Conference_airport",
+        "iasted#Conference_hotel",
+        "iasted#Sponsor_company_house",
+        "iasted#Presenter_university"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Presenter_state": {
+      "id": "iasted#Presenter_state",
+      "name": "Presenter state",
+      "parents": [
+        "iasted#State"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Delegate": {
+      "id": "iasted#Delegate",
+      "name": "Delegate",
+      "parents": [
+        "iasted#Person"
+      ],
+      "children": [
+        "iasted#One_day_presenter",
+        "iasted#Technical_commitee",
+        "iasted#Listener",
+        "iasted#Session_chair",
+        "iasted#Speaker",
+        "iasted#Hotel_presenter",
+        "iasted#Non_speaker",
+        "iasted#IASTED_non_member",
+        "iasted#Conference_Hiker",
+        "iasted#IASTED_member"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Presenter_city": {
+      "id": "iasted#Presenter_city",
+      "name": "Presenter city",
+      "parents": [
+        "iasted#City"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Hotel_registration_form": {
+      "id": "iasted#Hotel_registration_form",
+      "name": "Hotel registration form",
+      "parents": [
+        "iasted#Form"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Deadline_hotel_reservation": {
+      "id": "iasted#Deadline_hotel_reservation",
+      "name": "Deadline hotel reservation",
+      "parents": [
+        "iasted#Deadline"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Form": {
+      "id": "iasted#Form",
+      "name": "Form",
+      "parents": [
+        "iasted#Document"
+      ],
+      "children": [
+        "iasted#Hotel_registration_form",
+        "iasted#Registration_form",
+        "iasted#Author_information_form"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Car": {
+      "id": "iasted#Car",
+      "name": "Car",
+      "parents": [
+        "iasted#Transport_vehicle"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Transport_vehicle": {
+      "id": "iasted#Transport_vehicle",
+      "name": "Transport vehicle",
+      "parents": [
+        "iasted#Item"
+      ],
+      "children": [
+        "iasted#Car",
+        "iasted#Taxi",
+        "iasted#Shuttle_bus",
+        "iasted#Van"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Mailing_list": {
+      "id": "iasted#Mailing_list",
+      "name": "Mailing list",
+      "parents": [
+        "iasted#Document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Document": {
+      "id": "iasted#Document",
+      "name": "Document",
+      "parents": [
+        "iasted#Item"
+      ],
+      "children": [
+        "iasted#Form",
+        "iasted#Mailing_list",
+        "iasted#Record_of_attendance",
+        "iasted#Brief_introduction_for_Session_chair",
+        "iasted#Invitation_letter",
+        "iasted#Viza",
+        "iasted#Transparency",
+        "iasted#Submission",
+        "iasted#Review",
+        "iasted#Payment_document"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Renting": {
+      "id": "iasted#Renting",
+      "name": "Renting",
+      "parents": [
+        "iasted#Activity_before_conference"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Activity_before_conference": {
+      "id": "iasted#Activity_before_conference",
+      "name": "Activity before conference",
+      "parents": [
+        "iasted#Activity"
+      ],
+      "children": [
+        "iasted#Renting",
+        "iasted#Research",
+        "iasted#Refusing_manuscript",
+        "iasted#Accepting_manuscript",
+        "iasted#Receiving_manuscript"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Dinner_banquet": {
+      "id": "iasted#Dinner_banquet",
+      "name": "Dinner banquet",
+      "parents": [
+        "iasted#Social_program"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#One_day_presenter": {
+      "id": "iasted#One_day_presenter",
+      "name": "One day presenter",
+      "parents": [
+        "iasted#Delegate"
+      ],
+      "children": [],
+      "attributes": {
+        "is_present": "Thing"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Social_program": {
+      "id": "iasted#Social_program",
+      "name": "Social program",
+      "parents": [
+        "iasted#Conference_activity"
+      ],
+      "children": [
+        "iasted#Dinner_banquet"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Activity": {
+      "id": "iasted#Activity",
+      "name": "Activity",
+      "parents": [],
+      "children": [
+        "iasted#Activity_before_conference",
+        "iasted#Conference_activity",
+        "iasted#Activity_after_conference"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "iasted#Person": {
+      "id": "iasted#Person",
+      "name": "Person",
+      "parents": [],
+      "children": [
+        "iasted#Delegate",
+        "iasted#Sponsor"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "iasted#PowerPoint_presentation": {
+      "id": "iasted#PowerPoint_presentation",
+      "name": "PowerPoint presentation",
+      "parents": [
+        "iasted#Presentation"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Presentation": {
+      "id": "iasted#Presentation",
+      "name": "Presentation",
+      "parents": [
+        "iasted#Conference_activity"
+      ],
+      "children": [
+        "iasted#PowerPoint_presentation",
+        "iasted#Video_presentation"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Conference_restaurant": {
+      "id": "iasted#Conference_restaurant",
+      "name": "Conference restaurant",
+      "parents": [
+        "iasted#Building"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Conference_city": {
+      "id": "iasted#Conference_city",
+      "name": "Conference city",
+      "parents": [
+        "iasted#City"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Conference_state": {
+      "id": "iasted#Conference_state",
+      "name": "Conference state",
+      "parents": [
+        "iasted#State"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Submissions_deadline": {
+      "id": "iasted#Submissions_deadline",
+      "name": "Submissions deadline",
+      "parents": [
+        "iasted#Deadline"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Deadline": {
+      "id": "iasted#Deadline",
+      "name": "Deadline",
+      "parents": [
+        "iasted#Time"
+      ],
+      "children": [
+        "iasted#Deadline_hotel_reservation",
+        "iasted#Submissions_deadline",
+        "iasted#Deadline_for_notification_of_acceptance",
+        "iasted#Registation_deadline",
+        "iasted#Camera_ready_manuscript_deadline"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Simulating": {
+      "id": "iasted#Simulating",
+      "name": "Simulating",
+      "parents": [
+        "iasted#Research"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Research": {
+      "id": "iasted#Research",
+      "name": "Research",
+      "parents": [
+        "iasted#Activity_before_conference"
+      ],
+      "children": [
+        "iasted#Simulating",
+        "iasted#Modelling"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Technic_activity": {
+      "id": "iasted#Technic_activity",
+      "name": "Technic activity",
+      "parents": [
+        "iasted#Conference_activity"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Conference_activity": {
+      "id": "iasted#Conference_activity",
+      "name": "Conference activity",
+      "parents": [
+        "iasted#Activity"
+      ],
+      "children": [
+        "iasted#Social_program",
+        "iasted#Presentation",
+        "iasted#Technic_activity",
+        "iasted#Registration",
+        "iasted#Introduction",
+        "iasted#Welcome_address",
+        "iasted#Lecture",
+        "iasted#Coffee_break",
+        "iasted#Coctail_reception"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Technical_commitee": {
+      "id": "iasted#Technical_commitee",
+      "name": "Technical commitee",
+      "parents": [
+        "iasted#Delegate"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Place": {
+      "id": "iasted#Place",
+      "name": "Place",
+      "parents": [],
+      "children": [
+        "iasted#Building",
+        "iasted#Session_room",
+        "iasted#Hotel_room",
+        "iasted#Conference_hall",
+        "iasted#Main_office"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "iasted#Author_cd_proceedings_included": {
+      "id": "iasted#Author_cd_proceedings_included",
+      "name": "Author cd proceedings included",
+      "parents": [
+        "iasted#Author"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 4
+    },
+    "iasted#Author": {
+      "id": "iasted#Author",
+      "name": "Author",
+      "parents": [
+        "iasted#Speaker"
+      ],
+      "children": [
+        "iasted#Author_cd_proceedings_included",
+        "iasted#Lecturer",
+        "iasted#Plenary_lecture_speaker",
+        "iasted#Tutorial_speaker",
+        "iasted#Author_book_proceedings_included"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Cd_proceening": {
+      "id": "iasted#Cd_proceening",
+      "name": "Cd proceening",
+      "parents": [
+        "iasted#Publication"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Trip_day": {
+      "id": "iasted#Trip_day",
+      "name": "Trip day",
+      "parents": [
+        "iasted#Time"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Time": {
+      "id": "iasted#Time",
+      "name": "Time",
+      "parents": [],
+      "children": [
+        "iasted#Deadline",
+        "iasted#Trip_day",
+        "iasted#Conference_days"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "iasted#Record_of_attendance": {
+      "id": "iasted#Record_of_attendance",
+      "name": "Record of attendance",
+      "parents": [
+        "iasted#Document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Listener": {
+      "id": "iasted#Listener",
+      "name": "Listener",
+      "parents": [
+        "iasted#Delegate"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Session_room": {
+      "id": "iasted#Session_room",
+      "name": "Session room",
+      "parents": [
+        "iasted#Place"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Brief_introduction_for_Session_chair": {
+      "id": "iasted#Brief_introduction_for_Session_chair",
+      "name": "Brief introduction for Session chair",
+      "parents": [
+        "iasted#Document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Session_chair": {
+      "id": "iasted#Session_chair",
+      "name": "Session chair",
+      "parents": [
+        "iasted#Delegate"
+      ],
+      "children": [],
+      "attributes": {
+        "go_through": "Introduction_of_speaker"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Invitation_letter": {
+      "id": "iasted#Invitation_letter",
+      "name": "Invitation letter",
+      "parents": [
+        "iasted#Document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Registration_form": {
+      "id": "iasted#Registration_form",
+      "name": "Registration form",
+      "parents": [
+        "iasted#Form"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Viza": {
+      "id": "iasted#Viza",
+      "name": "Viza",
+      "parents": [
+        "iasted#Document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Registration": {
+      "id": "iasted#Registration",
+      "name": "Registration",
+      "parents": [
+        "iasted#Conference_activity"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Conference_days": {
+      "id": "iasted#Conference_days",
+      "name": "Conference days",
+      "parents": [
+        "iasted#Time"
+      ],
+      "children": [
+        "iasted#One_conference_day"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Conference_building": {
+      "id": "iasted#Conference_building",
+      "name": "Conference building",
+      "parents": [
+        "iasted#Building"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Registration_fee": {
+      "id": "iasted#Registration_fee",
+      "name": "Registration fee",
+      "parents": [
+        "iasted#Fee"
+      ],
+      "children": [
+        "iasted#Author_attendee_book_registration_fee",
+        "iasted#Nonmember_registration_fee",
+        "iasted#Nonauthor_registration_fee",
+        "iasted#Memeber_registration_fee",
+        "iasted#Student_registration_fee",
+        "iasted#Author_attendee_cd_registration_fee"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Departure": {
+      "id": "iasted#Departure",
+      "name": "Departure",
+      "parents": [
+        "iasted#Activity_after_conference"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Activity_after_conference": {
+      "id": "iasted#Activity_after_conference",
+      "name": "Activity after conference",
+      "parents": [
+        "iasted#Activity"
+      ],
+      "children": [
+        "iasted#Departure",
+        "iasted#Full_day_tour"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Conference_airport": {
+      "id": "iasted#Conference_airport",
+      "name": "Conference airport",
+      "parents": [
+        "iasted#Building"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Worker_lecturer": {
+      "id": "iasted#Worker_lecturer",
+      "name": "Worker lecturer",
+      "parents": [
+        "iasted#Lecturer"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 5
+    },
+    "iasted#Lecturer": {
+      "id": "iasted#Lecturer",
+      "name": "Lecturer",
+      "parents": [
+        "iasted#Author"
+      ],
+      "children": [
+        "iasted#Worker_lecturer",
+        "iasted#Student_lecturer"
+      ],
+      "attributes": {
+        "give": "Session"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 4
+    },
+    "iasted#Transparency": {
+      "id": "iasted#Transparency",
+      "name": "Transparency",
+      "parents": [
+        "iasted#Document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Speaker": {
+      "id": "iasted#Speaker",
+      "name": "Speaker",
+      "parents": [
+        "iasted#Delegate"
+      ],
+      "children": [
+        "iasted#Author",
+        "iasted#Reviewer"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "iasted#Non_speaker"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#City": {
+      "id": "iasted#City",
+      "name": "City",
+      "parents": [],
+      "children": [
+        "iasted#Presenter_city",
+        "iasted#Conference_city",
+        "iasted#Sponsor_city",
+        "iasted#Trip_city"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "iasted#Card": {
+      "id": "iasted#Card",
+      "name": "Card",
+      "parents": [
+        "iasted#Item"
+      ],
+      "children": [
+        "iasted#Credit_card"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Item": {
+      "id": "iasted#Item",
+      "name": "Item",
+      "parents": [],
+      "children": [
+        "iasted#Transport_vehicle",
+        "iasted#Document",
+        "iasted#Card",
+        "iasted#Audiovisual_equipment",
+        "iasted#Publication"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "iasted#Author_attendee_book_registration_fee": {
+      "id": "iasted#Author_attendee_book_registration_fee",
+      "name": "Author attendee book registration fee",
+      "parents": [
+        "iasted#Registration_fee"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Book_proceeding": {
+      "id": "iasted#Book_proceeding",
+      "name": "Book proceeding",
+      "parents": [
+        "iasted#Publication"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Video_cassette_player": {
+      "id": "iasted#Video_cassette_player",
+      "name": "Video cassette player",
+      "parents": [
+        "iasted#Audiovisual_equipment"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Audiovisual_equipment": {
+      "id": "iasted#Audiovisual_equipment",
+      "name": "Audiovisual equipment",
+      "parents": [
+        "iasted#Item"
+      ],
+      "children": [
+        "iasted#Video_cassette_player",
+        "iasted#LCD_projector",
+        "iasted#Computer",
+        "iasted#Overhead_projector"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Video_presentation": {
+      "id": "iasted#Video_presentation",
+      "name": "Video presentation",
+      "parents": [
+        "iasted#Presentation"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Hotel_room": {
+      "id": "iasted#Hotel_room",
+      "name": "Hotel room",
+      "parents": [
+        "iasted#Place"
+      ],
+      "children": [
+        "iasted#Single_hotel_room",
+        "iasted#Double_hotel_room"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Hotel_presenter": {
+      "id": "iasted#Hotel_presenter",
+      "name": "Hotel presenter",
+      "parents": [
+        "iasted#Delegate"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Conference_hotel": {
+      "id": "iasted#Conference_hotel",
+      "name": "Conference hotel",
+      "parents": [
+        "iasted#Building"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Money": {
+      "id": "iasted#Money",
+      "name": "Money",
+      "parents": [],
+      "children": [
+        "iasted#Tax",
+        "iasted#Fee",
+        "iasted#Sponzorship",
+        "iasted#Tip"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "iasted#State": {
+      "id": "iasted#State",
+      "name": "State",
+      "parents": [],
+      "children": [
+        "iasted#Presenter_state",
+        "iasted#Conference_state",
+        "iasted#Sponsor_state"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "iasted#Introduction": {
+      "id": "iasted#Introduction",
+      "name": "Introduction",
+      "parents": [
+        "iasted#Conference_activity"
+      ],
+      "children": [
+        "iasted#Introduction_of_speaker"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Welcome_address": {
+      "id": "iasted#Welcome_address",
+      "name": "Welcome address",
+      "parents": [
+        "iasted#Conference_activity"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Value_added_tax": {
+      "id": "iasted#Value_added_tax",
+      "name": "Value added tax",
+      "parents": [
+        "iasted#Tax"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Tax": {
+      "id": "iasted#Tax",
+      "name": "Tax",
+      "parents": [
+        "iasted#Money"
+      ],
+      "children": [
+        "iasted#Value_added_tax",
+        "iasted#Departure_tax"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Refusing_manuscript": {
+      "id": "iasted#Refusing_manuscript",
+      "name": "Refusing manuscript",
+      "parents": [
+        "iasted#Activity_before_conference"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Final_manuscript": {
+      "id": "iasted#Final_manuscript",
+      "name": "Final manuscript",
+      "parents": [
+        "iasted#Submission"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Accepting_manuscript": {
+      "id": "iasted#Accepting_manuscript",
+      "name": "Accepting manuscript",
+      "parents": [
+        "iasted#Activity_before_conference"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Submission": {
+      "id": "iasted#Submission",
+      "name": "Submission",
+      "parents": [
+        "iasted#Document"
+      ],
+      "children": [
+        "iasted#Final_manuscript",
+        "iasted#Initial_manuscipt"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Sponsor_city": {
+      "id": "iasted#Sponsor_city",
+      "name": "Sponsor city",
+      "parents": [
+        "iasted#City"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Sponsor": {
+      "id": "iasted#Sponsor",
+      "name": "Sponsor",
+      "parents": [
+        "iasted#Person"
+      ],
+      "children": [],
+      "attributes": {
+        "give": "Sponzorship"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Time_zone": {
+      "id": "iasted#Time_zone",
+      "name": "Time zone",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "iasted#Introduction_of_speaker": {
+      "id": "iasted#Introduction_of_speaker",
+      "name": "Introduction of speaker",
+      "parents": [
+        "iasted#Introduction"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Conference_hall": {
+      "id": "iasted#Conference_hall",
+      "name": "Conference hall",
+      "parents": [
+        "iasted#Place"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Plenary_lecture": {
+      "id": "iasted#Plenary_lecture",
+      "name": "Plenary lecture",
+      "parents": [
+        "iasted#Lecture"
+      ],
+      "children": [],
+      "attributes": {
+        "is_given_by": "Plenary_lecture_speaker"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Lecture": {
+      "id": "iasted#Lecture",
+      "name": "Lecture",
+      "parents": [
+        "iasted#Conference_activity"
+      ],
+      "children": [
+        "iasted#Plenary_lecture",
+        "iasted#Tutorial",
+        "iasted#Session"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Plenary_lecture_speaker": {
+      "id": "iasted#Plenary_lecture_speaker",
+      "name": "Plenary lecture speaker",
+      "parents": [
+        "iasted#Author"
+      ],
+      "children": [],
+      "attributes": {
+        "give": "Tutorial"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 4
+    },
+    "iasted#LCD_projector": {
+      "id": "iasted#LCD_projector",
+      "name": "LCD projector",
+      "parents": [
+        "iasted#Audiovisual_equipment"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Deadline_for_notification_of_acceptance": {
+      "id": "iasted#Deadline_for_notification_of_acceptance",
+      "name": "Deadline for notification of acceptance",
+      "parents": [
+        "iasted#Deadline"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Tutorial": {
+      "id": "iasted#Tutorial",
+      "name": "Tutorial",
+      "parents": [
+        "iasted#Lecture"
+      ],
+      "children": [],
+      "attributes": {
+        "is_given_by": "Tutorial_speaker"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Tutorial_speaker": {
+      "id": "iasted#Tutorial_speaker",
+      "name": "Tutorial speaker",
+      "parents": [
+        "iasted#Author"
+      ],
+      "children": [],
+      "attributes": {
+        "give": "Plenary_lecture"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 4
+    },
+    "iasted#Session": {
+      "id": "iasted#Session",
+      "name": "Session",
+      "parents": [
+        "iasted#Lecture"
+      ],
+      "children": [
+        "iasted#Speaker_lecture"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Registation_deadline": {
+      "id": "iasted#Registation_deadline",
+      "name": "Registation deadline",
+      "parents": [
+        "iasted#Deadline"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Single_hotel_room": {
+      "id": "iasted#Single_hotel_room",
+      "name": "Single hotel room",
+      "parents": [
+        "iasted#Hotel_room"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Non_speaker": {
+      "id": "iasted#Non_speaker",
+      "name": "Non speaker",
+      "parents": [
+        "iasted#Delegate"
+      ],
+      "children": [
+        "iasted#Worker_non_speaker",
+        "iasted#Student_non_speaker"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "iasted#Speaker"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Author_information_form": {
+      "id": "iasted#Author_information_form",
+      "name": "Author information form",
+      "parents": [
+        "iasted#Form"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Nonmember_registration_fee": {
+      "id": "iasted#Nonmember_registration_fee",
+      "name": "Nonmember registration fee",
+      "parents": [
+        "iasted#Registration_fee"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#IASTED_non_member": {
+      "id": "iasted#IASTED_non_member",
+      "name": "IASTED non member",
+      "parents": [
+        "iasted#Delegate"
+      ],
+      "children": [],
+      "attributes": {
+        "pay": "Nonmember_registration_fee"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Hotel_fee": {
+      "id": "iasted#Hotel_fee",
+      "name": "Hotel fee",
+      "parents": [
+        "iasted#Fee"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Fee": {
+      "id": "iasted#Fee",
+      "name": "Fee",
+      "parents": [
+        "iasted#Money"
+      ],
+      "children": [
+        "iasted#Registration_fee",
+        "iasted#Hotel_fee",
+        "iasted#Fee_for_extra_trip"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Publication": {
+      "id": "iasted#Publication",
+      "name": "Publication",
+      "parents": [
+        "iasted#Item"
+      ],
+      "children": [
+        "iasted#Cd_proceening",
+        "iasted#Book_proceeding"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Taxi": {
+      "id": "iasted#Taxi",
+      "name": "Taxi",
+      "parents": [
+        "iasted#Transport_vehicle"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Sponsor_state": {
+      "id": "iasted#Sponsor_state",
+      "name": "Sponsor state",
+      "parents": [
+        "iasted#State"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Reviewer": {
+      "id": "iasted#Reviewer",
+      "name": "Reviewer",
+      "parents": [
+        "iasted#Speaker"
+      ],
+      "children": [],
+      "attributes": {
+        "give": "Review"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Review": {
+      "id": "iasted#Review",
+      "name": "Review",
+      "parents": [
+        "iasted#Document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Modelling": {
+      "id": "iasted#Modelling",
+      "name": "Modelling",
+      "parents": [
+        "iasted#Research"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Worker_non_speaker": {
+      "id": "iasted#Worker_non_speaker",
+      "name": "Worker non speaker",
+      "parents": [
+        "iasted#Non_speaker"
+      ],
+      "children": [],
+      "attributes": {
+        "pay": "Nonauthor_registration_fee"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Nonauthor_registration_fee": {
+      "id": "iasted#Nonauthor_registration_fee",
+      "name": "Nonauthor registration fee",
+      "parents": [
+        "iasted#Registration_fee"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Payment_document": {
+      "id": "iasted#Payment_document",
+      "name": "Payment document",
+      "parents": [
+        "iasted#Document"
+      ],
+      "children": [
+        "iasted#Cheque",
+        "iasted#Bank_transfer"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Camera_ready_manuscript_deadline": {
+      "id": "iasted#Camera_ready_manuscript_deadline",
+      "name": "Camera ready manuscript deadline",
+      "parents": [
+        "iasted#Deadline"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#One_conference_day": {
+      "id": "iasted#One_conference_day",
+      "name": "One conference day",
+      "parents": [
+        "iasted#Conference_days"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Fee_for_extra_trip": {
+      "id": "iasted#Fee_for_extra_trip",
+      "name": "Fee for extra trip",
+      "parents": [
+        "iasted#Fee"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Full_day_tour": {
+      "id": "iasted#Full_day_tour",
+      "name": "Full day tour",
+      "parents": [
+        "iasted#Activity_after_conference"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Conference_Hiker": {
+      "id": "iasted#Conference_Hiker",
+      "name": "Conference Hiker",
+      "parents": [
+        "iasted#Delegate"
+      ],
+      "children": [],
+      "attributes": {
+        "go_through": "Full_day_tour"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Computer": {
+      "id": "iasted#Computer",
+      "name": "Computer",
+      "parents": [
+        "iasted#Audiovisual_equipment"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#IASTED_member": {
+      "id": "iasted#IASTED_member",
+      "name": "IASTED member",
+      "parents": [
+        "iasted#Delegate"
+      ],
+      "children": [],
+      "attributes": {
+        "pay": "Memeber_registration_fee"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Memeber_registration_fee": {
+      "id": "iasted#Memeber_registration_fee",
+      "name": "Memeber registration fee",
+      "parents": [
+        "iasted#Registration_fee"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Author_book_proceedings_included": {
+      "id": "iasted#Author_book_proceedings_included",
+      "name": "Author book proceedings included",
+      "parents": [
+        "iasted#Author"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 4
+    },
+    "iasted#Sponsor_company_house": {
+      "id": "iasted#Sponsor_company_house",
+      "name": "Sponsor company house",
+      "parents": [
+        "iasted#Building"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Sponzorship": {
+      "id": "iasted#Sponzorship",
+      "name": "Sponzorship",
+      "parents": [
+        "iasted#Money"
+      ],
+      "children": [],
+      "attributes": {
+        "is_paid_by": "Sponsor"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Student_lecturer": {
+      "id": "iasted#Student_lecturer",
+      "name": "Student lecturer",
+      "parents": [
+        "iasted#Lecturer"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 5
+    },
+    "iasted#Trip_city": {
+      "id": "iasted#Trip_city",
+      "name": "Trip city",
+      "parents": [
+        "iasted#City"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Cheque": {
+      "id": "iasted#Cheque",
+      "name": "Cheque",
+      "parents": [
+        "iasted#Payment_document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Shuttle_bus": {
+      "id": "iasted#Shuttle_bus",
+      "name": "Shuttle bus",
+      "parents": [
+        "iasted#Transport_vehicle"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Student_non_speaker": {
+      "id": "iasted#Student_non_speaker",
+      "name": "Student non speaker",
+      "parents": [
+        "iasted#Non_speaker"
+      ],
+      "children": [],
+      "attributes": {
+        "pay": "Student_registration_fee"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Student_registration_fee": {
+      "id": "iasted#Student_registration_fee",
+      "name": "Student registration fee",
+      "parents": [
+        "iasted#Registration_fee"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Author_attendee_cd_registration_fee": {
+      "id": "iasted#Author_attendee_cd_registration_fee",
+      "name": "Author attendee cd registration fee",
+      "parents": [
+        "iasted#Registration_fee"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Tip": {
+      "id": "iasted#Tip",
+      "name": "Tip",
+      "parents": [
+        "iasted#Money"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Credit_card": {
+      "id": "iasted#Credit_card",
+      "name": "Credit card",
+      "parents": [
+        "iasted#Card"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Van": {
+      "id": "iasted#Van",
+      "name": "Van",
+      "parents": [
+        "iasted#Transport_vehicle"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Main_office": {
+      "id": "iasted#Main_office",
+      "name": "Main office",
+      "parents": [
+        "iasted#Place"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "iasted#Presenter_university": {
+      "id": "iasted#Presenter_university",
+      "name": "Presenter university",
+      "parents": [
+        "iasted#Building"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Departure_tax": {
+      "id": "iasted#Departure_tax",
+      "name": "Departure tax",
+      "parents": [
+        "iasted#Tax"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Receiving_manuscript": {
+      "id": "iasted#Receiving_manuscript",
+      "name": "Receiving manuscript",
+      "parents": [
+        "iasted#Activity_before_conference"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Double_hotel_room": {
+      "id": "iasted#Double_hotel_room",
+      "name": "Double hotel room",
+      "parents": [
+        "iasted#Hotel_room"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Initial_manuscipt": {
+      "id": "iasted#Initial_manuscipt",
+      "name": "Initial manuscipt",
+      "parents": [
+        "iasted#Submission"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Coffee_break": {
+      "id": "iasted#Coffee_break",
+      "name": "Coffee break",
+      "parents": [
+        "iasted#Conference_activity"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Bank_transfer": {
+      "id": "iasted#Bank_transfer",
+      "name": "Bank transfer",
+      "parents": [
+        "iasted#Payment_document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "iasted#Overhead_projector": {
+      "id": "iasted#Overhead_projector",
+      "name": "Overhead projector",
+      "parents": [
+        "iasted#Audiovisual_equipment"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Speaker_lecture": {
+      "id": "iasted#Speaker_lecture",
+      "name": "Speaker lecture",
+      "parents": [
+        "iasted#Session"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 4
+    },
+    "iasted#Coctail_reception": {
+      "id": "iasted#Coctail_reception",
+      "name": "Coctail reception",
+      "parents": [
+        "iasted#Conference_activity"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "iasted#Currency": {
+      "id": "iasted#Currency",
+      "name": "Currency",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    }
+  }
+}
