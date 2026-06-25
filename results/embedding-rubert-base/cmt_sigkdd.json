@@ -1,0 +1,161 @@
+{
+  "approach": "embedding-rubert-base",
+  "pair": "cmt\u2194sigkdd",
+  "source": "cmt",
+  "target": "sigkdd",
+  "precision": 0.20689655172413793,
+  "recall": 0.6,
+  "f1": 0.3076923076923077,
+  "matches": 6,
+  "total_predicted": 29,
+  "total_gt": 10,
+  "wall_time": 0.025183773999742698,
+  "model": "DeepPavlov/rubert-base-cased",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Acceptance",
+      "target_id": "sigkdd#Organizator",
+      "confidence": 0.5398820042610168
+    },
+    {
+      "source_id": "cmt#Administrator",
+      "target_id": "sigkdd#Committee",
+      "confidence": 0.7286420464515686
+    },
+    {
+      "source_id": "cmt#AssociatedChair",
+      "target_id": "sigkdd#Program_Chair",
+      "confidence": 0.6433679461479187
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "sigkdd#Author",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#AuthorNotReviewer",
+      "target_id": "sigkdd#Bronze_Supporter",
+      "confidence": 0.5598928928375244
+    },
+    {
+      "source_id": "cmt#Bid",
+      "target_id": "sigkdd#Fee",
+      "confidence": 0.7485858798027039
+    },
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "sigkdd#General_Chair",
+      "confidence": 0.7563524842262268
+    },
+    {
+      "source_id": "cmt#Co-author",
+      "target_id": "sigkdd#Author_of_paper",
+      "confidence": 0.6290619373321533
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.9999999403953552
+    },
+    {
+      "source_id": "cmt#ConferenceChair",
+      "target_id": "sigkdd#Organizator",
+      "confidence": 0.6157987117767334
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "sigkdd#Registration_SIGMOD_Member",
+      "confidence": 0.6097822785377502
+    },
+    {
+      "source_id": "cmt#Decision",
+      "target_id": "sigkdd#Person",
+      "confidence": 0.7700768709182739
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "sigkdd#Document",
+      "confidence": 0.9999998807907104
+    },
+    {
+      "source_id": "cmt#ExternalReviewer",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.5722619891166687
+    },
+    {
+      "source_id": "cmt#Meta-Review",
+      "target_id": "sigkdd#Best_Research_Paper_Award",
+      "confidence": 0.6532665491104126
+    },
+    {
+      "source_id": "cmt#Meta-Reviewer",
+      "target_id": "sigkdd#Best_Research_Paper_Award",
+      "confidence": 0.6885210275650024
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "sigkdd#Paper",
+      "confidence": 1.000000238418579
+    },
+    {
+      "source_id": "cmt#PaperAbstract",
+      "target_id": "sigkdd#Abstract",
+      "confidence": 0.7070399522781372
+    },
+    {
+      "source_id": "cmt#PaperFullVersion",
+      "target_id": "sigkdd#Deadline_Paper_Submission",
+      "confidence": 0.6317678093910217
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "sigkdd#Person",
+      "confidence": 0.9999999403953552
+    },
+    {
+      "source_id": "cmt#Preference",
+      "target_id": "sigkdd#Speaker",
+      "confidence": 0.6896559000015259
+    },
+    {
+      "source_id": "cmt#ProgramCommittee",
+      "target_id": "sigkdd#Registration_SIGMOD_Member",
+      "confidence": 0.5770934820175171
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeChair",
+      "target_id": "sigkdd#Registration_SIGMOD_Member",
+      "confidence": 0.579939603805542
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "sigkdd#Registration_SIGMOD_Member",
+      "confidence": 0.6123133897781372
+    },
+    {
+      "source_id": "cmt#Rejection",
+      "target_id": "sigkdd#Program_Chair",
+      "confidence": 0.7097257971763611
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "sigkdd#Review",
+      "confidence": 0.9999999403953552
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "sigkdd#Review",
+      "confidence": 0.8455994725227356
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "sigkdd#Registration_SIGMOD_Member",
+      "confidence": 0.5637035369873047
+    },
+    {
+      "source_id": "cmt#User",
+      "target_id": "sigkdd#Paper",
+      "confidence": 0.9358458518981934
+    }
+  ]
+}

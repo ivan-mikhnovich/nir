@@ -1,0 +1,716 @@
+{
+  "approach": "embedding-ruRoberta-large",
+  "pair": "iasted\u2194sigkdd",
+  "source": "iasted",
+  "target": "sigkdd",
+  "precision": 0.09285714285714286,
+  "recall": 0.8666666666666667,
+  "f1": 0.16774193548387098,
+  "matches": 13,
+  "total_predicted": 140,
+  "total_gt": 15,
+  "wall_time": 0.12858346400025766,
+  "model": "ai-forever/ruRoberta-large",
+  "match_pairs": [
+    {
+      "source_id": "iasted#Accepting_manuscript",
+      "target_id": "sigkdd#Author_of_paper",
+      "confidence": 0.8575925827026367
+    },
+    {
+      "source_id": "iasted#Activity",
+      "target_id": "sigkdd#Author",
+      "confidence": 0.8680828809738159
+    },
+    {
+      "source_id": "iasted#Activity_after_conference",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 0.9033135175704956
+    },
+    {
+      "source_id": "iasted#Activity_before_conference",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 0.9014351963996887
+    },
+    {
+      "source_id": "iasted#Audiovisual_equipment",
+      "target_id": "sigkdd#Author_of_paper_student",
+      "confidence": 0.8674063682556152
+    },
+    {
+      "source_id": "iasted#Author",
+      "target_id": "sigkdd#Author",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Author_attendee_book_registration_fee",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.9154586791992188
+    },
+    {
+      "source_id": "iasted#Author_attendee_cd_registration_fee",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.9158080816268921
+    },
+    {
+      "source_id": "iasted#Author_book_proceedings_included",
+      "target_id": "sigkdd#Author_of_paper_student",
+      "confidence": 0.8931950330734253
+    },
+    {
+      "source_id": "iasted#Author_cd_proceedings_included",
+      "target_id": "sigkdd#Author_of_paper_student",
+      "confidence": 0.86623215675354
+    },
+    {
+      "source_id": "iasted#Author_information_form",
+      "target_id": "sigkdd#Author",
+      "confidence": 0.9128717184066772
+    },
+    {
+      "source_id": "iasted#Bank_transfer",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.829345703125
+    },
+    {
+      "source_id": "iasted#Book_proceeding",
+      "target_id": "sigkdd#Best_Paper_Awards_Committee",
+      "confidence": 0.8560231924057007
+    },
+    {
+      "source_id": "iasted#Brief_introduction_for_Session_chair",
+      "target_id": "sigkdd#Best_Student_Paper_Supporter",
+      "confidence": 0.9056352972984314
+    },
+    {
+      "source_id": "iasted#Building",
+      "target_id": "sigkdd#Program_Chair",
+      "confidence": 0.8257663249969482
+    },
+    {
+      "source_id": "iasted#Camera_ready_manuscript_deadline",
+      "target_id": "sigkdd#Author_of_paper_student",
+      "confidence": 0.8685288429260254
+    },
+    {
+      "source_id": "iasted#Car",
+      "target_id": "sigkdd#Person",
+      "confidence": 0.7996777892112732
+    },
+    {
+      "source_id": "iasted#Card",
+      "target_id": "sigkdd#Award",
+      "confidence": 0.8443043828010559
+    },
+    {
+      "source_id": "iasted#Cd_proceening",
+      "target_id": "sigkdd#Listener",
+      "confidence": 0.8597621321678162
+    },
+    {
+      "source_id": "iasted#Cheque",
+      "target_id": "sigkdd#Speaker",
+      "confidence": 0.7320389747619629
+    },
+    {
+      "source_id": "iasted#City",
+      "target_id": "sigkdd#Award",
+      "confidence": 0.8334973454475403
+    },
+    {
+      "source_id": "iasted#Coctail_reception",
+      "target_id": "sigkdd#Bronze_Supporter",
+      "confidence": 0.8781124353408813
+    },
+    {
+      "source_id": "iasted#Coffee_break",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 0.8632378578186035
+    },
+    {
+      "source_id": "iasted#Computer",
+      "target_id": "sigkdd#Gold_Supporter",
+      "confidence": 0.8671426177024841
+    },
+    {
+      "source_id": "iasted#Conference_Hiker",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.9194033145904541
+    },
+    {
+      "source_id": "iasted#Conference_activity",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 0.9126569032669067
+    },
+    {
+      "source_id": "iasted#Conference_airport",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 0.9320065975189209
+    },
+    {
+      "source_id": "iasted#Conference_building",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 0.9325418472290039
+    },
+    {
+      "source_id": "iasted#Conference_city",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 0.9557560682296753
+    },
+    {
+      "source_id": "iasted#Conference_days",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 0.9482855200767517
+    },
+    {
+      "source_id": "iasted#Conference_hall",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 0.9999998807907104
+    },
+    {
+      "source_id": "iasted#Conference_hotel",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 0.9603667259216309
+    },
+    {
+      "source_id": "iasted#Conference_restaurant",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 0.9271240234375
+    },
+    {
+      "source_id": "iasted#Conference_state",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 0.9555896520614624
+    },
+    {
+      "source_id": "iasted#Credit_card",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.8303318619728088
+    },
+    {
+      "source_id": "iasted#Currency",
+      "target_id": "sigkdd#Registration_Student",
+      "confidence": 0.8724358677864075
+    },
+    {
+      "source_id": "iasted#Deadline",
+      "target_id": "sigkdd#Deadline",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Deadline_for_notification_of_acceptance",
+      "target_id": "sigkdd#Deadline_Author_notification",
+      "confidence": 0.9146026968955994
+    },
+    {
+      "source_id": "iasted#Deadline_hotel_reservation",
+      "target_id": "sigkdd#Deadline_Paper_Submission",
+      "confidence": 0.8876510262489319
+    },
+    {
+      "source_id": "iasted#Delegate",
+      "target_id": "sigkdd#Deadline_Author_notification",
+      "confidence": 0.7921079397201538
+    },
+    {
+      "source_id": "iasted#Departure",
+      "target_id": "sigkdd#Sponzor",
+      "confidence": 0.8508824110031128
+    },
+    {
+      "source_id": "iasted#Departure_tax",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.8548716306686401
+    },
+    {
+      "source_id": "iasted#Dinner_banquet",
+      "target_id": "sigkdd#Bronze_Supporter",
+      "confidence": 0.8638339042663574
+    },
+    {
+      "source_id": "iasted#Document",
+      "target_id": "sigkdd#Document",
+      "confidence": 0.9999998807907104
+    },
+    {
+      "source_id": "iasted#Double_hotel_room",
+      "target_id": "sigkdd#Hotel",
+      "confidence": 0.8777914047241211
+    },
+    {
+      "source_id": "iasted#Fee",
+      "target_id": "sigkdd#Fee",
+      "confidence": 0.9999999403953552
+    },
+    {
+      "source_id": "iasted#Fee_for_extra_trip",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.8677433133125305
+    },
+    {
+      "source_id": "iasted#Final_manuscript",
+      "target_id": "sigkdd#Author_of_paper",
+      "confidence": 0.8763970732688904
+    },
+    {
+      "source_id": "iasted#Form",
+      "target_id": "sigkdd#Fee",
+      "confidence": 0.8352615833282471
+    },
+    {
+      "source_id": "iasted#Full_day_tour",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.8327633738517761
+    },
+    {
+      "source_id": "iasted#Hotel_fee",
+      "target_id": "sigkdd#Hotel",
+      "confidence": 0.9200542569160461
+    },
+    {
+      "source_id": "iasted#Hotel_presenter",
+      "target_id": "sigkdd#Hotel",
+      "confidence": 0.8853467702865601
+    },
+    {
+      "source_id": "iasted#Hotel_registration_form",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.9020178914070129
+    },
+    {
+      "source_id": "iasted#Hotel_room",
+      "target_id": "sigkdd#Hotel",
+      "confidence": 0.9316047430038452
+    },
+    {
+      "source_id": "iasted#IASTED_member",
+      "target_id": "sigkdd#Registration_SIGMOD_Member",
+      "confidence": 0.8918123245239258
+    },
+    {
+      "source_id": "iasted#IASTED_non_member",
+      "target_id": "sigkdd#Registration_SIGMOD_Member",
+      "confidence": 0.9106195569038391
+    },
+    {
+      "source_id": "iasted#Initial_manuscipt",
+      "target_id": "sigkdd#Deadline_Author_notification",
+      "confidence": 0.859372079372406
+    },
+    {
+      "source_id": "iasted#Introduction",
+      "target_id": "sigkdd#Exhibitor",
+      "confidence": 0.8168253898620605
+    },
+    {
+      "source_id": "iasted#Introduction_of_speaker",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 0.9027807116508484
+    },
+    {
+      "source_id": "iasted#Invitation_letter",
+      "target_id": "sigkdd#Exhibitor",
+      "confidence": 0.8934412598609924
+    },
+    {
+      "source_id": "iasted#Item",
+      "target_id": "sigkdd#Author",
+      "confidence": 0.8326228857040405
+    },
+    {
+      "source_id": "iasted#LCD_projector",
+      "target_id": "sigkdd#Registration_SIGKDD_Member",
+      "confidence": 0.8626102805137634
+    },
+    {
+      "source_id": "iasted#Lecture",
+      "target_id": "sigkdd#Place",
+      "confidence": 0.8363566994667053
+    },
+    {
+      "source_id": "iasted#Lecturer",
+      "target_id": "sigkdd#Listener",
+      "confidence": 0.8911042809486389
+    },
+    {
+      "source_id": "iasted#Listener",
+      "target_id": "sigkdd#Listener",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "iasted#Mailing_list",
+      "target_id": "sigkdd#Webmaster",
+      "confidence": 0.8399487137794495
+    },
+    {
+      "source_id": "iasted#Main_office",
+      "target_id": "sigkdd#Main_office",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "iasted#Memeber_registration_fee",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.96026211977005
+    },
+    {
+      "source_id": "iasted#Modelling",
+      "target_id": "sigkdd#Webmaster",
+      "confidence": 0.8541048169136047
+    },
+    {
+      "source_id": "iasted#Money",
+      "target_id": "sigkdd#Main_office",
+      "confidence": 0.7999950647354126
+    },
+    {
+      "source_id": "iasted#Non_speaker",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 0.9163728952407837
+    },
+    {
+      "source_id": "iasted#Nonauthor_registration_fee",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.9351504445075989
+    },
+    {
+      "source_id": "iasted#Nonmember_registration_fee",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.9449660778045654
+    },
+    {
+      "source_id": "iasted#One_conference_day",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 0.9107962846755981
+    },
+    {
+      "source_id": "iasted#One_day_presenter",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 0.8637800216674805
+    },
+    {
+      "source_id": "iasted#Overhead_projector",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 0.8810384273529053
+    },
+    {
+      "source_id": "iasted#Payment_document",
+      "target_id": "sigkdd#Document",
+      "confidence": 0.9245734810829163
+    },
+    {
+      "source_id": "iasted#Person",
+      "target_id": "sigkdd#Person",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "iasted#Place",
+      "target_id": "sigkdd#Place",
+      "confidence": 0.9999999403953552
+    },
+    {
+      "source_id": "iasted#Plenary_lecture",
+      "target_id": "sigkdd#Best_Student_Paper_Supporter",
+      "confidence": 0.845475435256958
+    },
+    {
+      "source_id": "iasted#Plenary_lecture_speaker",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 0.8934434056282043
+    },
+    {
+      "source_id": "iasted#PowerPoint_presentation",
+      "target_id": "sigkdd#Best_Student_Paper_Supporter",
+      "confidence": 0.8667751550674438
+    },
+    {
+      "source_id": "iasted#Presentation",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.8809238076210022
+    },
+    {
+      "source_id": "iasted#Presenter_city",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.8741363286972046
+    },
+    {
+      "source_id": "iasted#Presenter_house",
+      "target_id": "sigkdd#Main_office",
+      "confidence": 0.8946242332458496
+    },
+    {
+      "source_id": "iasted#Presenter_state",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.8759624361991882
+    },
+    {
+      "source_id": "iasted#Presenter_university",
+      "target_id": "sigkdd#Bronze_Supporter",
+      "confidence": 0.8656977415084839
+    },
+    {
+      "source_id": "iasted#Publication",
+      "target_id": "sigkdd#Paper",
+      "confidence": 0.8661047220230103
+    },
+    {
+      "source_id": "iasted#Receiving_manuscript",
+      "target_id": "sigkdd#Best_Student_Paper_Supporter",
+      "confidence": 0.8589885830879211
+    },
+    {
+      "source_id": "iasted#Record_of_attendance",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 0.8887337446212769
+    },
+    {
+      "source_id": "iasted#Refusing_manuscript",
+      "target_id": "sigkdd#Author_of_paper",
+      "confidence": 0.8638947010040283
+    },
+    {
+      "source_id": "iasted#Registation_deadline",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.9188516736030579
+    },
+    {
+      "source_id": "iasted#Registration",
+      "target_id": "sigkdd#Registration_Student",
+      "confidence": 0.9497011303901672
+    },
+    {
+      "source_id": "iasted#Registration_fee",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.999999463558197
+    },
+    {
+      "source_id": "iasted#Registration_form",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.9410347938537598
+    },
+    {
+      "source_id": "iasted#Renting",
+      "target_id": "sigkdd#Listener",
+      "confidence": 0.847388505935669
+    },
+    {
+      "source_id": "iasted#Research",
+      "target_id": "sigkdd#Review",
+      "confidence": 0.8987254500389099
+    },
+    {
+      "source_id": "iasted#Review",
+      "target_id": "sigkdd#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Reviewer",
+      "target_id": "sigkdd#Review",
+      "confidence": 0.9626137018203735
+    },
+    {
+      "source_id": "iasted#Session",
+      "target_id": "sigkdd#Sponzor",
+      "confidence": 0.84450763463974
+    },
+    {
+      "source_id": "iasted#Session_chair",
+      "target_id": "sigkdd#Program_Chair",
+      "confidence": 0.8855010867118835
+    },
+    {
+      "source_id": "iasted#Session_room",
+      "target_id": "sigkdd#Bronze_Supporter",
+      "confidence": 0.8619783520698547
+    },
+    {
+      "source_id": "iasted#Shuttle_bus",
+      "target_id": "sigkdd#Author",
+      "confidence": 0.8550645709037781
+    },
+    {
+      "source_id": "iasted#Simulating",
+      "target_id": "sigkdd#Author",
+      "confidence": 0.8286913633346558
+    },
+    {
+      "source_id": "iasted#Single_hotel_room",
+      "target_id": "sigkdd#Hotel",
+      "confidence": 0.8754845261573792
+    },
+    {
+      "source_id": "iasted#Social_program",
+      "target_id": "sigkdd#Program_Committee_member",
+      "confidence": 0.8926849365234375
+    },
+    {
+      "source_id": "iasted#Speaker",
+      "target_id": "sigkdd#Speaker",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Speaker_lecture",
+      "target_id": "sigkdd#Speaker",
+      "confidence": 0.9213975071907043
+    },
+    {
+      "source_id": "iasted#Sponsor",
+      "target_id": "sigkdd#Sponzor",
+      "confidence": 0.8907157182693481
+    },
+    {
+      "source_id": "iasted#Sponsor_city",
+      "target_id": "sigkdd#Bronze_Supporter",
+      "confidence": 0.8758013844490051
+    },
+    {
+      "source_id": "iasted#Sponsor_company_house",
+      "target_id": "sigkdd#Main_office",
+      "confidence": 0.9059779644012451
+    },
+    {
+      "source_id": "iasted#Sponsor_state",
+      "target_id": "sigkdd#Main_office",
+      "confidence": 0.8810667395591736
+    },
+    {
+      "source_id": "iasted#Sponzorship",
+      "target_id": "sigkdd#Sponzor",
+      "confidence": 0.9369150996208191
+    },
+    {
+      "source_id": "iasted#State",
+      "target_id": "sigkdd#Place",
+      "confidence": 0.8134840726852417
+    },
+    {
+      "source_id": "iasted#Student_lecturer",
+      "target_id": "sigkdd#Author_of_paper_student",
+      "confidence": 0.9150128364562988
+    },
+    {
+      "source_id": "iasted#Student_non_speaker",
+      "target_id": "sigkdd#Author_of_paper_student",
+      "confidence": 0.9171608686447144
+    },
+    {
+      "source_id": "iasted#Student_registration_fee",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.9558660387992859
+    },
+    {
+      "source_id": "iasted#Submission",
+      "target_id": "sigkdd#Deadline_Paper_Submission",
+      "confidence": 0.8907760381698608
+    },
+    {
+      "source_id": "iasted#Submissions_deadline",
+      "target_id": "sigkdd#Deadline_Paper_Submission",
+      "confidence": 0.927187979221344
+    },
+    {
+      "source_id": "iasted#Tax",
+      "target_id": "sigkdd#Fee",
+      "confidence": 0.7887527346611023
+    },
+    {
+      "source_id": "iasted#Taxi",
+      "target_id": "sigkdd#Webmaster",
+      "confidence": 0.7693831920623779
+    },
+    {
+      "source_id": "iasted#Technic_activity",
+      "target_id": "sigkdd#Exhibitor",
+      "confidence": 0.8571764230728149
+    },
+    {
+      "source_id": "iasted#Technical_commitee",
+      "target_id": "sigkdd#Committee",
+      "confidence": 0.8816736936569214
+    },
+    {
+      "source_id": "iasted#Time",
+      "target_id": "sigkdd#Review",
+      "confidence": 0.8303405046463013
+    },
+    {
+      "source_id": "iasted#Time_zone",
+      "target_id": "sigkdd#Deadline_Author_notification",
+      "confidence": 0.8183362483978271
+    },
+    {
+      "source_id": "iasted#Tip",
+      "target_id": "sigkdd#Award",
+      "confidence": 0.8032283782958984
+    },
+    {
+      "source_id": "iasted#Transparency",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.8817947506904602
+    },
+    {
+      "source_id": "iasted#Transport_vehicle",
+      "target_id": "sigkdd#Organizator",
+      "confidence": 0.8545469045639038
+    },
+    {
+      "source_id": "iasted#Trip_city",
+      "target_id": "sigkdd#Author_of_paper_student",
+      "confidence": 0.8579697608947754
+    },
+    {
+      "source_id": "iasted#Trip_day",
+      "target_id": "sigkdd#Author_of_paper",
+      "confidence": 0.8548169732093811
+    },
+    {
+      "source_id": "iasted#Tutorial",
+      "target_id": "sigkdd#Author",
+      "confidence": 0.8688156604766846
+    },
+    {
+      "source_id": "iasted#Tutorial_speaker",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 0.920969545841217
+    },
+    {
+      "source_id": "iasted#Value_added_tax",
+      "target_id": "sigkdd#Main_office",
+      "confidence": 0.8384793400764465
+    },
+    {
+      "source_id": "iasted#Van",
+      "target_id": "sigkdd#Fee",
+      "confidence": 0.7725793719291687
+    },
+    {
+      "source_id": "iasted#Video_cassette_player",
+      "target_id": "sigkdd#Best_Student_Paper_Supporter",
+      "confidence": 0.886967122554779
+    },
+    {
+      "source_id": "iasted#Video_presentation",
+      "target_id": "sigkdd#Author_of_paper_student",
+      "confidence": 0.8634654879570007
+    },
+    {
+      "source_id": "iasted#Viza",
+      "target_id": "sigkdd#Paper",
+      "confidence": 0.806827187538147
+    },
+    {
+      "source_id": "iasted#Welcome_address",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 0.8679883480072021
+    },
+    {
+      "source_id": "iasted#Worker_lecturer",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 0.8776189088821411
+    },
+    {
+      "source_id": "iasted#Worker_non_speaker",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 0.911527693271637
+    }
+  ]
+}

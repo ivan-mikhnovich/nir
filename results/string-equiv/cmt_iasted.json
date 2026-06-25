@@ -1,0 +1,40 @@
+{
+  "approach": "string-equiv",
+  "pair": "cmt\u2194iasted",
+  "source": "cmt",
+  "target": "iasted",
+  "precision": 0.8,
+  "recall": 1.0,
+  "f1": 0.888888888888889,
+  "matches": 4,
+  "total_predicted": 5,
+  "total_gt": 4,
+  "wall_time": 4.142599937040359e-05,
+  "match_pairs": [
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "iasted#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "iasted#Document",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "iasted#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "iasted#Author",
+      "confidence": 1.0
+    }
+  ]
+}

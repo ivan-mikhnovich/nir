@@ -1,0 +1,161 @@
+{
+  "approach": "embedding-MiniLM",
+  "pair": "cmt\u2194iasted",
+  "source": "cmt",
+  "target": "iasted",
+  "precision": 0.13793103448275862,
+  "recall": 1.0,
+  "f1": 0.2424242424242424,
+  "matches": 4,
+  "total_predicted": 29,
+  "total_gt": 4,
+  "wall_time": 0.022815250002167886,
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Acceptance",
+      "target_id": "iasted#Deadline_for_notification_of_acceptance",
+      "confidence": 0.5301550626754761
+    },
+    {
+      "source_id": "cmt#Administrator",
+      "target_id": "iasted#Computer",
+      "confidence": 0.5005302429199219
+    },
+    {
+      "source_id": "cmt#AssociatedChair",
+      "target_id": "iasted#Registration",
+      "confidence": 0.35876062512397766
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "iasted#Author",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#AuthorNotReviewer",
+      "target_id": "iasted#Author",
+      "confidence": 0.5061947703361511
+    },
+    {
+      "source_id": "cmt#Bid",
+      "target_id": "iasted#Currency",
+      "confidence": 0.4464476704597473
+    },
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "iasted#Session_chair",
+      "confidence": 0.5384995341300964
+    },
+    {
+      "source_id": "cmt#Co-author",
+      "target_id": "iasted#Author",
+      "confidence": 0.7693231105804443
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "iasted#Conference_state",
+      "confidence": 0.861950159072876
+    },
+    {
+      "source_id": "cmt#ConferenceChair",
+      "target_id": "iasted#Conference_activity",
+      "confidence": 0.6731380224227905
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "iasted#Conference_activity",
+      "confidence": 0.682963490486145
+    },
+    {
+      "source_id": "cmt#Decision",
+      "target_id": "iasted#Review",
+      "confidence": 0.4464840590953827
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "iasted#Document",
+      "confidence": 0.9999998807907104
+    },
+    {
+      "source_id": "cmt#ExternalReviewer",
+      "target_id": "iasted#LCD_projector",
+      "confidence": 0.2031257599592209
+    },
+    {
+      "source_id": "cmt#Meta-Review",
+      "target_id": "iasted#Review",
+      "confidence": 0.7003583908081055
+    },
+    {
+      "source_id": "cmt#Meta-Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.8213430643081665
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "iasted#Document",
+      "confidence": 0.6194126605987549
+    },
+    {
+      "source_id": "cmt#PaperAbstract",
+      "target_id": "iasted#Document",
+      "confidence": 0.43913692235946655
+    },
+    {
+      "source_id": "cmt#PaperFullVersion",
+      "target_id": "iasted#Document",
+      "confidence": 0.4663431942462921
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "iasted#Person",
+      "confidence": 1.000000238418579
+    },
+    {
+      "source_id": "cmt#Preference",
+      "target_id": "iasted#Item",
+      "confidence": 0.33861035108566284
+    },
+    {
+      "source_id": "cmt#ProgramCommittee",
+      "target_id": "iasted#Technical_commitee",
+      "confidence": 0.4638040065765381
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeChair",
+      "target_id": "iasted#Technical_commitee",
+      "confidence": 0.42721453309059143
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "iasted#Technical_commitee",
+      "confidence": 0.4727365970611572
+    },
+    {
+      "source_id": "cmt#Rejection",
+      "target_id": "iasted#Submission",
+      "confidence": 0.3532189130783081
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "iasted#Review",
+      "confidence": 1.000000238418579
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "iasted#Introduction",
+      "confidence": 0.3564120829105377
+    },
+    {
+      "source_id": "cmt#User",
+      "target_id": "iasted#Person",
+      "confidence": 0.5441259145736694
+    }
+  ]
+}

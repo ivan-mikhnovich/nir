@@ -1,0 +1,206 @@
+{
+  "approach": "embedding-LaBSE",
+  "pair": "confOf\u2194edas",
+  "source": "confOf",
+  "target": "edas",
+  "precision": 0.34210526315789475,
+  "recall": 0.9285714285714286,
+  "f1": 0.5,
+  "matches": 13,
+  "total_predicted": 38,
+  "total_gt": 14,
+  "wall_time": 0.04140840900072362,
+  "model": "sentence-transformers/LaBSE",
+  "match_pairs": [
+    {
+      "source_id": "confof#Administrative_event",
+      "target_id": "edas#AcademicEvent",
+      "confidence": 0.6025452613830566
+    },
+    {
+      "source_id": "confof#Administrator",
+      "target_id": "edas#Author",
+      "confidence": 0.5519570112228394
+    },
+    {
+      "source_id": "confof#Assistant",
+      "target_id": "edas#Attendee",
+      "confidence": 0.5359498262405396
+    },
+    {
+      "source_id": "confof#Author",
+      "target_id": "edas#Author",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Banquet",
+      "target_id": "edas#Conference",
+      "confidence": 0.6248680353164673
+    },
+    {
+      "source_id": "confof#Camera_Ready_event",
+      "target_id": "edas#ConferenceEvent",
+      "confidence": 0.5018296241760254
+    },
+    {
+      "source_id": "confof#Chair_PC",
+      "target_id": "edas#SessionChair",
+      "confidence": 0.5019774436950684
+    },
+    {
+      "source_id": "confof#City",
+      "target_id": "edas#Country",
+      "confidence": 0.6406469345092773
+    },
+    {
+      "source_id": "confof#Company",
+      "target_id": "edas#Organization",
+      "confidence": 0.6216224431991577
+    },
+    {
+      "source_id": "confof#Conference",
+      "target_id": "edas#Conference",
+      "confidence": 0.9999999403953552
+    },
+    {
+      "source_id": "confof#Contribution",
+      "target_id": "edas#Attendee",
+      "confidence": 0.5839717388153076
+    },
+    {
+      "source_id": "confof#Country",
+      "target_id": "edas#Country",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Event",
+      "target_id": "edas#ConferenceEvent",
+      "confidence": 0.7897082567214966
+    },
+    {
+      "source_id": "confof#Member",
+      "target_id": "edas#Attendee",
+      "confidence": 0.7036639451980591
+    },
+    {
+      "source_id": "confof#Member_PC",
+      "target_id": "edas#TPCMember",
+      "confidence": 0.5274894833564758
+    },
+    {
+      "source_id": "confof#Organization",
+      "target_id": "edas#Organization",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Paper",
+      "target_id": "edas#Paper",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Participant",
+      "target_id": "edas#Attendee",
+      "confidence": 0.935187578201294
+    },
+    {
+      "source_id": "confof#Person",
+      "target_id": "edas#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Poster",
+      "target_id": "edas#PublishedPaper",
+      "confidence": 0.6155220866203308
+    },
+    {
+      "source_id": "confof#Reception",
+      "target_id": "edas#Reception",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Registration_of_participants_event",
+      "target_id": "edas#Attendee",
+      "confidence": 0.4808553159236908
+    },
+    {
+      "source_id": "confof#Regular",
+      "target_id": "edas#Person",
+      "confidence": 0.40842053294181824
+    },
+    {
+      "source_id": "confof#Reviewing_event",
+      "target_id": "edas#TalkEvent",
+      "confidence": 0.5719281435012817
+    },
+    {
+      "source_id": "confof#Reviewing_results_event",
+      "target_id": "edas#ConferenceEvent",
+      "confidence": 0.4199449419975281
+    },
+    {
+      "source_id": "confof#Scholar",
+      "target_id": "edas#Reviewer",
+      "confidence": 0.5777295827865601
+    },
+    {
+      "source_id": "confof#Science_Worker",
+      "target_id": "edas#AcademicEvent",
+      "confidence": 0.48574092984199524
+    },
+    {
+      "source_id": "confof#Short_paper",
+      "target_id": "edas#Paper",
+      "confidence": 0.7196369171142578
+    },
+    {
+      "source_id": "confof#Social_event",
+      "target_id": "edas#SocialEvent",
+      "confidence": 0.8967145085334778
+    },
+    {
+      "source_id": "confof#Student",
+      "target_id": "edas#Attendee",
+      "confidence": 0.6168073415756226
+    },
+    {
+      "source_id": "confof#Submission_event",
+      "target_id": "edas#ConferenceEvent",
+      "confidence": 0.6051687002182007
+    },
+    {
+      "source_id": "confof#Topic",
+      "target_id": "edas#Topic",
+      "confidence": 0.9999999403953552
+    },
+    {
+      "source_id": "confof#Trip",
+      "target_id": "edas#Excursion",
+      "confidence": 0.8517248630523682
+    },
+    {
+      "source_id": "confof#Tutorial",
+      "target_id": "edas#Workshop",
+      "confidence": 0.607966423034668
+    },
+    {
+      "source_id": "confof#University",
+      "target_id": "edas#AcademicEvent",
+      "confidence": 0.5963253974914551
+    },
+    {
+      "source_id": "confof#Volunteer",
+      "target_id": "edas#NGO",
+      "confidence": 0.5160858631134033
+    },
+    {
+      "source_id": "confof#Working_event",
+      "target_id": "edas#MealEvent",
+      "confidence": 0.667748212814331
+    },
+    {
+      "source_id": "confof#Workshop",
+      "target_id": "edas#Workshop",
+      "confidence": 1.000000238418579
+    }
+  ]
+}

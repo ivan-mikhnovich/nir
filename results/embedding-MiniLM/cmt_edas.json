@@ -1,0 +1,161 @@
+{
+  "approach": "embedding-MiniLM",
+  "pair": "cmt\u2194edas",
+  "source": "cmt",
+  "target": "edas",
+  "precision": 0.27586206896551724,
+  "recall": 1.0,
+  "f1": 0.4324324324324324,
+  "matches": 8,
+  "total_predicted": 29,
+  "total_gt": 8,
+  "wall_time": 0.018805761999828974,
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Acceptance",
+      "target_id": "edas#AcceptRating",
+      "confidence": 0.5719085931777954
+    },
+    {
+      "source_id": "cmt#Administrator",
+      "target_id": "edas#GovernmentOrganization",
+      "confidence": 0.49300310015678406
+    },
+    {
+      "source_id": "cmt#AssociatedChair",
+      "target_id": "edas#ConferenceChair",
+      "confidence": 0.5898122787475586
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "edas#Author",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#AuthorNotReviewer",
+      "target_id": "edas#Author",
+      "confidence": 0.5061948299407959
+    },
+    {
+      "source_id": "cmt#Bid",
+      "target_id": "edas#Conference",
+      "confidence": 0.37156498432159424
+    },
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "edas#Organization",
+      "confidence": 0.4347526431083679
+    },
+    {
+      "source_id": "cmt#Co-author",
+      "target_id": "edas#Author",
+      "confidence": 0.7693232297897339
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "edas#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#ConferenceChair",
+      "target_id": "edas#ConferenceChair",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "edas#Conference",
+      "confidence": 0.7399160861968994
+    },
+    {
+      "source_id": "cmt#Decision",
+      "target_id": "edas#Review",
+      "confidence": 0.4464840292930603
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "edas#Document",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#ExternalReviewer",
+      "target_id": "edas#CallForReviews",
+      "confidence": 0.5693364143371582
+    },
+    {
+      "source_id": "cmt#Meta-Review",
+      "target_id": "edas#Review",
+      "confidence": 0.7003583908081055
+    },
+    {
+      "source_id": "cmt#Meta-Reviewer",
+      "target_id": "edas#Reviewer",
+      "confidence": 0.8213430047035217
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "edas#Paper",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#PaperAbstract",
+      "target_id": "edas#Paper",
+      "confidence": 0.756304919719696
+    },
+    {
+      "source_id": "cmt#PaperFullVersion",
+      "target_id": "edas#PaperPresentation",
+      "confidence": 0.6847589612007141
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "edas#Person",
+      "confidence": 1.000000238418579
+    },
+    {
+      "source_id": "cmt#Preference",
+      "target_id": "edas#AcceptRating",
+      "confidence": 0.35609492659568787
+    },
+    {
+      "source_id": "cmt#ProgramCommittee",
+      "target_id": "edas#Programme",
+      "confidence": 0.5224448442459106
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeChair",
+      "target_id": "edas#ConferenceChair",
+      "confidence": 0.5390276908874512
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "edas#TPCMember",
+      "confidence": 0.43680718541145325
+    },
+    {
+      "source_id": "cmt#Rejection",
+      "target_id": "edas#RejectRating",
+      "confidence": 0.5526888370513916
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "edas#Review",
+      "confidence": 1.000000238418579
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "edas#Reviewer",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "edas#Topic",
+      "confidence": 0.4278295934200287
+    },
+    {
+      "source_id": "cmt#User",
+      "target_id": "edas#Person",
+      "confidence": 0.5441257953643799
+    }
+  ]
+}

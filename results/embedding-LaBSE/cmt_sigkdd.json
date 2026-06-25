@@ -1,0 +1,161 @@
+{
+  "approach": "embedding-LaBSE",
+  "pair": "cmt\u2194sigkdd",
+  "source": "cmt",
+  "target": "sigkdd",
+  "precision": 0.27586206896551724,
+  "recall": 0.8,
+  "f1": 0.4102564102564103,
+  "matches": 8,
+  "total_predicted": 29,
+  "total_gt": 10,
+  "wall_time": 0.020944625000993256,
+  "model": "sentence-transformers/LaBSE",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Acceptance",
+      "target_id": "sigkdd#Award",
+      "confidence": 0.5390462875366211
+    },
+    {
+      "source_id": "cmt#Administrator",
+      "target_id": "sigkdd#Webmaster",
+      "confidence": 0.6811200976371765
+    },
+    {
+      "source_id": "cmt#AssociatedChair",
+      "target_id": "sigkdd#Person",
+      "confidence": 0.4100569486618042
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "sigkdd#Author",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "cmt#AuthorNotReviewer",
+      "target_id": "sigkdd#Author",
+      "confidence": 0.7955113649368286
+    },
+    {
+      "source_id": "cmt#Bid",
+      "target_id": "sigkdd#Award",
+      "confidence": 0.6138179302215576
+    },
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "sigkdd#General_Chair",
+      "confidence": 0.6528122425079346
+    },
+    {
+      "source_id": "cmt#Co-author",
+      "target_id": "sigkdd#Author",
+      "confidence": 0.815693736076355
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "sigkdd#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#ConferenceChair",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.8679794073104858
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.8243741989135742
+    },
+    {
+      "source_id": "cmt#Decision",
+      "target_id": "sigkdd#Committee",
+      "confidence": 0.5218774080276489
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "sigkdd#Document",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#ExternalReviewer",
+      "target_id": "sigkdd#Author",
+      "confidence": 0.5651634335517883
+    },
+    {
+      "source_id": "cmt#Meta-Review",
+      "target_id": "sigkdd#Review",
+      "confidence": 0.6464294195175171
+    },
+    {
+      "source_id": "cmt#Meta-Reviewer",
+      "target_id": "sigkdd#Review",
+      "confidence": 0.5198969841003418
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "sigkdd#Paper",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#PaperAbstract",
+      "target_id": "sigkdd#Paper",
+      "confidence": 0.8033862709999084
+    },
+    {
+      "source_id": "cmt#PaperFullVersion",
+      "target_id": "sigkdd#Paper",
+      "confidence": 0.6649099588394165
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "sigkdd#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Preference",
+      "target_id": "sigkdd#Fee",
+      "confidence": 0.46612077951431274
+    },
+    {
+      "source_id": "cmt#ProgramCommittee",
+      "target_id": "sigkdd#Program_Committee",
+      "confidence": 0.9606786370277405
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeChair",
+      "target_id": "sigkdd#Program_Committee",
+      "confidence": 0.8397606611251831
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "sigkdd#Program_Committee_member",
+      "confidence": 0.8551538586616516
+    },
+    {
+      "source_id": "cmt#Rejection",
+      "target_id": "sigkdd#Review",
+      "confidence": 0.4850066900253296
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "sigkdd#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "sigkdd#Review",
+      "confidence": 0.7999135255813599
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "sigkdd#Program_Chair",
+      "confidence": 0.48055925965309143
+    },
+    {
+      "source_id": "cmt#User",
+      "target_id": "sigkdd#Person",
+      "confidence": 0.6293937563896179
+    }
+  ]
+}

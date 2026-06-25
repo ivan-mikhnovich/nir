@@ -1,0 +1,311 @@
+{
+  "approach": "embedding-ruRoberta-large",
+  "pair": "conference\u2194edas",
+  "source": "conference",
+  "target": "edas",
+  "precision": 0.1864406779661017,
+  "recall": 0.7857142857142857,
+  "f1": 0.3013698630136986,
+  "matches": 11,
+  "total_predicted": 59,
+  "total_gt": 14,
+  "wall_time": 0.12128265800129157,
+  "model": "ai-forever/ruRoberta-large",
+  "match_pairs": [
+    {
+      "source_id": "Conference#Abstract",
+      "target_id": "edas#Author",
+      "confidence": 0.8450186848640442
+    },
+    {
+      "source_id": "Conference#Accepted_contribution",
+      "target_id": "edas#AcceptedPaper",
+      "confidence": 0.9106018543243408
+    },
+    {
+      "source_id": "Conference#Active_conference_participant",
+      "target_id": "edas#ConferenceDinner",
+      "confidence": 0.8834646940231323
+    },
+    {
+      "source_id": "Conference#Call_for_paper",
+      "target_id": "edas#CallForPapers",
+      "confidence": 0.9377440214157104
+    },
+    {
+      "source_id": "Conference#Call_for_participation",
+      "target_id": "edas#CallForPapers",
+      "confidence": 0.8886857032775879
+    },
+    {
+      "source_id": "Conference#Camera_ready_contribution",
+      "target_id": "edas#NumericalReviewQuestion",
+      "confidence": 0.8933130502700806
+    },
+    {
+      "source_id": "Conference#Chair",
+      "target_id": "edas#SessionChair",
+      "confidence": 0.853348433971405
+    },
+    {
+      "source_id": "Conference#Co-chair",
+      "target_id": "edas#SessionChair",
+      "confidence": 0.9032374620437622
+    },
+    {
+      "source_id": "Conference#Committee",
+      "target_id": "edas#CommunicationsTopic",
+      "confidence": 0.8632234930992126
+    },
+    {
+      "source_id": "Conference#Committee_member",
+      "target_id": "edas#WirelessCommunicationsTopic",
+      "confidence": 0.8723110556602478
+    },
+    {
+      "source_id": "Conference#Conference",
+      "target_id": "edas#Conference",
+      "confidence": 0.9999999403953552
+    },
+    {
+      "source_id": "Conference#Conference_announcement",
+      "target_id": "edas#TwoLevelConference",
+      "confidence": 0.8846704959869385
+    },
+    {
+      "source_id": "Conference#Conference_applicant",
+      "target_id": "edas#ConferenceVenuePlace",
+      "confidence": 0.9238191246986389
+    },
+    {
+      "source_id": "Conference#Conference_contribution",
+      "target_id": "edas#ConferenceEvent",
+      "confidence": 0.9154127240180969
+    },
+    {
+      "source_id": "Conference#Conference_contributor",
+      "target_id": "edas#ConferenceSession",
+      "confidence": 0.9113234281539917
+    },
+    {
+      "source_id": "Conference#Conference_document",
+      "target_id": "edas#Document",
+      "confidence": 0.9139480590820312
+    },
+    {
+      "source_id": "Conference#Conference_fees",
+      "target_id": "edas#ConferenceSession",
+      "confidence": 0.9241946339607239
+    },
+    {
+      "source_id": "Conference#Conference_part",
+      "target_id": "edas#Conference",
+      "confidence": 0.96196049451828
+    },
+    {
+      "source_id": "Conference#Conference_participant",
+      "target_id": "edas#ConferenceDinner",
+      "confidence": 0.9232680201530457
+    },
+    {
+      "source_id": "Conference#Conference_proceedings",
+      "target_id": "edas#ConferenceSession",
+      "confidence": 0.881010115146637
+    },
+    {
+      "source_id": "Conference#Conference_volume",
+      "target_id": "edas#Conference",
+      "confidence": 0.9096912145614624
+    },
+    {
+      "source_id": "Conference#Conference_www",
+      "target_id": "edas#Conference",
+      "confidence": 0.962787389755249
+    },
+    {
+      "source_id": "Conference#Contribution_1th-author",
+      "target_id": "edas#ParallelAndDistributedComputingTopic",
+      "confidence": 0.8969249725341797
+    },
+    {
+      "source_id": "Conference#Contribution_co-author",
+      "target_id": "edas#CallForManuscripts",
+      "confidence": 0.8965229988098145
+    },
+    {
+      "source_id": "Conference#Early_paid_applicant",
+      "target_id": "edas#ParallelAndDistributedComputingTopic",
+      "confidence": 0.8996309041976929
+    },
+    {
+      "source_id": "Conference#Extended_abstract",
+      "target_id": "edas#ParallelAndDistributedComputingTopic",
+      "confidence": 0.8846107721328735
+    },
+    {
+      "source_id": "Conference#Important_dates",
+      "target_id": "edas#PowerlineTransmissionTopic",
+      "confidence": 0.8776805400848389
+    },
+    {
+      "source_id": "Conference#Information_for_participants",
+      "target_id": "edas#WirelessCommunicationsTopic",
+      "confidence": 0.8783332109451294
+    },
+    {
+      "source_id": "Conference#Invited_speaker",
+      "target_id": "edas#MealBreak",
+      "confidence": 0.8828898072242737
+    },
+    {
+      "source_id": "Conference#Invited_talk",
+      "target_id": "edas#WelcomeTalk",
+      "confidence": 0.8689160346984863
+    },
+    {
+      "source_id": "Conference#Late_paid_applicant",
+      "target_id": "edas#ParallelAndDistributedComputingTopic",
+      "confidence": 0.8860325217247009
+    },
+    {
+      "source_id": "Conference#Organization",
+      "target_id": "edas#Organization",
+      "confidence": 0.9999999403953552
+    },
+    {
+      "source_id": "Conference#Organizer",
+      "target_id": "edas#Organization",
+      "confidence": 0.9655463099479675
+    },
+    {
+      "source_id": "Conference#Organizing_committee",
+      "target_id": "edas#Organization",
+      "confidence": 0.9329447746276855
+    },
+    {
+      "source_id": "Conference#Paid_applicant",
+      "target_id": "edas#AccommodationPlace",
+      "confidence": 0.8993707895278931
+    },
+    {
+      "source_id": "Conference#Paper",
+      "target_id": "edas#Paper",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Passive_conference_participant",
+      "target_id": "edas#ConferenceDinner",
+      "confidence": 0.8993982076644897
+    },
+    {
+      "source_id": "Conference#Person",
+      "target_id": "edas#Person",
+      "confidence": 0.9999999403953552
+    },
+    {
+      "source_id": "Conference#Poster",
+      "target_id": "edas#Presenter",
+      "confidence": 0.8878849744796753
+    },
+    {
+      "source_id": "Conference#Presentation",
+      "target_id": "edas#PaperPresentation",
+      "confidence": 0.9376143217086792
+    },
+    {
+      "source_id": "Conference#Program_committee",
+      "target_id": "edas#Programme",
+      "confidence": 0.9015545845031738
+    },
+    {
+      "source_id": "Conference#Publisher",
+      "target_id": "edas#PublishedPaper",
+      "confidence": 0.901159405708313
+    },
+    {
+      "source_id": "Conference#Registeered_applicant",
+      "target_id": "edas#ParallelAndDistributedComputingTopic",
+      "confidence": 0.9090195894241333
+    },
+    {
+      "source_id": "Conference#Regular_author",
+      "target_id": "edas#Author",
+      "confidence": 0.9094326496124268
+    },
+    {
+      "source_id": "Conference#Regular_contribution",
+      "target_id": "edas#NumericalReviewQuestion",
+      "confidence": 0.8880186676979065
+    },
+    {
+      "source_id": "Conference#Rejected_contribution",
+      "target_id": "edas#TextualReviewQuestion",
+      "confidence": 0.9039056897163391
+    },
+    {
+      "source_id": "Conference#Review",
+      "target_id": "edas#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Review_expertise",
+      "target_id": "edas#Reviewer",
+      "confidence": 0.9155809283256531
+    },
+    {
+      "source_id": "Conference#Review_preference",
+      "target_id": "edas#Reviewer",
+      "confidence": 0.9261647462844849
+    },
+    {
+      "source_id": "Conference#Reviewed_contribution",
+      "target_id": "edas#ReviewQuestion",
+      "confidence": 0.9180667400360107
+    },
+    {
+      "source_id": "Conference#Reviewer",
+      "target_id": "edas#Reviewer",
+      "confidence": 0.9999998807907104
+    },
+    {
+      "source_id": "Conference#Steering_committee",
+      "target_id": "edas#OrganizationalMeeting",
+      "confidence": 0.88123619556427
+    },
+    {
+      "source_id": "Conference#Submitted_contribution",
+      "target_id": "edas#NumericalReviewQuestion",
+      "confidence": 0.8952399492263794
+    },
+    {
+      "source_id": "Conference#Topic",
+      "target_id": "edas#Topic",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "Conference#Track",
+      "target_id": "edas#TravelGrant",
+      "confidence": 0.8716616630554199
+    },
+    {
+      "source_id": "Conference#Track-workshop_chair",
+      "target_id": "edas#Workshop",
+      "confidence": 0.8874052166938782
+    },
+    {
+      "source_id": "Conference#Tutorial",
+      "target_id": "edas#Author",
+      "confidence": 0.8688157796859741
+    },
+    {
+      "source_id": "Conference#Workshop",
+      "target_id": "edas#Workshop",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "Conference#Written_contribution",
+      "target_id": "edas#NumericalReviewQuestion",
+      "confidence": 0.889561653137207
+    }
+  ]
+}

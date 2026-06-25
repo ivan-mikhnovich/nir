@@ -1,0 +1,161 @@
+{
+  "approach": "embedding-MiniLM",
+  "pair": "cmt\u2194confOf",
+  "source": "cmt",
+  "target": "confOf",
+  "precision": 0.20689655172413793,
+  "recall": 0.6,
+  "f1": 0.3076923076923077,
+  "matches": 6,
+  "total_predicted": 29,
+  "total_gt": 10,
+  "wall_time": 0.024357927999517415,
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Acceptance",
+      "target_id": "confof#Organization",
+      "confidence": 0.36869531869888306
+    },
+    {
+      "source_id": "cmt#Administrator",
+      "target_id": "confof#Administrator",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "cmt#AssociatedChair",
+      "target_id": "confof#Organization",
+      "confidence": 0.4007476568222046
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "confof#Author",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#AuthorNotReviewer",
+      "target_id": "confof#Author",
+      "confidence": 0.5061948299407959
+    },
+    {
+      "source_id": "cmt#Bid",
+      "target_id": "confof#Conference",
+      "confidence": 0.37156495451927185
+    },
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "confof#Administrator",
+      "confidence": 0.5251865386962891
+    },
+    {
+      "source_id": "cmt#Co-author",
+      "target_id": "confof#Author",
+      "confidence": 0.7693233489990234
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "confof#Conference",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "cmt#ConferenceChair",
+      "target_id": "confof#Conference",
+      "confidence": 0.6585781574249268
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "confof#Conference",
+      "confidence": 0.7399159073829651
+    },
+    {
+      "source_id": "cmt#Decision",
+      "target_id": "confof#Contribution",
+      "confidence": 0.3991919159889221
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "confof#Paper",
+      "confidence": 0.6194126009941101
+    },
+    {
+      "source_id": "cmt#ExternalReviewer",
+      "target_id": "confof#Reviewing_event",
+      "confidence": 0.13705456256866455
+    },
+    {
+      "source_id": "cmt#Meta-Review",
+      "target_id": "confof#Reviewing_event",
+      "confidence": 0.5116263031959534
+    },
+    {
+      "source_id": "cmt#Meta-Reviewer",
+      "target_id": "confof#Reviewing_event",
+      "confidence": 0.5144325494766235
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "confof#Paper",
+      "confidence": 0.9999998807907104
+    },
+    {
+      "source_id": "cmt#PaperAbstract",
+      "target_id": "confof#Paper",
+      "confidence": 0.7563048601150513
+    },
+    {
+      "source_id": "cmt#PaperFullVersion",
+      "target_id": "confof#Paper",
+      "confidence": 0.6639871597290039
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "confof#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Preference",
+      "target_id": "confof#Regular",
+      "confidence": 0.4469814598560333
+    },
+    {
+      "source_id": "cmt#ProgramCommittee",
+      "target_id": "confof#Student",
+      "confidence": 0.38083428144454956
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeChair",
+      "target_id": "confof#Workshop",
+      "confidence": 0.28826671838760376
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "confof#Member",
+      "confidence": 0.46200305223464966
+    },
+    {
+      "source_id": "cmt#Rejection",
+      "target_id": "confof#Contribution",
+      "confidence": 0.30377084016799927
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "confof#Reviewing_event",
+      "confidence": 0.6237741112709045
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "confof#Reviewing_event",
+      "confidence": 0.5612380504608154
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "confof#Topic",
+      "confidence": 0.42782968282699585
+    },
+    {
+      "source_id": "cmt#User",
+      "target_id": "confof#Member",
+      "confidence": 0.5958645343780518
+    }
+  ]
+}
