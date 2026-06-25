@@ -1,0 +1,161 @@
+{
+  "approach": "embedding-rubert-base",
+  "pair": "cmt\u2194ekaw",
+  "source": "cmt",
+  "target": "ekaw",
+  "precision": 0.20689655172413793,
+  "recall": 0.75,
+  "f1": 0.32432432432432434,
+  "matches": 6,
+  "total_predicted": 29,
+  "total_gt": 8,
+  "wall_time": 0.029994552001880948,
+  "model": "DeepPavlov/rubert-base-cased",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Acceptance",
+      "target_id": "ekaw#Accepted_Paper",
+      "confidence": 0.5426840782165527
+    },
+    {
+      "source_id": "cmt#Administrator",
+      "target_id": "ekaw#Session",
+      "confidence": 0.7314286231994629
+    },
+    {
+      "source_id": "cmt#AssociatedChair",
+      "target_id": "ekaw#OC_Chair",
+      "confidence": 0.6668113470077515
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "ekaw#Paper",
+      "confidence": 0.8681880235671997
+    },
+    {
+      "source_id": "cmt#AuthorNotReviewer",
+      "target_id": "ekaw#Web_Site",
+      "confidence": 0.6105921268463135
+    },
+    {
+      "source_id": "cmt#Bid",
+      "target_id": "ekaw#Person",
+      "confidence": 0.7437126040458679
+    },
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "ekaw#Workshop_Chair",
+      "confidence": 0.7433328032493591
+    },
+    {
+      "source_id": "cmt#Co-author",
+      "target_id": "ekaw#Multi-author_Volume",
+      "confidence": 0.7149271368980408
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "ekaw#Conference",
+      "confidence": 0.9999998211860657
+    },
+    {
+      "source_id": "cmt#ConferenceChair",
+      "target_id": "ekaw#Conference",
+      "confidence": 0.5068930983543396
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "ekaw#Conference_Participant",
+      "confidence": 0.5021349191665649
+    },
+    {
+      "source_id": "cmt#Decision",
+      "target_id": "ekaw#Location",
+      "confidence": 0.7891033887863159
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "ekaw#Document",
+      "confidence": 0.9999998807907104
+    },
+    {
+      "source_id": "cmt#ExternalReviewer",
+      "target_id": "ekaw#Possible_Reviewer",
+      "confidence": 0.6554715633392334
+    },
+    {
+      "source_id": "cmt#Meta-Review",
+      "target_id": "ekaw#Positive_Review",
+      "confidence": 0.7741020917892456
+    },
+    {
+      "source_id": "cmt#Meta-Reviewer",
+      "target_id": "ekaw#Negative_Review",
+      "confidence": 0.7930298447608948
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "ekaw#Paper",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#PaperAbstract",
+      "target_id": "ekaw#Abstract",
+      "confidence": 0.7070399522781372
+    },
+    {
+      "source_id": "cmt#PaperFullVersion",
+      "target_id": "ekaw#Poster_Paper",
+      "confidence": 0.6641917824745178
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "ekaw#Person",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "cmt#Preference",
+      "target_id": "ekaw#Conference_Session",
+      "confidence": 0.8002212643623352
+    },
+    {
+      "source_id": "cmt#ProgramCommittee",
+      "target_id": "ekaw#Programme_Brochure",
+      "confidence": 0.4815950095653534
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeChair",
+      "target_id": "ekaw#Programme_Brochure",
+      "confidence": 0.48539549112319946
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "ekaw#Programme_Brochure",
+      "confidence": 0.5107145309448242
+    },
+    {
+      "source_id": "cmt#Rejection",
+      "target_id": "ekaw#Rejected_Paper",
+      "confidence": 0.8458690643310547
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "ekaw#Review",
+      "confidence": 0.9999999403953552
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "ekaw#Review",
+      "confidence": 0.8455995321273804
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "ekaw#OC_Member",
+      "confidence": 0.4269392490386963
+    },
+    {
+      "source_id": "cmt#User",
+      "target_id": "ekaw#Paper",
+      "confidence": 0.9358458518981934
+    }
+  ]
+}

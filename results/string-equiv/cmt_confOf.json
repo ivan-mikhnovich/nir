@@ -1,0 +1,40 @@
+{
+  "approach": "string-equiv",
+  "pair": "cmt\u2194confOf",
+  "source": "cmt",
+  "target": "confOf",
+  "precision": 0.8,
+  "recall": 0.4,
+  "f1": 0.5333333333333333,
+  "matches": 4,
+  "total_predicted": 5,
+  "total_gt": 10,
+  "wall_time": 3.771699994103983e-05,
+  "match_pairs": [
+    {
+      "source_id": "cmt#Person",
+      "target_id": "confof#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "confof#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "confof#Paper",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "confof#Author",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Administrator",
+      "target_id": "confof#Administrator",
+      "confidence": 1.0
+    }
+  ]
+}

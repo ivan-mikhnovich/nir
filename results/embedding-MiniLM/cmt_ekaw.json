@@ -1,0 +1,161 @@
+{
+  "approach": "embedding-MiniLM",
+  "pair": "cmt\u2194ekaw",
+  "source": "cmt",
+  "target": "ekaw",
+  "precision": 0.2413793103448276,
+  "recall": 0.875,
+  "f1": 0.3783783783783784,
+  "matches": 7,
+  "total_predicted": 29,
+  "total_gt": 8,
+  "wall_time": 0.01688040400040336,
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Acceptance",
+      "target_id": "ekaw#Accepted_Paper",
+      "confidence": 0.5551033020019531
+    },
+    {
+      "source_id": "cmt#Administrator",
+      "target_id": "ekaw#Agency_Staff_Member",
+      "confidence": 0.49089622497558594
+    },
+    {
+      "source_id": "cmt#AssociatedChair",
+      "target_id": "ekaw#Organisation",
+      "confidence": 0.3812904357910156
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "ekaw#Paper_Author",
+      "confidence": 0.8163520693778992
+    },
+    {
+      "source_id": "cmt#AuthorNotReviewer",
+      "target_id": "ekaw#Paper_Author",
+      "confidence": 0.45346778631210327
+    },
+    {
+      "source_id": "cmt#Bid",
+      "target_id": "ekaw#Proceedings",
+      "confidence": 0.3875575363636017
+    },
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "ekaw#Session_Chair",
+      "confidence": 0.5384995937347412
+    },
+    {
+      "source_id": "cmt#Co-author",
+      "target_id": "ekaw#Paper_Author",
+      "confidence": 0.6755797863006592
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "ekaw#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#ConferenceChair",
+      "target_id": "ekaw#Conference",
+      "confidence": 0.6585780382156372
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "ekaw#Conference_Participant",
+      "confidence": 0.7549580335617065
+    },
+    {
+      "source_id": "cmt#Decision",
+      "target_id": "ekaw#Review",
+      "confidence": 0.4464839994907379
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "ekaw#Document",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#ExternalReviewer",
+      "target_id": "ekaw#Presenter",
+      "confidence": 0.18328864872455597
+    },
+    {
+      "source_id": "cmt#Meta-Review",
+      "target_id": "ekaw#Review",
+      "confidence": 0.7003583312034607
+    },
+    {
+      "source_id": "cmt#Meta-Reviewer",
+      "target_id": "ekaw#Possible_Reviewer",
+      "confidence": 0.7209087610244751
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "ekaw#Paper",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#PaperAbstract",
+      "target_id": "ekaw#Paper",
+      "confidence": 0.7563048601150513
+    },
+    {
+      "source_id": "cmt#PaperFullVersion",
+      "target_id": "ekaw#Paper",
+      "confidence": 0.6639872789382935
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "ekaw#Person",
+      "confidence": 1.000000238418579
+    },
+    {
+      "source_id": "cmt#Preference",
+      "target_id": "ekaw#Location",
+      "confidence": 0.31437164545059204
+    },
+    {
+      "source_id": "cmt#ProgramCommittee",
+      "target_id": "ekaw#Programme_Brochure",
+      "confidence": 0.3871082067489624
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeChair",
+      "target_id": "ekaw#Workshop_Session",
+      "confidence": 0.29372796416282654
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "ekaw#SC_Member",
+      "confidence": 0.3922833800315857
+    },
+    {
+      "source_id": "cmt#Rejection",
+      "target_id": "ekaw#Rejected_Paper",
+      "confidence": 0.5600412487983704
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "ekaw#Review",
+      "confidence": 1.000000238418579
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "ekaw#Possible_Reviewer",
+      "confidence": 0.8397858738899231
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "ekaw#Proceedings",
+      "confidence": 0.39903199672698975
+    },
+    {
+      "source_id": "cmt#User",
+      "target_id": "ekaw#Person",
+      "confidence": 0.5441257953643799
+    }
+  ]
+}

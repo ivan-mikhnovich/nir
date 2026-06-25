@@ -1,0 +1,161 @@
+{
+  "approach": "embedding-ruRoberta-large",
+  "pair": "cmt\u2194iasted",
+  "source": "cmt",
+  "target": "iasted",
+  "precision": 0.13793103448275862,
+  "recall": 1.0,
+  "f1": 0.2424242424242424,
+  "matches": 4,
+  "total_predicted": 29,
+  "total_gt": 4,
+  "wall_time": 0.11550471600276069,
+  "model": "ai-forever/ruRoberta-large",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Acceptance",
+      "target_id": "iasted#Deadline_for_notification_of_acceptance",
+      "confidence": 0.8889456391334534
+    },
+    {
+      "source_id": "cmt#Administrator",
+      "target_id": "iasted#Registration",
+      "confidence": 0.8923795223236084
+    },
+    {
+      "source_id": "cmt#AssociatedChair",
+      "target_id": "iasted#Sponsor_company_house",
+      "confidence": 0.886431872844696
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "iasted#Author",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "cmt#AuthorNotReviewer",
+      "target_id": "iasted#Author_information_form",
+      "confidence": 0.9165836572647095
+    },
+    {
+      "source_id": "cmt#Bid",
+      "target_id": "iasted#Card",
+      "confidence": 0.8151350021362305
+    },
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "iasted#Session_chair",
+      "confidence": 0.85296630859375
+    },
+    {
+      "source_id": "cmt#Co-author",
+      "target_id": "iasted#Author",
+      "confidence": 0.9121233224868774
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "iasted#Conference_city",
+      "confidence": 0.9552556276321411
+    },
+    {
+      "source_id": "cmt#ConferenceChair",
+      "target_id": "iasted#Conference_city",
+      "confidence": 0.9483330249786377
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "iasted#Conference_Hiker",
+      "confidence": 0.934565007686615
+    },
+    {
+      "source_id": "cmt#Decision",
+      "target_id": "iasted#Departure",
+      "confidence": 0.8728838562965393
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "iasted#Document",
+      "confidence": 0.9999998807907104
+    },
+    {
+      "source_id": "cmt#ExternalReviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.9198147654533386
+    },
+    {
+      "source_id": "cmt#Meta-Review",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.9076743721961975
+    },
+    {
+      "source_id": "cmt#Meta-Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.9154472947120667
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "iasted#Publication",
+      "confidence": 0.8661046028137207
+    },
+    {
+      "source_id": "cmt#PaperAbstract",
+      "target_id": "iasted#Final_manuscript",
+      "confidence": 0.8793776631355286
+    },
+    {
+      "source_id": "cmt#PaperFullVersion",
+      "target_id": "iasted#PowerPoint_presentation",
+      "confidence": 0.8655883073806763
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "iasted#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Preference",
+      "target_id": "iasted#Presentation",
+      "confidence": 0.9204981923103333
+    },
+    {
+      "source_id": "cmt#ProgramCommittee",
+      "target_id": "iasted#Technical_commitee",
+      "confidence": 0.8847386837005615
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeChair",
+      "target_id": "iasted#Brief_introduction_for_Session_chair",
+      "confidence": 0.8967981934547424
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "iasted#Nonmember_registration_fee",
+      "confidence": 0.8966645002365112
+    },
+    {
+      "source_id": "cmt#Rejection",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.9098939895629883
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "iasted#Review",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "iasted#Overhead_projector",
+      "confidence": 0.8905993103981018
+    },
+    {
+      "source_id": "cmt#User",
+      "target_id": "iasted#Computer",
+      "confidence": 0.8538618683815002
+    }
+  ]
+}

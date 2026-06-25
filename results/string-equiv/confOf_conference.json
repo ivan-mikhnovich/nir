@@ -1,0 +1,55 @@
+{
+  "approach": "string-equiv",
+  "pair": "confOf\u2194conference",
+  "source": "confOf",
+  "target": "conference",
+  "precision": 0.875,
+  "recall": 0.6363636363636364,
+  "f1": 0.7368421052631579,
+  "matches": 7,
+  "total_predicted": 8,
+  "total_gt": 11,
+  "wall_time": 3.163699875585735e-05,
+  "match_pairs": [
+    {
+      "source_id": "confof#Organization",
+      "target_id": "Conference#Organization",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Person",
+      "target_id": "Conference#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Topic",
+      "target_id": "Conference#Topic",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Poster",
+      "target_id": "Conference#Poster",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Paper",
+      "target_id": "Conference#Paper",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Workshop",
+      "target_id": "Conference#Workshop",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Conference",
+      "target_id": "Conference#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Tutorial",
+      "target_id": "Conference#Tutorial",
+      "confidence": 1.0
+    }
+  ]
+}

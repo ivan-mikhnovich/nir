@@ -1,0 +1,40 @@
+{
+  "approach": "string-equiv",
+  "pair": "conference\u2194iasted",
+  "source": "conference",
+  "target": "iasted",
+  "precision": 0.8,
+  "recall": 0.3076923076923077,
+  "f1": 0.4444444444444444,
+  "matches": 4,
+  "total_predicted": 5,
+  "total_gt": 13,
+  "wall_time": 4.444600017450284e-05,
+  "match_pairs": [
+    {
+      "source_id": "Conference#Person",
+      "target_id": "iasted#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Presentation",
+      "target_id": "iasted#Presentation",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Tutorial",
+      "target_id": "iasted#Tutorial",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Review",
+      "target_id": "iasted#Review",
+      "confidence": 1.0
+    }
+  ]
+}

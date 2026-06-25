@@ -1,0 +1,161 @@
+{
+  "approach": "embedding-LaBSE",
+  "pair": "cmt\u2194edas",
+  "source": "cmt",
+  "target": "edas",
+  "precision": 0.27586206896551724,
+  "recall": 1.0,
+  "f1": 0.4324324324324324,
+  "matches": 8,
+  "total_predicted": 29,
+  "total_gt": 8,
+  "wall_time": 0.03533482999773696,
+  "model": "sentence-transformers/LaBSE",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Acceptance",
+      "target_id": "edas#Reception",
+      "confidence": 0.8388959169387817
+    },
+    {
+      "source_id": "cmt#Administrator",
+      "target_id": "edas#Author",
+      "confidence": 0.5519569516181946
+    },
+    {
+      "source_id": "cmt#AssociatedChair",
+      "target_id": "edas#SessionChair",
+      "confidence": 0.5983595252037048
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "edas#Author",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "cmt#AuthorNotReviewer",
+      "target_id": "edas#Author",
+      "confidence": 0.7955113053321838
+    },
+    {
+      "source_id": "cmt#Bid",
+      "target_id": "edas#Presenter",
+      "confidence": 0.5866583585739136
+    },
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "edas#Attendee",
+      "confidence": 0.5906521677970886
+    },
+    {
+      "source_id": "cmt#Co-author",
+      "target_id": "edas#Author",
+      "confidence": 0.8156936764717102
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "edas#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#ConferenceChair",
+      "target_id": "edas#ConferenceChair",
+      "confidence": 1.000000238418579
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "edas#ConferenceDinner",
+      "confidence": 0.8463342189788818
+    },
+    {
+      "source_id": "cmt#Decision",
+      "target_id": "edas#ReviewQuestion",
+      "confidence": 0.48741379380226135
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "edas#Document",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#ExternalReviewer",
+      "target_id": "edas#Reviewer",
+      "confidence": 0.6267334818840027
+    },
+    {
+      "source_id": "cmt#Meta-Review",
+      "target_id": "edas#Review",
+      "confidence": 0.6464294195175171
+    },
+    {
+      "source_id": "cmt#Meta-Reviewer",
+      "target_id": "edas#Reviewer",
+      "confidence": 0.71085125207901
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "edas#Paper",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#PaperAbstract",
+      "target_id": "edas#Paper",
+      "confidence": 0.8033862709999084
+    },
+    {
+      "source_id": "cmt#PaperFullVersion",
+      "target_id": "edas#PaperPresentation",
+      "confidence": 0.6828755140304565
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "edas#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Preference",
+      "target_id": "edas#Topic",
+      "confidence": 0.4445715546607971
+    },
+    {
+      "source_id": "cmt#ProgramCommittee",
+      "target_id": "edas#Programme",
+      "confidence": 0.7679956555366516
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeChair",
+      "target_id": "edas#Programme",
+      "confidence": 0.7163271903991699
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "edas#Programme",
+      "confidence": 0.6972693800926208
+    },
+    {
+      "source_id": "cmt#Rejection",
+      "target_id": "edas#RejectRating",
+      "confidence": 0.8340184688568115
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "edas#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "edas#Reviewer",
+      "confidence": 1.000000238418579
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "edas#Topic",
+      "confidence": 0.7847974300384521
+    },
+    {
+      "source_id": "cmt#User",
+      "target_id": "edas#Person",
+      "confidence": 0.6293936371803284
+    }
+  ]
+}

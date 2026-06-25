@@ -1,0 +1,311 @@
+{
+  "approach": "embedding-MiniLM",
+  "pair": "conference\u2194sigkdd",
+  "source": "conference",
+  "target": "sigkdd",
+  "precision": 0.2033898305084746,
+  "recall": 1.0,
+  "f1": 0.33802816901408456,
+  "matches": 12,
+  "total_predicted": 59,
+  "total_gt": 12,
+  "wall_time": 0.015792217000125675,
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "match_pairs": [
+    {
+      "source_id": "Conference#Abstract",
+      "target_id": "sigkdd#Abstract",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "Conference#Accepted_contribution",
+      "target_id": "sigkdd#Award",
+      "confidence": 0.452160507440567
+    },
+    {
+      "source_id": "Conference#Active_conference_participant",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.6485191583633423
+    },
+    {
+      "source_id": "Conference#Call_for_paper",
+      "target_id": "sigkdd#Paper",
+      "confidence": 0.7846174240112305
+    },
+    {
+      "source_id": "Conference#Call_for_participation",
+      "target_id": "sigkdd#Organizing_Committee",
+      "confidence": 0.4283917546272278
+    },
+    {
+      "source_id": "Conference#Camera_ready_contribution",
+      "target_id": "sigkdd#Award",
+      "confidence": 0.26145023107528687
+    },
+    {
+      "source_id": "Conference#Chair",
+      "target_id": "sigkdd#General_Chair",
+      "confidence": 0.8049275875091553
+    },
+    {
+      "source_id": "Conference#Co-chair",
+      "target_id": "sigkdd#General_Chair",
+      "confidence": 0.6972280740737915
+    },
+    {
+      "source_id": "Conference#Committee",
+      "target_id": "sigkdd#Committee",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Committee_member",
+      "target_id": "sigkdd#Program_Committee_member",
+      "confidence": 0.8416009545326233
+    },
+    {
+      "source_id": "Conference#Conference",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.9999999403953552
+    },
+    {
+      "source_id": "Conference#Conference_announcement",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.7868601083755493
+    },
+    {
+      "source_id": "Conference#Conference_applicant",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.6522355675697327
+    },
+    {
+      "source_id": "Conference#Conference_contribution",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.7077383995056152
+    },
+    {
+      "source_id": "Conference#Conference_contributor",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.7215802073478699
+    },
+    {
+      "source_id": "Conference#Conference_document",
+      "target_id": "sigkdd#Document",
+      "confidence": 0.6889073252677917
+    },
+    {
+      "source_id": "Conference#Conference_fees",
+      "target_id": "sigkdd#Fee",
+      "confidence": 0.6700059175491333
+    },
+    {
+      "source_id": "Conference#Conference_part",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.8700488805770874
+    },
+    {
+      "source_id": "Conference#Conference_participant",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.816257119178772
+    },
+    {
+      "source_id": "Conference#Conference_proceedings",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.7949857115745544
+    },
+    {
+      "source_id": "Conference#Conference_volume",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.7303855419158936
+    },
+    {
+      "source_id": "Conference#Conference_www",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.8424111604690552
+    },
+    {
+      "source_id": "Conference#Contribution_1th-author",
+      "target_id": "sigkdd#Author",
+      "confidence": 0.5706686973571777
+    },
+    {
+      "source_id": "Conference#Contribution_co-author",
+      "target_id": "sigkdd#Author",
+      "confidence": 0.5893338918685913
+    },
+    {
+      "source_id": "Conference#Early_paid_applicant",
+      "target_id": "sigkdd#Registration_Student",
+      "confidence": 0.413381427526474
+    },
+    {
+      "source_id": "Conference#Extended_abstract",
+      "target_id": "sigkdd#Abstract",
+      "confidence": 0.8137854337692261
+    },
+    {
+      "source_id": "Conference#Important_dates",
+      "target_id": "sigkdd#Deadline",
+      "confidence": 0.4480838477611542
+    },
+    {
+      "source_id": "Conference#Information_for_participants",
+      "target_id": "sigkdd#Organizing_Committee",
+      "confidence": 0.31523555517196655
+    },
+    {
+      "source_id": "Conference#Invited_speaker",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "Conference#Invited_talk",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 0.7853121757507324
+    },
+    {
+      "source_id": "Conference#Late_paid_applicant",
+      "target_id": "sigkdd#Registration_Student",
+      "confidence": 0.37491512298583984
+    },
+    {
+      "source_id": "Conference#Organization",
+      "target_id": "sigkdd#Organizing_Committee",
+      "confidence": 0.6689579486846924
+    },
+    {
+      "source_id": "Conference#Organizer",
+      "target_id": "sigkdd#Organizing_Committee",
+      "confidence": 0.4636712074279785
+    },
+    {
+      "source_id": "Conference#Organizing_committee",
+      "target_id": "sigkdd#Organizing_Committee",
+      "confidence": 0.9999999403953552
+    },
+    {
+      "source_id": "Conference#Paid_applicant",
+      "target_id": "sigkdd#Registration_Student",
+      "confidence": 0.46664321422576904
+    },
+    {
+      "source_id": "Conference#Paper",
+      "target_id": "sigkdd#Paper",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Passive_conference_participant",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.5823203325271606
+    },
+    {
+      "source_id": "Conference#Person",
+      "target_id": "sigkdd#Person",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "Conference#Poster",
+      "target_id": "sigkdd#Paper",
+      "confidence": 0.5427091717720032
+    },
+    {
+      "source_id": "Conference#Presentation",
+      "target_id": "sigkdd#Exhibitor",
+      "confidence": 0.5215880274772644
+    },
+    {
+      "source_id": "Conference#Program_committee",
+      "target_id": "sigkdd#Program_Committee",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "Conference#Publisher",
+      "target_id": "sigkdd#Author",
+      "confidence": 0.5511735677719116
+    },
+    {
+      "source_id": "Conference#Registeered_applicant",
+      "target_id": "sigkdd#Registration_Student",
+      "confidence": 0.6452575922012329
+    },
+    {
+      "source_id": "Conference#Regular_author",
+      "target_id": "sigkdd#Author",
+      "confidence": 0.6991560459136963
+    },
+    {
+      "source_id": "Conference#Regular_contribution",
+      "target_id": "sigkdd#Best_Research_Paper_Award",
+      "confidence": 0.3624751567840576
+    },
+    {
+      "source_id": "Conference#Rejected_contribution",
+      "target_id": "sigkdd#Award",
+      "confidence": 0.31683140993118286
+    },
+    {
+      "source_id": "Conference#Review",
+      "target_id": "sigkdd#Review",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "Conference#Review_expertise",
+      "target_id": "sigkdd#Review",
+      "confidence": 0.676682710647583
+    },
+    {
+      "source_id": "Conference#Review_preference",
+      "target_id": "sigkdd#Review",
+      "confidence": 0.6840206384658813
+    },
+    {
+      "source_id": "Conference#Reviewed_contribution",
+      "target_id": "sigkdd#Review",
+      "confidence": 0.686943769454956
+    },
+    {
+      "source_id": "Conference#Reviewer",
+      "target_id": "sigkdd#Review",
+      "confidence": 0.8096710443496704
+    },
+    {
+      "source_id": "Conference#Steering_committee",
+      "target_id": "sigkdd#Committee",
+      "confidence": 0.7564718723297119
+    },
+    {
+      "source_id": "Conference#Submitted_contribution",
+      "target_id": "sigkdd#Deadline_Paper_Submission",
+      "confidence": 0.44288378953933716
+    },
+    {
+      "source_id": "Conference#Topic",
+      "target_id": "sigkdd#Place",
+      "confidence": 0.42150166630744934
+    },
+    {
+      "source_id": "Conference#Track",
+      "target_id": "sigkdd#Paper",
+      "confidence": 0.33361637592315674
+    },
+    {
+      "source_id": "Conference#Track-workshop_chair",
+      "target_id": "sigkdd#Program_Chair",
+      "confidence": 0.7158708572387695
+    },
+    {
+      "source_id": "Conference#Tutorial",
+      "target_id": "sigkdd#Webmaster",
+      "confidence": 0.32384711503982544
+    },
+    {
+      "source_id": "Conference#Workshop",
+      "target_id": "sigkdd#Exhibitor",
+      "confidence": 0.4488599896430969
+    },
+    {
+      "source_id": "Conference#Written_contribution",
+      "target_id": "sigkdd#Author",
+      "confidence": 0.5824921131134033
+    }
+  ]
+}

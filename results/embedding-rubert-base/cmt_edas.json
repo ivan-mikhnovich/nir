@@ -1,0 +1,161 @@
+{
+  "approach": "embedding-rubert-base",
+  "pair": "cmt\u2194edas",
+  "source": "cmt",
+  "target": "edas",
+  "precision": 0.27586206896551724,
+  "recall": 1.0,
+  "f1": 0.4324324324324324,
+  "matches": 8,
+  "total_predicted": 29,
+  "total_gt": 8,
+  "wall_time": 0.03614625200134469,
+  "model": "DeepPavlov/rubert-base-cased",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Acceptance",
+      "target_id": "edas#AcceptRating",
+      "confidence": 0.7476752400398254
+    },
+    {
+      "source_id": "cmt#Administrator",
+      "target_id": "edas#Organization",
+      "confidence": 0.7315700650215149
+    },
+    {
+      "source_id": "cmt#AssociatedChair",
+      "target_id": "edas#SessionChair",
+      "confidence": 0.8493850827217102
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "edas#Author",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "cmt#AuthorNotReviewer",
+      "target_id": "edas#PersonalReviewHistory",
+      "confidence": 0.8272145986557007
+    },
+    {
+      "source_id": "cmt#Bid",
+      "target_id": "edas#Person",
+      "confidence": 0.7437127232551575
+    },
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "edas#Reviewer",
+      "confidence": 0.6483673453330994
+    },
+    {
+      "source_id": "cmt#Co-author",
+      "target_id": "edas#Author",
+      "confidence": 0.556857705116272
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "edas#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#ConferenceChair",
+      "target_id": "edas#ConferenceChair",
+      "confidence": 0.9999998807907104
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "edas#ConferenceSession",
+      "confidence": 0.776387095451355
+    },
+    {
+      "source_id": "cmt#Decision",
+      "target_id": "edas#Reception",
+      "confidence": 0.7706314921379089
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "edas#Document",
+      "confidence": 0.9999998807907104
+    },
+    {
+      "source_id": "cmt#ExternalReviewer",
+      "target_id": "edas#PersonalReviewHistory",
+      "confidence": 0.7728863954544067
+    },
+    {
+      "source_id": "cmt#Meta-Review",
+      "target_id": "edas#ReviewForm",
+      "confidence": 0.7218800783157349
+    },
+    {
+      "source_id": "cmt#Meta-Reviewer",
+      "target_id": "edas#Reviewer",
+      "confidence": 0.7212605476379395
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "edas#Paper",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "cmt#PaperAbstract",
+      "target_id": "edas#ReviewForm",
+      "confidence": 0.6715304851531982
+    },
+    {
+      "source_id": "cmt#PaperFullVersion",
+      "target_id": "edas#ReviewForm",
+      "confidence": 0.7560563087463379
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "edas#Person",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "cmt#Preference",
+      "target_id": "edas#Programme",
+      "confidence": 0.7125483751296997
+    },
+    {
+      "source_id": "cmt#ProgramCommittee",
+      "target_id": "edas#RadioCommunicationsTopic",
+      "confidence": 0.6891366243362427
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeChair",
+      "target_id": "edas#MobileComputingTopic",
+      "confidence": 0.7256986498832703
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "edas#ParallelAndDistributedComputingTopic",
+      "confidence": 0.7631866931915283
+    },
+    {
+      "source_id": "cmt#Rejection",
+      "target_id": "edas#Reception",
+      "confidence": 0.8220698833465576
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "edas#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "edas#Reviewer",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "edas#NonAcademicEvent",
+      "confidence": 0.6397322416305542
+    },
+    {
+      "source_id": "cmt#User",
+      "target_id": "edas#Paper",
+      "confidence": 0.9358459711074829
+    }
+  ]
+}

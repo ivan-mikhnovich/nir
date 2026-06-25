@@ -1,0 +1,35 @@
+{
+  "approach": "string-equiv",
+  "pair": "confOf\u2194sigkdd",
+  "source": "confOf",
+  "target": "sigkdd",
+  "precision": 1.0,
+  "recall": 0.6666666666666666,
+  "f1": 0.8,
+  "matches": 4,
+  "total_predicted": 4,
+  "total_gt": 6,
+  "wall_time": 2.1728001229348592e-05,
+  "match_pairs": [
+    {
+      "source_id": "confof#Person",
+      "target_id": "sigkdd#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Paper",
+      "target_id": "sigkdd#Paper",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Conference",
+      "target_id": "sigkdd#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Author",
+      "target_id": "sigkdd#Author",
+      "confidence": 1.0
+    }
+  ]
+}

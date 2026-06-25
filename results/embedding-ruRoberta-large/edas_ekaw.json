@@ -1,0 +1,531 @@
+{
+  "approach": "embedding-ruRoberta-large",
+  "pair": "edas\u2194ekaw",
+  "source": "edas",
+  "target": "ekaw",
+  "precision": 0.1262135922330097,
+  "recall": 0.6842105263157895,
+  "f1": 0.21311475409836064,
+  "matches": 13,
+  "total_predicted": 103,
+  "total_gt": 19,
+  "wall_time": 0.1366721439990215,
+  "model": "ai-forever/ruRoberta-large",
+  "match_pairs": [
+    {
+      "source_id": "edas#AcademiaOrganization",
+      "target_id": "ekaw#Organisation",
+      "confidence": 0.931784987449646
+    },
+    {
+      "source_id": "edas#AcademicEvent",
+      "target_id": "ekaw#Academic_Institution",
+      "confidence": 0.9234132766723633
+    },
+    {
+      "source_id": "edas#AcceptRating",
+      "target_id": "ekaw#Accepted_Paper",
+      "confidence": 0.8779778480529785
+    },
+    {
+      "source_id": "edas#AcceptedPaper",
+      "target_id": "ekaw#Accepted_Paper",
+      "confidence": 0.9825440645217896
+    },
+    {
+      "source_id": "edas#AccommodationPlace",
+      "target_id": "ekaw#Agency_Staff_Member",
+      "confidence": 0.8834342360496521
+    },
+    {
+      "source_id": "edas#AccpetIfRoomRating",
+      "target_id": "ekaw#Programme_Brochure",
+      "confidence": 0.87303626537323
+    },
+    {
+      "source_id": "edas#ActivePaper",
+      "target_id": "ekaw#Poster_Paper",
+      "confidence": 0.9291970729827881
+    },
+    {
+      "source_id": "edas#AntennasTopic",
+      "target_id": "ekaw#Agency_Staff_Member",
+      "confidence": 0.8465205430984497
+    },
+    {
+      "source_id": "edas#Attendee",
+      "target_id": "ekaw#Presenter",
+      "confidence": 0.8531055450439453
+    },
+    {
+      "source_id": "edas#Author",
+      "target_id": "ekaw#Paper_Author",
+      "confidence": 0.9038974642753601
+    },
+    {
+      "source_id": "edas#BreakEvent",
+      "target_id": "ekaw#Invited_Speaker",
+      "confidence": 0.8772214651107788
+    },
+    {
+      "source_id": "edas#CADTopic",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.8687664270401001
+    },
+    {
+      "source_id": "edas#Call",
+      "target_id": "ekaw#Flyer",
+      "confidence": 0.8342403769493103
+    },
+    {
+      "source_id": "edas#CallForManuscripts",
+      "target_id": "ekaw#Submitted_Paper",
+      "confidence": 0.8831222057342529
+    },
+    {
+      "source_id": "edas#CallForPapers",
+      "target_id": "ekaw#Conference_Paper",
+      "confidence": 0.9144180417060852
+    },
+    {
+      "source_id": "edas#CallForReviews",
+      "target_id": "ekaw#Possible_Reviewer",
+      "confidence": 0.8956601619720459
+    },
+    {
+      "source_id": "edas#ClosingTalk",
+      "target_id": "ekaw#Contributed_Talk",
+      "confidence": 0.8879899978637695
+    },
+    {
+      "source_id": "edas#CoffeeBreak",
+      "target_id": "ekaw#Invited_Speaker",
+      "confidence": 0.8790296316146851
+    },
+    {
+      "source_id": "edas#CommunicationTheoryTopic",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.8958753347396851
+    },
+    {
+      "source_id": "edas#CommunicationsTopic",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.8972081542015076
+    },
+    {
+      "source_id": "edas#ComputerArchitectureTopic",
+      "target_id": "ekaw#Multi-author_Volume",
+      "confidence": 0.8812803030014038
+    },
+    {
+      "source_id": "edas#ComputerNetworksAapplicationsTopic",
+      "target_id": "ekaw#Late-Registered_Participant",
+      "confidence": 0.8795350193977356
+    },
+    {
+      "source_id": "edas#ComputerNetworksEnterpriseTopic",
+      "target_id": "ekaw#Submitted_Paper",
+      "confidence": 0.8832617998123169
+    },
+    {
+      "source_id": "edas#ComputerNetworksManagementTopic",
+      "target_id": "ekaw#Early-Registered_Participant",
+      "confidence": 0.8867395520210266
+    },
+    {
+      "source_id": "edas#ComputerNetworksMeasurementsTopic",
+      "target_id": "ekaw#Early-Registered_Participant",
+      "confidence": 0.8997772932052612
+    },
+    {
+      "source_id": "edas#ComputerNetworksOpticalTopic",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.8898420929908752
+    },
+    {
+      "source_id": "edas#ComputerNetworksSecurityTopic",
+      "target_id": "ekaw#Early-Registered_Participant",
+      "confidence": 0.8843978047370911
+    },
+    {
+      "source_id": "edas#ComputerNetworksSensorTopic",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.8826677799224854
+    },
+    {
+      "source_id": "edas#ComputerNetworksSwitchingTopic",
+      "target_id": "ekaw#Early-Registered_Participant",
+      "confidence": 0.8786651492118835
+    },
+    {
+      "source_id": "edas#ComputerNetworksTopic",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.8904229402542114
+    },
+    {
+      "source_id": "edas#Conference",
+      "target_id": "ekaw#Conference",
+      "confidence": 0.9999999403953552
+    },
+    {
+      "source_id": "edas#ConferenceChair",
+      "target_id": "ekaw#Conference",
+      "confidence": 0.95645672082901
+    },
+    {
+      "source_id": "edas#ConferenceDinner",
+      "target_id": "ekaw#Conference",
+      "confidence": 0.9353642463684082
+    },
+    {
+      "source_id": "edas#ConferenceEvent",
+      "target_id": "ekaw#Conference",
+      "confidence": 0.9568343162536621
+    },
+    {
+      "source_id": "edas#ConferenceSession",
+      "target_id": "ekaw#Conference_Session",
+      "confidence": 0.9781928062438965
+    },
+    {
+      "source_id": "edas#ConferenceVenuePlace",
+      "target_id": "ekaw#Conference_Banquet",
+      "confidence": 0.9243425130844116
+    },
+    {
+      "source_id": "edas#ContactInformation",
+      "target_id": "ekaw#Invited_Talk_Abstract",
+      "confidence": 0.859290599822998
+    },
+    {
+      "source_id": "edas#Country",
+      "target_id": "ekaw#Organisation",
+      "confidence": 0.8630329966545105
+    },
+    {
+      "source_id": "edas#CryptographyTopic",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.8910529613494873
+    },
+    {
+      "source_id": "edas#DiningPlace",
+      "target_id": "ekaw#Camera_Ready_Paper",
+      "confidence": 0.8650407195091248
+    },
+    {
+      "source_id": "edas#Document",
+      "target_id": "ekaw#Document",
+      "confidence": 0.9999999403953552
+    },
+    {
+      "source_id": "edas#Excursion",
+      "target_id": "ekaw#Poster_Session",
+      "confidence": 0.8612326383590698
+    },
+    {
+      "source_id": "edas#FreeTimeBreak",
+      "target_id": "ekaw#Invited_Speaker",
+      "confidence": 0.8776350021362305
+    },
+    {
+      "source_id": "edas#GovernmentOrganization",
+      "target_id": "ekaw#Organising_Agency",
+      "confidence": 0.9369347095489502
+    },
+    {
+      "source_id": "edas#IndustryOrganization",
+      "target_id": "ekaw#Organisation",
+      "confidence": 0.9470528364181519
+    },
+    {
+      "source_id": "edas#MealBreak",
+      "target_id": "ekaw#Invited_Speaker",
+      "confidence": 0.8837200999259949
+    },
+    {
+      "source_id": "edas#MealEvent",
+      "target_id": "ekaw#Event",
+      "confidence": 0.8643931150436401
+    },
+    {
+      "source_id": "edas#MealMenu",
+      "target_id": "ekaw#Demo_Paper",
+      "confidence": 0.842650294303894
+    },
+    {
+      "source_id": "edas#MedicineTopic",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.8799536228179932
+    },
+    {
+      "source_id": "edas#MeetingRoomPlace",
+      "target_id": "ekaw#Programme_Brochure",
+      "confidence": 0.8800656795501709
+    },
+    {
+      "source_id": "edas#MicroelectronicsTopic",
+      "target_id": "ekaw#Multi-author_Volume",
+      "confidence": 0.8427963852882385
+    },
+    {
+      "source_id": "edas#MobileComputingTopic",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.9076316356658936
+    },
+    {
+      "source_id": "edas#MultimediaTopic",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.8977979421615601
+    },
+    {
+      "source_id": "edas#NGO",
+      "target_id": "ekaw#OC_Member",
+      "confidence": 0.8345173597335815
+    },
+    {
+      "source_id": "edas#NonAcademicEvent",
+      "target_id": "ekaw#Academic_Institution",
+      "confidence": 0.9070364832878113
+    },
+    {
+      "source_id": "edas#NumericalReviewQuestion",
+      "target_id": "ekaw#Rejected_Paper",
+      "confidence": 0.8945874571800232
+    },
+    {
+      "source_id": "edas#OperatingTopicsystems",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.8830517530441284
+    },
+    {
+      "source_id": "edas#Organization",
+      "target_id": "ekaw#Organisation",
+      "confidence": 0.9878098368644714
+    },
+    {
+      "source_id": "edas#OrganizationalMeeting",
+      "target_id": "ekaw#Organisation",
+      "confidence": 0.9227851629257202
+    },
+    {
+      "source_id": "edas#Paper",
+      "target_id": "ekaw#Paper",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#PaperPresentation",
+      "target_id": "ekaw#Conference_Paper",
+      "confidence": 0.9293447732925415
+    },
+    {
+      "source_id": "edas#ParallelAndDistributedComputingTopic",
+      "target_id": "ekaw#Early-Registered_Participant",
+      "confidence": 0.9146242141723633
+    },
+    {
+      "source_id": "edas#PendingPaper",
+      "target_id": "ekaw#Paper",
+      "confidence": 0.9418905973434448
+    },
+    {
+      "source_id": "edas#PerformanceTopic",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.8876507878303528
+    },
+    {
+      "source_id": "edas#Person",
+      "target_id": "ekaw#Person",
+      "confidence": 0.9999998807907104
+    },
+    {
+      "source_id": "edas#PersonalHistory",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.8704003691673279
+    },
+    {
+      "source_id": "edas#PersonalPublicationHistory",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.8676391243934631
+    },
+    {
+      "source_id": "edas#PersonalReviewHistory",
+      "target_id": "ekaw#Possible_Reviewer",
+      "confidence": 0.9008039236068726
+    },
+    {
+      "source_id": "edas#Place",
+      "target_id": "ekaw#Presenter",
+      "confidence": 0.8531914353370667
+    },
+    {
+      "source_id": "edas#PowerlineTransmissionTopic",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.8943874835968018
+    },
+    {
+      "source_id": "edas#Presenter",
+      "target_id": "ekaw#Presenter",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#Programme",
+      "target_id": "ekaw#Programme_Brochure",
+      "confidence": 0.933926522731781
+    },
+    {
+      "source_id": "edas#PublishedPaper",
+      "target_id": "ekaw#Assigned_Paper",
+      "confidence": 0.9319996237754822
+    },
+    {
+      "source_id": "edas#RadioCommunicationsTopic",
+      "target_id": "ekaw#Late-Registered_Participant",
+      "confidence": 0.8802028894424438
+    },
+    {
+      "source_id": "edas#RatedPapers",
+      "target_id": "ekaw#Rejected_Paper",
+      "confidence": 0.9063746929168701
+    },
+    {
+      "source_id": "edas#Reception",
+      "target_id": "ekaw#Session",
+      "confidence": 0.8634448647499084
+    },
+    {
+      "source_id": "edas#RejectRating",
+      "target_id": "ekaw#Rejected_Paper",
+      "confidence": 0.8799746632575989
+    },
+    {
+      "source_id": "edas#RejectedPaper",
+      "target_id": "ekaw#Rejected_Paper",
+      "confidence": 0.9800813794136047
+    },
+    {
+      "source_id": "edas#Review",
+      "target_id": "ekaw#Review",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "edas#ReviewForm",
+      "target_id": "ekaw#Review",
+      "confidence": 0.9402185678482056
+    },
+    {
+      "source_id": "edas#ReviewQuestion",
+      "target_id": "ekaw#Review",
+      "confidence": 0.9093831777572632
+    },
+    {
+      "source_id": "edas#ReviewRating",
+      "target_id": "ekaw#Review",
+      "confidence": 0.916871190071106
+    },
+    {
+      "source_id": "edas#Reviewer",
+      "target_id": "ekaw#Review",
+      "confidence": 0.9626134634017944
+    },
+    {
+      "source_id": "edas#SatelliteAndSpaceCommunicationsTopic",
+      "target_id": "ekaw#Late-Registered_Participant",
+      "confidence": 0.8689179420471191
+    },
+    {
+      "source_id": "edas#SecurityTopic",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.9143158197402954
+    },
+    {
+      "source_id": "edas#SessionChair",
+      "target_id": "ekaw#Session_Chair",
+      "confidence": 0.9814894795417786
+    },
+    {
+      "source_id": "edas#SignalProcessingTopic",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.8972432613372803
+    },
+    {
+      "source_id": "edas#SingleLevelConference",
+      "target_id": "ekaw#Conference_Participant",
+      "confidence": 0.9089910984039307
+    },
+    {
+      "source_id": "edas#SlideSet",
+      "target_id": "ekaw#Session",
+      "confidence": 0.8557571172714233
+    },
+    {
+      "source_id": "edas#SocialEvent",
+      "target_id": "ekaw#Social_Event",
+      "confidence": 0.9691900610923767
+    },
+    {
+      "source_id": "edas#Sponsorship",
+      "target_id": "ekaw#Workshop_Session",
+      "confidence": 0.8756582736968994
+    },
+    {
+      "source_id": "edas#TPCMember",
+      "target_id": "ekaw#SC_Member",
+      "confidence": 0.9082136154174805
+    },
+    {
+      "source_id": "edas#TalkEvent",
+      "target_id": "ekaw#Event",
+      "confidence": 0.8921242952346802
+    },
+    {
+      "source_id": "edas#TestOnlyTopic",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.8931511044502258
+    },
+    {
+      "source_id": "edas#TextualReviewQuestion",
+      "target_id": "ekaw#Contributed_Talk",
+      "confidence": 0.9066495299339294
+    },
+    {
+      "source_id": "edas#Topic",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.8848541975021362
+    },
+    {
+      "source_id": "edas#TravelGrant",
+      "target_id": "ekaw#Programme_Brochure",
+      "confidence": 0.8795554637908936
+    },
+    {
+      "source_id": "edas#TwoLevelConference",
+      "target_id": "ekaw#Conference_Trip",
+      "confidence": 0.9169303178787231
+    },
+    {
+      "source_id": "edas#WeekRejectRating",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.8960579633712769
+    },
+    {
+      "source_id": "edas#WelcomeTalk",
+      "target_id": "ekaw#Invited_Talk",
+      "confidence": 0.8795461654663086
+    },
+    {
+      "source_id": "edas#WirelessCommunicationsTopic",
+      "target_id": "ekaw#Submitted_Paper",
+      "confidence": 0.8922885656356812
+    },
+    {
+      "source_id": "edas#WithdrawnPaper",
+      "target_id": "ekaw#Submitted_Paper",
+      "confidence": 0.9075076580047607
+    },
+    {
+      "source_id": "edas#Workshop",
+      "target_id": "ekaw#Workshop",
+      "confidence": 1.0000001192092896
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "approach": "embedding-rubert-base",
+  "pair": "cmt\u2194conference",
+  "source": "cmt",
+  "target": "conference",
+  "precision": 0.27586206896551724,
+  "recall": 0.7272727272727273,
+  "f1": 0.4,
+  "matches": 8,
+  "total_predicted": 29,
+  "total_gt": 11,
+  "wall_time": 0.022908309001650196,
+  "model": "DeepPavlov/rubert-base-cased",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Acceptance",
+      "target_id": "Conference#Accepted_contribution",
+      "confidence": 0.5296463966369629
+    },
+    {
+      "source_id": "cmt#Administrator",
+      "target_id": "Conference#Organization",
+      "confidence": 0.7315700650215149
+    },
+    {
+      "source_id": "cmt#AssociatedChair",
+      "target_id": "Conference#Organization",
+      "confidence": 0.626033365726471
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "Conference#Committee",
+      "confidence": 0.8834086656570435
+    },
+    {
+      "source_id": "cmt#AuthorNotReviewer",
+      "target_id": "Conference#Reviewed_contribution",
+      "confidence": 0.6022573709487915
+    },
+    {
+      "source_id": "cmt#Bid",
+      "target_id": "Conference#Person",
+      "confidence": 0.7437126040458679
+    },
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "Conference#Chair",
+      "confidence": 0.8190693855285645
+    },
+    {
+      "source_id": "cmt#Co-author",
+      "target_id": "Conference#Contribution_co-author",
+      "confidence": 0.8054836988449097
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "Conference#Conference",
+      "confidence": 0.9999998211860657
+    },
+    {
+      "source_id": "cmt#ConferenceChair",
+      "target_id": "Conference#Conference_fees",
+      "confidence": 0.5269880294799805
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "Conference#Conference_fees",
+      "confidence": 0.6249165534973145
+    },
+    {
+      "source_id": "cmt#Decision",
+      "target_id": "Conference#Person",
+      "confidence": 0.7700767517089844
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "Conference#Paper",
+      "confidence": 0.9116833209991455
+    },
+    {
+      "source_id": "cmt#ExternalReviewer",
+      "target_id": "Conference#Late_paid_applicant",
+      "confidence": 0.6208070516586304
+    },
+    {
+      "source_id": "cmt#Meta-Review",
+      "target_id": "Conference#Review_preference",
+      "confidence": 0.7416906952857971
+    },
+    {
+      "source_id": "cmt#Meta-Reviewer",
+      "target_id": "Conference#Reviewer",
+      "confidence": 0.7212605476379395
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "Conference#Paper",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "cmt#PaperAbstract",
+      "target_id": "Conference#Abstract",
+      "confidence": 0.7070399522781372
+    },
+    {
+      "source_id": "cmt#PaperFullVersion",
+      "target_id": "Conference#Review_expertise",
+      "confidence": 0.6162363290786743
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "Conference#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Preference",
+      "target_id": "Conference#Review_preference",
+      "confidence": 0.8701235055923462
+    },
+    {
+      "source_id": "cmt#ProgramCommittee",
+      "target_id": "Conference#Program_committee",
+      "confidence": 0.46654433012008667
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeChair",
+      "target_id": "Conference#Program_committee",
+      "confidence": 0.4549579620361328
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "Conference#Late_paid_applicant",
+      "confidence": 0.47535330057144165
+    },
+    {
+      "source_id": "cmt#Rejection",
+      "target_id": "Conference#Accepted_contribution",
+      "confidence": 0.7455134391784668
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "Conference#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "Conference#Reviewer",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "Conference#Extended_abstract",
+      "confidence": 0.46358177065849304
+    },
+    {
+      "source_id": "cmt#User",
+      "target_id": "Conference#Paper",
+      "confidence": 0.9358459115028381
+    }
+  ]
+}

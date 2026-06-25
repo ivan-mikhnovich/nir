@@ -1,0 +1,75 @@
+{
+  "approach": "string-equiv",
+  "pair": "iasted\u2194sigkdd",
+  "source": "iasted",
+  "target": "sigkdd",
+  "precision": 0.9166666666666666,
+  "recall": 0.7333333333333333,
+  "f1": 0.8148148148148148,
+  "matches": 11,
+  "total_predicted": 12,
+  "total_gt": 15,
+  "wall_time": 3.707699943333864e-05,
+  "match_pairs": [
+    {
+      "source_id": "iasted#Document",
+      "target_id": "sigkdd#Document",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Person",
+      "target_id": "sigkdd#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Deadline",
+      "target_id": "sigkdd#Deadline",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Place",
+      "target_id": "sigkdd#Place",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Author",
+      "target_id": "sigkdd#Author",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Listener",
+      "target_id": "sigkdd#Listener",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Registration_fee",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Speaker",
+      "target_id": "sigkdd#Speaker",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Conference_hall",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Fee",
+      "target_id": "sigkdd#Fee",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Review",
+      "target_id": "sigkdd#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Main_office",
+      "target_id": "sigkdd#Main_office",
+      "confidence": 1.0
+    }
+  ]
+}
