@@ -1,0 +1,14 @@
+{
+  "approach": "llm-gpt",
+  "pair": "ekaw\u2194iasted",
+  "source": "ekaw",
+  "target": "iasted",
+  "precision": 0.2962962962962963,
+  "recall": 0.8,
+  "f1": 0.43243243243243246,
+  "matches": 8,
+  "total_predicted": 27,
+  "total_gt": 10,
+  "wall_time": 0.00010973200187436305,
+  "mode": "ensemble"
+}

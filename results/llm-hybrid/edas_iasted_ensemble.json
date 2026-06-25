@@ -1,0 +1,14 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "edas\u2194iasted",
+  "source": "edas",
+  "target": "iasted",
+  "precision": 0.47368421052631576,
+  "recall": 0.47368421052631576,
+  "f1": 0.47368421052631576,
+  "matches": 9,
+  "total_predicted": 19,
+  "total_gt": 19,
+  "wall_time": 8.450899986200966e-05,
+  "mode": "ensemble"
+}

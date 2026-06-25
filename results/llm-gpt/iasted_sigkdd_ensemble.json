@@ -1,0 +1,14 @@
+{
+  "approach": "llm-gpt",
+  "pair": "iasted\u2194sigkdd",
+  "source": "iasted",
+  "target": "sigkdd",
+  "precision": 0.42857142857142855,
+  "recall": 0.8,
+  "f1": 0.5581395348837209,
+  "matches": 12,
+  "total_predicted": 28,
+  "total_gt": 15,
+  "wall_time": 9.891999798128381e-05,
+  "mode": "ensemble"
+}

@@ -1,0 +1,14 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "cmt\u2194confOf",
+  "source": "cmt",
+  "target": "confOf",
+  "precision": 0.875,
+  "recall": 0.7,
+  "f1": 0.7777777777777777,
+  "matches": 7,
+  "total_predicted": 8,
+  "total_gt": 10,
+  "wall_time": 5.927000165684149e-05,
+  "mode": "ensemble"
+}

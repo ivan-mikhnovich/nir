@@ -1,0 +1,78 @@
+{
+  "approach": "llm-gpt",
+  "pair": "confOf\u2194iasted",
+  "source": "confOf",
+  "target": "iasted",
+  "precision": 0.3333333333333333,
+  "recall": 0.4444444444444444,
+  "f1": 0.380952380952381,
+  "matches": 4,
+  "total_predicted": 12,
+  "total_gt": 9,
+  "wall_time": 27.805905651999637,
+  "api_time": 27.743223254999975,
+  "per_node": 0.7300848224999994,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "confof#Author",
+      "target_id": "iasted#Author",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Banquet",
+      "target_id": "iasted#Dinner_banquet",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#City",
+      "target_id": "iasted#City",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Conference",
+      "target_id": "iasted#Conference_activity",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Participant",
+      "target_id": "iasted#Delegate",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Person",
+      "target_id": "iasted#Person",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Registration_of_participants_event",
+      "target_id": "iasted#Registration",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Reviewing_event",
+      "target_id": "iasted#Review",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Student",
+      "target_id": "iasted#Student_non_speaker",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "confof#Submission_event",
+      "target_id": "iasted#Submission",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Trip",
+      "target_id": "iasted#Full_day_tour",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#University",
+      "target_id": "iasted#Presenter_university",
+      "confidence": 0.9
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "conference\u2194edas",
+  "source": "conference",
+  "target": "edas",
+  "precision": 0.6666666666666666,
+  "recall": 0.7142857142857143,
+  "f1": 0.689655172413793,
+  "matches": 10,
+  "total_predicted": 15,
+  "total_gt": 14,
+  "wall_time": 7.526100125687663e-05,
+  "mode": "ensemble"
+}

@@ -1,0 +1,14 @@
+{
+  "approach": "llm-gpt",
+  "pair": "cmt\u2194iasted",
+  "source": "cmt",
+  "target": "iasted",
+  "precision": 0.4444444444444444,
+  "recall": 1.0,
+  "f1": 0.6153846153846153,
+  "matches": 4,
+  "total_predicted": 9,
+  "total_gt": 4,
+  "wall_time": 6.333099918265361e-05,
+  "mode": "ensemble"
+}

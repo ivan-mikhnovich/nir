@@ -1,0 +1,48 @@
+{
+  "approach": "llm-bm25",
+  "pair": "edas\u2194iasted",
+  "source": "edas",
+  "target": "iasted",
+  "precision": 0.8333333333333334,
+  "recall": 0.2631578947368421,
+  "f1": 0.39999999999999997,
+  "matches": 5,
+  "total_predicted": 6,
+  "total_gt": 19,
+  "wall_time": 8.871037524000712,
+  "api_time": 8.870815020996815,
+  "per_node": 0.08612441767958073,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "edas#Author",
+      "target_id": "iasted#Author",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#Document",
+      "target_id": "iasted#Document",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Person",
+      "target_id": "iasted#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#Place",
+      "target_id": "iasted#Place",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#Review",
+      "target_id": "iasted#Review",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.95
+    }
+  ]
+}

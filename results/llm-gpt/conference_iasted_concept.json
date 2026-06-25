@@ -1,0 +1,88 @@
+{
+  "approach": "llm-gpt",
+  "pair": "conference\u2194iasted",
+  "source": "conference",
+  "target": "iasted",
+  "precision": 0.35714285714285715,
+  "recall": 0.38461538461538464,
+  "f1": 0.3703703703703704,
+  "matches": 5,
+  "total_predicted": 14,
+  "total_gt": 13,
+  "wall_time": 44.396062157000415,
+  "api_time": 44.351128014001006,
+  "per_node": 0.7517140341356102,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "Conference#Conference_contribution",
+      "target_id": "iasted#Presentation",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Conference_fees",
+      "target_id": "iasted#Registration_fee",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "Conference#Contribution_co-author",
+      "target_id": "iasted#Author",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Important_dates",
+      "target_id": "iasted#Conference_days",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "Conference#Invited_speaker",
+      "target_id": "iasted#Tutorial_speaker",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "Conference#Invited_talk",
+      "target_id": "iasted#Speaker_lecture",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "Conference#Organization",
+      "target_id": "iasted#Sponsor_company_house",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "Conference#Passive_conference_participant",
+      "target_id": "iasted#Non_speaker",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "Conference#Person",
+      "target_id": "iasted#Person",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Review",
+      "target_id": "iasted#Review",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Submitted_contribution",
+      "target_id": "iasted#Submission",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Track-workshop_chair",
+      "target_id": "iasted#Session_chair",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "Conference#Tutorial",
+      "target_id": "iasted#Tutorial",
+      "confidence": 0.95
+    }
+  ]
+}

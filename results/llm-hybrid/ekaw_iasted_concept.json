@@ -1,0 +1,73 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "ekaw\u2194iasted",
+  "source": "ekaw",
+  "target": "iasted",
+  "precision": 0.5454545454545454,
+  "recall": 0.6,
+  "f1": 0.5714285714285713,
+  "matches": 6,
+  "total_predicted": 11,
+  "total_gt": 10,
+  "wall_time": 65.32828910799799,
+  "api_time": 65.27332317500259,
+  "per_node": 0.8941551119863368,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "ekaw#Academic_Institution",
+      "target_id": "iasted#Presenter_university",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "ekaw#Document",
+      "target_id": "iasted#Document",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "ekaw#Individual_Presentation",
+      "target_id": "iasted#PowerPoint_presentation",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "ekaw#Location",
+      "target_id": "iasted#Place",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "ekaw#Person",
+      "target_id": "iasted#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "ekaw#Possible_Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "ekaw#Rejected_Paper",
+      "target_id": "iasted#Refusing_manuscript",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "ekaw#Review",
+      "target_id": "iasted#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "ekaw#Session",
+      "target_id": "iasted#Session",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "ekaw#Session_Chair",
+      "target_id": "iasted#Session_chair",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "ekaw#Submitted_Paper",
+      "target_id": "iasted#Submission",
+      "confidence": 0.95
+    }
+  ]
+}

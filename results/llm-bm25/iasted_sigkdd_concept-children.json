@@ -1,0 +1,63 @@
+{
+  "approach": "llm-bm25",
+  "pair": "iasted\u2194sigkdd",
+  "source": "iasted",
+  "target": "sigkdd",
+  "precision": 0.5555555555555556,
+  "recall": 0.3333333333333333,
+  "f1": 0.4166666666666667,
+  "matches": 5,
+  "total_predicted": 9,
+  "total_gt": 15,
+  "wall_time": 44.03600919100063,
+  "api_time": 44.03568807699776,
+  "per_node": 0.31454062912141256,
+  "mode": "concept-children",
+  "match_pairs": [
+    {
+      "source_id": "iasted#Conference_activity",
+      "target_id": "sigkdd#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Conference_hall",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Deadline_for_notification_of_acceptance",
+      "target_id": "sigkdd#Deadline_Author_notification",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "iasted#Introduction_of_speaker",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "iasted#Listener",
+      "target_id": "sigkdd#Listener",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Main_office",
+      "target_id": "sigkdd#Main_office",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Review",
+      "target_id": "sigkdd#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Student_non_speaker",
+      "target_id": "sigkdd#Registration_Student",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "iasted#Submission",
+      "target_id": "sigkdd#Deadline_Paper_Submission",
+      "confidence": 0.9
+    }
+  ]
+}

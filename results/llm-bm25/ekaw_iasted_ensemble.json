@@ -1,0 +1,14 @@
+{
+  "approach": "llm-bm25",
+  "pair": "ekaw\u2194iasted",
+  "source": "ekaw",
+  "target": "iasted",
+  "precision": 0.7142857142857143,
+  "recall": 0.5,
+  "f1": 0.588235294117647,
+  "matches": 5,
+  "total_predicted": 7,
+  "total_gt": 10,
+  "wall_time": 5.3620999096892774e-05,
+  "mode": "ensemble"
+}

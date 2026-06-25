@@ -1,0 +1,28 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "confOf\u2194iasted",
+  "source": "confOf",
+  "target": "iasted",
+  "precision": 1.0,
+  "recall": 0.2222222222222222,
+  "f1": 0.3636363636363636,
+  "matches": 2,
+  "total_predicted": 2,
+  "total_gt": 9,
+  "wall_time": 34.124124751000636,
+  "api_time": 34.12390283899913,
+  "per_node": 0.897997443131556,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "confof#Author",
+      "target_id": "iasted#Author",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Person",
+      "target_id": "iasted#Person",
+      "confidence": 1.0
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "confOf\u2194ekaw",
+  "source": "confOf",
+  "target": "ekaw",
+  "precision": 0.8888888888888888,
+  "recall": 0.4,
+  "f1": 0.5517241379310346,
+  "matches": 8,
+  "total_predicted": 9,
+  "total_gt": 20,
+  "wall_time": 46.07818672099984,
+  "api_time": 46.03589920100012,
+  "per_node": 1.2114710316052664,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "confof#Author",
+      "target_id": "ekaw#Paper_Author",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Chair_PC",
+      "target_id": "ekaw#PC_Chair",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Conference",
+      "target_id": "ekaw#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Participant",
+      "target_id": "ekaw#Conference_Participant",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Regular",
+      "target_id": "ekaw#Regular_Paper",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Social_event",
+      "target_id": "ekaw#Social_Event",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Student",
+      "target_id": "ekaw#Student",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Topic",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "confof#University",
+      "target_id": "ekaw#University",
+      "confidence": 1.0
+    }
+  ]
+}

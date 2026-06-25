@@ -1,0 +1,88 @@
+{
+  "approach": "llm-gpt",
+  "pair": "confOf\u2194ekaw",
+  "source": "confOf",
+  "target": "ekaw",
+  "precision": 0.7857142857142857,
+  "recall": 0.55,
+  "f1": 0.6470588235294117,
+  "matches": 11,
+  "total_predicted": 14,
+  "total_gt": 20,
+  "wall_time": 23.141802628999812,
+  "api_time": 23.141575882000325,
+  "per_node": 0.6089888390000086,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "confof#Author",
+      "target_id": "ekaw#Paper_Author",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Chair_PC",
+      "target_id": "ekaw#PC_Chair",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#City",
+      "target_id": "ekaw#Location",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Contribution",
+      "target_id": "ekaw#Contributed_Talk",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Member",
+      "target_id": "ekaw#OC_Member",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "confof#Member_PC",
+      "target_id": "ekaw#PC_Member",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Organization",
+      "target_id": "ekaw#Organisation",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Participant",
+      "target_id": "ekaw#Conference_Participant",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Person",
+      "target_id": "ekaw#Person",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Social_event",
+      "target_id": "ekaw#Social_Event",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Student",
+      "target_id": "ekaw#Student",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Tutorial",
+      "target_id": "ekaw#Tutorial",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#University",
+      "target_id": "ekaw#University",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Workshop",
+      "target_id": "ekaw#Workshop",
+      "confidence": 0.9
+    }
+  ]
+}

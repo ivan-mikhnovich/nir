@@ -1,0 +1,14 @@
+{
+  "approach": "llm-gpt",
+  "pair": "conference\u2194edas",
+  "source": "conference",
+  "target": "edas",
+  "precision": 0.45,
+  "recall": 0.6428571428571429,
+  "f1": 0.5294117647058824,
+  "matches": 9,
+  "total_predicted": 20,
+  "total_gt": 14,
+  "wall_time": 0.00011905100109288469,
+  "mode": "ensemble"
+}

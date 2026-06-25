@@ -1,0 +1,14 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "cmt\u2194ekaw",
+  "source": "cmt",
+  "target": "ekaw",
+  "precision": 0.6666666666666666,
+  "recall": 1.0,
+  "f1": 0.8,
+  "matches": 8,
+  "total_predicted": 12,
+  "total_gt": 8,
+  "wall_time": 6.070100062061101e-05,
+  "mode": "ensemble"
+}

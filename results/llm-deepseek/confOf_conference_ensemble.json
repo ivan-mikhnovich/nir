@@ -1,0 +1,14 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "confOf\u2194conference",
+  "source": "conference",
+  "target": "confOf",
+  "precision": 0.5294117647058824,
+  "recall": 0.8181818181818182,
+  "f1": 0.6428571428571428,
+  "matches": 9,
+  "total_predicted": 17,
+  "total_gt": 11,
+  "wall_time": 8.671900104673114e-05,
+  "mode": "ensemble"
+}

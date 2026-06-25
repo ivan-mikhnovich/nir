@@ -1,0 +1,14 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "conference\u2194iasted",
+  "source": "conference",
+  "target": "iasted",
+  "precision": 0.5454545454545454,
+  "recall": 0.46153846153846156,
+  "f1": 0.4999999999999999,
+  "matches": 6,
+  "total_predicted": 11,
+  "total_gt": 13,
+  "wall_time": 6.271099846344441e-05,
+  "mode": "ensemble"
+}

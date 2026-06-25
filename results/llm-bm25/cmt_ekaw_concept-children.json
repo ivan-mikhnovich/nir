@@ -1,0 +1,43 @@
+{
+  "approach": "llm-bm25",
+  "pair": "cmt\u2194ekaw",
+  "source": "cmt",
+  "target": "ekaw",
+  "precision": 1.0,
+  "recall": 0.625,
+  "f1": 0.7692307692307693,
+  "matches": 5,
+  "total_predicted": 5,
+  "total_gt": 8,
+  "wall_time": 9.21570970099856,
+  "api_time": 9.215599498998927,
+  "per_node": 0.3177792930689285,
+  "mode": "concept-children",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Author",
+      "target_id": "ekaw#Paper_Author",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "ekaw#Conference",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "ekaw#Document",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "ekaw#Paper",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "ekaw#Person",
+      "confidence": 0.9
+    }
+  ]
+}

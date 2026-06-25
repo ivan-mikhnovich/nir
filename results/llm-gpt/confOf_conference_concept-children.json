@@ -1,0 +1,108 @@
+{
+  "approach": "llm-gpt",
+  "pair": "confOf\u2194conference",
+  "source": "conference",
+  "target": "confOf",
+  "precision": 0.3888888888888889,
+  "recall": 0.6363636363636364,
+  "f1": 0.4827586206896552,
+  "matches": 7,
+  "total_predicted": 18,
+  "total_gt": 11,
+  "wall_time": 111.90382169100121,
+  "api_time": 111.9034842229994,
+  "per_node": 1.8966692241186338,
+  "mode": "concept-children",
+  "match_pairs": [
+    {
+      "source_id": "Conference#Accepted_contribution",
+      "target_id": "confof#Contribution",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Camera_ready_contribution",
+      "target_id": "confof#Camera_Ready_event",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Committee_member",
+      "target_id": "confof#Member",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "Conference#Conference",
+      "target_id": "confof#Conference",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Conference_document",
+      "target_id": "confof#Event",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "Conference#Conference_part",
+      "target_id": "confof#Tutorial",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Information_for_participants",
+      "target_id": "confof#Registration_of_participants_event",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Organization",
+      "target_id": "confof#Organization",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Paper",
+      "target_id": "confof#Paper",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Person",
+      "target_id": "confof#Person",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Poster",
+      "target_id": "confof#Poster",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Registeered_applicant",
+      "target_id": "confof#Participant",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "Conference#Regular_author",
+      "target_id": "confof#Author",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Review",
+      "target_id": "confof#Reviewing_event",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Reviewer",
+      "target_id": "confof#Member_PC",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Topic",
+      "target_id": "confof#Topic",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Workshop",
+      "target_id": "confof#Workshop",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Written_contribution",
+      "target_id": "confof#Submission_event",
+      "confidence": 0.95
+    }
+  ]
+}

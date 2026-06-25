@@ -1,0 +1,14 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "conference\u2194ekaw",
+  "source": "conference",
+  "target": "ekaw",
+  "precision": 0.5,
+  "recall": 0.5652173913043478,
+  "f1": 0.5306122448979592,
+  "matches": 13,
+  "total_predicted": 26,
+  "total_gt": 23,
+  "wall_time": 0.00010287800023434102,
+  "mode": "ensemble"
+}

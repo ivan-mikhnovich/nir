@@ -1,0 +1,43 @@
+{
+  "approach": "llm-bm25",
+  "pair": "confOf\u2194iasted",
+  "source": "confOf",
+  "target": "iasted",
+  "precision": 0.4,
+  "recall": 0.2222222222222222,
+  "f1": 0.2857142857142857,
+  "matches": 2,
+  "total_predicted": 5,
+  "total_gt": 9,
+  "wall_time": 14.05010197700176,
+  "api_time": 14.049952484998357,
+  "per_node": 0.3697355917104831,
+  "mode": "concept-children",
+  "match_pairs": [
+    {
+      "source_id": "confof#Camera_Ready_event",
+      "target_id": "iasted#Camera_ready_manuscript_deadline",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Member",
+      "target_id": "iasted#IASTED_member",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Person",
+      "target_id": "iasted#Person",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "confof#Submission_event",
+      "target_id": "iasted#Submission",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Tutorial",
+      "target_id": "iasted#Tutorial",
+      "confidence": 1.0
+    }
+  ]
+}

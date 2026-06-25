@@ -1,0 +1,48 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "conference\u2194sigkdd",
+  "source": "conference",
+  "target": "sigkdd",
+  "precision": 0.6666666666666666,
+  "recall": 0.3333333333333333,
+  "f1": 0.4444444444444444,
+  "matches": 4,
+  "total_predicted": 6,
+  "total_gt": 12,
+  "wall_time": 50.91511545499816,
+  "api_time": 50.91480540300108,
+  "per_node": 0.8629628034406963,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "Conference#Committee",
+      "target_id": "sigkdd#Committee",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Conference",
+      "target_id": "sigkdd#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Invited_speaker",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Organizer",
+      "target_id": "sigkdd#Organizator",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Organizing_committee",
+      "target_id": "sigkdd#Organizing_Committee",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Program_committee",
+      "target_id": "sigkdd#Program_Committee",
+      "confidence": 1.0
+    }
+  ]
+}

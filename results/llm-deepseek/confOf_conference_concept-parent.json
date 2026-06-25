@@ -1,0 +1,53 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "confOf\u2194conference",
+  "source": "conference",
+  "target": "confOf",
+  "precision": 0.5714285714285714,
+  "recall": 0.36363636363636365,
+  "f1": 0.4444444444444444,
+  "matches": 4,
+  "total_predicted": 7,
+  "total_gt": 11,
+  "wall_time": 47.38074750099986,
+  "api_time": 47.38042570499965,
+  "per_node": 0.8030580627966043,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "Conference#Active_conference_participant",
+      "target_id": "confof#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Conference",
+      "target_id": "confof#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Organization",
+      "target_id": "confof#Organization",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Paper",
+      "target_id": "confof#Paper",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Poster",
+      "target_id": "confof#Poster",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Reviewer",
+      "target_id": "confof#Member_PC",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Topic",
+      "target_id": "confof#Topic",
+      "confidence": 1.0
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "confOf\u2194iasted",
+  "source": "confOf",
+  "target": "iasted",
+  "precision": 0.5,
+  "recall": 0.4444444444444444,
+  "f1": 0.47058823529411764,
+  "matches": 4,
+  "total_predicted": 8,
+  "total_gt": 9,
+  "wall_time": 36.928130511001655,
+  "api_time": 36.92792018899854,
+  "per_node": 0.9717873733946985,
+  "mode": "concept-children",
+  "match_pairs": [
+    {
+      "source_id": "confof#Banquet",
+      "target_id": "iasted#Dinner_banquet",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "confof#Camera_Ready_event",
+      "target_id": "iasted#Camera_ready_manuscript_deadline",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Contribution",
+      "target_id": "iasted#Submission",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Person",
+      "target_id": "iasted#Person",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Poster",
+      "target_id": "iasted#Presentation",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Reception",
+      "target_id": "iasted#Coctail_reception",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Reviewing_event",
+      "target_id": "iasted#Review",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Tutorial",
+      "target_id": "iasted#Tutorial",
+      "confidence": 0.95
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "approach": "llm-gpt",
+  "pair": "edas\u2194ekaw",
+  "source": "edas",
+  "target": "ekaw",
+  "precision": 0.47619047619047616,
+  "recall": 0.5263157894736842,
+  "f1": 0.5,
+  "matches": 10,
+  "total_predicted": 21,
+  "total_gt": 19,
+  "wall_time": 9.291300011682324e-05,
+  "mode": "ensemble"
+}

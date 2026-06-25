@@ -1,0 +1,88 @@
+{
+  "approach": "llm-gpt",
+  "pair": "edas\u2194iasted",
+  "source": "edas",
+  "target": "iasted",
+  "precision": 0.6428571428571429,
+  "recall": 0.47368421052631576,
+  "f1": 0.5454545454545454,
+  "matches": 9,
+  "total_predicted": 14,
+  "total_gt": 19,
+  "wall_time": 391.9596876780015,
+  "api_time": 391.9592211960007,
+  "per_node": 3.805429332000007,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "edas#Author",
+      "target_id": "iasted#Author",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#CoffeeBreak",
+      "target_id": "iasted#Coffee_break",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#ConferenceDinner",
+      "target_id": "iasted#Dinner_banquet",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "edas#ConferenceVenuePlace",
+      "target_id": "iasted#Conference_hall",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#MeetingRoomPlace",
+      "target_id": "iasted#Session_room",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Person",
+      "target_id": "iasted#Person",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Place",
+      "target_id": "iasted#Conference_hotel",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Reception",
+      "target_id": "iasted#Coctail_reception",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Review",
+      "target_id": "iasted#Review",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#SessionChair",
+      "target_id": "iasted#Session_chair",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Sponsorship",
+      "target_id": "iasted#Sponzorship",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#TPCMember",
+      "target_id": "iasted#Technical_commitee",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "edas#WelcomeTalk",
+      "target_id": "iasted#Welcome_address",
+      "confidence": 0.9
+    }
+  ]
+}

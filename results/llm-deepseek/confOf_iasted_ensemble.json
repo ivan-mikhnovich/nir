@@ -1,0 +1,14 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "confOf\u2194iasted",
+  "source": "confOf",
+  "target": "iasted",
+  "precision": 0.4444444444444444,
+  "recall": 0.4444444444444444,
+  "f1": 0.4444444444444444,
+  "matches": 4,
+  "total_predicted": 9,
+  "total_gt": 9,
+  "wall_time": 4.944099964632187e-05,
+  "mode": "ensemble"
+}

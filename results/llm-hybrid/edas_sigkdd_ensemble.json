@@ -1,0 +1,14 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "edas\u2194sigkdd",
+  "source": "edas",
+  "target": "sigkdd",
+  "precision": 0.7272727272727273,
+  "recall": 0.7272727272727273,
+  "f1": 0.7272727272727273,
+  "matches": 8,
+  "total_predicted": 11,
+  "total_gt": 11,
+  "wall_time": 5.886000144528225e-05,
+  "mode": "ensemble"
+}

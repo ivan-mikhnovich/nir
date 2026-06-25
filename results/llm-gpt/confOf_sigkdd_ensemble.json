@@ -1,0 +1,14 @@
+{
+  "approach": "llm-gpt",
+  "pair": "confOf\u2194sigkdd",
+  "source": "confOf",
+  "target": "sigkdd",
+  "precision": 0.25,
+  "recall": 0.5,
+  "f1": 0.3333333333333333,
+  "matches": 3,
+  "total_predicted": 12,
+  "total_gt": 6,
+  "wall_time": 5.985099960525986e-05,
+  "mode": "ensemble"
+}

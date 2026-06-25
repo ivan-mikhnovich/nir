@@ -1,0 +1,103 @@
+{
+  "approach": "llm-gpt",
+  "pair": "conference\u2194edas",
+  "source": "conference",
+  "target": "edas",
+  "precision": 0.47058823529411764,
+  "recall": 0.5714285714285714,
+  "f1": 0.5161290322580646,
+  "matches": 8,
+  "total_predicted": 17,
+  "total_gt": 14,
+  "wall_time": 81.04083748999983,
+  "api_time": 81.04051531799996,
+  "per_node": 1.3735680562372874,
+  "mode": "concept-children",
+  "match_pairs": [
+    {
+      "source_id": "Conference#Accepted_contribution",
+      "target_id": "edas#AcceptedPaper",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Call_for_paper",
+      "target_id": "edas#CallForPapers",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Camera_ready_contribution",
+      "target_id": "edas#Document",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Chair",
+      "target_id": "edas#ConferenceChair",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Committee_member",
+      "target_id": "edas#TPCMember",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "Conference#Conference",
+      "target_id": "edas#Conference",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Conference_contribution",
+      "target_id": "edas#PaperPresentation",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "Conference#Conference_part",
+      "target_id": "edas#ConferenceSession",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "Conference#Conference_participant",
+      "target_id": "edas#Attendee",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Contribution_co-author",
+      "target_id": "edas#Author",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Invited_speaker",
+      "target_id": "edas#Presenter",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "Conference#Organization",
+      "target_id": "edas#Organization",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Person",
+      "target_id": "edas#Person",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Review",
+      "target_id": "edas#Review",
+      "confidence": 0.99
+    },
+    {
+      "source_id": "Conference#Reviewer",
+      "target_id": "edas#Reviewer",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Topic",
+      "target_id": "edas#Topic",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Workshop",
+      "target_id": "edas#Workshop",
+      "confidence": 0.95
+    }
+  ]
+}

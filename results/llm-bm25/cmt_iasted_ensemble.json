@@ -1,0 +1,14 @@
+{
+  "approach": "llm-bm25",
+  "pair": "cmt\u2194iasted",
+  "source": "cmt",
+  "target": "iasted",
+  "precision": 0.8,
+  "recall": 1.0,
+  "f1": 0.888888888888889,
+  "matches": 4,
+  "total_predicted": 5,
+  "total_gt": 4,
+  "wall_time": 4.219100082991645e-05,
+  "mode": "ensemble"
+}

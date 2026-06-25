@@ -1,0 +1,14 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "edas\u2194sigkdd",
+  "source": "edas",
+  "target": "sigkdd",
+  "precision": 0.5454545454545454,
+  "recall": 0.5454545454545454,
+  "f1": 0.5454545454545454,
+  "matches": 6,
+  "total_predicted": 11,
+  "total_gt": 11,
+  "wall_time": 5.701199916074984e-05,
+  "mode": "ensemble"
+}

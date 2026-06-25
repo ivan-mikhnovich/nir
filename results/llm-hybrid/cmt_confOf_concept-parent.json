@@ -1,0 +1,48 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "cmt\u2194confOf",
+  "source": "cmt",
+  "target": "confOf",
+  "precision": 1.0,
+  "recall": 0.6,
+  "f1": 0.7499999999999999,
+  "matches": 6,
+  "total_predicted": 6,
+  "total_gt": 10,
+  "wall_time": 31.130154259997653,
+  "api_time": 31.129969948000507,
+  "per_node": 1.0734472395862245,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Administrator",
+      "target_id": "confof#Administrator",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "confof#Author",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "confof#Conference",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "confof#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "confof#Member_PC",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "confof#Topic",
+      "confidence": 0.9
+    }
+  ]
+}

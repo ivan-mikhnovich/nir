@@ -1,0 +1,14 @@
+{
+  "approach": "llm-gpt",
+  "pair": "cmt\u2194confOf",
+  "source": "cmt",
+  "target": "confOf",
+  "precision": 0.6666666666666666,
+  "recall": 0.6,
+  "f1": 0.631578947368421,
+  "matches": 6,
+  "total_predicted": 9,
+  "total_gt": 10,
+  "wall_time": 5.48269999853801e-05,
+  "mode": "ensemble"
+}

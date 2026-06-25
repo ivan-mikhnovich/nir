@@ -1,0 +1,33 @@
+{
+  "approach": "llm-bm25",
+  "pair": "cmt\u2194conference",
+  "source": "cmt",
+  "target": "conference",
+  "precision": 0.6666666666666666,
+  "recall": 0.18181818181818182,
+  "f1": 0.28571428571428575,
+  "matches": 2,
+  "total_predicted": 3,
+  "total_gt": 11,
+  "wall_time": 12.696847694001917,
+  "api_time": 12.696713973000442,
+  "per_node": 0.4378177232069118,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "Conference#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "Conference#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "Conference#Reviewer",
+      "confidence": 0.95
+    }
+  ]
+}

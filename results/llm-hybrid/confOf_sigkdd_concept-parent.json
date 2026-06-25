@@ -1,0 +1,33 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "confOf\u2194sigkdd",
+  "source": "confOf",
+  "target": "sigkdd",
+  "precision": 1.0,
+  "recall": 0.5,
+  "f1": 0.6666666666666666,
+  "matches": 3,
+  "total_predicted": 3,
+  "total_gt": 6,
+  "wall_time": 31.870999779999693,
+  "api_time": 31.870777848002035,
+  "per_node": 0.8387046802105799,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "confof#Conference",
+      "target_id": "sigkdd#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Member_PC",
+      "target_id": "sigkdd#Program_Committee_member",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Person",
+      "target_id": "sigkdd#Person",
+      "confidence": 0.95
+    }
+  ]
+}

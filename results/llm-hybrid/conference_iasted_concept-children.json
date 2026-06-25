@@ -1,0 +1,43 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "conference\u2194iasted",
+  "source": "conference",
+  "target": "iasted",
+  "precision": 0.8,
+  "recall": 0.3076923076923077,
+  "f1": 0.4444444444444444,
+  "matches": 4,
+  "total_predicted": 5,
+  "total_gt": 13,
+  "wall_time": 49.67885607599965,
+  "api_time": 49.678536282001005,
+  "per_node": 0.8420090895254407,
+  "mode": "concept-children",
+  "match_pairs": [
+    {
+      "source_id": "Conference#Conference_fees",
+      "target_id": "iasted#Fee",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "Conference#Rejected_contribution",
+      "target_id": "iasted#Refusing_manuscript",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Review",
+      "target_id": "iasted#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Tutorial",
+      "target_id": "iasted#Tutorial",
+      "confidence": 1.0
+    }
+  ]
+}

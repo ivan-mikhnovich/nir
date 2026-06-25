@@ -1,0 +1,48 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "confOf\u2194conference",
+  "source": "conference",
+  "target": "confOf",
+  "precision": 0.6666666666666666,
+  "recall": 0.36363636363636365,
+  "f1": 0.4705882352941177,
+  "matches": 4,
+  "total_predicted": 6,
+  "total_gt": 11,
+  "wall_time": 52.70471428100063,
+  "api_time": 52.70439669899861,
+  "per_node": 0.8932948593050611,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "Conference#Conference",
+      "target_id": "confof#Conference",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Conference_contributor",
+      "target_id": "confof#Author",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Paper",
+      "target_id": "confof#Paper",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Person",
+      "target_id": "confof#Person",
+      "confidence": 0.99
+    },
+    {
+      "source_id": "Conference#Poster",
+      "target_id": "confof#Poster",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Topic",
+      "target_id": "confof#Topic",
+      "confidence": 1.0
+    }
+  ]
+}

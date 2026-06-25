@@ -1,0 +1,14 @@
+{
+  "approach": "llm-bm25",
+  "pair": "conference\u2194ekaw",
+  "source": "conference",
+  "target": "ekaw",
+  "precision": 0.6111111111111112,
+  "recall": 0.4782608695652174,
+  "f1": 0.5365853658536586,
+  "matches": 11,
+  "total_predicted": 18,
+  "total_gt": 23,
+  "wall_time": 8.80879997566808e-05,
+  "mode": "ensemble"
+}

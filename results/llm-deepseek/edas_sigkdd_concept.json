@@ -1,0 +1,63 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "edas\u2194sigkdd",
+  "source": "edas",
+  "target": "sigkdd",
+  "precision": 0.5555555555555556,
+  "recall": 0.45454545454545453,
+  "f1": 0.5,
+  "matches": 5,
+  "total_predicted": 9,
+  "total_gt": 11,
+  "wall_time": 68.0350248850009,
+  "api_time": 67.95783947400196,
+  "per_node": 0.659784849262155,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "edas#AccommodationPlace",
+      "target_id": "sigkdd#Hotel",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Author",
+      "target_id": "sigkdd#Author_of_paper",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#ConferenceVenuePlace",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Document",
+      "target_id": "sigkdd#Document",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#Person",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#PersonalPublicationHistory",
+      "target_id": "sigkdd#Author",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Place",
+      "target_id": "sigkdd#Place",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#Presenter",
+      "target_id": "sigkdd#Speaker",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Review",
+      "target_id": "sigkdd#Review",
+      "confidence": 1.0
+    }
+  ]
+}

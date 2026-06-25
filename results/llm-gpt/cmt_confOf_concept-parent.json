@@ -1,0 +1,58 @@
+{
+  "approach": "llm-gpt",
+  "pair": "cmt\u2194confOf",
+  "source": "cmt",
+  "target": "confOf",
+  "precision": 0.75,
+  "recall": 0.6,
+  "f1": 0.6666666666666665,
+  "matches": 6,
+  "total_predicted": 8,
+  "total_gt": 10,
+  "wall_time": 41.19997995199992,
+  "api_time": 41.19979095400049,
+  "per_node": 1.4206824466896721,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Administrator",
+      "target_id": "confof#Administrator",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "confof#Author",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "confof#Conference",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "confof#Member",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "confof#Paper",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "confof#Person",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "confof#Member_PC",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "confof#Topic",
+      "confidence": 0.9
+    }
+  ]
+}

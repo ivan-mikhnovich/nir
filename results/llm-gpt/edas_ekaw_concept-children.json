@@ -1,0 +1,93 @@
+{
+  "approach": "llm-gpt",
+  "pair": "edas\u2194ekaw",
+  "source": "edas",
+  "target": "ekaw",
+  "precision": 0.4,
+  "recall": 0.3157894736842105,
+  "f1": 0.35294117647058826,
+  "matches": 6,
+  "total_predicted": 15,
+  "total_gt": 19,
+  "wall_time": 109.25536297299914,
+  "api_time": 109.25490744700073,
+  "per_node": 1.0607272567669974,
+  "mode": "concept-children",
+  "match_pairs": [
+    {
+      "source_id": "edas#AcademiaOrganization",
+      "target_id": "ekaw#Academic_Institution",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#AcademicEvent",
+      "target_id": "ekaw#Workshop",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#AcceptedPaper",
+      "target_id": "ekaw#Accepted_Paper",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#AccpetIfRoomRating",
+      "target_id": "ekaw#Rejected_Paper",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Attendee",
+      "target_id": "ekaw#Conference_Participant",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Conference",
+      "target_id": "ekaw#Conference",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Excursion",
+      "target_id": "ekaw#Conference_Trip",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "edas#MealEvent",
+      "target_id": "ekaw#Conference_Banquet",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Paper",
+      "target_id": "ekaw#Paper",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Person",
+      "target_id": "ekaw#Person",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Presenter",
+      "target_id": "ekaw#Presenter",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#RatedPapers",
+      "target_id": "ekaw#Evaluated_Paper",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "edas#Reception",
+      "target_id": "ekaw#Social_Event",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#RejectRating",
+      "target_id": "ekaw#Negative_Review",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Review",
+      "target_id": "ekaw#Review",
+      "confidence": 0.95
+    }
+  ]
+}

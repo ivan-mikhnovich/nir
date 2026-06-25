@@ -1,0 +1,43 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "confOf\u2194edas",
+  "source": "confOf",
+  "target": "edas",
+  "precision": 1.0,
+  "recall": 0.35714285714285715,
+  "f1": 0.5263157894736842,
+  "matches": 5,
+  "total_predicted": 5,
+  "total_gt": 14,
+  "wall_time": 33.88838599600058,
+  "api_time": 33.88813729299909,
+  "per_node": 0.8917930866578708,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "confof#Country",
+      "target_id": "edas#Country",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Member_PC",
+      "target_id": "edas#TPCMember",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Participant",
+      "target_id": "edas#Attendee",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Person",
+      "target_id": "edas#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Reception",
+      "target_id": "edas#Reception",
+      "confidence": 0.95
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "approach": "llm-bm25",
+  "pair": "cmt\u2194edas",
+  "source": "cmt",
+  "target": "edas",
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0,
+  "matches": 8,
+  "total_predicted": 8,
+  "total_gt": 8,
+  "wall_time": 5.206900004850468e-05,
+  "mode": "ensemble"
+}

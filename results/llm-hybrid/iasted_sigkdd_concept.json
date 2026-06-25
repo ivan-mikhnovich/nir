@@ -1,0 +1,108 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "iasted\u2194sigkdd",
+  "source": "iasted",
+  "target": "sigkdd",
+  "precision": 0.5,
+  "recall": 0.6,
+  "f1": 0.5454545454545454,
+  "matches": 9,
+  "total_predicted": 18,
+  "total_gt": 15,
+  "wall_time": 99.15973072799898,
+  "api_time": 99.10695716600094,
+  "per_node": 0.7079068369000067,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "iasted#Conference_activity",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "iasted#Conference_hall",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Deadline_for_notification_of_acceptance",
+      "target_id": "sigkdd#Deadline_Author_notification",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "iasted#Document",
+      "target_id": "sigkdd#Document",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Fee",
+      "target_id": "sigkdd#Fee",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Final_manuscript",
+      "target_id": "sigkdd#Paper",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "iasted#IASTED_non_member",
+      "target_id": "sigkdd#Registration_Non-Member",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "iasted#Listener",
+      "target_id": "sigkdd#Listener",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Main_office",
+      "target_id": "sigkdd#Main_office",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Place",
+      "target_id": "sigkdd#Place",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Presenter_state",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "iasted#Registration_fee",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Review",
+      "target_id": "sigkdd#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Speaker",
+      "target_id": "sigkdd#Speaker",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Sponsor",
+      "target_id": "sigkdd#Silver_Supporter",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "iasted#Sponsor_state",
+      "target_id": "sigkdd#Platinum_Supporter",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "iasted#Sponzorship",
+      "target_id": "sigkdd#Sponzor",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "iasted#Submissions_deadline",
+      "target_id": "sigkdd#Deadline_Paper_Submission",
+      "confidence": 0.9
+    }
+  ]
+}

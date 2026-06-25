@@ -1,0 +1,14 @@
+{
+  "approach": "llm-gpt",
+  "pair": "conference\u2194ekaw",
+  "source": "conference",
+  "target": "ekaw",
+  "precision": 0.42857142857142855,
+  "recall": 0.6521739130434783,
+  "f1": 0.5172413793103448,
+  "matches": 15,
+  "total_predicted": 35,
+  "total_gt": 23,
+  "wall_time": 0.00011929799984500278,
+  "mode": "ensemble"
+}

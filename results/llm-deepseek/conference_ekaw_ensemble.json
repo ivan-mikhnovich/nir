@@ -1,0 +1,14 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "conference\u2194ekaw",
+  "source": "conference",
+  "target": "ekaw",
+  "precision": 0.625,
+  "recall": 0.6521739130434783,
+  "f1": 0.6382978723404256,
+  "matches": 15,
+  "total_predicted": 24,
+  "total_gt": 23,
+  "wall_time": 0.00010614999973768136,
+  "mode": "ensemble"
+}
