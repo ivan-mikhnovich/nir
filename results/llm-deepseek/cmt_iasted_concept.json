@@ -1,0 +1,43 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "cmt\u2194iasted",
+  "source": "cmt",
+  "target": "iasted",
+  "precision": 0.6,
+  "recall": 0.75,
+  "f1": 0.6666666666666665,
+  "matches": 3,
+  "total_predicted": 5,
+  "total_gt": 4,
+  "wall_time": 24.672676607999165,
+  "api_time": 24.616889908000303,
+  "per_node": 0.8488582726896656,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "iasted#Session_chair",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#PaperFullVersion",
+      "target_id": "iasted#Final_manuscript",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "iasted#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "iasted#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.95
+    }
+  ]
+}

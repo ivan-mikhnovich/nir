@@ -1,0 +1,83 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "edas\u2194iasted",
+  "source": "edas",
+  "target": "iasted",
+  "precision": 0.6923076923076923,
+  "recall": 0.47368421052631576,
+  "f1": 0.5625,
+  "matches": 9,
+  "total_predicted": 13,
+  "total_gt": 19,
+  "wall_time": 79.12036688700027,
+  "api_time": 79.1199217229987,
+  "per_node": 0.7681545798349388,
+  "mode": "concept-children",
+  "match_pairs": [
+    {
+      "source_id": "edas#Author",
+      "target_id": "iasted#Author",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#CoffeeBreak",
+      "target_id": "iasted#Coffee_break",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#ConferenceVenuePlace",
+      "target_id": "iasted#Conference_building",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "edas#DiningPlace",
+      "target_id": "iasted#Conference_restaurant",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Excursion",
+      "target_id": "iasted#Full_day_tour",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#MeetingRoomPlace",
+      "target_id": "iasted#Session_room",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Place",
+      "target_id": "iasted#Place",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#RejectedPaper",
+      "target_id": "iasted#Refusing_manuscript",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Review",
+      "target_id": "iasted#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#SessionChair",
+      "target_id": "iasted#Session_chair",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#SlideSet",
+      "target_id": "iasted#PowerPoint_presentation",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#WelcomeTalk",
+      "target_id": "iasted#Welcome_address",
+      "confidence": 0.95
+    }
+  ]
+}

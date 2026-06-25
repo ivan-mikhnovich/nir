@@ -1,0 +1,78 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "ekaw\u2194iasted",
+  "source": "ekaw",
+  "target": "iasted",
+  "precision": 0.4166666666666667,
+  "recall": 0.5,
+  "f1": 0.45454545454545453,
+  "matches": 5,
+  "total_predicted": 12,
+  "total_gt": 10,
+  "wall_time": 62.982035769000504,
+  "api_time": 62.910813233000226,
+  "per_node": 0.8617919620958935,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "ekaw#Academic_Institution",
+      "target_id": "iasted#Presenter_university",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "ekaw#Camera_Ready_Paper",
+      "target_id": "iasted#Final_manuscript",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "ekaw#Document",
+      "target_id": "iasted#Document",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "ekaw#Location",
+      "target_id": "iasted#Place",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "ekaw#Multi-author_Volume",
+      "target_id": "iasted#Author_book_proceedings_included",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "ekaw#Possible_Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "ekaw#Review",
+      "target_id": "iasted#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "ekaw#Session",
+      "target_id": "iasted#Session",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "ekaw#Session_Chair",
+      "target_id": "iasted#Session_chair",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "ekaw#Social_Event",
+      "target_id": "iasted#Social_program",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "ekaw#Student",
+      "target_id": "iasted#Student_non_speaker",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "ekaw#Submitted_Paper",
+      "target_id": "iasted#Submission",
+      "confidence": 0.9
+    }
+  ]
+}

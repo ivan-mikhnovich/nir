@@ -1,0 +1,14 @@
+{
+  "approach": "llm-bm25",
+  "pair": "edas\u2194ekaw",
+  "source": "edas",
+  "target": "ekaw",
+  "precision": 0.6666666666666666,
+  "recall": 0.3157894736842105,
+  "f1": 0.42857142857142855,
+  "matches": 6,
+  "total_predicted": 9,
+  "total_gt": 19,
+  "wall_time": 6.461099837906659e-05,
+  "mode": "ensemble"
+}

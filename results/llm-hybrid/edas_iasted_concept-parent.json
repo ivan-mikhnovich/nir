@@ -1,0 +1,68 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "edas\u2194iasted",
+  "source": "edas",
+  "target": "iasted",
+  "precision": 0.6,
+  "recall": 0.3157894736842105,
+  "f1": 0.41379310344827586,
+  "matches": 6,
+  "total_predicted": 10,
+  "total_gt": 19,
+  "wall_time": 81.55668349899861,
+  "api_time": 81.55621588500071,
+  "per_node": 0.7918079212135991,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "edas#BreakEvent",
+      "target_id": "iasted#Coffee_break",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Document",
+      "target_id": "iasted#Document",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Excursion",
+      "target_id": "iasted#Full_day_tour",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#PaperPresentation",
+      "target_id": "iasted#Presentation",
+      "confidence": 0.75
+    },
+    {
+      "source_id": "edas#Place",
+      "target_id": "iasted#Place",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#Review",
+      "target_id": "iasted#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#SessionChair",
+      "target_id": "iasted#Session_chair",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#TPCMember",
+      "target_id": "iasted#Technical_commitee",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#WelcomeTalk",
+      "target_id": "iasted#Welcome_address",
+      "confidence": 0.9
+    }
+  ]
+}

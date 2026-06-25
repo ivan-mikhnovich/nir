@@ -1,0 +1,88 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "edas\u2194ekaw",
+  "source": "edas",
+  "target": "ekaw",
+  "precision": 0.7142857142857143,
+  "recall": 0.5263157894736842,
+  "f1": 0.6060606060606061,
+  "matches": 10,
+  "total_predicted": 14,
+  "total_gt": 19,
+  "wall_time": 74.90845300799992,
+  "api_time": 74.90799654999864,
+  "per_node": 0.7272621024271713,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "edas#AcademiaOrganization",
+      "target_id": "ekaw#Academic_Institution",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#AcceptedPaper",
+      "target_id": "ekaw#Accepted_Paper",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Author",
+      "target_id": "ekaw#Paper_Author",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#ConferenceSession",
+      "target_id": "ekaw#Conference_Session",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#Document",
+      "target_id": "ekaw#Document",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#Excursion",
+      "target_id": "ekaw#Conference_Trip",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Organization",
+      "target_id": "ekaw#Organisation",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Paper",
+      "target_id": "ekaw#Paper",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#Person",
+      "target_id": "ekaw#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#RejectedPaper",
+      "target_id": "ekaw#Rejected_Paper",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Reviewer",
+      "target_id": "ekaw#Possible_Reviewer",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#SessionChair",
+      "target_id": "ekaw#Session_Chair",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#TPCMember",
+      "target_id": "ekaw#PC_Member",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Workshop",
+      "target_id": "ekaw#Workshop",
+      "confidence": 0.95
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "cmt\u2194edas",
+  "source": "cmt",
+  "target": "edas",
+  "precision": 0.8888888888888888,
+  "recall": 1.0,
+  "f1": 0.9411764705882353,
+  "matches": 8,
+  "total_predicted": 9,
+  "total_gt": 8,
+  "wall_time": 25.700096868999935,
+  "api_time": 25.699892591000207,
+  "per_node": 0.8862031927931106,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Author",
+      "target_id": "edas#Author",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "edas#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#ConferenceChair",
+      "target_id": "edas#ConferenceChair",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "edas#Document",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "edas#Paper",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "edas#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "edas#Review",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "edas#Reviewer",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "edas#Topic",
+      "confidence": 0.9
+    }
+  ]
+}

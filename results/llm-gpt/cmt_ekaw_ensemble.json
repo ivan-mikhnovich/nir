@@ -1,0 +1,14 @@
+{
+  "approach": "llm-gpt",
+  "pair": "cmt\u2194ekaw",
+  "source": "cmt",
+  "target": "ekaw",
+  "precision": 0.375,
+  "recall": 0.75,
+  "f1": 0.5,
+  "matches": 6,
+  "total_predicted": 16,
+  "total_gt": 8,
+  "wall_time": 8.17219988675788e-05,
+  "mode": "ensemble"
+}

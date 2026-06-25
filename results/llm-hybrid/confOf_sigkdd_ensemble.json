@@ -1,0 +1,14 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "confOf\u2194sigkdd",
+  "source": "confOf",
+  "target": "sigkdd",
+  "precision": 0.8,
+  "recall": 0.6666666666666666,
+  "f1": 0.7272727272727272,
+  "matches": 4,
+  "total_predicted": 5,
+  "total_gt": 6,
+  "wall_time": 4.536999767879024e-05,
+  "mode": "ensemble"
+}

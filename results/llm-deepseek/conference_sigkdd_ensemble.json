@@ -1,0 +1,14 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "conference\u2194sigkdd",
+  "source": "conference",
+  "target": "sigkdd",
+  "precision": 0.42857142857142855,
+  "recall": 0.5,
+  "f1": 0.4615384615384615,
+  "matches": 6,
+  "total_predicted": 14,
+  "total_gt": 12,
+  "wall_time": 6.59100005577784e-05,
+  "mode": "ensemble"
+}

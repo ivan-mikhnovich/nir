@@ -1,0 +1,98 @@
+{
+  "approach": "llm-gpt",
+  "pair": "confOf\u2194conference",
+  "source": "conference",
+  "target": "confOf",
+  "precision": 0.5,
+  "recall": 0.7272727272727273,
+  "f1": 0.5925925925925926,
+  "matches": 8,
+  "total_predicted": 16,
+  "total_gt": 11,
+  "wall_time": 55.4210823100002,
+  "api_time": 55.42078782399949,
+  "per_node": 0.939335386847449,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "Conference#Accepted_contribution",
+      "target_id": "confof#Contribution",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Committee_member",
+      "target_id": "confof#Member",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "Conference#Conference",
+      "target_id": "confof#Conference",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Conference_contribution",
+      "target_id": "confof#Short_paper",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Conference_contributor",
+      "target_id": "confof#Member_PC",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "Conference#Conference_participant",
+      "target_id": "confof#Participant",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Organization",
+      "target_id": "confof#Organization",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Paper",
+      "target_id": "confof#Paper",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Passive_conference_participant",
+      "target_id": "confof#Person",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Poster",
+      "target_id": "confof#Poster",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Regular_author",
+      "target_id": "confof#Author",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Review",
+      "target_id": "confof#Reviewing_event",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Topic",
+      "target_id": "confof#Topic",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Track-workshop_chair",
+      "target_id": "confof#Chair_PC",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Tutorial",
+      "target_id": "confof#Tutorial",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Workshop",
+      "target_id": "confof#Workshop",
+      "confidence": 0.9
+    }
+  ]
+}

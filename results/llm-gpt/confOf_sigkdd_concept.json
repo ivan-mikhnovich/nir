@@ -1,0 +1,68 @@
+{
+  "approach": "llm-gpt",
+  "pair": "confOf\u2194sigkdd",
+  "source": "confOf",
+  "target": "sigkdd",
+  "precision": 0.2,
+  "recall": 0.3333333333333333,
+  "f1": 0.25,
+  "matches": 2,
+  "total_predicted": 10,
+  "total_gt": 6,
+  "wall_time": 17.655379777001144,
+  "api_time": 17.622535370999685,
+  "per_node": 0.46375093081578117,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "confof#Administrator",
+      "target_id": "sigkdd#Webmaster",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "confof#Author",
+      "target_id": "sigkdd#Author_of_paper",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#City",
+      "target_id": "sigkdd#Place",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Conference",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Member",
+      "target_id": "sigkdd#Organizing_Committee_member",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Member_PC",
+      "target_id": "sigkdd#Program_Committee_member",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Organization",
+      "target_id": "sigkdd#Organizing_Committee",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "confof#Reviewing_event",
+      "target_id": "sigkdd#Review",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Student",
+      "target_id": "sigkdd#Registration_Student",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "confof#Volunteer",
+      "target_id": "sigkdd#Organizator",
+      "confidence": 0.9
+    }
+  ]
+}

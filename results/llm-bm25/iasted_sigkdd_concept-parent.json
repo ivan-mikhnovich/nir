@@ -1,0 +1,58 @@
+{
+  "approach": "llm-bm25",
+  "pair": "iasted\u2194sigkdd",
+  "source": "iasted",
+  "target": "sigkdd",
+  "precision": 0.875,
+  "recall": 0.4666666666666667,
+  "f1": 0.608695652173913,
+  "matches": 7,
+  "total_predicted": 8,
+  "total_gt": 15,
+  "wall_time": 45.146703264999815,
+  "api_time": 45.146365971002524,
+  "per_node": 0.32247404265001806,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "iasted#Conference_activity",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "iasted#Conference_hall",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Deadline_for_notification_of_acceptance",
+      "target_id": "sigkdd#Deadline_Author_notification",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "iasted#Main_office",
+      "target_id": "sigkdd#Main_office",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Nonmember_registration_fee",
+      "target_id": "sigkdd#Registration_Non-Member",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "iasted#Place",
+      "target_id": "sigkdd#Place",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Registration_fee",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "iasted#Review",
+      "target_id": "sigkdd#Review",
+      "confidence": 0.9
+    }
+  ]
+}

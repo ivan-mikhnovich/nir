@@ -1,0 +1,113 @@
+{
+  "approach": "llm-gpt",
+  "pair": "edas\u2194iasted",
+  "source": "edas",
+  "target": "iasted",
+  "precision": 0.5263157894736842,
+  "recall": 0.5263157894736842,
+  "f1": 0.5263157894736842,
+  "matches": 10,
+  "total_predicted": 19,
+  "total_gt": 19,
+  "wall_time": 91.29089831700185,
+  "api_time": 91.29038304500136,
+  "per_node": 0.8863143984951589,
+  "mode": "concept-children",
+  "match_pairs": [
+    {
+      "source_id": "edas#Author",
+      "target_id": "iasted#Author",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#CoffeeBreak",
+      "target_id": "iasted#Coffee_break",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Conference",
+      "target_id": "iasted#Conference_state",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#ConferenceDinner",
+      "target_id": "iasted#Dinner_banquet",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#ConferenceVenuePlace",
+      "target_id": "iasted#Conference_building",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "edas#DiningPlace",
+      "target_id": "iasted#Conference_restaurant",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "edas#MeetingRoomPlace",
+      "target_id": "iasted#Session_room",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "edas#PaperPresentation",
+      "target_id": "iasted#Presentation",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Person",
+      "target_id": "iasted#Person",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#PersonalReviewHistory",
+      "target_id": "iasted#Record_of_attendance",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "edas#Reception",
+      "target_id": "iasted#Conference_activity",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#RejectedPaper",
+      "target_id": "iasted#Refusing_manuscript",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Review",
+      "target_id": "iasted#Review",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#SessionChair",
+      "target_id": "iasted#Session_chair",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#SlideSet",
+      "target_id": "iasted#PowerPoint_presentation",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Sponsorship",
+      "target_id": "iasted#Sponzorship",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#TPCMember",
+      "target_id": "iasted#Technical_commitee",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#WelcomeTalk",
+      "target_id": "iasted#Welcome_address",
+      "confidence": 0.95
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "edas\u2194iasted",
+  "source": "edas",
+  "target": "iasted",
+  "precision": 0.6666666666666666,
+  "recall": 0.42105263157894735,
+  "f1": 0.5161290322580646,
+  "matches": 8,
+  "total_predicted": 12,
+  "total_gt": 19,
+  "wall_time": 69.99093967299996,
+  "api_time": 69.92283649199817,
+  "per_node": 0.6788624902135745,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "edas#Author",
+      "target_id": "iasted#Author",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#CoffeeBreak",
+      "target_id": "iasted#Coffee_break",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#ConferenceVenuePlace",
+      "target_id": "iasted#Conference_city",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#DiningPlace",
+      "target_id": "iasted#Conference_restaurant",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Document",
+      "target_id": "iasted#Document",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#Excursion",
+      "target_id": "iasted#Trip_day",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#MealEvent",
+      "target_id": "iasted#Dinner_banquet",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Person",
+      "target_id": "iasted#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#Review",
+      "target_id": "iasted#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#SessionChair",
+      "target_id": "iasted#Session_chair",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#WelcomeTalk",
+      "target_id": "iasted#Welcome_address",
+      "confidence": 0.95
+    }
+  ]
+}

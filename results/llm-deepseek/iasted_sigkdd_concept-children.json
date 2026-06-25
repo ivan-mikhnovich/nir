@@ -1,0 +1,73 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "iasted\u2194sigkdd",
+  "source": "iasted",
+  "target": "sigkdd",
+  "precision": 0.8181818181818182,
+  "recall": 0.6,
+  "f1": 0.6923076923076923,
+  "matches": 9,
+  "total_predicted": 11,
+  "total_gt": 15,
+  "wall_time": 109.94997891000094,
+  "api_time": 109.94942100899789,
+  "per_node": 0.7853530072071278,
+  "mode": "concept-children",
+  "match_pairs": [
+    {
+      "source_id": "iasted#Author",
+      "target_id": "sigkdd#Author",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "iasted#Conference_hall",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Deadline",
+      "target_id": "sigkdd#Deadline",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "iasted#Deadline_for_notification_of_acceptance",
+      "target_id": "sigkdd#Deadline_Author_notification",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "iasted#Listener",
+      "target_id": "sigkdd#Listener",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Main_office",
+      "target_id": "sigkdd#Main_office",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Review",
+      "target_id": "sigkdd#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Speaker",
+      "target_id": "sigkdd#Speaker",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "iasted#Sponsor",
+      "target_id": "sigkdd#Sponzor",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "iasted#Submission",
+      "target_id": "sigkdd#Paper",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "iasted#Submissions_deadline",
+      "target_id": "sigkdd#Deadline_Paper_Submission",
+      "confidence": 0.95
+    }
+  ]
+}

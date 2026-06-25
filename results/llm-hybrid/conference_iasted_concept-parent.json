@@ -1,0 +1,43 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "conference\u2194iasted",
+  "source": "conference",
+  "target": "iasted",
+  "precision": 0.6,
+  "recall": 0.23076923076923078,
+  "f1": 0.33333333333333337,
+  "matches": 3,
+  "total_predicted": 5,
+  "total_gt": 13,
+  "wall_time": 47.309567625001364,
+  "api_time": 47.30925595200097,
+  "per_node": 0.8018517957966266,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "Conference#Person",
+      "target_id": "iasted#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Presentation",
+      "target_id": "iasted#Presentation",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "Conference#Review",
+      "target_id": "iasted#Review",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Written_contribution",
+      "target_id": "iasted#Final_manuscript",
+      "confidence": 0.9
+    }
+  ]
+}

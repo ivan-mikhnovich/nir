@@ -1,0 +1,68 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "confOf\u2194edas",
+  "source": "confOf",
+  "target": "edas",
+  "precision": 0.8,
+  "recall": 0.5714285714285714,
+  "f1": 0.6666666666666666,
+  "matches": 8,
+  "total_predicted": 10,
+  "total_gt": 14,
+  "wall_time": 36.12997165600245,
+  "api_time": 36.08635687900096,
+  "per_node": 0.9496409705000253,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "confof#Author",
+      "target_id": "edas#Author",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Conference",
+      "target_id": "edas#Conference",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Organization",
+      "target_id": "edas#Organization",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Paper",
+      "target_id": "edas#Paper",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Person",
+      "target_id": "edas#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Reception",
+      "target_id": "edas#Reception",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Social_event",
+      "target_id": "edas#SocialEvent",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Student",
+      "target_id": "edas#Attendee",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Trip",
+      "target_id": "edas#Excursion",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Workshop",
+      "target_id": "edas#Workshop",
+      "confidence": 0.9
+    }
+  ]
+}

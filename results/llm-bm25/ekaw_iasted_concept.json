@@ -1,0 +1,48 @@
+{
+  "approach": "llm-bm25",
+  "pair": "ekaw\u2194iasted",
+  "source": "ekaw",
+  "target": "iasted",
+  "precision": 0.8333333333333334,
+  "recall": 0.5,
+  "f1": 0.625,
+  "matches": 5,
+  "total_predicted": 6,
+  "total_gt": 10,
+  "wall_time": 27.728252452998277,
+  "api_time": 27.72474300199974,
+  "per_node": 0.3797910000273937,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "ekaw#Document",
+      "target_id": "iasted#Document",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "ekaw#Person",
+      "target_id": "iasted#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "ekaw#Possible_Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "ekaw#Review",
+      "target_id": "iasted#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "ekaw#Session_Chair",
+      "target_id": "iasted#Session_chair",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "ekaw#Tutorial",
+      "target_id": "iasted#Tutorial",
+      "confidence": 0.95
+    }
+  ]
+}

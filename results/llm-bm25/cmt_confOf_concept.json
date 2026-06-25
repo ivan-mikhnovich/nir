@@ -1,0 +1,38 @@
+{
+  "approach": "llm-bm25",
+  "pair": "cmt\u2194confOf",
+  "source": "cmt",
+  "target": "confOf",
+  "precision": 0.75,
+  "recall": 0.3,
+  "f1": 0.4285714285714285,
+  "matches": 3,
+  "total_predicted": 4,
+  "total_gt": 10,
+  "wall_time": 12.247805902999971,
+  "api_time": 12.247086666997347,
+  "per_node": 0.42231333334473614,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Administrator",
+      "target_id": "confof#Administrator",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "confof#Conference",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "confof#Paper",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "confof#Person",
+      "confidence": 0.95
+    }
+  ]
+}

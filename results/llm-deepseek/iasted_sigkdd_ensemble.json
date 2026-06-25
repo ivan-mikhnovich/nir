@@ -1,0 +1,14 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "iasted\u2194sigkdd",
+  "source": "iasted",
+  "target": "sigkdd",
+  "precision": 0.65,
+  "recall": 0.8666666666666667,
+  "f1": 0.7428571428571429,
+  "matches": 13,
+  "total_predicted": 20,
+  "total_gt": 15,
+  "wall_time": 8.373200034839101e-05,
+  "mode": "ensemble"
+}

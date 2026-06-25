@@ -1,0 +1,14 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "cmt\u2194edas",
+  "source": "cmt",
+  "target": "edas",
+  "precision": 0.7272727272727273,
+  "recall": 1.0,
+  "f1": 0.8421052631578948,
+  "matches": 8,
+  "total_predicted": 11,
+  "total_gt": 8,
+  "wall_time": 6.258200028241845e-05,
+  "mode": "ensemble"
+}

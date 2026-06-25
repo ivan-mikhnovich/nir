@@ -1,0 +1,14 @@
+{
+  "approach": "llm-gpt",
+  "pair": "confOf\u2194iasted",
+  "source": "confOf",
+  "target": "iasted",
+  "precision": 0.2857142857142857,
+  "recall": 0.4444444444444444,
+  "f1": 0.34782608695652173,
+  "matches": 4,
+  "total_predicted": 14,
+  "total_gt": 9,
+  "wall_time": 8.349099880433641e-05,
+  "mode": "ensemble"
+}

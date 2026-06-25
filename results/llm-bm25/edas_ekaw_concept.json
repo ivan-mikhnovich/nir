@@ -1,0 +1,43 @@
+{
+  "approach": "llm-bm25",
+  "pair": "edas\u2194ekaw",
+  "source": "edas",
+  "target": "ekaw",
+  "precision": 0.6,
+  "recall": 0.15789473684210525,
+  "f1": 0.25,
+  "matches": 3,
+  "total_predicted": 5,
+  "total_gt": 19,
+  "wall_time": 12.196667659001832,
+  "api_time": 12.194220852001308,
+  "per_node": 0.11839049370875057,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "edas#Document",
+      "target_id": "ekaw#Document",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Person",
+      "target_id": "ekaw#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#Presenter",
+      "target_id": "ekaw#Presenter",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#Reviewer",
+      "target_id": "ekaw#Possible_Reviewer",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Workshop",
+      "target_id": "ekaw#Workshop",
+      "confidence": 0.9
+    }
+  ]
+}

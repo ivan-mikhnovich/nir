@@ -1,0 +1,53 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "cmt\u2194sigkdd",
+  "source": "cmt",
+  "target": "sigkdd",
+  "precision": 0.8571428571428571,
+  "recall": 0.6,
+  "f1": 0.7058823529411764,
+  "matches": 6,
+  "total_predicted": 7,
+  "total_gt": 10,
+  "wall_time": 23.498759314999916,
+  "api_time": 23.498557692999384,
+  "per_node": 0.8102950928620477,
+  "mode": "concept-children",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "sigkdd#General_Chair",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "sigkdd#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "sigkdd#Document",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "cmt#ProgramCommittee",
+      "target_id": "sigkdd#Program_Committee",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeChair",
+      "target_id": "sigkdd#Program_Chair",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "sigkdd#Program_Committee_member",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "sigkdd#Review",
+      "confidence": 1.0
+    }
+  ]
+}

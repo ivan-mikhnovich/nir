@@ -1,0 +1,14 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "conference\u2194edas",
+  "source": "conference",
+  "target": "edas",
+  "precision": 0.6428571428571429,
+  "recall": 0.6428571428571429,
+  "f1": 0.6428571428571429,
+  "matches": 9,
+  "total_predicted": 14,
+  "total_gt": 14,
+  "wall_time": 5.900100222788751e-05,
+  "mode": "ensemble"
+}

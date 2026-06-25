@@ -1,0 +1,14 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "confOf\u2194edas",
+  "source": "confOf",
+  "target": "edas",
+  "precision": 0.8461538461538461,
+  "recall": 0.7857142857142857,
+  "f1": 0.8148148148148148,
+  "matches": 11,
+  "total_predicted": 13,
+  "total_gt": 14,
+  "wall_time": 6.56910015095491e-05,
+  "mode": "ensemble"
+}

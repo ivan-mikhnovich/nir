@@ -1,0 +1,63 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "cmt\u2194ekaw",
+  "source": "cmt",
+  "target": "ekaw",
+  "precision": 0.6666666666666666,
+  "recall": 0.75,
+  "f1": 0.7058823529411765,
+  "matches": 6,
+  "total_predicted": 9,
+  "total_gt": 8,
+  "wall_time": 25.665124389000994,
+  "api_time": 25.47525171700181,
+  "per_node": 0.8784569557586831,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Author",
+      "target_id": "ekaw#Paper_Author",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "ekaw#Session_Chair",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Co-author",
+      "target_id": "ekaw#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "ekaw#Conference",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "ekaw#Conference_Participant",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "ekaw#Paper",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#PaperFullVersion",
+      "target_id": "ekaw#Regular_Paper",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "ekaw#PC_Member",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "ekaw#Review",
+      "confidence": 1.0
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "confOf\u2194ekaw",
+  "source": "confOf",
+  "target": "ekaw",
+  "precision": 0.8333333333333334,
+  "recall": 0.5,
+  "f1": 0.625,
+  "matches": 10,
+  "total_predicted": 12,
+  "total_gt": 20,
+  "wall_time": 7.443100003001746e-05,
+  "mode": "ensemble"
+}

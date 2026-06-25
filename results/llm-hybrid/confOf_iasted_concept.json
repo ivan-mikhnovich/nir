@@ -1,0 +1,63 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "confOf\u2194iasted",
+  "source": "confOf",
+  "target": "iasted",
+  "precision": 0.5555555555555556,
+  "recall": 0.5555555555555556,
+  "f1": 0.5555555555555556,
+  "matches": 5,
+  "total_predicted": 9,
+  "total_gt": 9,
+  "wall_time": 35.775265437998314,
+  "api_time": 35.727327755997976,
+  "per_node": 0.9401928356841572,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "confof#Author",
+      "target_id": "iasted#Author",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Camera_Ready_event",
+      "target_id": "iasted#Camera_ready_manuscript_deadline",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Chair_PC",
+      "target_id": "iasted#Session_chair",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#City",
+      "target_id": "iasted#City",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Country",
+      "target_id": "iasted#State",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "confof#Person",
+      "target_id": "iasted#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Student",
+      "target_id": "iasted#Student_non_speaker",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Submission_event",
+      "target_id": "iasted#Submission",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Tutorial",
+      "target_id": "iasted#Tutorial",
+      "confidence": 0.95
+    }
+  ]
+}

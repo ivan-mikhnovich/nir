@@ -1,0 +1,14 @@
+{
+  "approach": "llm-gpt",
+  "pair": "conference\u2194sigkdd",
+  "source": "conference",
+  "target": "sigkdd",
+  "precision": 0.4090909090909091,
+  "recall": 0.75,
+  "f1": 0.5294117647058824,
+  "matches": 9,
+  "total_predicted": 22,
+  "total_gt": 12,
+  "wall_time": 8.587400225223973e-05,
+  "mode": "ensemble"
+}

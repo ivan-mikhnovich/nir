@@ -1,0 +1,14 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "cmt\u2194conference",
+  "source": "cmt",
+  "target": "conference",
+  "precision": 0.6666666666666666,
+  "recall": 0.7272727272727273,
+  "f1": 0.6956521739130435,
+  "matches": 8,
+  "total_predicted": 12,
+  "total_gt": 11,
+  "wall_time": 6.330999894998968e-05,
+  "mode": "ensemble"
+}

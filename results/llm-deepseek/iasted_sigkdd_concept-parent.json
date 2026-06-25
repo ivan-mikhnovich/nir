@@ -1,0 +1,73 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "iasted\u2194sigkdd",
+  "source": "iasted",
+  "target": "sigkdd",
+  "precision": 0.8181818181818182,
+  "recall": 0.6,
+  "f1": 0.6923076923076923,
+  "matches": 9,
+  "total_predicted": 11,
+  "total_gt": 15,
+  "wall_time": 106.80023742499907,
+  "api_time": 106.79967363399919,
+  "per_node": 0.7628548116714228,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "iasted#Author",
+      "target_id": "sigkdd#Author",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "iasted#Conference_activity",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "iasted#Conference_hall",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Document",
+      "target_id": "sigkdd#Document",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Listener",
+      "target_id": "sigkdd#Listener",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "iasted#Main_office",
+      "target_id": "sigkdd#Main_office",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Nonmember_registration_fee",
+      "target_id": "sigkdd#Registration_Non-Member",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "iasted#Place",
+      "target_id": "sigkdd#Place",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Registration_fee",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "iasted#Review",
+      "target_id": "sigkdd#Review",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "iasted#Sponsor",
+      "target_id": "sigkdd#Sponzor",
+      "confidence": 0.8
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "conference\u2194ekaw",
+  "source": "conference",
+  "target": "ekaw",
+  "precision": 0.7142857142857143,
+  "recall": 0.43478260869565216,
+  "f1": 0.5405405405405405,
+  "matches": 10,
+  "total_predicted": 14,
+  "total_gt": 23,
+  "wall_time": 50.994267330000184,
+  "api_time": 50.99397954799997,
+  "per_node": 0.8643047381016944,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "Conference#Abstract",
+      "target_id": "ekaw#Abstract",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Accepted_contribution",
+      "target_id": "ekaw#Accepted_Paper",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Conference_part",
+      "target_id": "ekaw#Conference_Session",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "Conference#Conference_participant",
+      "target_id": "ekaw#Conference_Participant",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Conference_proceedings",
+      "target_id": "ekaw#Conference_Proceedings",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Invited_speaker",
+      "target_id": "ekaw#Invited_Speaker",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Invited_talk",
+      "target_id": "ekaw#Invited_Talk",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Organization",
+      "target_id": "ekaw#Organisation",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Person",
+      "target_id": "ekaw#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Rejected_contribution",
+      "target_id": "ekaw#Rejected_Paper",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Topic",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Tutorial",
+      "target_id": "ekaw#Tutorial",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Workshop",
+      "target_id": "ekaw#Workshop",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Written_contribution",
+      "target_id": "ekaw#Conference_Paper",
+      "confidence": 0.95
+    }
+  ]
+}

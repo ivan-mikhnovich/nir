@@ -1,0 +1,63 @@
+{
+  "approach": "llm-bm25",
+  "pair": "confOf\u2194edas",
+  "source": "confOf",
+  "target": "edas",
+  "precision": 0.8888888888888888,
+  "recall": 0.5714285714285714,
+  "f1": 0.6956521739130435,
+  "matches": 8,
+  "total_predicted": 9,
+  "total_gt": 14,
+  "wall_time": 10.181988861000718,
+  "api_time": 10.18062837600155,
+  "per_node": 0.26791127305267237,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "confof#Author",
+      "target_id": "edas#Author",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Conference",
+      "target_id": "edas#Conference",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Country",
+      "target_id": "edas#Country",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "confof#Organization",
+      "target_id": "edas#Organization",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Paper",
+      "target_id": "edas#Paper",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Person",
+      "target_id": "edas#Person",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Reception",
+      "target_id": "edas#Reception",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Topic",
+      "target_id": "edas#Topic",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "confof#Workshop",
+      "target_id": "edas#Workshop",
+      "confidence": 0.9
+    }
+  ]
+}

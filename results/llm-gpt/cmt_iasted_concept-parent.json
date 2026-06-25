@@ -1,0 +1,38 @@
+{
+  "approach": "llm-gpt",
+  "pair": "cmt\u2194iasted",
+  "source": "cmt",
+  "target": "iasted",
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0,
+  "matches": 4,
+  "total_predicted": 4,
+  "total_gt": 4,
+  "wall_time": 38.49223394300134,
+  "api_time": 38.49203518000104,
+  "per_node": 1.3273115579310704,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Author",
+      "target_id": "iasted#Author",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "iasted#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "iasted#Review",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.9
+    }
+  ]
+}

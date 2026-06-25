@@ -1,0 +1,14 @@
+{
+  "approach": "llm-gpt",
+  "pair": "conference\u2194iasted",
+  "source": "conference",
+  "target": "iasted",
+  "precision": 0.23809523809523808,
+  "recall": 0.38461538461538464,
+  "f1": 0.2941176470588235,
+  "matches": 5,
+  "total_predicted": 21,
+  "total_gt": 13,
+  "wall_time": 9.667099948273972e-05,
+  "mode": "ensemble"
+}

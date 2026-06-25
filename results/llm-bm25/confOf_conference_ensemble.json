@@ -1,0 +1,14 @@
+{
+  "approach": "llm-bm25",
+  "pair": "confOf\u2194conference",
+  "source": "conference",
+  "target": "confOf",
+  "precision": 0.7272727272727273,
+  "recall": 0.7272727272727273,
+  "f1": 0.7272727272727273,
+  "matches": 8,
+  "total_predicted": 11,
+  "total_gt": 11,
+  "wall_time": 5.276099909679033e-05,
+  "mode": "ensemble"
+}

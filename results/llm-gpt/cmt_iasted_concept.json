@@ -1,0 +1,53 @@
+{
+  "approach": "llm-gpt",
+  "pair": "cmt\u2194iasted",
+  "source": "cmt",
+  "target": "iasted",
+  "precision": 0.5714285714285714,
+  "recall": 1.0,
+  "f1": 0.7272727272727273,
+  "matches": 4,
+  "total_predicted": 7,
+  "total_gt": 4,
+  "wall_time": 23.50905634999981,
+  "api_time": 23.470985375000964,
+  "per_node": 0.8093443232758953,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Author",
+      "target_id": "iasted#Author",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "iasted#Session_chair",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "cmt#PaperFullVersion",
+      "target_id": "iasted#Document",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "iasted#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#ProgramCommittee",
+      "target_id": "iasted#Technical_commitee",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "iasted#Review",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.9
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "approach": "llm-gpt",
+  "pair": "cmt\u2194ekaw",
+  "source": "cmt",
+  "target": "ekaw",
+  "precision": 0.45454545454545453,
+  "recall": 0.625,
+  "f1": 0.5263157894736842,
+  "matches": 5,
+  "total_predicted": 11,
+  "total_gt": 8,
+  "wall_time": 45.88384064299862,
+  "api_time": 45.88363810999908,
+  "per_node": 1.5821944175861753,
+  "mode": "concept-children",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Acceptance",
+      "target_id": "ekaw#Accepted_Paper",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#AssociatedChair",
+      "target_id": "ekaw#Workshop_Chair",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "ekaw#Paper_Author",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "ekaw#Demo_Chair",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "ekaw#Conference",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "ekaw#Document",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "ekaw#Person",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "ekaw#PC_Member",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Rejection",
+      "target_id": "ekaw#Rejected_Paper",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "ekaw#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.9
+    }
+  ]
+}

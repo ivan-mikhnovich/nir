@@ -1,0 +1,14 @@
+{
+  "approach": "llm-gpt",
+  "pair": "cmt\u2194conference",
+  "source": "cmt",
+  "target": "conference",
+  "precision": 0.5714285714285714,
+  "recall": 0.7272727272727273,
+  "f1": 0.64,
+  "matches": 8,
+  "total_predicted": 14,
+  "total_gt": 11,
+  "wall_time": 7.471499884559307e-05,
+  "mode": "ensemble"
+}

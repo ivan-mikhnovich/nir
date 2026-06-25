@@ -1,0 +1,14 @@
+{
+  "approach": "llm-bm25",
+  "pair": "ekaw\u2194sigkdd",
+  "source": "ekaw",
+  "target": "sigkdd",
+  "precision": 0.8181818181818182,
+  "recall": 0.8181818181818182,
+  "f1": 0.8181818181818182,
+  "matches": 9,
+  "total_predicted": 11,
+  "total_gt": 11,
+  "wall_time": 6.866100011393428e-05,
+  "mode": "ensemble"
+}

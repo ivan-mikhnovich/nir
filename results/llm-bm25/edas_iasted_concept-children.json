@@ -1,0 +1,33 @@
+{
+  "approach": "llm-bm25",
+  "pair": "edas\u2194iasted",
+  "source": "edas",
+  "target": "iasted",
+  "precision": 0.6666666666666666,
+  "recall": 0.10526315789473684,
+  "f1": 0.18181818181818182,
+  "matches": 2,
+  "total_predicted": 3,
+  "total_gt": 19,
+  "wall_time": 11.669491314998595,
+  "api_time": 11.669306624000455,
+  "per_node": 0.11329423906796558,
+  "mode": "concept-children",
+  "match_pairs": [
+    {
+      "source_id": "edas#Person",
+      "target_id": "iasted#Person",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Review",
+      "target_id": "iasted#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.95
+    }
+  ]
+}

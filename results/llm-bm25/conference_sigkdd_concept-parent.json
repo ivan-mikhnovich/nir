@@ -1,0 +1,48 @@
+{
+  "approach": "llm-bm25",
+  "pair": "conference\u2194sigkdd",
+  "source": "conference",
+  "target": "sigkdd",
+  "precision": 0.8333333333333334,
+  "recall": 0.4166666666666667,
+  "f1": 0.5555555555555556,
+  "matches": 5,
+  "total_predicted": 6,
+  "total_gt": 12,
+  "wall_time": 21.32167084500179,
+  "api_time": 21.321436281999922,
+  "per_node": 0.3613802759661004,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "Conference#Abstract",
+      "target_id": "sigkdd#Abstract",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "Conference#Committee",
+      "target_id": "sigkdd#Committee",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Conference",
+      "target_id": "sigkdd#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Invited_speaker",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Organizing_committee",
+      "target_id": "sigkdd#Organizing_Committee",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Program_committee",
+      "target_id": "sigkdd#Program_Committee",
+      "confidence": 1.0
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "approach": "llm-bm25",
+  "pair": "cmt\u2194ekaw",
+  "source": "cmt",
+  "target": "ekaw",
+  "precision": 1.0,
+  "recall": 0.75,
+  "f1": 0.8571428571428571,
+  "matches": 6,
+  "total_predicted": 6,
+  "total_gt": 8,
+  "wall_time": 5.6379998568445444e-05,
+  "mode": "ensemble"
+}

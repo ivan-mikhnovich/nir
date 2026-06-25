@@ -1,0 +1,38 @@
+{
+  "approach": "llm-bm25",
+  "pair": "conference\u2194iasted",
+  "source": "conference",
+  "target": "iasted",
+  "precision": 0.75,
+  "recall": 0.23076923076923078,
+  "f1": 0.3529411764705882,
+  "matches": 3,
+  "total_predicted": 4,
+  "total_gt": 13,
+  "wall_time": 21.975764631999482,
+  "api_time": 21.975581508999312,
+  "per_node": 0.3724674832033782,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "Conference#Conference_contributor",
+      "target_id": "iasted#Conference_Hiker",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Person",
+      "target_id": "iasted#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "Conference#Tutorial",
+      "target_id": "iasted#Tutorial",
+      "confidence": 0.95
+    }
+  ]
+}

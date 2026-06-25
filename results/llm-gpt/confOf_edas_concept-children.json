@@ -1,0 +1,88 @@
+{
+  "approach": "llm-gpt",
+  "pair": "confOf\u2194edas",
+  "source": "confOf",
+  "target": "edas",
+  "precision": 0.5,
+  "recall": 0.5,
+  "f1": 0.5,
+  "matches": 7,
+  "total_predicted": 14,
+  "total_gt": 14,
+  "wall_time": 57.19718184799967,
+  "api_time": 57.19694770600108,
+  "per_node": 1.5051828343684495,
+  "mode": "concept-children",
+  "match_pairs": [
+    {
+      "source_id": "confof#Banquet",
+      "target_id": "edas#MealEvent",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#City",
+      "target_id": "edas#Place",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Company",
+      "target_id": "edas#Organization",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Country",
+      "target_id": "edas#Country",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Member",
+      "target_id": "edas#TPCMember",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "confof#Member_PC",
+      "target_id": "edas#Reviewer",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Paper",
+      "target_id": "edas#Paper",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Participant",
+      "target_id": "edas#Attendee",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Person",
+      "target_id": "edas#Person",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Reception",
+      "target_id": "edas#Reception",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Social_event",
+      "target_id": "edas#SocialEvent",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Topic",
+      "target_id": "edas#Topic",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#University",
+      "target_id": "edas#AcademiaOrganization",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Working_event",
+      "target_id": "edas#Workshop",
+      "confidence": 0.95
+    }
+  ]
+}

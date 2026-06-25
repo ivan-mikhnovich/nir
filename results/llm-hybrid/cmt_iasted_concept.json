@@ -1,0 +1,48 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "cmt\u2194iasted",
+  "source": "cmt",
+  "target": "iasted",
+  "precision": 0.5,
+  "recall": 0.75,
+  "f1": 0.6,
+  "matches": 3,
+  "total_predicted": 6,
+  "total_gt": 4,
+  "wall_time": 23.760272341001837,
+  "api_time": 23.715029232000234,
+  "per_node": 0.8177596286896632,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "cmt#PaperFullVersion",
+      "target_id": "iasted#Final_manuscript",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "iasted#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Rejection",
+      "target_id": "iasted#Refusing_manuscript",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "iasted#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#User",
+      "target_id": "iasted#Author",
+      "confidence": 0.8
+    }
+  ]
+}

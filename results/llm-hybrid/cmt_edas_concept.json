@@ -1,0 +1,53 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "cmt\u2194edas",
+  "source": "cmt",
+  "target": "edas",
+  "precision": 0.7142857142857143,
+  "recall": 0.625,
+  "f1": 0.6666666666666666,
+  "matches": 5,
+  "total_predicted": 7,
+  "total_gt": 8,
+  "wall_time": 34.06409940000003,
+  "api_time": 33.87197975399977,
+  "per_node": 1.167999301862061,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Author",
+      "target_id": "edas#Author",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "edas#Conference",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#ConferenceChair",
+      "target_id": "edas#ConferenceChair",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Meta-Reviewer",
+      "target_id": "edas#Reviewer",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "edas#Paper",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "edas#TPCMember",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "edas#Review",
+      "confidence": 1.0
+    }
+  ]
+}

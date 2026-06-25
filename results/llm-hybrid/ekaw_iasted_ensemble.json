@@ -1,0 +1,14 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "ekaw\u2194iasted",
+  "source": "ekaw",
+  "target": "iasted",
+  "precision": 0.6153846153846154,
+  "recall": 0.8,
+  "f1": 0.6956521739130435,
+  "matches": 8,
+  "total_predicted": 13,
+  "total_gt": 10,
+  "wall_time": 7.042899960651994e-05,
+  "mode": "ensemble"
+}

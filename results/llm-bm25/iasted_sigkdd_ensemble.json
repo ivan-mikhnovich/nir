@@ -1,0 +1,14 @@
+{
+  "approach": "llm-bm25",
+  "pair": "iasted\u2194sigkdd",
+  "source": "iasted",
+  "target": "sigkdd",
+  "precision": 0.7058823529411765,
+  "recall": 0.8,
+  "f1": 0.7500000000000001,
+  "matches": 12,
+  "total_predicted": 17,
+  "total_gt": 15,
+  "wall_time": 7.209099931060337e-05,
+  "mode": "ensemble"
+}

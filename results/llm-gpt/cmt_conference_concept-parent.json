@@ -1,0 +1,73 @@
+{
+  "approach": "llm-gpt",
+  "pair": "cmt\u2194conference",
+  "source": "cmt",
+  "target": "conference",
+  "precision": 0.6363636363636364,
+  "recall": 0.6363636363636364,
+  "f1": 0.6363636363636364,
+  "matches": 7,
+  "total_predicted": 11,
+  "total_gt": 11,
+  "wall_time": 15.49915841999973,
+  "api_time": 15.498937177999323,
+  "per_node": 0.5344461095861835,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Acceptance",
+      "target_id": "Conference#Accepted_contribution",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "Conference#Regular_author",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Co-author",
+      "target_id": "Conference#Contribution_co-author",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "Conference#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "Conference#Conference_participant",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "Conference#Conference_document",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "Conference#Paper",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#ProgramCommittee",
+      "target_id": "Conference#Program_committee",
+      "confidence": 0.98
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "Conference#Review",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "Conference#Reviewer",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "Conference#Topic",
+      "confidence": 0.9
+    }
+  ]
+}

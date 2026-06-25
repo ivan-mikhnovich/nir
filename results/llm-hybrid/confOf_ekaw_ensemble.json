@@ -1,0 +1,14 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "confOf\u2194ekaw",
+  "source": "confOf",
+  "target": "ekaw",
+  "precision": 0.8333333333333334,
+  "recall": 0.75,
+  "f1": 0.7894736842105262,
+  "matches": 15,
+  "total_predicted": 18,
+  "total_gt": 20,
+  "wall_time": 7.532899962825468e-05,
+  "mode": "ensemble"
+}

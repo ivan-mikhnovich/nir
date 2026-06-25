@@ -1,0 +1,63 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "cmt\u2194ekaw",
+  "source": "cmt",
+  "target": "ekaw",
+  "precision": 0.5555555555555556,
+  "recall": 0.625,
+  "f1": 0.5882352941176471,
+  "matches": 5,
+  "total_predicted": 9,
+  "total_gt": 8,
+  "wall_time": 28.055748265000148,
+  "api_time": 27.84984632600026,
+  "per_node": 0.9603395284827676,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Author",
+      "target_id": "ekaw#Paper_Author",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "ekaw#Conference",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "ekaw#OC_Member",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "ekaw#Document",
+      "confidence": 0.99
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "ekaw#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "ekaw#PC_Member",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "ekaw#Review",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#User",
+      "target_id": "ekaw#Student",
+      "confidence": 0.9
+    }
+  ]
+}

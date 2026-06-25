@@ -1,0 +1,14 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "edas\u2194ekaw",
+  "source": "edas",
+  "target": "ekaw",
+  "precision": 0.7391304347826086,
+  "recall": 0.8947368421052632,
+  "f1": 0.8095238095238095,
+  "matches": 17,
+  "total_predicted": 23,
+  "total_gt": 19,
+  "wall_time": 8.927800081437454e-05,
+  "mode": "ensemble"
+}

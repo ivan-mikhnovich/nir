@@ -1,0 +1,14 @@
+{
+  "approach": "llm-hybrid",
+  "pair": "conference\u2194sigkdd",
+  "source": "conference",
+  "target": "sigkdd",
+  "precision": 0.6153846153846154,
+  "recall": 0.6666666666666666,
+  "f1": 0.64,
+  "matches": 8,
+  "total_predicted": 13,
+  "total_gt": 12,
+  "wall_time": 7.13379995431751e-05,
+  "mode": "ensemble"
+}

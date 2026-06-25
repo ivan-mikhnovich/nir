@@ -1,0 +1,68 @@
+{
+  "approach": "llm-bm25",
+  "pair": "confOf\u2194ekaw",
+  "source": "confOf",
+  "target": "ekaw",
+  "precision": 1.0,
+  "recall": 0.5,
+  "f1": 0.6666666666666666,
+  "matches": 10,
+  "total_predicted": 10,
+  "total_gt": 20,
+  "wall_time": 24.889943425000183,
+  "api_time": 24.88859641099998,
+  "per_node": 0.6549630634473679,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "confof#Banquet",
+      "target_id": "ekaw#Conference_Banquet",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Chair_PC",
+      "target_id": "ekaw#PC_Chair",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Event",
+      "target_id": "ekaw#Event",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Member_PC",
+      "target_id": "ekaw#PC_Member",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Person",
+      "target_id": "ekaw#Person",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Social_event",
+      "target_id": "ekaw#Social_Event",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Student",
+      "target_id": "ekaw#Student",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Tutorial",
+      "target_id": "ekaw#Tutorial",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#University",
+      "target_id": "ekaw#University",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Workshop",
+      "target_id": "ekaw#Workshop",
+      "confidence": 0.95
+    }
+  ]
+}

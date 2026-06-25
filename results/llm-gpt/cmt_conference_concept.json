@@ -1,0 +1,88 @@
+{
+  "approach": "llm-gpt",
+  "pair": "cmt\u2194conference",
+  "source": "cmt",
+  "target": "conference",
+  "precision": 0.5714285714285714,
+  "recall": 0.7272727272727273,
+  "f1": 0.64,
+  "matches": 8,
+  "total_predicted": 14,
+  "total_gt": 11,
+  "wall_time": 37.093008200999975,
+  "api_time": 36.944529905998934,
+  "per_node": 1.2739493071034116,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Acceptance",
+      "target_id": "Conference#Accepted_contribution",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "Conference#Regular_author",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "Conference#Chair",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Co-author",
+      "target_id": "Conference#Contribution_co-author",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "Conference#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "Conference#Conference_participant",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "Conference#Conference_document",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "Conference#Paper",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#ProgramCommittee",
+      "target_id": "Conference#Program_committee",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Rejection",
+      "target_id": "Conference#Rejected_contribution",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "Conference#Review",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "Conference#Reviewer",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "Conference#Topic",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#User",
+      "target_id": "Conference#Person",
+      "confidence": 0.9
+    }
+  ]
+}

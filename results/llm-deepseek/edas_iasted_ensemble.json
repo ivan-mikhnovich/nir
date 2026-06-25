@@ -1,0 +1,14 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "edas\u2194iasted",
+  "source": "edas",
+  "target": "iasted",
+  "precision": 0.5789473684210527,
+  "recall": 0.5789473684210527,
+  "f1": 0.5789473684210527,
+  "matches": 11,
+  "total_predicted": 19,
+  "total_gt": 19,
+  "wall_time": 7.384299897239543e-05,
+  "mode": "ensemble"
+}

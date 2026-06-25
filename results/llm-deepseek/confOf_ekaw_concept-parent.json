@@ -1,0 +1,48 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "confOf\u2194ekaw",
+  "source": "confOf",
+  "target": "ekaw",
+  "precision": 1.0,
+  "recall": 0.3,
+  "f1": 0.4615384615384615,
+  "matches": 6,
+  "total_predicted": 6,
+  "total_gt": 20,
+  "wall_time": 35.76819833699983,
+  "api_time": 35.76794836199997,
+  "per_node": 0.9412617989999992,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "confof#Author",
+      "target_id": "ekaw#Paper_Author",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "confof#Organization",
+      "target_id": "ekaw#Organisation",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Person",
+      "target_id": "ekaw#Person",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Student",
+      "target_id": "ekaw#Student",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#University",
+      "target_id": "ekaw#University",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Workshop",
+      "target_id": "ekaw#Workshop",
+      "confidence": 0.8
+    }
+  ]
+}

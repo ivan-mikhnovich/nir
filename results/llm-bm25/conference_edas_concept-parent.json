@@ -1,0 +1,48 @@
+{
+  "approach": "llm-bm25",
+  "pair": "conference\u2194edas",
+  "source": "conference",
+  "target": "edas",
+  "precision": 1.0,
+  "recall": 0.42857142857142855,
+  "f1": 0.6,
+  "matches": 6,
+  "total_predicted": 6,
+  "total_gt": 14,
+  "wall_time": 16.07915392099676,
+  "api_time": 16.07898325899805,
+  "per_node": 0.2725251399830178,
+  "mode": "concept-parent",
+  "match_pairs": [
+    {
+      "source_id": "Conference#Paper",
+      "target_id": "edas#Paper",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Person",
+      "target_id": "edas#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Review",
+      "target_id": "edas#Review",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Reviewer",
+      "target_id": "edas#Reviewer",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Topic",
+      "target_id": "edas#Topic",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Workshop",
+      "target_id": "edas#Workshop",
+      "confidence": 0.9
+    }
+  ]
+}

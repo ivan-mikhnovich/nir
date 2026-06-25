@@ -1,0 +1,83 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "edas\u2194iasted",
+  "source": "edas",
+  "target": "iasted",
+  "precision": 0.5384615384615384,
+  "recall": 0.3684210526315789,
+  "f1": 0.4375,
+  "matches": 7,
+  "total_predicted": 13,
+  "total_gt": 19,
+  "wall_time": 74.20843711999987,
+  "api_time": 74.15127183499862,
+  "per_node": 0.7199152605339673,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "edas#AcceptedPaper",
+      "target_id": "iasted#Accepting_manuscript",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "edas#AccommodationPlace",
+      "target_id": "iasted#Conference_hotel",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Author",
+      "target_id": "iasted#Author",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#CoffeeBreak",
+      "target_id": "iasted#Coffee_break",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#DiningPlace",
+      "target_id": "iasted#Conference_restaurant",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#MealEvent",
+      "target_id": "iasted#Dinner_banquet",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Person",
+      "target_id": "iasted#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#PublishedPaper",
+      "target_id": "iasted#Publication",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#RejectedPaper",
+      "target_id": "iasted#Refusing_manuscript",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Review",
+      "target_id": "iasted#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#SessionChair",
+      "target_id": "iasted#Session_chair",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Sponsorship",
+      "target_id": "iasted#Sponzorship",
+      "confidence": 0.95
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "approach": "llm-bm25",
+  "pair": "confOf\u2194sigkdd",
+  "source": "confOf",
+  "target": "sigkdd",
+  "precision": 0.8333333333333334,
+  "recall": 0.8333333333333334,
+  "f1": 0.8333333333333334,
+  "matches": 5,
+  "total_predicted": 6,
+  "total_gt": 6,
+  "wall_time": 11.777251825998974,
+  "api_time": 11.776159164997807,
+  "per_node": 0.3098989253946791,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "confof#Author",
+      "target_id": "sigkdd#Author_of_paper",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Chair_PC",
+      "target_id": "sigkdd#Program_Chair",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Conference",
+      "target_id": "sigkdd#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Member_PC",
+      "target_id": "sigkdd#Program_Committee_member",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Paper",
+      "target_id": "sigkdd#Paper",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Person",
+      "target_id": "sigkdd#Person",
+      "confidence": 0.9
+    }
+  ]
+}

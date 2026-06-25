@@ -1,0 +1,14 @@
+{
+  "approach": "llm-deepseek",
+  "pair": "edas\u2194ekaw",
+  "source": "edas",
+  "target": "ekaw",
+  "precision": 0.625,
+  "recall": 0.5263157894736842,
+  "f1": 0.5714285714285714,
+  "matches": 10,
+  "total_predicted": 16,
+  "total_gt": 19,
+  "wall_time": 7.330399967031553e-05,
+  "mode": "ensemble"
+}

@@ -1,0 +1,98 @@
+{
+  "approach": "llm-gpt",
+  "pair": "edas\u2194ekaw",
+  "source": "edas",
+  "target": "ekaw",
+  "precision": 0.5625,
+  "recall": 0.47368421052631576,
+  "f1": 0.5142857142857142,
+  "matches": 9,
+  "total_predicted": 16,
+  "total_gt": 19,
+  "wall_time": 108.22241792799832,
+  "api_time": 108.14748709799824,
+  "per_node": 1.0499756028931868,
+  "mode": "concept",
+  "match_pairs": [
+    {
+      "source_id": "edas#AcademiaOrganization",
+      "target_id": "ekaw#Academic_Institution",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#AcceptedPaper",
+      "target_id": "ekaw#Accepted_Paper",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#AccpetIfRoomRating",
+      "target_id": "ekaw#Rejected_Paper",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Attendee",
+      "target_id": "ekaw#Conference_Participant",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Conference",
+      "target_id": "ekaw#Conference",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#ConferenceDinner",
+      "target_id": "ekaw#Conference_Banquet",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Excursion",
+      "target_id": "ekaw#Conference_Trip",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "edas#Paper",
+      "target_id": "ekaw#Paper",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Person",
+      "target_id": "ekaw#Person",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Presenter",
+      "target_id": "ekaw#Presenter",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#RatedPapers",
+      "target_id": "ekaw#Evaluated_Paper",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#RejectRating",
+      "target_id": "ekaw#Negative_Review",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "edas#Review",
+      "target_id": "ekaw#Review",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Reviewer",
+      "target_id": "ekaw#Possible_Reviewer",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#SocialEvent",
+      "target_id": "ekaw#Social_Event",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Workshop",
+      "target_id": "ekaw#Workshop",
+      "confidence": 0.9
+    }
+  ]
+}
