@@ -1,0 +1,600 @@
+{
+  "name": "confOf",
+  "namespace": "http://confOf",
+  "root_id": "confof#Event",
+  "nodes": {
+    "confof#Trip": {
+      "id": "confof#Trip",
+      "name": "Trip",
+      "parents": [
+        "confof#Social_event"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Banquet",
+        "confof#Reception"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "confof#Banquet": {
+      "id": "confof#Banquet",
+      "name": "Banquet",
+      "parents": [
+        "confof#Social_event"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Trip",
+        "confof#Reception"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "confof#Reception": {
+      "id": "confof#Reception",
+      "name": "Reception",
+      "parents": [
+        "confof#Social_event"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Banquet",
+        "confof#Trip"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "confof#Social_event": {
+      "id": "confof#Social_event",
+      "name": "Social event",
+      "parents": [
+        "confof#Event"
+      ],
+      "children": [
+        "confof#Trip",
+        "confof#Banquet",
+        "confof#Reception"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Working_event",
+        "confof#Administrative_event"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "confof#Event": {
+      "id": "confof#Event",
+      "name": "Event",
+      "parents": [],
+      "children": [
+        "confof#Social_event",
+        "confof#Administrative_event",
+        "confof#Working_event"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Contribution",
+        "confof#City",
+        "confof#Organization",
+        "confof#Person",
+        "confof#Topic",
+        "confof#Country"
+      ],
+      "comment": "confTool",
+      "depth": 0
+    },
+    "confof#Contribution": {
+      "id": "confof#Contribution",
+      "name": "Contribution",
+      "parents": [],
+      "children": [
+        "confof#Poster",
+        "confof#Paper",
+        "confof#Short_paper"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Country",
+        "confof#City",
+        "confof#Event",
+        "confof#Person",
+        "confof#Topic",
+        "confof#Organization"
+      ],
+      "comment": "confTool",
+      "depth": 0
+    },
+    "confof#City": {
+      "id": "confof#City",
+      "name": "City",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Contribution",
+        "confof#Person",
+        "confof#Organization",
+        "confof#Event",
+        "confof#Topic"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "confof#Organization": {
+      "id": "confof#Organization",
+      "name": "Organization",
+      "parents": [],
+      "children": [
+        "confof#Company",
+        "confof#University"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Event",
+        "confof#Person",
+        "confof#Contribution",
+        "confof#Topic",
+        "confof#City",
+        "confof#Country"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "confof#Person": {
+      "id": "confof#Person",
+      "name": "Person",
+      "parents": [],
+      "children": [
+        "confof#Scholar",
+        "confof#Administrator",
+        "confof#Participant",
+        "confof#Member_PC",
+        "confof#Chair_PC",
+        "confof#Science_Worker",
+        "confof#Assistant",
+        "confof#Volunteer",
+        "confof#Author"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#City",
+        "confof#Topic",
+        "confof#Organization",
+        "confof#Country",
+        "confof#Contribution",
+        "confof#Event"
+      ],
+      "comment": "confTool",
+      "depth": 0
+    },
+    "confof#Topic": {
+      "id": "confof#Topic",
+      "name": "Topic",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Country",
+        "confof#Contribution",
+        "confof#Organization",
+        "confof#City",
+        "confof#Event",
+        "confof#Person"
+      ],
+      "comment": "confTool",
+      "depth": 0
+    },
+    "confof#Country": {
+      "id": "confof#Country",
+      "name": "Country",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Event",
+        "confof#Organization",
+        "confof#Person",
+        "confof#Contribution",
+        "confof#Topic"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "confof#Company": {
+      "id": "confof#Company",
+      "name": "Company",
+      "parents": [
+        "confof#Organization"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#University"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "confof#University": {
+      "id": "confof#University",
+      "name": "University",
+      "parents": [
+        "confof#Organization"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Company"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "confof#Scholar": {
+      "id": "confof#Scholar",
+      "name": "Scholar",
+      "parents": [
+        "confof#Person"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "price category - scholar",
+      "depth": 1
+    },
+    "confof#Administrator": {
+      "id": "confof#Administrator",
+      "name": "Administrator",
+      "parents": [
+        "confof#Person"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "confTool",
+      "depth": 1
+    },
+    "confof#Poster": {
+      "id": "confof#Poster",
+      "name": "Poster",
+      "parents": [
+        "confof#Contribution"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Paper",
+        "confof#Short_paper"
+      ],
+      "comment": "confTool",
+      "depth": 1
+    },
+    "confof#Paper": {
+      "id": "confof#Paper",
+      "name": "Paper",
+      "parents": [
+        "confof#Contribution"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Short_paper",
+        "confof#Poster"
+      ],
+      "comment": "confTool",
+      "depth": 1
+    },
+    "confof#Short_paper": {
+      "id": "confof#Short_paper",
+      "name": "Short paper",
+      "parents": [
+        "confof#Contribution"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Poster",
+        "confof#Paper"
+      ],
+      "comment": "confTool",
+      "depth": 1
+    },
+    "confof#Reviewing_results_event": {
+      "id": "confof#Reviewing_results_event",
+      "name": "Reviewing results event",
+      "parents": [
+        "confof#Administrative_event"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Reviewing_event",
+        "confof#Registration_of_participants_event",
+        "confof#Submission_event",
+        "confof#Camera_Ready_event"
+      ],
+      "comment": "Results of the reviewing procedures, accessable to authors",
+      "depth": 2
+    },
+    "confof#Administrative_event": {
+      "id": "confof#Administrative_event",
+      "name": "Administrative event",
+      "parents": [
+        "confof#Event"
+      ],
+      "children": [
+        "confof#Reviewing_results_event",
+        "confof#Reviewing_event",
+        "confof#Registration_of_participants_event",
+        "confof#Submission_event",
+        "confof#Camera_Ready_event"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Social_event",
+        "confof#Working_event"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "confof#Reviewing_event": {
+      "id": "confof#Reviewing_event",
+      "name": "Reviewing event",
+      "parents": [
+        "confof#Administrative_event"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Camera_Ready_event",
+        "confof#Reviewing_results_event",
+        "confof#Registration_of_participants_event",
+        "confof#Submission_event"
+      ],
+      "comment": "Reviewing procedure for submitted contributions",
+      "depth": 2
+    },
+    "confof#Registration_of_participants_event": {
+      "id": "confof#Registration_of_participants_event",
+      "name": "Registration of participants event",
+      "parents": [
+        "confof#Administrative_event"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Camera_Ready_event",
+        "confof#Reviewing_results_event",
+        "confof#Submission_event",
+        "confof#Reviewing_event"
+      ],
+      "comment": "confTool",
+      "depth": 2
+    },
+    "confof#Submission_event": {
+      "id": "confof#Submission_event",
+      "name": "Submission event",
+      "parents": [
+        "confof#Administrative_event"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Registration_of_participants_event",
+        "confof#Camera_Ready_event",
+        "confof#Reviewing_event",
+        "confof#Reviewing_results_event"
+      ],
+      "comment": "Submission of contributions",
+      "depth": 2
+    },
+    "confof#Camera_Ready_event": {
+      "id": "confof#Camera_Ready_event",
+      "name": "Camera Ready event",
+      "parents": [
+        "confof#Administrative_event"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Reviewing_event",
+        "confof#Registration_of_participants_event",
+        "confof#Reviewing_results_event",
+        "confof#Submission_event"
+      ],
+      "comment": "confTool",
+      "depth": 2
+    },
+    "confof#Workshop": {
+      "id": "confof#Workshop",
+      "name": "Workshop",
+      "parents": [
+        "confof#Working_event"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Conference",
+        "confof#Tutorial"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "confof#Conference": {
+      "id": "confof#Conference",
+      "name": "Conference",
+      "parents": [
+        "confof#Working_event"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Tutorial",
+        "confof#Workshop"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "confof#Tutorial": {
+      "id": "confof#Tutorial",
+      "name": "Tutorial",
+      "parents": [
+        "confof#Working_event"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Conference",
+        "confof#Workshop"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "confof#Working_event": {
+      "id": "confof#Working_event",
+      "name": "Working event",
+      "parents": [
+        "confof#Event"
+      ],
+      "children": [
+        "confof#Workshop",
+        "confof#Conference",
+        "confof#Tutorial"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "confof#Administrative_event",
+        "confof#Social_event"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "confof#Member": {
+      "id": "confof#Member",
+      "name": "Member",
+      "parents": [
+        "confof#Participant"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "confTool",
+      "depth": 2
+    },
+    "confof#Participant": {
+      "id": "confof#Participant",
+      "name": "Participant",
+      "parents": [
+        "confof#Person"
+      ],
+      "children": [
+        "confof#Member",
+        "confof#Student",
+        "confof#Regular"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "confTool",
+      "depth": 1
+    },
+    "confof#Member_PC": {
+      "id": "confof#Member_PC",
+      "name": "Member PC",
+      "parents": [
+        "confof#Person"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "Reviewer",
+      "depth": 1
+    },
+    "confof#Chair_PC": {
+      "id": "confof#Chair_PC",
+      "name": "Chair PC",
+      "parents": [
+        "confof#Person"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "confTool",
+      "depth": 1
+    },
+    "confof#Student": {
+      "id": "confof#Student",
+      "name": "Student",
+      "parents": [
+        "confof#Participant"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "confTool",
+      "depth": 2
+    },
+    "confof#Science_Worker": {
+      "id": "confof#Science_Worker",
+      "name": "Science Worker",
+      "parents": [
+        "confof#Person"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "confTool",
+      "depth": 1
+    },
+    "confof#Assistant": {
+      "id": "confof#Assistant",
+      "name": "Assistant",
+      "parents": [
+        "confof#Person"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "confTool",
+      "depth": 1
+    },
+    "confof#Volunteer": {
+      "id": "confof#Volunteer",
+      "name": "Volunteer",
+      "parents": [
+        "confof#Person"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "confTool",
+      "depth": 1
+    },
+    "confof#Regular": {
+      "id": "confof#Regular",
+      "name": "Regular",
+      "parents": [
+        "confof#Participant"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "confTool",
+      "depth": 2
+    },
+    "confof#Author": {
+      "id": "confof#Author",
+      "name": "Author",
+      "parents": [
+        "confof#Person"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "confTool",
+      "depth": 1
+    }
+  }
+}

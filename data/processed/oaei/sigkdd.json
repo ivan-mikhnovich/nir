@@ -1,0 +1,640 @@
+{
+  "name": "sigkdd",
+  "namespace": "http://sigkdd",
+  "root_id": "sigkdd#Place",
+  "nodes": {
+    "sigkdd#Hotel": {
+      "id": "sigkdd#Hotel",
+      "name": "Hotel",
+      "parents": [
+        "sigkdd#Place"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Place": {
+      "id": "sigkdd#Place",
+      "name": "Place",
+      "parents": [],
+      "children": [
+        "sigkdd#Hotel",
+        "sigkdd#Conference_hall",
+        "sigkdd#Main_office"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "sigkdd#Abstract": {
+      "id": "sigkdd#Abstract",
+      "name": "Abstract",
+      "parents": [
+        "sigkdd#Document"
+      ],
+      "children": [],
+      "attributes": {
+        "submit_until": "Deadline_Abstract_Submission"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Document": {
+      "id": "sigkdd#Document",
+      "name": "Document",
+      "parents": [],
+      "children": [
+        "sigkdd#Abstract",
+        "sigkdd#Review",
+        "sigkdd#Paper"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "sigkdd#Deadline_Abstract_Submission": {
+      "id": "sigkdd#Deadline_Abstract_Submission",
+      "name": "Deadline Abstract Submission",
+      "parents": [
+        "sigkdd#Deadline"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Best_Applications_Paper_Award": {
+      "id": "sigkdd#Best_Applications_Paper_Award",
+      "name": "Best Applications Paper Award",
+      "parents": [
+        "sigkdd#Award"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Award": {
+      "id": "sigkdd#Award",
+      "name": "Award",
+      "parents": [],
+      "children": [
+        "sigkdd#Best_Applications_Paper_Award",
+        "sigkdd#Best_Student_Paper_Award",
+        "sigkdd#Best_Research_Paper_Award"
+      ],
+      "attributes": {
+        "awarded_by": "Organizator"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "sigkdd#Deadline_Paper_Submission": {
+      "id": "sigkdd#Deadline_Paper_Submission",
+      "name": "Deadline Paper Submission",
+      "parents": [
+        "sigkdd#Deadline"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Deadline": {
+      "id": "sigkdd#Deadline",
+      "name": "Deadline",
+      "parents": [],
+      "children": [
+        "sigkdd#Deadline_Abstract_Submission",
+        "sigkdd#Deadline_Paper_Submission",
+        "sigkdd#Deadline_Author_notification"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "sigkdd#Deadline_Author_notification": {
+      "id": "sigkdd#Deadline_Author_notification",
+      "name": "Deadline Author notification",
+      "parents": [
+        "sigkdd#Deadline"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Webmaster": {
+      "id": "sigkdd#Webmaster",
+      "name": "Webmaster",
+      "parents": [
+        "sigkdd#Organizator"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "sigkdd#Organizator": {
+      "id": "sigkdd#Organizator",
+      "name": "Organizator",
+      "parents": [
+        "sigkdd#Person"
+      ],
+      "children": [
+        "sigkdd#Webmaster",
+        "sigkdd#Program_Chair",
+        "sigkdd#General_Chair",
+        "sigkdd#Program_Committee_member",
+        "sigkdd#Organizing_Committee_member"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Author_of_paper_student": {
+      "id": "sigkdd#Author_of_paper_student",
+      "name": "Author of paper student",
+      "parents": [
+        "sigkdd#Author"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "sigkdd#Best_Student_Paper_Award": {
+      "id": "sigkdd#Best_Student_Paper_Award",
+      "name": "Best Student Paper Award",
+      "parents": [
+        "sigkdd#Award"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Author": {
+      "id": "sigkdd#Author",
+      "name": "Author",
+      "parents": [
+        "sigkdd#Speaker"
+      ],
+      "children": [
+        "sigkdd#Author_of_paper_student",
+        "sigkdd#Author_of_paper"
+      ],
+      "attributes": {
+        "submit": "Paper"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "sigkdd#ACM_SIGKDD": {
+      "id": "sigkdd#ACM_SIGKDD",
+      "name": "ACM SIGKDD",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "sigkdd#Conference": {
+      "id": "sigkdd#Conference",
+      "name": "Conference",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "sigkdd#Sponzor": {
+      "id": "sigkdd#Sponzor",
+      "name": "Sponzor",
+      "parents": [],
+      "children": [
+        "sigkdd#Exhibitor",
+        "sigkdd#Bronze_Supporter",
+        "sigkdd#Platinum_Supporter",
+        "sigkdd#Gold_Supporter",
+        "sigkdd#Best_Student_Paper_Supporter",
+        "sigkdd#Silver_Supporter"
+      ],
+      "attributes": {
+        "pay": "Sponzor_fee"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "sigkdd#Exhibitor": {
+      "id": "sigkdd#Exhibitor",
+      "name": "Exhibitor",
+      "parents": [
+        "sigkdd#Sponzor"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Registration_SIGMOD_Member": {
+      "id": "sigkdd#Registration_SIGMOD_Member",
+      "name": "Registration SIGMOD Member",
+      "parents": [
+        "sigkdd#Registration_fee"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "sigkdd#Registration_fee": {
+      "id": "sigkdd#Registration_fee",
+      "name": "Registration fee",
+      "parents": [
+        "sigkdd#Fee"
+      ],
+      "children": [
+        "sigkdd#Registration_SIGMOD_Member",
+        "sigkdd#Registration_Non-Member",
+        "sigkdd#Registration_SIGKDD_Member",
+        "sigkdd#Registration_Student"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Person": {
+      "id": "sigkdd#Person",
+      "name": "Person",
+      "parents": [],
+      "children": [
+        "sigkdd#Organizator",
+        "sigkdd#Speaker",
+        "sigkdd#Listener"
+      ],
+      "attributes": {
+        "pay": "Registration_fee"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "sigkdd#Bronze_Supporter": {
+      "id": "sigkdd#Bronze_Supporter",
+      "name": "Bronze Supporter",
+      "parents": [
+        "sigkdd#Sponzor"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Committee": {
+      "id": "sigkdd#Committee",
+      "name": "Committee",
+      "parents": [],
+      "children": [
+        "sigkdd#Best_Paper_Awards_Committee",
+        "sigkdd#Program_Committee",
+        "sigkdd#Organizing_Committee"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "sigkdd#Platinum_Supporter": {
+      "id": "sigkdd#Platinum_Supporter",
+      "name": "Platinum Supporter",
+      "parents": [
+        "sigkdd#Sponzor"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Conference_hall": {
+      "id": "sigkdd#Conference_hall",
+      "name": "Conference hall",
+      "parents": [
+        "sigkdd#Place"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Best_Paper_Awards_Committee": {
+      "id": "sigkdd#Best_Paper_Awards_Committee",
+      "name": "Best Paper Awards Committee",
+      "parents": [
+        "sigkdd#Committee"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Program_Chair": {
+      "id": "sigkdd#Program_Chair",
+      "name": "Program Chair",
+      "parents": [
+        "sigkdd#Organizator"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "sigkdd#Main_office": {
+      "id": "sigkdd#Main_office",
+      "name": "Main office",
+      "parents": [
+        "sigkdd#Place"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Registration_Non-Member": {
+      "id": "sigkdd#Registration_Non-Member",
+      "name": "Registration Non-Member",
+      "parents": [
+        "sigkdd#Registration_fee"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "sigkdd#Fee": {
+      "id": "sigkdd#Fee",
+      "name": "Fee",
+      "parents": [],
+      "children": [
+        "sigkdd#Registration_fee",
+        "sigkdd#Sponzor_fee"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "sigkdd#Review": {
+      "id": "sigkdd#Review",
+      "name": "Review",
+      "parents": [
+        "sigkdd#Document"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Sponzor_fee": {
+      "id": "sigkdd#Sponzor_fee",
+      "name": "Sponzor fee",
+      "parents": [
+        "sigkdd#Fee"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Registration_SIGKDD_Member": {
+      "id": "sigkdd#Registration_SIGKDD_Member",
+      "name": "Registration SIGKDD Member",
+      "parents": [
+        "sigkdd#Registration_fee"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "sigkdd#Program_Committee": {
+      "id": "sigkdd#Program_Committee",
+      "name": "Program Committee",
+      "parents": [
+        "sigkdd#Committee"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#General_Chair": {
+      "id": "sigkdd#General_Chair",
+      "name": "General Chair",
+      "parents": [
+        "sigkdd#Organizator"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "sigkdd#Speaker": {
+      "id": "sigkdd#Speaker",
+      "name": "Speaker",
+      "parents": [
+        "sigkdd#Person"
+      ],
+      "children": [
+        "sigkdd#Author",
+        "sigkdd#Invited_Speaker"
+      ],
+      "attributes": {
+        "presentation": "Document"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Gold_Supporter": {
+      "id": "sigkdd#Gold_Supporter",
+      "name": "Gold Supporter",
+      "parents": [
+        "sigkdd#Sponzor"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Registration_Student": {
+      "id": "sigkdd#Registration_Student",
+      "name": "Registration Student",
+      "parents": [
+        "sigkdd#Registration_fee"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "sigkdd#Organizing_Committee": {
+      "id": "sigkdd#Organizing_Committee",
+      "name": "Organizing Committee",
+      "parents": [
+        "sigkdd#Committee"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Listener": {
+      "id": "sigkdd#Listener",
+      "name": "Listener",
+      "parents": [
+        "sigkdd#Person"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Program_Committee_member": {
+      "id": "sigkdd#Program_Committee_member",
+      "name": "Program Committee member",
+      "parents": [
+        "sigkdd#Organizator"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "sigkdd#Invited_Speaker": {
+      "id": "sigkdd#Invited_Speaker",
+      "name": "Invited Speaker",
+      "parents": [
+        "sigkdd#Speaker"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "sigkdd#Best_Research_Paper_Award": {
+      "id": "sigkdd#Best_Research_Paper_Award",
+      "name": "Best Research Paper Award",
+      "parents": [
+        "sigkdd#Award"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Best_Student_Paper_Supporter": {
+      "id": "sigkdd#Best_Student_Paper_Supporter",
+      "name": "Best Student Paper Supporter",
+      "parents": [
+        "sigkdd#Sponzor"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Paper": {
+      "id": "sigkdd#Paper",
+      "name": "Paper",
+      "parents": [
+        "sigkdd#Document"
+      ],
+      "children": [],
+      "attributes": {
+        "submit_until": "Deadline_Paper_Submission"
+      },
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Silver_Supporter": {
+      "id": "sigkdd#Silver_Supporter",
+      "name": "Silver Supporter",
+      "parents": [
+        "sigkdd#Sponzor"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "sigkdd#Organizing_Committee_member": {
+      "id": "sigkdd#Organizing_Committee_member",
+      "name": "Organizing Committee member",
+      "parents": [
+        "sigkdd#Organizator"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "sigkdd#Author_of_paper": {
+      "id": "sigkdd#Author_of_paper",
+      "name": "Author of paper",
+      "parents": [
+        "sigkdd#Author"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    }
+  }
+}

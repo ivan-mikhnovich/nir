@@ -1,0 +1,447 @@
+{
+  "name": "cmt_V1",
+  "namespace": "http://cmt",
+  "root_id": "cmt#Decision_V1",
+  "nodes": {
+    "cmt#Meta-Reviewer_V1": {
+      "id": "cmt#Meta-Reviewer_V1",
+      "name": "Meta-Reviewer",
+      "parents": [
+        "cmt#Reviewer_V1"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "A special type of Reviewer.  There can be any number of Reviewers for a given paper, but only one Meta-Reviewer.  The Meta-Reviewer can go over all the reviews submitted for the paper and submit their own review.  Questions for the Meta-Reviewer can be different from those for a normal Reviewer.  Their role is to ensure that the reviews are good and consistent. The decision to use Meta-Reviewers is optional, and must be set before paper assignment occurs.",
+      "depth": 3
+    },
+    "cmt#Reviewer_V1": {
+      "id": "cmt#Reviewer_V1",
+      "name": "Reviewer",
+      "parents": [
+        "cmt#ConferenceMember_V1",
+        "cmt#User_V1"
+      ],
+      "children": [
+        "cmt#Meta-Reviewer_V1"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "cmt#AuthorNotReviewer_V1",
+        "cmt#ExternalReviewer_V1"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "cmt#Decision_V1": {
+      "id": "cmt#Decision_V1",
+      "name": "Decision",
+      "parents": [],
+      "children": [
+        "cmt#Acceptance_V1",
+        "cmt#Rejection_V1"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "cmt#Person_V1",
+        "cmt#Document_V1",
+        "cmt#Preference_V1",
+        "cmt#ProgramCommittee_V1",
+        "cmt#Bid_V1",
+        "cmt#Conference_V1"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "cmt#Person_V1": {
+      "id": "cmt#Person_V1",
+      "name": "Person",
+      "parents": [],
+      "children": [
+        "cmt#ConferenceMember_V1",
+        "cmt#ProgramCommitteeMember_V1",
+        "cmt#ExternalReviewer_V1",
+        "cmt#Chairman_V1",
+        "cmt#User_V1"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "cmt#Preference_V1",
+        "cmt#ProgramCommittee_V1",
+        "cmt#Bid_V1",
+        "cmt#Conference_V1",
+        "cmt#Decision_V1",
+        "cmt#Document_V1"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "cmt#Document_V1": {
+      "id": "cmt#Document_V1",
+      "name": "Document",
+      "parents": [],
+      "children": [
+        "cmt#Review_V1",
+        "cmt#Paper_V1"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "cmt#Bid_V1",
+        "cmt#Decision_V1",
+        "cmt#ProgramCommittee_V1",
+        "cmt#Conference_V1",
+        "cmt#Person_V1",
+        "cmt#Preference_V1"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "cmt#Preference_V1": {
+      "id": "cmt#Preference_V1",
+      "name": "Preference",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "cmt#ProgramCommittee_V1",
+        "cmt#Person_V1",
+        "cmt#Decision_V1",
+        "cmt#Document_V1",
+        "cmt#Conference_V1",
+        "cmt#Bid_V1"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "cmt#ProgramCommittee_V1": {
+      "id": "cmt#ProgramCommittee_V1",
+      "name": "ProgramCommittee",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "cmt#Person_V1",
+        "cmt#Conference_V1",
+        "cmt#Preference_V1",
+        "cmt#Decision_V1",
+        "cmt#Bid_V1",
+        "cmt#Document_V1"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "cmt#Bid_V1": {
+      "id": "cmt#Bid_V1",
+      "name": "Bid",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "cmt#Document_V1",
+        "cmt#Preference_V1",
+        "cmt#ProgramCommittee_V1",
+        "cmt#Conference_V1",
+        "cmt#Decision_V1",
+        "cmt#Person_V1"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "cmt#Conference_V1": {
+      "id": "cmt#Conference_V1",
+      "name": "Conference",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "cmt#Preference_V1",
+        "cmt#Decision_V1",
+        "cmt#Person_V1",
+        "cmt#Bid_V1",
+        "cmt#ProgramCommittee_V1",
+        "cmt#Document_V1"
+      ],
+      "comment": "",
+      "depth": 0
+    },
+    "cmt#ConferenceChair_V1": {
+      "id": "cmt#ConferenceChair_V1",
+      "name": "ConferenceChair",
+      "parents": [
+        "cmt#ConferenceMember_V1"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "cmt#AssociatedChair_V1"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "cmt#ConferenceMember_V1": {
+      "id": "cmt#ConferenceMember_V1",
+      "name": "ConferenceMember",
+      "parents": [
+        "cmt#Person_V1"
+      ],
+      "children": [
+        "cmt#Reviewer_V1",
+        "cmt#ConferenceChair_V1",
+        "cmt#AssociatedChair_V1",
+        "cmt#ProgramCommitteeMember_V1",
+        "cmt#Author_V1"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "cmt#AssociatedChair_V1": {
+      "id": "cmt#AssociatedChair_V1",
+      "name": "AssociatedChair",
+      "parents": [
+        "cmt#ConferenceMember_V1"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "cmt#ConferenceChair_V1"
+      ],
+      "comment": "",
+      "depth": 2
+    },
+    "cmt#ProgramCommitteeMember_V1": {
+      "id": "cmt#ProgramCommitteeMember_V1",
+      "name": "ProgramCommitteeMember",
+      "parents": [
+        "cmt#ConferenceMember_V1",
+        "cmt#Person_V1"
+      ],
+      "children": [
+        "cmt#ProgramCommitteeChair_V1"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "cmt#AuthorNotReviewer_V1"
+      ],
+      "comment": "The Program Committee consists of all members of the conference except for Authors who are not also Reviewers.",
+      "depth": 2
+    },
+    "cmt#AuthorNotReviewer_V1": {
+      "id": "cmt#AuthorNotReviewer_V1",
+      "name": "AuthorNotReviewer",
+      "parents": [
+        "cmt#Author_V1"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "cmt#ProgramCommitteeMember_V1",
+        "cmt#Reviewer_V1"
+      ],
+      "comment": "",
+      "depth": 3
+    },
+    "cmt#SubjectArea_V1": {
+      "id": "cmt#SubjectArea_V1",
+      "name": "SubjectArea",
+      "parents": [],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 0
+    },
+    "cmt#ExternalReviewer_V1": {
+      "id": "cmt#ExternalReviewer_V1",
+      "name": "ExternalReviewer",
+      "parents": [
+        "cmt#Person_V1"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "cmt#Reviewer_V1"
+      ],
+      "comment": "An External Reviewer is a person that has been assigned to review a paper for another Reviewer, but is not themselves a Reviewer. ",
+      "depth": 1
+    },
+    "cmt#Chairman_V1": {
+      "id": "cmt#Chairman_V1",
+      "name": "Chairman",
+      "parents": [
+        "cmt#Person_V1"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "cmt#ProgramCommitteeChair_V1": {
+      "id": "cmt#ProgramCommitteeChair_V1",
+      "name": "ProgramCommitteeChair",
+      "parents": [
+        "cmt#ProgramCommitteeMember_V1"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "cmt#Acceptance_V1": {
+      "id": "cmt#Acceptance_V1",
+      "name": "Acceptance",
+      "parents": [
+        "cmt#Decision_V1"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "cmt#Rejection_V1"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "cmt#Rejection_V1": {
+      "id": "cmt#Rejection_V1",
+      "name": "Rejection",
+      "parents": [
+        "cmt#Decision_V1"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [
+        "cmt#Acceptance_V1"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "cmt#Review_V1": {
+      "id": "cmt#Review_V1",
+      "name": "Review",
+      "parents": [
+        "cmt#Document_V1"
+      ],
+      "children": [
+        "cmt#Meta-Review_V1"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "cmt#Paper_V1"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "cmt#Paper_V1": {
+      "id": "cmt#Paper_V1",
+      "name": "Paper",
+      "parents": [
+        "cmt#Document_V1"
+      ],
+      "children": [
+        "cmt#PaperAbstract_V1",
+        "cmt#PaperFullVersion_V1"
+      ],
+      "attributes": {},
+      "disjoint_with": [
+        "cmt#Review_V1"
+      ],
+      "comment": "",
+      "depth": 1
+    },
+    "cmt#Author_V1": {
+      "id": "cmt#Author_V1",
+      "name": "Author",
+      "parents": [
+        "cmt#ConferenceMember_V1",
+        "cmt#User_V1"
+      ],
+      "children": [
+        "cmt#AuthorNotReviewer_V1",
+        "cmt#Co-author_V1"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "cmt#User_V1": {
+      "id": "cmt#User_V1",
+      "name": "User",
+      "parents": [
+        "cmt#Person_V1"
+      ],
+      "children": [
+        "cmt#Reviewer_V1",
+        "cmt#Author_V1",
+        "cmt#Administrator_V1"
+      ],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 1
+    },
+    "cmt#Co-author_V1": {
+      "id": "cmt#Co-author_V1",
+      "name": "Co-author",
+      "parents": [
+        "cmt#Author_V1"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 3
+    },
+    "cmt#PaperAbstract_V1": {
+      "id": "cmt#PaperAbstract_V1",
+      "name": "PaperAbstract",
+      "parents": [
+        "cmt#Paper_V1"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "cmt#PaperFullVersion_V1": {
+      "id": "cmt#PaperFullVersion_V1",
+      "name": "PaperFullVersion",
+      "parents": [
+        "cmt#Paper_V1"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "cmt#Administrator_V1": {
+      "id": "cmt#Administrator_V1",
+      "name": "Administrator",
+      "parents": [
+        "cmt#User_V1"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    },
+    "cmt#Meta-Review_V1": {
+      "id": "cmt#Meta-Review_V1",
+      "name": "Meta-Review",
+      "parents": [
+        "cmt#Review_V1"
+      ],
+      "children": [],
+      "attributes": {},
+      "disjoint_with": [],
+      "comment": "",
+      "depth": 2
+    }
+  }
+}
