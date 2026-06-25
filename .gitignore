@@ -1,0 +1,8 @@
+/.venv
+.ipynb_checkpoints
+__pycache__
+
+/note.docx
+**/.~lock*
+/results/viz/
+/results/comparison.xlsx

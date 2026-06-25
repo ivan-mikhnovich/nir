@@ -1,0 +1,27 @@
+[project]
+name = "taxon-matcher"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "graphviz>=0.21",
+    "httpx[socks]>=0.28.1",
+    "matplotlib>=3.11.0",
+    "networkx>=3.6.1",
+    "numpy>=2.5.0",
+    "openai>=2.44.0",
+    "openpyxl>=3.1.5",
+    "owlready2>=0.51",
+    "pillow>=12.2.0",
+    "pyyaml>=6.0.3",
+    "rank-bm25>=0.2.2",
+    "scikit-learn>=1.9.0",
+    "sentence-transformers>=5.6.0",
+    "tqdm>=4.68.3",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.20",
+]
