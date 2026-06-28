@@ -1,0 +1,10 @@
+{
+  "pair": "edas\u2194sigkdd",
+  "approach": "gnn-baseline",
+  "f1": 0.25,
+  "precision": 0.19047619047619047,
+  "recall": 0.36363636363636365,
+  "matches": 4,
+  "total_predicted": 21,
+  "total_gt": 11
+}

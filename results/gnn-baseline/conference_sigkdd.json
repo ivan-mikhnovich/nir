@@ -1,0 +1,10 @@
+{
+  "pair": "conference\u2194sigkdd",
+  "approach": "gnn-baseline",
+  "f1": 0.15789473684210525,
+  "precision": 0.11538461538461539,
+  "recall": 0.25,
+  "matches": 3,
+  "total_predicted": 26,
+  "total_gt": 12
+}

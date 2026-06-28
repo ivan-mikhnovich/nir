@@ -1,0 +1,10 @@
+{
+  "pair": "edas\u2194ekaw",
+  "approach": "gnn-baseline",
+  "f1": 0.3111111111111111,
+  "precision": 0.2692307692307692,
+  "recall": 0.3684210526315789,
+  "matches": 7,
+  "total_predicted": 26,
+  "total_gt": 19
+}

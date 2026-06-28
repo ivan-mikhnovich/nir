@@ -1,0 +1,10 @@
+{
+  "pair": "ekaw\u2194sigkdd",
+  "approach": "gnn-baseline",
+  "f1": 0.15384615384615383,
+  "precision": 0.10714285714285714,
+  "recall": 0.2727272727272727,
+  "matches": 3,
+  "total_predicted": 28,
+  "total_gt": 11
+}

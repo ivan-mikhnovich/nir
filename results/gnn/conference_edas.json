@@ -1,0 +1,7 @@
+{
+  "pair": "conference\u2194edas",
+  "approach": "gnn",
+  "f1": 0.0983606557377049,
+  "precision": 0.06382978723404255,
+  "recall": 0.21428571428571427
+}
