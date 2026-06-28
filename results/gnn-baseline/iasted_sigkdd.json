@@ -1,0 +1,10 @@
+{
+  "pair": "iasted\u2194sigkdd",
+  "approach": "gnn-baseline",
+  "f1": 0.3913043478260869,
+  "precision": 0.2903225806451613,
+  "recall": 0.6,
+  "matches": 9,
+  "total_predicted": 31,
+  "total_gt": 15
+}

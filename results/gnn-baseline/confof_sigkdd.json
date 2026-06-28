@@ -1,0 +1,10 @@
+{
+  "pair": "confOf\u2194sigkdd",
+  "approach": "gnn-baseline",
+  "f1": 0.07692307692307691,
+  "precision": 0.05,
+  "recall": 0.16666666666666666,
+  "matches": 1,
+  "total_predicted": 20,
+  "total_gt": 6
+}
