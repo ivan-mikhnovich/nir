@@ -1,0 +1,181 @@
+digraph pair_cmt_conference_ensemble {
+	bgcolor=transparent compound=true dpi=144 nodesep=0.5 pad=0.2 rankdir=TB ranksep=0.9
+	node [fontname=Arial fontsize=10 margin="0.14,0.08" shape=box style="rounded,filled"]
+	subgraph cluster_src {
+		color="#5ba3d9" fontname=Arial fontsize=12 label=cmt style=dashed
+		edge [arrowhead=none color="#b0b0b0" penwidth=0.9]
+		"s_cmt_Meta-Reviewer" [label="Meta-Reviewer" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Reviewer [label=Reviewer color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_cmt_Decision [label=Decision color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Person [label=Person color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Document [label=Document color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Preference [label=Preference color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_ProgramCommittee [label=ProgramCommittee color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Bid [label=Bid color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Conference [label=Conference color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_ConferenceChair [label=ConferenceChair color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_ConferenceMember [label=ConferenceMember color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_cmt_AssociatedChair [label=AssociatedChair color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_ProgramCommitteeMember [label=ProgramCommitteeMember color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_AuthorNotReviewer [label=AuthorNotReviewer color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_cmt_SubjectArea [label=SubjectArea color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_cmt_ExternalReviewer [label=ExternalReviewer color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Chairman [label=Chairman color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_cmt_ProgramCommitteeChair [label=ProgramCommitteeChair color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Acceptance [label=Acceptance color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_cmt_Rejection [label=Rejection color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_cmt_Review [label=Review color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_cmt_Paper [label=Paper color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_cmt_Author [label=Author color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_cmt_User [label=User color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		"s_cmt_Co-author" [label="Co-author" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_cmt_PaperAbstract [label=PaperAbstract color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_PaperFullVersion [label=PaperFullVersion color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Administrator [label=Administrator color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		"s_cmt_Meta-Review" [label="Meta-Review" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Reviewer -> "s_cmt_Meta-Reviewer"
+		s_cmt_ConferenceMember -> s_cmt_Reviewer
+		s_cmt_User -> s_cmt_Reviewer
+		s_cmt_ConferenceMember -> s_cmt_ConferenceChair
+		s_cmt_Person -> s_cmt_ConferenceMember
+		s_cmt_ConferenceMember -> s_cmt_AssociatedChair
+		s_cmt_ConferenceMember -> s_cmt_ProgramCommitteeMember
+		s_cmt_Person -> s_cmt_ProgramCommitteeMember
+		s_cmt_Author -> s_cmt_AuthorNotReviewer
+		s_cmt_Person -> s_cmt_ExternalReviewer
+		s_cmt_Person -> s_cmt_Chairman
+		s_cmt_ProgramCommitteeMember -> s_cmt_ProgramCommitteeChair
+		s_cmt_Decision -> s_cmt_Acceptance
+		s_cmt_Decision -> s_cmt_Rejection
+		s_cmt_Document -> s_cmt_Review
+		s_cmt_Document -> s_cmt_Paper
+		s_cmt_ConferenceMember -> s_cmt_Author
+		s_cmt_User -> s_cmt_Author
+		s_cmt_Person -> s_cmt_User
+		s_cmt_Author -> "s_cmt_Co-author"
+		s_cmt_Paper -> s_cmt_PaperAbstract
+		s_cmt_Paper -> s_cmt_PaperFullVersion
+		s_cmt_User -> s_cmt_Administrator
+		s_cmt_Review -> "s_cmt_Meta-Review"
+	}
+	subgraph cluster_tgt {
+		color="#d95b5b" fontname=Arial fontsize=12 label=conference style=dashed
+		edge [arrowhead=none color="#b0b0b0" penwidth=0.9]
+		t_Conference_Conference_participant [label="Conference participant" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_Conference_Active_conference_participant [label="Active conference participant" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Passive_conference_participant [label="Passive conference participant" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Person [label=Person color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Review_expertise [label="Review expertise" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Submitted_contribution [label="Submitted contribution" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Reviewer [label=Reviewer color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_Conference_Regular_author [label="Regular author" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_Conference_Conference_contributor [label="Conference contributor" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		"t_Conference_Contribution_1th-author" [label="Contribution 1th-author" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		"t_Conference_Contribution_co-author" [label="Contribution co-author" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_Conference_Conference_contribution [label="Conference contribution" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		"t_Conference_Co-chair" [label="Co-chair" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Committee [label=Committee color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Committee_member [label="Committee member" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Abstract [label=Abstract color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Extended_abstract [label="Extended abstract" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Important_dates [label="Important dates" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Invited_speaker [label="Invited speaker" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Conference_proceedings [label="Conference proceedings" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Information_for_participants [label="Information for participants" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Conference_document [label="Conference document" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Organization [label=Organization color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Regular_contribution [label="Regular contribution" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Poster [label=Poster color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Written_contribution [label="Written contribution" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Conference_applicant [label="Conference applicant" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Camera_ready_contribution [label="Camera ready contribution" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Accepted_contribution [label="Accepted contribution" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_Conference_Program_committee [label="Program committee" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Organizing_committee [label="Organizing committee" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Steering_committee [label="Steering committee" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Conference_volume [label="Conference volume" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Conference [label=Conference color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Call_for_paper [label="Call for paper" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Conference_announcement [label="Conference announcement" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Paper [label=Paper color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_Conference_Invited_talk [label="Invited talk" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Conference_part [label="Conference part" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Presentation [label=Presentation color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Chair [label=Chair color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_Conference_Track [label=Track color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Workshop [label=Workshop color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Tutorial [label=Tutorial color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Rejected_contribution [label="Rejected contribution" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_Conference_Reviewed_contribution [label="Reviewed contribution" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Review [label=Review color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_Conference_Topic [label=Topic color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_Conference_Late_paid_applicant [label="Late paid applicant" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Paid_applicant [label="Paid applicant" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Early_paid_applicant [label="Early paid applicant" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Organizer [label=Organizer color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Call_for_participation [label="Call for participation" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Publisher [label=Publisher color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Registeered_applicant [label="Registeered applicant" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		"t_Conference_Track-workshop_chair" [label="Track-workshop chair" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Conference_www [label="Conference www" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Conference_fees [label="Conference fees" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Review_preference [label="Review preference" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_Conference_Person -> t_Conference_Conference_participant
+		t_Conference_Conference_contributor -> t_Conference_Active_conference_participant
+		t_Conference_Conference_participant -> t_Conference_Active_conference_participant
+		t_Conference_Conference_participant -> t_Conference_Passive_conference_participant
+		t_Conference_Written_contribution -> t_Conference_Submitted_contribution
+		t_Conference_Person -> t_Conference_Reviewer
+		t_Conference_Conference_contributor -> t_Conference_Regular_author
+		t_Conference_Person -> t_Conference_Conference_contributor
+		t_Conference_Regular_author -> "t_Conference_Contribution_1th-author"
+		t_Conference_Regular_author -> "t_Conference_Contribution_co-author"
+		t_Conference_Conference_document -> t_Conference_Conference_contribution
+		t_Conference_Committee_member -> "t_Conference_Co-chair"
+		t_Conference_Person -> t_Conference_Committee_member
+		t_Conference_Extended_abstract -> t_Conference_Abstract
+		t_Conference_Regular_contribution -> t_Conference_Extended_abstract
+		t_Conference_Conference_contributor -> t_Conference_Invited_speaker
+		t_Conference_Conference_document -> t_Conference_Information_for_participants
+		t_Conference_Written_contribution -> t_Conference_Regular_contribution
+		t_Conference_Conference_contribution -> t_Conference_Poster
+		t_Conference_Conference_contribution -> t_Conference_Written_contribution
+		t_Conference_Person -> t_Conference_Conference_applicant
+		t_Conference_Accepted_contribution -> t_Conference_Camera_ready_contribution
+		t_Conference_Reviewed_contribution -> t_Conference_Accepted_contribution
+		t_Conference_Committee -> t_Conference_Program_committee
+		t_Conference_Committee -> t_Conference_Organizing_committee
+		t_Conference_Committee -> t_Conference_Steering_committee
+		t_Conference_Conference -> t_Conference_Conference_volume
+		t_Conference_Conference_document -> t_Conference_Call_for_paper
+		t_Conference_Conference_document -> t_Conference_Conference_announcement
+		t_Conference_Regular_contribution -> t_Conference_Paper
+		t_Conference_Presentation -> t_Conference_Invited_talk
+		t_Conference_Conference_contribution -> t_Conference_Presentation
+		t_Conference_Committee_member -> t_Conference_Chair
+		t_Conference_Conference_part -> t_Conference_Track
+		t_Conference_Conference_part -> t_Conference_Workshop
+		t_Conference_Conference_part -> t_Conference_Tutorial
+		t_Conference_Reviewed_contribution -> t_Conference_Rejected_contribution
+		t_Conference_Submitted_contribution -> t_Conference_Reviewed_contribution
+		t_Conference_Conference_document -> t_Conference_Review
+		t_Conference_Paid_applicant -> t_Conference_Late_paid_applicant
+		t_Conference_Registeered_applicant -> t_Conference_Paid_applicant
+		t_Conference_Paid_applicant -> t_Conference_Early_paid_applicant
+		t_Conference_Conference_document -> t_Conference_Call_for_participation
+		t_Conference_Conference_applicant -> t_Conference_Registeered_applicant
+		t_Conference_Person -> "t_Conference_Track-workshop_chair"
+		t_Conference_Conference_document -> t_Conference_Conference_www
+	}
+	s_cmt_Chairman -> t_Conference_Chair [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_cmt_Review -> t_Conference_Review [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_cmt_Reviewer -> t_Conference_Reviewer [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_cmt_SubjectArea -> t_Conference_Topic [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_cmt_Author -> t_Conference_Regular_author [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_cmt_ConferenceMember -> t_Conference_Conference_participant [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_cmt_Acceptance -> t_Conference_Accepted_contribution [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_cmt_AuthorNotReviewer -> "t_Conference_Contribution_1th-author" [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	"s_cmt_Co-author" -> "t_Conference_Contribution_co-author" [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_cmt_Paper -> t_Conference_Paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_cmt_Rejection -> t_Conference_Rejected_contribution [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+}

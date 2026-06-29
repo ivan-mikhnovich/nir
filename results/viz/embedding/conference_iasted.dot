@@ -1,0 +1,446 @@
+digraph pair_conference_iasted {
+	bgcolor=transparent compound=true dpi=144 nodesep=0.5 pad=0.2 rankdir=TB ranksep=0.9
+	node [fontname=Arial fontsize=10 margin="0.14,0.08" shape=box style="rounded,filled"]
+	subgraph cluster_src {
+		color="#5ba3d9" fontname=Arial fontsize=12 label=conference style=dashed
+		edge [arrowhead=none color="#b0b0b0" penwidth=0.9]
+		s_Conference_Conference_participant [label="Conference participant" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Active_conference_participant [label="Active conference participant" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Passive_conference_participant [label="Passive conference participant" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Person [label=Person color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Review_expertise [label="Review expertise" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Submitted_contribution [label="Submitted contribution" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Reviewer [label=Reviewer color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Regular_author [label="Regular author" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Conference_contributor [label="Conference contributor" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		"s_Conference_Contribution_1th-author" [label="Contribution 1th-author" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		"s_Conference_Contribution_co-author" [label="Contribution co-author" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Conference_contribution [label="Conference contribution" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		"s_Conference_Co-chair" [label="Co-chair" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Committee [label=Committee color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Committee_member [label="Committee member" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Abstract [label=Abstract color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Extended_abstract [label="Extended abstract" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Important_dates [label="Important dates" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Invited_speaker [label="Invited speaker" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Conference_proceedings [label="Conference proceedings" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Information_for_participants [label="Information for participants" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Conference_document [label="Conference document" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Organization [label=Organization color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Regular_contribution [label="Regular contribution" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Poster [label=Poster color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Written_contribution [label="Written contribution" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Conference_applicant [label="Conference applicant" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Camera_ready_contribution [label="Camera ready contribution" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Accepted_contribution [label="Accepted contribution" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Program_committee [label="Program committee" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Organizing_committee [label="Organizing committee" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Steering_committee [label="Steering committee" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Conference_volume [label="Conference volume" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Conference [label=Conference color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Call_for_paper [label="Call for paper" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Conference_announcement [label="Conference announcement" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Paper [label=Paper color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Invited_talk [label="Invited talk" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Conference_part [label="Conference part" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Presentation [label=Presentation color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Chair [label=Chair color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Track [label=Track color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Workshop [label=Workshop color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Tutorial [label=Tutorial color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Rejected_contribution [label="Rejected contribution" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Reviewed_contribution [label="Reviewed contribution" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Review [label=Review color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Topic [label=Topic color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Late_paid_applicant [label="Late paid applicant" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Paid_applicant [label="Paid applicant" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Early_paid_applicant [label="Early paid applicant" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Organizer [label=Organizer color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Call_for_participation [label="Call for participation" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Publisher [label=Publisher color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Registeered_applicant [label="Registeered applicant" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		"s_Conference_Track-workshop_chair" [label="Track-workshop chair" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Conference_www [label="Conference www" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Conference_fees [label="Conference fees" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Review_preference [label="Review preference" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_Conference_Person -> s_Conference_Conference_participant
+		s_Conference_Conference_contributor -> s_Conference_Active_conference_participant
+		s_Conference_Conference_participant -> s_Conference_Active_conference_participant
+		s_Conference_Conference_participant -> s_Conference_Passive_conference_participant
+		s_Conference_Written_contribution -> s_Conference_Submitted_contribution
+		s_Conference_Person -> s_Conference_Reviewer
+		s_Conference_Conference_contributor -> s_Conference_Regular_author
+		s_Conference_Person -> s_Conference_Conference_contributor
+		s_Conference_Regular_author -> "s_Conference_Contribution_1th-author"
+		s_Conference_Regular_author -> "s_Conference_Contribution_co-author"
+		s_Conference_Conference_document -> s_Conference_Conference_contribution
+		s_Conference_Committee_member -> "s_Conference_Co-chair"
+		s_Conference_Person -> s_Conference_Committee_member
+		s_Conference_Extended_abstract -> s_Conference_Abstract
+		s_Conference_Regular_contribution -> s_Conference_Extended_abstract
+		s_Conference_Conference_contributor -> s_Conference_Invited_speaker
+		s_Conference_Conference_document -> s_Conference_Information_for_participants
+		s_Conference_Written_contribution -> s_Conference_Regular_contribution
+		s_Conference_Conference_contribution -> s_Conference_Poster
+		s_Conference_Conference_contribution -> s_Conference_Written_contribution
+		s_Conference_Person -> s_Conference_Conference_applicant
+		s_Conference_Accepted_contribution -> s_Conference_Camera_ready_contribution
+		s_Conference_Reviewed_contribution -> s_Conference_Accepted_contribution
+		s_Conference_Committee -> s_Conference_Program_committee
+		s_Conference_Committee -> s_Conference_Organizing_committee
+		s_Conference_Committee -> s_Conference_Steering_committee
+		s_Conference_Conference -> s_Conference_Conference_volume
+		s_Conference_Conference_document -> s_Conference_Call_for_paper
+		s_Conference_Conference_document -> s_Conference_Conference_announcement
+		s_Conference_Regular_contribution -> s_Conference_Paper
+		s_Conference_Presentation -> s_Conference_Invited_talk
+		s_Conference_Conference_contribution -> s_Conference_Presentation
+		s_Conference_Committee_member -> s_Conference_Chair
+		s_Conference_Conference_part -> s_Conference_Track
+		s_Conference_Conference_part -> s_Conference_Workshop
+		s_Conference_Conference_part -> s_Conference_Tutorial
+		s_Conference_Reviewed_contribution -> s_Conference_Rejected_contribution
+		s_Conference_Submitted_contribution -> s_Conference_Reviewed_contribution
+		s_Conference_Conference_document -> s_Conference_Review
+		s_Conference_Paid_applicant -> s_Conference_Late_paid_applicant
+		s_Conference_Registeered_applicant -> s_Conference_Paid_applicant
+		s_Conference_Paid_applicant -> s_Conference_Early_paid_applicant
+		s_Conference_Conference_document -> s_Conference_Call_for_participation
+		s_Conference_Conference_applicant -> s_Conference_Registeered_applicant
+		s_Conference_Person -> "s_Conference_Track-workshop_chair"
+		s_Conference_Conference_document -> s_Conference_Conference_www
+	}
+	subgraph cluster_tgt {
+		color="#d95b5b" fontname=Arial fontsize=12 label=iasted style=dashed
+		edge [arrowhead=none color="#b0b0b0" penwidth=0.9]
+		t_iasted_Presenter_house [label="Presenter house" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Building [label=Building color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Presenter_state [label="Presenter state" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Delegate [label=Delegate color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Presenter_city [label="Presenter city" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Hotel_registration_form [label="Hotel registration form" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Deadline_hotel_reservation [label="Deadline hotel reservation" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Form [label=Form color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Car [label=Car color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Transport_vehicle [label="Transport vehicle" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Mailing_list [label="Mailing list" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Document [label=Document color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Renting [label=Renting color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Activity_before_conference [label="Activity before conference" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Dinner_banquet [label="Dinner banquet" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_One_day_presenter [label="One day presenter" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Social_program [label="Social program" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Activity [label=Activity color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Person [label=Person color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_PowerPoint_presentation [label="PowerPoint presentation" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Presentation [label=Presentation color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Conference_restaurant [label="Conference restaurant" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Conference_city [label="Conference city" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Conference_state [label="Conference state" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Submissions_deadline [label="Submissions deadline" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Deadline [label=Deadline color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Simulating [label=Simulating color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Research [label=Research color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Technic_activity [label="Technic activity" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Conference_activity [label="Conference activity" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Technical_commitee [label="Technical commitee" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Place [label=Place color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Author_cd_proceedings_included [label="Author cd proceedings included" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Author [label=Author color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Cd_proceening [label="Cd proceening" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Trip_day [label="Trip day" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Time [label=Time color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Record_of_attendance [label="Record of attendance" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Listener [label=Listener color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Session_room [label="Session room" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Brief_introduction_for_Session_chair [label="Brief introduction for Session chair" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Session_chair [label="Session chair" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Invitation_letter [label="Invitation letter" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Registration_form [label="Registration form" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Viza [label=Viza color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Registration [label=Registration color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Conference_days [label="Conference days" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Conference_building [label="Conference building" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Registration_fee [label="Registration fee" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Departure [label=Departure color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Activity_after_conference [label="Activity after conference" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Conference_airport [label="Conference airport" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Worker_lecturer [label="Worker lecturer" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Lecturer [label=Lecturer color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Transparency [label=Transparency color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Speaker [label=Speaker color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_City [label=City color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Card [label=Card color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Item [label=Item color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Author_attendee_book_registration_fee [label="Author attendee book registration fee" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Book_proceeding [label="Book proceeding" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Video_cassette_player [label="Video cassette player" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Audiovisual_equipment [label="Audiovisual equipment" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Video_presentation [label="Video presentation" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Hotel_room [label="Hotel room" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Hotel_presenter [label="Hotel presenter" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Conference_hotel [label="Conference hotel" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Money [label=Money color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_State [label=State color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Introduction [label=Introduction color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Welcome_address [label="Welcome address" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Value_added_tax [label="Value added tax" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Tax [label=Tax color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Refusing_manuscript [label="Refusing manuscript" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Final_manuscript [label="Final manuscript" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Accepting_manuscript [label="Accepting manuscript" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Submission [label=Submission color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Sponsor_city [label="Sponsor city" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Sponsor [label=Sponsor color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Time_zone [label="Time zone" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Introduction_of_speaker [label="Introduction of speaker" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Conference_hall [label="Conference hall" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Plenary_lecture [label="Plenary lecture" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Lecture [label=Lecture color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Plenary_lecture_speaker [label="Plenary lecture speaker" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_LCD_projector [label="LCD projector" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Deadline_for_notification_of_acceptance [label="Deadline for notification of acceptance" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Tutorial [label=Tutorial color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Tutorial_speaker [label="Tutorial speaker" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Session [label=Session color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Registation_deadline [label="Registation deadline" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Single_hotel_room [label="Single hotel room" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Non_speaker [label="Non speaker" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Author_information_form [label="Author information form" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Nonmember_registration_fee [label="Nonmember registration fee" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_IASTED_non_member [label="IASTED non member" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Hotel_fee [label="Hotel fee" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Fee [label=Fee color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Publication [label=Publication color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Taxi [label=Taxi color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Sponsor_state [label="Sponsor state" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Reviewer [label=Reviewer color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Review [label=Review color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Modelling [label=Modelling color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Worker_non_speaker [label="Worker non speaker" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Nonauthor_registration_fee [label="Nonauthor registration fee" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Payment_document [label="Payment document" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Camera_ready_manuscript_deadline [label="Camera ready manuscript deadline" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_One_conference_day [label="One conference day" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Fee_for_extra_trip [label="Fee for extra trip" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Full_day_tour [label="Full day tour" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Conference_Hiker [label="Conference Hiker" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Computer [label=Computer color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_IASTED_member [label="IASTED member" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Memeber_registration_fee [label="Memeber registration fee" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Author_book_proceedings_included [label="Author book proceedings included" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Sponsor_company_house [label="Sponsor company house" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Sponzorship [label=Sponzorship color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Student_lecturer [label="Student lecturer" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Trip_city [label="Trip city" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Cheque [label=Cheque color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Shuttle_bus [label="Shuttle bus" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Student_non_speaker [label="Student non speaker" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Student_registration_fee [label="Student registration fee" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Author_attendee_cd_registration_fee [label="Author attendee cd registration fee" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Tip [label=Tip color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Credit_card [label="Credit card" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Van [label=Van color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Main_office [label="Main office" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Presenter_university [label="Presenter university" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Departure_tax [label="Departure tax" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Receiving_manuscript [label="Receiving manuscript" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Double_hotel_room [label="Double hotel room" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Initial_manuscipt [label="Initial manuscipt" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Coffee_break [label="Coffee break" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Bank_transfer [label="Bank transfer" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Overhead_projector [label="Overhead projector" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Speaker_lecture [label="Speaker lecture" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Coctail_reception [label="Coctail reception" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_iasted_Currency [label=Currency color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_iasted_Building -> t_iasted_Presenter_house
+		t_iasted_Place -> t_iasted_Building
+		t_iasted_State -> t_iasted_Presenter_state
+		t_iasted_Person -> t_iasted_Delegate
+		t_iasted_City -> t_iasted_Presenter_city
+		t_iasted_Form -> t_iasted_Hotel_registration_form
+		t_iasted_Deadline -> t_iasted_Deadline_hotel_reservation
+		t_iasted_Document -> t_iasted_Form
+		t_iasted_Transport_vehicle -> t_iasted_Car
+		t_iasted_Item -> t_iasted_Transport_vehicle
+		t_iasted_Document -> t_iasted_Mailing_list
+		t_iasted_Item -> t_iasted_Document
+		t_iasted_Activity_before_conference -> t_iasted_Renting
+		t_iasted_Activity -> t_iasted_Activity_before_conference
+		t_iasted_Social_program -> t_iasted_Dinner_banquet
+		t_iasted_Delegate -> t_iasted_One_day_presenter
+		t_iasted_Conference_activity -> t_iasted_Social_program
+		t_iasted_Presentation -> t_iasted_PowerPoint_presentation
+		t_iasted_Conference_activity -> t_iasted_Presentation
+		t_iasted_Building -> t_iasted_Conference_restaurant
+		t_iasted_City -> t_iasted_Conference_city
+		t_iasted_State -> t_iasted_Conference_state
+		t_iasted_Deadline -> t_iasted_Submissions_deadline
+		t_iasted_Time -> t_iasted_Deadline
+		t_iasted_Research -> t_iasted_Simulating
+		t_iasted_Activity_before_conference -> t_iasted_Research
+		t_iasted_Conference_activity -> t_iasted_Technic_activity
+		t_iasted_Activity -> t_iasted_Conference_activity
+		t_iasted_Delegate -> t_iasted_Technical_commitee
+		t_iasted_Author -> t_iasted_Author_cd_proceedings_included
+		t_iasted_Speaker -> t_iasted_Author
+		t_iasted_Publication -> t_iasted_Cd_proceening
+		t_iasted_Time -> t_iasted_Trip_day
+		t_iasted_Document -> t_iasted_Record_of_attendance
+		t_iasted_Delegate -> t_iasted_Listener
+		t_iasted_Place -> t_iasted_Session_room
+		t_iasted_Document -> t_iasted_Brief_introduction_for_Session_chair
+		t_iasted_Delegate -> t_iasted_Session_chair
+		t_iasted_Document -> t_iasted_Invitation_letter
+		t_iasted_Form -> t_iasted_Registration_form
+		t_iasted_Document -> t_iasted_Viza
+		t_iasted_Conference_activity -> t_iasted_Registration
+		t_iasted_Time -> t_iasted_Conference_days
+		t_iasted_Building -> t_iasted_Conference_building
+		t_iasted_Fee -> t_iasted_Registration_fee
+		t_iasted_Activity_after_conference -> t_iasted_Departure
+		t_iasted_Activity -> t_iasted_Activity_after_conference
+		t_iasted_Building -> t_iasted_Conference_airport
+		t_iasted_Lecturer -> t_iasted_Worker_lecturer
+		t_iasted_Author -> t_iasted_Lecturer
+		t_iasted_Document -> t_iasted_Transparency
+		t_iasted_Delegate -> t_iasted_Speaker
+		t_iasted_Item -> t_iasted_Card
+		t_iasted_Registration_fee -> t_iasted_Author_attendee_book_registration_fee
+		t_iasted_Publication -> t_iasted_Book_proceeding
+		t_iasted_Audiovisual_equipment -> t_iasted_Video_cassette_player
+		t_iasted_Item -> t_iasted_Audiovisual_equipment
+		t_iasted_Presentation -> t_iasted_Video_presentation
+		t_iasted_Place -> t_iasted_Hotel_room
+		t_iasted_Delegate -> t_iasted_Hotel_presenter
+		t_iasted_Building -> t_iasted_Conference_hotel
+		t_iasted_Conference_activity -> t_iasted_Introduction
+		t_iasted_Conference_activity -> t_iasted_Welcome_address
+		t_iasted_Tax -> t_iasted_Value_added_tax
+		t_iasted_Money -> t_iasted_Tax
+		t_iasted_Activity_before_conference -> t_iasted_Refusing_manuscript
+		t_iasted_Submission -> t_iasted_Final_manuscript
+		t_iasted_Activity_before_conference -> t_iasted_Accepting_manuscript
+		t_iasted_Document -> t_iasted_Submission
+		t_iasted_City -> t_iasted_Sponsor_city
+		t_iasted_Person -> t_iasted_Sponsor
+		t_iasted_Introduction -> t_iasted_Introduction_of_speaker
+		t_iasted_Place -> t_iasted_Conference_hall
+		t_iasted_Lecture -> t_iasted_Plenary_lecture
+		t_iasted_Conference_activity -> t_iasted_Lecture
+		t_iasted_Author -> t_iasted_Plenary_lecture_speaker
+		t_iasted_Audiovisual_equipment -> t_iasted_LCD_projector
+		t_iasted_Deadline -> t_iasted_Deadline_for_notification_of_acceptance
+		t_iasted_Lecture -> t_iasted_Tutorial
+		t_iasted_Author -> t_iasted_Tutorial_speaker
+		t_iasted_Lecture -> t_iasted_Session
+		t_iasted_Deadline -> t_iasted_Registation_deadline
+		t_iasted_Hotel_room -> t_iasted_Single_hotel_room
+		t_iasted_Delegate -> t_iasted_Non_speaker
+		t_iasted_Form -> t_iasted_Author_information_form
+		t_iasted_Registration_fee -> t_iasted_Nonmember_registration_fee
+		t_iasted_Delegate -> t_iasted_IASTED_non_member
+		t_iasted_Fee -> t_iasted_Hotel_fee
+		t_iasted_Money -> t_iasted_Fee
+		t_iasted_Item -> t_iasted_Publication
+		t_iasted_Transport_vehicle -> t_iasted_Taxi
+		t_iasted_State -> t_iasted_Sponsor_state
+		t_iasted_Speaker -> t_iasted_Reviewer
+		t_iasted_Document -> t_iasted_Review
+		t_iasted_Research -> t_iasted_Modelling
+		t_iasted_Non_speaker -> t_iasted_Worker_non_speaker
+		t_iasted_Registration_fee -> t_iasted_Nonauthor_registration_fee
+		t_iasted_Document -> t_iasted_Payment_document
+		t_iasted_Deadline -> t_iasted_Camera_ready_manuscript_deadline
+		t_iasted_Conference_days -> t_iasted_One_conference_day
+		t_iasted_Fee -> t_iasted_Fee_for_extra_trip
+		t_iasted_Activity_after_conference -> t_iasted_Full_day_tour
+		t_iasted_Delegate -> t_iasted_Conference_Hiker
+		t_iasted_Audiovisual_equipment -> t_iasted_Computer
+		t_iasted_Delegate -> t_iasted_IASTED_member
+		t_iasted_Registration_fee -> t_iasted_Memeber_registration_fee
+		t_iasted_Author -> t_iasted_Author_book_proceedings_included
+		t_iasted_Building -> t_iasted_Sponsor_company_house
+		t_iasted_Money -> t_iasted_Sponzorship
+		t_iasted_Lecturer -> t_iasted_Student_lecturer
+		t_iasted_City -> t_iasted_Trip_city
+		t_iasted_Payment_document -> t_iasted_Cheque
+		t_iasted_Transport_vehicle -> t_iasted_Shuttle_bus
+		t_iasted_Non_speaker -> t_iasted_Student_non_speaker
+		t_iasted_Registration_fee -> t_iasted_Student_registration_fee
+		t_iasted_Registration_fee -> t_iasted_Author_attendee_cd_registration_fee
+		t_iasted_Money -> t_iasted_Tip
+		t_iasted_Card -> t_iasted_Credit_card
+		t_iasted_Transport_vehicle -> t_iasted_Van
+		t_iasted_Place -> t_iasted_Main_office
+		t_iasted_Building -> t_iasted_Presenter_university
+		t_iasted_Tax -> t_iasted_Departure_tax
+		t_iasted_Activity_before_conference -> t_iasted_Receiving_manuscript
+		t_iasted_Hotel_room -> t_iasted_Double_hotel_room
+		t_iasted_Submission -> t_iasted_Initial_manuscipt
+		t_iasted_Conference_activity -> t_iasted_Coffee_break
+		t_iasted_Payment_document -> t_iasted_Bank_transfer
+		t_iasted_Audiovisual_equipment -> t_iasted_Overhead_projector
+		t_iasted_Session -> t_iasted_Speaker_lecture
+		t_iasted_Conference_activity -> t_iasted_Coctail_reception
+	}
+	s_Conference_Abstract -> t_iasted_Final_manuscript [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Accepted_contribution -> t_iasted_Accepting_manuscript [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Active_conference_participant -> t_iasted_Non_speaker [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Call_for_paper -> t_iasted_Invitation_letter [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Call_for_participation -> t_iasted_Presentation [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Camera_ready_contribution -> t_iasted_Accepting_manuscript [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Chair -> t_iasted_Session_chair [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	"s_Conference_Co-chair" -> t_iasted_Session_chair [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Committee -> t_iasted_Currency [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Committee_member -> t_iasted_Session_chair [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Conference -> t_iasted_Activity [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Conference_announcement -> t_iasted_Presentation [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Conference_applicant -> t_iasted_Introduction_of_speaker [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Conference_contribution -> t_iasted_Presentation [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Conference_contributor -> t_iasted_Introduction_of_speaker [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Conference_document -> t_iasted_Activity [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Conference_fees -> t_iasted_Currency [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Conference_part -> t_iasted_Activity [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Conference_participant -> t_iasted_Introduction_of_speaker [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Conference_proceedings -> t_iasted_Activity [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Conference_volume -> t_iasted_Conference_activity [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Conference_www -> t_iasted_Conference_activity [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	"s_Conference_Contribution_1th-author" -> t_iasted_Plenary_lecture_speaker [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	"s_Conference_Contribution_co-author" -> t_iasted_Plenary_lecture_speaker [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Early_paid_applicant -> t_iasted_Student_non_speaker [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Extended_abstract -> t_iasted_Final_manuscript [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Important_dates -> t_iasted_Time [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Information_for_participants -> t_iasted_Presentation [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Invited_speaker -> t_iasted_Tutorial_speaker [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Invited_talk -> t_iasted_Presentation [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Late_paid_applicant -> t_iasted_Student_non_speaker [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Organization -> t_iasted_Activity [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Organizer -> t_iasted_Place [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Organizing_committee -> t_iasted_Social_program [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Paid_applicant -> t_iasted_Worker_lecturer [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Paper -> t_iasted_Final_manuscript [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Passive_conference_participant -> t_iasted_Non_speaker [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Person -> t_iasted_Person [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Poster -> t_iasted_Presentation [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Presentation -> t_iasted_Presentation [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Program_committee -> t_iasted_Social_program [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Publisher -> t_iasted_Place [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Registeered_applicant -> t_iasted_Introduction_of_speaker [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Regular_author -> t_iasted_Author [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Regular_contribution -> t_iasted_Speaker_lecture [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Rejected_contribution -> t_iasted_Accepting_manuscript [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Review -> t_iasted_Review [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Review_expertise -> t_iasted_Activity [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Review_preference -> t_iasted_Activity [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Reviewed_contribution -> t_iasted_Final_manuscript [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Reviewer -> t_iasted_Listener [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Steering_committee -> t_iasted_Social_program [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Submitted_contribution -> t_iasted_Final_manuscript [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Topic -> t_iasted_Item [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Track -> t_iasted_Lecture [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	"s_Conference_Track-workshop_chair" -> t_iasted_Session_chair [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Tutorial -> t_iasted_Lecture [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Workshop -> t_iasted_Lecture [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_Conference_Written_contribution -> t_iasted_Receiving_manuscript [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+}

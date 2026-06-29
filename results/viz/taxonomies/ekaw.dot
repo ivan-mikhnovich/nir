@@ -1,0 +1,149 @@
+digraph tax_ekaw {
+	bgcolor=transparent dpi=144 nodesep=0.5 pad=0 rankdir=TB ranksep=0.9
+	node [fontname=Arial fontsize=10 margin="0.14,0.08" shape=box style="rounded,filled"]
+	edge [arrowhead=none color="#b0b0b0" penwidth=0.9]
+	ekaw_Event [label=Event color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Person [label=Person color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Accepted_Paper [label="Accepted Paper" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Rejected_Paper [label="Rejected Paper" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Evaluated_Paper [label="Evaluated Paper" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Camera_Ready_Paper [label="Camera Ready Paper" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Positive_Review [label="Positive Review" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Workshop_Paper [label="Workshop Paper" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Industrial_Paper [label="Industrial Paper" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Paper [label=Paper color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Conference_Paper [label="Conference Paper" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Industrial_Session [label="Industrial Session" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Conference_Session [label="Conference Session" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Regular_Session [label="Regular Session" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Poster_Session [label="Poster Session" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Demo_Session [label="Demo Session" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Session [label=Session color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Abstract [label=Abstract color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Document [label=Document color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Paper_Author [label="Paper Author" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Conference_Trip [label="Conference Trip" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Social_Event [label="Social Event" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Tutorial_Abstract [label="Tutorial Abstract" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Conference_Participant [label="Conference Participant" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Submitted_Paper [label="Submitted Paper" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Assigned_Paper [label="Assigned Paper" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Negative_Review [label="Negative Review" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Review [label=Review color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Neutral_Review [label="Neutral Review" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Research_Topic [label="Research Topic" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Organising_Agency [label="Organising Agency" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Academic_Institution [label="Academic Institution" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Organisation [label=Organisation color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Proceedings_Publisher [label="Proceedings Publisher" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Poster_Paper [label="Poster Paper" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Regular_Paper [label="Regular Paper" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Demo_Paper [label="Demo Paper" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Location [label=Location color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Research_Institute [label="Research Institute" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Scientific_Event [label="Scientific Event" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Invited_Talk_Abstract [label="Invited Talk Abstract" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Agency_Staff_Member [label="Agency Staff Member" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Workshop_Session [label="Workshop Session" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Track [label=Track color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Invited_Talk [label="Invited Talk" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Workshop [label=Workshop color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Tutorial [label=Tutorial color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Contributed_Talk [label="Contributed Talk" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Conference [label=Conference color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Demo_Chair [label="Demo Chair" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Tutorial_Chair [label="Tutorial Chair" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_PC_Chair [label="PC Chair" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_PC_Member [label="PC Member" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_OC_Member [label="OC Member" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Proceedings [label=Proceedings color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Programme_Brochure [label="Programme Brochure" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Flyer [label=Flyer color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Web_Site [label="Web Site" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	"ekaw_Multi-author_Volume" [label="Multi-author Volume" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Individual_Presentation [label="Individual Presentation" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_OC_Chair [label="OC Chair" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Conference_Banquet [label="Conference Banquet" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Workshop_Chair [label="Workshop Chair" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Conference_Proceedings [label="Conference Proceedings" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Session_Chair [label="Session Chair" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	"ekaw_Early-Registered_Participant" [label="Early-Registered Participant" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	"ekaw_Late-Registered_Participant" [label="Late-Registered Participant" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_University [label=University color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Possible_Reviewer [label="Possible Reviewer" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Student [label=Student color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Invited_Speaker [label="Invited Speaker" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Presenter [label=Presenter color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_SC_Member [label="SC Member" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	ekaw_Evaluated_Paper -> ekaw_Accepted_Paper
+	ekaw_Evaluated_Paper -> ekaw_Rejected_Paper
+	ekaw_Assigned_Paper -> ekaw_Evaluated_Paper
+	ekaw_Paper -> ekaw_Camera_Ready_Paper
+	ekaw_Review -> ekaw_Positive_Review
+	ekaw_Paper -> ekaw_Workshop_Paper
+	ekaw_Paper -> ekaw_Industrial_Paper
+	ekaw_Document -> ekaw_Paper
+	ekaw_Paper -> ekaw_Conference_Paper
+	ekaw_Conference_Session -> ekaw_Industrial_Session
+	ekaw_Session -> ekaw_Conference_Session
+	ekaw_Session -> ekaw_Regular_Session
+	ekaw_Session -> ekaw_Poster_Session
+	ekaw_Session -> ekaw_Demo_Session
+	ekaw_Scientific_Event -> ekaw_Session
+	ekaw_Document -> ekaw_Abstract
+	ekaw_Person -> ekaw_Paper_Author
+	ekaw_Social_Event -> ekaw_Conference_Trip
+	ekaw_Event -> ekaw_Social_Event
+	ekaw_Abstract -> ekaw_Tutorial_Abstract
+	ekaw_Person -> ekaw_Conference_Participant
+	ekaw_Paper -> ekaw_Submitted_Paper
+	ekaw_Submitted_Paper -> ekaw_Assigned_Paper
+	ekaw_Review -> ekaw_Negative_Review
+	ekaw_Document -> ekaw_Review
+	ekaw_Review -> ekaw_Neutral_Review
+	ekaw_Organisation -> ekaw_Organising_Agency
+	ekaw_Organisation -> ekaw_Academic_Institution
+	ekaw_Organisation -> ekaw_Proceedings_Publisher
+	ekaw_Paper -> ekaw_Poster_Paper
+	ekaw_Paper -> ekaw_Regular_Paper
+	ekaw_Paper -> ekaw_Demo_Paper
+	ekaw_Academic_Institution -> ekaw_Research_Institute
+	ekaw_Event -> ekaw_Scientific_Event
+	ekaw_Abstract -> ekaw_Invited_Talk_Abstract
+	ekaw_Person -> ekaw_Agency_Staff_Member
+	ekaw_Session -> ekaw_Workshop_Session
+	ekaw_Scientific_Event -> ekaw_Track
+	ekaw_Individual_Presentation -> ekaw_Invited_Talk
+	ekaw_Scientific_Event -> ekaw_Workshop
+	ekaw_Individual_Presentation -> ekaw_Tutorial
+	ekaw_Individual_Presentation -> ekaw_Contributed_Talk
+	ekaw_Scientific_Event -> ekaw_Conference
+	ekaw_Conference_Participant -> ekaw_Demo_Chair
+	ekaw_Conference_Participant -> ekaw_Tutorial_Chair
+	ekaw_PC_Member -> ekaw_Tutorial_Chair
+	ekaw_Conference_Participant -> ekaw_PC_Chair
+	ekaw_PC_Member -> ekaw_PC_Chair
+	ekaw_Possible_Reviewer -> ekaw_PC_Member
+	ekaw_Conference_Participant -> ekaw_OC_Member
+	"ekaw_Multi-author_Volume" -> ekaw_Proceedings
+	ekaw_Document -> ekaw_Programme_Brochure
+	ekaw_Document -> ekaw_Flyer
+	ekaw_Document -> ekaw_Web_Site
+	ekaw_Document -> "ekaw_Multi-author_Volume"
+	ekaw_Scientific_Event -> ekaw_Individual_Presentation
+	ekaw_OC_Member -> ekaw_OC_Chair
+	ekaw_Social_Event -> ekaw_Conference_Banquet
+	ekaw_Conference_Participant -> ekaw_Workshop_Chair
+	ekaw_PC_Member -> ekaw_Workshop_Chair
+	ekaw_Proceedings -> ekaw_Conference_Proceedings
+	ekaw_PC_Member -> ekaw_Session_Chair
+	ekaw_Conference_Participant -> ekaw_Session_Chair
+	ekaw_Conference_Participant -> "ekaw_Early-Registered_Participant"
+	ekaw_Conference_Participant -> "ekaw_Late-Registered_Participant"
+	ekaw_Academic_Institution -> ekaw_University
+	ekaw_Person -> ekaw_Possible_Reviewer
+	ekaw_Person -> ekaw_Student
+	ekaw_Presenter -> ekaw_Invited_Speaker
+	ekaw_Conference_Participant -> ekaw_Presenter
+	ekaw_PC_Member -> ekaw_SC_Member
+}

@@ -1,0 +1,74 @@
+digraph tax_confOf {
+	bgcolor=transparent dpi=144 nodesep=0.5 pad=0 rankdir=TB ranksep=0.9
+	node [fontname=Arial fontsize=10 margin="0.14,0.08" shape=box style="rounded,filled"]
+	edge [arrowhead=none color="#b0b0b0" penwidth=0.9]
+	confof_Trip [label=Trip color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Banquet [label=Banquet color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Reception [label=Reception color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Social_event [label="Social event" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Event [label=Event color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Contribution [label=Contribution color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_City [label=City color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Organization [label=Organization color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Person [label=Person color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Topic [label=Topic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Country [label=Country color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Company [label=Company color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_University [label=University color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Scholar [label=Scholar color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Administrator [label=Administrator color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Poster [label=Poster color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Paper [label=Paper color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Short_paper [label="Short paper" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Reviewing_results_event [label="Reviewing results event" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Administrative_event [label="Administrative event" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Reviewing_event [label="Reviewing event" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Registration_of_participants_event [label="Registration of participants event" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Submission_event [label="Submission event" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Camera_Ready_event [label="Camera Ready event" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Workshop [label=Workshop color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Conference [label=Conference color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Tutorial [label=Tutorial color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Working_event [label="Working event" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Member [label=Member color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Participant [label=Participant color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Member_PC [label="Member PC" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Chair_PC [label="Chair PC" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Student [label=Student color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Science_Worker [label="Science Worker" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Assistant [label=Assistant color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Volunteer [label=Volunteer color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Regular [label=Regular color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Author [label=Author color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	confof_Social_event -> confof_Trip
+	confof_Social_event -> confof_Banquet
+	confof_Social_event -> confof_Reception
+	confof_Event -> confof_Social_event
+	confof_Organization -> confof_Company
+	confof_Organization -> confof_University
+	confof_Person -> confof_Scholar
+	confof_Person -> confof_Administrator
+	confof_Contribution -> confof_Poster
+	confof_Contribution -> confof_Paper
+	confof_Contribution -> confof_Short_paper
+	confof_Administrative_event -> confof_Reviewing_results_event
+	confof_Event -> confof_Administrative_event
+	confof_Administrative_event -> confof_Reviewing_event
+	confof_Administrative_event -> confof_Registration_of_participants_event
+	confof_Administrative_event -> confof_Submission_event
+	confof_Administrative_event -> confof_Camera_Ready_event
+	confof_Working_event -> confof_Workshop
+	confof_Working_event -> confof_Conference
+	confof_Working_event -> confof_Tutorial
+	confof_Event -> confof_Working_event
+	confof_Participant -> confof_Member
+	confof_Person -> confof_Participant
+	confof_Person -> confof_Member_PC
+	confof_Person -> confof_Chair_PC
+	confof_Participant -> confof_Student
+	confof_Person -> confof_Science_Worker
+	confof_Person -> confof_Assistant
+	confof_Person -> confof_Volunteer
+	confof_Participant -> confof_Regular
+	confof_Person -> confof_Author
+}
