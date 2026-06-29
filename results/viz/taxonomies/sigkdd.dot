@@ -1,0 +1,93 @@
+digraph tax_sigkdd {
+	bgcolor=transparent dpi=144 nodesep=0.5 pad=0 rankdir=TB ranksep=0.9
+	node [fontname=Arial fontsize=10 margin="0.14,0.08" shape=box style="rounded,filled"]
+	edge [arrowhead=none color="#b0b0b0" penwidth=0.9]
+	sigkdd_Hotel [label=Hotel color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Place [label=Place color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Abstract [label=Abstract color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Document [label=Document color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Deadline_Abstract_Submission [label="Deadline Abstract Submission" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Best_Applications_Paper_Award [label="Best Applications Paper Award" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Award [label=Award color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Deadline_Paper_Submission [label="Deadline Paper Submission" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Deadline [label=Deadline color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Deadline_Author_notification [label="Deadline Author notification" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Webmaster [label=Webmaster color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Organizator [label=Organizator color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Author_of_paper_student [label="Author of paper student" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Best_Student_Paper_Award [label="Best Student Paper Award" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Author [label=Author color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_ACM_SIGKDD [label="ACM SIGKDD" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Conference [label=Conference color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Sponzor [label=Sponzor color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Exhibitor [label=Exhibitor color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Registration_SIGMOD_Member [label="Registration SIGMOD Member" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Registration_fee [label="Registration fee" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Person [label=Person color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Bronze_Supporter [label="Bronze Supporter" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Committee [label=Committee color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Platinum_Supporter [label="Platinum Supporter" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Conference_hall [label="Conference hall" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Best_Paper_Awards_Committee [label="Best Paper Awards Committee" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Program_Chair [label="Program Chair" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Main_office [label="Main office" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	"sigkdd_Registration_Non-Member" [label="Registration Non-Member" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Fee [label=Fee color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Review [label=Review color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Sponzor_fee [label="Sponzor fee" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Registration_SIGKDD_Member [label="Registration SIGKDD Member" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Program_Committee [label="Program Committee" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_General_Chair [label="General Chair" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Speaker [label=Speaker color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Gold_Supporter [label="Gold Supporter" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Registration_Student [label="Registration Student" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Organizing_Committee [label="Organizing Committee" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Listener [label=Listener color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Program_Committee_member [label="Program Committee member" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Invited_Speaker [label="Invited Speaker" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Best_Research_Paper_Award [label="Best Research Paper Award" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Best_Student_Paper_Supporter [label="Best Student Paper Supporter" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Paper [label=Paper color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Silver_Supporter [label="Silver Supporter" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Organizing_Committee_member [label="Organizing Committee member" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Author_of_paper [label="Author of paper" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	sigkdd_Place -> sigkdd_Hotel
+	sigkdd_Document -> sigkdd_Abstract
+	sigkdd_Deadline -> sigkdd_Deadline_Abstract_Submission
+	sigkdd_Award -> sigkdd_Best_Applications_Paper_Award
+	sigkdd_Deadline -> sigkdd_Deadline_Paper_Submission
+	sigkdd_Deadline -> sigkdd_Deadline_Author_notification
+	sigkdd_Organizator -> sigkdd_Webmaster
+	sigkdd_Person -> sigkdd_Organizator
+	sigkdd_Author -> sigkdd_Author_of_paper_student
+	sigkdd_Award -> sigkdd_Best_Student_Paper_Award
+	sigkdd_Speaker -> sigkdd_Author
+	sigkdd_Sponzor -> sigkdd_Exhibitor
+	sigkdd_Registration_fee -> sigkdd_Registration_SIGMOD_Member
+	sigkdd_Fee -> sigkdd_Registration_fee
+	sigkdd_Sponzor -> sigkdd_Bronze_Supporter
+	sigkdd_Sponzor -> sigkdd_Platinum_Supporter
+	sigkdd_Place -> sigkdd_Conference_hall
+	sigkdd_Committee -> sigkdd_Best_Paper_Awards_Committee
+	sigkdd_Organizator -> sigkdd_Program_Chair
+	sigkdd_Place -> sigkdd_Main_office
+	sigkdd_Registration_fee -> "sigkdd_Registration_Non-Member"
+	sigkdd_Document -> sigkdd_Review
+	sigkdd_Fee -> sigkdd_Sponzor_fee
+	sigkdd_Registration_fee -> sigkdd_Registration_SIGKDD_Member
+	sigkdd_Committee -> sigkdd_Program_Committee
+	sigkdd_Organizator -> sigkdd_General_Chair
+	sigkdd_Person -> sigkdd_Speaker
+	sigkdd_Sponzor -> sigkdd_Gold_Supporter
+	sigkdd_Registration_fee -> sigkdd_Registration_Student
+	sigkdd_Committee -> sigkdd_Organizing_Committee
+	sigkdd_Person -> sigkdd_Listener
+	sigkdd_Organizator -> sigkdd_Program_Committee_member
+	sigkdd_Speaker -> sigkdd_Invited_Speaker
+	sigkdd_Award -> sigkdd_Best_Research_Paper_Award
+	sigkdd_Sponzor -> sigkdd_Best_Student_Paper_Supporter
+	sigkdd_Document -> sigkdd_Paper
+	sigkdd_Sponzor -> sigkdd_Silver_Supporter
+	sigkdd_Organizator -> sigkdd_Organizing_Committee_member
+	sigkdd_Author -> sigkdd_Author_of_paper
+}

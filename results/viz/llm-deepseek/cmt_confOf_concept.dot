@@ -1,0 +1,140 @@
+digraph pair_cmt_confOf_concept {
+	bgcolor=transparent compound=true dpi=144 nodesep=0.5 pad=0.2 rankdir=TB ranksep=0.9
+	node [fontname=Arial fontsize=10 margin="0.14,0.08" shape=box style="rounded,filled"]
+	subgraph cluster_src {
+		color="#5ba3d9" fontname=Arial fontsize=12 label=cmt style=dashed
+		edge [arrowhead=none color="#b0b0b0" penwidth=0.9]
+		"s_cmt_Meta-Reviewer" [label="Meta-Reviewer" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Reviewer [label=Reviewer color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Decision [label=Decision color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Person [label=Person color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_cmt_Document [label=Document color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Preference [label=Preference color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_ProgramCommittee [label=ProgramCommittee color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Bid [label=Bid color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Conference [label=Conference color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_ConferenceChair [label=ConferenceChair color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_ConferenceMember [label=ConferenceMember color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_cmt_AssociatedChair [label=AssociatedChair color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_ProgramCommitteeMember [label=ProgramCommitteeMember color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_cmt_AuthorNotReviewer [label=AuthorNotReviewer color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_SubjectArea [label=SubjectArea color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_ExternalReviewer [label=ExternalReviewer color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Chairman [label=Chairman color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_ProgramCommitteeChair [label=ProgramCommitteeChair color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Acceptance [label=Acceptance color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Rejection [label=Rejection color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Review [label=Review color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Paper [label=Paper color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_cmt_Author [label=Author color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_cmt_User [label=User color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		"s_cmt_Co-author" [label="Co-author" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_PaperAbstract [label=PaperAbstract color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_PaperFullVersion [label=PaperFullVersion color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Administrator [label=Administrator color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		"s_cmt_Meta-Review" [label="Meta-Review" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_cmt_Reviewer -> "s_cmt_Meta-Reviewer"
+		s_cmt_ConferenceMember -> s_cmt_Reviewer
+		s_cmt_User -> s_cmt_Reviewer
+		s_cmt_ConferenceMember -> s_cmt_ConferenceChair
+		s_cmt_Person -> s_cmt_ConferenceMember
+		s_cmt_ConferenceMember -> s_cmt_AssociatedChair
+		s_cmt_ConferenceMember -> s_cmt_ProgramCommitteeMember
+		s_cmt_Person -> s_cmt_ProgramCommitteeMember
+		s_cmt_Author -> s_cmt_AuthorNotReviewer
+		s_cmt_Person -> s_cmt_ExternalReviewer
+		s_cmt_Person -> s_cmt_Chairman
+		s_cmt_ProgramCommitteeMember -> s_cmt_ProgramCommitteeChair
+		s_cmt_Decision -> s_cmt_Acceptance
+		s_cmt_Decision -> s_cmt_Rejection
+		s_cmt_Document -> s_cmt_Review
+		s_cmt_Document -> s_cmt_Paper
+		s_cmt_ConferenceMember -> s_cmt_Author
+		s_cmt_User -> s_cmt_Author
+		s_cmt_Person -> s_cmt_User
+		s_cmt_Author -> "s_cmt_Co-author"
+		s_cmt_Paper -> s_cmt_PaperAbstract
+		s_cmt_Paper -> s_cmt_PaperFullVersion
+		s_cmt_User -> s_cmt_Administrator
+		s_cmt_Review -> "s_cmt_Meta-Review"
+	}
+	subgraph cluster_tgt {
+		color="#d95b5b" fontname=Arial fontsize=12 label=confOf style=dashed
+		edge [arrowhead=none color="#b0b0b0" penwidth=0.9]
+		t_confof_Trip [label=Trip color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Banquet [label=Banquet color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Reception [label=Reception color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Social_event [label="Social event" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Event [label=Event color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Contribution [label=Contribution color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_City [label=City color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Organization [label=Organization color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Person [label=Person color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_confof_Topic [label=Topic color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Country [label=Country color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Company [label=Company color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_University [label=University color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Scholar [label=Scholar color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Administrator [label=Administrator color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_confof_Poster [label=Poster color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Paper [label=Paper color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_confof_Short_paper [label="Short paper" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Reviewing_results_event [label="Reviewing results event" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Administrative_event [label="Administrative event" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Reviewing_event [label="Reviewing event" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Registration_of_participants_event [label="Registration of participants event" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Submission_event [label="Submission event" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Camera_Ready_event [label="Camera Ready event" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Workshop [label=Workshop color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Conference [label=Conference color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Tutorial [label=Tutorial color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Working_event [label="Working event" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Member [label=Member color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_confof_Participant [label=Participant color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Member_PC [label="Member PC" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_confof_Chair_PC [label="Chair PC" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Student [label=Student color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Science_Worker [label="Science Worker" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Assistant [label=Assistant color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Volunteer [label=Volunteer color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Regular [label=Regular color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_confof_Author [label=Author color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_confof_Social_event -> t_confof_Trip
+		t_confof_Social_event -> t_confof_Banquet
+		t_confof_Social_event -> t_confof_Reception
+		t_confof_Event -> t_confof_Social_event
+		t_confof_Organization -> t_confof_Company
+		t_confof_Organization -> t_confof_University
+		t_confof_Person -> t_confof_Scholar
+		t_confof_Person -> t_confof_Administrator
+		t_confof_Contribution -> t_confof_Poster
+		t_confof_Contribution -> t_confof_Paper
+		t_confof_Contribution -> t_confof_Short_paper
+		t_confof_Administrative_event -> t_confof_Reviewing_results_event
+		t_confof_Event -> t_confof_Administrative_event
+		t_confof_Administrative_event -> t_confof_Reviewing_event
+		t_confof_Administrative_event -> t_confof_Registration_of_participants_event
+		t_confof_Administrative_event -> t_confof_Submission_event
+		t_confof_Administrative_event -> t_confof_Camera_Ready_event
+		t_confof_Working_event -> t_confof_Workshop
+		t_confof_Working_event -> t_confof_Conference
+		t_confof_Working_event -> t_confof_Tutorial
+		t_confof_Event -> t_confof_Working_event
+		t_confof_Participant -> t_confof_Member
+		t_confof_Person -> t_confof_Participant
+		t_confof_Person -> t_confof_Member_PC
+		t_confof_Person -> t_confof_Chair_PC
+		t_confof_Participant -> t_confof_Student
+		t_confof_Person -> t_confof_Science_Worker
+		t_confof_Person -> t_confof_Assistant
+		t_confof_Person -> t_confof_Volunteer
+		t_confof_Participant -> t_confof_Regular
+		t_confof_Person -> t_confof_Author
+	}
+	s_cmt_Administrator -> t_confof_Administrator [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_cmt_Author -> t_confof_Author [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_cmt_ConferenceMember -> t_confof_Member [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_cmt_Paper -> t_confof_Paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_cmt_Person -> t_confof_Person [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_cmt_ProgramCommitteeMember -> t_confof_Member_PC [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+}

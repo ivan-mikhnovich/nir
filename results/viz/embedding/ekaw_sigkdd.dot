@@ -1,0 +1,317 @@
+digraph pair_ekaw_sigkdd {
+	bgcolor=transparent compound=true dpi=144 nodesep=0.5 pad=0.2 rankdir=TB ranksep=0.9
+	node [fontname=Arial fontsize=10 margin="0.14,0.08" shape=box style="rounded,filled"]
+	subgraph cluster_src {
+		color="#5ba3d9" fontname=Arial fontsize=12 label=ekaw style=dashed
+		edge [arrowhead=none color="#b0b0b0" penwidth=0.9]
+		s_ekaw_Event [label=Event color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Person [label=Person color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Accepted_Paper [label="Accepted Paper" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Rejected_Paper [label="Rejected Paper" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Evaluated_Paper [label="Evaluated Paper" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Camera_Ready_Paper [label="Camera Ready Paper" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Positive_Review [label="Positive Review" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Workshop_Paper [label="Workshop Paper" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Industrial_Paper [label="Industrial Paper" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Paper [label=Paper color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Conference_Paper [label="Conference Paper" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Industrial_Session [label="Industrial Session" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Conference_Session [label="Conference Session" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Regular_Session [label="Regular Session" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Poster_Session [label="Poster Session" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Demo_Session [label="Demo Session" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Session [label=Session color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Abstract [label=Abstract color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Document [label=Document color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Paper_Author [label="Paper Author" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Conference_Trip [label="Conference Trip" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Social_Event [label="Social Event" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Tutorial_Abstract [label="Tutorial Abstract" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Conference_Participant [label="Conference Participant" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Submitted_Paper [label="Submitted Paper" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Assigned_Paper [label="Assigned Paper" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Negative_Review [label="Negative Review" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Review [label=Review color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Neutral_Review [label="Neutral Review" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Research_Topic [label="Research Topic" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Organising_Agency [label="Organising Agency" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Academic_Institution [label="Academic Institution" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Organisation [label=Organisation color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Proceedings_Publisher [label="Proceedings Publisher" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Poster_Paper [label="Poster Paper" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Regular_Paper [label="Regular Paper" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Demo_Paper [label="Demo Paper" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Location [label=Location color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Research_Institute [label="Research Institute" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Scientific_Event [label="Scientific Event" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Invited_Talk_Abstract [label="Invited Talk Abstract" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Agency_Staff_Member [label="Agency Staff Member" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Workshop_Session [label="Workshop Session" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Track [label=Track color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Invited_Talk [label="Invited Talk" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Workshop [label=Workshop color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Tutorial [label=Tutorial color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Contributed_Talk [label="Contributed Talk" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Conference [label=Conference color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Demo_Chair [label="Demo Chair" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Tutorial_Chair [label="Tutorial Chair" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_PC_Chair [label="PC Chair" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_PC_Member [label="PC Member" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_OC_Member [label="OC Member" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Proceedings [label=Proceedings color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Programme_Brochure [label="Programme Brochure" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Flyer [label=Flyer color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Web_Site [label="Web Site" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		"s_ekaw_Multi-author_Volume" [label="Multi-author Volume" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Individual_Presentation [label="Individual Presentation" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_OC_Chair [label="OC Chair" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Conference_Banquet [label="Conference Banquet" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Workshop_Chair [label="Workshop Chair" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Conference_Proceedings [label="Conference Proceedings" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Session_Chair [label="Session Chair" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		"s_ekaw_Early-Registered_Participant" [label="Early-Registered Participant" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		"s_ekaw_Late-Registered_Participant" [label="Late-Registered Participant" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_University [label=University color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Possible_Reviewer [label="Possible Reviewer" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Student [label=Student color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Invited_Speaker [label="Invited Speaker" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Presenter [label=Presenter color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_SC_Member [label="SC Member" color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_ekaw_Evaluated_Paper -> s_ekaw_Accepted_Paper
+		s_ekaw_Evaluated_Paper -> s_ekaw_Rejected_Paper
+		s_ekaw_Assigned_Paper -> s_ekaw_Evaluated_Paper
+		s_ekaw_Paper -> s_ekaw_Camera_Ready_Paper
+		s_ekaw_Review -> s_ekaw_Positive_Review
+		s_ekaw_Paper -> s_ekaw_Workshop_Paper
+		s_ekaw_Paper -> s_ekaw_Industrial_Paper
+		s_ekaw_Document -> s_ekaw_Paper
+		s_ekaw_Paper -> s_ekaw_Conference_Paper
+		s_ekaw_Conference_Session -> s_ekaw_Industrial_Session
+		s_ekaw_Session -> s_ekaw_Conference_Session
+		s_ekaw_Session -> s_ekaw_Regular_Session
+		s_ekaw_Session -> s_ekaw_Poster_Session
+		s_ekaw_Session -> s_ekaw_Demo_Session
+		s_ekaw_Scientific_Event -> s_ekaw_Session
+		s_ekaw_Document -> s_ekaw_Abstract
+		s_ekaw_Person -> s_ekaw_Paper_Author
+		s_ekaw_Social_Event -> s_ekaw_Conference_Trip
+		s_ekaw_Event -> s_ekaw_Social_Event
+		s_ekaw_Abstract -> s_ekaw_Tutorial_Abstract
+		s_ekaw_Person -> s_ekaw_Conference_Participant
+		s_ekaw_Paper -> s_ekaw_Submitted_Paper
+		s_ekaw_Submitted_Paper -> s_ekaw_Assigned_Paper
+		s_ekaw_Review -> s_ekaw_Negative_Review
+		s_ekaw_Document -> s_ekaw_Review
+		s_ekaw_Review -> s_ekaw_Neutral_Review
+		s_ekaw_Organisation -> s_ekaw_Organising_Agency
+		s_ekaw_Organisation -> s_ekaw_Academic_Institution
+		s_ekaw_Organisation -> s_ekaw_Proceedings_Publisher
+		s_ekaw_Paper -> s_ekaw_Poster_Paper
+		s_ekaw_Paper -> s_ekaw_Regular_Paper
+		s_ekaw_Paper -> s_ekaw_Demo_Paper
+		s_ekaw_Academic_Institution -> s_ekaw_Research_Institute
+		s_ekaw_Event -> s_ekaw_Scientific_Event
+		s_ekaw_Abstract -> s_ekaw_Invited_Talk_Abstract
+		s_ekaw_Person -> s_ekaw_Agency_Staff_Member
+		s_ekaw_Session -> s_ekaw_Workshop_Session
+		s_ekaw_Scientific_Event -> s_ekaw_Track
+		s_ekaw_Individual_Presentation -> s_ekaw_Invited_Talk
+		s_ekaw_Scientific_Event -> s_ekaw_Workshop
+		s_ekaw_Individual_Presentation -> s_ekaw_Tutorial
+		s_ekaw_Individual_Presentation -> s_ekaw_Contributed_Talk
+		s_ekaw_Scientific_Event -> s_ekaw_Conference
+		s_ekaw_Conference_Participant -> s_ekaw_Demo_Chair
+		s_ekaw_Conference_Participant -> s_ekaw_Tutorial_Chair
+		s_ekaw_PC_Member -> s_ekaw_Tutorial_Chair
+		s_ekaw_Conference_Participant -> s_ekaw_PC_Chair
+		s_ekaw_PC_Member -> s_ekaw_PC_Chair
+		s_ekaw_Possible_Reviewer -> s_ekaw_PC_Member
+		s_ekaw_Conference_Participant -> s_ekaw_OC_Member
+		"s_ekaw_Multi-author_Volume" -> s_ekaw_Proceedings
+		s_ekaw_Document -> s_ekaw_Programme_Brochure
+		s_ekaw_Document -> s_ekaw_Flyer
+		s_ekaw_Document -> s_ekaw_Web_Site
+		s_ekaw_Document -> "s_ekaw_Multi-author_Volume"
+		s_ekaw_Scientific_Event -> s_ekaw_Individual_Presentation
+		s_ekaw_OC_Member -> s_ekaw_OC_Chair
+		s_ekaw_Social_Event -> s_ekaw_Conference_Banquet
+		s_ekaw_Conference_Participant -> s_ekaw_Workshop_Chair
+		s_ekaw_PC_Member -> s_ekaw_Workshop_Chair
+		s_ekaw_Proceedings -> s_ekaw_Conference_Proceedings
+		s_ekaw_PC_Member -> s_ekaw_Session_Chair
+		s_ekaw_Conference_Participant -> s_ekaw_Session_Chair
+		s_ekaw_Conference_Participant -> "s_ekaw_Early-Registered_Participant"
+		s_ekaw_Conference_Participant -> "s_ekaw_Late-Registered_Participant"
+		s_ekaw_Academic_Institution -> s_ekaw_University
+		s_ekaw_Person -> s_ekaw_Possible_Reviewer
+		s_ekaw_Person -> s_ekaw_Student
+		s_ekaw_Presenter -> s_ekaw_Invited_Speaker
+		s_ekaw_Conference_Participant -> s_ekaw_Presenter
+		s_ekaw_PC_Member -> s_ekaw_SC_Member
+	}
+	subgraph cluster_tgt {
+		color="#d95b5b" fontname=Arial fontsize=12 label=sigkdd style=dashed
+		edge [arrowhead=none color="#b0b0b0" penwidth=0.9]
+		t_sigkdd_Hotel [label=Hotel color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Place [label=Place color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_sigkdd_Abstract [label=Abstract color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_sigkdd_Document [label=Document color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_sigkdd_Deadline_Abstract_Submission [label="Deadline Abstract Submission" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Best_Applications_Paper_Award [label="Best Applications Paper Award" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Award [label=Award color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Deadline_Paper_Submission [label="Deadline Paper Submission" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Deadline [label=Deadline color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Deadline_Author_notification [label="Deadline Author notification" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Webmaster [label=Webmaster color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Organizator [label=Organizator color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_sigkdd_Author_of_paper_student [label="Author of paper student" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Best_Student_Paper_Award [label="Best Student Paper Award" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Author [label=Author color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_sigkdd_ACM_SIGKDD [label="ACM SIGKDD" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Conference [label=Conference color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Sponzor [label=Sponzor color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Exhibitor [label=Exhibitor color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Registration_SIGMOD_Member [label="Registration SIGMOD Member" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Registration_fee [label="Registration fee" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Person [label=Person color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Bronze_Supporter [label="Bronze Supporter" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Committee [label=Committee color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Platinum_Supporter [label="Platinum Supporter" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Conference_hall [label="Conference hall" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_sigkdd_Best_Paper_Awards_Committee [label="Best Paper Awards Committee" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Program_Chair [label="Program Chair" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_sigkdd_Main_office [label="Main office" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		"t_sigkdd_Registration_Non-Member" [label="Registration Non-Member" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Fee [label=Fee color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Review [label=Review color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_sigkdd_Sponzor_fee [label="Sponzor fee" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Registration_SIGKDD_Member [label="Registration SIGKDD Member" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Program_Committee [label="Program Committee" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_General_Chair [label="General Chair" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Speaker [label=Speaker color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Gold_Supporter [label="Gold Supporter" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Registration_Student [label="Registration Student" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Organizing_Committee [label="Organizing Committee" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_sigkdd_Listener [label=Listener color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_sigkdd_Program_Committee_member [label="Program Committee member" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_sigkdd_Invited_Speaker [label="Invited Speaker" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_sigkdd_Best_Research_Paper_Award [label="Best Research Paper Award" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Best_Student_Paper_Supporter [label="Best Student Paper Supporter" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Paper [label=Paper color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_sigkdd_Silver_Supporter [label="Silver Supporter" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_sigkdd_Organizing_Committee_member [label="Organizing Committee member" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_sigkdd_Author_of_paper [label="Author of paper" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_sigkdd_Place -> t_sigkdd_Hotel
+		t_sigkdd_Document -> t_sigkdd_Abstract
+		t_sigkdd_Deadline -> t_sigkdd_Deadline_Abstract_Submission
+		t_sigkdd_Award -> t_sigkdd_Best_Applications_Paper_Award
+		t_sigkdd_Deadline -> t_sigkdd_Deadline_Paper_Submission
+		t_sigkdd_Deadline -> t_sigkdd_Deadline_Author_notification
+		t_sigkdd_Organizator -> t_sigkdd_Webmaster
+		t_sigkdd_Person -> t_sigkdd_Organizator
+		t_sigkdd_Author -> t_sigkdd_Author_of_paper_student
+		t_sigkdd_Award -> t_sigkdd_Best_Student_Paper_Award
+		t_sigkdd_Speaker -> t_sigkdd_Author
+		t_sigkdd_Sponzor -> t_sigkdd_Exhibitor
+		t_sigkdd_Registration_fee -> t_sigkdd_Registration_SIGMOD_Member
+		t_sigkdd_Fee -> t_sigkdd_Registration_fee
+		t_sigkdd_Sponzor -> t_sigkdd_Bronze_Supporter
+		t_sigkdd_Sponzor -> t_sigkdd_Platinum_Supporter
+		t_sigkdd_Place -> t_sigkdd_Conference_hall
+		t_sigkdd_Committee -> t_sigkdd_Best_Paper_Awards_Committee
+		t_sigkdd_Organizator -> t_sigkdd_Program_Chair
+		t_sigkdd_Place -> t_sigkdd_Main_office
+		t_sigkdd_Registration_fee -> "t_sigkdd_Registration_Non-Member"
+		t_sigkdd_Document -> t_sigkdd_Review
+		t_sigkdd_Fee -> t_sigkdd_Sponzor_fee
+		t_sigkdd_Registration_fee -> t_sigkdd_Registration_SIGKDD_Member
+		t_sigkdd_Committee -> t_sigkdd_Program_Committee
+		t_sigkdd_Organizator -> t_sigkdd_General_Chair
+		t_sigkdd_Person -> t_sigkdd_Speaker
+		t_sigkdd_Sponzor -> t_sigkdd_Gold_Supporter
+		t_sigkdd_Registration_fee -> t_sigkdd_Registration_Student
+		t_sigkdd_Committee -> t_sigkdd_Organizing_Committee
+		t_sigkdd_Person -> t_sigkdd_Listener
+		t_sigkdd_Organizator -> t_sigkdd_Program_Committee_member
+		t_sigkdd_Speaker -> t_sigkdd_Invited_Speaker
+		t_sigkdd_Award -> t_sigkdd_Best_Research_Paper_Award
+		t_sigkdd_Sponzor -> t_sigkdd_Best_Student_Paper_Supporter
+		t_sigkdd_Document -> t_sigkdd_Paper
+		t_sigkdd_Sponzor -> t_sigkdd_Silver_Supporter
+		t_sigkdd_Organizator -> t_sigkdd_Organizing_Committee_member
+		t_sigkdd_Author -> t_sigkdd_Author_of_paper
+	}
+	s_ekaw_Abstract -> t_sigkdd_Abstract [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Academic_Institution -> t_sigkdd_Organizing_Committee [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Accepted_Paper -> t_sigkdd_Paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Agency_Staff_Member -> t_sigkdd_Organizing_Committee_member [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Assigned_Paper -> t_sigkdd_Paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Camera_Ready_Paper -> t_sigkdd_Paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Conference -> t_sigkdd_Program_Chair [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Conference_Banquet -> t_sigkdd_Conference_hall [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Conference_Paper -> t_sigkdd_Paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Conference_Participant -> t_sigkdd_Program_Committee_member [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Conference_Proceedings -> t_sigkdd_Author_of_paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Conference_Session -> t_sigkdd_Conference_hall [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Conference_Trip -> t_sigkdd_Conference_hall [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Contributed_Talk -> t_sigkdd_Invited_Speaker [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Demo_Chair -> t_sigkdd_Program_Chair [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Demo_Paper -> t_sigkdd_Paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Demo_Session -> t_sigkdd_Program_Chair [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Document -> t_sigkdd_Document [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	"s_ekaw_Early-Registered_Participant" -> t_sigkdd_Invited_Speaker [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Evaluated_Paper -> t_sigkdd_Paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Event -> t_sigkdd_Organizator [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Flyer -> t_sigkdd_Author_of_paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Individual_Presentation -> t_sigkdd_Program_Chair [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Industrial_Paper -> t_sigkdd_Paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Industrial_Session -> t_sigkdd_Conference_hall [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Invited_Speaker -> t_sigkdd_Invited_Speaker [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Invited_Talk -> t_sigkdd_Invited_Speaker [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Invited_Talk_Abstract -> t_sigkdd_Invited_Speaker [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	"s_ekaw_Late-Registered_Participant" -> t_sigkdd_Invited_Speaker [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Location -> t_sigkdd_Place [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	"s_ekaw_Multi-author_Volume" -> t_sigkdd_Author [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Negative_Review -> t_sigkdd_Review [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Neutral_Review -> t_sigkdd_Review [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_OC_Chair -> t_sigkdd_Organizing_Committee_member [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_OC_Member -> t_sigkdd_Organizing_Committee_member [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Organisation -> t_sigkdd_Organizator [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Organising_Agency -> t_sigkdd_Organizing_Committee [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_PC_Chair -> t_sigkdd_Program_Chair [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_PC_Member -> t_sigkdd_Organizing_Committee_member [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Paper -> t_sigkdd_Paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Paper_Author -> t_sigkdd_Author_of_paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Person -> t_sigkdd_Organizator [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Positive_Review -> t_sigkdd_Review [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Possible_Reviewer -> t_sigkdd_Listener [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Poster_Paper -> t_sigkdd_Paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Poster_Session -> t_sigkdd_Program_Chair [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Presenter -> t_sigkdd_Invited_Speaker [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Proceedings -> t_sigkdd_Author [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Proceedings_Publisher -> t_sigkdd_Organizator [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Programme_Brochure -> t_sigkdd_Paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Regular_Paper -> t_sigkdd_Paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Regular_Session -> t_sigkdd_Program_Chair [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Rejected_Paper -> t_sigkdd_Paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Research_Institute -> t_sigkdd_Organizing_Committee [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Research_Topic -> t_sigkdd_Document [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Review -> t_sigkdd_Review [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_SC_Member -> t_sigkdd_Organizing_Committee_member [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Scientific_Event -> t_sigkdd_Conference_hall [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Session -> t_sigkdd_Program_Chair [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Session_Chair -> t_sigkdd_Program_Chair [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Social_Event -> t_sigkdd_Program_Chair [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Student -> t_sigkdd_Listener [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Submitted_Paper -> t_sigkdd_Paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Track -> t_sigkdd_Program_Chair [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Tutorial -> t_sigkdd_Program_Chair [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Tutorial_Abstract -> t_sigkdd_Abstract [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Tutorial_Chair -> t_sigkdd_Program_Chair [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_University -> t_sigkdd_Organizing_Committee [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Web_Site -> t_sigkdd_Paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Workshop -> t_sigkdd_Program_Chair [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Workshop_Chair -> t_sigkdd_Program_Chair [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Workshop_Paper -> t_sigkdd_Paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_ekaw_Workshop_Session -> t_sigkdd_Conference_hall [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+}

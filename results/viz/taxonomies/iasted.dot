@@ -1,0 +1,275 @@
+digraph tax_iasted {
+	bgcolor=transparent dpi=144 nodesep=0.5 pad=0 rankdir=TB ranksep=0.9
+	node [fontname=Arial fontsize=10 margin="0.14,0.08" shape=box style="rounded,filled"]
+	edge [arrowhead=none color="#b0b0b0" penwidth=0.9]
+	iasted_Presenter_house [label="Presenter house" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Building [label=Building color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Presenter_state [label="Presenter state" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Delegate [label=Delegate color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Presenter_city [label="Presenter city" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Hotel_registration_form [label="Hotel registration form" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Deadline_hotel_reservation [label="Deadline hotel reservation" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Form [label=Form color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Car [label=Car color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Transport_vehicle [label="Transport vehicle" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Mailing_list [label="Mailing list" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Document [label=Document color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Renting [label=Renting color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Activity_before_conference [label="Activity before conference" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Dinner_banquet [label="Dinner banquet" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_One_day_presenter [label="One day presenter" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Social_program [label="Social program" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Activity [label=Activity color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Person [label=Person color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_PowerPoint_presentation [label="PowerPoint presentation" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Presentation [label=Presentation color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Conference_restaurant [label="Conference restaurant" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Conference_city [label="Conference city" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Conference_state [label="Conference state" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Submissions_deadline [label="Submissions deadline" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Deadline [label=Deadline color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Simulating [label=Simulating color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Research [label=Research color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Technic_activity [label="Technic activity" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Conference_activity [label="Conference activity" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Technical_commitee [label="Technical commitee" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Place [label=Place color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Author_cd_proceedings_included [label="Author cd proceedings included" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Author [label=Author color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Cd_proceening [label="Cd proceening" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Trip_day [label="Trip day" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Time [label=Time color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Record_of_attendance [label="Record of attendance" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Listener [label=Listener color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Session_room [label="Session room" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Brief_introduction_for_Session_chair [label="Brief introduction for Session chair" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Session_chair [label="Session chair" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Invitation_letter [label="Invitation letter" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Registration_form [label="Registration form" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Viza [label=Viza color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Registration [label=Registration color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Conference_days [label="Conference days" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Conference_building [label="Conference building" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Registration_fee [label="Registration fee" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Departure [label=Departure color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Activity_after_conference [label="Activity after conference" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Conference_airport [label="Conference airport" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Worker_lecturer [label="Worker lecturer" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Lecturer [label=Lecturer color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Transparency [label=Transparency color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Speaker [label=Speaker color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_City [label=City color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Card [label=Card color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Item [label=Item color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Author_attendee_book_registration_fee [label="Author attendee book registration fee" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Book_proceeding [label="Book proceeding" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Video_cassette_player [label="Video cassette player" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Audiovisual_equipment [label="Audiovisual equipment" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Video_presentation [label="Video presentation" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Hotel_room [label="Hotel room" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Hotel_presenter [label="Hotel presenter" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Conference_hotel [label="Conference hotel" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Money [label=Money color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_State [label=State color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Introduction [label=Introduction color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Welcome_address [label="Welcome address" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Value_added_tax [label="Value added tax" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Tax [label=Tax color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Refusing_manuscript [label="Refusing manuscript" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Final_manuscript [label="Final manuscript" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Accepting_manuscript [label="Accepting manuscript" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Submission [label=Submission color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Sponsor_city [label="Sponsor city" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Sponsor [label=Sponsor color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Time_zone [label="Time zone" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Introduction_of_speaker [label="Introduction of speaker" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Conference_hall [label="Conference hall" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Plenary_lecture [label="Plenary lecture" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Lecture [label=Lecture color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Plenary_lecture_speaker [label="Plenary lecture speaker" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_LCD_projector [label="LCD projector" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Deadline_for_notification_of_acceptance [label="Deadline for notification of acceptance" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Tutorial [label=Tutorial color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Tutorial_speaker [label="Tutorial speaker" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Session [label=Session color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Registation_deadline [label="Registation deadline" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Single_hotel_room [label="Single hotel room" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Non_speaker [label="Non speaker" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Author_information_form [label="Author information form" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Nonmember_registration_fee [label="Nonmember registration fee" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_IASTED_non_member [label="IASTED non member" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Hotel_fee [label="Hotel fee" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Fee [label=Fee color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Publication [label=Publication color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Taxi [label=Taxi color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Sponsor_state [label="Sponsor state" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Reviewer [label=Reviewer color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Review [label=Review color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Modelling [label=Modelling color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Worker_non_speaker [label="Worker non speaker" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Nonauthor_registration_fee [label="Nonauthor registration fee" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Payment_document [label="Payment document" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Camera_ready_manuscript_deadline [label="Camera ready manuscript deadline" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_One_conference_day [label="One conference day" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Fee_for_extra_trip [label="Fee for extra trip" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Full_day_tour [label="Full day tour" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Conference_Hiker [label="Conference Hiker" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Computer [label=Computer color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_IASTED_member [label="IASTED member" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Memeber_registration_fee [label="Memeber registration fee" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Author_book_proceedings_included [label="Author book proceedings included" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Sponsor_company_house [label="Sponsor company house" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Sponzorship [label=Sponzorship color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Student_lecturer [label="Student lecturer" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Trip_city [label="Trip city" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Cheque [label=Cheque color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Shuttle_bus [label="Shuttle bus" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Student_non_speaker [label="Student non speaker" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Student_registration_fee [label="Student registration fee" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Author_attendee_cd_registration_fee [label="Author attendee cd registration fee" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Tip [label=Tip color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Credit_card [label="Credit card" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Van [label=Van color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Main_office [label="Main office" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Presenter_university [label="Presenter university" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Departure_tax [label="Departure tax" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Receiving_manuscript [label="Receiving manuscript" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Double_hotel_room [label="Double hotel room" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Initial_manuscipt [label="Initial manuscipt" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Coffee_break [label="Coffee break" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Bank_transfer [label="Bank transfer" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Overhead_projector [label="Overhead projector" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Speaker_lecture [label="Speaker lecture" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Coctail_reception [label="Coctail reception" color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Currency [label=Currency color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+	iasted_Building -> iasted_Presenter_house
+	iasted_Place -> iasted_Building
+	iasted_State -> iasted_Presenter_state
+	iasted_Person -> iasted_Delegate
+	iasted_City -> iasted_Presenter_city
+	iasted_Form -> iasted_Hotel_registration_form
+	iasted_Deadline -> iasted_Deadline_hotel_reservation
+	iasted_Document -> iasted_Form
+	iasted_Transport_vehicle -> iasted_Car
+	iasted_Item -> iasted_Transport_vehicle
+	iasted_Document -> iasted_Mailing_list
+	iasted_Item -> iasted_Document
+	iasted_Activity_before_conference -> iasted_Renting
+	iasted_Activity -> iasted_Activity_before_conference
+	iasted_Social_program -> iasted_Dinner_banquet
+	iasted_Delegate -> iasted_One_day_presenter
+	iasted_Conference_activity -> iasted_Social_program
+	iasted_Presentation -> iasted_PowerPoint_presentation
+	iasted_Conference_activity -> iasted_Presentation
+	iasted_Building -> iasted_Conference_restaurant
+	iasted_City -> iasted_Conference_city
+	iasted_State -> iasted_Conference_state
+	iasted_Deadline -> iasted_Submissions_deadline
+	iasted_Time -> iasted_Deadline
+	iasted_Research -> iasted_Simulating
+	iasted_Activity_before_conference -> iasted_Research
+	iasted_Conference_activity -> iasted_Technic_activity
+	iasted_Activity -> iasted_Conference_activity
+	iasted_Delegate -> iasted_Technical_commitee
+	iasted_Author -> iasted_Author_cd_proceedings_included
+	iasted_Speaker -> iasted_Author
+	iasted_Publication -> iasted_Cd_proceening
+	iasted_Time -> iasted_Trip_day
+	iasted_Document -> iasted_Record_of_attendance
+	iasted_Delegate -> iasted_Listener
+	iasted_Place -> iasted_Session_room
+	iasted_Document -> iasted_Brief_introduction_for_Session_chair
+	iasted_Delegate -> iasted_Session_chair
+	iasted_Document -> iasted_Invitation_letter
+	iasted_Form -> iasted_Registration_form
+	iasted_Document -> iasted_Viza
+	iasted_Conference_activity -> iasted_Registration
+	iasted_Time -> iasted_Conference_days
+	iasted_Building -> iasted_Conference_building
+	iasted_Fee -> iasted_Registration_fee
+	iasted_Activity_after_conference -> iasted_Departure
+	iasted_Activity -> iasted_Activity_after_conference
+	iasted_Building -> iasted_Conference_airport
+	iasted_Lecturer -> iasted_Worker_lecturer
+	iasted_Author -> iasted_Lecturer
+	iasted_Document -> iasted_Transparency
+	iasted_Delegate -> iasted_Speaker
+	iasted_Item -> iasted_Card
+	iasted_Registration_fee -> iasted_Author_attendee_book_registration_fee
+	iasted_Publication -> iasted_Book_proceeding
+	iasted_Audiovisual_equipment -> iasted_Video_cassette_player
+	iasted_Item -> iasted_Audiovisual_equipment
+	iasted_Presentation -> iasted_Video_presentation
+	iasted_Place -> iasted_Hotel_room
+	iasted_Delegate -> iasted_Hotel_presenter
+	iasted_Building -> iasted_Conference_hotel
+	iasted_Conference_activity -> iasted_Introduction
+	iasted_Conference_activity -> iasted_Welcome_address
+	iasted_Tax -> iasted_Value_added_tax
+	iasted_Money -> iasted_Tax
+	iasted_Activity_before_conference -> iasted_Refusing_manuscript
+	iasted_Submission -> iasted_Final_manuscript
+	iasted_Activity_before_conference -> iasted_Accepting_manuscript
+	iasted_Document -> iasted_Submission
+	iasted_City -> iasted_Sponsor_city
+	iasted_Person -> iasted_Sponsor
+	iasted_Introduction -> iasted_Introduction_of_speaker
+	iasted_Place -> iasted_Conference_hall
+	iasted_Lecture -> iasted_Plenary_lecture
+	iasted_Conference_activity -> iasted_Lecture
+	iasted_Author -> iasted_Plenary_lecture_speaker
+	iasted_Audiovisual_equipment -> iasted_LCD_projector
+	iasted_Deadline -> iasted_Deadline_for_notification_of_acceptance
+	iasted_Lecture -> iasted_Tutorial
+	iasted_Author -> iasted_Tutorial_speaker
+	iasted_Lecture -> iasted_Session
+	iasted_Deadline -> iasted_Registation_deadline
+	iasted_Hotel_room -> iasted_Single_hotel_room
+	iasted_Delegate -> iasted_Non_speaker
+	iasted_Form -> iasted_Author_information_form
+	iasted_Registration_fee -> iasted_Nonmember_registration_fee
+	iasted_Delegate -> iasted_IASTED_non_member
+	iasted_Fee -> iasted_Hotel_fee
+	iasted_Money -> iasted_Fee
+	iasted_Item -> iasted_Publication
+	iasted_Transport_vehicle -> iasted_Taxi
+	iasted_State -> iasted_Sponsor_state
+	iasted_Speaker -> iasted_Reviewer
+	iasted_Document -> iasted_Review
+	iasted_Research -> iasted_Modelling
+	iasted_Non_speaker -> iasted_Worker_non_speaker
+	iasted_Registration_fee -> iasted_Nonauthor_registration_fee
+	iasted_Document -> iasted_Payment_document
+	iasted_Deadline -> iasted_Camera_ready_manuscript_deadline
+	iasted_Conference_days -> iasted_One_conference_day
+	iasted_Fee -> iasted_Fee_for_extra_trip
+	iasted_Activity_after_conference -> iasted_Full_day_tour
+	iasted_Delegate -> iasted_Conference_Hiker
+	iasted_Audiovisual_equipment -> iasted_Computer
+	iasted_Delegate -> iasted_IASTED_member
+	iasted_Registration_fee -> iasted_Memeber_registration_fee
+	iasted_Author -> iasted_Author_book_proceedings_included
+	iasted_Building -> iasted_Sponsor_company_house
+	iasted_Money -> iasted_Sponzorship
+	iasted_Lecturer -> iasted_Student_lecturer
+	iasted_City -> iasted_Trip_city
+	iasted_Payment_document -> iasted_Cheque
+	iasted_Transport_vehicle -> iasted_Shuttle_bus
+	iasted_Non_speaker -> iasted_Student_non_speaker
+	iasted_Registration_fee -> iasted_Student_registration_fee
+	iasted_Registration_fee -> iasted_Author_attendee_cd_registration_fee
+	iasted_Money -> iasted_Tip
+	iasted_Card -> iasted_Credit_card
+	iasted_Transport_vehicle -> iasted_Van
+	iasted_Place -> iasted_Main_office
+	iasted_Building -> iasted_Presenter_university
+	iasted_Tax -> iasted_Departure_tax
+	iasted_Activity_before_conference -> iasted_Receiving_manuscript
+	iasted_Hotel_room -> iasted_Double_hotel_room
+	iasted_Submission -> iasted_Initial_manuscipt
+	iasted_Conference_activity -> iasted_Coffee_break
+	iasted_Payment_document -> iasted_Bank_transfer
+	iasted_Audiovisual_equipment -> iasted_Overhead_projector
+	iasted_Session -> iasted_Speaker_lecture
+	iasted_Conference_activity -> iasted_Coctail_reception
+}

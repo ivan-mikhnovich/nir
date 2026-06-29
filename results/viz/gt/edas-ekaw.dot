@@ -1,0 +1,361 @@
+digraph "pair_edas-ekaw" {
+	bgcolor=transparent compound=true dpi=144 nodesep=0.5 pad=0.2 rankdir=TB ranksep=0.9
+	node [fontname=Arial fontsize=10 margin="0.14,0.08" shape=box style="rounded,filled"]
+	subgraph cluster_src {
+		color="#5ba3d9" fontname=Arial fontsize=12 label=edas style=dashed
+		edge [arrowhead=none color="#b0b0b0" penwidth=0.9]
+		s_edas_SlideSet [label=SlideSet color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_Review [label=Review color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_edas_Programme [label=Programme color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_edas_Paper [label=Paper color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_edas_MealMenu [label=MealMenu color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_Document [label=Document color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_edas_Topic [label=Topic color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_edas_ConferenceEvent [label=ConferenceEvent color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_edas_Call [label=Call color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_ReviewRating [label=ReviewRating color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_Organization [label=Organization color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_edas_ReviewForm [label=ReviewForm color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_Conference [label=Conference color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_PersonalHistory [label=PersonalHistory color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_Sponsorship [label=Sponsorship color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_ReviewQuestion [label=ReviewQuestion color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_Person [label=Person color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_edas_Country [label=Country color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_ConferenceSession [label=ConferenceSession color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_ContactInformation [label=ContactInformation color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_Place [label=Place color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_edas_WeekRejectRating [label=WeekRejectRating color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_AcceptRating [label=AcceptRating color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_AccpetIfRoomRating [label=AccpetIfRoomRating color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_RejectRating [label=RejectRating color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_MealEvent [label=MealEvent color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_NonAcademicEvent [label=NonAcademicEvent color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_BreakEvent [label=BreakEvent color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_ParallelAndDistributedComputingTopic [label=ParallelAndDistributedComputingTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_WirelessCommunicationsTopic [label=WirelessCommunicationsTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_OperatingTopicsystems [label=OperatingTopicsystems color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_ComputerNetworksTopic [label=ComputerNetworksTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_SatelliteAndSpaceCommunicationsTopic [label=SatelliteAndSpaceCommunicationsTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_CADTopic [label=CADTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_MultimediaTopic [label=MultimediaTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_CommunicationsTopic [label=CommunicationsTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_PowerlineTransmissionTopic [label=PowerlineTransmissionTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_AntennasTopic [label=AntennasTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_PerformanceTopic [label=PerformanceTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_SignalProcessingTopic [label=SignalProcessingTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_MicroelectronicsTopic [label=MicroelectronicsTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_TestOnlyTopic [label=TestOnlyTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_RadioCommunicationsTopic [label=RadioCommunicationsTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_ComputerArchitectureTopic [label=ComputerArchitectureTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_MedicineTopic [label=MedicineTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_SecurityTopic [label=SecurityTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_MobileComputingTopic [label=MobileComputingTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_CryptographyTopic [label=CryptographyTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_CommunicationTheoryTopic [label=CommunicationTheoryTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_ConferenceChair [label=ConferenceChair color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_Author [label=Author color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_edas_DiningPlace [label=DiningPlace color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_Presenter [label=Presenter color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_AcademiaOrganization [label=AcademiaOrganization color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_edas_IndustryOrganization [label=IndustryOrganization color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_NGO [label=NGO color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_GovernmentOrganization [label=GovernmentOrganization color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_ComputerNetworksEnterpriseTopic [label=ComputerNetworksEnterpriseTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_ComputerNetworksSwitchingTopic [label=ComputerNetworksSwitchingTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_ComputerNetworksSensorTopic [label=ComputerNetworksSensorTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_ComputerNetworksSecurityTopic [label=ComputerNetworksSecurityTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_ComputerNetworksOpticalTopic [label=ComputerNetworksOpticalTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_ComputerNetworksMeasurementsTopic [label=ComputerNetworksMeasurementsTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_ComputerNetworksManagementTopic [label=ComputerNetworksManagementTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_ComputerNetworksAapplicationsTopic [label=ComputerNetworksAapplicationsTopic color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_ActivePaper [label=ActivePaper color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_PendingPaper [label=PendingPaper color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_WithdrawnPaper [label=WithdrawnPaper color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_RejectedPaper [label=RejectedPaper color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_edas_AcceptedPaper [label=AcceptedPaper color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_edas_PublishedPaper [label=PublishedPaper color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_Attendee [label=Attendee color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_edas_CoffeeBreak [label=CoffeeBreak color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_FreeTimeBreak [label=FreeTimeBreak color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_MealBreak [label=MealBreak color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_Reviewer [label=Reviewer color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_ClosingTalk [label=ClosingTalk color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_WelcomeTalk [label=WelcomeTalk color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_TalkEvent [label=TalkEvent color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_SessionChair [label=SessionChair color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_edas_TPCMember [label=TPCMember color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_TwoLevelConference [label=TwoLevelConference color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_CallForPapers [label=CallForPapers color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_TextualReviewQuestion [label=TextualReviewQuestion color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_NumericalReviewQuestion [label=NumericalReviewQuestion color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_OrganizationalMeeting [label=OrganizationalMeeting color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_PaperPresentation [label=PaperPresentation color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_Workshop [label=Workshop color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_edas_AcademicEvent [label=AcademicEvent color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_edas_PersonalPublicationHistory [label=PersonalPublicationHistory color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_Excursion [label=Excursion color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_SocialEvent [label=SocialEvent color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_edas_CallForReviews [label=CallForReviews color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_PersonalReviewHistory [label=PersonalReviewHistory color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_ConferenceVenuePlace [label=ConferenceVenuePlace color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_CallForManuscripts [label=CallForManuscripts color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_Reception [label=Reception color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_SingleLevelConference [label=SingleLevelConference color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_MeetingRoomPlace [label=MeetingRoomPlace color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_AccommodationPlace [label=AccommodationPlace color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_RatedPapers [label=RatedPapers color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_TravelGrant [label=TravelGrant color="#5ba3d9" fillcolor="#e8f4fd" penwidth=1.3]
+		s_edas_ConferenceDinner [label=ConferenceDinner color="#2ca02c" fillcolor="#e8f4fd" penwidth=2.5]
+		s_edas_Document -> s_edas_SlideSet
+		s_edas_Document -> s_edas_Review
+		s_edas_Document -> s_edas_Programme
+		s_edas_Document -> s_edas_Paper
+		s_edas_Document -> s_edas_MealMenu
+		s_edas_ReviewRating -> s_edas_WeekRejectRating
+		s_edas_ReviewRating -> s_edas_AcceptRating
+		s_edas_ReviewRating -> s_edas_AccpetIfRoomRating
+		s_edas_ReviewRating -> s_edas_RejectRating
+		s_edas_NonAcademicEvent -> s_edas_MealEvent
+		s_edas_ConferenceEvent -> s_edas_NonAcademicEvent
+		s_edas_NonAcademicEvent -> s_edas_BreakEvent
+		s_edas_Topic -> s_edas_ParallelAndDistributedComputingTopic
+		s_edas_Topic -> s_edas_WirelessCommunicationsTopic
+		s_edas_Topic -> s_edas_OperatingTopicsystems
+		s_edas_Topic -> s_edas_ComputerNetworksTopic
+		s_edas_Topic -> s_edas_SatelliteAndSpaceCommunicationsTopic
+		s_edas_Topic -> s_edas_CADTopic
+		s_edas_Topic -> s_edas_MultimediaTopic
+		s_edas_Topic -> s_edas_CommunicationsTopic
+		s_edas_Topic -> s_edas_PowerlineTransmissionTopic
+		s_edas_Topic -> s_edas_AntennasTopic
+		s_edas_Topic -> s_edas_PerformanceTopic
+		s_edas_Topic -> s_edas_SignalProcessingTopic
+		s_edas_Topic -> s_edas_MicroelectronicsTopic
+		s_edas_Topic -> s_edas_TestOnlyTopic
+		s_edas_Topic -> s_edas_RadioCommunicationsTopic
+		s_edas_Topic -> s_edas_ComputerArchitectureTopic
+		s_edas_Topic -> s_edas_MedicineTopic
+		s_edas_Topic -> s_edas_SecurityTopic
+		s_edas_Topic -> s_edas_MobileComputingTopic
+		s_edas_Topic -> s_edas_CryptographyTopic
+		s_edas_Topic -> s_edas_CommunicationTheoryTopic
+		s_edas_Person -> s_edas_ConferenceChair
+		s_edas_Place -> s_edas_DiningPlace
+		s_edas_Author -> s_edas_Presenter
+		s_edas_Organization -> s_edas_AcademiaOrganization
+		s_edas_Organization -> s_edas_IndustryOrganization
+		s_edas_Organization -> s_edas_NGO
+		s_edas_Organization -> s_edas_GovernmentOrganization
+		s_edas_ComputerNetworksTopic -> s_edas_ComputerNetworksEnterpriseTopic
+		s_edas_ComputerNetworksTopic -> s_edas_ComputerNetworksSwitchingTopic
+		s_edas_ComputerNetworksTopic -> s_edas_ComputerNetworksSensorTopic
+		s_edas_ComputerNetworksTopic -> s_edas_ComputerNetworksSecurityTopic
+		s_edas_ComputerNetworksTopic -> s_edas_ComputerNetworksOpticalTopic
+		s_edas_ComputerNetworksTopic -> s_edas_ComputerNetworksMeasurementsTopic
+		s_edas_ComputerNetworksTopic -> s_edas_ComputerNetworksManagementTopic
+		s_edas_ComputerNetworksTopic -> s_edas_ComputerNetworksAapplicationsTopic
+		s_edas_Paper -> s_edas_ActivePaper
+		s_edas_Paper -> s_edas_PendingPaper
+		s_edas_Paper -> s_edas_WithdrawnPaper
+		s_edas_Paper -> s_edas_RejectedPaper
+		s_edas_Paper -> s_edas_AcceptedPaper
+		s_edas_Paper -> s_edas_PublishedPaper
+		s_edas_Person -> s_edas_Attendee
+		s_edas_BreakEvent -> s_edas_CoffeeBreak
+		s_edas_BreakEvent -> s_edas_FreeTimeBreak
+		s_edas_BreakEvent -> s_edas_MealBreak
+		s_edas_TalkEvent -> s_edas_ClosingTalk
+		s_edas_TalkEvent -> s_edas_WelcomeTalk
+		s_edas_AcademicEvent -> s_edas_TalkEvent
+		s_edas_Person -> s_edas_SessionChair
+		s_edas_Person -> s_edas_TPCMember
+		s_edas_Call -> s_edas_CallForPapers
+		s_edas_ReviewQuestion -> s_edas_TextualReviewQuestion
+		s_edas_ReviewQuestion -> s_edas_NumericalReviewQuestion
+		s_edas_AcademicEvent -> s_edas_OrganizationalMeeting
+		s_edas_AcademicEvent -> s_edas_PaperPresentation
+		s_edas_AcademicEvent -> s_edas_Workshop
+		s_edas_ConferenceEvent -> s_edas_AcademicEvent
+		s_edas_PersonalHistory -> s_edas_PersonalPublicationHistory
+		s_edas_SocialEvent -> s_edas_Excursion
+		s_edas_NonAcademicEvent -> s_edas_SocialEvent
+		s_edas_Call -> s_edas_CallForReviews
+		s_edas_PersonalHistory -> s_edas_PersonalReviewHistory
+		s_edas_Place -> s_edas_ConferenceVenuePlace
+		s_edas_Call -> s_edas_CallForManuscripts
+		s_edas_SocialEvent -> s_edas_Reception
+		s_edas_Place -> s_edas_MeetingRoomPlace
+		s_edas_Place -> s_edas_AccommodationPlace
+		s_edas_ActivePaper -> s_edas_RatedPapers
+		s_edas_Sponsorship -> s_edas_TravelGrant
+		s_edas_MealEvent -> s_edas_ConferenceDinner
+	}
+	subgraph cluster_tgt {
+		color="#d95b5b" fontname=Arial fontsize=12 label=ekaw style=dashed
+		edge [arrowhead=none color="#b0b0b0" penwidth=0.9]
+		t_ekaw_Event [label=Event color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_ekaw_Person [label=Person color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_ekaw_Accepted_Paper [label="Accepted Paper" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_ekaw_Rejected_Paper [label="Rejected Paper" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_ekaw_Evaluated_Paper [label="Evaluated Paper" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Camera_Ready_Paper [label="Camera Ready Paper" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Positive_Review [label="Positive Review" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Workshop_Paper [label="Workshop Paper" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Industrial_Paper [label="Industrial Paper" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Paper [label=Paper color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_ekaw_Conference_Paper [label="Conference Paper" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Industrial_Session [label="Industrial Session" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Conference_Session [label="Conference Session" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Regular_Session [label="Regular Session" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Poster_Session [label="Poster Session" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Demo_Session [label="Demo Session" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Session [label=Session color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Abstract [label=Abstract color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Document [label=Document color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_ekaw_Paper_Author [label="Paper Author" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_ekaw_Conference_Trip [label="Conference Trip" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Social_Event [label="Social Event" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_ekaw_Tutorial_Abstract [label="Tutorial Abstract" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Conference_Participant [label="Conference Participant" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_ekaw_Submitted_Paper [label="Submitted Paper" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Assigned_Paper [label="Assigned Paper" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Negative_Review [label="Negative Review" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Review [label=Review color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_ekaw_Neutral_Review [label="Neutral Review" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Research_Topic [label="Research Topic" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_ekaw_Organising_Agency [label="Organising Agency" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Academic_Institution [label="Academic Institution" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_ekaw_Organisation [label=Organisation color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_ekaw_Proceedings_Publisher [label="Proceedings Publisher" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Poster_Paper [label="Poster Paper" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Regular_Paper [label="Regular Paper" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Demo_Paper [label="Demo Paper" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Location [label=Location color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_ekaw_Research_Institute [label="Research Institute" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Scientific_Event [label="Scientific Event" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_ekaw_Invited_Talk_Abstract [label="Invited Talk Abstract" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Agency_Staff_Member [label="Agency Staff Member" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Workshop_Session [label="Workshop Session" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Track [label=Track color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Invited_Talk [label="Invited Talk" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Workshop [label=Workshop color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_ekaw_Tutorial [label=Tutorial color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Contributed_Talk [label="Contributed Talk" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Conference [label=Conference color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Demo_Chair [label="Demo Chair" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Tutorial_Chair [label="Tutorial Chair" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_PC_Chair [label="PC Chair" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_PC_Member [label="PC Member" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_OC_Member [label="OC Member" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Proceedings [label=Proceedings color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Programme_Brochure [label="Programme Brochure" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_ekaw_Flyer [label=Flyer color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Web_Site [label="Web Site" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		"t_ekaw_Multi-author_Volume" [label="Multi-author Volume" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Individual_Presentation [label="Individual Presentation" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_OC_Chair [label="OC Chair" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Conference_Banquet [label="Conference Banquet" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		t_ekaw_Workshop_Chair [label="Workshop Chair" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Conference_Proceedings [label="Conference Proceedings" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Session_Chair [label="Session Chair" color="#2ca02c" fillcolor="#fde8e8" penwidth=2.5]
+		"t_ekaw_Early-Registered_Participant" [label="Early-Registered Participant" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		"t_ekaw_Late-Registered_Participant" [label="Late-Registered Participant" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_University [label=University color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Possible_Reviewer [label="Possible Reviewer" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Student [label=Student color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Invited_Speaker [label="Invited Speaker" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Presenter [label=Presenter color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_SC_Member [label="SC Member" color="#d95b5b" fillcolor="#fde8e8" penwidth=1.3]
+		t_ekaw_Evaluated_Paper -> t_ekaw_Accepted_Paper
+		t_ekaw_Evaluated_Paper -> t_ekaw_Rejected_Paper
+		t_ekaw_Assigned_Paper -> t_ekaw_Evaluated_Paper
+		t_ekaw_Paper -> t_ekaw_Camera_Ready_Paper
+		t_ekaw_Review -> t_ekaw_Positive_Review
+		t_ekaw_Paper -> t_ekaw_Workshop_Paper
+		t_ekaw_Paper -> t_ekaw_Industrial_Paper
+		t_ekaw_Document -> t_ekaw_Paper
+		t_ekaw_Paper -> t_ekaw_Conference_Paper
+		t_ekaw_Conference_Session -> t_ekaw_Industrial_Session
+		t_ekaw_Session -> t_ekaw_Conference_Session
+		t_ekaw_Session -> t_ekaw_Regular_Session
+		t_ekaw_Session -> t_ekaw_Poster_Session
+		t_ekaw_Session -> t_ekaw_Demo_Session
+		t_ekaw_Scientific_Event -> t_ekaw_Session
+		t_ekaw_Document -> t_ekaw_Abstract
+		t_ekaw_Person -> t_ekaw_Paper_Author
+		t_ekaw_Social_Event -> t_ekaw_Conference_Trip
+		t_ekaw_Event -> t_ekaw_Social_Event
+		t_ekaw_Abstract -> t_ekaw_Tutorial_Abstract
+		t_ekaw_Person -> t_ekaw_Conference_Participant
+		t_ekaw_Paper -> t_ekaw_Submitted_Paper
+		t_ekaw_Submitted_Paper -> t_ekaw_Assigned_Paper
+		t_ekaw_Review -> t_ekaw_Negative_Review
+		t_ekaw_Document -> t_ekaw_Review
+		t_ekaw_Review -> t_ekaw_Neutral_Review
+		t_ekaw_Organisation -> t_ekaw_Organising_Agency
+		t_ekaw_Organisation -> t_ekaw_Academic_Institution
+		t_ekaw_Organisation -> t_ekaw_Proceedings_Publisher
+		t_ekaw_Paper -> t_ekaw_Poster_Paper
+		t_ekaw_Paper -> t_ekaw_Regular_Paper
+		t_ekaw_Paper -> t_ekaw_Demo_Paper
+		t_ekaw_Academic_Institution -> t_ekaw_Research_Institute
+		t_ekaw_Event -> t_ekaw_Scientific_Event
+		t_ekaw_Abstract -> t_ekaw_Invited_Talk_Abstract
+		t_ekaw_Person -> t_ekaw_Agency_Staff_Member
+		t_ekaw_Session -> t_ekaw_Workshop_Session
+		t_ekaw_Scientific_Event -> t_ekaw_Track
+		t_ekaw_Individual_Presentation -> t_ekaw_Invited_Talk
+		t_ekaw_Scientific_Event -> t_ekaw_Workshop
+		t_ekaw_Individual_Presentation -> t_ekaw_Tutorial
+		t_ekaw_Individual_Presentation -> t_ekaw_Contributed_Talk
+		t_ekaw_Scientific_Event -> t_ekaw_Conference
+		t_ekaw_Conference_Participant -> t_ekaw_Demo_Chair
+		t_ekaw_Conference_Participant -> t_ekaw_Tutorial_Chair
+		t_ekaw_PC_Member -> t_ekaw_Tutorial_Chair
+		t_ekaw_Conference_Participant -> t_ekaw_PC_Chair
+		t_ekaw_PC_Member -> t_ekaw_PC_Chair
+		t_ekaw_Possible_Reviewer -> t_ekaw_PC_Member
+		t_ekaw_Conference_Participant -> t_ekaw_OC_Member
+		"t_ekaw_Multi-author_Volume" -> t_ekaw_Proceedings
+		t_ekaw_Document -> t_ekaw_Programme_Brochure
+		t_ekaw_Document -> t_ekaw_Flyer
+		t_ekaw_Document -> t_ekaw_Web_Site
+		t_ekaw_Document -> "t_ekaw_Multi-author_Volume"
+		t_ekaw_Scientific_Event -> t_ekaw_Individual_Presentation
+		t_ekaw_OC_Member -> t_ekaw_OC_Chair
+		t_ekaw_Social_Event -> t_ekaw_Conference_Banquet
+		t_ekaw_Conference_Participant -> t_ekaw_Workshop_Chair
+		t_ekaw_PC_Member -> t_ekaw_Workshop_Chair
+		t_ekaw_Proceedings -> t_ekaw_Conference_Proceedings
+		t_ekaw_PC_Member -> t_ekaw_Session_Chair
+		t_ekaw_Conference_Participant -> t_ekaw_Session_Chair
+		t_ekaw_Conference_Participant -> "t_ekaw_Early-Registered_Participant"
+		t_ekaw_Conference_Participant -> "t_ekaw_Late-Registered_Participant"
+		t_ekaw_Academic_Institution -> t_ekaw_University
+		t_ekaw_Person -> t_ekaw_Possible_Reviewer
+		t_ekaw_Person -> t_ekaw_Student
+		t_ekaw_Presenter -> t_ekaw_Invited_Speaker
+		t_ekaw_Conference_Participant -> t_ekaw_Presenter
+		t_ekaw_PC_Member -> t_ekaw_SC_Member
+	}
+	s_edas_ConferenceDinner -> t_ekaw_Conference_Banquet [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_edas_AcademicEvent -> t_ekaw_Scientific_Event [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_edas_AcceptedPaper -> t_ekaw_Accepted_Paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_edas_Place -> t_ekaw_Location [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_edas_AcademiaOrganization -> t_ekaw_Academic_Institution [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_edas_SocialEvent -> t_ekaw_Social_Event [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_edas_Organization -> t_ekaw_Organisation [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_edas_Author -> t_ekaw_Paper_Author [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_edas_Topic -> t_ekaw_Research_Topic [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_edas_Document -> t_ekaw_Document [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_edas_RejectedPaper -> t_ekaw_Rejected_Paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_edas_ConferenceEvent -> t_ekaw_Event [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_edas_SessionChair -> t_ekaw_Session_Chair [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_edas_Person -> t_ekaw_Person [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_edas_Programme -> t_ekaw_Programme_Brochure [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_edas_Review -> t_ekaw_Review [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_edas_Workshop -> t_ekaw_Workshop [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_edas_Paper -> t_ekaw_Paper [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+	s_edas_Attendee -> t_ekaw_Conference_Participant [arrowhead=none color="#2ca02c" penwidth=2.0 style=dashed]
+}
