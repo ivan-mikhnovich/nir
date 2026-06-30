@@ -1,0 +1,56 @@
+digraph matching {
+  rankdir=TB
+  bgcolor="transparent"
+  nodesep=0.7
+  ranksep=0.8
+  node [shape=box, style="rounded,filled", fontname="Arial",
+        fontsize=13, margin="0.15,0.10"]
+  edge [color="#909090", penwidth=1.1, arrowhead=none]
+
+  // ── Source (left) ──
+  subgraph cluster_src {
+    label="CMT"
+    style=dashed
+    color="#5ba3d9"
+    fontsize=14
+
+    s_Document   [label="Document",    fillcolor="#e8f4fd", color="#5ba3d9" penwidth=1.3]
+    s_Paper      [label="Paper",       fillcolor="#e8f4fd", color="#2ca02c" penwidth=2.5]
+    s_Poster     [label="Poster",      fillcolor="#e8f4fd", color="#2ca02c" penwidth=2.5]
+    s_Person     [label="Person",      fillcolor="#e8f4fd", color="#2ca02c" penwidth=2.5]
+    s_Author     [label="Author",      fillcolor="#e8f4fd", color="#2ca02c" penwidth=2.5]
+    s_Reviewer   [label="Reviewer",    fillcolor="#e8f4fd", color="#5ba3d9" penwidth=1.3]
+
+    s_Document -> s_Paper
+    s_Document -> s_Poster
+    s_Person -> s_Author
+    s_Person -> s_Reviewer
+  }
+
+  // ── Target (right) ──
+  subgraph cluster_tgt {
+    label="ConfOf"
+    style=dashed
+    color="#d95b5b"
+    fontsize=14
+
+    t_Contribution  [label="Contribution",   fillcolor="#fde8e8", color="#d95b5b" penwidth=1.3]
+    t_Paper         [label="Paper",          fillcolor="#fde8e8", color="#2ca02c" penwidth=2.5]
+    t_Poster        [label="Poster",         fillcolor="#fde8e8", color="#2ca02c" penwidth=2.5]
+    t_Human         [label="Person",         fillcolor="#fde8e8", color="#2ca02c" penwidth=2.5]
+    t_Author        [label="Author",         fillcolor="#fde8e8", color="#2ca02c" penwidth=2.5]
+    t_Committee     [label="CommitteeMember", fillcolor="#fde8e8", color="#d95b5b" penwidth=1.3]
+
+    t_Contribution -> t_Paper
+    t_Contribution -> t_Poster
+    t_Human -> t_Author
+    t_Human -> t_Committee
+  }
+
+  // ── Match edges ──
+  edge [color="#2ca02c", penwidth=2.0, style=dashed, arrowhead=none]
+  s_Paper  -> t_Paper
+  s_Poster -> t_Poster
+  s_Person -> t_Human
+  s_Author -> t_Author
+}
