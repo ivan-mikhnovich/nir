@@ -1,0 +1,522 @@
+\documentclass[aspectratio=169,9pt]{beamer}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{russian}
+\setotherlanguage{english}
+\tracinglostchars=3
+
+\setmainfont{Noto Serif}
+\setsansfont{Noto Sans}
+\setmonofont{Noto Sans Mono}
+
+\usepackage{mathtools}
+\usepackage[labelfont=bf, labelsep=period]{caption}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+% Тема и цвета.
+\usetheme{Berlin}
+\usecolortheme{default}
+
+% Пользовательские цвета.
+\definecolor{good}{HTML}{1E8449}
+\definecolor{amber}{HTML}{B8860B}
+\definecolor{accent}{HTML}{C0392B}
+
+% Убираем навигационные символы.
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{frametitle continuation}{}
+
+% Хедер/футер.
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{
+  \hfill%
+  \usebeamercolor[fg]{page number in head/foot}%
+  \usebeamerfont{page number in head/foot}%
+  \insertframenumber~/ \inserttotalframenumber%
+  \hspace{1em}%
+  \vspace{0.5em}%
+}
+
+\title{Разработка средств автоматического\\отображения между таксономиями}
+\subtitle{Embedding-based \enspace\textbullet\enspace LLM (LLMs4OM) \enspace\textbullet\enspace GraphSAGE \enspace\textbullet\enspace OAEI 2025}
+\author{Михнович Иван Вадимович}
+\institute{НИУ ВШЭ \enspace\textbullet\enspace МОАД \enspace\textbullet\enspace 1-й курс}
+\date{Санкт-Петербург, июнь 2026 г.}
+
+\begin{document}
+
+% --- 1. Титульный слайд ---
+{
+\setbeamertemplate{footline}{}
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+}
+
+% --- 2. Постановка задачи ---
+\begin{frame}{Постановка задачи}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.45\textwidth}
+      \structure{\large Таксономии}
+      \vspace{0.3em}
+
+      \begin{itemize}
+        \item Т.н. <<дерево классификатора>>
+        \item Узлы~--- классы (например, \texttt{Document}, \texttt{Paper})
+        \item Рёбра~--- отношение «is-a» (\texttt{subClassOf})
+        \item В общем случае DAG, а не дерево
+        \item Можно рассматривать как частный случай онтологии
+      \end{itemize}
+
+    \column{0.52\textwidth}
+      \structure{\large Сопоставление таксономий}
+      \begin{itemize}
+        \item Даны две таксономии \texttt{A} и \texttt{B}
+        \item Нужно найти соответствия между их классами
+        \item Один и тот же концепт~--- разные имена, разная иерархия
+        \item Результат: alignment = список матчей (1:1)
+      \end{itemize}
+
+      \vspace{0.3em}
+      \structure{\large Сложность}
+      \begin{itemize}
+        \item Синонимы: \texttt{Person} $\leftrightarrow$ \texttt{Human}
+        \item Разная гранулярность: \texttt{Paper} $\leftrightarrow$ \texttt{FullPaper}?
+        \item Отсутствие общей лексики в текстовых описаниях узлов ~--- нужно понимать смысл написанного
+      \end{itemize}
+  \end{columns}
+\end{frame}
+
+% --- 3. Пример мэтчинга (диаграмма) ---
+{
+\setbeamertemplate{footline}{}
+\begin{frame}[plain]
+  \begin{center}
+    \includegraphics[width=0.80\textwidth,height=0.85\textheight,keepaspectratio]{matching_diagram.png}
+  \end{center}
+\end{frame}
+}
+
+% --- 4. Данные: OAEI 2025 Conference Track ---
+\begin{frame}{Данные: OAEI 2025 Conference Track}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+      \structure{\large OAEI (Ontology Alignment Evaluation Initiative)}
+      \begin{itemize}
+        \item Ежегодное соревнование по ontology matching
+        \item Conference Track~--- 7 онтологий про научные конференции
+        \item 21 референсный alignment (ground truth)
+        \item Онтологии были урезаны до таксономий путём уничтожения всех связей кроме \texttt{subClassOf}
+        \item 29--140 узлов в каждой онтологии
+      \end{itemize}
+
+    \column{0.48\textwidth}
+      \structure{\large Synthetic data}
+      \begin{itemize}
+        \item 4 сценария на базе cmt: exact, synonym, structural, attribute
+        \item Использовались для GNN-аугментации
+      \end{itemize}
+  \end{columns}
+\end{frame}
+
+% --- 5. Список онтологий
+\begin{frame}{Данные: OAEI 2025 Conference Track (продолжение)}
+  \structure{\large Список онтологий}
+  \vspace{0.3em}
+
+  \begin{tabular}{@{}ll@{}r@{}}
+    \toprule
+    Код & Название & Кол-во узлов \\
+    \midrule
+    cmt & Conference Management Tool & 29 \\
+    confOf & Conference Offerings & 38 \\
+    conference & Conference & 59 \\
+    edas & EDAS & 103 \\
+    ekaw & EKAW & 73 \\
+    iasted & IASTED & 140 \\
+    sigkdd & SIGKDD & 49 \\
+    \bottomrule
+  \end{tabular}
+
+  \vspace{0.5em}
+  \alert{Разный размер, разная лексика, разная структура.}
+\end{frame}
+
+% --- 6. Метрики ---
+\begin{frame}{Метрики оценки}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+      \structure{\large Основная метрика: F1}
+      \vspace{0.3em}
+
+      \begin{itemize}
+        \item 1:1 matching с порогом уверенности
+        \item Precision = TP / (TP + FP)
+        \item Recall = TP / (TP + FN)
+        \item F1 = гармоническое среднее
+      \end{itemize}
+
+      \vspace{0.5em}
+      \structure{\large Дополнительные метрики}
+      \begin{itemize}
+        \item Precision и Recall отдельно
+        \item True Positives (количество правильных пар)
+        \item Predicted count vs. Ground Truth count
+      \end{itemize}
+
+    \column{0.48\textwidth}
+      \structure{\large Baseline: StringEquiv}
+      \vspace{0.3em}
+
+      \begin{itemize}
+        \item Точное совпадение имён классов без учёта регистра букв
+        \item Официальный lower bound OAEI
+        \item Если имена совпадают~--- матч
+        \item На некоторых парах онтологий достигает F1 = 1{,}0
+        \item Ломается на синонимах и любых различиях в лексике
+      \end{itemize}
+
+      \vspace{0.5em}
+      \begin{center}
+        \color{amber}\large
+        Любой разумный подход к этой задаче должен быть не хуже, чем StringEquiv
+      \end{center}
+  \end{columns}
+\end{frame}
+
+% --- 7. Подходы (обзор) ---
+\begin{frame}{Подходы}
+  \begin{enumerate}
+    \item \structure{Embedding-based}
+
+      {\small BERT (LaBSE, MiniLM, ruRoberta, rubert) + cosine similarity.\\
+      Результаты сильно зависят от того, какой текст мы извлекаем из узлов.\\
+      Оказалось что \texttt{name\_only} на OAEI работает лучше, чем имя + путь.}
+
+    \vspace{0.5em}
+    \item \structure{LLM-based (LLMs4OM)}
+
+      {\small DeepSeek-v4-flash / GPT-4.1-mini.  Бинарная классификация
+      пар-кандидатов при помощи LLM (yes/no).  Три представления: C, CP, CC.}
+
+    \vspace{0.5em}
+    \item \structure{GraphSAGE (GNN)}
+
+      {\small Siamese GraphSAGE на MiniLM-фичах.  Leave-one-out CV.\\
+      \alert{Отрицательный результат}: хуже чем исходные эмбеддинги сами по себе.}
+
+    \vspace{0.5em}
+    \item \structure{Ablation study: BM25 + LLM}
+
+      {\small Лексический ретривер (без и в комбинации с эмбеддингами).\\
+      \alert{Гибридный ретривер даёт лучший средний F1} (0{,}685 против 0{,}644 у чистого MiniLM).}
+  \end{enumerate}
+\end{frame}
+
+% --- 8. Embedding-based подход ---
+\begin{frame}{Embedding-based: BERT + cosine similarity}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+      \structure{\large Схема}
+      \begin{enumerate}
+        \item Имя класса $\to$ sentence-transformer $\to$ эмбеддинг
+        \item Для каждого source-узла: cosine similarity со всеми target-узлами
+        \item 1:1 greedy matching по убыванию сходства
+        \item 4 модели: LaBSE, MiniLM, ruRoberta-large, rubert-base
+      \end{enumerate}
+
+      \vspace{0.5em}
+      \structure{\large Интересное наблюдение}
+      \begin{itemize}
+        \item Включение пути/атрибутов в описание узла \alert{ухудшает} F1 в 1,5 раза
+        \item Только имя: 0{,}314 | Имя + путь + атрибуты: 0{,}207 (MiniLM)
+        \item BERT запутывается в разных иерархиях для одного концепта
+      \end{itemize}
+
+    \column{0.48\textwidth}
+      \structure{\large Результаты (21 пара)}
+      \vspace{0.2em}
+
+      \begin{tabular}{@{}lcc@{}}
+        \toprule
+        Модель & Dim & Avg F1 \\
+        \midrule
+        LaBSE & 768 & \textbf{0{,}323} \\
+        MiniLM & 384 & 0{,}314 \\
+        ruRoberta-large & 1024 & 0{,}279 \\
+        rubert-base & 768 & 0{,}258 \\
+        \bottomrule
+      \end{tabular}
+
+      \vspace{0.5em}
+      \textbf{Выводы:}
+      \begin{itemize}
+        \item LaBSE лучший (multilingual, высокий dim)
+        \item MiniLM почти не уступает (вдвое меньше dim, быстрее)
+        \item Русскоязычные модели хуже работают на английском тексте (duh!)
+        \item Структурная информация запутывает BERTы
+      \end{itemize}
+  \end{columns}
+\end{frame}
+
+% --- 9. LLM-based подход ---
+\begin{frame}{LLM-based: LLMs4OM framework}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+      \structure{\large Схема LLMs4OM (arXiv 2404.10317)}
+      \begin{enumerate}
+        \item MiniLM эмбеддинг $\to$ top-5 кандидатов
+        \item Для каждого узла LLM классифицирует каждую потенциальную пару (yes/no)
+        \item Три представления для LLM: C (имя), CP (имя + родители), CC (имя + дети)
+        \item Жадный отбор пар по убыванию уверенности, threshold $>0{,}7$
+        \item Structured JSON output
+        \item 10 workers, exponential backoff retry
+      \end{enumerate}
+
+      \vspace{0.5em}
+      \structure{\large Модели}
+      \begin{itemize}
+        \item \textbf{GPT-4.1-mini} (OpenRouter)
+        \item \textbf{DeepSeek-v4-flash} (DeepSeek Platform)
+      \end{itemize}
+
+    \column{0.48\textwidth}
+      \structure{\large Пример: cmt $\leftrightarrow$ confOf (DeepSeek)}
+      \vspace{0.2em}
+
+      \begin{tabular}{@{}lc@{}}
+        \toprule
+        Режим & F1 \\
+        \midrule
+        Embedding (MiniLM) & 0{,}308 \\
+        StringEquiv & 0{,}533 \\
+        \midrule
+        LLM C (имя) & 0{,}667 \\
+        LLM CP (+родители) & \textbf{0{,}750} \\
+        LLM CC (+дети) & 0{,}588 \\
+        \bottomrule
+      \end{tabular}
+
+      \vspace{0.5em}
+      \textbf{Прирост:} +0{,}217 над StringEquiv (+41\%).
+
+      \vspace{0.3em}
+      \textbf{Стоимость:} source\_nodes $\times$ top\_k $\times$ 3\_modes = 29 $\times$ 5 $\times$ 3 = 435 обращений к LLM.
+  \end{columns}
+\end{frame}
+
+% --- 10. Главный результат: LLM vs baselines (график) ---
+\begin{frame}[plain]
+  \begin{center}
+    \includegraphics[width=0.92\textwidth,height=0.90\textheight,keepaspectratio]{comparison_six_pairs.png}
+  \end{center}
+\end{frame}
+
+% --- 11. LLM vs StringEquiv: анализ ---
+\begin{frame}{LLM vs StringEquiv: анализ}
+  \structure{\large LLM превосходит StringEquiv на <<сложных>> парах таксономий}
+
+  \vspace{0.5em}
+  \begin{tabular}{@{}lccc@{}}
+    \toprule
+    Пара & StringEquiv & Лучший результат LLM & $\Delta$ \\
+    \midrule
+    cmt $\leftrightarrow$ conference & 0{,}375 & 0{,}640 (GPT) & \textbf{+71\%} \\
+    cmt $\leftrightarrow$ confOf & 0{,}533 & 0{,}750 (DS) & \textbf{+41\%} \\
+    confOf $\leftrightarrow$ conference & 0{,}737 & 0{,}762 (DS) & +3\% \\
+    cmt $\leftrightarrow$ edas & \textbf{1{,}000} & 1{,}000 (BM25) & 0\% \\
+    confOf $\leftrightarrow$ ekaw & 0{,}552 & 0{,}667 (BM25) & \textbf{+21\%} \\
+    conference $\leftrightarrow$ ekaw & 0{,}457 & 0{,}577 (GPT) & \textbf{+26\%} \\
+    \bottomrule
+  \end{tabular}
+
+  \vspace{0.5em}
+  \begin{itemize}
+    \item На парах с низким лексическим перекрытием (cmt$\leftrightarrow$conference, 37{,}5\%) LLM показывают лучшие результаты: +71\%.
+    \item cmt$\leftrightarrow$edas~--- потолок: все 8 GT-совпадений~--- точное совпадение по строкам, улучшать нечего.
+    \item confOf$\leftrightarrow$conference: StringEquiv уже силён (0{,}737), LLM приносит скромный буст +3\%.
+    \item \textbf{LLM требуют много времени и ресурсов, но их не нужно дообучать под задачу; выигрыш над StringEquiv~--- только на парах с низким лексическим перекрытием, в среднем силы сопоставимы (0{,}644 у LLM+MiniLM против 0{,}663 у StringEquiv).}
+  \end{itemize}
+\end{frame}
+
+% --- 7. BM25 ablation ---
+\begin{frame}{Ablation study: BM25 и гибридный ретривер}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.50\textwidth}
+      \structure{\large Что проверили}
+      \begin{itemize}
+        \item \textbf{BM25}: лексический ретривер + DeepSeek
+        \item \textbf{Hybrid}: union top-K (MiniLM + BM25) + DeepSeek
+      \end{itemize}
+
+      \vspace{0.5em}
+      \structure{\large Результат}
+      \begin{itemize}
+        \item BM25 лучший на 8/21 парах: cmt$\leftrightarrow$ekaw (0{,}857), confOf$\leftrightarrow$sigkdd (0{,}909) и др.
+        \item Hybrid лучший на 5/21 парах: edas$\leftrightarrow$ekaw (0{,}811), ekaw$\leftrightarrow$sigkdd (0{,}857) и др.
+        \item Оба ретривера улучшают средний F1: 0{,}662 (BM25) и 0{,}685 (Hybrid) против 0{,}644 у чистого MiniLM; гибридный~--- лучший в среднем
+      \end{itemize}
+
+    \column{0.46\textwidth}
+      \structure{\large Интерпретация}
+      \begin{itemize}
+        \item BM25 полезен, когда имена классов пересекаются лексически (confOf$\leftrightarrow$sigkdd: \texttt{Activity}, \texttt{Conference})
+        \item Hybrid помогает, когда MiniLM-ретривер пропускает хороших кандидатов (edas$\leftrightarrow$ekaw)
+        \item На 13 парах из 21 BM25-ретривер лучше чистого MiniLM (Hybrid~--- на 11), так что одного MiniLM недостаточно
+      \end{itemize}
+
+      \vspace{0.5em}
+      \begin{center}
+        \color{amber}\large
+        BM25 и Hybrid улучшают средний F1;\\
+        лучший средний результат~--- у гибридного ретривера
+      \end{center}
+  \end{columns}
+\end{frame}
+
+% --- 8. GNN: архитектура ---
+\begin{frame}[plain]
+  \begin{center}
+    \includegraphics[width=0.90\textwidth,height=0.88\textheight,keepaspectratio]{gnn_architecture.png}
+  \end{center}
+\end{frame}
+
+% --- 9. GNN: обучение и результат ---
+\begin{frame}{GraphSAGE: как обучали и что получилось}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.52\textwidth}
+      \structure{\large Идея}
+      \begin{itemize}
+        \item MiniLM знает \textbf{имя} класса (\texttt{Paper})
+        \item GNN добавляет знание о \textbf{соседях} (\texttt{Document $>$ Paper})
+        \item Гипотеза: структура графа помогает сопоставлению
+      \end{itemize}
+
+      \vspace{0.3em}
+      \structure{\large Как обучали}
+      \begin{itemize}
+        \item Правильная пара (\texttt{Paper}$\leftrightarrow$\texttt{Paper}):
+          цель~--- косинус $\to$ 1{,}0
+        \item Случайная пара (\texttt{Paper}$\leftrightarrow$\texttt{Reviewer}):
+          цель~--- косинус $\to$ 0{,}0
+        \item 3 случайных негатива на каждый позитив
+        \item 21 фолд leave-one-out: 20 пар учим, одну проверяем
+      \end{itemize}
+
+    \column{0.44\textwidth}
+      \structure{\large Итог (средний F1 по 21 паре)}
+
+      {\footnotesize
+      \begin{tabular}{@{}lc@{\hspace{10pt}}c@{}}
+        \toprule
+        Подход & F1 & $\Delta$ \\
+        \midrule
+        MiniLM, жадный 1:1 & 0{,}156 & \\
+        GNN (1 слой) & 0{,}204 & $+0{,}048$ \\
+        \midrule
+        MiniLM, ближайший & 0{,}314 & $-0{,}110$ \\
+        \bottomrule
+      \end{tabular}}
+
+      \vspace{0.3em}
+      \structure{\large Почему не сработало}
+      \begin{enumerate}
+        \item \textbf{Мало данных}: 20 реальных пар ({\textasciitilde}250 позитивов) + синтетика из тех же онтологий.
+        \item \textbf{Структура не переносится}: \texttt{Paper} под \texttt{Document} здесь и под \texttt{Contribution} там.
+        \item \textbf{Схема отбора пар у GNN хуже}: тот же матчер даёт $0{,}156 \to 0{,}204$, но выбор ближайшего узла~--- больше.
+      \end{enumerate}
+  \end{columns}
+\end{frame}
+
+% --- 9. Итоговая таблица подходов ---
+\begin{frame}{Итоговая таблица (6 <<сложных>> пар, лучший режим LLM)}
+  \centering
+  \footnotesize
+
+  \begin{tabular}{@{}lcccccc@{}}
+    \toprule
+    \textbf{Пара} & \textbf{LaBSE} & \textbf{MiniLM} & \textbf{StrEq} & \textbf{GNN} & \textbf{Лучший LLM} & \textbf{LLM F1} \\
+    \midrule
+    cmt $\leftrightarrow$ confOf
+      & 0{,}308 & 0{,}308 & 0{,}533 & 0{,}343 & DeepSeek CP & 0{,}750 \\
+    cmt $\leftrightarrow$ conference
+      & 0{,}450 & 0{,}450 & 0{,}375 & 0{,}108 & GPT C & 0{,}640 \\
+    confOf $\leftrightarrow$ conference
+      & 0{,}367 & 0{,}367 & 0{,}737 & 0{,}293 & DS C / BM25 CP & 0{,}762 \\
+    cmt $\leftrightarrow$ edas
+      & 0{,}432 & 0{,}432 & \textbf{1{,}000} & 0{,}111 & BM25 CC & \textbf{1{,}000} \\
+    confOf $\leftrightarrow$ ekaw
+      & 0{,}586 & 0{,}586 & 0{,}552 & 0{,}154 & BM25 C & 0{,}667 \\
+    conference $\leftrightarrow$ ekaw
+      & 0{,}439 & 0{,}463 & 0{,}457 & 0{,}209 & GPT CC & 0{,}577 \\
+    \bottomrule
+  \end{tabular}
+
+  \vspace{1em}
+  \begin{itemize}
+    \item LLM превосходит все не-LLM подходы на всех парах, кроме cmt$\leftrightarrow$edas (потолок)
+    \item Embedding (LaBSE, MiniLM) лучше StringEquiv на парах таксономий с различной лексикой
+    \item GNN систематически хуже raw эмбеддингов
+    \vspace{0.5em}
+    \item LLM с любым ретривером (MiniLM, BM25, Hybrid) дают лучшие результаты на парах с различной лексикой
+    \item StringEquiv -- неожиданно сильный бейзлайн для данного датасета, что подозрительно
+    \item GNN не удалось оценить по достоинству из-за недостатка данных
+  \end{itemize}
+
+\end{frame}
+
+% --- 10. Выводы ---
+\begin{frame}{Выводы}
+  \begin{enumerate}
+    \item \structure{LLM + эмбеддинги (LLMs4OM) ~--- неплохое решение, если у вас много ресурсов и времени}
+
+    \vspace{0.4em}
+    \item \structure{Данных OAEI (Conference Track) недостаточно для развития темы}
+
+    \item \structure{\texttt{name\_only}~--- лучше работает с BERTами: F1 в 1,5 раза выше, чем у имени вместе с путём и атрибутами}
+
+    \vspace{0.4em}
+    \item \structure{Графовые сети не дают выигрыша при недостатке данных}
+
+    \vspace{0.4em}
+    \item \structure{Требуется дальнейшее исследование возможностей гибридного поиска в задаче OM}
+
+      {\small BM25 лучший на 8/21 парах, Hybrid~--- на 5/21; в среднем оба лучше чистого
+      MiniLM-ретривера (0{,}662 и 0{,}685 против 0{,}644).}
+  \end{enumerate}
+\end{frame}
+
+% --- 11. Направления для дальнейшей работы ---
+\begin{frame}{Направления для дальнейшей работы}
+  \begin{itemize}
+    \item \structure{Проверка согласованности таксономий} — вторая половина темы:
+      reasoner (HermiT, Pellet) для OWL + LLM-проверка подозрительных связей
+
+    \vspace{0.3em}
+    \item \structure{Пробная интеграция лучших решений в проприетарную ГИС}
+
+    \vspace{0.3em}
+    \item \structure{Бо́льший датасет}: синтетика через LLM, полный OntoFarm —
+      на нём GNN-архитектуры (GraphSAGE, GAT) и масштабирование LLM через blocking
+
+    \vspace{0.3em}
+    \item \structure{Анализ ошибок LLM}: систематические паттерны, ансамблирование режимов
+  \end{itemize}
+\end{frame}
+
+% --- 12. Спасибо ---
+{
+\setbeamertemplate{footline}{}
+\begin{frame}[plain]
+  \begin{center}
+    \vspace{2cm}
+    {\usebeamercolor[fg]{structure}\fontsize{36}{42}\selectfont Спасибо за внимание!}\\[1cm]
+  \end{center}
+\end{frame}
+}
+
+\end{document}

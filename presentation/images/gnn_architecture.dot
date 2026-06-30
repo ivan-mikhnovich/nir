@@ -1,0 +1,54 @@
+digraph gnn {
+  rankdir=LR
+  bgcolor="transparent"
+  nodesep=0.4
+  ranksep=0.7
+  node [shape=box, style="rounded,filled", fontname="Arial",
+        fontsize=11, margin="0.12,0.08"]
+  edge [arrowhead=normal, penwidth=1.2]
+
+  subgraph cluster_src {
+    label="Таксономия A (source)"
+    style=dashed
+    color="#5ba3d9"
+    fontsize=13
+
+    src_graph [label="Граф (узлы + рёбра)", fillcolor="#e8f4fd"]
+    src_bert  [label="MiniLM (384-dim)", fillcolor="#d4e6f1"]
+    src_gnn   [label="GraphSAGE
+(1 слой, residual)
+384 → 384", fillcolor="#aed6f1"]
+    src_emb   [label="L2-norm
+(384-dim)", fillcolor="#85c1e9"]
+
+    src_graph -> src_bert -> src_gnn -> src_emb
+  }
+
+  subgraph cluster_tgt {
+    label="Таксономия B (target)"
+    style=dashed
+    color="#d95b5b"
+    fontsize=13
+
+    tgt_graph [label="Граф (узлы + рёбра)", fillcolor="#fde8e8"]
+    tgt_bert  [label="MiniLM (384-dim)", fillcolor="#f5c6c6"]
+    tgt_gnn   [label="GraphSAGE
+(1 слой, residual)
+384 → 384", fillcolor="#f1948a"]
+    tgt_emb   [label="L2-norm
+(384-dim)", fillcolor="#e74c3c", fontcolor=white]
+
+    tgt_graph -> tgt_bert -> tgt_gnn -> tgt_emb
+  }
+
+  cosine [label="Cosine similarity
+матрица [Nₛ × Nₜ]", shape=box, style="rounded,filled",
+           fillcolor="#f9e79f", fontsize=12]
+  match  [label="Жадный отбор 1:1
+по убыванию сходства", shape=box, style="rounded,filled",
+           fillcolor="#abebc6", fontsize=12]
+
+  src_emb -> cosine [color="#5ba3d9", penwidth=1.5]
+  tgt_emb -> cosine [color="#d95b5b", penwidth=1.5]
+  cosine -> match [penwidth=1.5]
+}
