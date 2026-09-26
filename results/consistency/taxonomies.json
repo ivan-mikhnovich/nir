@@ -1,0 +1,51 @@
+{
+  "cmt": {
+    "node_count": 29,
+    "root_count": 8,
+    "max_depth": 3,
+    "counts": {},
+    "violations": []
+  },
+  "confOf": {
+    "node_count": 38,
+    "root_count": 7,
+    "max_depth": 2,
+    "counts": {},
+    "violations": []
+  },
+  "conference": {
+    "node_count": 59,
+    "root_count": 14,
+    "max_depth": 6,
+    "counts": {},
+    "violations": []
+  },
+  "edas": {
+    "node_count": 103,
+    "root_count": 20,
+    "max_depth": 3,
+    "counts": {},
+    "violations": []
+  },
+  "ekaw": {
+    "node_count": 73,
+    "root_count": 6,
+    "max_depth": 5,
+    "counts": {},
+    "violations": []
+  },
+  "iasted": {
+    "node_count": 140,
+    "root_count": 10,
+    "max_depth": 5,
+    "counts": {},
+    "violations": []
+  },
+  "sigkdd": {
+    "node_count": 49,
+    "root_count": 10,
+    "max_depth": 3,
+    "counts": {},
+    "violations": []
+  }
+}
