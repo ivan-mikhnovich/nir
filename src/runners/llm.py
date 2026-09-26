@@ -8,29 +8,13 @@ Usage:
 """
 
 import argparse
-import json
 from pathlib import Path
 
-from src.data_loader import load_taxonomy
+from src.data_loader import load_alignments, load_taxonomies, load_taxonomy
 from src.matchers.llm import LLMMatcher
 from src.metrics import evaluate_1to1
 
 LOCAL_BASE_URL = "http://127.0.0.1:12434/v1"
-
-
-def load_taxonomies(data_dir: Path) -> dict:
-    taxonomies: dict = {}
-    for f in sorted(data_dir.glob("*.json")):
-        if f.name == "alignments.json":
-            continue
-        tax = load_taxonomy(f)
-        taxonomies[tax.name] = tax
-    return taxonomies
-
-
-def load_alignments(path: Path) -> list[dict]:
-    with open(path, encoding="utf-8") as f:
-        return json.load(f)
 
 
 def make_gt_alignment(al_data: dict):

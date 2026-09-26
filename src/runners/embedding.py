@@ -3,11 +3,10 @@
 Iterates over multiple sentence-transformer models for comparison.
 """
 
-import json
 import time
 from pathlib import Path
 
-from src.data_loader import load_taxonomy
+from src.data_loader import load_alignments, load_taxonomies, load_taxonomy
 from src.matchers.embedding import EmbeddingMatcher
 from src.metrics import evaluate_1to1, MatchMetrics
 
@@ -19,22 +18,6 @@ MODELS: list[tuple[str, str]] = [
     ("ruRoberta-large", "ai-forever/ruRoberta-large"),
     ("rubert-base", "DeepPavlov/rubert-base-cased"),
 ]
-
-
-def load_taxonomies(data_dir: Path) -> dict:
-    """Load all processed taxonomy JSON files from a directory."""
-    taxonomies: dict = {}
-    for f in sorted(data_dir.glob("*.json")):
-        if f.name == "alignments.json":
-            continue
-        tax = load_taxonomy(f)
-        taxonomies[tax.name] = tax
-    return taxonomies
-
-
-def load_alignments(path: Path) -> list[dict]:
-    with open(path, encoding="utf-8") as f:
-        return json.load(f)
 
 
 def make_gt_alignment(al_data: dict):

@@ -17,7 +17,7 @@ import time
 from pathlib import Path
 
 from src.cache import cache_path, load_all_cached, load_cached, pair_key
-from src.data_loader import load_taxonomy
+from src.data_loader import find_gt, load_alignments, load_taxonomies
 from src.matchers.embedding import EmbeddingMatcher
 from src.matchers.llm import LLMMatcher
 from src.metrics import evaluate_1to1, MatchMetrics
@@ -40,50 +40,6 @@ def _get_all_pairs(taxonomies: dict) -> list[tuple[str, str]]:
     """Return all pairs across the loaded taxonomies."""
     names = sorted(taxonomies.keys())
     return [(s, t) for i, s in enumerate(names) for t in names[i + 1:]]
-
-# ── Helpers ──────────────────────────────────────────────────────────
-
-
-def load_taxonomies(data_dir: Path) -> dict:
-    taxonomies: dict = {}
-    for f in sorted(data_dir.glob("*.json")):
-        if f.name == "alignments.json":
-            continue
-        tax = load_taxonomy(f)
-        taxonomies[tax.name] = tax
-    return taxonomies
-
-
-def load_alignments(path: Path) -> list[dict]:
-    with open(path, encoding="utf-8") as f:
-        return json.load(f)
-
-
-def find_gt(src_name: str, tgt_name: str, alignments_raw: list[dict]) -> Alignment | None:
-    """Find ground-truth alignment, trying both source↔target orderings."""
-    for al_data in alignments_raw:
-        s = al_data["source"]
-        t = al_data["target"]
-        if (s == src_name and t == tgt_name) or (s == tgt_name and t == src_name):
-            matches = [
-                TaxonMatch(source_id=m["source_id"], target_id=m["target_id"],
-                           confidence=m.get("confidence", 1.0))
-                for m in al_data["matches"]
-            ]
-            # If we matched the reverse direction, swap source/target in matches.
-            if s == tgt_name and t == src_name:
-                matches = [
-                    TaxonMatch(source_id=m.target_id, target_id=m.source_id,
-                               confidence=m.confidence)
-                    for m in matches
-                ]
-            return Alignment(
-                source=src_name,
-                target=tgt_name,
-                matches=matches,
-            )
-    return None
-
 
 # ── Cache ────────────────────────────────────────────────────────────
 
