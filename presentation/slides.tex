@@ -89,6 +89,11 @@
         \item Отсутствие общей лексики в текстовых описаниях узлов ~--- нужно понимать смысл написанного
       \end{itemize}
   \end{columns}
+
+  \vspace{0.3em}
+  \footnotesize
+  \structure{Вторая половина темы:} проверить согласованность~--- как внутри каждой
+  таксономии, так и в найденном отображении.
 \end{frame}
 
 % --- 3. Пример мэтчинга (диаграмма) ---
@@ -238,27 +243,27 @@
       \end{itemize}
 
     \column{0.48\textwidth}
-      \structure{\large Результаты (21 пара)}
+      \structure{\large Результаты: без порога (21 пара)}
       \vspace{0.2em}
 
       \begin{tabular}{@{}lcc@{}}
         \toprule
         Модель & Dim & Avg F1 \\
         \midrule
-        LaBSE & 768 & \textbf{0{,}323} \\
+        LaBSE & 768 & 0{,}323 \\
         MiniLM & 384 & 0{,}314 \\
         ruRoberta-large & 1024 & 0{,}279 \\
         rubert-base & 768 & 0{,}258 \\
         \bottomrule
       \end{tabular}
 
-      \vspace{0.5em}
-      \textbf{Выводы:}
+      \vspace{0.4em}
+      \structure{\large После калибровки порога}
       \begin{itemize}
-        \item LaBSE лучший (multilingual, высокий dim)
-        \item MiniLM почти не уступает (вдвое меньше dim, быстрее)
-        \item Русскоязычные модели хуже работают на английском тексте (duh!)
-        \item Структурная информация запутывает BERTы
+        \item Без порога: ближайший кандидат на каждый узел, 1195 пар на 258 эталонных
+        \item Порог: 0{,}90 у LaBSE и MiniLM, 0{,}95 у rubert-base, 0{,}99 у ruRoberta-large
+        \item \textbf{LaBSE: 0{,}323 $\to$ 0{,}688} ($P$ = 0{,}881, $R$ = 0{,}583)
+        \item Порог не переносится: у ruRoberta-large нет сходств ниже 0{,}73
       \end{itemize}
   \end{columns}
 \end{frame}
@@ -432,6 +437,94 @@
   \end{columns}
 \end{frame}
 
+% --- 9a. Проверка согласованности ---
+\begin{frame}{Проверка согласованности}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.46\textwidth}
+      \structure{\large Что проверяется}
+      \begin{itemize}
+        \item \textbf{Внутри таксономии}: циклы «is-a», совпадающие метки, несовместимость класса с собственным предком, отсутствие пути к корню
+        \item \textbf{В отображении}: инъективность 1:1, противоречие объявленной несовместимости, инверсия подчинения, низкая уверенность
+      \end{itemize}
+
+      \vspace{0.4em}
+      \structure{\large Целостность таксономий}
+      \begin{itemize}
+        \item 7 онтологий, 491 класс~--- \alert{0 нарушений}
+        \item Самопроверка на испорченной таксономии срабатывает по всем четырём видам
+      \end{itemize}
+
+    \column{0.50\textwidth}
+      \structure{\large Нарушения в отображениях}
+      {\footnotesize (у LLM~--- сумма по 21 паре и трём режимам, у остальных по 21 паре)}
+      \begin{tabular}{@{}lrrr@{}}
+        \toprule
+        Подход & 1:1 & несовм. & подчин. \\
+        \midrule
+        LaBSE & 250 & 421 & 545 \\
+        MiniLM & 255 & 424 & 600 \\
+        rubert-base & 246 & 328 & 775 \\
+        \midrule
+        DeepSeek + BM25 & 0 & 1 & 9 \\
+        DeepSeek + MiniLM & 0 & 2 & 29 \\
+        GPT-4.1-mini & 0 & 24 & 113 \\
+        StringEquiv & 0 & 0 & 2 \\
+        \bottomrule
+      \end{tabular}
+
+      \vspace{0.4em}
+      {\footnotesize \texttt{Acceptance} и \texttt{Rejection} несовместимы, но LaBSE отправляет оба в \texttt{Reception}}
+  \end{columns}
+\end{frame}
+
+% --- 9b. Калибровка порога и потолок отбора ---
+\begin{frame}{Калибровка порога и потолок отбора кандидатов}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.50\textwidth}
+      \structure{\large Порог уверенности, средний F1}
+      \begin{tabular}{@{}lccc@{}}
+        \toprule
+        Модель & без & с & порог \\
+        \midrule
+        LaBSE & 0{,}323 & \textbf{0{,}688} & 0{,}90 \\
+        MiniLM & 0{,}314 & 0{,}670 & 0{,}90 \\
+        rubert-base & 0{,}258 & 0{,}646 & 0{,}95 \\
+        ruRoberta-large & 0{,}279 & 0{,}643 & 0{,}99 \\
+        \midrule
+        StringEquiv & 0{,}663 & --- & --- \\
+        LLM + гибрид & 0{,}685 & --- & --- \\
+        \bottomrule
+      \end{tabular}
+
+      \vspace{0.4em}
+      \structure{\large Парные тесты (21 пара)}
+      \begin{itemize}
+        \item LaBSE с порогом против LaBSE без: $+0{,}365$, $p < 0{,}0001$, выигрыш 21/0
+        \item LaBSE с порогом против StringEquiv: $+0{,}025$, $p = 0{,}020$
+        \item LLM + гибрид против StringEquiv: $+0{,}022$, $p = 0{,}77$~--- не значимо
+      \end{itemize}
+
+    \column{0.48\textwidth}
+      \structure{\large Полнота кандидатов, recall@$k$}
+      \begin{tabular}{@{}lccccc@{}}
+        \toprule
+        Ретривер & 1 & 2 & 3 & 5 & 10 \\
+        \midrule
+        MiniLM & 0{,}56 & 0{,}66 & 0{,}74 & 0{,}78 & 0{,}87 \\
+        BM25 & 0{,}69 & 0{,}72 & 0{,}72 & 0{,}73 & 0{,}73 \\
+        BM25 + эмбед. & \textbf{0{,}81} & 0{,}87 & 0{,}91 & \textbf{0{,}93} & 0{,}96 \\
+        \bottomrule
+      \end{tabular}
+
+      \vspace{0.4em}
+      \begin{itemize}
+        \item Потолок F1 при $k = 5$: гибрид 0{,}96, MiniLM 0{,}88, BM25 0{,}84
+        \item BM25 не находит кандидатов для 22{,}8\% эталонных узлов
+        \item Узкое место~--- этап классификации, а не отбор кандидатов
+      \end{itemize}
+  \end{columns}
+\end{frame}
+
 % --- 9. Итоговая таблица подходов ---
 \begin{frame}{Итоговая таблица (6 <<сложных>> пар, лучший режим LLM)}
   \centering
@@ -456,15 +549,15 @@
     \bottomrule
   \end{tabular}
 
-  \vspace{1em}
+  \vspace{0.6em}
+  {\footnotesize LaBSE с калиброванным порогом: 0{,}688 в среднем~--- значимо выше StringEquiv ($p = 0{,}020$) и неотличимо от лучшего LLM (0{,}685).}
+
+  \vspace{0.6em}
   \begin{itemize}
-    \item LLM превосходит все не-LLM подходы на всех парах, кроме cmt$\leftrightarrow$edas (потолок)
-    \item Embedding (LaBSE, MiniLM) лучше StringEquiv на парах таксономий с различной лексикой
-    \item GNN систематически хуже raw эмбеддингов
-    \vspace{0.5em}
-    \item LLM с любым ретривером (MiniLM, BM25, Hybrid) дают лучшие результаты на парах с различной лексикой
-    \item StringEquiv -- неожиданно сильный бейзлайн для данного датасета, что подозрительно
-    \item GNN не удалось оценить по достоинству из-за недостатка данных
+    \item LLM \alert{не} превосходит не-LLM подходы в среднем: разница с StringEquiv неотличима от нуля ($-0{,}001$, $p = 1{,}00$)
+    \item LLM выигрывает там, где лексика расходится: cmt$\leftrightarrow$conference 0{,}375 $\to$ 0{,}640
+    \item StringEquiv упирается в потолок на парах с общей лексикой (cmt$\leftrightarrow$edas: 1{,}000)
+    \item GNN систематически хуже сырых эмбеддингов
   \end{itemize}
 
 \end{frame}
@@ -472,29 +565,30 @@
 % --- 10. Выводы ---
 \begin{frame}{Выводы}
   \begin{enumerate}
-    \item \structure{LLM + эмбеддинги (LLMs4OM) ~--- неплохое решение, если у вас много ресурсов и времени}
+    \item \structure{Проверка согласованности реализована}: целостность 7 онтологий (0 нарушений на 491 классе) и согласованность найденных отображений
 
-    \vspace{0.4em}
-    \item \structure{Данных OAEI (Conference Track) недостаточно для развития темы}
+    \vspace{0.3em}
+    \item \structure{Отображения противоречат семантике}: 328--424 нарушения объявленной несовместимости у эмбеддинговых подходов против 1--24 у LLM
 
-    \item \structure{\texttt{name\_only}~--- лучше работает с BERTами: F1 в 1,5 раза выше, чем у имени вместе с путём и атрибутами}
+    \vspace{0.3em}
+    \item \structure{Калибровка порога важнее выбора модели}: LaBSE 0{,}323 $\to$ 0{,}688, порог подбирается под модель
 
-    \vspace{0.4em}
-    \item \structure{Графовые сети не дают выигрыша при недостатке данных}
+    \vspace{0.3em}
+    \item \structure{Средние сами по себе обманчивы}: LLM и StringEquiv статистически неотличимы ($p = 1{,}00$), выигрыш LLM локален
 
-    \vspace{0.4em}
-    \item \structure{Требуется дальнейшее исследование возможностей гибридного поиска в задаче OM}
+    \vspace{0.3em}
+    \item \structure{Узкое место LLM~--- классификация, а не отбор}: потолок отбора 0{,}96 против достигнутых 0{,}685
 
-      {\small BM25 лучший на 8/21 парах, Hybrid~--- на 5/21; в среднем оба лучше чистого
-      MiniLM-ретривера (0{,}662 и 0{,}685 против 0{,}644).}
+    \vspace{0.3em}
+    \item \structure{Графовые сети не дают выигрыша при недостатке данных}, а \texttt{name\_only} лучше пути и атрибутов в 1,5 раза
   \end{enumerate}
 \end{frame}
 
 % --- 11. Направления для дальнейшей работы ---
 \begin{frame}{Направления для дальнейшей работы}
   \begin{itemize}
-    \item \structure{Проверка согласованности таксономий} — вторая половина темы:
-      reasoner (HermiT, Pellet) для OWL + LLM-проверка подозрительных связей
+    \item \structure{Формальный вывод поверх реализованных проверок}: reasoner (HermiT, Pellet)
+      для OWL-аксиом + LLM-проверка подозрительных связей
 
     \vspace{0.3em}
     \item \structure{Пробная интеграция лучших решений в проприетарную ГИС}
@@ -504,7 +598,8 @@
       на нём GNN-архитектуры (GraphSAGE, GAT) и масштабирование LLM через blocking
 
     \vspace{0.3em}
-    \item \structure{Анализ ошибок LLM}: систематические паттерны, ансамблирование режимов
+    \item \structure{Анализ ошибок и устойчивости LLM}: повторные прогоны для оценки разброса,
+      систематические паттерны, ансамблирование режимов
   \end{itemize}
 \end{frame}
 
