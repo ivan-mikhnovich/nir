@@ -3,31 +3,34 @@
   "pair": "confOf\u2194conference",
   "source": "conference",
   "target": "confOf",
-  "precision": 0.6666666666666666,
+  "precision": 0.8571428571428571,
   "recall": 0.5454545454545454,
-  "f1": 0.6,
+  "f1": 0.6666666666666665,
   "matches": 6,
-  "total_predicted": 9,
+  "total_predicted": 7,
   "total_gt": 11,
-  "wall_time": 57.272513161999086,
-  "api_time": 57.232103844999074,
-  "per_node": 0.9700356583898148,
+  "wall_time": 26.994506129005458,
+  "api_time": 26.953541007998865,
+  "per_node": 0.4568396781016757,
+  "requests": 59,
+  "judgements": 160,
+  "retries": 0,
   "mode": "concept",
   "match_pairs": [
     {
-      "source_id": "Conference#Committee_member",
-      "target_id": "confof#Member_PC",
-      "confidence": 0.95
-    },
-    {
       "source_id": "Conference#Conference",
       "target_id": "confof#Conference",
-      "confidence": 0.95
+      "confidence": 1.0
     },
     {
-      "source_id": "Conference#Information_for_participants",
+      "source_id": "Conference#Conference_contribution",
+      "target_id": "confof#Contribution",
+      "confidence": 0.92
+    },
+    {
+      "source_id": "Conference#Conference_participant",
       "target_id": "confof#Participant",
-      "confidence": 0.95
+      "confidence": 0.86
     },
     {
       "source_id": "Conference#Organization",
@@ -37,27 +40,17 @@
     {
       "source_id": "Conference#Paper",
       "target_id": "confof#Paper",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
       "source_id": "Conference#Person",
       "target_id": "confof#Person",
-      "confidence": 1.0
-    },
-    {
-      "source_id": "Conference#Poster",
-      "target_id": "confof#Poster",
-      "confidence": 0.95
+      "confidence": 0.99
     },
     {
       "source_id": "Conference#Topic",
       "target_id": "confof#Topic",
-      "confidence": 0.95
-    },
-    {
-      "source_id": "Conference#Workshop",
-      "target_id": "confof#Workshop",
-      "confidence": 0.95
+      "confidence": 0.99
     }
   ]
 }

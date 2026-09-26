@@ -3,15 +3,18 @@
   "pair": "cmt\u2194confOf",
   "source": "cmt",
   "target": "confOf",
-  "precision": 0.8571428571428571,
-  "recall": 0.6,
-  "f1": 0.7058823529411764,
-  "matches": 6,
-  "total_predicted": 7,
+  "precision": 1.0,
+  "recall": 0.3,
+  "f1": 0.4615384615384615,
+  "matches": 3,
+  "total_predicted": 3,
   "total_gt": 10,
-  "wall_time": 31.538955068997893,
-  "api_time": 31.538752787000703,
-  "per_node": 1.0875431995517484,
+  "wall_time": 15.486049072991591,
+  "api_time": 15.485854611964896,
+  "per_node": 0.5339949866194792,
+  "requests": 29,
+  "judgements": 70,
+  "retries": 0,
   "mode": "concept-children",
   "match_pairs": [
     {
@@ -22,32 +25,12 @@
     {
       "source_id": "cmt#Author",
       "target_id": "confof#Author",
-      "confidence": 1.0
-    },
-    {
-      "source_id": "cmt#Conference",
-      "target_id": "confof#Conference",
-      "confidence": 0.95
-    },
-    {
-      "source_id": "cmt#Paper",
-      "target_id": "confof#Paper",
-      "confidence": 0.95
-    },
-    {
-      "source_id": "cmt#Person",
-      "target_id": "confof#Person",
-      "confidence": 0.9
-    },
-    {
-      "source_id": "cmt#ProgramCommitteeMember",
-      "target_id": "confof#Member_PC",
-      "confidence": 0.95
+      "confidence": 0.98
     },
     {
       "source_id": "cmt#SubjectArea",
       "target_id": "confof#Topic",
-      "confidence": 0.9
+      "confidence": 0.95
     }
   ]
 }

@@ -9,15 +9,18 @@
   "matches": 5,
   "total_predicted": 5,
   "total_gt": 10,
-  "wall_time": 26.074004380003316,
-  "api_time": 26.073760698000115,
-  "per_node": 0.3571748040821934,
+  "wall_time": 14.367495743033942,
+  "api_time": 14.367246771987993,
+  "per_node": 0.19681159961627387,
+  "requests": 44,
+  "judgements": 92,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
       "source_id": "ekaw#Document",
       "target_id": "iasted#Document",
-      "confidence": 0.95
+      "confidence": 1.0
     },
     {
       "source_id": "ekaw#Person",
@@ -27,12 +30,12 @@
     {
       "source_id": "ekaw#Review",
       "target_id": "iasted#Review",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
       "source_id": "ekaw#Session_Chair",
       "target_id": "iasted#Session_chair",
-      "confidence": 0.95
+      "confidence": 0.86
     },
     {
       "source_id": "ekaw#Tutorial",

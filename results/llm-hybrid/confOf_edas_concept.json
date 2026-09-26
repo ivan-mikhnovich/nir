@@ -9,9 +9,12 @@
   "matches": 8,
   "total_predicted": 10,
   "total_gt": 14,
-  "wall_time": 36.12997165600245,
-  "api_time": 36.08635687900096,
-  "per_node": 0.9496409705000253,
+  "wall_time": 19.63365828699898,
+  "api_time": 19.585799981025048,
+  "per_node": 0.5154157889743434,
+  "requests": 38,
+  "judgements": 125,
+  "retries": 0,
   "mode": "concept",
   "match_pairs": [
     {
@@ -20,24 +23,29 @@
       "confidence": 1.0
     },
     {
+      "source_id": "confof#Company",
+      "target_id": "edas#IndustryOrganization",
+      "confidence": 0.9
+    },
+    {
       "source_id": "confof#Conference",
       "target_id": "edas#Conference",
-      "confidence": 0.95
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Country",
+      "target_id": "edas#Country",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Member_PC",
+      "target_id": "edas#TPCMember",
+      "confidence": 0.9
     },
     {
       "source_id": "confof#Organization",
       "target_id": "edas#Organization",
       "confidence": 0.95
-    },
-    {
-      "source_id": "confof#Paper",
-      "target_id": "edas#Paper",
-      "confidence": 0.9
-    },
-    {
-      "source_id": "confof#Person",
-      "target_id": "edas#Person",
-      "confidence": 1.0
     },
     {
       "source_id": "confof#Reception",
@@ -47,22 +55,17 @@
     {
       "source_id": "confof#Social_event",
       "target_id": "edas#SocialEvent",
-      "confidence": 1.0
+      "confidence": 0.98
     },
     {
-      "source_id": "confof#Student",
-      "target_id": "edas#Attendee",
-      "confidence": 0.9
+      "source_id": "confof#Topic",
+      "target_id": "edas#Topic",
+      "confidence": 0.95
     },
     {
       "source_id": "confof#Trip",
       "target_id": "edas#Excursion",
-      "confidence": 0.9
-    },
-    {
-      "source_id": "confof#Workshop",
-      "target_id": "edas#Workshop",
-      "confidence": 0.9
+      "confidence": 0.88
     }
   ]
 }

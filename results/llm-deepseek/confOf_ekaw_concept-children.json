@@ -3,21 +3,24 @@
   "pair": "confOf\u2194ekaw",
   "source": "confOf",
   "target": "ekaw",
-  "precision": 0.9,
-  "recall": 0.45,
-  "f1": 0.6,
-  "matches": 9,
+  "precision": 1.0,
+  "recall": 0.5,
+  "f1": 0.6666666666666666,
+  "matches": 10,
   "total_predicted": 10,
   "total_gt": 20,
-  "wall_time": 34.47920505299999,
-  "api_time": 34.47897129900002,
-  "per_node": 0.9073413499736848,
+  "wall_time": 17.114898860047106,
+  "api_time": 17.114666837034747,
+  "per_node": 0.45038596939565123,
+  "requests": 38,
+  "judgements": 120,
+  "retries": 0,
   "mode": "concept-children",
   "match_pairs": [
     {
       "source_id": "confof#Author",
       "target_id": "ekaw#Paper_Author",
-      "confidence": 0.95
+      "confidence": 0.9
     },
     {
       "source_id": "confof#Chair_PC",
@@ -25,14 +28,14 @@
       "confidence": 0.95
     },
     {
-      "source_id": "confof#Organization",
-      "target_id": "ekaw#Organisation",
-      "confidence": 1.0
+      "source_id": "confof#Member_PC",
+      "target_id": "ekaw#PC_Member",
+      "confidence": 0.98
     },
     {
-      "source_id": "confof#Participant",
-      "target_id": "ekaw#Conference_Participant",
-      "confidence": 0.95
+      "source_id": "confof#Organization",
+      "target_id": "ekaw#Organisation",
+      "confidence": 0.99
     },
     {
       "source_id": "confof#Person",
@@ -40,9 +43,9 @@
       "confidence": 0.95
     },
     {
-      "source_id": "confof#Science_Worker",
-      "target_id": "ekaw#Possible_Reviewer",
-      "confidence": 0.8
+      "source_id": "confof#Social_event",
+      "target_id": "ekaw#Social_Event",
+      "confidence": 0.95
     },
     {
       "source_id": "confof#Student",
@@ -62,7 +65,7 @@
     {
       "source_id": "confof#Workshop",
       "target_id": "ekaw#Workshop",
-      "confidence": 0.95
+      "confidence": 0.98
     }
   ]
 }

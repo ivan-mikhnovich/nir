@@ -3,12 +3,72 @@
   "pair": "iasted\u2194sigkdd",
   "source": "iasted",
   "target": "sigkdd",
-  "precision": 0.65,
-  "recall": 0.8666666666666667,
-  "f1": 0.7428571428571429,
-  "matches": 13,
-  "total_predicted": 20,
+  "precision": 1.0,
+  "recall": 0.6,
+  "f1": 0.7499999999999999,
+  "matches": 9,
+  "total_predicted": 9,
   "total_gt": 15,
-  "wall_time": 8.373200034839101e-05,
-  "mode": "ensemble"
+  "rule": ">=2-of-3+greedy_injective",
+  "min_votes": 2,
+  "modes": [
+    "concept",
+    "concept-parent",
+    "concept-children"
+  ],
+  "mode_requests": {
+    "concept": 140,
+    "concept-parent": 140,
+    "concept-children": 140
+  },
+  "requests": 0,
+  "wall_time": 0.0,
+  "mode": "ensemble",
+  "match_pairs": [
+    {
+      "source_id": "iasted#Conference_hall",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Deadline",
+      "target_id": "sigkdd#Deadline",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Listener",
+      "target_id": "sigkdd#Listener",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Main_office",
+      "target_id": "sigkdd#Main_office",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Place",
+      "target_id": "sigkdd#Place",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Registration_fee",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Review",
+      "target_id": "sigkdd#Review",
+      "confidence": 0.9833333333333333
+    },
+    {
+      "source_id": "iasted#Deadline_for_notification_of_acceptance",
+      "target_id": "sigkdd#Deadline_Author_notification",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "iasted#Nonmember_registration_fee",
+      "target_id": "sigkdd#Registration_Non-Member",
+      "confidence": 0.925
+    }
+  ]
 }

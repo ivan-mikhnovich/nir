@@ -3,12 +3,62 @@
   "pair": "confOf\u2194conference",
   "source": "conference",
   "target": "confOf",
-  "precision": 0.5294117647058824,
-  "recall": 0.8181818181818182,
-  "f1": 0.6428571428571428,
-  "matches": 9,
-  "total_predicted": 17,
+  "precision": 0.7142857142857143,
+  "recall": 0.45454545454545453,
+  "f1": 0.5555555555555556,
+  "matches": 5,
+  "total_predicted": 7,
   "total_gt": 11,
-  "wall_time": 8.671900104673114e-05,
-  "mode": "ensemble"
+  "rule": ">=2-of-3+greedy_injective",
+  "min_votes": 2,
+  "modes": [
+    "concept",
+    "concept-parent",
+    "concept-children"
+  ],
+  "mode_requests": {
+    "concept": 59,
+    "concept-parent": 59,
+    "concept-children": 59
+  },
+  "requests": 0,
+  "wall_time": 0.0,
+  "mode": "ensemble",
+  "match_pairs": [
+    {
+      "source_id": "Conference#Organization",
+      "target_id": "confof#Organization",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Person",
+      "target_id": "confof#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Topic",
+      "target_id": "confof#Topic",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Conference",
+      "target_id": "confof#Conference",
+      "confidence": 0.9933333333333333
+    },
+    {
+      "source_id": "Conference#Workshop",
+      "target_id": "confof#Workshop",
+      "confidence": 0.965
+    },
+    {
+      "source_id": "Conference#Poster",
+      "target_id": "confof#Poster",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Review",
+      "target_id": "confof#Reviewing_event",
+      "confidence": 0.925
+    }
+  ]
 }

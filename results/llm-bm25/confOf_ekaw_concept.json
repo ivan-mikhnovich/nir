@@ -4,34 +4,37 @@
   "source": "confOf",
   "target": "ekaw",
   "precision": 1.0,
-  "recall": 0.5,
-  "f1": 0.6666666666666666,
-  "matches": 10,
-  "total_predicted": 10,
+  "recall": 0.6,
+  "f1": 0.7499999999999999,
+  "matches": 12,
+  "total_predicted": 12,
   "total_gt": 20,
-  "wall_time": 24.889943425000183,
-  "api_time": 24.88859641099998,
-  "per_node": 0.6549630634473679,
+  "wall_time": 9.292702300008386,
+  "api_time": 9.291377538989764,
+  "per_node": 0.24450993523657272,
+  "requests": 27,
+  "judgements": 63,
+  "retries": 0,
   "mode": "concept",
   "match_pairs": [
     {
-      "source_id": "confof#Banquet",
-      "target_id": "ekaw#Conference_Banquet",
-      "confidence": 0.95
-    },
-    {
       "source_id": "confof#Chair_PC",
       "target_id": "ekaw#PC_Chair",
-      "confidence": 0.95
+      "confidence": 1.0
     },
     {
-      "source_id": "confof#Event",
-      "target_id": "ekaw#Event",
+      "source_id": "confof#Conference",
+      "target_id": "ekaw#Conference",
       "confidence": 0.95
     },
     {
       "source_id": "confof#Member_PC",
       "target_id": "ekaw#PC_Member",
+      "confidence": 0.99
+    },
+    {
+      "source_id": "confof#Participant",
+      "target_id": "ekaw#Conference_Participant",
       "confidence": 0.95
     },
     {
@@ -40,14 +43,24 @@
       "confidence": 0.95
     },
     {
+      "source_id": "confof#Poster",
+      "target_id": "ekaw#Poster_Paper",
+      "confidence": 0.9
+    },
+    {
       "source_id": "confof#Social_event",
       "target_id": "ekaw#Social_Event",
-      "confidence": 0.95
+      "confidence": 0.85
     },
     {
       "source_id": "confof#Student",
       "target_id": "ekaw#Student",
-      "confidence": 1.0
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Topic",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.85
     },
     {
       "source_id": "confof#Tutorial",
@@ -62,7 +75,7 @@
     {
       "source_id": "confof#Workshop",
       "target_id": "ekaw#Workshop",
-      "confidence": 0.95
+      "confidence": 1.0
     }
   ]
 }

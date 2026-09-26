@@ -3,15 +3,18 @@
   "pair": "conference\u2194iasted",
   "source": "conference",
   "target": "iasted",
-  "precision": 0.35714285714285715,
+  "precision": 0.3333333333333333,
   "recall": 0.38461538461538464,
-  "f1": 0.3703703703703704,
+  "f1": 0.3571428571428571,
   "matches": 5,
-  "total_predicted": 14,
+  "total_predicted": 15,
   "total_gt": 13,
-  "wall_time": 44.396062157000415,
-  "api_time": 44.351128014001006,
-  "per_node": 0.7517140341356102,
+  "wall_time": 58.57453600096051,
+  "api_time": 58.51374208997004,
+  "per_node": 0.9917583405079667,
+  "requests": 59,
+  "judgements": 295,
+  "retries": 0,
   "mode": "concept",
   "match_pairs": [
     {
@@ -25,18 +28,18 @@
       "confidence": 0.8
     },
     {
-      "source_id": "Conference#Contribution_co-author",
+      "source_id": "Conference#Conference_part",
+      "target_id": "iasted#Conference_days",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Contribution_1th-author",
       "target_id": "iasted#Author",
       "confidence": 0.9
     },
     {
-      "source_id": "Conference#Important_dates",
-      "target_id": "iasted#Conference_days",
-      "confidence": 0.8
-    },
-    {
       "source_id": "Conference#Invited_speaker",
-      "target_id": "iasted#Tutorial_speaker",
+      "target_id": "iasted#Speaker",
       "confidence": 0.8
     },
     {
@@ -52,7 +55,7 @@
     {
       "source_id": "Conference#Passive_conference_participant",
       "target_id": "iasted#Non_speaker",
-      "confidence": 0.85
+      "confidence": 0.8
     },
     {
       "source_id": "Conference#Person",
@@ -73,6 +76,11 @@
       "source_id": "Conference#Submitted_contribution",
       "target_id": "iasted#Submission",
       "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Track",
+      "target_id": "iasted#Conference_activity",
+      "confidence": 0.85
     },
     {
       "source_id": "Conference#Track-workshop_chair",

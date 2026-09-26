@@ -3,15 +3,18 @@
   "pair": "confOf\u2194iasted",
   "source": "confOf",
   "target": "iasted",
-  "precision": 0.2857142857142857,
+  "precision": 0.3076923076923077,
   "recall": 0.4444444444444444,
-  "f1": 0.34782608695652173,
+  "f1": 0.3636363636363637,
   "matches": 4,
-  "total_predicted": 14,
+  "total_predicted": 13,
   "total_gt": 9,
-  "wall_time": 58.12027154899988,
-  "api_time": 58.120000526001604,
-  "per_node": 1.5294736980526737,
+  "wall_time": 10.731763952004258,
+  "api_time": 10.731390698987525,
+  "per_node": 0.28240501839440857,
+  "requests": 38,
+  "judgements": 190,
+  "retries": 0,
   "mode": "concept-children",
   "match_pairs": [
     {
@@ -22,11 +25,6 @@
     {
       "source_id": "confof#Banquet",
       "target_id": "iasted#Dinner_banquet",
-      "confidence": 0.9
-    },
-    {
-      "source_id": "confof#Chair_PC",
-      "target_id": "iasted#Session_chair",
       "confidence": 0.9
     },
     {
@@ -45,9 +43,14 @@
       "confidence": 0.9
     },
     {
+      "source_id": "confof#Paper",
+      "target_id": "iasted#Final_manuscript",
+      "confidence": 0.85
+    },
+    {
       "source_id": "confof#Participant",
       "target_id": "iasted#Delegate",
-      "confidence": 0.85
+      "confidence": 0.8
     },
     {
       "source_id": "confof#Person",
@@ -62,7 +65,7 @@
     {
       "source_id": "confof#Reviewing_event",
       "target_id": "iasted#Review",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
       "source_id": "confof#Student",
@@ -77,12 +80,7 @@
     {
       "source_id": "confof#Trip",
       "target_id": "iasted#Full_day_tour",
-      "confidence": 0.8
-    },
-    {
-      "source_id": "confof#University",
-      "target_id": "iasted#Presenter_university",
-      "confidence": 0.9
+      "confidence": 0.85
     }
   ]
 }

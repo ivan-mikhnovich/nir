@@ -3,36 +3,24 @@
   "pair": "conference\u2194edas",
   "source": "conference",
   "target": "edas",
-  "precision": 0.5833333333333334,
+  "precision": 0.7,
   "recall": 0.5,
-  "f1": 0.5384615384615384,
+  "f1": 0.5833333333333334,
   "matches": 7,
-  "total_predicted": 12,
+  "total_predicted": 10,
   "total_gt": 14,
-  "wall_time": 54.78601963300025,
-  "api_time": 54.74103635499887,
-  "per_node": 0.9278141755084554,
+  "wall_time": 28.41286595503334,
+  "api_time": 28.353984077984933,
+  "per_node": 0.4805760013217785,
+  "requests": 59,
+  "judgements": 145,
+  "retries": 0,
   "mode": "concept",
   "match_pairs": [
     {
-      "source_id": "Conference#Accepted_contribution",
-      "target_id": "edas#AcceptedPaper",
-      "confidence": 0.95
-    },
-    {
       "source_id": "Conference#Call_for_paper",
       "target_id": "edas#CallForPapers",
-      "confidence": 1.0
-    },
-    {
-      "source_id": "Conference#Camera_ready_contribution",
-      "target_id": "edas#Document",
-      "confidence": 0.95
-    },
-    {
-      "source_id": "Conference#Committee_member",
-      "target_id": "edas#TPCMember",
-      "confidence": 0.85
+      "confidence": 0.99
     },
     {
       "source_id": "Conference#Conference",
@@ -50,14 +38,14 @@
       "confidence": 1.0
     },
     {
-      "source_id": "Conference#Regular_contribution",
-      "target_id": "edas#PaperPresentation",
-      "confidence": 0.9
+      "source_id": "Conference#Person",
+      "target_id": "edas#Person",
+      "confidence": 0.99
     },
     {
       "source_id": "Conference#Rejected_contribution",
       "target_id": "edas#RejectedPaper",
-      "confidence": 0.95
+      "confidence": 0.96
     },
     {
       "source_id": "Conference#Review",
@@ -65,14 +53,19 @@
       "confidence": 1.0
     },
     {
-      "source_id": "Conference#Reviewer",
-      "target_id": "edas#Reviewer",
-      "confidence": 1.0
+      "source_id": "Conference#Reviewed_contribution",
+      "target_id": "edas#Document",
+      "confidence": 0.85
     },
     {
       "source_id": "Conference#Topic",
       "target_id": "edas#Topic",
-      "confidence": 1.0
+      "confidence": 0.99
+    },
+    {
+      "source_id": "Conference#Workshop",
+      "target_id": "edas#Workshop",
+      "confidence": 0.95
     }
   ]
 }

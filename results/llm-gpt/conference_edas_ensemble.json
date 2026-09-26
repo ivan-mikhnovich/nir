@@ -3,12 +3,107 @@
   "pair": "conference\u2194edas",
   "source": "conference",
   "target": "edas",
-  "precision": 0.45,
-  "recall": 0.6428571428571429,
-  "f1": 0.5294117647058824,
-  "matches": 9,
-  "total_predicted": 20,
+  "precision": 0.5,
+  "recall": 0.5714285714285714,
+  "f1": 0.5333333333333333,
+  "matches": 8,
+  "total_predicted": 16,
   "total_gt": 14,
-  "wall_time": 0.00011905100109288469,
-  "mode": "ensemble"
+  "rule": ">=2-of-3+greedy_injective",
+  "min_votes": 2,
+  "modes": [
+    "concept",
+    "concept-parent",
+    "concept-children"
+  ],
+  "mode_requests": {
+    "concept": 59,
+    "concept-parent": 59,
+    "concept-children": 59
+  },
+  "requests": 0,
+  "wall_time": 0.0,
+  "mode": "ensemble",
+  "match_pairs": [
+    {
+      "source_id": "Conference#Organization",
+      "target_id": "edas#Organization",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Review",
+      "target_id": "edas#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Regular_author",
+      "target_id": "edas#Author",
+      "confidence": 0.97
+    },
+    {
+      "source_id": "Conference#Person",
+      "target_id": "edas#Person",
+      "confidence": 0.9666666666666667
+    },
+    {
+      "source_id": "Conference#Reviewer",
+      "target_id": "edas#Reviewer",
+      "confidence": 0.9666666666666667
+    },
+    {
+      "source_id": "Conference#Topic",
+      "target_id": "edas#Topic",
+      "confidence": 0.9666666666666667
+    },
+    {
+      "source_id": "Conference#Call_for_paper",
+      "target_id": "edas#CallForPapers",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Camera_ready_contribution",
+      "target_id": "edas#Document",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Conference",
+      "target_id": "edas#Conference",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Conference_participant",
+      "target_id": "edas#Attendee",
+      "confidence": 0.9333333333333333
+    },
+    {
+      "source_id": "Conference#Workshop",
+      "target_id": "edas#Workshop",
+      "confidence": 0.9166666666666666
+    },
+    {
+      "source_id": "Conference#Invited_talk",
+      "target_id": "edas#TalkEvent",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Chair",
+      "target_id": "edas#ConferenceChair",
+      "confidence": 0.8833333333333333
+    },
+    {
+      "source_id": "Conference#Conference_part",
+      "target_id": "edas#ConferenceSession",
+      "confidence": 0.8833333333333333
+    },
+    {
+      "source_id": "Conference#Committee_member",
+      "target_id": "edas#TPCMember",
+      "confidence": 0.8666666666666667
+    },
+    {
+      "source_id": "Conference#Invited_speaker",
+      "target_id": "edas#Presenter",
+      "confidence": 0.825
+    }
+  ]
 }

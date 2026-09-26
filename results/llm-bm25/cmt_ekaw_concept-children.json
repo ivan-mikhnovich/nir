@@ -4,40 +4,48 @@
   "source": "cmt",
   "target": "ekaw",
   "precision": 1.0,
-  "recall": 0.625,
-  "f1": 0.7692307692307693,
-  "matches": 5,
-  "total_predicted": 5,
+  "recall": 0.75,
+  "f1": 0.8571428571428571,
+  "matches": 6,
+  "total_predicted": 6,
   "total_gt": 8,
-  "wall_time": 9.21570970099856,
-  "api_time": 9.215599498998927,
-  "per_node": 0.3177792930689285,
+  "wall_time": 4.6264624309842475,
+  "api_time": 4.626328440033831,
+  "per_node": 0.1595285668977183,
+  "requests": 7,
+  "judgements": 18,
+  "retries": 0,
   "mode": "concept-children",
   "match_pairs": [
     {
       "source_id": "cmt#Author",
       "target_id": "ekaw#Paper_Author",
-      "confidence": 0.85
+      "confidence": 0.88
     },
     {
       "source_id": "cmt#Conference",
       "target_id": "ekaw#Conference",
-      "confidence": 0.8
+      "confidence": 0.99
     },
     {
       "source_id": "cmt#Document",
       "target_id": "ekaw#Document",
-      "confidence": 0.8
+      "confidence": 0.95
     },
     {
       "source_id": "cmt#Paper",
       "target_id": "ekaw#Paper",
-      "confidence": 1.0
+      "confidence": 0.95
     },
     {
       "source_id": "cmt#Person",
       "target_id": "ekaw#Person",
-      "confidence": 0.9
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "ekaw#Review",
+      "confidence": 0.92
     }
   ]
 }

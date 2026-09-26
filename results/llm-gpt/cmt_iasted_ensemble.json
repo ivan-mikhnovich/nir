@@ -9,6 +9,66 @@
   "matches": 4,
   "total_predicted": 9,
   "total_gt": 4,
-  "wall_time": 6.333099918265361e-05,
-  "mode": "ensemble"
+  "rule": ">=2-of-3+greedy_injective",
+  "min_votes": 2,
+  "modes": [
+    "concept",
+    "concept-parent",
+    "concept-children"
+  ],
+  "mode_requests": {
+    "concept": 29,
+    "concept-parent": 29,
+    "concept-children": 29
+  },
+  "requests": 0,
+  "wall_time": 0.0,
+  "mode": "ensemble",
+  "match_pairs": [
+    {
+      "source_id": "cmt#Person",
+      "target_id": "iasted#Person",
+      "confidence": 0.9833333333333333
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "iasted#Review",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "iasted#Author",
+      "confidence": 0.9333333333333333
+    },
+    {
+      "source_id": "cmt#ProgramCommittee",
+      "target_id": "iasted#Technical_commitee",
+      "confidence": 0.925
+    },
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "iasted#Session_chair",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#PaperFullVersion",
+      "target_id": "iasted#Final_manuscript",
+      "confidence": 0.8500000000000001
+    },
+    {
+      "source_id": "cmt#Co-author",
+      "target_id": "iasted#Author_cd_proceedings_included",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "iasted#Document",
+      "confidence": 0.8
+    }
+  ]
 }

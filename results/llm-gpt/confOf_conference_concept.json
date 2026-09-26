@@ -3,15 +3,18 @@
   "pair": "confOf\u2194conference",
   "source": "conference",
   "target": "confOf",
-  "precision": 0.5294117647058824,
+  "precision": 0.5,
   "recall": 0.8181818181818182,
-  "f1": 0.6428571428571428,
+  "f1": 0.6206896551724137,
   "matches": 9,
-  "total_predicted": 17,
+  "total_predicted": 18,
   "total_gt": 11,
-  "wall_time": 52.220174571000825,
-  "api_time": 52.169555033000506,
-  "per_node": 0.8842297463220424,
+  "wall_time": 57.26478644000599,
+  "api_time": 57.219093912048265,
+  "per_node": 0.9698151510516655,
+  "requests": 59,
+  "judgements": 295,
+  "retries": 0,
   "mode": "concept",
   "match_pairs": [
     {
@@ -47,7 +50,7 @@
     {
       "source_id": "Conference#Information_for_participants",
       "target_id": "confof#Registration_of_participants_event",
-      "confidence": 0.95
+      "confidence": 0.85
     },
     {
       "source_id": "Conference#Organization",
@@ -67,7 +70,12 @@
     {
       "source_id": "Conference#Poster",
       "target_id": "confof#Poster",
-      "confidence": 0.95
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Registeered_applicant",
+      "target_id": "confof#Student",
+      "confidence": 0.85
     },
     {
       "source_id": "Conference#Regular_author",
@@ -75,9 +83,9 @@
       "confidence": 0.9
     },
     {
-      "source_id": "Conference#Reviewer",
+      "source_id": "Conference#Review_expertise",
       "target_id": "confof#Member_PC",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
       "source_id": "Conference#Topic",

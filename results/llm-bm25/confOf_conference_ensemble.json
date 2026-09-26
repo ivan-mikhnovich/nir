@@ -3,12 +3,62 @@
   "pair": "confOf\u2194conference",
   "source": "conference",
   "target": "confOf",
-  "precision": 0.7272727272727273,
-  "recall": 0.7272727272727273,
-  "f1": 0.7272727272727273,
-  "matches": 8,
-  "total_predicted": 11,
+  "precision": 1.0,
+  "recall": 0.6363636363636364,
+  "f1": 0.7777777777777778,
+  "matches": 7,
+  "total_predicted": 7,
   "total_gt": 11,
-  "wall_time": 5.276099909679033e-05,
-  "mode": "ensemble"
+  "rule": ">=2-of-3+greedy_injective",
+  "min_votes": 2,
+  "modes": [
+    "concept",
+    "concept-parent",
+    "concept-children"
+  ],
+  "mode_requests": {
+    "concept": 36,
+    "concept-parent": 36,
+    "concept-children": 36
+  },
+  "requests": 0,
+  "wall_time": 0.0,
+  "mode": "ensemble",
+  "match_pairs": [
+    {
+      "source_id": "Conference#Person",
+      "target_id": "confof#Person",
+      "confidence": 0.9633333333333333
+    },
+    {
+      "source_id": "Conference#Organization",
+      "target_id": "confof#Organization",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Topic",
+      "target_id": "confof#Topic",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "Conference#Poster",
+      "target_id": "confof#Poster",
+      "confidence": 0.925
+    },
+    {
+      "source_id": "Conference#Tutorial",
+      "target_id": "confof#Tutorial",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "Conference#Workshop",
+      "target_id": "confof#Workshop",
+      "confidence": 0.8733333333333333
+    },
+    {
+      "source_id": "Conference#Conference_participant",
+      "target_id": "confof#Participant",
+      "confidence": 0.825
+    }
+  ]
 }

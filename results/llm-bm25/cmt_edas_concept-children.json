@@ -9,35 +9,38 @@
   "matches": 8,
   "total_predicted": 8,
   "total_gt": 8,
-  "wall_time": 8.191564699000082,
-  "api_time": 8.1914410710001,
-  "per_node": 0.28246348520689996,
+  "wall_time": 5.223013903014362,
+  "api_time": 5.222880892048124,
+  "per_node": 0.18009934110510772,
+  "requests": 8,
+  "judgements": 8,
+  "retries": 0,
   "mode": "concept-children",
   "match_pairs": [
     {
       "source_id": "cmt#Author",
       "target_id": "edas#Author",
-      "confidence": 0.8
+      "confidence": 0.95
     },
     {
       "source_id": "cmt#Conference",
       "target_id": "edas#Conference",
-      "confidence": 0.95
+      "confidence": 0.98
     },
     {
       "source_id": "cmt#ConferenceChair",
       "target_id": "edas#ConferenceChair",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
       "source_id": "cmt#Document",
       "target_id": "edas#Document",
-      "confidence": 0.95
+      "confidence": 0.98
     },
     {
       "source_id": "cmt#Paper",
       "target_id": "edas#Paper",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
       "source_id": "cmt#Person",

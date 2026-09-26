@@ -3,56 +3,44 @@
   "pair": "cmt\u2194confOf",
   "source": "cmt",
   "target": "confOf",
-  "precision": 0.75,
-  "recall": 0.6,
-  "f1": 0.6666666666666665,
-  "matches": 6,
-  "total_predicted": 8,
+  "precision": 0.8,
+  "recall": 0.4,
+  "f1": 0.5333333333333333,
+  "matches": 4,
+  "total_predicted": 5,
   "total_gt": 10,
-  "wall_time": 23.91287681600079,
-  "api_time": 23.857935133000865,
-  "per_node": 0.8226874183793401,
+  "wall_time": 15.925811893015634,
+  "api_time": 15.889894349966198,
+  "per_node": 0.5479273913781447,
+  "requests": 29,
+  "judgements": 60,
+  "retries": 0,
   "mode": "concept",
   "match_pairs": [
     {
       "source_id": "cmt#Administrator",
       "target_id": "confof#Administrator",
-      "confidence": 0.95
+      "confidence": 1.0
     },
     {
       "source_id": "cmt#Author",
       "target_id": "confof#Author",
-      "confidence": 1.0
-    },
-    {
-      "source_id": "cmt#Conference",
-      "target_id": "confof#Conference",
-      "confidence": 1.0
+      "confidence": 0.99
     },
     {
       "source_id": "cmt#Paper",
       "target_id": "confof#Paper",
-      "confidence": 1.0
+      "confidence": 0.95
     },
     {
       "source_id": "cmt#Person",
       "target_id": "confof#Person",
-      "confidence": 1.0
-    },
-    {
-      "source_id": "cmt#ProgramCommitteeMember",
-      "target_id": "confof#Member_PC",
-      "confidence": 0.95
-    },
-    {
-      "source_id": "cmt#Review",
-      "target_id": "confof#Reviewing_event",
-      "confidence": 0.9
+      "confidence": 0.99
     },
     {
       "source_id": "cmt#SubjectArea",
       "target_id": "confof#Topic",
-      "confidence": 0.9
+      "confidence": 0.95
     }
   ]
 }

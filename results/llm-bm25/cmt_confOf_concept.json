@@ -3,21 +3,29 @@
   "pair": "cmt\u2194confOf",
   "source": "cmt",
   "target": "confOf",
-  "precision": 0.75,
-  "recall": 0.3,
-  "f1": 0.4285714285714285,
-  "matches": 3,
-  "total_predicted": 4,
+  "precision": 0.8,
+  "recall": 0.4,
+  "f1": 0.5333333333333333,
+  "matches": 4,
+  "total_predicted": 5,
   "total_gt": 10,
-  "wall_time": 12.247805902999971,
-  "api_time": 12.247086666997347,
-  "per_node": 0.42231333334473614,
+  "wall_time": 4.975462089001667,
+  "api_time": 4.97472616302548,
+  "per_node": 0.17154228148363723,
+  "requests": 5,
+  "judgements": 6,
+  "retries": 0,
   "mode": "concept",
   "match_pairs": [
     {
       "source_id": "cmt#Administrator",
       "target_id": "confof#Administrator",
-      "confidence": 1.0
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "confof#Author",
+      "confidence": 0.98
     },
     {
       "source_id": "cmt#Conference",

@@ -3,15 +3,18 @@
   "pair": "confOf\u2194iasted",
   "source": "confOf",
   "target": "iasted",
-  "precision": 0.3333333333333333,
+  "precision": 0.2857142857142857,
   "recall": 0.4444444444444444,
-  "f1": 0.380952380952381,
+  "f1": 0.34782608695652173,
   "matches": 4,
-  "total_predicted": 12,
+  "total_predicted": 14,
   "total_gt": 9,
-  "wall_time": 27.805905651999637,
-  "api_time": 27.743223254999975,
-  "per_node": 0.7300848224999994,
+  "wall_time": 50.69887068402022,
+  "api_time": 50.642094742972404,
+  "per_node": 1.3326867037624317,
+  "requests": 38,
+  "judgements": 190,
+  "retries": 0,
   "mode": "concept",
   "match_pairs": [
     {
@@ -25,6 +28,11 @@
       "confidence": 0.9
     },
     {
+      "source_id": "confof#Chair_PC",
+      "target_id": "iasted#Session_chair",
+      "confidence": 0.9
+    },
+    {
       "source_id": "confof#City",
       "target_id": "iasted#City",
       "confidence": 0.95
@@ -33,6 +41,16 @@
       "source_id": "confof#Conference",
       "target_id": "iasted#Conference_activity",
       "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Member_PC",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Organization",
+      "target_id": "iasted#Sponsor",
+      "confidence": 0.85
     },
     {
       "source_id": "confof#Participant",
@@ -60,18 +78,13 @@
       "confidence": 0.8
     },
     {
-      "source_id": "confof#Submission_event",
-      "target_id": "iasted#Submission",
-      "confidence": 0.9
-    },
-    {
       "source_id": "confof#Trip",
       "target_id": "iasted#Full_day_tour",
-      "confidence": 0.9
+      "confidence": 0.85
     },
     {
-      "source_id": "confof#University",
-      "target_id": "iasted#Presenter_university",
+      "source_id": "confof#Tutorial",
+      "target_id": "iasted#Introduction",
       "confidence": 0.9
     }
   ]

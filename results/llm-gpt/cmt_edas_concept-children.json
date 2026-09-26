@@ -9,20 +9,23 @@
   "matches": 8,
   "total_predicted": 10,
   "total_gt": 8,
-  "wall_time": 41.16442956999981,
-  "api_time": 41.164243892000286,
-  "per_node": 1.4194566859310442,
+  "wall_time": 43.39357746398309,
+  "api_time": 43.39336720301071,
+  "per_node": 1.4963230070003695,
+  "requests": 29,
+  "judgements": 145,
+  "retries": 0,
   "mode": "concept-children",
   "match_pairs": [
     {
       "source_id": "cmt#Acceptance",
       "target_id": "edas#AcceptedPaper",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
       "source_id": "cmt#Author",
       "target_id": "edas#Author",
-      "confidence": 0.99
+      "confidence": 0.98
     },
     {
       "source_id": "cmt#Conference",
@@ -32,7 +35,7 @@
     {
       "source_id": "cmt#ConferenceChair",
       "target_id": "edas#ConferenceChair",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
       "source_id": "cmt#Document",
@@ -42,7 +45,7 @@
     {
       "source_id": "cmt#Paper",
       "target_id": "edas#Paper",
-      "confidence": 0.95
+      "confidence": 0.98
     },
     {
       "source_id": "cmt#Person",

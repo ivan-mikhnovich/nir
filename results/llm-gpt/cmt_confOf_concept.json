@@ -3,15 +3,18 @@
   "pair": "cmt\u2194confOf",
   "source": "cmt",
   "target": "confOf",
-  "precision": 0.75,
-  "recall": 0.6,
-  "f1": 0.6666666666666665,
-  "matches": 6,
-  "total_predicted": 8,
+  "precision": 0.5555555555555556,
+  "recall": 0.5,
+  "f1": 0.5263157894736842,
+  "matches": 5,
+  "total_predicted": 9,
   "total_gt": 10,
-  "wall_time": 23.469056277001073,
-  "api_time": 23.421616584999356,
-  "per_node": 0.8076419512068743,
+  "wall_time": 7.832637941988651,
+  "api_time": 7.784572725009639,
+  "per_node": 0.2684335422417117,
+  "requests": 29,
+  "judgements": 145,
+  "retries": 0,
   "mode": "concept",
   "match_pairs": [
     {
@@ -25,9 +28,14 @@
       "confidence": 0.95
     },
     {
+      "source_id": "cmt#Chairman",
+      "target_id": "confof#Person",
+      "confidence": 0.95
+    },
+    {
       "source_id": "cmt#Conference",
       "target_id": "confof#Conference",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
       "source_id": "cmt#ConferenceMember",
@@ -37,11 +45,11 @@
     {
       "source_id": "cmt#Paper",
       "target_id": "confof#Paper",
-      "confidence": 0.95
+      "confidence": 0.9
     },
     {
-      "source_id": "cmt#Person",
-      "target_id": "confof#Person",
+      "source_id": "cmt#Review",
+      "target_id": "confof#Reviewing_event",
       "confidence": 0.95
     },
     {

@@ -1,37 +1,44 @@
 {
   "embedding-LaBSE": {
     "pairs": 21,
-    "baseline_f1": 0.3234622837405007,
-    "loo_f1": 0.6882459931166256,
-    "loo_precision": 0.8813899063899064,
-    "loo_recall": 0.5834080654855418,
+    "mode_selection": "per-pair maximum over modes (oracle)",
+    "baseline_f1": 0.3600685514656684,
+    "loo_f1": 0.6356831410059485,
+    "loo_precision": 0.6798295580858607,
+    "loo_recall": 0.6509508519642551,
     "thresholds": {
-      "0.9": 21
+      "0.8": 7,
+      "0.9": 4,
+      "0.7": 10
     }
   },
   "embedding-MiniLM": {
     "pairs": 21,
-    "baseline_f1": 0.31445288931284926,
-    "loo_f1": 0.6701875584067477,
-    "loo_precision": 0.8724853189138904,
-    "loo_recall": 0.562728661347491,
+    "mode_selection": "per-pair maximum over modes (oracle)",
+    "baseline_f1": 0.34911506281844357,
+    "loo_f1": 0.6527778804380635,
+    "loo_precision": 0.8223420759135045,
+    "loo_recall": 0.5674905661093957,
     "thresholds": {
-      "0.9": 21
+      "0.8": 14,
+      "0.9": 7
     }
   },
   "embedding-ruRoberta-large": {
     "pairs": 21,
-    "baseline_f1": 0.2786691598630097,
-    "loo_f1": 0.6433068913439721,
-    "loo_precision": 0.8838813303099018,
-    "loo_recall": 0.5278207393686308,
+    "mode_selection": "per-pair maximum over modes (oracle)",
+    "baseline_f1": 0.29938897035519163,
+    "loo_f1": 0.6769327949291124,
+    "loo_precision": 0.8085433085433086,
+    "loo_recall": 0.5984217902737027,
     "thresholds": {
-      "0.99": 21
+      "0.95": 21
     }
   },
   "embedding-rubert-base": {
     "pairs": 21,
-    "baseline_f1": 0.2583578550125726,
+    "mode_selection": "per-pair maximum over modes (oracle)",
+    "baseline_f1": 0.28468771531411313,
     "loo_f1": 0.6457699455311642,
     "loo_precision": 0.8845427059712774,
     "loo_recall": 0.5302016917495832,
@@ -39,48 +46,77 @@
       "0.95": 21
     }
   },
+  "gnn": {
+    "pairs": 21,
+    "mode_selection": "per-pair maximum over modes (oracle)",
+    "baseline_f1": 0.3332101963985333,
+    "loo_f1": 0.6674853221458705,
+    "loo_precision": 0.8316829295820892,
+    "loo_recall": 0.5746371420039286,
+    "thresholds": {
+      "0.99": 21
+    }
+  },
+  "gnn-baseline": {
+    "pairs": 21,
+    "mode_selection": "per-pair maximum over modes (oracle)",
+    "baseline_f1": 0.34911506281844357,
+    "loo_f1": 0.6527778804380635,
+    "loo_precision": 0.8223420759135045,
+    "loo_recall": 0.5674905661093957,
+    "thresholds": {
+      "0.8": 14,
+      "0.9": 7
+    }
+  },
   "llm-bm25": {
     "pairs": 21,
-    "baseline_f1": 0.661712690575769,
-    "loo_f1": 0.661712690575769,
-    "loo_precision": 0.8755291005291005,
-    "loo_recall": 0.5529736502766904,
+    "mode_selection": "per-pair maximum over modes (oracle)",
+    "baseline_f1": 0.685015902242793,
+    "loo_f1": 0.685015902242793,
+    "loo_precision": 0.9066803566803567,
+    "loo_recall": 0.574063003696871,
     "thresholds": {
       "0.0": 21
     }
   },
   "llm-deepseek": {
     "pairs": 21,
-    "baseline_f1": 0.644347817149622,
-    "loo_f1": 0.644347817149622,
-    "loo_precision": 0.783377088209021,
-    "loo_recall": 0.561439810900419,
+    "mode_selection": "per-pair maximum over modes (oracle)",
+    "baseline_f1": 0.6445484645471091,
+    "loo_f1": 0.6598271686213314,
+    "loo_precision": 0.8763096691668121,
+    "loo_recall": 0.5520698227710323,
     "thresholds": {
-      "0.0": 21
+      "0.9": 21
     }
   },
   "llm-gpt": {
     "pairs": 21,
-    "baseline_f1": 0.6097729685012802,
-    "loo_f1": 0.639205747228927,
-    "loo_precision": 0.6691280280565994,
-    "loo_recall": 0.6310655957435951,
+    "mode_selection": "per-pair maximum over modes (oracle)",
+    "baseline_f1": 0.6129696041389278,
+    "loo_f1": 0.6500838758867622,
+    "loo_precision": 0.6741983895345239,
+    "loo_recall": 0.6473351657725637,
     "thresholds": {
       "0.9": 21
     }
   },
   "llm-hybrid": {
     "pairs": 21,
-    "baseline_f1": 0.6849858694086762,
-    "loo_f1": 0.6849858694086762,
-    "loo_precision": 0.7786491947206233,
-    "loo_recall": 0.6242263907922619,
+    "mode_selection": "per-pair maximum over modes (oracle)",
+    "baseline_f1": 0.712032334183018,
+    "loo_f1": 0.711326866810884,
+    "loo_precision": 0.8790871904317282,
+    "loo_recall": 0.608405091512316,
     "thresholds": {
-      "0.8": 21
+      "0.0": 20,
+      "0.8": 1
     }
   },
   "string-equiv": {
     "pairs": 21,
+    "mode_selection": "per-pair maximum over modes (oracle)",
     "baseline_f1": 0.6628998799422047,
     "loo_f1": 0.6628998799422047,
     "loo_precision": 0.8832199546485261,

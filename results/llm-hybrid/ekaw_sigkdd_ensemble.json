@@ -3,12 +3,82 @@
   "pair": "ekaw\u2194sigkdd",
   "source": "ekaw",
   "target": "sigkdd",
-  "precision": 0.7142857142857143,
-  "recall": 0.9090909090909091,
-  "f1": 0.8,
-  "matches": 10,
-  "total_predicted": 14,
+  "precision": 0.8181818181818182,
+  "recall": 0.8181818181818182,
+  "f1": 0.8181818181818182,
+  "matches": 9,
+  "total_predicted": 11,
   "total_gt": 11,
-  "wall_time": 6.583000140381046e-05,
-  "mode": "ensemble"
+  "rule": ">=2-of-3+greedy_injective",
+  "min_votes": 2,
+  "modes": [
+    "concept",
+    "concept-parent",
+    "concept-children"
+  ],
+  "mode_requests": {
+    "concept": 73,
+    "concept-parent": 73,
+    "concept-children": 73
+  },
+  "requests": 0,
+  "wall_time": 0.0,
+  "mode": "ensemble",
+  "match_pairs": [
+    {
+      "source_id": "ekaw#Review",
+      "target_id": "sigkdd#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "ekaw#Conference",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.9966666666666667
+    },
+    {
+      "source_id": "ekaw#Document",
+      "target_id": "sigkdd#Document",
+      "confidence": 0.995
+    },
+    {
+      "source_id": "ekaw#PC_Member",
+      "target_id": "sigkdd#Program_Committee_member",
+      "confidence": 0.9866666666666667
+    },
+    {
+      "source_id": "ekaw#Invited_Speaker",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 0.9833333333333333
+    },
+    {
+      "source_id": "ekaw#Paper",
+      "target_id": "sigkdd#Paper",
+      "confidence": 0.9733333333333333
+    },
+    {
+      "source_id": "ekaw#PC_Chair",
+      "target_id": "sigkdd#Program_Chair",
+      "confidence": 0.96
+    },
+    {
+      "source_id": "ekaw#OC_Member",
+      "target_id": "sigkdd#Organizing_Committee_member",
+      "confidence": 0.9533333333333333
+    },
+    {
+      "source_id": "ekaw#Abstract",
+      "target_id": "sigkdd#Abstract",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "ekaw#Location",
+      "target_id": "sigkdd#Place",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "ekaw#Presenter",
+      "target_id": "sigkdd#Speaker",
+      "confidence": 0.925
+    }
+  ]
 }

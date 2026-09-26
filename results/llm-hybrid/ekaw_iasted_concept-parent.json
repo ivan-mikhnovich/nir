@@ -3,26 +3,24 @@
   "pair": "ekaw\u2194iasted",
   "source": "ekaw",
   "target": "iasted",
-  "precision": 0.7142857142857143,
-  "recall": 0.5,
-  "f1": 0.588235294117647,
-  "matches": 5,
-  "total_predicted": 7,
+  "precision": 1.0,
+  "recall": 0.6,
+  "f1": 0.7499999999999999,
+  "matches": 6,
+  "total_predicted": 6,
   "total_gt": 10,
-  "wall_time": 63.118163333001576,
-  "api_time": 63.11779763300001,
-  "per_node": 0.8646273648356165,
+  "wall_time": 25.83320603601169,
+  "api_time": 25.83279949304415,
+  "per_node": 0.35387396565813906,
+  "requests": 73,
+  "judgements": 307,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
-      "source_id": "ekaw#Academic_Institution",
-      "target_id": "iasted#Presenter_university",
-      "confidence": 0.95
-    },
-    {
-      "source_id": "ekaw#Conference_Banquet",
-      "target_id": "iasted#Dinner_banquet",
-      "confidence": 0.95
+      "source_id": "ekaw#Document",
+      "target_id": "iasted#Document",
+      "confidence": 0.99
     },
     {
       "source_id": "ekaw#Location",
@@ -30,9 +28,9 @@
       "confidence": 0.95
     },
     {
-      "source_id": "ekaw#Possible_Reviewer",
-      "target_id": "iasted#Reviewer",
-      "confidence": 0.95
+      "source_id": "ekaw#Person",
+      "target_id": "iasted#Person",
+      "confidence": 1.0
     },
     {
       "source_id": "ekaw#Review",
@@ -42,12 +40,12 @@
     {
       "source_id": "ekaw#Session_Chair",
       "target_id": "iasted#Session_chair",
-      "confidence": 0.95
+      "confidence": 0.85
     },
     {
       "source_id": "ekaw#Tutorial",
       "target_id": "iasted#Tutorial",
-      "confidence": 0.9
+      "confidence": 0.95
     }
   ]
 }

@@ -3,15 +3,18 @@
   "pair": "conference\u2194sigkdd",
   "source": "conference",
   "target": "sigkdd",
-  "precision": 0.6666666666666666,
-  "recall": 0.3333333333333333,
-  "f1": 0.4444444444444444,
-  "matches": 4,
-  "total_predicted": 6,
+  "precision": 0.6,
+  "recall": 0.25,
+  "f1": 0.35294117647058826,
+  "matches": 3,
+  "total_predicted": 5,
   "total_gt": 12,
-  "wall_time": 50.91511545499816,
-  "api_time": 50.91480540300108,
-  "per_node": 0.8629628034406963,
+  "wall_time": 22.927952072001062,
+  "api_time": 22.927659249980934,
+  "per_node": 0.38860439406747344,
+  "requests": 59,
+  "judgements": 220,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
@@ -25,14 +28,9 @@
       "confidence": 1.0
     },
     {
-      "source_id": "Conference#Invited_speaker",
-      "target_id": "sigkdd#Invited_Speaker",
-      "confidence": 0.95
-    },
-    {
       "source_id": "Conference#Organizer",
       "target_id": "sigkdd#Organizator",
-      "confidence": 1.0
+      "confidence": 0.97
     },
     {
       "source_id": "Conference#Organizing_committee",

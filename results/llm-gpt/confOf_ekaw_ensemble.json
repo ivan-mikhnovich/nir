@@ -3,12 +3,82 @@
   "pair": "confOf\u2194ekaw",
   "source": "confOf",
   "target": "ekaw",
-  "precision": 0.631578947368421,
-  "recall": 0.6,
-  "f1": 0.6153846153846154,
-  "matches": 12,
-  "total_predicted": 19,
+  "precision": 0.9090909090909091,
+  "recall": 0.5,
+  "f1": 0.6451612903225806,
+  "matches": 10,
+  "total_predicted": 11,
   "total_gt": 20,
-  "wall_time": 9.089800005313009e-05,
-  "mode": "ensemble"
+  "rule": ">=2-of-3+greedy_injective",
+  "min_votes": 2,
+  "modes": [
+    "concept",
+    "concept-parent",
+    "concept-children"
+  ],
+  "mode_requests": {
+    "concept": 38,
+    "concept-parent": 38,
+    "concept-children": 38
+  },
+  "requests": 0,
+  "wall_time": 0.0,
+  "mode": "ensemble",
+  "match_pairs": [
+    {
+      "source_id": "confof#Organization",
+      "target_id": "ekaw#Organisation",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Tutorial",
+      "target_id": "ekaw#Tutorial",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Student",
+      "target_id": "ekaw#Student",
+      "confidence": 0.9333333333333333
+    },
+    {
+      "source_id": "confof#University",
+      "target_id": "ekaw#University",
+      "confidence": 0.9333333333333333
+    },
+    {
+      "source_id": "confof#Workshop",
+      "target_id": "ekaw#Workshop",
+      "confidence": 0.9166666666666666
+    },
+    {
+      "source_id": "confof#Author",
+      "target_id": "ekaw#Paper_Author",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Banquet",
+      "target_id": "ekaw#Conference_Banquet",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Chair_PC",
+      "target_id": "ekaw#PC_Chair",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Member_PC",
+      "target_id": "ekaw#PC_Member",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Person",
+      "target_id": "ekaw#Person",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Member",
+      "target_id": "ekaw#OC_Member",
+      "confidence": 0.8500000000000001
+    }
+  ]
 }

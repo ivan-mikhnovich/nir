@@ -3,21 +3,34 @@
   "pair": "cmt\u2194iasted",
   "source": "cmt",
   "target": "iasted",
-  "precision": 1.0,
+  "precision": 0.6666666666666666,
   "recall": 1.0,
-  "f1": 1.0,
+  "f1": 0.8,
   "matches": 4,
-  "total_predicted": 4,
+  "total_predicted": 6,
   "total_gt": 4,
-  "wall_time": 38.49223394300134,
-  "api_time": 38.49203518000104,
-  "per_node": 1.3273115579310704,
+  "wall_time": 10.79525339603424,
+  "api_time": 10.795045323029626,
+  "per_node": 0.3722429421734354,
+  "requests": 29,
+  "judgements": 145,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
       "source_id": "cmt#Author",
       "target_id": "iasted#Author",
       "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "iasted#Document",
+      "confidence": 0.8
+    },
+    {
+      "source_id": "cmt#PaperFullVersion",
+      "target_id": "iasted#Final_manuscript",
+      "confidence": 0.8
     },
     {
       "source_id": "cmt#Person",
@@ -27,7 +40,7 @@
     {
       "source_id": "cmt#Review",
       "target_id": "iasted#Review",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
       "source_id": "cmt#Reviewer",

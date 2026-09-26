@@ -9,7 +9,7 @@
   "matches": 7,
   "total_predicted": 7,
   "total_gt": 11,
-  "wall_time": 2.6787000024341978e-05,
+  "wall_time": 4.3620995711535215e-05,
   "match_pairs": [
     {
       "source_id": "ekaw#Person",

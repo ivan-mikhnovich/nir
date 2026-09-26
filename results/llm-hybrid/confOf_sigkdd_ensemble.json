@@ -3,12 +3,42 @@
   "pair": "confOf\u2194sigkdd",
   "source": "confOf",
   "target": "sigkdd",
-  "precision": 0.8,
-  "recall": 0.6666666666666666,
-  "f1": 0.7272727272727272,
-  "matches": 4,
-  "total_predicted": 5,
+  "precision": 1.0,
+  "recall": 0.5,
+  "f1": 0.6666666666666666,
+  "matches": 3,
+  "total_predicted": 3,
   "total_gt": 6,
-  "wall_time": 4.536999767879024e-05,
-  "mode": "ensemble"
+  "rule": ">=2-of-3+greedy_injective",
+  "min_votes": 2,
+  "modes": [
+    "concept",
+    "concept-parent",
+    "concept-children"
+  ],
+  "mode_requests": {
+    "concept": 38,
+    "concept-parent": 38,
+    "concept-children": 38
+  },
+  "requests": 0,
+  "wall_time": 0.0,
+  "mode": "ensemble",
+  "match_pairs": [
+    {
+      "source_id": "confof#Conference",
+      "target_id": "sigkdd#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Member_PC",
+      "target_id": "sigkdd#Program_Committee_member",
+      "confidence": 0.9766666666666667
+    },
+    {
+      "source_id": "confof#Chair_PC",
+      "target_id": "sigkdd#Program_Chair",
+      "confidence": 0.94
+    }
+  ]
 }

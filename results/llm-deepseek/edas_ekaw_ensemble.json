@@ -3,12 +3,72 @@
   "pair": "edas\u2194ekaw",
   "source": "edas",
   "target": "ekaw",
-  "precision": 0.625,
-  "recall": 0.5263157894736842,
-  "f1": 0.5714285714285714,
-  "matches": 10,
-  "total_predicted": 16,
+  "precision": 0.7777777777777778,
+  "recall": 0.3684210526315789,
+  "f1": 0.5,
+  "matches": 7,
+  "total_predicted": 9,
   "total_gt": 19,
-  "wall_time": 7.330399967031553e-05,
-  "mode": "ensemble"
+  "rule": ">=2-of-3+greedy_injective",
+  "min_votes": 2,
+  "modes": [
+    "concept",
+    "concept-parent",
+    "concept-children"
+  ],
+  "mode_requests": {
+    "concept": 103,
+    "concept-parent": 103,
+    "concept-children": 103
+  },
+  "requests": 0,
+  "wall_time": 0.0,
+  "mode": "ensemble",
+  "match_pairs": [
+    {
+      "source_id": "edas#Presenter",
+      "target_id": "ekaw#Presenter",
+      "confidence": 0.995
+    },
+    {
+      "source_id": "edas#SessionChair",
+      "target_id": "ekaw#Session_Chair",
+      "confidence": 0.9866666666666667
+    },
+    {
+      "source_id": "edas#RejectedPaper",
+      "target_id": "ekaw#Rejected_Paper",
+      "confidence": 0.98
+    },
+    {
+      "source_id": "edas#Person",
+      "target_id": "ekaw#Person",
+      "confidence": 0.975
+    },
+    {
+      "source_id": "edas#SocialEvent",
+      "target_id": "ekaw#Social_Event",
+      "confidence": 0.975
+    },
+    {
+      "source_id": "edas#AcceptedPaper",
+      "target_id": "ekaw#Accepted_Paper",
+      "confidence": 0.97
+    },
+    {
+      "source_id": "edas#Workshop",
+      "target_id": "ekaw#Workshop",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#ConferenceDinner",
+      "target_id": "ekaw#Conference_Banquet",
+      "confidence": 0.89
+    },
+    {
+      "source_id": "edas#Excursion",
+      "target_id": "ekaw#Conference_Trip",
+      "confidence": 0.81
+    }
+  ]
 }

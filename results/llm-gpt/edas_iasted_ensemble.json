@@ -3,12 +3,122 @@
   "pair": "edas\u2194iasted",
   "source": "edas",
   "target": "iasted",
-  "precision": 0.4782608695652174,
+  "precision": 0.5789473684210527,
   "recall": 0.5789473684210527,
-  "f1": 0.5238095238095238,
+  "f1": 0.5789473684210527,
   "matches": 11,
-  "total_predicted": 23,
+  "total_predicted": 19,
   "total_gt": 19,
-  "wall_time": 0.00011035200077458285,
-  "mode": "ensemble"
+  "rule": ">=2-of-3+greedy_injective",
+  "min_votes": 2,
+  "modes": [
+    "concept",
+    "concept-parent",
+    "concept-children"
+  ],
+  "mode_requests": {
+    "concept": 103,
+    "concept-parent": 103,
+    "concept-children": 103
+  },
+  "requests": 0,
+  "wall_time": 0.0,
+  "mode": "ensemble",
+  "match_pairs": [
+    {
+      "source_id": "edas#Author",
+      "target_id": "iasted#Author",
+      "confidence": 0.9666666666666667
+    },
+    {
+      "source_id": "edas#Reception",
+      "target_id": "iasted#Coctail_reception",
+      "confidence": 0.96
+    },
+    {
+      "source_id": "edas#CoffeeBreak",
+      "target_id": "iasted#Coffee_break",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#ConferenceDinner",
+      "target_id": "iasted#Dinner_banquet",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#RejectedPaper",
+      "target_id": "iasted#Refusing_manuscript",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#SessionChair",
+      "target_id": "iasted#Session_chair",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Sponsorship",
+      "target_id": "iasted#Sponzorship",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Person",
+      "target_id": "iasted#Person",
+      "confidence": 0.9333333333333333
+    },
+    {
+      "source_id": "edas#Review",
+      "target_id": "iasted#Review",
+      "confidence": 0.9333333333333333
+    },
+    {
+      "source_id": "edas#WelcomeTalk",
+      "target_id": "iasted#Welcome_address",
+      "confidence": 0.9333333333333333
+    },
+    {
+      "source_id": "edas#ConferenceVenuePlace",
+      "target_id": "iasted#Conference_building",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#DiningPlace",
+      "target_id": "iasted#Conference_restaurant",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#MeetingRoomPlace",
+      "target_id": "iasted#Session_room",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#PaperPresentation",
+      "target_id": "iasted#Presentation",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#PublishedPaper",
+      "target_id": "iasted#Publication",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#SlideSet",
+      "target_id": "iasted#PowerPoint_presentation",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Workshop",
+      "target_id": "iasted#Conference_activity",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#AccpetIfRoomRating",
+      "target_id": "iasted#Accepting_manuscript",
+      "confidence": 0.85
+    }
+  ]
 }

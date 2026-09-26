@@ -9,20 +9,18 @@
   "matches": 4,
   "total_predicted": 4,
   "total_gt": 6,
-  "wall_time": 30.144208284000342,
-  "api_time": 30.14397596100025,
-  "per_node": 0.7932625252894803,
+  "wall_time": 16.137934633996338,
+  "api_time": 16.137694201956037,
+  "per_node": 0.4246761632093694,
+  "requests": 38,
+  "judgements": 143,
+  "retries": 0,
   "mode": "concept-children",
   "match_pairs": [
     {
-      "source_id": "confof#Author",
-      "target_id": "sigkdd#Author",
-      "confidence": 0.9
-    },
-    {
       "source_id": "confof#Chair_PC",
       "target_id": "sigkdd#Program_Chair",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
       "source_id": "confof#Conference",
@@ -32,6 +30,11 @@
     {
       "source_id": "confof#Member_PC",
       "target_id": "sigkdd#Program_Committee_member",
+      "confidence": 0.98
+    },
+    {
+      "source_id": "confof#Paper",
+      "target_id": "sigkdd#Paper",
       "confidence": 0.95
     }
   ]

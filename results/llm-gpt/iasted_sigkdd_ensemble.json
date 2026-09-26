@@ -3,12 +3,122 @@
   "pair": "iasted\u2194sigkdd",
   "source": "iasted",
   "target": "sigkdd",
-  "precision": 0.42857142857142855,
+  "precision": 0.631578947368421,
   "recall": 0.8,
-  "f1": 0.5581395348837209,
+  "f1": 0.7058823529411765,
   "matches": 12,
-  "total_predicted": 28,
+  "total_predicted": 19,
   "total_gt": 15,
-  "wall_time": 9.891999798128381e-05,
-  "mode": "ensemble"
+  "rule": ">=2-of-3+greedy_injective",
+  "min_votes": 2,
+  "modes": [
+    "concept",
+    "concept-parent",
+    "concept-children"
+  ],
+  "mode_requests": {
+    "concept": 140,
+    "concept-parent": 140,
+    "concept-children": 140
+  },
+  "requests": 0,
+  "wall_time": 0.0,
+  "mode": "ensemble",
+  "match_pairs": [
+    {
+      "source_id": "iasted#Place",
+      "target_id": "sigkdd#Place",
+      "confidence": 0.975
+    },
+    {
+      "source_id": "iasted#Conference_hall",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 0.9666666666666667
+    },
+    {
+      "source_id": "iasted#Main_office",
+      "target_id": "sigkdd#Main_office",
+      "confidence": 0.9666666666666667
+    },
+    {
+      "source_id": "iasted#Document",
+      "target_id": "sigkdd#Document",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "iasted#Fee",
+      "target_id": "sigkdd#Fee",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "iasted#Registration_fee",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "iasted#Review",
+      "target_id": "sigkdd#Review",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "iasted#Speaker",
+      "target_id": "sigkdd#Speaker",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "iasted#Deadline",
+      "target_id": "sigkdd#Deadline",
+      "confidence": 0.9333333333333333
+    },
+    {
+      "source_id": "iasted#Listener",
+      "target_id": "sigkdd#Listener",
+      "confidence": 0.9333333333333333
+    },
+    {
+      "source_id": "iasted#Author",
+      "target_id": "sigkdd#Author",
+      "confidence": 0.925
+    },
+    {
+      "source_id": "iasted#Author_book_proceedings_included",
+      "target_id": "sigkdd#Author_of_paper",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "iasted#Double_hotel_room",
+      "target_id": "sigkdd#Hotel",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "iasted#Nonmember_registration_fee",
+      "target_id": "sigkdd#Registration_Non-Member",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "iasted#Publication",
+      "target_id": "sigkdd#Paper",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "iasted#Sponsor",
+      "target_id": "sigkdd#Sponzor",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "iasted#Submission",
+      "target_id": "sigkdd#Deadline_Paper_Submission",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "iasted#Student_lecturer",
+      "target_id": "sigkdd#Author_of_paper_student",
+      "confidence": 0.8666666666666667
+    },
+    {
+      "source_id": "iasted#Sponsor_state",
+      "target_id": "sigkdd#Platinum_Supporter",
+      "confidence": 0.8
+    }
+  ]
 }

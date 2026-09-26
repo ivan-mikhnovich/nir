@@ -1,0 +1,1199 @@
+{
+  "rules": {
+    "mean_over_modes": "mean over C/CP/CC, per pair then over pairs (selection-free)",
+    "loo_mode_selection": "for pair P the mode with the best mean over the other pairs is applied to P (selection-free)",
+    "ensemble": ">=2-of-3+greedy_injective (selection-free)",
+    "oracle_max": "per-pair maximum over C/CP/CC, chosen with the pair's own ground truth (ORACLE, not deployable)",
+    "plurality": "legacy rule: most-voted target per source, ties by the first vote, no 1:1 (kept for the aggregation-rule ablation only)"
+  },
+  "approaches": {
+    "llm-bm25": {
+      "mean_over_modes": 0.60351675456872,
+      "loo_mode_selection": 0.6513750401782389,
+      "oracle_max": 0.685015902242793,
+      "n_pairs": 21,
+      "ensemble": 0.6239939907586967,
+      "retriever": "BM25-only",
+      "requests": {
+        "per_pair": {
+          "cmt↔confOf": {
+            "concept": 5,
+            "concept-parent": 5,
+            "concept-children": 5
+          },
+          "cmt↔conference": {
+            "concept": 9,
+            "concept-parent": 9,
+            "concept-children": 9
+          },
+          "cmt↔edas": {
+            "concept": 8,
+            "concept-parent": 8,
+            "concept-children": 8
+          },
+          "cmt↔ekaw": {
+            "concept": 7,
+            "concept-parent": 7,
+            "concept-children": 7
+          },
+          "cmt↔iasted": {
+            "concept": 7,
+            "concept-parent": 7,
+            "concept-children": 7
+          },
+          "cmt↔sigkdd": {
+            "concept": 6,
+            "concept-parent": 6,
+            "concept-children": 6
+          },
+          "confOf↔conference": {
+            "concept": 36,
+            "concept-parent": 36,
+            "concept-children": 36
+          },
+          "confOf↔edas": {
+            "concept": 10,
+            "concept-parent": 10,
+            "concept-children": 10
+          },
+          "confOf↔ekaw": {
+            "concept": 27,
+            "concept-parent": 27,
+            "concept-children": 27
+          },
+          "confOf↔iasted": {
+            "concept": 19,
+            "concept-parent": 19,
+            "concept-children": 19
+          },
+          "confOf↔sigkdd": {
+            "concept": 11,
+            "concept-parent": 11,
+            "concept-children": 11
+          },
+          "conference↔edas": {
+            "concept": 26,
+            "concept-parent": 26,
+            "concept-children": 26
+          },
+          "conference↔ekaw": {
+            "concept": 41,
+            "concept-parent": 41,
+            "concept-children": 41
+          },
+          "conference↔iasted": {
+            "concept": 31,
+            "concept-parent": 31,
+            "concept-children": 31
+          },
+          "conference↔sigkdd": {
+            "concept": 32,
+            "concept-parent": 32,
+            "concept-children": 32
+          },
+          "edas↔ekaw": {
+            "concept": 11,
+            "concept-parent": 11,
+            "concept-children": 11
+          },
+          "edas↔iasted": {
+            "concept": 10,
+            "concept-parent": 10,
+            "concept-children": 10
+          },
+          "edas↔sigkdd": {
+            "concept": 7,
+            "concept-parent": 7,
+            "concept-children": 7
+          },
+          "ekaw↔iasted": {
+            "concept": 44,
+            "concept-parent": 44,
+            "concept-children": 44
+          },
+          "ekaw↔sigkdd": {
+            "concept": 44,
+            "concept-parent": 44,
+            "concept-children": 44
+          },
+          "iasted↔sigkdd": {
+            "concept": 64,
+            "concept-parent": 64,
+            "concept-children": 64
+          }
+        },
+        "total": 1365,
+        "exact": true,
+        "basis": "records",
+        "measured_mode_entries": 63,
+        "note": "one request per source node per mode; a value comes from the record's `requests` field when present, otherwise from the source-node count (exact for a retriever covering every source) or from a model-free recomputation of the same BM25 retrieval"
+      },
+      "plurality": {
+        "mean": 0.7075840094844171,
+        "per_pair": {
+          "cmt↔confOf": 0.5333333333333333,
+          "cmt↔conference": 0.4705882352941177,
+          "cmt↔edas": 1.0,
+          "cmt↔ekaw": 0.8571428571428571,
+          "cmt↔iasted": 0.888888888888889,
+          "cmt↔sigkdd": 0.6666666666666666,
+          "confOf↔conference": 0.8571428571428572,
+          "confOf↔edas": 0.6956521739130435,
+          "confOf↔ekaw": 0.8,
+          "confOf↔iasted": 0.6666666666666667,
+          "confOf↔sigkdd": 1.0,
+          "conference↔edas": 0.6956521739130435,
+          "conference↔ekaw": 0.5365853658536586,
+          "conference↔iasted": 0.4444444444444444,
+          "conference↔sigkdd": 0.761904761904762,
+          "edas↔ekaw": 0.5185185185185185,
+          "edas↔iasted": 0.39999999999999997,
+          "edas↔sigkdd": 0.7058823529411764,
+          "ekaw↔iasted": 0.7499999999999999,
+          "ekaw↔sigkdd": 0.7826086956521738,
+          "iasted↔sigkdd": 0.8275862068965518
+        }
+      },
+      "per_pair_f1": {
+        "cmt↔confOf": {
+          "concept-children": 0.4285714285714285,
+          "concept-parent": 0.33333333333333337,
+          "concept": 0.5333333333333333,
+          "ensemble": 0.4285714285714285,
+          "plurality": 0.5333333333333333
+        },
+        "cmt↔conference": {
+          "concept-children": 0.4705882352941177,
+          "concept-parent": 0.28571428571428575,
+          "concept": 0.37499999999999994,
+          "ensemble": 0.37499999999999994,
+          "plurality": 0.4705882352941177
+        },
+        "cmt↔edas": {
+          "concept-children": 1.0,
+          "concept-parent": 0.9333333333333333,
+          "concept": 0.7692307692307693,
+          "ensemble": 0.9333333333333333,
+          "plurality": 1.0
+        },
+        "cmt↔ekaw": {
+          "concept-children": 0.8571428571428571,
+          "concept-parent": 0.7692307692307693,
+          "concept": 0.4,
+          "ensemble": 0.7692307692307693,
+          "plurality": 0.8571428571428571
+        },
+        "cmt↔iasted": {
+          "concept-children": 0.8571428571428571,
+          "concept-parent": 0.5714285714285715,
+          "concept": 0.888888888888889,
+          "ensemble": 0.75,
+          "plurality": 0.888888888888889
+        },
+        "cmt↔sigkdd": {
+          "concept-children": 0.6666666666666666,
+          "concept-parent": 0.6666666666666666,
+          "concept": 0.5714285714285715,
+          "ensemble": 0.6666666666666666,
+          "plurality": 0.6666666666666666
+        },
+        "confOf↔conference": {
+          "concept-children": 0.7777777777777778,
+          "concept-parent": 0.5882352941176471,
+          "concept": 0.7058823529411764,
+          "ensemble": 0.7777777777777778,
+          "plurality": 0.8571428571428572
+        },
+        "confOf↔edas": {
+          "concept-children": 0.6363636363636364,
+          "concept-parent": 0.5714285714285714,
+          "concept": 0.5714285714285714,
+          "ensemble": 0.5714285714285714,
+          "plurality": 0.6956521739130435
+        },
+        "confOf↔ekaw": {
+          "concept-children": 0.6451612903225806,
+          "concept-parent": 0.5185185185185185,
+          "concept": 0.7499999999999999,
+          "ensemble": 0.6666666666666666,
+          "plurality": 0.8
+        },
+        "confOf↔iasted": {
+          "concept-children": 0.6153846153846153,
+          "concept-parent": 0.5,
+          "concept": 0.5714285714285714,
+          "ensemble": 0.5,
+          "plurality": 0.6666666666666667
+        },
+        "confOf↔sigkdd": {
+          "concept-children": 0.9090909090909091,
+          "concept-parent": 0.6666666666666666,
+          "concept": 0.9090909090909091,
+          "ensemble": 0.9090909090909091,
+          "plurality": 1.0
+        },
+        "conference↔edas": {
+          "concept-children": 0.6363636363636364,
+          "concept-parent": 0.3333333333333333,
+          "concept": 0.5,
+          "ensemble": 0.5,
+          "plurality": 0.6956521739130435
+        },
+        "conference↔ekaw": {
+          "concept-children": 0.5,
+          "concept-parent": 0.21428571428571427,
+          "concept": 0.4,
+          "ensemble": 0.42424242424242425,
+          "plurality": 0.5365853658536586
+        },
+        "conference↔iasted": {
+          "concept-children": 0.4444444444444444,
+          "concept-parent": 0.375,
+          "concept": 0.4444444444444444,
+          "ensemble": 0.4444444444444444,
+          "plurality": 0.4444444444444444
+        },
+        "conference↔sigkdd": {
+          "concept-children": 0.761904761904762,
+          "concept-parent": 0.7000000000000001,
+          "concept": 0.7000000000000001,
+          "ensemble": 0.7000000000000001,
+          "plurality": 0.761904761904762
+        },
+        "edas↔ekaw": {
+          "concept-children": 0.39999999999999997,
+          "concept-parent": 0.5384615384615384,
+          "concept": 0.39999999999999997,
+          "ensemble": 0.46153846153846156,
+          "plurality": 0.5185185185185185
+        },
+        "edas↔iasted": {
+          "concept-children": 0.3333333333333333,
+          "concept-parent": 0.2608695652173913,
+          "concept": 0.39999999999999997,
+          "ensemble": 0.3333333333333333,
+          "plurality": 0.39999999999999997
+        },
+        "edas↔sigkdd": {
+          "concept-children": 0.625,
+          "concept-parent": 0.7058823529411764,
+          "concept": 0.7058823529411764,
+          "ensemble": 0.7058823529411764,
+          "plurality": 0.7058823529411764
+        },
+        "ekaw↔iasted": {
+          "concept-children": 0.6666666666666666,
+          "concept-parent": 0.6666666666666666,
+          "concept": 0.6666666666666666,
+          "ensemble": 0.6666666666666666,
+          "plurality": 0.7499999999999999
+        },
+        "ekaw↔sigkdd": {
+          "concept-children": 0.7272727272727273,
+          "concept-parent": 0.8571428571428572,
+          "concept": 0.7999999999999999,
+          "ensemble": 0.7999999999999999,
+          "plurality": 0.7826086956521738
+        },
+        "iasted↔sigkdd": {
+          "concept-children": 0.7200000000000001,
+          "concept-parent": 0.4545454545454545,
+          "concept": 0.7692307692307692,
+          "ensemble": 0.7200000000000001,
+          "plurality": 0.8275862068965518
+        }
+      }
+    },
+    "llm-deepseek": {
+      "mean_over_modes": 0.5587870489074376,
+      "loo_mode_selection": 0.5930159338094663,
+      "oracle_max": 0.636045063186565,
+      "n_pairs": 21,
+      "ensemble": 0.601782831891191,
+      "retriever": "embedding-MiniLM",
+      "requests": {
+        "per_pair": {
+          "cmt↔confOf": {
+            "concept": 29,
+            "concept-parent": 29,
+            "concept-children": 29
+          },
+          "cmt↔conference": {
+            "concept": 29,
+            "concept-parent": 29,
+            "concept-children": 29
+          },
+          "cmt↔edas": {
+            "concept": 29,
+            "concept-parent": 29,
+            "concept-children": 29
+          },
+          "cmt↔ekaw": {
+            "concept": 29,
+            "concept-parent": 29,
+            "concept-children": 29
+          },
+          "cmt↔iasted": {
+            "concept": 29,
+            "concept-parent": 29,
+            "concept-children": 29
+          },
+          "cmt↔sigkdd": {
+            "concept": 29,
+            "concept-parent": 29,
+            "concept-children": 29
+          },
+          "confOf↔conference": {
+            "concept": 59,
+            "concept-parent": 59,
+            "concept-children": 59
+          },
+          "confOf↔edas": {
+            "concept": 38,
+            "concept-parent": 38,
+            "concept-children": 38
+          },
+          "confOf↔ekaw": {
+            "concept": 38,
+            "concept-parent": 38,
+            "concept-children": 38
+          },
+          "confOf↔iasted": {
+            "concept": 38,
+            "concept-parent": 38,
+            "concept-children": 38
+          },
+          "confOf↔sigkdd": {
+            "concept": 38,
+            "concept-parent": 38,
+            "concept-children": 38
+          },
+          "conference↔edas": {
+            "concept": 59,
+            "concept-parent": 59,
+            "concept-children": 59
+          },
+          "conference↔ekaw": {
+            "concept": 59,
+            "concept-parent": 59,
+            "concept-children": 59
+          },
+          "conference↔iasted": {
+            "concept": 59,
+            "concept-parent": 59,
+            "concept-children": 59
+          },
+          "conference↔sigkdd": {
+            "concept": 59,
+            "concept-parent": 59,
+            "concept-children": 59
+          },
+          "edas↔ekaw": {
+            "concept": 103,
+            "concept-parent": 103,
+            "concept-children": 103
+          },
+          "edas↔iasted": {
+            "concept": 103,
+            "concept-parent": 103,
+            "concept-children": 103
+          },
+          "edas↔sigkdd": {
+            "concept": 103,
+            "concept-parent": 103,
+            "concept-children": 103
+          },
+          "ekaw↔iasted": {
+            "concept": 73,
+            "concept-parent": 73,
+            "concept-children": 73
+          },
+          "ekaw↔sigkdd": {
+            "concept": 73,
+            "concept-parent": 73,
+            "concept-children": 73
+          },
+          "iasted↔sigkdd": {
+            "concept": 140,
+            "concept-parent": 140,
+            "concept-children": 140
+          }
+        },
+        "total": 3648,
+        "exact": true,
+        "basis": "records",
+        "measured_mode_entries": 63,
+        "note": "one request per source node per mode; a value comes from the record's `requests` field when present, otherwise from the source-node count (exact for a retriever covering every source) or from a model-free recomputation of the same BM25 retrieval"
+      },
+      "plurality": {
+        "mean": 0.6588436023633838,
+        "per_pair": {
+          "cmt↔confOf": 0.7058823529411764,
+          "cmt↔conference": 0.5263157894736842,
+          "cmt↔edas": 0.9411764705882353,
+          "cmt↔ekaw": 0.6666666666666666,
+          "cmt↔iasted": 0.8,
+          "cmt↔sigkdd": 0.7499999999999999,
+          "confOf↔conference": 0.5263157894736842,
+          "confOf↔edas": 0.88,
+          "confOf↔ekaw": 0.787878787878788,
+          "confOf↔iasted": 0.375,
+          "confOf↔sigkdd": 0.6,
+          "conference↔edas": 0.6153846153846153,
+          "conference↔ekaw": 0.6153846153846153,
+          "conference↔iasted": 0.4761904761904762,
+          "conference↔sigkdd": 0.5454545454545454,
+          "edas↔ekaw": 0.6666666666666667,
+          "edas↔iasted": 0.5161290322580646,
+          "edas↔sigkdd": 0.5555555555555556,
+          "ekaw↔iasted": 0.6666666666666666,
+          "ekaw↔sigkdd": 0.761904761904762,
+          "iasted↔sigkdd": 0.8571428571428571
+        }
+      },
+      "per_pair_f1": {
+        "cmt↔confOf": {
+          "concept-children": 0.625,
+          "concept-parent": 0.4615384615384615,
+          "concept": 0.5333333333333333,
+          "ensemble": 0.5333333333333333,
+          "plurality": 0.7058823529411764
+        },
+        "cmt↔conference": {
+          "concept-children": 0.5555555555555556,
+          "concept-parent": 0.5000000000000001,
+          "concept": 0.3529411764705882,
+          "ensemble": 0.4444444444444444,
+          "plurality": 0.5263157894736842
+        },
+        "cmt↔edas": {
+          "concept-children": 0.7692307692307693,
+          "concept-parent": 0.9411764705882353,
+          "concept": 0.875,
+          "ensemble": 0.9411764705882353,
+          "plurality": 0.9411764705882353
+        },
+        "cmt↔ekaw": {
+          "concept-children": 0.36363636363636365,
+          "concept-parent": 0.5714285714285715,
+          "concept": 0.5714285714285715,
+          "ensemble": 0.6666666666666666,
+          "plurality": 0.6666666666666666
+        },
+        "cmt↔iasted": {
+          "concept-children": 0.5714285714285715,
+          "concept-parent": 0.6666666666666666,
+          "concept": 0.8,
+          "ensemble": 0.75,
+          "plurality": 0.8
+        },
+        "cmt↔sigkdd": {
+          "concept-children": 0.6666666666666666,
+          "concept-parent": 0.7499999999999999,
+          "concept": 0.7499999999999999,
+          "ensemble": 0.7499999999999999,
+          "plurality": 0.7499999999999999
+        },
+        "confOf↔conference": {
+          "concept-children": 0.26666666666666666,
+          "concept-parent": 0.5882352941176471,
+          "concept": 0.4444444444444444,
+          "ensemble": 0.5555555555555556,
+          "plurality": 0.5263157894736842
+        },
+        "confOf↔edas": {
+          "concept-children": 0.6666666666666666,
+          "concept-parent": 0.3333333333333333,
+          "concept": 0.6666666666666666,
+          "ensemble": 0.5263157894736842,
+          "plurality": 0.88
+        },
+        "confOf↔ekaw": {
+          "concept-children": 0.6666666666666666,
+          "concept-parent": 0.33333333333333337,
+          "concept": 0.7096774193548387,
+          "ensemble": 0.6666666666666666,
+          "plurality": 0.787878787878788
+        },
+        "confOf↔iasted": {
+          "concept-children": 0.4,
+          "concept-parent": 0.19999999999999998,
+          "concept": 0.2857142857142857,
+          "ensemble": 0.30769230769230765,
+          "plurality": 0.375
+        },
+        "confOf↔sigkdd": {
+          "concept-children": 0.6666666666666666,
+          "concept-parent": 0.5,
+          "concept": 0.6,
+          "ensemble": 0.6666666666666666,
+          "plurality": 0.6
+        },
+        "conference↔edas": {
+          "concept-children": 0.5833333333333334,
+          "concept-parent": 0.5714285714285714,
+          "concept": 0.5833333333333334,
+          "ensemble": 0.6666666666666666,
+          "plurality": 0.6153846153846153
+        },
+        "conference↔ekaw": {
+          "concept-children": 0.6111111111111112,
+          "concept-parent": 0.3870967741935483,
+          "concept": 0.5714285714285714,
+          "ensemble": 0.6111111111111112,
+          "plurality": 0.6153846153846153
+        },
+        "conference↔iasted": {
+          "concept-children": 0.4444444444444444,
+          "concept-parent": 0.2666666666666667,
+          "concept": 0.42105263157894735,
+          "ensemble": 0.375,
+          "plurality": 0.4761904761904762
+        },
+        "conference↔sigkdd": {
+          "concept-children": 0.6,
+          "concept-parent": 0.35294117647058826,
+          "concept": 0.5714285714285715,
+          "ensemble": 0.6,
+          "plurality": 0.5454545454545454
+        },
+        "edas↔ekaw": {
+          "concept-children": 0.46153846153846156,
+          "concept-parent": 0.5714285714285714,
+          "concept": 0.48275862068965514,
+          "ensemble": 0.5,
+          "plurality": 0.6666666666666667
+        },
+        "edas↔iasted": {
+          "concept-children": 0.5,
+          "concept-parent": 0.5,
+          "concept": 0.5,
+          "ensemble": 0.5,
+          "plurality": 0.5161290322580646
+        },
+        "edas↔sigkdd": {
+          "concept-children": 0.37499999999999994,
+          "concept-parent": 0.5333333333333333,
+          "concept": 0.5555555555555556,
+          "ensemble": 0.4705882352941177,
+          "plurality": 0.5555555555555556
+        },
+        "ekaw↔iasted": {
+          "concept-children": 0.4,
+          "concept-parent": 0.625,
+          "concept": 0.6666666666666666,
+          "ensemble": 0.5555555555555556,
+          "plurality": 0.6666666666666666
+        },
+        "ekaw↔sigkdd": {
+          "concept-children": 0.7999999999999999,
+          "concept-parent": 0.7999999999999999,
+          "concept": 0.761904761904762,
+          "ensemble": 0.7999999999999999,
+          "plurality": 0.761904761904762
+        },
+        "iasted↔sigkdd": {
+          "concept-children": 0.6363636363636364,
+          "concept-parent": 0.6666666666666667,
+          "concept": 0.7499999999999999,
+          "ensemble": 0.7499999999999999,
+          "plurality": 0.8571428571428571
+        }
+      }
+    },
+    "llm-gpt": {
+      "mean_over_modes": 0.5454534700026173,
+      "loo_mode_selection": 0.584981113133973,
+      "oracle_max": 0.6034901813461617,
+      "n_pairs": 21,
+      "ensemble": 0.5748084523685907,
+      "retriever": "embedding-MiniLM",
+      "requests": {
+        "per_pair": {
+          "cmt↔confOf": {
+            "concept": 29,
+            "concept-parent": 29,
+            "concept-children": 29
+          },
+          "cmt↔conference": {
+            "concept": 29,
+            "concept-parent": 29,
+            "concept-children": 29
+          },
+          "cmt↔edas": {
+            "concept": 29,
+            "concept-parent": 29,
+            "concept-children": 29
+          },
+          "cmt↔ekaw": {
+            "concept": 29,
+            "concept-parent": 29,
+            "concept-children": 29
+          },
+          "cmt↔iasted": {
+            "concept": 29,
+            "concept-parent": 29,
+            "concept-children": 29
+          },
+          "cmt↔sigkdd": {
+            "concept": 29,
+            "concept-parent": 29,
+            "concept-children": 29
+          },
+          "confOf↔conference": {
+            "concept": 59,
+            "concept-parent": 59,
+            "concept-children": 59
+          },
+          "confOf↔edas": {
+            "concept": 38,
+            "concept-parent": 38,
+            "concept-children": 38
+          },
+          "confOf↔ekaw": {
+            "concept": 38,
+            "concept-parent": 38,
+            "concept-children": 38
+          },
+          "confOf↔iasted": {
+            "concept": 38,
+            "concept-parent": 38,
+            "concept-children": 38
+          },
+          "confOf↔sigkdd": {
+            "concept": 38,
+            "concept-parent": 38,
+            "concept-children": 38
+          },
+          "conference↔edas": {
+            "concept": 59,
+            "concept-parent": 59,
+            "concept-children": 59
+          },
+          "conference↔ekaw": {
+            "concept": 59,
+            "concept-parent": 59,
+            "concept-children": 59
+          },
+          "conference↔iasted": {
+            "concept": 59,
+            "concept-parent": 59,
+            "concept-children": 59
+          },
+          "conference↔sigkdd": {
+            "concept": 59,
+            "concept-parent": 59,
+            "concept-children": 59
+          },
+          "edas↔ekaw": {
+            "concept": 103,
+            "concept-parent": 103,
+            "concept-children": 103
+          },
+          "edas↔iasted": {
+            "concept": 103,
+            "concept-parent": 103,
+            "concept-children": 103
+          },
+          "edas↔sigkdd": {
+            "concept": 103,
+            "concept-parent": 103,
+            "concept-children": 103
+          },
+          "ekaw↔iasted": {
+            "concept": 73,
+            "concept-parent": 73,
+            "concept-children": 73
+          },
+          "ekaw↔sigkdd": {
+            "concept": 73,
+            "concept-parent": 73,
+            "concept-children": 73
+          },
+          "iasted↔sigkdd": {
+            "concept": 140,
+            "concept-parent": 140,
+            "concept-children": 140
+          }
+        },
+        "total": 3648,
+        "exact": true,
+        "basis": "records",
+        "measured_mode_entries": 63,
+        "note": "one request per source node per mode; a value comes from the record's `requests` field when present, otherwise from the source-node count (exact for a retriever covering every source) or from a model-free recomputation of the same BM25 retrieval"
+      },
+      "plurality": {
+        "mean": 0.5123851667664612,
+        "per_pair": {
+          "cmt↔confOf": 0.6,
+          "cmt↔conference": 0.5925925925925926,
+          "cmt↔edas": 0.8421052631578948,
+          "cmt↔ekaw": 0.46153846153846156,
+          "cmt↔iasted": 0.5714285714285715,
+          "cmt↔sigkdd": 0.5454545454545454,
+          "confOf↔conference": 0.5142857142857142,
+          "confOf↔edas": 0.6285714285714286,
+          "confOf↔ekaw": 0.631578947368421,
+          "confOf↔iasted": 0.32,
+          "confOf↔sigkdd": 0.4,
+          "conference↔edas": 0.4864864864864865,
+          "conference↔ekaw": 0.5333333333333333,
+          "conference↔iasted": 0.27777777777777773,
+          "conference↔sigkdd": 0.5,
+          "edas↔ekaw": 0.5,
+          "edas↔iasted": 0.5,
+          "edas↔sigkdd": 0.4615384615384615,
+          "ekaw↔iasted": 0.4,
+          "ekaw↔sigkdd": 0.4827586206896552,
+          "iasted↔sigkdd": 0.5106382978723405
+        }
+      },
+      "per_pair_f1": {
+        "cmt↔confOf": {
+          "concept-children": 0.5555555555555556,
+          "concept-parent": 0.631578947368421,
+          "concept": 0.5263157894736842,
+          "ensemble": 0.5263157894736842,
+          "plurality": 0.6
+        },
+        "cmt↔conference": {
+          "concept-children": 0.5833333333333334,
+          "concept-parent": 0.6363636363636364,
+          "concept": 0.6153846153846153,
+          "ensemble": 0.6666666666666667,
+          "plurality": 0.5925925925925926
+        },
+        "cmt↔edas": {
+          "concept-children": 0.888888888888889,
+          "concept-parent": 0.8421052631578948,
+          "concept": 0.8421052631578948,
+          "ensemble": 0.8421052631578948,
+          "plurality": 0.8421052631578948
+        },
+        "cmt↔ekaw": {
+          "concept-children": 0.5714285714285714,
+          "concept-parent": 0.5714285714285714,
+          "concept": 0.43478260869565216,
+          "ensemble": 0.5454545454545454,
+          "plurality": 0.46153846153846156
+        },
+        "cmt↔iasted": {
+          "concept-children": 0.6153846153846153,
+          "concept-parent": 0.8,
+          "concept": 0.6666666666666666,
+          "ensemble": 0.6153846153846153,
+          "plurality": 0.5714285714285715
+        },
+        "cmt↔sigkdd": {
+          "concept-children": 0.6,
+          "concept-parent": 0.631578947368421,
+          "concept": 0.5714285714285713,
+          "ensemble": 0.631578947368421,
+          "plurality": 0.5454545454545454
+        },
+        "confOf↔conference": {
+          "concept-children": 0.4444444444444444,
+          "concept-parent": 0.5714285714285714,
+          "concept": 0.6206896551724137,
+          "ensemble": 0.5714285714285714,
+          "plurality": 0.5142857142857142
+        },
+        "confOf↔edas": {
+          "concept-children": 0.5,
+          "concept-parent": 0.8148148148148148,
+          "concept": 0.6875000000000001,
+          "ensemble": 0.689655172413793,
+          "plurality": 0.6285714285714286
+        },
+        "confOf↔ekaw": {
+          "concept-children": 0.588235294117647,
+          "concept-parent": 0.625,
+          "concept": 0.6470588235294117,
+          "ensemble": 0.6451612903225806,
+          "plurality": 0.631578947368421
+        },
+        "confOf↔iasted": {
+          "concept-children": 0.3636363636363637,
+          "concept-parent": 0.4210526315789474,
+          "concept": 0.34782608695652173,
+          "ensemble": 0.380952380952381,
+          "plurality": 0.32
+        },
+        "confOf↔sigkdd": {
+          "concept-children": 0.3529411764705882,
+          "concept-parent": 0.4,
+          "concept": 0.37499999999999994,
+          "ensemble": 0.42857142857142855,
+          "plurality": 0.4
+        },
+        "conference↔edas": {
+          "concept-children": 0.4666666666666667,
+          "concept-parent": 0.6000000000000001,
+          "concept": 0.5,
+          "ensemble": 0.5333333333333333,
+          "plurality": 0.4864864864864865
+        },
+        "conference↔ekaw": {
+          "concept-children": 0.6037735849056605,
+          "concept-parent": 0.49056603773584906,
+          "concept": 0.5818181818181818,
+          "ensemble": 0.6037735849056605,
+          "plurality": 0.5333333333333333
+        },
+        "conference↔iasted": {
+          "concept-children": 0.27586206896551724,
+          "concept-parent": 0.38461538461538464,
+          "concept": 0.3571428571428571,
+          "ensemble": 0.3703703703703704,
+          "plurality": 0.27777777777777773
+        },
+        "conference↔sigkdd": {
+          "concept-children": 0.5161290322580646,
+          "concept-parent": 0.5,
+          "concept": 0.5517241379310345,
+          "ensemble": 0.6206896551724139,
+          "plurality": 0.5
+        },
+        "edas↔ekaw": {
+          "concept-children": 0.358974358974359,
+          "concept-parent": 0.5555555555555555,
+          "concept": 0.45,
+          "ensemble": 0.46153846153846156,
+          "plurality": 0.5
+        },
+        "edas↔iasted": {
+          "concept-children": 0.5500000000000002,
+          "concept-parent": 0.5882352941176471,
+          "concept": 0.5,
+          "ensemble": 0.5789473684210527,
+          "plurality": 0.5
+        },
+        "edas↔sigkdd": {
+          "concept-children": 0.47619047619047616,
+          "concept-parent": 0.45454545454545453,
+          "concept": 0.5217391304347826,
+          "ensemble": 0.5714285714285713,
+          "plurality": 0.4615384615384615
+        },
+        "ekaw↔iasted": {
+          "concept-children": 0.37499999999999994,
+          "concept-parent": 0.5384615384615384,
+          "concept": 0.5333333333333333,
+          "ensemble": 0.56,
+          "plurality": 0.4
+        },
+        "ekaw↔sigkdd": {
+          "concept-children": 0.4799999999999999,
+          "concept-parent": 0.4999999999999999,
+          "concept": 0.5384615384615385,
+          "ensemble": 0.5217391304347826,
+          "plurality": 0.4827586206896552
+        },
+        "iasted↔sigkdd": {
+          "concept-children": 0.43243243243243246,
+          "concept-parent": 0.7272727272727272,
+          "concept": 0.611111111111111,
+          "ensemble": 0.7058823529411765,
+          "plurality": 0.5106382978723405
+        }
+      }
+    },
+    "llm-hybrid": {
+      "mean_over_modes": 0.6201893943825896,
+      "loo_mode_selection": 0.6435532233710131,
+      "oracle_max": 0.7080442255295949,
+      "n_pairs": 21,
+      "ensemble": 0.6450618908695432,
+      "retriever": "BM25+MiniLM",
+      "requests": {
+        "per_pair": {
+          "cmt↔confOf": {
+            "concept": 29,
+            "concept-parent": 29,
+            "concept-children": 29
+          },
+          "cmt↔conference": {
+            "concept": 29,
+            "concept-parent": 29,
+            "concept-children": 29
+          },
+          "cmt↔edas": {
+            "concept": 29,
+            "concept-parent": 29,
+            "concept-children": 29
+          },
+          "cmt↔ekaw": {
+            "concept": 29,
+            "concept-parent": 29,
+            "concept-children": 29
+          },
+          "cmt↔iasted": {
+            "concept": 29,
+            "concept-parent": 29,
+            "concept-children": 29
+          },
+          "cmt↔sigkdd": {
+            "concept": 29,
+            "concept-parent": 29,
+            "concept-children": 29
+          },
+          "confOf↔conference": {
+            "concept": 59,
+            "concept-parent": 59,
+            "concept-children": 59
+          },
+          "confOf↔edas": {
+            "concept": 38,
+            "concept-parent": 38,
+            "concept-children": 38
+          },
+          "confOf↔ekaw": {
+            "concept": 38,
+            "concept-parent": 38,
+            "concept-children": 38
+          },
+          "confOf↔iasted": {
+            "concept": 38,
+            "concept-parent": 38,
+            "concept-children": 38
+          },
+          "confOf↔sigkdd": {
+            "concept": 38,
+            "concept-parent": 38,
+            "concept-children": 38
+          },
+          "conference↔edas": {
+            "concept": 59,
+            "concept-parent": 59,
+            "concept-children": 59
+          },
+          "conference↔ekaw": {
+            "concept": 59,
+            "concept-parent": 59,
+            "concept-children": 59
+          },
+          "conference↔iasted": {
+            "concept": 59,
+            "concept-parent": 59,
+            "concept-children": 59
+          },
+          "conference↔sigkdd": {
+            "concept": 59,
+            "concept-parent": 59,
+            "concept-children": 59
+          },
+          "edas↔ekaw": {
+            "concept": 103,
+            "concept-parent": 103,
+            "concept-children": 103
+          },
+          "edas↔iasted": {
+            "concept": 103,
+            "concept-parent": 103,
+            "concept-children": 103
+          },
+          "edas↔sigkdd": {
+            "concept": 103,
+            "concept-parent": 103,
+            "concept-children": 103
+          },
+          "ekaw↔iasted": {
+            "concept": 73,
+            "concept-parent": 73,
+            "concept-children": 73
+          },
+          "ekaw↔sigkdd": {
+            "concept": 73,
+            "concept-parent": 73,
+            "concept-children": 73
+          },
+          "iasted↔sigkdd": {
+            "concept": 140,
+            "concept-parent": 140,
+            "concept-children": 140
+          }
+        },
+        "total": 3648,
+        "exact": true,
+        "basis": "records",
+        "measured_mode_entries": 63,
+        "note": "one request per source node per mode; a value comes from the record's `requests` field when present, otherwise from the source-node count (exact for a retriever covering every source) or from a model-free recomputation of the same BM25 retrieval"
+      },
+      "plurality": {
+        "mean": 0.7317187129428359,
+        "per_pair": {
+          "cmt↔confOf": 0.8235294117647058,
+          "cmt↔conference": 0.631578947368421,
+          "cmt↔edas": 0.888888888888889,
+          "cmt↔ekaw": 0.7999999999999999,
+          "cmt↔iasted": 0.7272727272727273,
+          "cmt↔sigkdd": 0.9,
+          "confOf↔conference": 0.8181818181818182,
+          "confOf↔edas": 0.7200000000000001,
+          "confOf↔ekaw": 0.8235294117647058,
+          "confOf↔iasted": 0.5,
+          "confOf↔sigkdd": 0.7692307692307692,
+          "conference↔edas": 0.6666666666666666,
+          "conference↔ekaw": 0.6153846153846153,
+          "conference↔iasted": 0.5,
+          "conference↔sigkdd": 0.7272727272727272,
+          "edas↔ekaw": 0.7894736842105263,
+          "edas↔iasted": 0.5333333333333333,
+          "edas↔sigkdd": 0.761904761904762,
+          "ekaw↔iasted": 0.761904761904762,
+          "ekaw↔sigkdd": 0.7692307692307692,
+          "iasted↔sigkdd": 0.8387096774193549
+        }
+      },
+      "per_pair_f1": {
+        "cmt↔confOf": {
+          "concept-children": 0.4615384615384615,
+          "concept-parent": 0.5714285714285715,
+          "concept": 0.7499999999999999,
+          "ensemble": 0.6666666666666666,
+          "plurality": 0.8235294117647058
+        },
+        "cmt↔conference": {
+          "concept-children": 0.5882352941176471,
+          "concept-parent": 0.5000000000000001,
+          "concept": 0.5555555555555556,
+          "ensemble": 0.5882352941176471,
+          "plurality": 0.631578947368421
+        },
+        "cmt↔edas": {
+          "concept-children": 0.7999999999999999,
+          "concept-parent": 0.75,
+          "concept": 0.875,
+          "ensemble": 0.875,
+          "plurality": 0.888888888888889
+        },
+        "cmt↔ekaw": {
+          "concept-children": 0.2222222222222222,
+          "concept-parent": 0.6153846153846154,
+          "concept": 0.36363636363636365,
+          "ensemble": 0.2,
+          "plurality": 0.7999999999999999
+        },
+        "cmt↔iasted": {
+          "concept-children": 0.75,
+          "concept-parent": 0.5714285714285715,
+          "concept": 0.7272727272727273,
+          "ensemble": 0.75,
+          "plurality": 0.7272727272727273
+        },
+        "cmt↔sigkdd": {
+          "concept-children": 0.8235294117647058,
+          "concept-parent": 0.8235294117647058,
+          "concept": 0.7777777777777777,
+          "ensemble": 0.888888888888889,
+          "plurality": 0.9
+        },
+        "confOf↔conference": {
+          "concept-children": 0.6666666666666665,
+          "concept-parent": 0.6666666666666665,
+          "concept": 0.6666666666666665,
+          "ensemble": 0.6666666666666665,
+          "plurality": 0.8181818181818182
+        },
+        "confOf↔edas": {
+          "concept-children": 0.6956521739130435,
+          "concept-parent": 0.6,
+          "concept": 0.6666666666666666,
+          "ensemble": 0.6363636363636364,
+          "plurality": 0.7200000000000001
+        },
+        "confOf↔ekaw": {
+          "concept-children": 0.7096774193548387,
+          "concept-parent": 0.33333333333333337,
+          "concept": 0.7499999999999999,
+          "ensemble": 0.6666666666666666,
+          "plurality": 0.8235294117647058
+        },
+        "confOf↔iasted": {
+          "concept-children": 0.46153846153846156,
+          "concept-parent": 0.0,
+          "concept": 0.42857142857142855,
+          "ensemble": 0.3333333333333333,
+          "plurality": 0.5
+        },
+        "confOf↔sigkdd": {
+          "concept-children": 0.8,
+          "concept-parent": 0.8,
+          "concept": 0.5454545454545454,
+          "ensemble": 0.6666666666666666,
+          "plurality": 0.7692307692307692
+        },
+        "conference↔edas": {
+          "concept-children": 0.6666666666666666,
+          "concept-parent": 0.5454545454545454,
+          "concept": 0.5454545454545454,
+          "ensemble": 0.6086956521739131,
+          "plurality": 0.6666666666666666
+        },
+        "conference↔ekaw": {
+          "concept-children": 0.5882352941176471,
+          "concept-parent": 0.36363636363636365,
+          "concept": 0.5945945945945946,
+          "ensemble": 0.5142857142857143,
+          "plurality": 0.6153846153846153
+        },
+        "conference↔iasted": {
+          "concept-children": 0.5,
+          "concept-parent": 0.2666666666666667,
+          "concept": 0.5263157894736842,
+          "ensemble": 0.5263157894736842,
+          "plurality": 0.5
+        },
+        "conference↔sigkdd": {
+          "concept-children": 0.761904761904762,
+          "concept-parent": 0.5263157894736842,
+          "concept": 0.6666666666666666,
+          "ensemble": 0.6666666666666666,
+          "plurality": 0.7272727272727272
+        },
+        "edas↔ekaw": {
+          "concept-children": 0.7777777777777778,
+          "concept-parent": 0.7272727272727273,
+          "concept": 0.7058823529411765,
+          "ensemble": 0.742857142857143,
+          "plurality": 0.7894736842105263
+        },
+        "edas↔iasted": {
+          "concept-children": 0.3846153846153846,
+          "concept-parent": 0.5,
+          "concept": 0.5333333333333333,
+          "ensemble": 0.5517241379310345,
+          "plurality": 0.5333333333333333
+        },
+        "edas↔sigkdd": {
+          "concept-children": 0.5555555555555556,
+          "concept-parent": 0.7368421052631579,
+          "concept": 0.4705882352941177,
+          "ensemble": 0.5555555555555556,
+          "plurality": 0.761904761904762
+        },
+        "ekaw↔iasted": {
+          "concept-children": 0.8235294117647058,
+          "concept-parent": 0.7499999999999999,
+          "concept": 0.7,
+          "ensemble": 0.8235294117647058,
+          "plurality": 0.761904761904762
+        },
+        "ekaw↔sigkdd": {
+          "concept-children": 0.7272727272727273,
+          "concept-parent": 0.8571428571428572,
+          "concept": 0.6956521739130435,
+          "ensemble": 0.8181818181818182,
+          "plurality": 0.7692307692307692
+        },
+        "iasted↔sigkdd": {
+          "concept-children": 0.7499999999999999,
+          "concept-parent": 0.8148148148148148,
+          "concept": 0.6923076923076923,
+          "ensemble": 0.8,
+          "plurality": 0.8387096774193549
+        }
+      }
+    }
+  }
+}

@@ -9,7 +9,7 @@
   "matches": 5,
   "total_predicted": 5,
   "total_gt": 8,
-  "wall_time": 3.0297000193968415e-05,
+  "wall_time": 4.4370011892169714e-05,
   "match_pairs": [
     {
       "source_id": "cmt#Person",

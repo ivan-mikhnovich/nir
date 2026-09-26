@@ -1,7 +1,7 @@
 [
   {
     "source": "cmt",
-    "target": "cmt_ATTR",
+    "target": "cmt_ATTR_s42",
     "matches": [
       {
         "source_id": "cmt#Acceptance",
@@ -152,7 +152,7 @@
   },
   {
     "source": "cmt",
-    "target": "cmt_V1",
+    "target": "cmt_V1_s42",
     "matches": [
       {
         "source_id": "cmt#Acceptance",
@@ -303,7 +303,7 @@
   },
   {
     "source": "cmt",
-    "target": "cmt_STR",
+    "target": "cmt_STR_s42",
     "matches": [
       {
         "source_id": "cmt#Acceptance",
@@ -454,7 +454,7 @@
   },
   {
     "source": "cmt",
-    "target": "cmt_SYN",
+    "target": "cmt_SYN_s42",
     "matches": [
       {
         "source_id": "cmt#Acceptance",

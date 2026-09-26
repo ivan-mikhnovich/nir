@@ -1,0 +1,1290 @@
+{
+  "generated_at": "2026-09-27T02:17:19+03:00",
+  "sources": {
+    "code_constant": "значение взято из литерала исходника, файл и символ указаны в origin.",
+    "file_mtime": "число записей и крайние даты изменения файлов results/<подход>/*.json.",
+    "record_field": "поле, реально записанное в JSON-записях кэша (а не выведенное из кода)."
+  },
+  "code_files": {
+    "compare": "src/runners/compare.py",
+    "embedding": "src/runners/embedding.py",
+    "gnn": "src/runners/gnn.py",
+    "llm_matcher": "src/matchers/llm.py",
+    "gnn_matcher": "src/matchers/gnn.py"
+  },
+  "non_result_dirs": [
+    "consistency",
+    "viz"
+  ],
+  "approaches": {
+    "embedding-LaBSE": {
+      "kind": "embedding",
+      "code": {
+        "model": {
+          "value": "sentence-transformers/LaBSE",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:EMBEDDING_MODELS"
+        },
+        "description_mode": {
+          "value": "name_only",
+          "source": "code_constant",
+          "origin": "src/runners/embedding.py:rebuild_caches (EmbeddingMatcher)"
+        },
+        "rule": {
+          "value": "greedy_injective",
+          "source": "code_constant",
+          "origin": "src/runners/embedding.py:main --postprocess"
+        }
+      },
+      "disk": {
+        "records": {
+          "value": 21,
+          "source": "file_mtime"
+        },
+        "newest_mtime": {
+          "value": "2026-09-27 00:11:47",
+          "source": "file_mtime"
+        },
+        "oldest_mtime": {
+          "value": "2026-09-27 00:11:46",
+          "source": "file_mtime"
+        },
+        "api_requests": {
+          "value": null,
+          "records_with_requests": 0,
+          "source": "record_field"
+        },
+        "record_fields": {
+          "approach": {
+            "values": [
+              "embedding-LaBSE"
+            ],
+            "source": "record_field"
+          },
+          "model": {
+            "values": [
+              "sentence-transformers/LaBSE"
+            ],
+            "source": "record_field"
+          },
+          "postprocess": {
+            "values": [
+              "greedy_injective"
+            ],
+            "source": "record_field"
+          }
+        }
+      }
+    },
+    "embedding-MiniLM": {
+      "kind": "embedding",
+      "code": {
+        "model": {
+          "value": "sentence-transformers/all-MiniLM-L6-v2",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:EMBEDDING_MODELS"
+        },
+        "description_mode": {
+          "value": "name_only",
+          "source": "code_constant",
+          "origin": "src/runners/embedding.py:rebuild_caches (EmbeddingMatcher)"
+        },
+        "rule": {
+          "value": "greedy_injective",
+          "source": "code_constant",
+          "origin": "src/runners/embedding.py:main --postprocess"
+        }
+      },
+      "disk": {
+        "records": {
+          "value": 21,
+          "source": "file_mtime"
+        },
+        "newest_mtime": {
+          "value": "2026-09-27 00:11:48",
+          "source": "file_mtime"
+        },
+        "oldest_mtime": {
+          "value": "2026-09-27 00:11:47",
+          "source": "file_mtime"
+        },
+        "api_requests": {
+          "value": null,
+          "records_with_requests": 0,
+          "source": "record_field"
+        },
+        "record_fields": {
+          "approach": {
+            "values": [
+              "embedding-MiniLM"
+            ],
+            "source": "record_field"
+          },
+          "model": {
+            "values": [
+              "sentence-transformers/all-MiniLM-L6-v2"
+            ],
+            "source": "record_field"
+          },
+          "postprocess": {
+            "values": [
+              "greedy_injective"
+            ],
+            "source": "record_field"
+          }
+        }
+      }
+    },
+    "embedding-ruRoberta-large": {
+      "kind": "embedding",
+      "code": {
+        "model": {
+          "value": "ai-forever/ruRoberta-large",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:EMBEDDING_MODELS"
+        },
+        "description_mode": {
+          "value": "name_only",
+          "source": "code_constant",
+          "origin": "src/runners/embedding.py:rebuild_caches (EmbeddingMatcher)"
+        },
+        "rule": {
+          "value": "greedy_injective",
+          "source": "code_constant",
+          "origin": "src/runners/embedding.py:main --postprocess"
+        }
+      },
+      "disk": {
+        "records": {
+          "value": 21,
+          "source": "file_mtime"
+        },
+        "newest_mtime": {
+          "value": "2026-09-27 00:11:52",
+          "source": "file_mtime"
+        },
+        "oldest_mtime": {
+          "value": "2026-09-27 00:11:49",
+          "source": "file_mtime"
+        },
+        "api_requests": {
+          "value": null,
+          "records_with_requests": 0,
+          "source": "record_field"
+        },
+        "record_fields": {
+          "approach": {
+            "values": [
+              "embedding-ruRoberta-large"
+            ],
+            "source": "record_field"
+          },
+          "model": {
+            "values": [
+              "ai-forever/ruRoberta-large"
+            ],
+            "source": "record_field"
+          },
+          "postprocess": {
+            "values": [
+              "greedy_injective"
+            ],
+            "source": "record_field"
+          }
+        }
+      }
+    },
+    "embedding-rubert-base": {
+      "kind": "embedding",
+      "code": {
+        "model": {
+          "value": "DeepPavlov/rubert-base-cased",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:EMBEDDING_MODELS"
+        },
+        "description_mode": {
+          "value": "name_only",
+          "source": "code_constant",
+          "origin": "src/runners/embedding.py:rebuild_caches (EmbeddingMatcher)"
+        },
+        "rule": {
+          "value": "greedy_injective",
+          "source": "code_constant",
+          "origin": "src/runners/embedding.py:main --postprocess"
+        }
+      },
+      "disk": {
+        "records": {
+          "value": 21,
+          "source": "file_mtime"
+        },
+        "newest_mtime": {
+          "value": "2026-09-27 00:11:53",
+          "source": "file_mtime"
+        },
+        "oldest_mtime": {
+          "value": "2026-09-27 00:11:52",
+          "source": "file_mtime"
+        },
+        "api_requests": {
+          "value": null,
+          "records_with_requests": 0,
+          "source": "record_field"
+        },
+        "record_fields": {
+          "approach": {
+            "values": [
+              "embedding-rubert-base"
+            ],
+            "source": "record_field"
+          },
+          "model": {
+            "values": [
+              "DeepPavlov/rubert-base-cased"
+            ],
+            "source": "record_field"
+          },
+          "postprocess": {
+            "values": [
+              "greedy_injective"
+            ],
+            "source": "record_field"
+          }
+        }
+      }
+    },
+    "gnn": {
+      "kind": "gnn",
+      "code": {
+        "model": {
+          "value": "sentence-transformers/all-MiniLM-L6-v2",
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --embedder",
+          "note": "признаки узла — эмбеддинг имени класса (name_only), путь передаётся графом."
+        },
+        "rule": {
+          "value": "greedy_injective + to_alignment",
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:from ..matching_rules import"
+        },
+        "description_mode": {
+          "value": "name_only",
+          "source": "code_constant",
+          "origin": "src/matchers/gnn.py:SiameseGraphSAGE._encode_taxonomy",
+          "note": "признак узла — эмбеддинг имени класса; структура передаётся матрицей смежности."
+        },
+        "fold_mode": {
+          "value": "pair-loo",
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --fold-mode"
+        },
+        "seed": {
+          "value": 42,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --seed"
+        },
+        "epochs": {
+          "value": 60,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --epochs"
+        },
+        "hidden_dim": {
+          "value": 384,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --hidden-dim"
+        },
+        "out_dim": {
+          "value": 384,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --out-dim"
+        },
+        "num_layers": {
+          "value": 1,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --num-layers"
+        },
+        "dropout": {
+          "value": 0.5,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --dropout"
+        },
+        "lr": {
+          "value": 0.003,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --lr"
+        },
+        "weight_decay": {
+          "value": 0.0001,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --weight-decay"
+        },
+        "neg_ratio": {
+          "value": 3,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --neg-ratio"
+        },
+        "synthetic_seeds": {
+          "value": 3,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --synthetic-seeds"
+        },
+        "linear": {
+          "value": false,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --linear"
+        },
+        "checkpoint_dir": {
+          "value": "results/gnn",
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:RESULTS_DIR"
+        }
+      },
+      "disk": {
+        "records": {
+          "value": 21,
+          "source": "file_mtime"
+        },
+        "newest_mtime": {
+          "value": "2026-09-27 00:07:22",
+          "source": "file_mtime"
+        },
+        "oldest_mtime": {
+          "value": "2026-09-26 23:48:16",
+          "source": "file_mtime"
+        },
+        "api_requests": {
+          "value": null,
+          "records_with_requests": 0,
+          "source": "record_field"
+        },
+        "record_fields": {
+          "approach": {
+            "values": [
+              "gnn"
+            ],
+            "source": "record_field"
+          },
+          "config": {
+            "values": [
+              "{'seed': 42, 'embedder': 'sentence-transformers/all-MiniLM-L6-v2', 'hidden_dim': 384, 'out_dim': 384, 'num_layers': 1, 'dropout': 0.5, 'epochs': 60, 'lr': 0.003, 'weight_decay': 0.0001, 'neg_ratio': 3, 'synthetic_seeds': 3, 'linear': False, 'fold_mode': 'pair-loo', 'fold': 'pair cmt↔conference'}",
+              "{'seed': 42, 'embedder': 'sentence-transformers/all-MiniLM-L6-v2', 'hidden_dim': 384, 'out_dim': 384, 'num_layers': 1, 'dropout': 0.5, 'epochs': 60, 'lr': 0.003, 'weight_decay': 0.0001, 'neg_ratio': 3, 'synthetic_seeds': 3, 'linear': False, 'fold_mode': 'pair-loo', 'fold': 'pair cmt↔confOf'}",
+              "{'seed': 42, 'embedder': 'sentence-transformers/all-MiniLM-L6-v2', 'hidden_dim': 384, 'out_dim': 384, 'num_layers': 1, 'dropout': 0.5, 'epochs': 60, 'lr': 0.003, 'weight_decay': 0.0001, 'neg_ratio': 3, 'synthetic_seeds': 3, 'linear': False, 'fold_mode': 'pair-loo', 'fold': 'pair cmt↔edas'}",
+              "{'seed': 42, 'embedder': 'sentence-transformers/all-MiniLM-L6-v2', 'hidden_dim': 384, 'out_dim': 384, 'num_layers': 1, 'dropout': 0.5, 'epochs': 60, 'lr': 0.003, 'weight_decay': 0.0001, 'neg_ratio': 3, 'synthetic_seeds': 3, 'linear': False, 'fold_mode': 'pair-loo', 'fold': 'pair cmt↔ekaw'}",
+              "{'seed': 42, 'embedder': 'sentence-transformers/all-MiniLM-L6-v2', 'hidden_dim': 384, 'out_dim': 384, 'num_layers': 1, 'dropout': 0.5, 'epochs': 60, 'lr': 0.003, 'weight_decay': 0.0001, 'neg_ratio': 3, 'synthetic_seeds': 3, 'linear': False, 'fold_mode': 'pair-loo', 'fold': 'pair cmt↔iasted'}",
+              "{'seed': 42, 'embedder': 'sentence-transformers/all-MiniLM-L6-v2', 'hidden_dim': 384, 'out_dim': 384, 'num_layers': 1, 'dropout': 0.5, 'epochs': 60, 'lr': 0.003, 'weight_decay': 0.0001, 'neg_ratio': 3, 'synthetic_seeds': 3, 'linear': False, 'fold_mode': 'pair-loo', 'fold': 'pair cmt↔sigkdd'}"
+            ],
+            "source": "record_field"
+          },
+          "config.dropout": {
+            "values": [
+              0.5
+            ],
+            "source": "record_field"
+          },
+          "config.embedder": {
+            "values": [
+              "sentence-transformers/all-MiniLM-L6-v2"
+            ],
+            "source": "record_field"
+          },
+          "config.epochs": {
+            "values": [
+              60
+            ],
+            "source": "record_field"
+          },
+          "config.fold": {
+            "values": [
+              "pair cmt↔conference",
+              "pair cmt↔confOf",
+              "pair cmt↔edas",
+              "pair cmt↔ekaw",
+              "pair cmt↔iasted",
+              "pair cmt↔sigkdd"
+            ],
+            "source": "record_field"
+          },
+          "config.fold_mode": {
+            "values": [
+              "pair-loo"
+            ],
+            "source": "record_field"
+          },
+          "config.hidden_dim": {
+            "values": [
+              384
+            ],
+            "source": "record_field"
+          },
+          "config.linear": {
+            "values": [
+              false
+            ],
+            "source": "record_field"
+          },
+          "config.lr": {
+            "values": [
+              0.003
+            ],
+            "source": "record_field"
+          },
+          "config.neg_ratio": {
+            "values": [
+              3
+            ],
+            "source": "record_field"
+          },
+          "config.num_layers": {
+            "values": [
+              1
+            ],
+            "source": "record_field"
+          },
+          "config.out_dim": {
+            "values": [
+              384
+            ],
+            "source": "record_field"
+          },
+          "config.seed": {
+            "values": [
+              42
+            ],
+            "source": "record_field"
+          },
+          "config.synthetic_seeds": {
+            "values": [
+              3
+            ],
+            "source": "record_field"
+          },
+          "config.weight_decay": {
+            "values": [
+              0.0001
+            ],
+            "source": "record_field"
+          },
+          "seed": {
+            "values": [
+              42
+            ],
+            "source": "record_field"
+          }
+        }
+      }
+    },
+    "gnn-baseline": {
+      "kind": "gnn-baseline",
+      "code": {
+        "model": {
+          "value": "sentence-transformers/all-MiniLM-L6-v2",
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --embedder",
+          "note": "признаки узла — эмбеддинг имени класса (name_only), путь передаётся графом."
+        },
+        "rule": {
+          "value": "greedy_injective + to_alignment",
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:from ..matching_rules import"
+        },
+        "description_mode": {
+          "value": "name_only",
+          "source": "code_constant",
+          "origin": "src/matchers/gnn.py:SiameseGraphSAGE._encode_taxonomy",
+          "note": "признак узла — эмбеддинг имени класса; структура передаётся матрицей смежности."
+        },
+        "fold_mode": {
+          "value": null,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:_evaluate_baseline",
+          "note": "фолдов нет: оцениваются все 21 пара."
+        },
+        "seed": {
+          "value": 42,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --seed"
+        },
+        "epochs": {
+          "value": 0,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:_evaluate_baseline",
+          "note": "baseline не обучается."
+        },
+        "hidden_dim": {
+          "value": 384,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --hidden-dim"
+        },
+        "out_dim": {
+          "value": 384,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --out-dim"
+        },
+        "num_layers": {
+          "value": 1,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --num-layers"
+        },
+        "dropout": {
+          "value": 0.5,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --dropout"
+        },
+        "lr": {
+          "value": 0.003,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --lr"
+        },
+        "weight_decay": {
+          "value": 0.0001,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --weight-decay"
+        },
+        "neg_ratio": {
+          "value": 3,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --neg-ratio"
+        },
+        "synthetic_seeds": {
+          "value": 3,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --synthetic-seeds"
+        },
+        "linear": {
+          "value": false,
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:main --linear"
+        },
+        "checkpoint_dir": {
+          "value": "results/gnn",
+          "source": "code_constant",
+          "origin": "src/runners/gnn.py:RESULTS_DIR"
+        }
+      },
+      "disk": {
+        "records": {
+          "value": 21,
+          "source": "file_mtime"
+        },
+        "newest_mtime": {
+          "value": "2026-09-27 00:14:35",
+          "source": "file_mtime"
+        },
+        "oldest_mtime": {
+          "value": "2026-09-27 00:14:34",
+          "source": "file_mtime"
+        },
+        "api_requests": {
+          "value": null,
+          "records_with_requests": 0,
+          "source": "record_field"
+        },
+        "record_fields": {
+          "approach": {
+            "values": [
+              "gnn-baseline"
+            ],
+            "source": "record_field"
+          },
+          "config": {
+            "values": [
+              "{'seed': 42, 'embedder': 'sentence-transformers/all-MiniLM-L6-v2', 'hidden_dim': 384, 'out_dim': 384, 'num_layers': 1, 'dropout': 0.5, 'epochs': 60, 'lr': 0.003, 'weight_decay': 0.0001, 'neg_ratio': 3, 'synthetic_seeds': 3, 'linear': False, 'fold_mode': 'pair-loo', 'fold': 'baseline'}"
+            ],
+            "source": "record_field"
+          },
+          "config.dropout": {
+            "values": [
+              0.5
+            ],
+            "source": "record_field"
+          },
+          "config.embedder": {
+            "values": [
+              "sentence-transformers/all-MiniLM-L6-v2"
+            ],
+            "source": "record_field"
+          },
+          "config.epochs": {
+            "values": [
+              60
+            ],
+            "source": "record_field"
+          },
+          "config.fold": {
+            "values": [
+              "baseline"
+            ],
+            "source": "record_field"
+          },
+          "config.fold_mode": {
+            "values": [
+              "pair-loo"
+            ],
+            "source": "record_field"
+          },
+          "config.hidden_dim": {
+            "values": [
+              384
+            ],
+            "source": "record_field"
+          },
+          "config.linear": {
+            "values": [
+              false
+            ],
+            "source": "record_field"
+          },
+          "config.lr": {
+            "values": [
+              0.003
+            ],
+            "source": "record_field"
+          },
+          "config.neg_ratio": {
+            "values": [
+              3
+            ],
+            "source": "record_field"
+          },
+          "config.num_layers": {
+            "values": [
+              1
+            ],
+            "source": "record_field"
+          },
+          "config.out_dim": {
+            "values": [
+              384
+            ],
+            "source": "record_field"
+          },
+          "config.seed": {
+            "values": [
+              42
+            ],
+            "source": "record_field"
+          },
+          "config.synthetic_seeds": {
+            "values": [
+              3
+            ],
+            "source": "record_field"
+          },
+          "config.weight_decay": {
+            "values": [
+              0.0001
+            ],
+            "source": "record_field"
+          },
+          "seed": {
+            "values": [
+              42
+            ],
+            "source": "record_field"
+          }
+        }
+      }
+    },
+    "llm-bm25": {
+      "kind": "llm",
+      "code": {
+        "model": {
+          "value": "deepseek-v4-flash",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:run_llm_bm25 (model)"
+        },
+        "base_url": {
+          "value": "https://api.deepseek.com",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:run_llm_bm25"
+        },
+        "top_k": {
+          "value": 5,
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:run_llm_bm25 (top_k)"
+        },
+        "temperature": {
+          "value": 0.0,
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:run_llm_bm25 (temperature)"
+        },
+        "max_workers": {
+          "value": 10,
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:run_llm_bm25 (max_workers)"
+        },
+        "structured_output": {
+          "value": false,
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:run_llm_bm25 (use_structured_output)"
+        },
+        "modes": {
+          "value": [
+            "concept",
+            "concept-parent",
+            "concept-children"
+          ],
+          "source": "code_constant",
+          "origin": "src/matchers/llm.py:ENSEMBLE_MODES"
+        },
+        "rule": {
+          "value": ">=2-of-3+greedy_injective",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:ENSEMBLE_RULE"
+        },
+        "ensemble": {
+          "value": ">=2-of-3+greedy_injective",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:ENSEMBLE_RULE"
+        },
+        "confidence_threshold": {
+          "value": 0.7,
+          "source": "code_constant",
+          "origin": "src/matchers/llm.py:CONFIDENCE_THRESHOLD"
+        },
+        "min_votes": {
+          "value": 2,
+          "source": "code_constant",
+          "origin": "src/matchers/llm.py:ENSEMBLE_MIN_VOTES"
+        },
+        "retriever": {
+          "value": "BM25-only",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:RETRIEVER_KIND"
+        }
+      },
+      "disk": {
+        "records": {
+          "value": 84,
+          "source": "file_mtime"
+        },
+        "newest_mtime": {
+          "value": "2026-09-27 02:17:01",
+          "source": "file_mtime"
+        },
+        "oldest_mtime": {
+          "value": "2026-09-27 00:42:36",
+          "source": "file_mtime"
+        },
+        "api_requests": {
+          "value": 1365,
+          "records_with_requests": 84,
+          "source": "record_field"
+        },
+        "record_fields": {
+          "approach": {
+            "values": [
+              "llm-bm25"
+            ],
+            "source": "record_field"
+          },
+          "min_votes": {
+            "values": [
+              2
+            ],
+            "source": "record_field"
+          },
+          "mode": {
+            "values": [
+              "concept-children",
+              "concept-parent",
+              "concept",
+              "ensemble"
+            ],
+            "source": "record_field"
+          },
+          "modes": {
+            "values": [
+              [
+                "concept",
+                "concept-parent",
+                "concept-children"
+              ]
+            ],
+            "source": "record_field"
+          },
+          "requests": {
+            "values": [
+              5,
+              0,
+              9,
+              8,
+              7,
+              6
+            ],
+            "source": "record_field"
+          },
+          "rule": {
+            "values": [
+              ">=2-of-3+greedy_injective"
+            ],
+            "source": "record_field"
+          }
+        }
+      }
+    },
+    "llm-deepseek": {
+      "kind": "llm",
+      "code": {
+        "model": {
+          "value": "deepseek-v4-flash",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:run_llm_deepseek (model)"
+        },
+        "base_url": {
+          "value": "https://api.deepseek.com",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:run_llm_deepseek"
+        },
+        "top_k": {
+          "value": 5,
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:run_llm_deepseek (top_k)"
+        },
+        "temperature": {
+          "value": 0.0,
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:run_llm_deepseek (temperature)"
+        },
+        "max_workers": {
+          "value": 10,
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:run_llm_deepseek (max_workers)"
+        },
+        "structured_output": {
+          "value": false,
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:run_llm_deepseek (use_structured_output)"
+        },
+        "modes": {
+          "value": [
+            "concept",
+            "concept-parent",
+            "concept-children"
+          ],
+          "source": "code_constant",
+          "origin": "src/matchers/llm.py:ENSEMBLE_MODES"
+        },
+        "rule": {
+          "value": ">=2-of-3+greedy_injective",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:ENSEMBLE_RULE"
+        },
+        "ensemble": {
+          "value": ">=2-of-3+greedy_injective",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:ENSEMBLE_RULE"
+        },
+        "confidence_threshold": {
+          "value": 0.7,
+          "source": "code_constant",
+          "origin": "src/matchers/llm.py:CONFIDENCE_THRESHOLD"
+        },
+        "min_votes": {
+          "value": 2,
+          "source": "code_constant",
+          "origin": "src/matchers/llm.py:ENSEMBLE_MIN_VOTES"
+        },
+        "retriever": {
+          "value": "embedding-MiniLM",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:RETRIEVER_KIND"
+        }
+      },
+      "disk": {
+        "records": {
+          "value": 84,
+          "source": "file_mtime"
+        },
+        "newest_mtime": {
+          "value": "2026-09-27 02:17:01",
+          "source": "file_mtime"
+        },
+        "oldest_mtime": {
+          "value": "2026-09-27 00:18:54",
+          "source": "file_mtime"
+        },
+        "api_requests": {
+          "value": 3648,
+          "records_with_requests": 84,
+          "source": "record_field"
+        },
+        "record_fields": {
+          "approach": {
+            "values": [
+              "llm-deepseek"
+            ],
+            "source": "record_field"
+          },
+          "min_votes": {
+            "values": [
+              2
+            ],
+            "source": "record_field"
+          },
+          "mode": {
+            "values": [
+              "concept-children",
+              "concept-parent",
+              "concept",
+              "ensemble"
+            ],
+            "source": "record_field"
+          },
+          "modes": {
+            "values": [
+              [
+                "concept",
+                "concept-parent",
+                "concept-children"
+              ]
+            ],
+            "source": "record_field"
+          },
+          "requests": {
+            "values": [
+              29,
+              0,
+              59,
+              38,
+              103,
+              73
+            ],
+            "source": "record_field"
+          },
+          "rule": {
+            "values": [
+              ">=2-of-3+greedy_injective"
+            ],
+            "source": "record_field"
+          }
+        }
+      }
+    },
+    "llm-gpt": {
+      "kind": "llm",
+      "code": {
+        "model": {
+          "value": "openai/gpt-4.1-mini",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:run_llm_gpt (model)"
+        },
+        "base_url": {
+          "value": "https://api.kodikrouter.ru/v1",
+          "source": "code_constant",
+          "origin": "src/matchers/llm.py:LLMMatcher.__init__ (base_url, значение по умолчанию)"
+        },
+        "top_k": {
+          "value": 5,
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:run_llm_gpt (top_k)"
+        },
+        "temperature": {
+          "value": 0.0,
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:run_llm_gpt (temperature)"
+        },
+        "max_workers": {
+          "value": 10,
+          "source": "code_constant",
+          "origin": "src/matchers/llm.py:LLMMatcher.__init__ (max_workers, значение по умолчанию)"
+        },
+        "structured_output": {
+          "value": true,
+          "source": "code_constant",
+          "origin": "src/matchers/llm.py:LLMMatcher.__init__ (use_structured_output, значение по умолчанию)"
+        },
+        "modes": {
+          "value": [
+            "concept",
+            "concept-parent",
+            "concept-children"
+          ],
+          "source": "code_constant",
+          "origin": "src/matchers/llm.py:ENSEMBLE_MODES"
+        },
+        "rule": {
+          "value": ">=2-of-3+greedy_injective",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:ENSEMBLE_RULE"
+        },
+        "ensemble": {
+          "value": ">=2-of-3+greedy_injective",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:ENSEMBLE_RULE"
+        },
+        "confidence_threshold": {
+          "value": 0.7,
+          "source": "code_constant",
+          "origin": "src/matchers/llm.py:CONFIDENCE_THRESHOLD"
+        },
+        "min_votes": {
+          "value": 2,
+          "source": "code_constant",
+          "origin": "src/matchers/llm.py:ENSEMBLE_MIN_VOTES"
+        },
+        "retriever": {
+          "value": "embedding-MiniLM",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:RETRIEVER_KIND"
+        }
+      },
+      "disk": {
+        "records": {
+          "value": 84,
+          "source": "file_mtime"
+        },
+        "newest_mtime": {
+          "value": "2026-09-27 02:17:01",
+          "source": "file_mtime"
+        },
+        "oldest_mtime": {
+          "value": "2026-09-27 01:16:38",
+          "source": "file_mtime"
+        },
+        "api_requests": {
+          "value": 3648,
+          "records_with_requests": 84,
+          "source": "record_field"
+        },
+        "record_fields": {
+          "approach": {
+            "values": [
+              "llm-gpt"
+            ],
+            "source": "record_field"
+          },
+          "min_votes": {
+            "values": [
+              2
+            ],
+            "source": "record_field"
+          },
+          "mode": {
+            "values": [
+              "concept-children",
+              "concept-parent",
+              "concept",
+              "ensemble"
+            ],
+            "source": "record_field"
+          },
+          "modes": {
+            "values": [
+              [
+                "concept",
+                "concept-parent",
+                "concept-children"
+              ]
+            ],
+            "source": "record_field"
+          },
+          "requests": {
+            "values": [
+              29,
+              0,
+              59,
+              38,
+              103,
+              73
+            ],
+            "source": "record_field"
+          },
+          "rule": {
+            "values": [
+              ">=2-of-3+greedy_injective"
+            ],
+            "source": "record_field"
+          }
+        }
+      }
+    },
+    "llm-hybrid": {
+      "kind": "llm",
+      "code": {
+        "model": {
+          "value": "deepseek-v4-flash",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:run_llm_hybrid (model)"
+        },
+        "base_url": {
+          "value": "https://api.deepseek.com",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:run_llm_hybrid"
+        },
+        "top_k": {
+          "value": 5,
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:run_llm_hybrid (top_k)"
+        },
+        "temperature": {
+          "value": 0.0,
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:run_llm_hybrid (temperature)"
+        },
+        "max_workers": {
+          "value": 10,
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:run_llm_hybrid (max_workers)"
+        },
+        "structured_output": {
+          "value": false,
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:run_llm_hybrid (use_structured_output)"
+        },
+        "modes": {
+          "value": [
+            "concept",
+            "concept-parent",
+            "concept-children"
+          ],
+          "source": "code_constant",
+          "origin": "src/matchers/llm.py:ENSEMBLE_MODES"
+        },
+        "rule": {
+          "value": ">=2-of-3+greedy_injective",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:ENSEMBLE_RULE"
+        },
+        "ensemble": {
+          "value": ">=2-of-3+greedy_injective",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:ENSEMBLE_RULE"
+        },
+        "confidence_threshold": {
+          "value": 0.7,
+          "source": "code_constant",
+          "origin": "src/matchers/llm.py:CONFIDENCE_THRESHOLD"
+        },
+        "min_votes": {
+          "value": 2,
+          "source": "code_constant",
+          "origin": "src/matchers/llm.py:ENSEMBLE_MIN_VOTES"
+        },
+        "retriever": {
+          "value": "BM25+MiniLM",
+          "source": "code_constant",
+          "origin": "src/runners/compare.py:RETRIEVER_KIND"
+        }
+      },
+      "disk": {
+        "records": {
+          "value": 84,
+          "source": "file_mtime"
+        },
+        "newest_mtime": {
+          "value": "2026-09-27 02:17:01",
+          "source": "file_mtime"
+        },
+        "oldest_mtime": {
+          "value": "2026-09-27 00:52:20",
+          "source": "file_mtime"
+        },
+        "api_requests": {
+          "value": 3648,
+          "records_with_requests": 84,
+          "source": "record_field"
+        },
+        "record_fields": {
+          "approach": {
+            "values": [
+              "llm-hybrid"
+            ],
+            "source": "record_field"
+          },
+          "min_votes": {
+            "values": [
+              2
+            ],
+            "source": "record_field"
+          },
+          "mode": {
+            "values": [
+              "concept-children",
+              "concept-parent",
+              "concept",
+              "ensemble"
+            ],
+            "source": "record_field"
+          },
+          "modes": {
+            "values": [
+              [
+                "concept",
+                "concept-parent",
+                "concept-children"
+              ]
+            ],
+            "source": "record_field"
+          },
+          "requests": {
+            "values": [
+              29,
+              0,
+              59,
+              38,
+              103,
+              73
+            ],
+            "source": "record_field"
+          },
+          "rule": {
+            "values": [
+              ">=2-of-3+greedy_injective"
+            ],
+            "source": "record_field"
+          }
+        }
+      }
+    },
+    "string-equiv": {
+      "kind": "string",
+      "code": {
+        "model": {
+          "value": null,
+          "source": "code_constant",
+          "origin": "src/matchers/string_equiv.py:StringEquivMatcher",
+          "note": "лексическое совпадение имён, модель не используется."
+        },
+        "description_mode": {
+          "value": "raw names (normalised)",
+          "source": "code_constant",
+          "origin": "src/matchers/string_equiv.py:StringEquivMatcher.match",
+          "note": "сравниваются имена классов, приведённые к нижнему регистру."
+        },
+        "rule": {
+          "value": "не более одного матча на источник (ничья — наименьший id цели)",
+          "source": "code_constant",
+          "origin": "src/matchers/string_equiv.py:StringEquivMatcher.match"
+        }
+      },
+      "disk": {
+        "records": {
+          "value": 21,
+          "source": "file_mtime"
+        },
+        "newest_mtime": {
+          "value": "2026-09-27 00:11:53",
+          "source": "file_mtime"
+        },
+        "oldest_mtime": {
+          "value": "2026-09-27 00:11:53",
+          "source": "file_mtime"
+        },
+        "api_requests": {
+          "value": null,
+          "records_with_requests": 0,
+          "source": "record_field"
+        },
+        "record_fields": {
+          "approach": {
+            "values": [
+              "string-equiv"
+            ],
+            "source": "record_field"
+          }
+        }
+      }
+    }
+  }
+}

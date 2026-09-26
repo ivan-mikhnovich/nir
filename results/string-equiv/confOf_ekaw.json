@@ -9,7 +9,7 @@
   "matches": 8,
   "total_predicted": 9,
   "total_gt": 20,
-  "wall_time": 2.9167000320740044e-05,
+  "wall_time": 4.1951017919927835e-05,
   "match_pairs": [
     {
       "source_id": "confof#Social_event",

@@ -3,12 +3,52 @@
   "pair": "conference\u2194iasted",
   "source": "conference",
   "target": "iasted",
-  "precision": 0.7142857142857143,
-  "recall": 0.38461538461538464,
-  "f1": 0.5,
-  "matches": 5,
-  "total_predicted": 7,
+  "precision": 0.8,
+  "recall": 0.3076923076923077,
+  "f1": 0.4444444444444444,
+  "matches": 4,
+  "total_predicted": 5,
   "total_gt": 13,
-  "wall_time": 5.118099943501875e-05,
-  "mode": "ensemble"
+  "rule": ">=2-of-3+greedy_injective",
+  "min_votes": 2,
+  "modes": [
+    "concept",
+    "concept-parent",
+    "concept-children"
+  ],
+  "mode_requests": {
+    "concept": 31,
+    "concept-parent": 31,
+    "concept-children": 31
+  },
+  "requests": 0,
+  "wall_time": 0.0,
+  "mode": "ensemble",
+  "match_pairs": [
+    {
+      "source_id": "Conference#Review",
+      "target_id": "iasted#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Presentation",
+      "target_id": "iasted#Presentation",
+      "confidence": 0.975
+    },
+    {
+      "source_id": "Conference#Person",
+      "target_id": "iasted#Person",
+      "confidence": 0.9666666666666667
+    },
+    {
+      "source_id": "Conference#Tutorial",
+      "target_id": "iasted#Tutorial",
+      "confidence": 0.9333333333333333
+    },
+    {
+      "source_id": "Conference#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.9266666666666666
+    }
+  ]
 }

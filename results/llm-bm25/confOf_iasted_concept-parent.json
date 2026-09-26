@@ -4,26 +4,19 @@
   "source": "confOf",
   "target": "iasted",
   "precision": 1.0,
-  "recall": 0.4444444444444444,
-  "f1": 0.6153846153846153,
-  "matches": 4,
-  "total_predicted": 4,
+  "recall": 0.3333333333333333,
+  "f1": 0.5,
+  "matches": 3,
+  "total_predicted": 3,
   "total_gt": 9,
-  "wall_time": 14.80364175700015,
-  "api_time": 14.80349087599825,
-  "per_node": 0.389565549368375,
+  "wall_time": 6.903578906028997,
+  "api_time": 6.903415004955605,
+  "per_node": 0.18166881591988435,
+  "requests": 19,
+  "judgements": 35,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
-    {
-      "source_id": "confof#Author",
-      "target_id": "iasted#Author",
-      "confidence": 0.95
-    },
-    {
-      "source_id": "confof#Banquet",
-      "target_id": "iasted#Dinner_banquet",
-      "confidence": 0.9
-    },
     {
       "source_id": "confof#City",
       "target_id": "iasted#City",
@@ -33,6 +26,11 @@
       "source_id": "confof#Person",
       "target_id": "iasted#Person",
       "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Tutorial",
+      "target_id": "iasted#Tutorial",
+      "confidence": 0.93
     }
   ]
 }

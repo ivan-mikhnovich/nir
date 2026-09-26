@@ -3,26 +3,39 @@
   "pair": "cmt\u2194conference",
   "source": "cmt",
   "target": "conference",
-  "precision": 0.5,
-  "recall": 0.18181818181818182,
-  "f1": 0.26666666666666666,
-  "matches": 2,
-  "total_predicted": 4,
+  "precision": 0.6666666666666666,
+  "recall": 0.36363636363636365,
+  "f1": 0.4705882352941177,
+  "matches": 4,
+  "total_predicted": 6,
   "total_gt": 11,
-  "wall_time": 12.083854655000323,
-  "api_time": 12.083726823999314,
-  "per_node": 0.41668023531032117,
+  "wall_time": 5.05856458802009,
+  "api_time": 5.0584239870077,
+  "per_node": 0.1744284133450931,
+  "requests": 9,
+  "judgements": 15,
+  "retries": 0,
   "mode": "concept-children",
   "match_pairs": [
     {
+      "source_id": "cmt#Co-author",
+      "target_id": "Conference#Contribution_co-author",
+      "confidence": 0.98
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "Conference#Conference",
+      "confidence": 0.95
+    },
+    {
       "source_id": "cmt#Paper",
       "target_id": "Conference#Paper",
-      "confidence": 0.8
+      "confidence": 0.88
     },
     {
       "source_id": "cmt#Person",
       "target_id": "Conference#Person",
-      "confidence": 0.95
+      "confidence": 0.99
     },
     {
       "source_id": "cmt#Review",

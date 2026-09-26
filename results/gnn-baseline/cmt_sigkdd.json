@@ -1,10 +1,176 @@
 {
   "pair": "cmt\u2194sigkdd",
   "approach": "gnn-baseline",
-  "f1": 0.08,
-  "precision": 0.06666666666666667,
-  "recall": 0.1,
-  "matches": 1,
-  "total_predicted": 15,
-  "total_gt": 10
+  "source": "cmt",
+  "target": "sigkdd",
+  "f1": 0.4615384615384615,
+  "precision": 0.3103448275862069,
+  "recall": 0.9,
+  "matches": 9,
+  "total_predicted": 29,
+  "total_gt": 10,
+  "match_pairs": [
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "sigkdd#Conference",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "sigkdd#Author",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "sigkdd#Document",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "sigkdd#Person",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "sigkdd#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "sigkdd#Paper",
+      "confidence": 0.9999998807907104
+    },
+    {
+      "source_id": "cmt#Co-author",
+      "target_id": "sigkdd#Author_of_paper",
+      "confidence": 0.6722851991653442
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 0.6580384969711304
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "sigkdd#Program_Committee_member",
+      "confidence": 0.6033821105957031
+    },
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "sigkdd#Committee",
+      "confidence": 0.5914598703384399
+    },
+    {
+      "source_id": "cmt#ProgramCommittee",
+      "target_id": "sigkdd#Program_Committee",
+      "confidence": 0.527092456817627
+    },
+    {
+      "source_id": "cmt#PaperAbstract",
+      "target_id": "sigkdd#Best_Student_Paper_Supporter",
+      "confidence": 0.511614203453064
+    },
+    {
+      "source_id": "cmt#PaperFullVersion",
+      "target_id": "sigkdd#Best_Student_Paper_Award",
+      "confidence": 0.47981971502304077
+    },
+    {
+      "source_id": "cmt#AuthorNotReviewer",
+      "target_id": "sigkdd#Deadline_Author_notification",
+      "confidence": 0.45951467752456665
+    },
+    {
+      "source_id": "cmt#Decision",
+      "target_id": "sigkdd#Award",
+      "confidence": 0.44943809509277344
+    },
+    {
+      "source_id": "cmt#Bid",
+      "target_id": "sigkdd#Fee",
+      "confidence": 0.44568318128585815
+    },
+    {
+      "source_id": "cmt#Administrator",
+      "target_id": "sigkdd#Main_office",
+      "confidence": 0.4215892553329468
+    },
+    {
+      "source_id": "cmt#User",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 0.391306608915329
+    },
+    {
+      "source_id": "cmt#ConferenceChair",
+      "target_id": "sigkdd#Organizing_Committee",
+      "confidence": 0.3632487654685974
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeChair",
+      "target_id": "sigkdd#Program_Chair",
+      "confidence": 0.3592575490474701
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "sigkdd#Exhibitor",
+      "confidence": 0.3540734648704529
+    },
+    {
+      "source_id": "cmt#Acceptance",
+      "target_id": "sigkdd#Deadline",
+      "confidence": 0.33038660883903503
+    },
+    {
+      "source_id": "cmt#AssociatedChair",
+      "target_id": "sigkdd#Registration_SIGKDD_Member",
+      "confidence": 0.3303431272506714
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "sigkdd#Best_Paper_Awards_Committee",
+      "confidence": 0.2997252941131592
+    },
+    {
+      "source_id": "cmt#Meta-Reviewer",
+      "target_id": "sigkdd#Gold_Supporter",
+      "confidence": 0.29193592071533203
+    },
+    {
+      "source_id": "cmt#Preference",
+      "target_id": "sigkdd#Place",
+      "confidence": 0.28586485981941223
+    },
+    {
+      "source_id": "cmt#Meta-Review",
+      "target_id": "sigkdd#Best_Research_Paper_Award",
+      "confidence": 0.28042352199554443
+    },
+    {
+      "source_id": "cmt#Rejection",
+      "target_id": "sigkdd#Platinum_Supporter",
+      "confidence": 0.24245382845401764
+    },
+    {
+      "source_id": "cmt#ExternalReviewer",
+      "target_id": "sigkdd#Listener",
+      "confidence": 0.1551072895526886
+    }
+  ],
+  "seed": 42,
+  "config": {
+    "seed": 42,
+    "embedder": "sentence-transformers/all-MiniLM-L6-v2",
+    "hidden_dim": 384,
+    "out_dim": 384,
+    "num_layers": 1,
+    "dropout": 0.5,
+    "epochs": 60,
+    "lr": 0.003,
+    "weight_decay": 0.0001,
+    "neg_ratio": 3,
+    "synthetic_seeds": 3,
+    "linear": false,
+    "fold_mode": "pair-loo",
+    "fold": "baseline"
+  }
 }

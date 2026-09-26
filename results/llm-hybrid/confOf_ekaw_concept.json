@@ -3,46 +3,54 @@
   "pair": "confOf\u2194ekaw",
   "source": "confOf",
   "target": "ekaw",
-  "precision": 0.8888888888888888,
-  "recall": 0.4,
-  "f1": 0.5517241379310346,
-  "matches": 8,
-  "total_predicted": 9,
+  "precision": 1.0,
+  "recall": 0.6,
+  "f1": 0.7499999999999999,
+  "matches": 12,
+  "total_predicted": 12,
   "total_gt": 20,
-  "wall_time": 46.07818672099984,
-  "api_time": 46.03589920100012,
-  "per_node": 1.2114710316052664,
+  "wall_time": 18.6372237179894,
+  "api_time": 18.594495202996768,
+  "per_node": 0.4893288211314939,
+  "requests": 38,
+  "judgements": 116,
+  "retries": 0,
   "mode": "concept",
   "match_pairs": [
     {
       "source_id": "confof#Author",
       "target_id": "ekaw#Paper_Author",
-      "confidence": 0.95
+      "confidence": 0.82
     },
     {
       "source_id": "confof#Chair_PC",
       "target_id": "ekaw#PC_Chair",
-      "confidence": 1.0
+      "confidence": 0.95
     },
     {
       "source_id": "confof#Conference",
       "target_id": "ekaw#Conference",
-      "confidence": 1.0
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Event",
+      "target_id": "ekaw#Event",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Member_PC",
+      "target_id": "ekaw#PC_Member",
+      "confidence": 0.99
     },
     {
       "source_id": "confof#Participant",
       "target_id": "ekaw#Conference_Participant",
-      "confidence": 0.95
-    },
-    {
-      "source_id": "confof#Regular",
-      "target_id": "ekaw#Regular_Paper",
       "confidence": 0.9
     },
     {
-      "source_id": "confof#Social_event",
-      "target_id": "ekaw#Social_Event",
-      "confidence": 0.95
+      "source_id": "confof#Person",
+      "target_id": "ekaw#Person",
+      "confidence": 0.93
     },
     {
       "source_id": "confof#Student",
@@ -52,12 +60,22 @@
     {
       "source_id": "confof#Topic",
       "target_id": "ekaw#Research_Topic",
-      "confidence": 0.85
+      "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Tutorial",
+      "target_id": "ekaw#Tutorial",
+      "confidence": 0.96
     },
     {
       "source_id": "confof#University",
       "target_id": "ekaw#University",
       "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Workshop",
+      "target_id": "ekaw#Workshop",
+      "confidence": 0.99
     }
   ]
 }

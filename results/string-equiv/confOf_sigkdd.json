@@ -9,7 +9,7 @@
   "matches": 4,
   "total_predicted": 4,
   "total_gt": 6,
-  "wall_time": 2.1728001229348592e-05,
+  "wall_time": 3.336102236062288e-05,
   "match_pairs": [
     {
       "source_id": "confof#Person",

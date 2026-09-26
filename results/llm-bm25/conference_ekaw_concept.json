@@ -3,15 +3,18 @@
   "pair": "conference\u2194ekaw",
   "source": "conference",
   "target": "ekaw",
-  "precision": 0.6428571428571429,
-  "recall": 0.391304347826087,
-  "f1": 0.4864864864864865,
-  "matches": 9,
-  "total_predicted": 14,
+  "precision": 0.5833333333333334,
+  "recall": 0.30434782608695654,
+  "f1": 0.4,
+  "matches": 7,
+  "total_predicted": 12,
   "total_gt": 23,
-  "wall_time": 38.91087787400011,
-  "api_time": 38.90873136800019,
-  "per_node": 0.6594700231864439,
+  "wall_time": 17.53572948195506,
+  "api_time": 17.533547084021848,
+  "per_node": 0.2971787641359635,
+  "requests": 41,
+  "judgements": 83,
+  "retries": 0,
   "mode": "concept",
   "match_pairs": [
     {
@@ -22,6 +25,11 @@
     {
       "source_id": "Conference#Camera_ready_contribution",
       "target_id": "ekaw#Camera_Ready_Paper",
+      "confidence": 0.88
+    },
+    {
+      "source_id": "Conference#Conference_contribution",
+      "target_id": "ekaw#Conference_Paper",
       "confidence": 0.9
     },
     {
@@ -32,37 +40,22 @@
     {
       "source_id": "Conference#Conference_volume",
       "target_id": "ekaw#Conference_Proceedings",
-      "confidence": 0.95
+      "confidence": 0.9
     },
     {
       "source_id": "Conference#Invited_speaker",
       "target_id": "ekaw#Invited_Speaker",
-      "confidence": 0.95
+      "confidence": 1.0
     },
     {
       "source_id": "Conference#Invited_talk",
       "target_id": "ekaw#Invited_Talk",
-      "confidence": 0.95
-    },
-    {
-      "source_id": "Conference#Paper",
-      "target_id": "ekaw#Paper",
-      "confidence": 0.95
-    },
-    {
-      "source_id": "Conference#Person",
-      "target_id": "ekaw#Person",
-      "confidence": 1.0
-    },
-    {
-      "source_id": "Conference#Poster",
-      "target_id": "ekaw#Poster_Paper",
-      "confidence": 0.95
+      "confidence": 0.98
     },
     {
       "source_id": "Conference#Rejected_contribution",
       "target_id": "ekaw#Rejected_Paper",
-      "confidence": 0.9
+      "confidence": 0.86
     },
     {
       "source_id": "Conference#Review",
@@ -72,17 +65,17 @@
     {
       "source_id": "Conference#Track",
       "target_id": "ekaw#Track",
-      "confidence": 1.0
+      "confidence": 0.95
     },
     {
       "source_id": "Conference#Tutorial",
       "target_id": "ekaw#Tutorial",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
       "source_id": "Conference#Workshop",
       "target_id": "ekaw#Workshop",
-      "confidence": 0.9
+      "confidence": 0.96
     }
   ]
 }

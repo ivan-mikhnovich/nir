@@ -3,21 +3,29 @@
   "pair": "edas\u2194iasted",
   "source": "edas",
   "target": "iasted",
-  "precision": 0.47368421052631576,
-  "recall": 0.47368421052631576,
-  "f1": 0.47368421052631576,
-  "matches": 9,
-  "total_predicted": 19,
+  "precision": 0.47619047619047616,
+  "recall": 0.5263157894736842,
+  "f1": 0.5,
+  "matches": 10,
+  "total_predicted": 21,
   "total_gt": 19,
-  "wall_time": 83.3391167990012,
-  "api_time": 83.2556805589993,
-  "per_node": 0.8083075782427117,
+  "wall_time": 116.11301584204193,
+  "api_time": 116.03596184501657,
+  "per_node": 1.1265627363593842,
+  "requests": 103,
+  "judgements": 515,
+  "retries": 0,
   "mode": "concept",
   "match_pairs": [
     {
+      "source_id": "edas#AccpetIfRoomRating",
+      "target_id": "iasted#Accepting_manuscript",
+      "confidence": 0.85
+    },
+    {
       "source_id": "edas#Attendee",
       "target_id": "iasted#Record_of_attendance",
-      "confidence": 0.85
+      "confidence": 0.9
     },
     {
       "source_id": "edas#Author",
@@ -32,12 +40,12 @@
     {
       "source_id": "edas#ConferenceVenuePlace",
       "target_id": "iasted#Conference_building",
-      "confidence": 0.85
+      "confidence": 0.9
     },
     {
       "source_id": "edas#DiningPlace",
       "target_id": "iasted#Conference_restaurant",
-      "confidence": 0.85
+      "confidence": 0.9
     },
     {
       "source_id": "edas#MealEvent",
@@ -47,16 +55,21 @@
     {
       "source_id": "edas#MeetingRoomPlace",
       "target_id": "iasted#Session_room",
-      "confidence": 0.85
+      "confidence": 0.9
     },
     {
       "source_id": "edas#PaperPresentation",
       "target_id": "iasted#Presentation",
-      "confidence": 0.85
+      "confidence": 0.9
     },
     {
       "source_id": "edas#Person",
       "target_id": "iasted#Person",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Place",
+      "target_id": "iasted#Conference_city",
       "confidence": 0.95
     },
     {
@@ -72,7 +85,7 @@
     {
       "source_id": "edas#RejectedPaper",
       "target_id": "iasted#Refusing_manuscript",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
       "source_id": "edas#Review",
@@ -96,17 +109,17 @@
     },
     {
       "source_id": "edas#Sponsorship",
-      "target_id": "iasted#Sponsor",
-      "confidence": 0.9
-    },
-    {
-      "source_id": "edas#TPCMember",
-      "target_id": "iasted#Technical_commitee",
-      "confidence": 0.85
+      "target_id": "iasted#Sponzorship",
+      "confidence": 0.95
     },
     {
       "source_id": "edas#WelcomeTalk",
       "target_id": "iasted#Welcome_address",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Workshop",
+      "target_id": "iasted#Conference_activity",
       "confidence": 0.9
     }
   ]

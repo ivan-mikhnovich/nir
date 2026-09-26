@@ -9,9 +9,12 @@
   "matches": 5,
   "total_predicted": 5,
   "total_gt": 10,
-  "wall_time": 11.675976462000108,
-  "api_time": 11.67585821999819,
-  "per_node": 0.40261580068959274,
+  "wall_time": 5.469493778015021,
+  "api_time": 5.46933929703664,
+  "per_node": 0.18859790679436692,
+  "requests": 6,
+  "judgements": 10,
+  "retries": 0,
   "mode": "concept-children",
   "match_pairs": [
     {
@@ -22,12 +25,12 @@
     {
       "source_id": "cmt#Document",
       "target_id": "sigkdd#Document",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
       "source_id": "cmt#Paper",
       "target_id": "sigkdd#Paper",
-      "confidence": 1.0
+      "confidence": 0.95
     },
     {
       "source_id": "cmt#Person",

@@ -3,15 +3,18 @@
   "pair": "conference\u2194edas",
   "source": "conference",
   "target": "edas",
-  "precision": 0.7,
-  "recall": 0.5,
-  "f1": 0.5833333333333334,
-  "matches": 7,
+  "precision": 0.8,
+  "recall": 0.5714285714285714,
+  "f1": 0.6666666666666666,
+  "matches": 8,
   "total_predicted": 10,
   "total_gt": 14,
-  "wall_time": 49.923435248001624,
-  "api_time": 49.923102103999554,
-  "per_node": 0.846154272949145,
+  "wall_time": 25.388622798025608,
+  "api_time": 25.388259195024148,
+  "per_node": 0.4303094778817652,
+  "requests": 59,
+  "judgements": 195,
+  "retries": 0,
   "mode": "concept-children",
   "match_pairs": [
     {
@@ -22,27 +25,27 @@
     {
       "source_id": "Conference#Call_for_paper",
       "target_id": "edas#CallForPapers",
-      "confidence": 1.0
+      "confidence": 0.98
     },
     {
-      "source_id": "Conference#Conference_www",
+      "source_id": "Conference#Conference",
       "target_id": "edas#Conference",
-      "confidence": 0.9
-    },
-    {
-      "source_id": "Conference#Contribution_co-author",
-      "target_id": "edas#Author",
-      "confidence": 0.9
+      "confidence": 0.99
     },
     {
       "source_id": "Conference#Organization",
       "target_id": "edas#Organization",
-      "confidence": 1.0
+      "confidence": 0.98
     },
     {
-      "source_id": "Conference#Paper",
-      "target_id": "edas#Paper",
-      "confidence": 1.0
+      "source_id": "Conference#Person",
+      "target_id": "edas#Person",
+      "confidence": 0.99
+    },
+    {
+      "source_id": "Conference#Rejected_contribution",
+      "target_id": "edas#RejectedPaper",
+      "confidence": 0.95
     },
     {
       "source_id": "Conference#Review",

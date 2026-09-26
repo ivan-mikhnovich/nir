@@ -9,9 +9,12 @@
   "matches": 7,
   "total_predicted": 11,
   "total_gt": 11,
-  "wall_time": 15.49915841999973,
-  "api_time": 15.498937177999323,
-  "per_node": 0.5344461095861835,
+  "wall_time": 8.929200145008508,
+  "api_time": 8.928958303004038,
+  "per_node": 0.30789511389669094,
+  "requests": 29,
+  "judgements": 145,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
@@ -47,7 +50,7 @@
     {
       "source_id": "cmt#Paper",
       "target_id": "Conference#Paper",
-      "confidence": 0.95
+      "confidence": 0.98
     },
     {
       "source_id": "cmt#ProgramCommittee",

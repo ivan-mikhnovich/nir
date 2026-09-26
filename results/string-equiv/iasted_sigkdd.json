@@ -9,7 +9,7 @@
   "matches": 11,
   "total_predicted": 12,
   "total_gt": 15,
-  "wall_time": 3.707699943333864e-05,
+  "wall_time": 6.495002890005708e-05,
   "match_pairs": [
     {
       "source_id": "iasted#Document",

@@ -4,14 +4,17 @@
   "source": "cmt",
   "target": "sigkdd",
   "precision": 1.0,
-  "recall": 0.5,
-  "f1": 0.6666666666666666,
-  "matches": 5,
-  "total_predicted": 5,
+  "recall": 0.6,
+  "f1": 0.7499999999999999,
+  "matches": 6,
+  "total_predicted": 6,
   "total_gt": 10,
-  "wall_time": 24.118772452000485,
-  "api_time": 24.118584378999003,
-  "per_node": 0.8316753234137587,
+  "wall_time": 12.43814714398468,
+  "api_time": 12.437922130979132,
+  "per_node": 0.4288938665854873,
+  "requests": 29,
+  "judgements": 115,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
@@ -27,11 +30,16 @@
     {
       "source_id": "cmt#ProgramCommittee",
       "target_id": "sigkdd#Program_Committee",
-      "confidence": 0.95
+      "confidence": 0.99
     },
     {
       "source_id": "cmt#ProgramCommitteeChair",
       "target_id": "sigkdd#Program_Chair",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "sigkdd#Program_Committee_member",
       "confidence": 0.95
     },
     {

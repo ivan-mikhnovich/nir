@@ -9,48 +9,24 @@
   "matches": 8,
   "total_predicted": 29,
   "total_gt": 8,
-  "wall_time": 0.018805761999828974,
+  "wall_time": 0.025118383986409754,
   "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "postprocess": "greedy_injective",
   "match_pairs": [
     {
-      "source_id": "cmt#Acceptance",
-      "target_id": "edas#AcceptRating",
-      "confidence": 0.5719085931777954
+      "source_id": "cmt#Person",
+      "target_id": "edas#Person",
+      "confidence": 1.000000238418579
     },
     {
-      "source_id": "cmt#Administrator",
-      "target_id": "edas#GovernmentOrganization",
-      "confidence": 0.49300310015678406
-    },
-    {
-      "source_id": "cmt#AssociatedChair",
-      "target_id": "edas#ConferenceChair",
-      "confidence": 0.5898122787475586
+      "source_id": "cmt#Review",
+      "target_id": "edas#Review",
+      "confidence": 1.000000238418579
     },
     {
       "source_id": "cmt#Author",
       "target_id": "edas#Author",
       "confidence": 1.0
-    },
-    {
-      "source_id": "cmt#AuthorNotReviewer",
-      "target_id": "edas#Author",
-      "confidence": 0.5061948299407959
-    },
-    {
-      "source_id": "cmt#Bid",
-      "target_id": "edas#Conference",
-      "confidence": 0.37156498432159424
-    },
-    {
-      "source_id": "cmt#Chairman",
-      "target_id": "edas#Organization",
-      "confidence": 0.4347526431083679
-    },
-    {
-      "source_id": "cmt#Co-author",
-      "target_id": "edas#Author",
-      "confidence": 0.7693232297897339
     },
     {
       "source_id": "cmt#Conference",
@@ -63,34 +39,9 @@
       "confidence": 1.0
     },
     {
-      "source_id": "cmt#ConferenceMember",
-      "target_id": "edas#Conference",
-      "confidence": 0.7399160861968994
-    },
-    {
-      "source_id": "cmt#Decision",
-      "target_id": "edas#Review",
-      "confidence": 0.4464840292930603
-    },
-    {
       "source_id": "cmt#Document",
       "target_id": "edas#Document",
       "confidence": 1.0
-    },
-    {
-      "source_id": "cmt#ExternalReviewer",
-      "target_id": "edas#CallForReviews",
-      "confidence": 0.5693364143371582
-    },
-    {
-      "source_id": "cmt#Meta-Review",
-      "target_id": "edas#Review",
-      "confidence": 0.7003583908081055
-    },
-    {
-      "source_id": "cmt#Meta-Reviewer",
-      "target_id": "edas#Reviewer",
-      "confidence": 0.8213430047035217
     },
     {
       "source_id": "cmt#Paper",
@@ -98,9 +49,14 @@
       "confidence": 1.0
     },
     {
-      "source_id": "cmt#PaperAbstract",
-      "target_id": "edas#Paper",
-      "confidence": 0.756304919719696
+      "source_id": "cmt#Reviewer",
+      "target_id": "edas#Reviewer",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "edas#ConferenceSession",
+      "confidence": 0.7133585214614868
     },
     {
       "source_id": "cmt#PaperFullVersion",
@@ -108,14 +64,29 @@
       "confidence": 0.6847589612007141
     },
     {
-      "source_id": "cmt#Person",
-      "target_id": "edas#Person",
-      "confidence": 1.000000238418579
+      "source_id": "cmt#Meta-Review",
+      "target_id": "edas#ReviewRating",
+      "confidence": 0.6271159052848816
     },
     {
-      "source_id": "cmt#Preference",
+      "source_id": "cmt#Acceptance",
       "target_id": "edas#AcceptRating",
-      "confidence": 0.35609492659568787
+      "confidence": 0.5719085931777954
+    },
+    {
+      "source_id": "cmt#ExternalReviewer",
+      "target_id": "edas#CallForReviews",
+      "confidence": 0.5693364143371582
+    },
+    {
+      "source_id": "cmt#Rejection",
+      "target_id": "edas#RejectRating",
+      "confidence": 0.5526888370513916
+    },
+    {
+      "source_id": "cmt#Meta-Reviewer",
+      "target_id": "edas#ReviewQuestion",
+      "confidence": 0.5501018762588501
     },
     {
       "source_id": "cmt#ProgramCommittee",
@@ -124,8 +95,23 @@
     },
     {
       "source_id": "cmt#ProgramCommitteeChair",
-      "target_id": "edas#ConferenceChair",
-      "confidence": 0.5390276908874512
+      "target_id": "edas#SessionChair",
+      "confidence": 0.5088859796524048
+    },
+    {
+      "source_id": "cmt#Administrator",
+      "target_id": "edas#GovernmentOrganization",
+      "confidence": 0.49300310015678406
+    },
+    {
+      "source_id": "cmt#PaperAbstract",
+      "target_id": "edas#PublishedPaper",
+      "confidence": 0.48868435621261597
+    },
+    {
+      "source_id": "cmt#AuthorNotReviewer",
+      "target_id": "edas#PersonalReviewHistory",
+      "confidence": 0.4586276710033417
     },
     {
       "source_id": "cmt#ProgramCommitteeMember",
@@ -133,19 +119,9 @@
       "confidence": 0.43680718541145325
     },
     {
-      "source_id": "cmt#Rejection",
-      "target_id": "edas#RejectRating",
-      "confidence": 0.5526888370513916
-    },
-    {
-      "source_id": "cmt#Review",
-      "target_id": "edas#Review",
-      "confidence": 1.000000238418579
-    },
-    {
-      "source_id": "cmt#Reviewer",
-      "target_id": "edas#Reviewer",
-      "confidence": 1.0
+      "source_id": "cmt#Chairman",
+      "target_id": "edas#Organization",
+      "confidence": 0.4347526431083679
     },
     {
       "source_id": "cmt#SubjectArea",
@@ -153,9 +129,34 @@
       "confidence": 0.4278295934200287
     },
     {
+      "source_id": "cmt#Decision",
+      "target_id": "edas#Call",
+      "confidence": 0.41845405101776123
+    },
+    {
+      "source_id": "cmt#AssociatedChair",
+      "target_id": "edas#CryptographyTopic",
+      "confidence": 0.33742228150367737
+    },
+    {
       "source_id": "cmt#User",
-      "target_id": "edas#Person",
-      "confidence": 0.5441257953643799
+      "target_id": "edas#Country",
+      "confidence": 0.3314822316169739
+    },
+    {
+      "source_id": "cmt#Bid",
+      "target_id": "edas#Sponsorship",
+      "confidence": 0.3194417357444763
+    },
+    {
+      "source_id": "cmt#Preference",
+      "target_id": "edas#PerformanceTopic",
+      "confidence": 0.29976925253868103
+    },
+    {
+      "source_id": "cmt#Co-author",
+      "target_id": "edas#ConferenceDinner",
+      "confidence": 0.27112793922424316
     }
   ]
 }

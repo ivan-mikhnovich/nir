@@ -4,21 +4,19 @@
   "source": "cmt",
   "target": "sigkdd",
   "precision": 1.0,
-  "recall": 0.6,
-  "f1": 0.7499999999999999,
-  "matches": 6,
-  "total_predicted": 6,
+  "recall": 0.5,
+  "f1": 0.6666666666666666,
+  "matches": 5,
+  "total_predicted": 5,
   "total_gt": 10,
-  "wall_time": 9.001590365998709,
-  "api_time": 9.001471483999921,
-  "per_node": 0.3103955684137904,
+  "wall_time": 5.465176545025315,
+  "api_time": 5.465038443973754,
+  "per_node": 0.18844960151633633,
+  "requests": 6,
+  "judgements": 10,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
-    {
-      "source_id": "cmt#Author",
-      "target_id": "sigkdd#Author",
-      "confidence": 0.8
-    },
     {
       "source_id": "cmt#Conference",
       "target_id": "sigkdd#Conference",
@@ -32,17 +30,17 @@
     {
       "source_id": "cmt#Paper",
       "target_id": "sigkdd#Paper",
-      "confidence": 0.95
+      "confidence": 0.98
     },
     {
       "source_id": "cmt#Person",
       "target_id": "sigkdd#Person",
-      "confidence": 1.0
+      "confidence": 0.95
     },
     {
       "source_id": "cmt#Review",
       "target_id": "sigkdd#Review",
-      "confidence": 1.0
+      "confidence": 0.99
     }
   ]
 }

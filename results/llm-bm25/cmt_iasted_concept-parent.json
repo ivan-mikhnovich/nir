@@ -3,22 +3,20 @@
   "pair": "cmt\u2194iasted",
   "source": "cmt",
   "target": "iasted",
-  "precision": 0.75,
-  "recall": 0.75,
-  "f1": 0.75,
-  "matches": 3,
-  "total_predicted": 4,
+  "precision": 0.6666666666666666,
+  "recall": 0.5,
+  "f1": 0.5714285714285715,
+  "matches": 2,
+  "total_predicted": 3,
   "total_gt": 4,
-  "wall_time": 11.411823591999564,
-  "api_time": 11.411714540998219,
-  "per_node": 0.3935073979654558,
+  "wall_time": 7.061437173979357,
+  "api_time": 7.061315801984165,
+  "per_node": 0.24349364834428155,
+  "requests": 7,
+  "judgements": 5,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
-    {
-      "source_id": "cmt#Author",
-      "target_id": "iasted#Author",
-      "confidence": 0.95
-    },
     {
       "source_id": "cmt#Document",
       "target_id": "iasted#Document",
@@ -30,9 +28,9 @@
       "confidence": 1.0
     },
     {
-      "source_id": "cmt#Reviewer",
-      "target_id": "iasted#Reviewer",
-      "confidence": 0.9
+      "source_id": "cmt#Review",
+      "target_id": "iasted#Review",
+      "confidence": 0.98
     }
   ]
 }

@@ -3,35 +3,43 @@
   "pair": "edas\u2194sigkdd",
   "source": "edas",
   "target": "sigkdd",
-  "precision": 1.0,
-  "recall": 0.5454545454545454,
-  "f1": 0.7058823529411764,
-  "matches": 6,
-  "total_predicted": 6,
+  "precision": 0.875,
+  "recall": 0.6363636363636364,
+  "f1": 0.7368421052631579,
+  "matches": 7,
+  "total_predicted": 8,
   "total_gt": 11,
-  "wall_time": 71.74863748100324,
-  "api_time": 71.74816001399813,
-  "per_node": 0.6965840778058071,
+  "wall_time": 30.05833370500477,
+  "api_time": 30.057820250978693,
+  "per_node": 0.2918234975823174,
+  "requests": 103,
+  "judgements": 468,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
-      "source_id": "edas#AccommodationPlace",
-      "target_id": "sigkdd#Hotel",
-      "confidence": 0.9
-    },
-    {
       "source_id": "edas#Author",
       "target_id": "sigkdd#Author",
-      "confidence": 0.95
+      "confidence": 0.98
     },
     {
-      "source_id": "edas#ConferenceVenuePlace",
-      "target_id": "sigkdd#Conference_hall",
-      "confidence": 0.9
+      "source_id": "edas#Conference",
+      "target_id": "sigkdd#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "edas#Document",
+      "target_id": "sigkdd#Document",
+      "confidence": 1.0
     },
     {
       "source_id": "edas#Paper",
       "target_id": "sigkdd#Paper",
+      "confidence": 0.99
+    },
+    {
+      "source_id": "edas#Person",
+      "target_id": "sigkdd#Person",
       "confidence": 0.95
     },
     {
@@ -43,6 +51,11 @@
       "source_id": "edas#Review",
       "target_id": "sigkdd#Review",
       "confidence": 1.0
+    },
+    {
+      "source_id": "edas#TPCMember",
+      "target_id": "sigkdd#Program_Committee_member",
+      "confidence": 0.9
     }
   ]
 }

@@ -4,45 +4,33 @@
   "source": "cmt",
   "target": "confOf",
   "precision": 1.0,
-  "recall": 0.6,
-  "f1": 0.7499999999999999,
-  "matches": 6,
-  "total_predicted": 6,
+  "recall": 0.3,
+  "f1": 0.4615384615384615,
+  "matches": 3,
+  "total_predicted": 3,
   "total_gt": 10,
-  "wall_time": 24.85474221199911,
-  "api_time": 24.854558635999638,
-  "per_node": 0.857053746068953,
+  "wall_time": 13.699811040016357,
+  "api_time": 13.699616689002141,
+  "per_node": 0.4724005754828325,
+  "requests": 29,
+  "judgements": 100,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
-      "source_id": "cmt#Administrator",
-      "target_id": "confof#Administrator",
-      "confidence": 0.85
-    },
-    {
-      "source_id": "cmt#Author",
-      "target_id": "confof#Author",
-      "confidence": 0.9
-    },
-    {
       "source_id": "cmt#Conference",
       "target_id": "confof#Conference",
-      "confidence": 1.0
+      "confidence": 0.95
     },
     {
       "source_id": "cmt#Person",
       "target_id": "confof#Person",
-      "confidence": 0.95
-    },
-    {
-      "source_id": "cmt#ProgramCommitteeMember",
-      "target_id": "confof#Member_PC",
-      "confidence": 0.95
+      "confidence": 1.0
     },
     {
       "source_id": "cmt#SubjectArea",
       "target_id": "confof#Topic",
-      "confidence": 0.9
+      "confidence": 0.92
     }
   ]
 }

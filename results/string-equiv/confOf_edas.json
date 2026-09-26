@@ -9,7 +9,7 @@
   "matches": 8,
   "total_predicted": 9,
   "total_gt": 14,
-  "wall_time": 3.727599869307596e-05,
+  "wall_time": 5.034997593611479e-05,
   "match_pairs": [
     {
       "source_id": "confof#Reception",

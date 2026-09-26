@@ -3,36 +3,39 @@
   "pair": "confOf\u2194conference",
   "source": "conference",
   "target": "confOf",
-  "precision": 0.6666666666666666,
-  "recall": 0.36363636363636365,
-  "f1": 0.4705882352941177,
-  "matches": 4,
-  "total_predicted": 6,
+  "precision": 0.8571428571428571,
+  "recall": 0.5454545454545454,
+  "f1": 0.6666666666666665,
+  "matches": 6,
+  "total_predicted": 7,
   "total_gt": 11,
-  "wall_time": 52.70471428100063,
-  "api_time": 52.70439669899861,
-  "per_node": 0.8932948593050611,
+  "wall_time": 22.584053457016125,
+  "api_time": 22.583728533994872,
+  "per_node": 0.3827750598982182,
+  "requests": 59,
+  "judgements": 210,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
       "source_id": "Conference#Conference",
       "target_id": "confof#Conference",
-      "confidence": 0.95
+      "confidence": 1.0
     },
     {
-      "source_id": "Conference#Conference_contributor",
-      "target_id": "confof#Author",
-      "confidence": 0.9
+      "source_id": "Conference#Organization",
+      "target_id": "confof#Organization",
+      "confidence": 0.98
     },
     {
       "source_id": "Conference#Paper",
       "target_id": "confof#Paper",
-      "confidence": 0.95
+      "confidence": 0.9
     },
     {
       "source_id": "Conference#Person",
       "target_id": "confof#Person",
-      "confidence": 0.99
+      "confidence": 0.98
     },
     {
       "source_id": "Conference#Poster",
@@ -43,6 +46,11 @@
       "source_id": "Conference#Topic",
       "target_id": "confof#Topic",
       "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Workshop",
+      "target_id": "confof#Workshop",
+      "confidence": 0.86
     }
   ]
 }

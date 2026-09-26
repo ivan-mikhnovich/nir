@@ -3,45 +3,43 @@
   "pair": "cmt\u2194conference",
   "source": "cmt",
   "target": "conference",
-  "precision": 0.6666666666666666,
+  "precision": 0.8,
   "recall": 0.36363636363636365,
-  "f1": 0.4705882352941177,
+  "f1": 0.5000000000000001,
   "matches": 4,
-  "total_predicted": 6,
+  "total_predicted": 5,
   "total_gt": 11,
-  "wall_time": 25.358605499999612,
-  "api_time": 25.358387915001003,
-  "per_node": 0.8744271694827932,
+  "wall_time": 12.804850033018738,
+  "api_time": 12.80463216098724,
+  "per_node": 0.44153904003404276,
+  "requests": 29,
+  "judgements": 115,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
-    {
-      "source_id": "cmt#Chairman",
-      "target_id": "Conference#Chair",
-      "confidence": 0.95
-    },
     {
       "source_id": "cmt#Conference",
       "target_id": "Conference#Conference",
       "confidence": 1.0
     },
     {
-      "source_id": "cmt#Paper",
-      "target_id": "Conference#Paper",
-      "confidence": 0.95
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "Conference#Conference_participant",
+      "confidence": 0.8
     },
     {
       "source_id": "cmt#ProgramCommittee",
       "target_id": "Conference#Program_committee",
-      "confidence": 0.95
+      "confidence": 0.99
     },
     {
       "source_id": "cmt#Review",
       "target_id": "Conference#Review",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
-      "source_id": "cmt#Reviewer",
-      "target_id": "Conference#Reviewer",
+      "source_id": "cmt#SubjectArea",
+      "target_id": "Conference#Topic",
       "confidence": 0.95
     }
   ]

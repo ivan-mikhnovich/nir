@@ -9,7 +9,7 @@
   "matches": 8,
   "total_predicted": 8,
   "total_gt": 8,
-  "wall_time": 4.28059993282659e-05,
+  "wall_time": 7.524999091401696e-05,
   "match_pairs": [
     {
       "source_id": "cmt#Reviewer",

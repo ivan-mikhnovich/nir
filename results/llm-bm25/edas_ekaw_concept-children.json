@@ -3,15 +3,18 @@
   "pair": "edas\u2194ekaw",
   "source": "edas",
   "target": "ekaw",
-  "precision": 0.8,
-  "recall": 0.21052631578947367,
-  "f1": 0.3333333333333333,
-  "matches": 4,
-  "total_predicted": 5,
+  "precision": 0.8333333333333334,
+  "recall": 0.2631578947368421,
+  "f1": 0.39999999999999997,
+  "matches": 5,
+  "total_predicted": 6,
   "total_gt": 19,
-  "wall_time": 14.647471234999102,
-  "api_time": 14.647237203000259,
-  "per_node": 0.14220618643689573,
+  "wall_time": 5.537202070001513,
+  "api_time": 5.536931388021912,
+  "per_node": 0.05375661541768847,
+  "requests": 11,
+  "judgements": 11,
+  "retries": 0,
   "mode": "concept-children",
   "match_pairs": [
     {
@@ -27,17 +30,22 @@
     {
       "source_id": "edas#Person",
       "target_id": "ekaw#Person",
-      "confidence": 0.85
+      "confidence": 0.95
     },
     {
-      "source_id": "edas#Review",
-      "target_id": "ekaw#Review",
-      "confidence": 1.0
-    },
-    {
-      "source_id": "edas#Reviewer",
-      "target_id": "ekaw#Possible_Reviewer",
+      "source_id": "edas#Presenter",
+      "target_id": "ekaw#Presenter",
       "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Topic",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Workshop",
+      "target_id": "ekaw#Workshop",
+      "confidence": 0.95
     }
   ]
 }

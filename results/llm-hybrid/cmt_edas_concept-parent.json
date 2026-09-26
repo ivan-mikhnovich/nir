@@ -3,31 +3,29 @@
   "pair": "cmt\u2194edas",
   "source": "cmt",
   "target": "edas",
-  "precision": 0.8571428571428571,
+  "precision": 0.75,
   "recall": 0.75,
-  "f1": 0.7999999999999999,
+  "f1": 0.75,
   "matches": 6,
-  "total_predicted": 7,
+  "total_predicted": 8,
   "total_gt": 8,
-  "wall_time": 29.489978387000065,
-  "api_time": 29.489780451000115,
-  "per_node": 1.0168889810689694,
+  "wall_time": 13.544665534980595,
+  "api_time": 13.544444273982663,
+  "per_node": 0.4670498025511263,
+  "requests": 29,
+  "judgements": 125,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
-    {
-      "source_id": "cmt#Author",
-      "target_id": "edas#Author",
-      "confidence": 1.0
-    },
     {
       "source_id": "cmt#Conference",
       "target_id": "edas#Conference",
       "confidence": 1.0
     },
     {
-      "source_id": "cmt#ConferenceChair",
-      "target_id": "edas#ConferenceChair",
-      "confidence": 0.8
+      "source_id": "cmt#Document",
+      "target_id": "edas#Document",
+      "confidence": 0.95
     },
     {
       "source_id": "cmt#Paper",
@@ -35,19 +33,29 @@
       "confidence": 0.95
     },
     {
+      "source_id": "cmt#Person",
+      "target_id": "edas#Person",
+      "confidence": 0.95
+    },
+    {
       "source_id": "cmt#ProgramCommitteeMember",
       "target_id": "edas#TPCMember",
-      "confidence": 0.95
+      "confidence": 0.93
     },
     {
       "source_id": "cmt#Review",
       "target_id": "edas#Review",
-      "confidence": 1.0
+      "confidence": 0.99
     },
     {
       "source_id": "cmt#Reviewer",
       "target_id": "edas#Reviewer",
       "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "edas#Topic",
+      "confidence": 0.9
     }
   ]
 }

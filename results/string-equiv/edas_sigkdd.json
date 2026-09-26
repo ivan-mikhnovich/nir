@@ -9,7 +9,7 @@
   "matches": 7,
   "total_predicted": 7,
   "total_gt": 11,
-  "wall_time": 3.262699829065241e-05,
+  "wall_time": 5.352095467969775e-05,
   "match_pairs": [
     {
       "source_id": "edas#Review",

@@ -3,41 +3,39 @@
   "pair": "edas\u2194ekaw",
   "source": "edas",
   "target": "ekaw",
-  "precision": 0.75,
-  "recall": 0.3157894736842105,
-  "f1": 0.44444444444444436,
-  "matches": 6,
-  "total_predicted": 8,
+  "precision": 0.8888888888888888,
+  "recall": 0.42105263157894735,
+  "f1": 0.5714285714285714,
+  "matches": 8,
+  "total_predicted": 9,
   "total_gt": 19,
-  "wall_time": 79.88665213499917,
-  "api_time": 79.8862123200015,
-  "per_node": 0.7755942943689467,
+  "wall_time": 34.5675182720297,
+  "api_time": 34.56701163796242,
+  "per_node": 0.33560205473749927,
+  "requests": 103,
+  "judgements": 444,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
-      "source_id": "edas#AcademiaOrganization",
-      "target_id": "ekaw#Academic_Institution",
-      "confidence": 0.95
-    },
-    {
       "source_id": "edas#AcceptedPaper",
       "target_id": "ekaw#Accepted_Paper",
-      "confidence": 0.95
+      "confidence": 0.97
     },
     {
-      "source_id": "edas#Conference",
-      "target_id": "ekaw#Conference",
-      "confidence": 0.95
-    },
-    {
-      "source_id": "edas#MealEvent",
+      "source_id": "edas#ConferenceDinner",
       "target_id": "ekaw#Conference_Banquet",
-      "confidence": 0.95
+      "confidence": 0.88
+    },
+    {
+      "source_id": "edas#Excursion",
+      "target_id": "ekaw#Conference_Trip",
+      "confidence": 0.72
     },
     {
       "source_id": "edas#Paper",
       "target_id": "ekaw#Paper",
-      "confidence": 1.0
+      "confidence": 0.9
     },
     {
       "source_id": "edas#Person",
@@ -50,8 +48,18 @@
       "confidence": 0.95
     },
     {
-      "source_id": "edas#Workshop",
-      "target_id": "ekaw#Workshop",
+      "source_id": "edas#Review",
+      "target_id": "ekaw#Review",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#SessionChair",
+      "target_id": "ekaw#Session_Chair",
+      "confidence": 0.97
+    },
+    {
+      "source_id": "edas#SocialEvent",
+      "target_id": "ekaw#Social_Event",
       "confidence": 0.95
     }
   ]

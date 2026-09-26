@@ -3,21 +3,34 @@
   "pair": "ekaw\u2194iasted",
   "source": "ekaw",
   "target": "iasted",
-  "precision": 0.5,
+  "precision": 0.4,
   "recall": 0.8,
-  "f1": 0.6153846153846154,
+  "f1": 0.5333333333333333,
   "matches": 8,
-  "total_predicted": 16,
+  "total_predicted": 20,
   "total_gt": 10,
-  "wall_time": 68.33782375699957,
-  "api_time": 68.26917250100087,
-  "per_node": 0.935194143849327,
+  "wall_time": 64.81417406199034,
+  "api_time": 64.75097924895817,
+  "per_node": 0.886999715739153,
+  "requests": 73,
+  "judgements": 365,
+  "retries": 0,
   "mode": "concept",
   "match_pairs": [
     {
+      "source_id": "ekaw#Academic_Institution",
+      "target_id": "iasted#Presenter_university",
+      "confidence": 0.9
+    },
+    {
       "source_id": "ekaw#Assigned_Paper",
+      "target_id": "iasted#Initial_manuscipt",
+      "confidence": 0.75
+    },
+    {
+      "source_id": "ekaw#Camera_Ready_Paper",
       "target_id": "iasted#Final_manuscript",
-      "confidence": 0.85
+      "confidence": 0.9
     },
     {
       "source_id": "ekaw#Conference_Banquet",
@@ -25,9 +38,14 @@
       "confidence": 0.9
     },
     {
-      "source_id": "ekaw#Conference_Proceedings",
-      "target_id": "iasted#Book_proceeding",
-      "confidence": 0.8
+      "source_id": "ekaw#Conference_Trip",
+      "target_id": "iasted#Conference_activity",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "ekaw#Contributed_Talk",
+      "target_id": "iasted#Presentation",
+      "confidence": 0.9
     },
     {
       "source_id": "ekaw#Document",
@@ -35,8 +53,8 @@
       "confidence": 1.0
     },
     {
-      "source_id": "ekaw#Individual_Presentation",
-      "target_id": "iasted#Presentation",
+      "source_id": "ekaw#Invited_Speaker",
+      "target_id": "iasted#Speaker",
       "confidence": 0.9
     },
     {
@@ -52,7 +70,17 @@
     {
       "source_id": "ekaw#Person",
       "target_id": "iasted#Person",
-      "confidence": 0.95
+      "confidence": 1.0
+    },
+    {
+      "source_id": "ekaw#Possible_Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "ekaw#Proceedings",
+      "target_id": "iasted#Author_book_proceedings_included",
+      "confidence": 0.9
     },
     {
       "source_id": "ekaw#Research_Topic",
@@ -63,11 +91,6 @@
       "source_id": "ekaw#Review",
       "target_id": "iasted#Review",
       "confidence": 0.95
-    },
-    {
-      "source_id": "ekaw#Scientific_Event",
-      "target_id": "iasted#Conference_activity",
-      "confidence": 0.9
     },
     {
       "source_id": "ekaw#Session",
@@ -82,17 +105,17 @@
     {
       "source_id": "ekaw#Student",
       "target_id": "iasted#Student_non_speaker",
-      "confidence": 0.8
+      "confidence": 0.95
     },
     {
       "source_id": "ekaw#Submitted_Paper",
       "target_id": "iasted#Submission",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
       "source_id": "ekaw#Tutorial_Abstract",
       "target_id": "iasted#Tutorial",
-      "confidence": 0.85
+      "confidence": 0.9
     }
   ]
 }

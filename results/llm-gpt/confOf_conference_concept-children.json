@@ -3,15 +3,18 @@
   "pair": "confOf\u2194conference",
   "source": "conference",
   "target": "confOf",
-  "precision": 0.3888888888888889,
-  "recall": 0.6363636363636364,
-  "f1": 0.4827586206896552,
-  "matches": 7,
-  "total_predicted": 18,
+  "precision": 0.375,
+  "recall": 0.5454545454545454,
+  "f1": 0.4444444444444444,
+  "matches": 6,
+  "total_predicted": 16,
   "total_gt": 11,
-  "wall_time": 111.90382169100121,
-  "api_time": 111.9034842229994,
-  "per_node": 1.8966692241186338,
+  "wall_time": 58.77549942000769,
+  "api_time": 58.77519408799708,
+  "per_node": 0.9961897303050352,
+  "requests": 59,
+  "judgements": 295,
+  "retries": 0,
   "mode": "concept-children",
   "match_pairs": [
     {
@@ -26,18 +29,13 @@
     },
     {
       "source_id": "Conference#Committee_member",
-      "target_id": "confof#Member",
+      "target_id": "confof#Chair_PC",
       "confidence": 0.85
     },
     {
       "source_id": "Conference#Conference",
       "target_id": "confof#Conference",
-      "confidence": 0.95
-    },
-    {
-      "source_id": "Conference#Conference_document",
-      "target_id": "confof#Event",
-      "confidence": 0.85
+      "confidence": 0.9
     },
     {
       "source_id": "Conference#Conference_part",
@@ -45,9 +43,9 @@
       "confidence": 0.95
     },
     {
-      "source_id": "Conference#Information_for_participants",
-      "target_id": "confof#Registration_of_participants_event",
-      "confidence": 0.9
+      "source_id": "Conference#Important_dates",
+      "target_id": "confof#Event",
+      "confidence": 0.8
     },
     {
       "source_id": "Conference#Organization",
@@ -60,9 +58,9 @@
       "confidence": 0.9
     },
     {
-      "source_id": "Conference#Person",
+      "source_id": "Conference#Passive_conference_participant",
       "target_id": "confof#Person",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
       "source_id": "Conference#Poster",
@@ -78,11 +76,6 @@
       "source_id": "Conference#Regular_author",
       "target_id": "confof#Author",
       "confidence": 0.9
-    },
-    {
-      "source_id": "Conference#Review",
-      "target_id": "confof#Reviewing_event",
-      "confidence": 0.95
     },
     {
       "source_id": "Conference#Reviewer",
@@ -102,7 +95,7 @@
     {
       "source_id": "Conference#Written_contribution",
       "target_id": "confof#Submission_event",
-      "confidence": 0.95
+      "confidence": 0.85
     }
   ]
 }

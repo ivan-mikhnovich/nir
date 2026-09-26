@@ -3,21 +3,34 @@
   "pair": "cmt\u2194iasted",
   "source": "cmt",
   "target": "iasted",
-  "precision": 0.5,
-  "recall": 0.75,
-  "f1": 0.6,
-  "matches": 3,
-  "total_predicted": 6,
+  "precision": 0.5714285714285714,
+  "recall": 1.0,
+  "f1": 0.7272727272727273,
+  "matches": 4,
+  "total_predicted": 7,
   "total_gt": 4,
-  "wall_time": 23.760272341001837,
-  "api_time": 23.715029232000234,
-  "per_node": 0.8177596286896632,
+  "wall_time": 13.588908942008857,
+  "api_time": 13.541007337043993,
+  "per_node": 0.46693128748427565,
+  "requests": 29,
+  "judgements": 117,
+  "retries": 0,
   "mode": "concept",
   "match_pairs": [
     {
-      "source_id": "cmt#PaperFullVersion",
-      "target_id": "iasted#Final_manuscript",
-      "confidence": 0.9
+      "source_id": "cmt#Author",
+      "target_id": "iasted#Author",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "iasted#Session_chair",
+      "confidence": 0.85
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "iasted#Document",
+      "confidence": 1.0
     },
     {
       "source_id": "cmt#Person",
@@ -37,12 +50,7 @@
     {
       "source_id": "cmt#Reviewer",
       "target_id": "iasted#Reviewer",
-      "confidence": 0.95
-    },
-    {
-      "source_id": "cmt#User",
-      "target_id": "iasted#Author",
-      "confidence": 0.8
+      "confidence": 0.98
     }
   ]
 }

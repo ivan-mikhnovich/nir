@@ -1,7 +1,221 @@
 {
   "pair": "confOf\u2194sigkdd",
   "approach": "gnn",
-  "f1": 0.1818181818181818,
-  "precision": 0.1111111111111111,
-  "recall": 0.5
+  "source": "confOf",
+  "target": "sigkdd",
+  "f1": 0.22727272727272727,
+  "precision": 0.13157894736842105,
+  "recall": 0.8333333333333334,
+  "matches": 5,
+  "total_predicted": 38,
+  "total_gt": 6,
+  "match_pairs": [
+    {
+      "source_id": "confof#Author",
+      "target_id": "sigkdd#Author",
+      "confidence": 0.99996018409729
+    },
+    {
+      "source_id": "confof#Paper",
+      "target_id": "sigkdd#Paper",
+      "confidence": 0.9999470710754395
+    },
+    {
+      "source_id": "confof#Person",
+      "target_id": "sigkdd#Person",
+      "confidence": 0.9997440576553345
+    },
+    {
+      "source_id": "confof#Conference",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.9994010329246521
+    },
+    {
+      "source_id": "confof#Camera_Ready_event",
+      "target_id": "sigkdd#Document",
+      "confidence": 0.9840018153190613
+    },
+    {
+      "source_id": "confof#Reviewing_event",
+      "target_id": "sigkdd#Review",
+      "confidence": 0.9792300462722778
+    },
+    {
+      "source_id": "confof#City",
+      "target_id": "sigkdd#Place",
+      "confidence": 0.9750890731811523
+    },
+    {
+      "source_id": "confof#Chair_PC",
+      "target_id": "sigkdd#General_Chair",
+      "confidence": 0.973947286605835
+    },
+    {
+      "source_id": "confof#Registration_of_participants_event",
+      "target_id": "sigkdd#Registration_Non-Member",
+      "confidence": 0.9728718996047974
+    },
+    {
+      "source_id": "confof#Submission_event",
+      "target_id": "sigkdd#Deadline_Paper_Submission",
+      "confidence": 0.9718534350395203
+    },
+    {
+      "source_id": "confof#Banquet",
+      "target_id": "sigkdd#Conference_hall",
+      "confidence": 0.9710290431976318
+    },
+    {
+      "source_id": "confof#Participant",
+      "target_id": "sigkdd#Listener",
+      "confidence": 0.9658633470535278
+    },
+    {
+      "source_id": "confof#Member_PC",
+      "target_id": "sigkdd#Program_Committee_member",
+      "confidence": 0.9641565084457397
+    },
+    {
+      "source_id": "confof#Assistant",
+      "target_id": "sigkdd#Committee",
+      "confidence": 0.963059663772583
+    },
+    {
+      "source_id": "confof#Company",
+      "target_id": "sigkdd#Abstract",
+      "confidence": 0.9629400968551636
+    },
+    {
+      "source_id": "confof#Regular",
+      "target_id": "sigkdd#Best_Applications_Paper_Award",
+      "confidence": 0.9569008350372314
+    },
+    {
+      "source_id": "confof#Administrator",
+      "target_id": "sigkdd#Organizing_Committee",
+      "confidence": 0.9471086263656616
+    },
+    {
+      "source_id": "confof#Volunteer",
+      "target_id": "sigkdd#Registration_SIGMOD_Member",
+      "confidence": 0.935949444770813
+    },
+    {
+      "source_id": "confof#Social_event",
+      "target_id": "sigkdd#Best_Research_Paper_Award",
+      "confidence": 0.9344788789749146
+    },
+    {
+      "source_id": "confof#Workshop",
+      "target_id": "sigkdd#Program_Committee",
+      "confidence": 0.9343581199645996
+    },
+    {
+      "source_id": "confof#Student",
+      "target_id": "sigkdd#Sponzor",
+      "confidence": 0.9268664717674255
+    },
+    {
+      "source_id": "confof#Member",
+      "target_id": "sigkdd#Organizing_Committee_member",
+      "confidence": 0.8488793969154358
+    },
+    {
+      "source_id": "confof#Trip",
+      "target_id": "sigkdd#Sponzor_fee",
+      "confidence": 0.811772346496582
+    },
+    {
+      "source_id": "confof#Science_Worker",
+      "target_id": "sigkdd#Organizator",
+      "confidence": 0.8098964691162109
+    },
+    {
+      "source_id": "confof#Scholar",
+      "target_id": "sigkdd#Registration_Student",
+      "confidence": 0.7532033920288086
+    },
+    {
+      "source_id": "confof#University",
+      "target_id": "sigkdd#Webmaster",
+      "confidence": 0.6644217371940613
+    },
+    {
+      "source_id": "confof#Reviewing_results_event",
+      "target_id": "sigkdd#Best_Paper_Awards_Committee",
+      "confidence": 0.4489152431488037
+    },
+    {
+      "source_id": "confof#Reception",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 0.411790668964386
+    },
+    {
+      "source_id": "confof#Organization",
+      "target_id": "sigkdd#Main_office",
+      "confidence": 0.38408589363098145
+    },
+    {
+      "source_id": "confof#Tutorial",
+      "target_id": "sigkdd#Program_Chair",
+      "confidence": 0.36754027009010315
+    },
+    {
+      "source_id": "confof#Working_event",
+      "target_id": "sigkdd#Deadline",
+      "confidence": 0.3188580572605133
+    },
+    {
+      "source_id": "confof#Poster",
+      "target_id": "sigkdd#Exhibitor",
+      "confidence": 0.3187487721443176
+    },
+    {
+      "source_id": "confof#Short_paper",
+      "target_id": "sigkdd#Speaker",
+      "confidence": 0.3161045014858246
+    },
+    {
+      "source_id": "confof#Contribution",
+      "target_id": "sigkdd#Award",
+      "confidence": 0.2614624798297882
+    },
+    {
+      "source_id": "confof#Topic",
+      "target_id": "sigkdd#Author_of_paper",
+      "confidence": 0.10411866754293442
+    },
+    {
+      "source_id": "confof#Country",
+      "target_id": "sigkdd#Platinum_Supporter",
+      "confidence": 0.10182656347751617
+    },
+    {
+      "source_id": "confof#Event",
+      "target_id": "sigkdd#Deadline_Author_notification",
+      "confidence": 0.0832367092370987
+    },
+    {
+      "source_id": "confof#Administrative_event",
+      "target_id": "sigkdd#Deadline_Abstract_Submission",
+      "confidence": 0.04732175171375275
+    }
+  ],
+  "seed": 42,
+  "config": {
+    "seed": 42,
+    "embedder": "sentence-transformers/all-MiniLM-L6-v2",
+    "hidden_dim": 384,
+    "out_dim": 384,
+    "num_layers": 1,
+    "dropout": 0.5,
+    "epochs": 60,
+    "lr": 0.003,
+    "weight_decay": 0.0001,
+    "neg_ratio": 3,
+    "synthetic_seeds": 3,
+    "linear": false,
+    "fold_mode": "pair-loo",
+    "fold": "pair confOf\u2194sigkdd"
+  }
 }

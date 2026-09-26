@@ -3,31 +3,39 @@
   "pair": "cmt\u2194ekaw",
   "source": "cmt",
   "target": "ekaw",
-  "precision": 0.8,
+  "precision": 0.6666666666666666,
   "recall": 0.5,
-  "f1": 0.6153846153846154,
+  "f1": 0.5714285714285715,
   "matches": 4,
-  "total_predicted": 5,
+  "total_predicted": 6,
   "total_gt": 8,
-  "wall_time": 26.73369641300087,
-  "api_time": 26.733500660000573,
-  "per_node": 0.9218448503448473,
+  "wall_time": 11.351308765995782,
+  "api_time": 11.351104544010013,
+  "per_node": 0.3914173980693108,
+  "requests": 29,
+  "judgements": 115,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
       "source_id": "cmt#Conference",
       "target_id": "ekaw#Conference",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "ekaw#Conference_Participant",
       "confidence": 0.95
     },
     {
       "source_id": "cmt#Document",
       "target_id": "ekaw#Document",
-      "confidence": 0.95
+      "confidence": 1.0
     },
     {
-      "source_id": "cmt#Person",
-      "target_id": "ekaw#Person",
-      "confidence": 0.95
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "ekaw#PC_Member",
+      "confidence": 0.99
     },
     {
       "source_id": "cmt#Review",
@@ -37,7 +45,7 @@
     {
       "source_id": "cmt#SubjectArea",
       "target_id": "ekaw#Research_Topic",
-      "confidence": 0.95
+      "confidence": 0.82
     }
   ]
 }

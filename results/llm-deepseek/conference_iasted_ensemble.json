@@ -3,12 +3,42 @@
   "pair": "conference\u2194iasted",
   "source": "conference",
   "target": "iasted",
-  "precision": 0.46153846153846156,
-  "recall": 0.46153846153846156,
-  "f1": 0.46153846153846156,
-  "matches": 6,
-  "total_predicted": 13,
+  "precision": 1.0,
+  "recall": 0.23076923076923078,
+  "f1": 0.375,
+  "matches": 3,
+  "total_predicted": 3,
   "total_gt": 13,
-  "wall_time": 6.718999793520197e-05,
-  "mode": "ensemble"
+  "rule": ">=2-of-3+greedy_injective",
+  "min_votes": 2,
+  "modes": [
+    "concept",
+    "concept-parent",
+    "concept-children"
+  ],
+  "mode_requests": {
+    "concept": 59,
+    "concept-parent": 59,
+    "concept-children": 59
+  },
+  "requests": 0,
+  "wall_time": 0.0,
+  "mode": "ensemble",
+  "match_pairs": [
+    {
+      "source_id": "Conference#Review",
+      "target_id": "iasted#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "Conference#Person",
+      "target_id": "iasted#Person",
+      "confidence": 0.9666666666666667
+    },
+    {
+      "source_id": "Conference#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.95
+    }
+  ]
 }

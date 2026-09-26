@@ -1,10 +1,221 @@
 {
   "pair": "confOf\u2194iasted",
   "approach": "gnn-baseline",
-  "f1": 0.04651162790697674,
-  "precision": 0.029411764705882353,
-  "recall": 0.1111111111111111,
-  "matches": 1,
-  "total_predicted": 34,
-  "total_gt": 9
+  "source": "confOf",
+  "target": "iasted",
+  "f1": 0.25531914893617025,
+  "precision": 0.15789473684210525,
+  "recall": 0.6666666666666666,
+  "matches": 6,
+  "total_predicted": 38,
+  "total_gt": 9,
+  "match_pairs": [
+    {
+      "source_id": "confof#Author",
+      "target_id": "iasted#Author",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "confof#Person",
+      "target_id": "iasted#Person",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "confof#Tutorial",
+      "target_id": "iasted#Tutorial",
+      "confidence": 1.0000001192092896
+    },
+    {
+      "source_id": "confof#City",
+      "target_id": "iasted#City",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "confof#Banquet",
+      "target_id": "iasted#Dinner_banquet",
+      "confidence": 0.8769387602806091
+    },
+    {
+      "source_id": "confof#Conference",
+      "target_id": "iasted#Conference_state",
+      "confidence": 0.8619502186775208
+    },
+    {
+      "source_id": "confof#Submission_event",
+      "target_id": "iasted#Submission",
+      "confidence": 0.8053956031799316
+    },
+    {
+      "source_id": "confof#Trip",
+      "target_id": "iasted#Trip_day",
+      "confidence": 0.7834756970405579
+    },
+    {
+      "source_id": "confof#Student",
+      "target_id": "iasted#Student_lecturer",
+      "confidence": 0.7066589593887329
+    },
+    {
+      "source_id": "confof#University",
+      "target_id": "iasted#Presenter_university",
+      "confidence": 0.6263943910598755
+    },
+    {
+      "source_id": "confof#Reviewing_event",
+      "target_id": "iasted#Review",
+      "confidence": 0.6237740516662598
+    },
+    {
+      "source_id": "confof#Paper",
+      "target_id": "iasted#Document",
+      "confidence": 0.6194127798080444
+    },
+    {
+      "source_id": "confof#Registration_of_participants_event",
+      "target_id": "iasted#Registration",
+      "confidence": 0.617888331413269
+    },
+    {
+      "source_id": "confof#Science_Worker",
+      "target_id": "iasted#Worker_lecturer",
+      "confidence": 0.6083575487136841
+    },
+    {
+      "source_id": "confof#Chair_PC",
+      "target_id": "iasted#Session_chair",
+      "confidence": 0.593130886554718
+    },
+    {
+      "source_id": "confof#Country",
+      "target_id": "iasted#State",
+      "confidence": 0.5756388306617737
+    },
+    {
+      "source_id": "confof#Social_event",
+      "target_id": "iasted#Social_program",
+      "confidence": 0.554813802242279
+    },
+    {
+      "source_id": "confof#Member",
+      "target_id": "iasted#IASTED_member",
+      "confidence": 0.5485488176345825
+    },
+    {
+      "source_id": "confof#Reception",
+      "target_id": "iasted#Listener",
+      "confidence": 0.5361096858978271
+    },
+    {
+      "source_id": "confof#Topic",
+      "target_id": "iasted#Introduction",
+      "confidence": 0.53522789478302
+    },
+    {
+      "source_id": "confof#Workshop",
+      "target_id": "iasted#Building",
+      "confidence": 0.5308207273483276
+    },
+    {
+      "source_id": "confof#Camera_Ready_event",
+      "target_id": "iasted#Camera_ready_manuscript_deadline",
+      "confidence": 0.5267367959022522
+    },
+    {
+      "source_id": "confof#Participant",
+      "target_id": "iasted#Activity",
+      "confidence": 0.5239109992980957
+    },
+    {
+      "source_id": "confof#Contribution",
+      "target_id": "iasted#Sponsor",
+      "confidence": 0.5132350921630859
+    },
+    {
+      "source_id": "confof#Administrator",
+      "target_id": "iasted#Computer",
+      "confidence": 0.5005301237106323
+    },
+    {
+      "source_id": "confof#Short_paper",
+      "target_id": "iasted#Publication",
+      "confidence": 0.49686217308044434
+    },
+    {
+      "source_id": "confof#Company",
+      "target_id": "iasted#Sponsor_company_house",
+      "confidence": 0.48975569009780884
+    },
+    {
+      "source_id": "confof#Scholar",
+      "target_id": "iasted#Research",
+      "confidence": 0.47809135913848877
+    },
+    {
+      "source_id": "confof#Event",
+      "target_id": "iasted#Item",
+      "confidence": 0.47310471534729004
+    },
+    {
+      "source_id": "confof#Administrative_event",
+      "target_id": "iasted#Conference_activity",
+      "confidence": 0.4536559581756592
+    },
+    {
+      "source_id": "confof#Poster",
+      "target_id": "iasted#Presentation",
+      "confidence": 0.44484061002731323
+    },
+    {
+      "source_id": "confof#Organization",
+      "target_id": "iasted#Conference_building",
+      "confidence": 0.43231040239334106
+    },
+    {
+      "source_id": "confof#Working_event",
+      "target_id": "iasted#Activity_after_conference",
+      "confidence": 0.4317701756954193
+    },
+    {
+      "source_id": "confof#Assistant",
+      "target_id": "iasted#Lecturer",
+      "confidence": 0.3988041877746582
+    },
+    {
+      "source_id": "confof#Member_PC",
+      "target_id": "iasted#Card",
+      "confidence": 0.39479994773864746
+    },
+    {
+      "source_id": "confof#Volunteer",
+      "target_id": "iasted#Renting",
+      "confidence": 0.3941105008125305
+    },
+    {
+      "source_id": "confof#Regular",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.39097490906715393
+    },
+    {
+      "source_id": "confof#Reviewing_results_event",
+      "target_id": "iasted#Activity_before_conference",
+      "confidence": 0.29396092891693115
+    }
+  ],
+  "seed": 42,
+  "config": {
+    "seed": 42,
+    "embedder": "sentence-transformers/all-MiniLM-L6-v2",
+    "hidden_dim": 384,
+    "out_dim": 384,
+    "num_layers": 1,
+    "dropout": 0.5,
+    "epochs": 60,
+    "lr": 0.003,
+    "weight_decay": 0.0001,
+    "neg_ratio": 3,
+    "synthetic_seeds": 3,
+    "linear": false,
+    "fold_mode": "pair-loo",
+    "fold": "baseline"
+  }
 }

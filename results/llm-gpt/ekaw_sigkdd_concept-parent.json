@@ -9,14 +9,22 @@
   "matches": 6,
   "total_predicted": 13,
   "total_gt": 11,
-  "wall_time": 74.39287564100232,
-  "api_time": 74.39248836399929,
-  "per_node": 1.0190751830684834,
+  "wall_time": 108.73939410998719,
+  "api_time": 108.73895854700822,
+  "per_node": 1.489574774616551,
+  "requests": 73,
+  "judgements": 365,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
       "source_id": "ekaw#Abstract",
       "target_id": "sigkdd#Abstract",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "ekaw#Camera_Ready_Paper",
+      "target_id": "sigkdd#Paper",
       "confidence": 0.9
     },
     {
@@ -32,7 +40,12 @@
     {
       "source_id": "ekaw#Invited_Speaker",
       "target_id": "sigkdd#Invited_Speaker",
-      "confidence": 0.95
+      "confidence": 0.9
+    },
+    {
+      "source_id": "ekaw#Location",
+      "target_id": "sigkdd#Hotel",
+      "confidence": 0.9
     },
     {
       "source_id": "ekaw#OC_Chair",
@@ -42,7 +55,7 @@
     {
       "source_id": "ekaw#OC_Member",
       "target_id": "sigkdd#Organizing_Committee_member",
-      "confidence": 0.85
+      "confidence": 0.9
     },
     {
       "source_id": "ekaw#PC_Member",
@@ -55,19 +68,9 @@
       "confidence": 0.9
     },
     {
-      "source_id": "ekaw#Possible_Reviewer",
-      "target_id": "sigkdd#Author",
-      "confidence": 0.8
-    },
-    {
       "source_id": "ekaw#Presenter",
       "target_id": "sigkdd#Speaker",
       "confidence": 0.9
-    },
-    {
-      "source_id": "ekaw#Rejected_Paper",
-      "target_id": "sigkdd#Paper",
-      "confidence": 0.95
     },
     {
       "source_id": "ekaw#Review",
@@ -77,7 +80,7 @@
     {
       "source_id": "ekaw#Student",
       "target_id": "sigkdd#Author_of_paper_student",
-      "confidence": 0.9
+      "confidence": 0.85
     }
   ]
 }

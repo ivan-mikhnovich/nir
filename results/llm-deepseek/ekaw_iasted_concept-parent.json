@@ -3,15 +3,18 @@
   "pair": "ekaw\u2194iasted",
   "source": "ekaw",
   "target": "iasted",
-  "precision": 0.6666666666666666,
-  "recall": 0.4,
-  "f1": 0.5,
-  "matches": 4,
+  "precision": 0.8333333333333334,
+  "recall": 0.5,
+  "f1": 0.625,
+  "matches": 5,
   "total_predicted": 6,
   "total_gt": 10,
-  "wall_time": 66.44190134199744,
-  "api_time": 66.44153319199904,
-  "per_node": 0.9101579889314937,
+  "wall_time": 25.927508162974846,
+  "api_time": 25.927117128972895,
+  "per_node": 0.35516598806812183,
+  "requests": 73,
+  "judgements": 290,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
@@ -22,17 +25,12 @@
     {
       "source_id": "ekaw#Location",
       "target_id": "iasted#Place",
-      "confidence": 0.95
+      "confidence": 0.9
     },
     {
-      "source_id": "ekaw#Multi-author_Volume",
-      "target_id": "iasted#Book_proceeding",
-      "confidence": 0.85
-    },
-    {
-      "source_id": "ekaw#Possible_Reviewer",
-      "target_id": "iasted#Reviewer",
-      "confidence": 0.95
+      "source_id": "ekaw#Person",
+      "target_id": "iasted#Person",
+      "confidence": 1.0
     },
     {
       "source_id": "ekaw#Review",
@@ -43,6 +41,11 @@
       "source_id": "ekaw#Session_Chair",
       "target_id": "iasted#Session_chair",
       "confidence": 0.95
+    },
+    {
+      "source_id": "ekaw#Submitted_Paper",
+      "target_id": "iasted#Submission",
+      "confidence": 0.85
     }
   ]
 }

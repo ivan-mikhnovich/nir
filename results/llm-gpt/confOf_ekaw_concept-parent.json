@@ -3,15 +3,18 @@
   "pair": "confOf\u2194ekaw",
   "source": "confOf",
   "target": "ekaw",
-  "precision": 0.7857142857142857,
-  "recall": 0.55,
-  "f1": 0.6470588235294117,
-  "matches": 11,
-  "total_predicted": 14,
+  "precision": 0.8333333333333334,
+  "recall": 0.5,
+  "f1": 0.625,
+  "matches": 10,
+  "total_predicted": 12,
   "total_gt": 20,
-  "wall_time": 23.141802628999812,
-  "api_time": 23.141575882000325,
-  "per_node": 0.6089888390000086,
+  "wall_time": 55.815832200984005,
+  "api_time": 55.815565400000196,
+  "per_node": 1.4688306684210577,
+  "requests": 38,
+  "judgements": 190,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
@@ -25,19 +28,9 @@
       "confidence": 0.9
     },
     {
-      "source_id": "confof#City",
-      "target_id": "ekaw#Location",
-      "confidence": 0.95
-    },
-    {
-      "source_id": "confof#Contribution",
-      "target_id": "ekaw#Contributed_Talk",
-      "confidence": 0.95
-    },
-    {
       "source_id": "confof#Member",
-      "target_id": "ekaw#OC_Member",
-      "confidence": 0.8
+      "target_id": "ekaw#Conference_Participant",
+      "confidence": 0.9
     },
     {
       "source_id": "confof#Member_PC",
@@ -50,14 +43,14 @@
       "confidence": 0.95
     },
     {
-      "source_id": "confof#Participant",
-      "target_id": "ekaw#Conference_Participant",
-      "confidence": 0.9
-    },
-    {
       "source_id": "confof#Person",
       "target_id": "ekaw#Person",
       "confidence": 0.9
+    },
+    {
+      "source_id": "confof#Science_Worker",
+      "target_id": "ekaw#Possible_Reviewer",
+      "confidence": 0.75
     },
     {
       "source_id": "confof#Social_event",

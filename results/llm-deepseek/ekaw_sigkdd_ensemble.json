@@ -3,12 +3,72 @@
   "pair": "ekaw\u2194sigkdd",
   "source": "ekaw",
   "target": "sigkdd",
-  "precision": 0.6153846153846154,
+  "precision": 0.8888888888888888,
   "recall": 0.7272727272727273,
-  "f1": 0.6666666666666667,
+  "f1": 0.7999999999999999,
   "matches": 8,
-  "total_predicted": 13,
+  "total_predicted": 9,
   "total_gt": 11,
-  "wall_time": 6.946099892957136e-05,
-  "mode": "ensemble"
+  "rule": ">=2-of-3+greedy_injective",
+  "min_votes": 2,
+  "modes": [
+    "concept",
+    "concept-parent",
+    "concept-children"
+  ],
+  "mode_requests": {
+    "concept": 73,
+    "concept-parent": 73,
+    "concept-children": 73
+  },
+  "requests": 0,
+  "wall_time": 0.0,
+  "mode": "ensemble",
+  "match_pairs": [
+    {
+      "source_id": "ekaw#Review",
+      "target_id": "sigkdd#Review",
+      "confidence": 1.0
+    },
+    {
+      "source_id": "ekaw#Conference",
+      "target_id": "sigkdd#Conference",
+      "confidence": 0.99
+    },
+    {
+      "source_id": "ekaw#OC_Member",
+      "target_id": "sigkdd#Organizing_Committee_member",
+      "confidence": 0.99
+    },
+    {
+      "source_id": "ekaw#Document",
+      "target_id": "sigkdd#Document",
+      "confidence": 0.9833333333333333
+    },
+    {
+      "source_id": "ekaw#Invited_Speaker",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 0.9833333333333333
+    },
+    {
+      "source_id": "ekaw#PC_Member",
+      "target_id": "sigkdd#Program_Committee_member",
+      "confidence": 0.98
+    },
+    {
+      "source_id": "ekaw#Abstract",
+      "target_id": "sigkdd#Abstract",
+      "confidence": 0.9766666666666667
+    },
+    {
+      "source_id": "ekaw#PC_Chair",
+      "target_id": "sigkdd#Program_Chair",
+      "confidence": 0.9466666666666667
+    },
+    {
+      "source_id": "ekaw#Location",
+      "target_id": "sigkdd#Place",
+      "confidence": 0.9
+    }
+  ]
 }

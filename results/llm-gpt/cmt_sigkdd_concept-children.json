@@ -9,15 +9,23 @@
   "matches": 6,
   "total_predicted": 10,
   "total_gt": 10,
-  "wall_time": 49.25482186800036,
-  "api_time": 49.25463013599983,
-  "per_node": 1.6984355219310288,
+  "wall_time": 9.306499243946746,
+  "api_time": 9.306275422975887,
+  "per_node": 0.320906049068134,
+  "requests": 29,
+  "judgements": 145,
+  "retries": 0,
   "mode": "concept-children",
   "match_pairs": [
     {
       "source_id": "cmt#Administrator",
-      "target_id": "sigkdd#Webmaster",
-      "confidence": 0.85
+      "target_id": "sigkdd#Organizator",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "sigkdd#Author",
+      "confidence": 0.95
     },
     {
       "source_id": "cmt#AuthorNotReviewer",
@@ -32,6 +40,11 @@
     {
       "source_id": "cmt#Conference",
       "target_id": "sigkdd#Conference",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "sigkdd#Program_Committee_member",
       "confidence": 0.95
     },
     {
@@ -50,19 +63,9 @@
       "confidence": 0.9
     },
     {
-      "source_id": "cmt#ProgramCommitteeMember",
-      "target_id": "sigkdd#Program_Committee_member",
-      "confidence": 0.95
-    },
-    {
       "source_id": "cmt#Review",
       "target_id": "sigkdd#Review",
       "confidence": 0.95
-    },
-    {
-      "source_id": "cmt#User",
-      "target_id": "sigkdd#Author",
-      "confidence": 0.9
     }
   ]
 }

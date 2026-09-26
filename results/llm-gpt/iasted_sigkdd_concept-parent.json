@@ -3,26 +3,24 @@
   "pair": "iasted\u2194sigkdd",
   "source": "iasted",
   "target": "sigkdd",
-  "precision": 0.6470588235294118,
-  "recall": 0.7333333333333333,
-  "f1": 0.6875,
-  "matches": 11,
-  "total_predicted": 17,
+  "precision": 0.6666666666666666,
+  "recall": 0.8,
+  "f1": 0.7272727272727272,
+  "matches": 12,
+  "total_predicted": 18,
   "total_gt": 15,
-  "wall_time": 140.22913264900126,
-  "api_time": 140.22850129400103,
-  "per_node": 1.0016321521000073,
+  "wall_time": 170.21415504597826,
+  "api_time": 170.21358281199355,
+  "per_node": 1.215811305799954,
+  "requests": 140,
+  "judgements": 700,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
       "source_id": "iasted#Author",
       "target_id": "sigkdd#Author",
       "confidence": 0.9
-    },
-    {
-      "source_id": "iasted#Author_attendee_book_registration_fee",
-      "target_id": "sigkdd#Registration_fee",
-      "confidence": 0.95
     },
     {
       "source_id": "iasted#Author_book_proceedings_included",
@@ -32,7 +30,7 @@
     {
       "source_id": "iasted#Conference_hall",
       "target_id": "sigkdd#Conference_hall",
-      "confidence": 0.95
+      "confidence": 1.0
     },
     {
       "source_id": "iasted#Deadline",
@@ -50,9 +48,9 @@
       "confidence": 0.95
     },
     {
-      "source_id": "iasted#IASTED_member",
-      "target_id": "sigkdd#Person",
-      "confidence": 0.8
+      "source_id": "iasted#Hotel_presenter",
+      "target_id": "sigkdd#Invited_Speaker",
+      "confidence": 0.9
     },
     {
       "source_id": "iasted#Listener",
@@ -62,7 +60,7 @@
     {
       "source_id": "iasted#Main_office",
       "target_id": "sigkdd#Main_office",
-      "confidence": 0.99
+      "confidence": 0.95
     },
     {
       "source_id": "iasted#Nonmember_registration_fee",
@@ -72,7 +70,7 @@
     {
       "source_id": "iasted#Place",
       "target_id": "sigkdd#Place",
-      "confidence": 0.95
+      "confidence": 1.0
     },
     {
       "source_id": "iasted#Publication",
@@ -80,9 +78,14 @@
       "confidence": 0.9
     },
     {
+      "source_id": "iasted#Registration_fee",
+      "target_id": "sigkdd#Registration_fee",
+      "confidence": 0.95
+    },
+    {
       "source_id": "iasted#Review",
       "target_id": "sigkdd#Review",
-      "confidence": 0.95
+      "confidence": 0.9
     },
     {
       "source_id": "iasted#Speaker",
@@ -93,6 +96,11 @@
       "source_id": "iasted#Sponsor",
       "target_id": "sigkdd#Sponzor",
       "confidence": 0.9
+    },
+    {
+      "source_id": "iasted#Student_lecturer",
+      "target_id": "sigkdd#Author_of_paper_student",
+      "confidence": 0.8
     },
     {
       "source_id": "iasted#Submission",

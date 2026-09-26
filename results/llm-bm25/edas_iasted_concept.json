@@ -9,9 +9,12 @@
   "matches": 5,
   "total_predicted": 6,
   "total_gt": 19,
-  "wall_time": 6.6828424369996355,
-  "api_time": 6.679442608001409,
-  "per_node": 0.06484895735923699,
+  "wall_time": 5.376564599981066,
+  "api_time": 5.373343884013593,
+  "per_node": 0.05216838722343294,
+  "requests": 10,
+  "judgements": 17,
+  "retries": 0,
   "mode": "concept",
   "match_pairs": [
     {
@@ -22,7 +25,7 @@
     {
       "source_id": "edas#Document",
       "target_id": "iasted#Document",
-      "confidence": 1.0
+      "confidence": 0.99
     },
     {
       "source_id": "edas#Person",
@@ -42,7 +45,7 @@
     {
       "source_id": "edas#Reviewer",
       "target_id": "iasted#Reviewer",
-      "confidence": 1.0
+      "confidence": 0.9
     }
   ]
 }

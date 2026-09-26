@@ -9,9 +9,12 @@
   "matches": 2,
   "total_predicted": 2,
   "total_gt": 4,
-  "wall_time": 27.72609343899967,
-  "api_time": 27.725913725998907,
-  "per_node": 0.9560659905516865,
+  "wall_time": 11.932069692004006,
+  "api_time": 11.931875801004935,
+  "per_node": 0.4114439931381012,
+  "requests": 29,
+  "judgements": 125,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
@@ -22,7 +25,7 @@
     {
       "source_id": "cmt#Review",
       "target_id": "iasted#Review",
-      "confidence": 1.0
+      "confidence": 0.98
     }
   ]
 }

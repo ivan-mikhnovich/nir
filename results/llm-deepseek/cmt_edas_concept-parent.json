@@ -9,35 +9,38 @@
   "matches": 8,
   "total_predicted": 9,
   "total_gt": 8,
-  "wall_time": 25.700096868999935,
-  "api_time": 25.699892591000207,
-  "per_node": 0.8862031927931106,
+  "wall_time": 12.4871886500041,
+  "api_time": 12.486980887013488,
+  "per_node": 0.4305855478280513,
+  "requests": 29,
+  "judgements": 135,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
       "source_id": "cmt#Author",
       "target_id": "edas#Author",
-      "confidence": 1.0
+      "confidence": 0.96
     },
     {
       "source_id": "cmt#Conference",
       "target_id": "edas#Conference",
-      "confidence": 1.0
+      "confidence": 0.99
     },
     {
       "source_id": "cmt#ConferenceChair",
       "target_id": "edas#ConferenceChair",
-      "confidence": 0.95
+      "confidence": 0.9
     },
     {
       "source_id": "cmt#Document",
       "target_id": "edas#Document",
-      "confidence": 0.95
+      "confidence": 1.0
     },
     {
       "source_id": "cmt#Paper",
       "target_id": "edas#Paper",
-      "confidence": 1.0
+      "confidence": 0.98
     },
     {
       "source_id": "cmt#Person",
@@ -47,7 +50,7 @@
     {
       "source_id": "cmt#Review",
       "target_id": "edas#Review",
-      "confidence": 0.95
+      "confidence": 1.0
     },
     {
       "source_id": "cmt#Reviewer",
@@ -57,7 +60,7 @@
     {
       "source_id": "cmt#SubjectArea",
       "target_id": "edas#Topic",
-      "confidence": 0.9
+      "confidence": 0.97
     }
   ]
 }

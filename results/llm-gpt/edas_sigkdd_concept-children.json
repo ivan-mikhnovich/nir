@@ -3,17 +3,25 @@
   "pair": "edas\u2194sigkdd",
   "source": "edas",
   "target": "sigkdd",
-  "precision": 0.5555555555555556,
+  "precision": 0.5,
   "recall": 0.45454545454545453,
-  "f1": 0.5,
+  "f1": 0.47619047619047616,
   "matches": 5,
-  "total_predicted": 9,
+  "total_predicted": 10,
   "total_gt": 11,
-  "wall_time": 92.23222421299943,
-  "api_time": 92.23175646399977,
-  "per_node": 0.895453946252425,
+  "wall_time": 115.80388776003383,
+  "api_time": 115.80335474701133,
+  "per_node": 1.1243044150195274,
+  "requests": 103,
+  "judgements": 515,
+  "retries": 0,
   "mode": "concept-children",
   "match_pairs": [
+    {
+      "source_id": "edas#AccommodationPlace",
+      "target_id": "sigkdd#Hotel",
+      "confidence": 0.9
+    },
     {
       "source_id": "edas#Author",
       "target_id": "sigkdd#Author_of_paper",
@@ -30,24 +38,19 @@
       "confidence": 0.9
     },
     {
+      "source_id": "edas#Country",
+      "target_id": "sigkdd#Place",
+      "confidence": 0.95
+    },
+    {
       "source_id": "edas#Document",
       "target_id": "sigkdd#Document",
       "confidence": 0.9
     },
     {
-      "source_id": "edas#Place",
-      "target_id": "sigkdd#Place",
-      "confidence": 0.95
-    },
-    {
       "source_id": "edas#Presenter",
       "target_id": "sigkdd#Invited_Speaker",
       "confidence": 0.9
-    },
-    {
-      "source_id": "edas#PublishedPaper",
-      "target_id": "sigkdd#Paper",
-      "confidence": 0.95
     },
     {
       "source_id": "edas#Review",
@@ -57,7 +60,12 @@
     {
       "source_id": "edas#TPCMember",
       "target_id": "sigkdd#Organizing_Committee_member",
-      "confidence": 0.9
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#WithdrawnPaper",
+      "target_id": "sigkdd#Paper",
+      "confidence": 0.95
     }
   ]
 }

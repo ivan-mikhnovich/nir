@@ -9,15 +9,18 @@
   "matches": 6,
   "total_predicted": 7,
   "total_gt": 14,
-  "wall_time": 6.530909221997717,
-  "api_time": 6.530768659999012,
-  "per_node": 0.17186233315786872,
+  "wall_time": 5.682438831019681,
+  "api_time": 5.682278460008092,
+  "per_node": 0.14953364368442348,
+  "requests": 10,
+  "judgements": 9,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
       "source_id": "confof#Author",
       "target_id": "edas#Author",
-      "confidence": 0.95
+      "confidence": 0.98
     },
     {
       "source_id": "confof#Conference",
@@ -27,17 +30,17 @@
     {
       "source_id": "confof#Country",
       "target_id": "edas#Country",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
       "source_id": "confof#Organization",
       "target_id": "edas#Organization",
-      "confidence": 1.0
+      "confidence": 0.95
     },
     {
       "source_id": "confof#Person",
       "target_id": "edas#Person",
-      "confidence": 1.0
+      "confidence": 0.95
     },
     {
       "source_id": "confof#Reception",

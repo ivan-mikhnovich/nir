@@ -9,9 +9,12 @@
   "matches": 8,
   "total_predicted": 11,
   "total_gt": 8,
-  "wall_time": 19.66067576400019,
-  "api_time": 19.660482785000113,
-  "per_node": 0.6779476822413832,
+  "wall_time": 9.314142619026825,
+  "api_time": 9.313895236991812,
+  "per_node": 0.32116880127557973,
+  "requests": 29,
+  "judgements": 145,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
@@ -22,7 +25,7 @@
     {
       "source_id": "cmt#Author",
       "target_id": "edas#Author",
-      "confidence": 0.99
+      "confidence": 1.0
     },
     {
       "source_id": "cmt#Conference",
@@ -52,7 +55,7 @@
     {
       "source_id": "cmt#Review",
       "target_id": "edas#Review",
-      "confidence": 0.95
+      "confidence": 0.9
     },
     {
       "source_id": "cmt#Reviewer",

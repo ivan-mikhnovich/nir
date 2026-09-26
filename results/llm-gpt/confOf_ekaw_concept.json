@@ -3,17 +3,25 @@
   "pair": "confOf\u2194ekaw",
   "source": "confOf",
   "target": "ekaw",
-  "precision": 0.6875,
+  "precision": 0.7857142857142857,
   "recall": 0.55,
-  "f1": 0.6111111111111112,
+  "f1": 0.6470588235294117,
   "matches": 11,
-  "total_predicted": 16,
+  "total_predicted": 14,
   "total_gt": 20,
-  "wall_time": 58.98078561400007,
-  "api_time": 58.92197384200017,
-  "per_node": 1.5505782590000046,
+  "wall_time": 50.811065960035194,
+  "api_time": 50.75877485400997,
+  "per_node": 1.3357572330002625,
+  "requests": 38,
+  "judgements": 190,
+  "retries": 0,
   "mode": "concept",
   "match_pairs": [
+    {
+      "source_id": "confof#Administrative_event",
+      "target_id": "ekaw#Event",
+      "confidence": 0.85
+    },
     {
       "source_id": "confof#Author",
       "target_id": "ekaw#Paper_Author",
@@ -30,14 +38,9 @@
       "confidence": 0.9
     },
     {
-      "source_id": "confof#City",
-      "target_id": "ekaw#Location",
-      "confidence": 0.95
-    },
-    {
       "source_id": "confof#Event",
       "target_id": "ekaw#Social_Event",
-      "confidence": 0.95
+      "confidence": 0.9
     },
     {
       "source_id": "confof#Member",
@@ -65,11 +68,6 @@
       "confidence": 0.9
     },
     {
-      "source_id": "confof#Science_Worker",
-      "target_id": "ekaw#Possible_Reviewer",
-      "confidence": 0.75
-    },
-    {
       "source_id": "confof#Student",
       "target_id": "ekaw#Student",
       "confidence": 0.95
@@ -85,14 +83,9 @@
       "confidence": 0.95
     },
     {
-      "source_id": "confof#Working_event",
-      "target_id": "ekaw#Event",
-      "confidence": 0.85
-    },
-    {
       "source_id": "confof#Workshop",
       "target_id": "ekaw#Workshop",
-      "confidence": 0.9
+      "confidence": 0.95
     }
   ]
 }

@@ -3,21 +3,24 @@
   "pair": "iasted\u2194sigkdd",
   "source": "iasted",
   "target": "sigkdd",
-  "precision": 0.75,
-  "recall": 0.6,
-  "f1": 0.6666666666666665,
-  "matches": 9,
+  "precision": 0.9166666666666666,
+  "recall": 0.7333333333333333,
+  "f1": 0.8148148148148148,
+  "matches": 11,
   "total_predicted": 12,
   "total_gt": 15,
-  "wall_time": 90.08340490300179,
-  "api_time": 90.08283931099868,
-  "per_node": 0.6434488522214191,
+  "wall_time": 42.03607254300732,
+  "api_time": 42.035360327980015,
+  "per_node": 0.30025257377128584,
+  "requests": 140,
+  "judgements": 604,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
       "source_id": "iasted#Author",
       "target_id": "sigkdd#Author",
-      "confidence": 0.95
+      "confidence": 0.85
     },
     {
       "source_id": "iasted#Conference_hall",
@@ -25,9 +28,14 @@
       "confidence": 1.0
     },
     {
-      "source_id": "iasted#Document",
-      "target_id": "sigkdd#Document",
-      "confidence": 1.0
+      "source_id": "iasted#Deadline",
+      "target_id": "sigkdd#Deadline",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "iasted#Deadline_for_notification_of_acceptance",
+      "target_id": "sigkdd#Deadline_Author_notification",
+      "confidence": 0.75
     },
     {
       "source_id": "iasted#Fee",
@@ -35,14 +43,14 @@
       "confidence": 1.0
     },
     {
-      "source_id": "iasted#Listener",
-      "target_id": "sigkdd#Listener",
-      "confidence": 0.9
-    },
-    {
       "source_id": "iasted#Main_office",
       "target_id": "sigkdd#Main_office",
       "confidence": 1.0
+    },
+    {
+      "source_id": "iasted#Nonmember_registration_fee",
+      "target_id": "sigkdd#Registration_Non-Member",
+      "confidence": 0.9
     },
     {
       "source_id": "iasted#Person",
@@ -57,22 +65,17 @@
     {
       "source_id": "iasted#Registration_fee",
       "target_id": "sigkdd#Registration_fee",
-      "confidence": 0.95
+      "confidence": 0.99
     },
     {
       "source_id": "iasted#Review",
       "target_id": "sigkdd#Review",
-      "confidence": 0.9
-    },
-    {
-      "source_id": "iasted#Sponsor",
-      "target_id": "sigkdd#Silver_Supporter",
-      "confidence": 0.9
+      "confidence": 0.98
     },
     {
       "source_id": "iasted#Submissions_deadline",
       "target_id": "sigkdd#Deadline_Paper_Submission",
-      "confidence": 0.95
+      "confidence": 0.86
     }
   ]
 }

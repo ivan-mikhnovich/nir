@@ -9,7 +9,7 @@
   "matches": 7,
   "total_predicted": 8,
   "total_gt": 14,
-  "wall_time": 3.831699905276764e-05,
+  "wall_time": 5.500001134350896e-05,
   "match_pairs": [
     {
       "source_id": "Conference#Person",

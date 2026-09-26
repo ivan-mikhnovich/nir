@@ -3,36 +3,29 @@
   "pair": "edas\u2194iasted",
   "source": "edas",
   "target": "iasted",
-  "precision": 0.6923076923076923,
-  "recall": 0.47368421052631576,
-  "f1": 0.5625,
-  "matches": 9,
-  "total_predicted": 13,
+  "precision": 0.7777777777777778,
+  "recall": 0.3684210526315789,
+  "f1": 0.5,
+  "matches": 7,
+  "total_predicted": 9,
   "total_gt": 19,
-  "wall_time": 74.60722447300213,
-  "api_time": 74.60675104600159,
-  "per_node": 0.724337388796132,
+  "wall_time": 36.68243451899616,
+  "api_time": 36.68195898499107,
+  "per_node": 0.35613552412612687,
+  "requests": 103,
+  "judgements": 415,
+  "retries": 0,
   "mode": "concept-children",
   "match_pairs": [
     {
+      "source_id": "edas#AcceptedPaper",
+      "target_id": "iasted#Final_manuscript",
+      "confidence": 0.72
+    },
+    {
       "source_id": "edas#CoffeeBreak",
       "target_id": "iasted#Coffee_break",
-      "confidence": 0.95
-    },
-    {
-      "source_id": "edas#ConferenceDinner",
-      "target_id": "iasted#Dinner_banquet",
-      "confidence": 0.95
-    },
-    {
-      "source_id": "edas#ConferenceVenuePlace",
-      "target_id": "iasted#Conference_building",
-      "confidence": 0.9
-    },
-    {
-      "source_id": "edas#DiningPlace",
-      "target_id": "iasted#Conference_restaurant",
-      "confidence": 0.95
+      "confidence": 1.0
     },
     {
       "source_id": "edas#MeetingRoomPlace",
@@ -40,18 +33,8 @@
       "confidence": 0.9
     },
     {
-      "source_id": "edas#Person",
-      "target_id": "iasted#Person",
-      "confidence": 0.95
-    },
-    {
       "source_id": "edas#Reception",
       "target_id": "iasted#Coctail_reception",
-      "confidence": 0.9
-    },
-    {
-      "source_id": "edas#RejectedPaper",
-      "target_id": "iasted#Refusing_manuscript",
       "confidence": 0.9
     },
     {
@@ -62,22 +45,22 @@
     {
       "source_id": "edas#Reviewer",
       "target_id": "iasted#Reviewer",
-      "confidence": 0.95
+      "confidence": 0.99
     },
     {
       "source_id": "edas#SessionChair",
       "target_id": "iasted#Session_chair",
-      "confidence": 0.95
+      "confidence": 0.97
     },
     {
-      "source_id": "edas#SlideSet",
-      "target_id": "iasted#PowerPoint_presentation",
-      "confidence": 0.95
+      "source_id": "edas#Sponsorship",
+      "target_id": "iasted#Sponzorship",
+      "confidence": 0.98
     },
     {
       "source_id": "edas#WelcomeTalk",
       "target_id": "iasted#Welcome_address",
-      "confidence": 0.95
+      "confidence": 0.9
     }
   ]
 }

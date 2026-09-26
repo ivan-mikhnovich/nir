@@ -3,26 +3,29 @@
   "pair": "edas\u2194ekaw",
   "source": "edas",
   "target": "ekaw",
-  "precision": 0.6666666666666666,
-  "recall": 0.21052631578947367,
-  "f1": 0.32,
-  "matches": 4,
-  "total_predicted": 6,
+  "precision": 1.0,
+  "recall": 0.3684210526315789,
+  "f1": 0.5384615384615384,
+  "matches": 7,
+  "total_predicted": 7,
   "total_gt": 19,
-  "wall_time": 11.566079955002351,
-  "api_time": 11.565879883000889,
-  "per_node": 0.11229009595146494,
+  "wall_time": 5.478603383991867,
+  "api_time": 5.478396152961068,
+  "per_node": 0.05318831216467056,
+  "requests": 11,
+  "judgements": 19,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
-      "source_id": "edas#Conference",
-      "target_id": "ekaw#Conference",
-      "confidence": 0.9
+      "source_id": "edas#Author",
+      "target_id": "ekaw#Paper_Author",
+      "confidence": 0.86
     },
     {
       "source_id": "edas#Document",
       "target_id": "ekaw#Document",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
       "source_id": "edas#Paper",
@@ -35,14 +38,19 @@
       "confidence": 0.95
     },
     {
-      "source_id": "edas#Presenter",
-      "target_id": "ekaw#Presenter",
-      "confidence": 0.95
+      "source_id": "edas#Review",
+      "target_id": "ekaw#Review",
+      "confidence": 0.98
+    },
+    {
+      "source_id": "edas#Topic",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.85
     },
     {
       "source_id": "edas#Workshop",
       "target_id": "ekaw#Workshop",
-      "confidence": 0.9
+      "confidence": 0.95
     }
   ]
 }

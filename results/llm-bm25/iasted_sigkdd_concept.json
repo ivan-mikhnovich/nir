@@ -3,15 +3,18 @@
   "pair": "iasted\u2194sigkdd",
   "source": "iasted",
   "target": "sigkdd",
-  "precision": 0.9166666666666666,
-  "recall": 0.7333333333333333,
-  "f1": 0.8148148148148148,
-  "matches": 11,
-  "total_predicted": 12,
+  "precision": 0.9090909090909091,
+  "recall": 0.6666666666666666,
+  "f1": 0.7692307692307692,
+  "matches": 10,
+  "total_predicted": 11,
   "total_gt": 15,
-  "wall_time": 41.49627989600049,
-  "api_time": 41.49214888700226,
-  "per_node": 0.29637249205001615,
+  "wall_time": 21.13219970901264,
+  "api_time": 21.128087367047556,
+  "per_node": 0.1509149097646254,
+  "requests": 64,
+  "judgements": 113,
+  "retries": 0,
   "mode": "concept",
   "match_pairs": [
     {
@@ -52,16 +55,11 @@
     {
       "source_id": "iasted#Person",
       "target_id": "sigkdd#Person",
-      "confidence": 0.9
+      "confidence": 0.95
     },
     {
       "source_id": "iasted#Place",
       "target_id": "sigkdd#Place",
-      "confidence": 1.0
-    },
-    {
-      "source_id": "iasted#Registration_fee",
-      "target_id": "sigkdd#Registration_fee",
       "confidence": 1.0
     },
     {

@@ -1,0 +1,1382 @@
+{
+  "model": "MiniLM",
+  "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+  "direction": "canonical",
+  "direction_note": "canonical = direction of the reference-alignment loader (src.cache.canonical_directions); sorted = alphabetical direction used by the pre-fix results/embedding-* caches.",
+  "pairs": [
+    "cmt↔conference",
+    "cmt↔confOf",
+    "cmt↔edas",
+    "cmt↔ekaw",
+    "cmt↔iasted",
+    "cmt↔sigkdd",
+    "conference↔confOf",
+    "conference↔edas",
+    "conference↔ekaw",
+    "conference↔iasted",
+    "conference↔sigkdd",
+    "confOf↔edas",
+    "confOf↔ekaw",
+    "confOf↔iasted",
+    "confOf↔sigkdd",
+    "edas↔ekaw",
+    "edas↔iasted",
+    "edas↔sigkdd",
+    "ekaw↔iasted",
+    "ekaw↔sigkdd",
+    "iasted↔sigkdd"
+  ],
+  "modes": {
+    "name_only": {
+      "components": [
+        "name"
+      ],
+      "mean_f1": 0.30920507590177054,
+      "per_pair": {
+        "cmt↔conference": {
+          "f1": 0.45000000000000007,
+          "precision": 0.3103448275862069,
+          "recall": 0.8181818181818182,
+          "predicted": 29
+        },
+        "cmt↔confOf": {
+          "f1": 0.3076923076923077,
+          "precision": 0.20689655172413793,
+          "recall": 0.6,
+          "predicted": 29
+        },
+        "cmt↔edas": {
+          "f1": 0.4324324324324324,
+          "precision": 0.27586206896551724,
+          "recall": 1.0,
+          "predicted": 29
+        },
+        "cmt↔ekaw": {
+          "f1": 0.3783783783783784,
+          "precision": 0.2413793103448276,
+          "recall": 0.875,
+          "predicted": 29
+        },
+        "cmt↔iasted": {
+          "f1": 0.2424242424242424,
+          "precision": 0.13793103448275862,
+          "recall": 1.0,
+          "predicted": 29
+        },
+        "cmt↔sigkdd": {
+          "f1": 0.4102564102564103,
+          "precision": 0.27586206896551724,
+          "recall": 0.8,
+          "predicted": 29
+        },
+        "conference↔confOf": {
+          "f1": 0.2571428571428571,
+          "precision": 0.15254237288135594,
+          "recall": 0.8181818181818182,
+          "predicted": 59
+        },
+        "conference↔edas": {
+          "f1": 0.32876712328767127,
+          "precision": 0.2033898305084746,
+          "recall": 0.8571428571428571,
+          "predicted": 59
+        },
+        "conference↔ekaw": {
+          "f1": 0.4634146341463415,
+          "precision": 0.3220338983050847,
+          "recall": 0.8260869565217391,
+          "predicted": 59
+        },
+        "conference↔iasted": {
+          "f1": 0.19444444444444445,
+          "precision": 0.11864406779661017,
+          "recall": 0.5384615384615384,
+          "predicted": 59
+        },
+        "conference↔sigkdd": {
+          "f1": 0.33802816901408456,
+          "precision": 0.2033898305084746,
+          "recall": 1.0,
+          "predicted": 59
+        },
+        "confOf↔edas": {
+          "f1": 0.46153846153846156,
+          "precision": 0.3157894736842105,
+          "recall": 0.8571428571428571,
+          "predicted": 38
+        },
+        "confOf↔ekaw": {
+          "f1": 0.5862068965517242,
+          "precision": 0.4473684210526316,
+          "recall": 0.85,
+          "predicted": 38
+        },
+        "confOf↔iasted": {
+          "f1": 0.25531914893617025,
+          "precision": 0.15789473684210525,
+          "recall": 0.6666666666666666,
+          "predicted": 38
+        },
+        "confOf↔sigkdd": {
+          "f1": 0.22727272727272727,
+          "precision": 0.13157894736842105,
+          "recall": 0.8333333333333334,
+          "predicted": 38
+        },
+        "edas↔ekaw": {
+          "f1": 0.22950819672131142,
+          "precision": 0.13592233009708737,
+          "recall": 0.7368421052631579,
+          "predicted": 103
+        },
+        "edas↔iasted": {
+          "f1": 0.18032786885245902,
+          "precision": 0.10679611650485436,
+          "recall": 0.5789473684210527,
+          "predicted": 103
+        },
+        "edas↔sigkdd": {
+          "f1": 0.14035087719298245,
+          "precision": 0.07766990291262135,
+          "recall": 0.7272727272727273,
+          "predicted": 103
+        },
+        "ekaw↔iasted": {
+          "f1": 0.21686746987951808,
+          "precision": 0.1232876712328767,
+          "recall": 0.9,
+          "predicted": 73
+        },
+        "ekaw↔sigkdd": {
+          "f1": 0.23809523809523808,
+          "precision": 0.136986301369863,
+          "recall": 0.9090909090909091,
+          "predicted": 73
+        },
+        "iasted↔sigkdd": {
+          "f1": 0.15483870967741936,
+          "precision": 0.08571428571428572,
+          "recall": 0.8,
+          "predicted": 140
+        }
+      }
+    },
+    "name_path": {
+      "components": [
+        "name",
+        "path"
+      ],
+      "mean_f1": 0.30285032039805493,
+      "per_pair": {
+        "cmt↔conference": {
+          "f1": 0.5000000000000001,
+          "precision": 0.3448275862068966,
+          "recall": 0.9090909090909091,
+          "predicted": 29
+        },
+        "cmt↔confOf": {
+          "f1": 0.358974358974359,
+          "precision": 0.2413793103448276,
+          "recall": 0.7,
+          "predicted": 29
+        },
+        "cmt↔edas": {
+          "f1": 0.32432432432432434,
+          "precision": 0.20689655172413793,
+          "recall": 0.75,
+          "predicted": 29
+        },
+        "cmt↔ekaw": {
+          "f1": 0.32432432432432434,
+          "precision": 0.20689655172413793,
+          "recall": 0.75,
+          "predicted": 29
+        },
+        "cmt↔iasted": {
+          "f1": 0.2424242424242424,
+          "precision": 0.13793103448275862,
+          "recall": 1.0,
+          "predicted": 29
+        },
+        "cmt↔sigkdd": {
+          "f1": 0.4102564102564103,
+          "precision": 0.27586206896551724,
+          "recall": 0.8,
+          "predicted": 29
+        },
+        "conference↔confOf": {
+          "f1": 0.2857142857142857,
+          "precision": 0.1694915254237288,
+          "recall": 0.9090909090909091,
+          "predicted": 59
+        },
+        "conference↔edas": {
+          "f1": 0.273972602739726,
+          "precision": 0.1694915254237288,
+          "recall": 0.7142857142857143,
+          "predicted": 59
+        },
+        "conference↔ekaw": {
+          "f1": 0.3170731707317073,
+          "precision": 0.22033898305084745,
+          "recall": 0.5652173913043478,
+          "predicted": 59
+        },
+        "conference↔iasted": {
+          "f1": 0.19444444444444445,
+          "precision": 0.11864406779661017,
+          "recall": 0.5384615384615384,
+          "predicted": 59
+        },
+        "conference↔sigkdd": {
+          "f1": 0.3098591549295775,
+          "precision": 0.1864406779661017,
+          "recall": 0.9166666666666666,
+          "predicted": 59
+        },
+        "confOf↔edas": {
+          "f1": 0.46153846153846156,
+          "precision": 0.3157894736842105,
+          "recall": 0.8571428571428571,
+          "predicted": 38
+        },
+        "confOf↔ekaw": {
+          "f1": 0.6206896551724138,
+          "precision": 0.47368421052631576,
+          "recall": 0.9,
+          "predicted": 38
+        },
+        "confOf↔iasted": {
+          "f1": 0.25531914893617025,
+          "precision": 0.15789473684210525,
+          "recall": 0.6666666666666666,
+          "predicted": 38
+        },
+        "confOf↔sigkdd": {
+          "f1": 0.22727272727272727,
+          "precision": 0.13157894736842105,
+          "recall": 0.8333333333333334,
+          "predicted": 38
+        },
+        "edas↔ekaw": {
+          "f1": 0.2459016393442623,
+          "precision": 0.14563106796116504,
+          "recall": 0.7894736842105263,
+          "predicted": 103
+        },
+        "edas↔iasted": {
+          "f1": 0.19672131147540986,
+          "precision": 0.11650485436893204,
+          "recall": 0.631578947368421,
+          "predicted": 103
+        },
+        "edas↔sigkdd": {
+          "f1": 0.17543859649122806,
+          "precision": 0.0970873786407767,
+          "recall": 0.9090909090909091,
+          "predicted": 103
+        },
+        "ekaw↔iasted": {
+          "f1": 0.21686746987951808,
+          "precision": 0.1232876712328767,
+          "recall": 0.9,
+          "predicted": 73
+        },
+        "ekaw↔sigkdd": {
+          "f1": 0.23809523809523808,
+          "precision": 0.136986301369863,
+          "recall": 0.9090909090909091,
+          "predicted": 73
+        },
+        "iasted↔sigkdd": {
+          "f1": 0.18064516129032257,
+          "precision": 0.1,
+          "recall": 0.9333333333333333,
+          "predicted": 140
+        }
+      }
+    },
+    "name+attributes": {
+      "components": [
+        "name",
+        "attributes"
+      ],
+      "mean_f1": 0.2798980424470921,
+      "per_pair": {
+        "cmt↔conference": {
+          "f1": 0.5000000000000001,
+          "precision": 0.3448275862068966,
+          "recall": 0.9090909090909091,
+          "predicted": 29
+        },
+        "cmt↔confOf": {
+          "f1": 0.3076923076923077,
+          "precision": 0.20689655172413793,
+          "recall": 0.6,
+          "predicted": 29
+        },
+        "cmt↔edas": {
+          "f1": 0.4324324324324324,
+          "precision": 0.27586206896551724,
+          "recall": 1.0,
+          "predicted": 29
+        },
+        "cmt↔ekaw": {
+          "f1": 0.3783783783783784,
+          "precision": 0.2413793103448276,
+          "recall": 0.875,
+          "predicted": 29
+        },
+        "cmt↔iasted": {
+          "f1": 0.18181818181818182,
+          "precision": 0.10344827586206896,
+          "recall": 0.75,
+          "predicted": 29
+        },
+        "cmt↔sigkdd": {
+          "f1": 0.25641025641025644,
+          "precision": 0.1724137931034483,
+          "recall": 0.5,
+          "predicted": 29
+        },
+        "conference↔confOf": {
+          "f1": 0.2857142857142857,
+          "precision": 0.1694915254237288,
+          "recall": 0.9090909090909091,
+          "predicted": 59
+        },
+        "conference↔edas": {
+          "f1": 0.3013698630136986,
+          "precision": 0.1864406779661017,
+          "recall": 0.7857142857142857,
+          "predicted": 59
+        },
+        "conference↔ekaw": {
+          "f1": 0.4634146341463415,
+          "precision": 0.3220338983050847,
+          "recall": 0.8260869565217391,
+          "predicted": 59
+        },
+        "conference↔iasted": {
+          "f1": 0.16666666666666666,
+          "precision": 0.1016949152542373,
+          "recall": 0.46153846153846156,
+          "predicted": 59
+        },
+        "conference↔sigkdd": {
+          "f1": 0.19718309859154928,
+          "precision": 0.11864406779661017,
+          "recall": 0.5833333333333334,
+          "predicted": 59
+        },
+        "confOf↔edas": {
+          "f1": 0.46153846153846156,
+          "precision": 0.3157894736842105,
+          "recall": 0.8571428571428571,
+          "predicted": 38
+        },
+        "confOf↔ekaw": {
+          "f1": 0.6206896551724138,
+          "precision": 0.47368421052631576,
+          "recall": 0.9,
+          "predicted": 38
+        },
+        "confOf↔iasted": {
+          "f1": 0.25531914893617025,
+          "precision": 0.15789473684210525,
+          "recall": 0.6666666666666666,
+          "predicted": 38
+        },
+        "confOf↔sigkdd": {
+          "f1": 0.09090909090909091,
+          "precision": 0.05263157894736842,
+          "recall": 0.3333333333333333,
+          "predicted": 38
+        },
+        "edas↔ekaw": {
+          "f1": 0.2459016393442623,
+          "precision": 0.14563106796116504,
+          "recall": 0.7894736842105263,
+          "predicted": 103
+        },
+        "edas↔iasted": {
+          "f1": 0.18032786885245902,
+          "precision": 0.10679611650485436,
+          "recall": 0.5789473684210527,
+          "predicted": 103
+        },
+        "edas↔sigkdd": {
+          "f1": 0.08771929824561403,
+          "precision": 0.04854368932038835,
+          "recall": 0.45454545454545453,
+          "predicted": 103
+        },
+        "ekaw↔iasted": {
+          "f1": 0.1686746987951807,
+          "precision": 0.0958904109589041,
+          "recall": 0.7,
+          "predicted": 73
+        },
+        "ekaw↔sigkdd": {
+          "f1": 0.16666666666666663,
+          "precision": 0.0958904109589041,
+          "recall": 0.6363636363636364,
+          "predicted": 73
+        },
+        "iasted↔sigkdd": {
+          "f1": 0.12903225806451613,
+          "precision": 0.07142857142857142,
+          "recall": 0.6666666666666666,
+          "predicted": 140
+        }
+      }
+    },
+    "name+disjoint+comment": {
+      "components": [
+        "name",
+        "attributes",
+        "disjoint",
+        "comment"
+      ],
+      "mean_f1": 0.1902420461768901,
+      "per_pair": {
+        "cmt↔conference": {
+          "f1": 0.25000000000000006,
+          "precision": 0.1724137931034483,
+          "recall": 0.45454545454545453,
+          "predicted": 29
+        },
+        "cmt↔confOf": {
+          "f1": 0.3076923076923077,
+          "precision": 0.20689655172413793,
+          "recall": 0.6,
+          "predicted": 29
+        },
+        "cmt↔edas": {
+          "f1": 0.2162162162162162,
+          "precision": 0.13793103448275862,
+          "recall": 0.5,
+          "predicted": 29
+        },
+        "cmt↔ekaw": {
+          "f1": 0.2162162162162162,
+          "precision": 0.13793103448275862,
+          "recall": 0.5,
+          "predicted": 29
+        },
+        "cmt↔iasted": {
+          "f1": 0.18181818181818182,
+          "precision": 0.10344827586206896,
+          "recall": 0.75,
+          "predicted": 29
+        },
+        "cmt↔sigkdd": {
+          "f1": 0.20512820512820515,
+          "precision": 0.13793103448275862,
+          "recall": 0.4,
+          "predicted": 29
+        },
+        "conference↔confOf": {
+          "f1": 0.2571428571428571,
+          "precision": 0.15254237288135594,
+          "recall": 0.8181818181818182,
+          "predicted": 59
+        },
+        "conference↔edas": {
+          "f1": 0.1917808219178082,
+          "precision": 0.11864406779661017,
+          "recall": 0.5,
+          "predicted": 59
+        },
+        "conference↔ekaw": {
+          "f1": 0.24390243902439024,
+          "precision": 0.1694915254237288,
+          "recall": 0.43478260869565216,
+          "predicted": 59
+        },
+        "conference↔iasted": {
+          "f1": 0.16666666666666666,
+          "precision": 0.1016949152542373,
+          "recall": 0.46153846153846156,
+          "predicted": 59
+        },
+        "conference↔sigkdd": {
+          "f1": 0.16901408450704228,
+          "precision": 0.1016949152542373,
+          "recall": 0.5,
+          "predicted": 59
+        },
+        "confOf↔edas": {
+          "f1": 0.34615384615384615,
+          "precision": 0.23684210526315788,
+          "recall": 0.6428571428571429,
+          "predicted": 38
+        },
+        "confOf↔ekaw": {
+          "f1": 0.3103448275862069,
+          "precision": 0.23684210526315788,
+          "recall": 0.45,
+          "predicted": 38
+        },
+        "confOf↔iasted": {
+          "f1": 0.1702127659574468,
+          "precision": 0.10526315789473684,
+          "recall": 0.4444444444444444,
+          "predicted": 38
+        },
+        "confOf↔sigkdd": {
+          "f1": 0.09090909090909091,
+          "precision": 0.05263157894736842,
+          "recall": 0.3333333333333333,
+          "predicted": 38
+        },
+        "edas↔ekaw": {
+          "f1": 0.09836065573770493,
+          "precision": 0.05825242718446602,
+          "recall": 0.3157894736842105,
+          "predicted": 103
+        },
+        "edas↔iasted": {
+          "f1": 0.09836065573770493,
+          "precision": 0.05825242718446602,
+          "recall": 0.3157894736842105,
+          "predicted": 103
+        },
+        "edas↔sigkdd": {
+          "f1": 0.07017543859649122,
+          "precision": 0.038834951456310676,
+          "recall": 0.36363636363636365,
+          "predicted": 103
+        },
+        "ekaw↔iasted": {
+          "f1": 0.09638554216867469,
+          "precision": 0.0547945205479452,
+          "recall": 0.4,
+          "predicted": 73
+        },
+        "ekaw↔sigkdd": {
+          "f1": 0.16666666666666663,
+          "precision": 0.0958904109589041,
+          "recall": 0.6363636363636364,
+          "predicted": 73
+        },
+        "iasted↔sigkdd": {
+          "f1": 0.14193548387096772,
+          "precision": 0.07857142857142857,
+          "recall": 0.7333333333333333,
+          "predicted": 140
+        }
+      }
+    },
+    "full": {
+      "components": [
+        "name",
+        "path",
+        "attributes",
+        "disjoint",
+        "comment"
+      ],
+      "mean_f1": 0.21106889547912835,
+      "per_pair": {
+        "cmt↔conference": {
+          "f1": 0.25000000000000006,
+          "precision": 0.1724137931034483,
+          "recall": 0.45454545454545453,
+          "predicted": 29
+        },
+        "cmt↔confOf": {
+          "f1": 0.358974358974359,
+          "precision": 0.2413793103448276,
+          "recall": 0.7,
+          "predicted": 29
+        },
+        "cmt↔edas": {
+          "f1": 0.2162162162162162,
+          "precision": 0.13793103448275862,
+          "recall": 0.5,
+          "predicted": 29
+        },
+        "cmt↔ekaw": {
+          "f1": 0.2162162162162162,
+          "precision": 0.13793103448275862,
+          "recall": 0.5,
+          "predicted": 29
+        },
+        "cmt↔iasted": {
+          "f1": 0.18181818181818182,
+          "precision": 0.10344827586206896,
+          "recall": 0.75,
+          "predicted": 29
+        },
+        "cmt↔sigkdd": {
+          "f1": 0.20512820512820515,
+          "precision": 0.13793103448275862,
+          "recall": 0.4,
+          "predicted": 29
+        },
+        "conference↔confOf": {
+          "f1": 0.2857142857142857,
+          "precision": 0.1694915254237288,
+          "recall": 0.9090909090909091,
+          "predicted": 59
+        },
+        "conference↔edas": {
+          "f1": 0.1917808219178082,
+          "precision": 0.11864406779661017,
+          "recall": 0.5,
+          "predicted": 59
+        },
+        "conference↔ekaw": {
+          "f1": 0.3170731707317073,
+          "precision": 0.22033898305084745,
+          "recall": 0.5652173913043478,
+          "predicted": 59
+        },
+        "conference↔iasted": {
+          "f1": 0.1388888888888889,
+          "precision": 0.0847457627118644,
+          "recall": 0.38461538461538464,
+          "predicted": 59
+        },
+        "conference↔sigkdd": {
+          "f1": 0.16901408450704228,
+          "precision": 0.1016949152542373,
+          "recall": 0.5,
+          "predicted": 59
+        },
+        "confOf↔edas": {
+          "f1": 0.423076923076923,
+          "precision": 0.2894736842105263,
+          "recall": 0.7857142857142857,
+          "predicted": 38
+        },
+        "confOf↔ekaw": {
+          "f1": 0.41379310344827586,
+          "precision": 0.3157894736842105,
+          "recall": 0.6,
+          "predicted": 38
+        },
+        "confOf↔iasted": {
+          "f1": 0.1702127659574468,
+          "precision": 0.10526315789473684,
+          "recall": 0.4444444444444444,
+          "predicted": 38
+        },
+        "confOf↔sigkdd": {
+          "f1": 0.09090909090909091,
+          "precision": 0.05263157894736842,
+          "recall": 0.3333333333333333,
+          "predicted": 38
+        },
+        "edas↔ekaw": {
+          "f1": 0.11475409836065571,
+          "precision": 0.06796116504854369,
+          "recall": 0.3684210526315789,
+          "predicted": 103
+        },
+        "edas↔iasted": {
+          "f1": 0.09836065573770493,
+          "precision": 0.05825242718446602,
+          "recall": 0.3157894736842105,
+          "predicted": 103
+        },
+        "edas↔sigkdd": {
+          "f1": 0.08771929824561403,
+          "precision": 0.04854368932038835,
+          "recall": 0.45454545454545453,
+          "predicted": 103
+        },
+        "ekaw↔iasted": {
+          "f1": 0.14457831325301204,
+          "precision": 0.0821917808219178,
+          "recall": 0.6,
+          "predicted": 73
+        },
+        "ekaw↔sigkdd": {
+          "f1": 0.19047619047619047,
+          "precision": 0.1095890410958904,
+          "recall": 0.7272727272727273,
+          "predicted": 73
+        },
+        "iasted↔sigkdd": {
+          "f1": 0.16774193548387098,
+          "precision": 0.09285714285714286,
+          "recall": 0.8666666666666667,
+          "predicted": 140
+        }
+      }
+    }
+  },
+  "postprocess": {
+    "argmax": {
+      "rule": "argmax",
+      "threshold": null,
+      "mean_f1": 0.30920507590177054,
+      "mean_predicted": 57.904761904761905,
+      "per_pair": {
+        "cmt↔conference": {
+          "f1": 0.45000000000000007,
+          "precision": 0.3103448275862069,
+          "recall": 0.8181818181818182,
+          "predicted": 29
+        },
+        "cmt↔confOf": {
+          "f1": 0.3076923076923077,
+          "precision": 0.20689655172413793,
+          "recall": 0.6,
+          "predicted": 29
+        },
+        "cmt↔edas": {
+          "f1": 0.4324324324324324,
+          "precision": 0.27586206896551724,
+          "recall": 1.0,
+          "predicted": 29
+        },
+        "cmt↔ekaw": {
+          "f1": 0.3783783783783784,
+          "precision": 0.2413793103448276,
+          "recall": 0.875,
+          "predicted": 29
+        },
+        "cmt↔iasted": {
+          "f1": 0.2424242424242424,
+          "precision": 0.13793103448275862,
+          "recall": 1.0,
+          "predicted": 29
+        },
+        "cmt↔sigkdd": {
+          "f1": 0.4102564102564103,
+          "precision": 0.27586206896551724,
+          "recall": 0.8,
+          "predicted": 29
+        },
+        "conference↔confOf": {
+          "f1": 0.2571428571428571,
+          "precision": 0.15254237288135594,
+          "recall": 0.8181818181818182,
+          "predicted": 59
+        },
+        "conference↔edas": {
+          "f1": 0.32876712328767127,
+          "precision": 0.2033898305084746,
+          "recall": 0.8571428571428571,
+          "predicted": 59
+        },
+        "conference↔ekaw": {
+          "f1": 0.4634146341463415,
+          "precision": 0.3220338983050847,
+          "recall": 0.8260869565217391,
+          "predicted": 59
+        },
+        "conference↔iasted": {
+          "f1": 0.19444444444444445,
+          "precision": 0.11864406779661017,
+          "recall": 0.5384615384615384,
+          "predicted": 59
+        },
+        "conference↔sigkdd": {
+          "f1": 0.33802816901408456,
+          "precision": 0.2033898305084746,
+          "recall": 1.0,
+          "predicted": 59
+        },
+        "confOf↔edas": {
+          "f1": 0.46153846153846156,
+          "precision": 0.3157894736842105,
+          "recall": 0.8571428571428571,
+          "predicted": 38
+        },
+        "confOf↔ekaw": {
+          "f1": 0.5862068965517242,
+          "precision": 0.4473684210526316,
+          "recall": 0.85,
+          "predicted": 38
+        },
+        "confOf↔iasted": {
+          "f1": 0.25531914893617025,
+          "precision": 0.15789473684210525,
+          "recall": 0.6666666666666666,
+          "predicted": 38
+        },
+        "confOf↔sigkdd": {
+          "f1": 0.22727272727272727,
+          "precision": 0.13157894736842105,
+          "recall": 0.8333333333333334,
+          "predicted": 38
+        },
+        "edas↔ekaw": {
+          "f1": 0.22950819672131142,
+          "precision": 0.13592233009708737,
+          "recall": 0.7368421052631579,
+          "predicted": 103
+        },
+        "edas↔iasted": {
+          "f1": 0.18032786885245902,
+          "precision": 0.10679611650485436,
+          "recall": 0.5789473684210527,
+          "predicted": 103
+        },
+        "edas↔sigkdd": {
+          "f1": 0.14035087719298245,
+          "precision": 0.07766990291262135,
+          "recall": 0.7272727272727273,
+          "predicted": 103
+        },
+        "ekaw↔iasted": {
+          "f1": 0.21686746987951808,
+          "precision": 0.1232876712328767,
+          "recall": 0.9,
+          "predicted": 73
+        },
+        "ekaw↔sigkdd": {
+          "f1": 0.23809523809523808,
+          "precision": 0.136986301369863,
+          "recall": 0.9090909090909091,
+          "predicted": 73
+        },
+        "iasted↔sigkdd": {
+          "f1": 0.15483870967741936,
+          "precision": 0.08571428571428572,
+          "recall": 0.8,
+          "predicted": 140
+        }
+      }
+    },
+    "dedupe_by_target": {
+      "rule": "dedupe_by_target",
+      "threshold": null,
+      "mean_f1": 0.49648946966889596,
+      "mean_predicted": 25.904761904761905,
+      "per_pair": {
+        "cmt↔conference": {
+          "f1": 0.6,
+          "precision": 0.47368421052631576,
+          "recall": 0.8181818181818182,
+          "predicted": 19
+        },
+        "cmt↔confOf": {
+          "f1": 0.4347826086956522,
+          "precision": 0.38461538461538464,
+          "recall": 0.5,
+          "predicted": 13
+        },
+        "cmt↔edas": {
+          "f1": 0.6399999999999999,
+          "precision": 0.47058823529411764,
+          "recall": 1.0,
+          "predicted": 17
+        },
+        "cmt↔ekaw": {
+          "f1": 0.5185185185185185,
+          "precision": 0.3684210526315789,
+          "recall": 0.875,
+          "predicted": 19
+        },
+        "cmt↔iasted": {
+          "f1": 0.38095238095238093,
+          "precision": 0.23529411764705882,
+          "recall": 1.0,
+          "predicted": 17
+        },
+        "cmt↔sigkdd": {
+          "f1": 0.6153846153846154,
+          "precision": 0.5,
+          "recall": 0.8,
+          "predicted": 16
+        },
+        "conference↔confOf": {
+          "f1": 0.5,
+          "precision": 0.38095238095238093,
+          "recall": 0.7272727272727273,
+          "predicted": 21
+        },
+        "conference↔edas": {
+          "f1": 0.5945945945945946,
+          "precision": 0.4782608695652174,
+          "recall": 0.7857142857142857,
+          "predicted": 23
+        },
+        "conference↔ekaw": {
+          "f1": 0.6206896551724138,
+          "precision": 0.5142857142857142,
+          "recall": 0.782608695652174,
+          "predicted": 35
+        },
+        "conference↔iasted": {
+          "f1": 0.3181818181818182,
+          "precision": 0.22580645161290322,
+          "recall": 0.5384615384615384,
+          "predicted": 31
+        },
+        "conference↔sigkdd": {
+          "f1": 0.6285714285714286,
+          "precision": 0.4782608695652174,
+          "recall": 0.9166666666666666,
+          "predicted": 23
+        },
+        "confOf↔edas": {
+          "f1": 0.6666666666666665,
+          "precision": 0.5454545454545454,
+          "recall": 0.8571428571428571,
+          "predicted": 22
+        },
+        "confOf↔ekaw": {
+          "f1": 0.7083333333333333,
+          "precision": 0.6071428571428571,
+          "recall": 0.85,
+          "predicted": 28
+        },
+        "confOf↔iasted": {
+          "f1": 0.30769230769230765,
+          "precision": 0.2,
+          "recall": 0.6666666666666666,
+          "predicted": 30
+        },
+        "confOf↔sigkdd": {
+          "f1": 0.3846153846153846,
+          "precision": 0.25,
+          "recall": 0.8333333333333334,
+          "predicted": 20
+        },
+        "edas↔ekaw": {
+          "f1": 0.4642857142857143,
+          "precision": 0.35135135135135137,
+          "recall": 0.6842105263157895,
+          "predicted": 37
+        },
+        "edas↔iasted": {
+          "f1": 0.28985507246376807,
+          "precision": 0.2,
+          "recall": 0.5263157894736842,
+          "predicted": 50
+        },
+        "edas↔sigkdd": {
+          "f1": 0.43243243243243246,
+          "precision": 0.3076923076923077,
+          "recall": 0.7272727272727273,
+          "predicted": 26
+        },
+        "ekaw↔iasted": {
+          "f1": 0.3529411764705882,
+          "precision": 0.21951219512195122,
+          "recall": 0.9,
+          "predicted": 41
+        },
+        "ekaw↔sigkdd": {
+          "f1": 0.4571428571428572,
+          "precision": 0.3333333333333333,
+          "recall": 0.7272727272727273,
+          "predicted": 24
+        },
+        "iasted↔sigkdd": {
+          "f1": 0.5106382978723405,
+          "precision": 0.375,
+          "recall": 0.8,
+          "predicted": 32
+        }
+      }
+    },
+    "greedy_injective": {
+      "rule": "greedy_injective",
+      "threshold": null,
+      "mean_f1": 0.34911506281844357,
+      "mean_predicted": 46.95238095238095,
+      "per_pair": {
+        "cmt↔conference": {
+          "f1": 0.45000000000000007,
+          "precision": 0.3103448275862069,
+          "recall": 0.8181818181818182,
+          "predicted": 29
+        },
+        "cmt↔confOf": {
+          "f1": 0.358974358974359,
+          "precision": 0.2413793103448276,
+          "recall": 0.7,
+          "predicted": 29
+        },
+        "cmt↔edas": {
+          "f1": 0.4324324324324324,
+          "precision": 0.27586206896551724,
+          "recall": 1.0,
+          "predicted": 29
+        },
+        "cmt↔ekaw": {
+          "f1": 0.4324324324324324,
+          "precision": 0.27586206896551724,
+          "recall": 1.0,
+          "predicted": 29
+        },
+        "cmt↔iasted": {
+          "f1": 0.2424242424242424,
+          "precision": 0.13793103448275862,
+          "recall": 1.0,
+          "predicted": 29
+        },
+        "cmt↔sigkdd": {
+          "f1": 0.4615384615384615,
+          "precision": 0.3103448275862069,
+          "recall": 0.9,
+          "predicted": 29
+        },
+        "conference↔confOf": {
+          "f1": 0.3673469387755102,
+          "precision": 0.23684210526315788,
+          "recall": 0.8181818181818182,
+          "predicted": 38
+        },
+        "conference↔edas": {
+          "f1": 0.3013698630136986,
+          "precision": 0.1864406779661017,
+          "recall": 0.7857142857142857,
+          "predicted": 59
+        },
+        "conference↔ekaw": {
+          "f1": 0.4390243902439025,
+          "precision": 0.3050847457627119,
+          "recall": 0.782608695652174,
+          "predicted": 59
+        },
+        "conference↔iasted": {
+          "f1": 0.2222222222222222,
+          "precision": 0.13559322033898305,
+          "recall": 0.6153846153846154,
+          "predicted": 59
+        },
+        "conference↔sigkdd": {
+          "f1": 0.36065573770491804,
+          "precision": 0.22448979591836735,
+          "recall": 0.9166666666666666,
+          "predicted": 49
+        },
+        "confOf↔edas": {
+          "f1": 0.46153846153846156,
+          "precision": 0.3157894736842105,
+          "recall": 0.8571428571428571,
+          "predicted": 38
+        },
+        "confOf↔ekaw": {
+          "f1": 0.6206896551724138,
+          "precision": 0.47368421052631576,
+          "recall": 0.9,
+          "predicted": 38
+        },
+        "confOf↔iasted": {
+          "f1": 0.25531914893617025,
+          "precision": 0.15789473684210525,
+          "recall": 0.6666666666666666,
+          "predicted": 38
+        },
+        "confOf↔sigkdd": {
+          "f1": 0.2727272727272727,
+          "precision": 0.15789473684210525,
+          "recall": 1.0,
+          "predicted": 38
+        },
+        "edas↔ekaw": {
+          "f1": 0.2826086956521739,
+          "precision": 0.1780821917808219,
+          "recall": 0.6842105263157895,
+          "predicted": 73
+        },
+        "edas↔iasted": {
+          "f1": 0.18032786885245902,
+          "precision": 0.10679611650485436,
+          "recall": 0.5789473684210527,
+          "predicted": 103
+        },
+        "edas↔sigkdd": {
+          "f1": 0.3,
+          "precision": 0.1836734693877551,
+          "recall": 0.8181818181818182,
+          "predicted": 49
+        },
+        "ekaw↔iasted": {
+          "f1": 0.21686746987951808,
+          "precision": 0.1232876712328767,
+          "recall": 0.9,
+          "predicted": 73
+        },
+        "ekaw↔sigkdd": {
+          "f1": 0.26666666666666666,
+          "precision": 0.16326530612244897,
+          "recall": 0.7272727272727273,
+          "predicted": 49
+        },
+        "iasted↔sigkdd": {
+          "f1": 0.40625,
+          "precision": 0.2653061224489796,
+          "recall": 0.8666666666666667,
+          "predicted": 49
+        }
+      }
+    },
+    "greedy_injective@0.5": {
+      "rule": "greedy_injective",
+      "threshold": 0.5,
+      "mean_f1": 0.5586221739467385,
+      "mean_predicted": 22.761904761904763,
+      "per_pair": {
+        "cmt↔conference": {
+          "f1": 0.5714285714285714,
+          "precision": 0.47058823529411764,
+          "recall": 0.7272727272727273,
+          "predicted": 17
+        },
+        "cmt↔confOf": {
+          "f1": 0.5555555555555556,
+          "precision": 0.625,
+          "recall": 0.5,
+          "predicted": 8
+        },
+        "cmt↔edas": {
+          "f1": 0.6399999999999999,
+          "precision": 0.47058823529411764,
+          "recall": 1.0,
+          "predicted": 17
+        },
+        "cmt↔ekaw": {
+          "f1": 0.6399999999999999,
+          "precision": 0.47058823529411764,
+          "recall": 1.0,
+          "predicted": 17
+        },
+        "cmt↔iasted": {
+          "f1": 0.5,
+          "precision": 0.3333333333333333,
+          "recall": 1.0,
+          "predicted": 12
+        },
+        "cmt↔sigkdd": {
+          "f1": 0.7272727272727272,
+          "precision": 0.6666666666666666,
+          "recall": 0.8,
+          "predicted": 12
+        },
+        "conference↔confOf": {
+          "f1": 0.6,
+          "precision": 0.47368421052631576,
+          "recall": 0.8181818181818182,
+          "predicted": 19
+        },
+        "conference↔edas": {
+          "f1": 0.55,
+          "precision": 0.4230769230769231,
+          "recall": 0.7857142857142857,
+          "predicted": 26
+        },
+        "conference↔ekaw": {
+          "f1": 0.5538461538461539,
+          "precision": 0.42857142857142855,
+          "recall": 0.782608695652174,
+          "predicted": 42
+        },
+        "conference↔iasted": {
+          "f1": 0.380952380952381,
+          "precision": 0.27586206896551724,
+          "recall": 0.6153846153846154,
+          "predicted": 29
+        },
+        "conference↔sigkdd": {
+          "f1": 0.6666666666666667,
+          "precision": 0.5238095238095238,
+          "recall": 0.9166666666666666,
+          "predicted": 21
+        },
+        "confOf↔edas": {
+          "f1": 0.6486486486486486,
+          "precision": 0.5217391304347826,
+          "recall": 0.8571428571428571,
+          "predicted": 23
+        },
+        "confOf↔ekaw": {
+          "f1": 0.7200000000000001,
+          "precision": 0.6,
+          "recall": 0.9,
+          "predicted": 30
+        },
+        "confOf↔iasted": {
+          "f1": 0.3529411764705882,
+          "precision": 0.24,
+          "recall": 0.6666666666666666,
+          "predicted": 25
+        },
+        "confOf↔sigkdd": {
+          "f1": 0.47619047619047616,
+          "precision": 0.3333333333333333,
+          "recall": 0.8333333333333334,
+          "predicted": 15
+        },
+        "edas↔ekaw": {
+          "f1": 0.5098039215686275,
+          "precision": 0.40625,
+          "recall": 0.6842105263157895,
+          "predicted": 32
+        },
+        "edas↔iasted": {
+          "f1": 0.40740740740740744,
+          "precision": 0.3142857142857143,
+          "recall": 0.5789473684210527,
+          "predicted": 35
+        },
+        "edas↔sigkdd": {
+          "f1": 0.7200000000000001,
+          "precision": 0.6428571428571429,
+          "recall": 0.8181818181818182,
+          "predicted": 14
+        },
+        "ekaw↔iasted": {
+          "f1": 0.391304347826087,
+          "precision": 0.25,
+          "recall": 0.9,
+          "predicted": 36
+        },
+        "ekaw↔sigkdd": {
+          "f1": 0.5,
+          "precision": 0.38095238095238093,
+          "recall": 0.7272727272727273,
+          "predicted": 21
+        },
+        "iasted↔sigkdd": {
+          "f1": 0.6190476190476191,
+          "precision": 0.48148148148148145,
+          "recall": 0.8666666666666667,
+          "predicted": 27
+        }
+      }
+    },
+    "greedy_injective@0.7": {
+      "rule": "greedy_injective",
+      "threshold": 0.7,
+      "mean_f1": 0.6598643619014579,
+      "mean_predicted": 11.476190476190476,
+      "per_pair": {
+        "cmt↔conference": {
+          "f1": 0.4444444444444444,
+          "precision": 0.5714285714285714,
+          "recall": 0.36363636363636365,
+          "predicted": 7
+        },
+        "cmt↔confOf": {
+          "f1": 0.5333333333333333,
+          "precision": 0.8,
+          "recall": 0.4,
+          "predicted": 5
+        },
+        "cmt↔edas": {
+          "f1": 0.9411764705882353,
+          "precision": 0.8888888888888888,
+          "recall": 1.0,
+          "predicted": 9
+        },
+        "cmt↔ekaw": {
+          "f1": 0.875,
+          "precision": 0.875,
+          "recall": 0.875,
+          "predicted": 8
+        },
+        "cmt↔iasted": {
+          "f1": 0.8,
+          "precision": 0.6666666666666666,
+          "recall": 1.0,
+          "predicted": 6
+        },
+        "cmt↔sigkdd": {
+          "f1": 0.7499999999999999,
+          "precision": 1.0,
+          "recall": 0.6,
+          "predicted": 6
+        },
+        "conference↔confOf": {
+          "f1": 0.761904761904762,
+          "precision": 0.8,
+          "recall": 0.7272727272727273,
+          "predicted": 10
+        },
+        "conference↔edas": {
+          "f1": 0.5384615384615384,
+          "precision": 0.5833333333333334,
+          "recall": 0.5,
+          "predicted": 12
+        },
+        "conference↔ekaw": {
+          "f1": 0.5957446808510638,
+          "precision": 0.5833333333333334,
+          "recall": 0.6086956521739131,
+          "predicted": 24
+        },
+        "conference↔iasted": {
+          "f1": 0.33333333333333337,
+          "precision": 0.36363636363636365,
+          "recall": 0.3076923076923077,
+          "predicted": 11
+        },
+        "conference↔sigkdd": {
+          "f1": 0.6666666666666666,
+          "precision": 0.6666666666666666,
+          "recall": 0.6666666666666666,
+          "predicted": 12
+        },
+        "confOf↔edas": {
+          "f1": 0.75,
+          "precision": 0.9,
+          "recall": 0.6428571428571429,
+          "predicted": 10
+        },
+        "confOf↔ekaw": {
+          "f1": 0.8205128205128205,
+          "precision": 0.8421052631578947,
+          "recall": 0.8,
+          "predicted": 19
+        },
+        "confOf↔iasted": {
+          "f1": 0.5555555555555556,
+          "precision": 0.5555555555555556,
+          "recall": 0.5555555555555556,
+          "predicted": 9
+        },
+        "confOf↔sigkdd": {
+          "f1": 0.7272727272727272,
+          "precision": 0.8,
+          "recall": 0.6666666666666666,
+          "predicted": 5
+        },
+        "edas↔ekaw": {
+          "f1": 0.6486486486486486,
+          "precision": 0.6666666666666666,
+          "recall": 0.631578947368421,
+          "predicted": 18
+        },
+        "edas↔iasted": {
+          "f1": 0.37499999999999994,
+          "precision": 0.46153846153846156,
+          "recall": 0.3157894736842105,
+          "predicted": 13
+        },
+        "edas↔sigkdd": {
+          "f1": 0.7777777777777778,
+          "precision": 1.0,
+          "recall": 0.6363636363636364,
+          "predicted": 7
+        },
+        "ekaw↔iasted": {
+          "f1": 0.6,
+          "precision": 0.45,
+          "recall": 0.9,
+          "predicted": 20
+        },
+        "ekaw↔sigkdd": {
+          "f1": 0.6956521739130435,
+          "precision": 0.6666666666666666,
+          "recall": 0.7272727272727273,
+          "predicted": 12
+        },
+        "iasted↔sigkdd": {
+          "f1": 0.6666666666666666,
+          "precision": 0.6111111111111112,
+          "recall": 0.7333333333333333,
+          "predicted": 18
+        }
+      }
+    }
+  }
+}

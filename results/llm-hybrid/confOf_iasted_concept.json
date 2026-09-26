@@ -3,41 +3,29 @@
   "pair": "confOf\u2194iasted",
   "source": "confOf",
   "target": "iasted",
-  "precision": 0.5555555555555556,
-  "recall": 0.5555555555555556,
-  "f1": 0.5555555555555556,
-  "matches": 5,
-  "total_predicted": 9,
+  "precision": 0.6,
+  "recall": 0.3333333333333333,
+  "f1": 0.42857142857142855,
+  "matches": 3,
+  "total_predicted": 5,
   "total_gt": 9,
-  "wall_time": 35.775265437998314,
-  "api_time": 35.727327755997976,
-  "per_node": 0.9401928356841572,
+  "wall_time": 17.767166108009405,
+  "api_time": 17.714418073999695,
+  "per_node": 0.4661688966842025,
+  "requests": 38,
+  "judgements": 113,
+  "retries": 0,
   "mode": "concept",
   "match_pairs": [
     {
-      "source_id": "confof#Author",
-      "target_id": "iasted#Author",
-      "confidence": 1.0
+      "source_id": "confof#Banquet",
+      "target_id": "iasted#Dinner_banquet",
+      "confidence": 0.9
     },
     {
-      "source_id": "confof#Camera_Ready_event",
-      "target_id": "iasted#Camera_ready_manuscript_deadline",
-      "confidence": 0.95
-    },
-    {
-      "source_id": "confof#Chair_PC",
-      "target_id": "iasted#Session_chair",
-      "confidence": 0.95
-    },
-    {
-      "source_id": "confof#City",
-      "target_id": "iasted#City",
-      "confidence": 1.0
-    },
-    {
-      "source_id": "confof#Country",
-      "target_id": "iasted#State",
-      "confidence": 0.8
+      "source_id": "confof#Contribution",
+      "target_id": "iasted#Submission",
+      "confidence": 0.9
     },
     {
       "source_id": "confof#Person",
@@ -45,14 +33,9 @@
       "confidence": 1.0
     },
     {
-      "source_id": "confof#Student",
-      "target_id": "iasted#Student_non_speaker",
+      "source_id": "confof#Reviewing_event",
+      "target_id": "iasted#Review",
       "confidence": 0.9
-    },
-    {
-      "source_id": "confof#Submission_event",
-      "target_id": "iasted#Submission",
-      "confidence": 0.95
     },
     {
       "source_id": "confof#Tutorial",

@@ -3,31 +3,29 @@
   "pair": "conference\u2194ekaw",
   "source": "conference",
   "target": "ekaw",
-  "precision": 0.6875,
-  "recall": 0.4782608695652174,
-  "f1": 0.5641025641025642,
-  "matches": 11,
-  "total_predicted": 16,
+  "precision": 0.6,
+  "recall": 0.2608695652173913,
+  "f1": 0.36363636363636365,
+  "matches": 6,
+  "total_predicted": 10,
   "total_gt": 23,
-  "wall_time": 62.66708197099979,
-  "api_time": 62.66677693800011,
-  "per_node": 1.0621487616610188,
+  "wall_time": 26.940154007985257,
+  "api_time": 26.939801005995832,
+  "per_node": 0.45660679671179377,
+  "requests": 59,
+  "judgements": 153,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
-      "source_id": "Conference#Accepted_contribution",
-      "target_id": "ekaw#Accepted_Paper",
-      "confidence": 0.95
+      "source_id": "Conference#Camera_ready_contribution",
+      "target_id": "ekaw#Camera_Ready_Paper",
+      "confidence": 0.9
     },
     {
       "source_id": "Conference#Conference",
       "target_id": "ekaw#Conference",
-      "confidence": 1.0
-    },
-    {
-      "source_id": "Conference#Conference_contribution",
-      "target_id": "ekaw#Conference_Paper",
-      "confidence": 0.8
+      "confidence": 0.98
     },
     {
       "source_id": "Conference#Conference_participant",
@@ -45,6 +43,11 @@
       "confidence": 0.95
     },
     {
+      "source_id": "Conference#Invited_talk",
+      "target_id": "ekaw#Invited_Talk",
+      "confidence": 0.96
+    },
+    {
       "source_id": "Conference#Organization",
       "target_id": "ekaw#Organisation",
       "confidence": 0.95
@@ -55,44 +58,14 @@
       "confidence": 1.0
     },
     {
-      "source_id": "Conference#Presentation",
-      "target_id": "ekaw#Individual_Presentation",
-      "confidence": 0.8
-    },
-    {
-      "source_id": "Conference#Regular_contribution",
-      "target_id": "ekaw#Regular_Paper",
-      "confidence": 0.95
-    },
-    {
-      "source_id": "Conference#Rejected_contribution",
-      "target_id": "ekaw#Rejected_Paper",
-      "confidence": 0.95
-    },
-    {
-      "source_id": "Conference#Review",
-      "target_id": "ekaw#Review",
-      "confidence": 0.85
-    },
-    {
       "source_id": "Conference#Topic",
       "target_id": "ekaw#Research_Topic",
-      "confidence": 0.9
-    },
-    {
-      "source_id": "Conference#Track",
-      "target_id": "ekaw#Track",
-      "confidence": 0.9
-    },
-    {
-      "source_id": "Conference#Tutorial",
-      "target_id": "ekaw#Tutorial",
-      "confidence": 0.8
+      "confidence": 0.95
     },
     {
       "source_id": "Conference#Workshop",
       "target_id": "ekaw#Workshop",
-      "confidence": 0.95
+      "confidence": 1.0
     }
   ]
 }

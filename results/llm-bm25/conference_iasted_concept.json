@@ -3,15 +3,18 @@
   "pair": "conference\u2194iasted",
   "source": "conference",
   "target": "iasted",
-  "precision": 0.8333333333333334,
-  "recall": 0.38461538461538464,
-  "f1": 0.5263157894736842,
-  "matches": 5,
-  "total_predicted": 6,
+  "precision": 0.8,
+  "recall": 0.3076923076923077,
+  "f1": 0.4444444444444444,
+  "matches": 4,
+  "total_predicted": 5,
   "total_gt": 13,
-  "wall_time": 16.441937108000275,
-  "api_time": 16.439003384999523,
-  "per_node": 0.2786271760169411,
+  "wall_time": 10.762807533959858,
+  "api_time": 10.75984414096456,
+  "per_node": 0.18237023967736543,
+  "requests": 31,
+  "judgements": 84,
+  "retries": 0,
   "mode": "concept",
   "match_pairs": [
     {
@@ -25,11 +28,6 @@
       "confidence": 1.0
     },
     {
-      "source_id": "Conference#Regular_author",
-      "target_id": "iasted#Author",
-      "confidence": 0.95
-    },
-    {
       "source_id": "Conference#Review",
       "target_id": "iasted#Review",
       "confidence": 1.0
@@ -37,12 +35,12 @@
     {
       "source_id": "Conference#Reviewer",
       "target_id": "iasted#Reviewer",
-      "confidence": 1.0
+      "confidence": 0.98
     },
     {
       "source_id": "Conference#Tutorial",
       "target_id": "iasted#Tutorial",
-      "confidence": 0.9
+      "confidence": 0.95
     }
   ]
 }

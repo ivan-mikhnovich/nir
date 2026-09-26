@@ -3,30 +3,43 @@
   "pair": "edas\u2194sigkdd",
   "source": "edas",
   "target": "sigkdd",
-  "precision": 0.6,
-  "recall": 0.2727272727272727,
-  "f1": 0.37499999999999994,
-  "matches": 3,
-  "total_predicted": 5,
+  "precision": 0.7142857142857143,
+  "recall": 0.45454545454545453,
+  "f1": 0.5555555555555556,
+  "matches": 5,
+  "total_predicted": 7,
   "total_gt": 11,
-  "wall_time": 75.1186149770001,
-  "api_time": 75.11814750000121,
-  "per_node": 0.7293024029126332,
+  "wall_time": 29.94128810800612,
+  "api_time": 29.940808393992484,
+  "per_node": 0.29068746013584934,
+  "requests": 103,
+  "judgements": 473,
+  "retries": 0,
   "mode": "concept-children",
   "match_pairs": [
-    {
-      "source_id": "edas#Author",
-      "target_id": "sigkdd#Author",
-      "confidence": 0.9
-    },
     {
       "source_id": "edas#Conference",
       "target_id": "sigkdd#Conference",
       "confidence": 1.0
     },
     {
-      "source_id": "edas#MeetingRoomPlace",
-      "target_id": "sigkdd#Conference_hall",
+      "source_id": "edas#Document",
+      "target_id": "sigkdd#Document",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "edas#Paper",
+      "target_id": "sigkdd#Paper",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Place",
+      "target_id": "sigkdd#Place",
+      "confidence": 0.9
+    },
+    {
+      "source_id": "edas#Presenter",
+      "target_id": "sigkdd#Speaker",
       "confidence": 0.9
     },
     {
@@ -37,7 +50,7 @@
     {
       "source_id": "edas#TPCMember",
       "target_id": "sigkdd#Program_Committee_member",
-      "confidence": 0.9
+      "confidence": 0.95
     }
   ]
 }

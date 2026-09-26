@@ -1,5 +1,5 @@
 {
-  "name": "cmt_STR",
+  "name": "cmt_STR_s42",
   "namespace": "http://cmt",
   "root_id": "cmt#Decision_STR",
   "nodes": {
@@ -62,7 +62,8 @@
         "cmt#ProgramCommitteeMember_STR",
         "cmt#ExternalReviewer_STR",
         "cmt#Chairman_STR",
-        "cmt#User_STR"
+        "cmt#User_STR",
+        "cmt#Administrator_STR"
       ],
       "attributes": {},
       "disjoint_with": [
@@ -375,8 +376,7 @@
       ],
       "children": [
         "cmt#Reviewer_STR",
-        "cmt#Author_STR",
-        "cmt#Administrator_STR"
+        "cmt#Author_STR"
       ],
       "attributes": {},
       "disjoint_with": [],
@@ -423,13 +423,13 @@
       "id": "cmt#Administrator_STR",
       "name": "Administrator",
       "parents": [
-        "cmt#User_STR"
+        "cmt#Person_STR"
       ],
       "children": [],
       "attributes": {},
       "disjoint_with": [],
       "comment": "",
-      "depth": 2
+      "depth": 1
     },
     "cmt#Meta-Review_STR": {
       "id": "cmt#Meta-Review_STR",

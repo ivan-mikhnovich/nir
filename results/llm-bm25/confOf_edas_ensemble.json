@@ -3,12 +3,62 @@
   "pair": "confOf\u2194edas",
   "source": "confOf",
   "target": "edas",
-  "precision": 0.8888888888888888,
-  "recall": 0.5714285714285714,
-  "f1": 0.6956521739130435,
-  "matches": 8,
-  "total_predicted": 9,
+  "precision": 0.8571428571428571,
+  "recall": 0.42857142857142855,
+  "f1": 0.5714285714285714,
+  "matches": 6,
+  "total_predicted": 7,
   "total_gt": 14,
-  "wall_time": 5.162999877939001e-05,
-  "mode": "ensemble"
+  "rule": ">=2-of-3+greedy_injective",
+  "min_votes": 2,
+  "modes": [
+    "concept",
+    "concept-parent",
+    "concept-children"
+  ],
+  "mode_requests": {
+    "concept": 10,
+    "concept-parent": 10,
+    "concept-children": 10
+  },
+  "requests": 0,
+  "wall_time": 0.0,
+  "mode": "ensemble",
+  "match_pairs": [
+    {
+      "source_id": "confof#Reception",
+      "target_id": "edas#Reception",
+      "confidence": 0.9833333333333333
+    },
+    {
+      "source_id": "confof#Conference",
+      "target_id": "edas#Conference",
+      "confidence": 0.9666666666666667
+    },
+    {
+      "source_id": "confof#Country",
+      "target_id": "edas#Country",
+      "confidence": 0.9633333333333333
+    },
+    {
+      "source_id": "confof#Author",
+      "target_id": "edas#Author",
+      "confidence": 0.96
+    },
+    {
+      "source_id": "confof#Organization",
+      "target_id": "edas#Organization",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Person",
+      "target_id": "edas#Person",
+      "confidence": 0.95
+    },
+    {
+      "source_id": "confof#Workshop",
+      "target_id": "edas#Workshop",
+      "confidence": 0.95
+    }
+  ]
 }

@@ -3,15 +3,18 @@
   "pair": "iasted\u2194sigkdd",
   "source": "iasted",
   "target": "sigkdd",
-  "precision": 0.5789473684210527,
+  "precision": 0.5238095238095238,
   "recall": 0.7333333333333333,
-  "f1": 0.6470588235294117,
+  "f1": 0.611111111111111,
   "matches": 11,
-  "total_predicted": 19,
+  "total_predicted": 21,
   "total_gt": 15,
-  "wall_time": 156.64816748999874,
-  "api_time": 156.59351554100067,
-  "per_node": 1.1185251110071477,
+  "wall_time": 125.82314627402229,
+  "api_time": 125.76731480099261,
+  "per_node": 0.898337962864233,
+  "requests": 140,
+  "judgements": 700,
+  "retries": 0,
   "mode": "concept",
   "match_pairs": [
     {
@@ -32,7 +35,7 @@
     {
       "source_id": "iasted#Deadline",
       "target_id": "sigkdd#Deadline",
-      "confidence": 1.0
+      "confidence": 0.95
     },
     {
       "source_id": "iasted#Document",
@@ -52,7 +55,12 @@
     {
       "source_id": "iasted#IASTED_non_member",
       "target_id": "sigkdd#Registration_Non-Member",
-      "confidence": 0.9
+      "confidence": 0.85
+    },
+    {
+      "source_id": "iasted#Initial_manuscipt",
+      "target_id": "sigkdd#Paper",
+      "confidence": 0.85
     },
     {
       "source_id": "iasted#Introduction_of_speaker",
@@ -75,14 +83,9 @@
       "confidence": 0.95
     },
     {
-      "source_id": "iasted#Publication",
-      "target_id": "sigkdd#Paper",
-      "confidence": 0.8
-    },
-    {
       "source_id": "iasted#Registration_fee",
       "target_id": "sigkdd#Registration_fee",
-      "confidence": 1.0
+      "confidence": 0.95
     },
     {
       "source_id": "iasted#Review",
@@ -100,9 +103,19 @@
       "confidence": 0.9
     },
     {
+      "source_id": "iasted#Sponsor_state",
+      "target_id": "sigkdd#Platinum_Supporter",
+      "confidence": 0.8
+    },
+    {
       "source_id": "iasted#Student_lecturer",
       "target_id": "sigkdd#Author_of_paper_student",
       "confidence": 0.9
+    },
+    {
+      "source_id": "iasted#Student_non_speaker",
+      "target_id": "sigkdd#Registration_Student",
+      "confidence": 0.8
     },
     {
       "source_id": "iasted#Submission",

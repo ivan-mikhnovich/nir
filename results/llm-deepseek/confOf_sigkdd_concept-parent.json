@@ -3,36 +3,29 @@
   "pair": "confOf\u2194sigkdd",
   "source": "confOf",
   "target": "sigkdd",
-  "precision": 0.75,
-  "recall": 0.5,
-  "f1": 0.6,
-  "matches": 3,
-  "total_predicted": 4,
+  "precision": 1.0,
+  "recall": 0.3333333333333333,
+  "f1": 0.5,
+  "matches": 2,
+  "total_predicted": 2,
   "total_gt": 6,
-  "wall_time": 27.776752948999274,
-  "api_time": 27.77651269600028,
-  "per_node": 0.73096086042106,
+  "wall_time": 14.364198458031751,
+  "api_time": 14.363970665959641,
+  "per_node": 0.3779992280515695,
+  "requests": 38,
+  "judgements": 145,
+  "retries": 0,
   "mode": "concept-parent",
   "match_pairs": [
     {
-      "source_id": "confof#Chair_PC",
-      "target_id": "sigkdd#Program_Chair",
-      "confidence": 0.95
-    },
-    {
       "source_id": "confof#Conference",
       "target_id": "sigkdd#Conference",
-      "confidence": 1.0
+      "confidence": 0.95
     },
     {
       "source_id": "confof#Member_PC",
       "target_id": "sigkdd#Program_Committee_member",
-      "confidence": 0.95
-    },
-    {
-      "source_id": "confof#Organization",
-      "target_id": "sigkdd#Organizing_Committee",
-      "confidence": 0.85
+      "confidence": 0.97
     }
   ]
 }

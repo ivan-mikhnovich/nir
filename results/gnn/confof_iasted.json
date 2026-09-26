@@ -1,7 +1,221 @@
 {
   "pair": "confOf\u2194iasted",
   "approach": "gnn",
-  "f1": 0.047619047619047616,
-  "precision": 0.030303030303030304,
-  "recall": 0.1111111111111111
+  "source": "confOf",
+  "target": "iasted",
+  "f1": 0.2978723404255319,
+  "precision": 0.18421052631578946,
+  "recall": 0.7777777777777778,
+  "matches": 7,
+  "total_predicted": 38,
+  "total_gt": 9,
+  "match_pairs": [
+    {
+      "source_id": "confof#Tutorial",
+      "target_id": "iasted#Tutorial",
+      "confidence": 0.9999985694885254
+    },
+    {
+      "source_id": "confof#Author",
+      "target_id": "iasted#Author",
+      "confidence": 0.999997615814209
+    },
+    {
+      "source_id": "confof#Person",
+      "target_id": "iasted#Person",
+      "confidence": 0.9998858571052551
+    },
+    {
+      "source_id": "confof#City",
+      "target_id": "iasted#City",
+      "confidence": 0.9998283982276917
+    },
+    {
+      "source_id": "confof#Banquet",
+      "target_id": "iasted#Dinner_banquet",
+      "confidence": 0.996140718460083
+    },
+    {
+      "source_id": "confof#Member",
+      "target_id": "iasted#IASTED_member",
+      "confidence": 0.989336371421814
+    },
+    {
+      "source_id": "confof#Camera_Ready_event",
+      "target_id": "iasted#Camera_ready_manuscript_deadline",
+      "confidence": 0.9853629469871521
+    },
+    {
+      "source_id": "confof#Poster",
+      "target_id": "iasted#Document",
+      "confidence": 0.9825454950332642
+    },
+    {
+      "source_id": "confof#Trip",
+      "target_id": "iasted#Sponzorship",
+      "confidence": 0.9820311665534973
+    },
+    {
+      "source_id": "confof#Conference",
+      "target_id": "iasted#Conference_state",
+      "confidence": 0.9812479019165039
+    },
+    {
+      "source_id": "confof#Topic",
+      "target_id": "iasted#Introduction",
+      "confidence": 0.9786059856414795
+    },
+    {
+      "source_id": "confof#Social_event",
+      "target_id": "iasted#Social_program",
+      "confidence": 0.973491370677948
+    },
+    {
+      "source_id": "confof#Submission_event",
+      "target_id": "iasted#Submissions_deadline",
+      "confidence": 0.9734097719192505
+    },
+    {
+      "source_id": "confof#Student",
+      "target_id": "iasted#Student_lecturer",
+      "confidence": 0.9706383943557739
+    },
+    {
+      "source_id": "confof#Chair_PC",
+      "target_id": "iasted#Brief_introduction_for_Session_chair",
+      "confidence": 0.9696402549743652
+    },
+    {
+      "source_id": "confof#Reviewing_results_event",
+      "target_id": "iasted#Review",
+      "confidence": 0.9694761037826538
+    },
+    {
+      "source_id": "confof#Contribution",
+      "target_id": "iasted#Tip",
+      "confidence": 0.9667628407478333
+    },
+    {
+      "source_id": "confof#Science_Worker",
+      "target_id": "iasted#Technic_activity",
+      "confidence": 0.9626628160476685
+    },
+    {
+      "source_id": "confof#Paper",
+      "target_id": "iasted#Currency",
+      "confidence": 0.962340235710144
+    },
+    {
+      "source_id": "confof#Regular",
+      "target_id": "iasted#Welcome_address",
+      "confidence": 0.9615711569786072
+    },
+    {
+      "source_id": "confof#Workshop",
+      "target_id": "iasted#Modelling",
+      "confidence": 0.9595679044723511
+    },
+    {
+      "source_id": "confof#Working_event",
+      "target_id": "iasted#Activity",
+      "confidence": 0.9586830139160156
+    },
+    {
+      "source_id": "confof#Volunteer",
+      "target_id": "iasted#Nonmember_registration_fee",
+      "confidence": 0.9539391994476318
+    },
+    {
+      "source_id": "confof#Member_PC",
+      "target_id": "iasted#Delegate",
+      "confidence": 0.9537314772605896
+    },
+    {
+      "source_id": "confof#Reviewing_event",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.9495248198509216
+    },
+    {
+      "source_id": "confof#Participant",
+      "target_id": "iasted#Speaker",
+      "confidence": 0.9471867084503174
+    },
+    {
+      "source_id": "confof#Country",
+      "target_id": "iasted#State",
+      "confidence": 0.9390794634819031
+    },
+    {
+      "source_id": "confof#University",
+      "target_id": "iasted#Student_registration_fee",
+      "confidence": 0.930640459060669
+    },
+    {
+      "source_id": "confof#Scholar",
+      "target_id": "iasted#Presenter_university",
+      "confidence": 0.9223955869674683
+    },
+    {
+      "source_id": "confof#Administrative_event",
+      "target_id": "iasted#Registation_deadline",
+      "confidence": 0.9200851917266846
+    },
+    {
+      "source_id": "confof#Administrator",
+      "target_id": "iasted#Session",
+      "confidence": 0.9026985764503479
+    },
+    {
+      "source_id": "confof#Reception",
+      "target_id": "iasted#Coctail_reception",
+      "confidence": 0.9023398756980896
+    },
+    {
+      "source_id": "confof#Assistant",
+      "target_id": "iasted#Fee",
+      "confidence": 0.8992473483085632
+    },
+    {
+      "source_id": "confof#Event",
+      "target_id": "iasted#Time",
+      "confidence": 0.8407859802246094
+    },
+    {
+      "source_id": "confof#Company",
+      "target_id": "iasted#Sponsor_company_house",
+      "confidence": 0.7945847511291504
+    },
+    {
+      "source_id": "confof#Short_paper",
+      "target_id": "iasted#Plenary_lecture",
+      "confidence": 0.7339140176773071
+    },
+    {
+      "source_id": "confof#Registration_of_participants_event",
+      "target_id": "iasted#Author_attendee_book_registration_fee",
+      "confidence": 0.7111026048660278
+    },
+    {
+      "source_id": "confof#Organization",
+      "target_id": "iasted#Hotel_room",
+      "confidence": 0.5793073177337646
+    }
+  ],
+  "seed": 42,
+  "config": {
+    "seed": 42,
+    "embedder": "sentence-transformers/all-MiniLM-L6-v2",
+    "hidden_dim": 384,
+    "out_dim": 384,
+    "num_layers": 1,
+    "dropout": 0.5,
+    "epochs": 60,
+    "lr": 0.003,
+    "weight_decay": 0.0001,
+    "neg_ratio": 3,
+    "synthetic_seeds": 3,
+    "linear": false,
+    "fold_mode": "pair-loo",
+    "fold": "pair confOf\u2194iasted"
+  }
 }

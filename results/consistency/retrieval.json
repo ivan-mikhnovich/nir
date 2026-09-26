@@ -3,13 +3,15 @@
     "embedding-MiniLM": {
       "recall": {
         "1": 0.5552217418023236,
-        "2": 0.6571715881130723,
-        "3": 0.7397822689339525,
-        "5": 0.7800601015949169,
+        "2": 0.661933492874977,
+        "3": 0.7470504393600177,
+        "5": 0.7825663672590772,
         "10": 0.8655479087401284
       },
       "uncovered": 0.0,
-      "ceiling": 0.876442431237002
+      "sent_k": 5,
+      "ceiling": 0.8780221389034425,
+      "ceiling_label": "upper bound reachable only at precision 1.0"
     },
     "bm25": {
       "recall": {
@@ -20,7 +22,9 @@
         "10": 0.7332682482241162
       },
       "uncovered": 0.22830719460336982,
-      "ceiling": 0.8436667810246493
+      "sent_k": 5,
+      "ceiling": 0.8436667810246493,
+      "ceiling_label": "upper bound reachable only at precision 1.0"
     },
     "hybrid": {
       "recall": {
@@ -31,7 +35,9 @@
         "10": 0.9564727669990828
       },
       "uncovered": 0.0,
-      "ceiling": 0.9621035317086528
+      "sent_k": 10,
+      "ceiling": 0.9777521907101825,
+      "ceiling_label": "upper bound reachable only at precision 1.0"
     }
   },
   "per_pair": {
@@ -73,8 +79,8 @@
       },
       "cmt↔sigkdd": {
         "recall@1": 0.4,
-        "recall@2": 0.4,
-        "recall@3": 0.6,
+        "recall@2": 0.5,
+        "recall@3": 0.7,
         "recall@5": 0.7,
         "recall@10": 0.8
       },
@@ -144,8 +150,8 @@
       "edas↔ekaw": {
         "recall@1": 0.3684210526315789,
         "recall@2": 0.47368421052631576,
-        "recall@3": 0.5263157894736842,
-        "recall@5": 0.5789473684210527,
+        "recall@3": 0.5789473684210527,
+        "recall@5": 0.631578947368421,
         "recall@10": 0.631578947368421
       },
       "edas↔iasted": {

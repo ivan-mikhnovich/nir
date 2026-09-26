@@ -1,7 +1,176 @@
 {
   "pair": "cmt\u2194confOf",
   "approach": "gnn",
-  "f1": 0.34285714285714286,
-  "precision": 0.24,
-  "recall": 0.6
+  "source": "cmt",
+  "target": "confOf",
+  "f1": 0.358974358974359,
+  "precision": 0.2413793103448276,
+  "recall": 0.7,
+  "matches": 7,
+  "total_predicted": 29,
+  "total_gt": 10,
+  "match_pairs": [
+    {
+      "source_id": "cmt#Administrator",
+      "target_id": "confof#Administrator",
+      "confidence": 0.9999944567680359
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "confof#Author",
+      "confidence": 0.9999943375587463
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "confof#Person",
+      "confidence": 0.99974125623703
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "confof#Paper",
+      "confidence": 0.9982978105545044
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "confof#Conference",
+      "confidence": 0.9969812631607056
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "confof#Topic",
+      "confidence": 0.9766255617141724
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "confof#Reviewing_event",
+      "confidence": 0.9752814769744873
+    },
+    {
+      "source_id": "cmt#AssociatedChair",
+      "target_id": "confof#Workshop",
+      "confidence": 0.9738750457763672
+    },
+    {
+      "source_id": "cmt#PaperAbstract",
+      "target_id": "confof#Short_paper",
+      "confidence": 0.9737606644630432
+    },
+    {
+      "source_id": "cmt#Co-author",
+      "target_id": "confof#Science_Worker",
+      "confidence": 0.9729061126708984
+    },
+    {
+      "source_id": "cmt#Preference",
+      "target_id": "confof#Country",
+      "confidence": 0.9717905521392822
+    },
+    {
+      "source_id": "cmt#User",
+      "target_id": "confof#Trip",
+      "confidence": 0.9700725674629211
+    },
+    {
+      "source_id": "cmt#Decision",
+      "target_id": "confof#Working_event",
+      "confidence": 0.9697754383087158
+    },
+    {
+      "source_id": "cmt#ConferenceChair",
+      "target_id": "confof#Banquet",
+      "confidence": 0.9677620530128479
+    },
+    {
+      "source_id": "cmt#Meta-Review",
+      "target_id": "confof#Social_event",
+      "confidence": 0.9654571413993835
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "confof#Member_PC",
+      "confidence": 0.96345454454422
+    },
+    {
+      "source_id": "cmt#Bid",
+      "target_id": "confof#Company",
+      "confidence": 0.9549179077148438
+    },
+    {
+      "source_id": "cmt#AuthorNotReviewer",
+      "target_id": "confof#Registration_of_participants_event",
+      "confidence": 0.9520084857940674
+    },
+    {
+      "source_id": "cmt#PaperFullVersion",
+      "target_id": "confof#Regular",
+      "confidence": 0.9455081224441528
+    },
+    {
+      "source_id": "cmt#Meta-Reviewer",
+      "target_id": "confof#Volunteer",
+      "confidence": 0.9440361857414246
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "confof#Participant",
+      "confidence": 0.9311683177947998
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "confof#Reviewing_results_event",
+      "confidence": 0.9053946137428284
+    },
+    {
+      "source_id": "cmt#Rejection",
+      "target_id": "confof#Submission_event",
+      "confidence": 0.9032159447669983
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeChair",
+      "target_id": "confof#Chair_PC",
+      "confidence": 0.8907233476638794
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "confof#Camera_Ready_event",
+      "confidence": 0.8816733956336975
+    },
+    {
+      "source_id": "cmt#Acceptance",
+      "target_id": "confof#University",
+      "confidence": 0.8607801795005798
+    },
+    {
+      "source_id": "cmt#ProgramCommittee",
+      "target_id": "confof#Member",
+      "confidence": 0.17660555243492126
+    },
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "confof#Organization",
+      "confidence": 0.08525591343641281
+    },
+    {
+      "source_id": "cmt#ExternalReviewer",
+      "target_id": "confof#City",
+      "confidence": 0.07582920789718628
+    }
+  ],
+  "seed": 42,
+  "config": {
+    "seed": 42,
+    "embedder": "sentence-transformers/all-MiniLM-L6-v2",
+    "hidden_dim": 384,
+    "out_dim": 384,
+    "num_layers": 1,
+    "dropout": 0.5,
+    "epochs": 60,
+    "lr": 0.003,
+    "weight_decay": 0.0001,
+    "neg_ratio": 3,
+    "synthetic_seeds": 3,
+    "linear": false,
+    "fold_mode": "pair-loo",
+    "fold": "pair cmt\u2194confOf"
+  }
 }
