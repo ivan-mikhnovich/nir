@@ -1,0 +1,92 @@
+{
+  "embedding-LaBSE": {
+    "pairs": 21,
+    "baseline_f1": 0.3234622837405007,
+    "loo_f1": 0.6882459931166256,
+    "loo_precision": 0.8813899063899064,
+    "loo_recall": 0.5834080654855418,
+    "thresholds": {
+      "0.9": 21
+    }
+  },
+  "embedding-MiniLM": {
+    "pairs": 21,
+    "baseline_f1": 0.31445288931284926,
+    "loo_f1": 0.6701875584067477,
+    "loo_precision": 0.8724853189138904,
+    "loo_recall": 0.562728661347491,
+    "thresholds": {
+      "0.9": 21
+    }
+  },
+  "embedding-ruRoberta-large": {
+    "pairs": 21,
+    "baseline_f1": 0.2786691598630097,
+    "loo_f1": 0.6433068913439721,
+    "loo_precision": 0.8838813303099018,
+    "loo_recall": 0.5278207393686308,
+    "thresholds": {
+      "0.99": 21
+    }
+  },
+  "embedding-rubert-base": {
+    "pairs": 21,
+    "baseline_f1": 0.2583578550125726,
+    "loo_f1": 0.6457699455311642,
+    "loo_precision": 0.8845427059712774,
+    "loo_recall": 0.5302016917495832,
+    "thresholds": {
+      "0.95": 21
+    }
+  },
+  "llm-bm25": {
+    "pairs": 21,
+    "baseline_f1": 0.661712690575769,
+    "loo_f1": 0.661712690575769,
+    "loo_precision": 0.8755291005291005,
+    "loo_recall": 0.5529736502766904,
+    "thresholds": {
+      "0.0": 21
+    }
+  },
+  "llm-deepseek": {
+    "pairs": 21,
+    "baseline_f1": 0.644347817149622,
+    "loo_f1": 0.644347817149622,
+    "loo_precision": 0.783377088209021,
+    "loo_recall": 0.561439810900419,
+    "thresholds": {
+      "0.0": 21
+    }
+  },
+  "llm-gpt": {
+    "pairs": 21,
+    "baseline_f1": 0.6097729685012802,
+    "loo_f1": 0.639205747228927,
+    "loo_precision": 0.6691280280565994,
+    "loo_recall": 0.6310655957435951,
+    "thresholds": {
+      "0.9": 21
+    }
+  },
+  "llm-hybrid": {
+    "pairs": 21,
+    "baseline_f1": 0.6849858694086762,
+    "loo_f1": 0.6849858694086762,
+    "loo_precision": 0.7786491947206233,
+    "loo_recall": 0.6242263907922619,
+    "thresholds": {
+      "0.8": 21
+    }
+  },
+  "string-equiv": {
+    "pairs": 21,
+    "baseline_f1": 0.6628998799422047,
+    "loo_f1": 0.6628998799422047,
+    "loo_precision": 0.8832199546485261,
+    "loo_recall": 0.5510091451657323,
+    "thresholds": {
+      "0.0": 21
+    }
+  }
+}
