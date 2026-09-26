@@ -19,8 +19,10 @@ RESULTS_DIR = Path("results")
 # Pair separator, both in canonical keys and in pair file names.
 PAIR_SEPARATOR = "↔"
 
-# Render-only subdirectory that is never part of the result cache.
+# Subdirectories of `results/` that hold derived artefacts, not matcher results.
 VIZ_DIR = "viz"
+CONSISTENCY_DIR = "consistency"
+NON_RESULT_DIRS = frozenset({VIZ_DIR, CONSISTENCY_DIR})
 
 
 def pair_key(a: str, b: str) -> str:
@@ -56,7 +58,7 @@ def load_all_cached() -> dict[str, dict]:
     if not RESULTS_DIR.exists():
         return all_data
     for subdir in sorted(RESULTS_DIR.iterdir()):
-        if not subdir.is_dir() or subdir.name == VIZ_DIR:
+        if not subdir.is_dir() or subdir.name in NON_RESULT_DIRS:
             continue
         approach = subdir.name
         for f in sorted(subdir.glob("*.json")):
