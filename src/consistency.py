@@ -3,15 +3,22 @@
 Two families of checks make up the second half of the topic:
 
 * Taxonomy-internal integrity — cycles in the `is-a` graph, duplicate labels,
-  declared disjointness between a class and its own ancestor, classes that are
-  unreachable from the declared root.
+  declared disjointness between a class and its own ancestor, classes whose
+  declared parent is absent from the taxonomy, and classes with no chain of
+  parents ending at a root.
 * Alignment consistency — violations of the 1:1 cardinality, matches that
-  contradict declared disjointness or the subsumption hierarchy of the source,
-  and low-confidence matches that the Human-in-the-Loop stage should review.
+  contradict declared disjointness or the subsumption hierarchy of the source.
 
 The alignment checks double as a post-filter: `check_alignment` records, for
 every match, the kinds it violates, so a caller can drop the flagged matches
 and measure whether the filter improves precision.
+
+Confidence is deliberately NOT one of the checks. A confidence cut-off is the
+post-processing the matchers leave to the caller, and it selects on the match's
+own confidence alone, so it can say nothing about consistency that the
+threshold sweep of `src.runners.consistency` does not already say: the two are
+numerically identical, and the sweep is where that number belongs (F2,
+review/review-consistency.md).
 
 Usage:
     from src.consistency import check_alignment, check_taxonomy
@@ -27,32 +34,33 @@ from src.taxonomy import Alignment, Taxonomy
 CYCLE = "is-a-cycle"
 DUPLICATE_LABEL = "duplicate-label"
 DISJOINT_ANCESTOR = "disjoint-ancestor"
+DANGLING_PARENT = "dangling-parent"
 UNREACHABLE = "unreachable-class"
 CARDINALITY = "cardinality-violation"
 DISJOINTNESS = "disjointness-violation"
 SUBSUMPTION = "subsumption-violation"
-LOW_CONFIDENCE = "low-confidence"
 
-# Severity per kind: an error contradicts the ontology or the 1:1 setting, a
-# warning is a structural anomaly, info is a hint for human review.
+# Severity per kind: an error contradicts the ontology or the 1:1 setting,
+# a warning is a structural anomaly.
 SEVERITY: dict[str, str] = {
     CYCLE: "error",
     DUPLICATE_LABEL: "warning",
     DISJOINT_ANCESTOR: "error",
+    DANGLING_PARENT: "error",
     UNREACHABLE: "info",
     CARDINALITY: "error",
     DISJOINTNESS: "error",
     SUBSUMPTION: "warning",
-    LOW_CONFIDENCE: "info",
 }
 
-# Kinds of an alignment check that a filter may drop matches for.
-ALIGNMENT_KINDS = (CARDINALITY, DISJOINTNESS, SUBSUMPTION, LOW_CONFIDENCE)
+# Kinds of the alignment checks proper, and the flags a filter may drop matches
+# for.  Low confidence is absent on purpose: it is the threshold sweep, not a
+# consistency check (see the module docstring).
+ALIGNMENT_KINDS = (CARDINALITY, DISJOINTNESS, SUBSUMPTION)
 
 # Kinds worth treating as "the alignment claims something the ontology denies".
 ERROR_KINDS = (CARDINALITY, DISJOINTNESS)
 WARNING_KINDS = (SUBSUMPTION,)
-INFO_KINDS = (LOW_CONFIDENCE,)
 
 
 @dataclass(frozen=True)
@@ -95,6 +103,12 @@ class AlignmentReport:
     match_count: int
     violations: list[Violation] = field(default_factory=list)
     flagged: dict[tuple[str, str], list[str]] = field(default_factory=dict)
+    # Overloaded groups per side — the unit a cardinality violation is counted
+    # in, as opposed to `flagged`, which counts the matches such a group
+    # invalidates (F5, review/review-consistency.md).
+    cardinality_groups: dict[str, int] = field(
+        default_factory=lambda: {"source": 0, "target": 0}
+    )
 
     def counts(self) -> dict[str, int]:
         """Number of violations per kind."""
@@ -142,11 +156,15 @@ def _is_descendant(tax: Taxonomy, node_id: str, ancestor_id: str) -> bool:
 
 
 def _roots(tax: Taxonomy) -> list[str]:
-    """Return the top-level classes, whose parents lie outside the taxonomy."""
-    return sorted(
-        nid for nid, node in tax.nodes.items()
-        if not any(parent in tax.nodes for parent in node.parents)
-    )
+    """Return the top-level classes, which declare no parent at all.
+
+    A class whose parents are all absent from the taxonomy is deliberately not
+    a root: that would silently turn a broken `is-a` link into a top-level
+    class (F1, review/review-consistency.md).  Such a class is reported as
+    `dangling-parent` and stays unreachable unless another declared parent
+    reaches a root.
+    """
+    return sorted(nid for nid, node in tax.nodes.items() if not node.parents)
 
 
 def _children_map(tax: Taxonomy) -> dict[str, list[str]]:
@@ -214,6 +232,16 @@ def check_taxonomy(tax: Taxonomy) -> TaxonomyReport:
             source_id=cycle[0],
         ))
 
+    for nid, node in sorted(tax.nodes.items()):
+        missing = sorted({p for p in node.parents if p not in tax.nodes})
+        if missing:
+            violations.append(Violation(
+                kind=DANGLING_PARENT,
+                detail=(f"{nid} declares parent(s) the taxonomy does not contain: "
+                        f"{_sample(missing)}"),
+                source_id=nid,
+            ))
+
     by_label: dict[str, list[str]] = {}
     for nid, node in tax.nodes.items():
         by_label.setdefault(_normalized(node.name), []).append(nid)
@@ -239,7 +267,8 @@ def check_taxonomy(tax: Taxonomy) -> TaxonomyReport:
 
     # The parser leaves top-level classes unlinked from owl:Thing, so a taxonomy
     # has many roots by construction.  A class counts as unreachable only when no
-    # chain of parents ends at one of those roots: a cycle or a broken link.
+    # chain of declared parents ends at one of those roots: a cycle, or a
+    # declared parent that is absent from the taxonomy.
     roots = _roots(tax)
     children = _children_map(tax)
     reachable = set(roots)
@@ -279,12 +308,19 @@ def check_alignment(
     approach: str = "",
     pair: str = "",
     mode: str | None = None,
-    confidence_threshold: float = 0.7,
 ) -> AlignmentReport:
     """Run every alignment check and record which kinds each match violates.
 
-    The 1:1 cardinality and low-confidence checks need only the alignment; the
-    disjointness and subsumption checks compare it against both taxonomies.
+    The cardinality check needs only the alignment; the disjointness and
+    subsumption checks compare it against both taxonomies.  All of them are
+    order-independent: an overloaded source or target is kept as a *set* of
+    nodes and every combination of those sets is tested, so shuffling
+    `alignment.matches` cannot change a count (F4,
+    review/review-consistency.md).
+
+    A cardinality violation is counted per overloaded GROUP — an LLM matcher
+    is source-injective by construction, so a single overloaded target group
+    invalidates several matches while counting once (F5).
     """
     violations: list[Violation] = []
     flagged: dict[tuple[str, str], list[str]] = {}
@@ -294,61 +330,61 @@ def check_alignment(
         if kind not in kinds:
             kinds.append(kind)
 
-    by_source: dict[str, list[str]] = {}
-    by_target: dict[str, list[str]] = {}
+    by_source: dict[str, set[str]] = {}
+    by_target: dict[str, set[str]] = {}
     for m in alignment.matches:
-        by_source.setdefault(m.source_id, []).append(m.target_id)
-        by_target.setdefault(m.target_id, []).append(m.source_id)
+        by_source.setdefault(m.source_id, set()).add(m.target_id)
+        by_target.setdefault(m.target_id, set()).add(m.source_id)
 
-    for sid, tids in sorted(by_source.items()):
-        if len(tids) > 1:
-            for tid in tids:
-                flag((sid, tid), CARDINALITY)
-            violations.append(Violation(
-                kind=CARDINALITY,
-                detail=f"source {sid} is matched to {len(tids)} targets: {_sample(sorted(tids))}",
-                source_id=sid,
-            ))
-    for tid, sids in sorted(by_target.items()):
-        if len(sids) > 1:
-            for sid in sids:
-                flag((sid, tid), CARDINALITY)
-            violations.append(Violation(
-                kind=CARDINALITY,
-                detail=f"target {tid} is matched to {len(sids)} sources: {_sample(sorted(sids))}",
-                target_id=tid,
-            ))
-
-    for m in alignment.matches:
-        if m.confidence < confidence_threshold:
-            flag((m.source_id, m.target_id), LOW_CONFIDENCE)
-            violations.append(Violation(
-                kind=LOW_CONFIDENCE,
-                detail=(f"confidence {m.confidence:.2f} is below the "
-                        f"{confidence_threshold:.2f} threshold"),
-                source_id=m.source_id,
-                target_id=m.target_id,
-            ))
-
-    map_s2t = {m.source_id: m.target_id for m in alignment.matches}
-    map_t2s = {m.target_id: m.source_id for m in alignment.matches}
+    overloaded_sources = sorted(sid for sid, tids in by_source.items() if len(tids) > 1)
+    overloaded_targets = sorted(tid for tid, sids in by_target.items() if len(sids) > 1)
+    for sid in overloaded_sources:
+        tids = sorted(by_source[sid])
+        for tid in tids:
+            flag((sid, tid), CARDINALITY)
+        violations.append(Violation(
+            kind=CARDINALITY,
+            detail=f"source {sid} is matched to {len(tids)} targets: {_sample(tids)}",
+            source_id=sid,
+        ))
+    for tid in overloaded_targets:
+        sids = sorted(by_target[tid])
+        for sid in sids:
+            flag((sid, tid), CARDINALITY)
+        violations.append(Violation(
+            kind=CARDINALITY,
+            detail=f"target {tid} is matched to {len(sids)} sources: {_sample(sids)}",
+            target_id=tid,
+        ))
 
     # Declared disjointness must survive the alignment: two classes that one
     # ontology declares disjoint cannot be matched by classes the other
-    # ontology relates by subsumption (this would make them overlap).
+    # ontology relates by subsumption (this would make them overlap).  One
+    # violation is counted per declared pair and side once any combination of
+    # its matches breaks the constraint, and every match of a breaking
+    # combination is flagged.
     for side, tax, other, mapping in (
-        ("source", src, tgt, map_s2t),
-        ("target", tgt, src, map_t2s),
+        ("source", src, tgt, by_source),
+        ("target", tgt, src, by_target),
     ):
         for x, y in _disjoint_pairs(tax):
             if x not in mapping or y not in mapping:
                 continue
-            mx, my = mapping[x], mapping[y]
-            if mx != my and not _is_descendant(other, mx, my) and not _is_descendant(other, my, mx):
+            clash: tuple[str, str] | None = None
+            for mx in sorted(mapping[x]):
+                for my in sorted(mapping[y]):
+                    if mx != my and not _is_descendant(other, mx, my) \
+                            and not _is_descendant(other, my, mx):
+                        continue
+                    keys = [(x, mx), (y, my)] if side == "source" else [(mx, x), (my, y)]
+                    for key in keys:
+                        flag(key, DISJOINTNESS)
+                    if clash is None:
+                        clash = (mx, my)
+            if clash is None:
                 continue
+            mx, my = clash
             keys = [(x, mx), (y, my)] if side == "source" else [(mx, x), (my, y)]
-            for key in keys:
-                flag(key, DISJOINTNESS)
             relation = ("both land on the same class" if mx == my
                         else f"{other.name} relates them by subsumption")
             violations.append(Violation(
@@ -360,26 +396,31 @@ def check_alignment(
             ))
 
     # A child may not be matched below where its own parent was matched: the
-    # alignment has to preserve the subsumption direction of the source.
+    # alignment has to preserve the subsumption direction of the source.  A
+    # parent matched to several targets gives one candidate per target, and the
+    # match is reported once.
     for m in alignment.matches:
         node = src.nodes.get(m.source_id)
         if node is None:
             continue
         for parent_id in node.parents:
-            parent_match = map_s2t.get(parent_id)
-            if parent_match is None or m.target_id == parent_match:
+            for parent_target in sorted(by_source.get(parent_id, ())):
+                if m.target_id == parent_target:
+                    continue
+                if _is_descendant(tgt, m.target_id, parent_target):
+                    continue
+                flag((m.source_id, m.target_id), SUBSUMPTION)
+                violations.append(Violation(
+                    kind=SUBSUMPTION,
+                    detail=(f"{m.source_id} ⊑ {parent_id} and {parent_id} ↔ "
+                            f"{parent_target}, but {m.target_id} is not a "
+                            f"descendant of {parent_target}"),
+                    source_id=m.source_id,
+                    target_id=m.target_id,
+                ))
+                break
+            else:
                 continue
-            if _is_descendant(tgt, m.target_id, parent_match):
-                continue
-            flag((m.source_id, m.target_id), SUBSUMPTION)
-            violations.append(Violation(
-                kind=SUBSUMPTION,
-                detail=(f"{m.source_id} ⊑ {parent_id} and {parent_id} ↔ "
-                        f"{parent_match}, but {m.target_id} is not a "
-                        f"descendant of {parent_match}"),
-                source_id=m.source_id,
-                target_id=m.target_id,
-            ))
             break
 
     return AlignmentReport(
@@ -389,6 +430,10 @@ def check_alignment(
         match_count=alignment.match_count,
         violations=violations,
         flagged=flagged,
+        cardinality_groups={
+            "source": len(overloaded_sources),
+            "target": len(overloaded_targets),
+        },
     )
 
 
@@ -416,8 +461,15 @@ def flag_quality(
 
     `error_precision` is the share of flagged matches that are wrong, and
     `error_recall` is the share of wrong matches that got flagged. Both are
-    measured against the ground truth, so a flag is useful when its precision
-    exceeds the base error rate of the alignment.
+    measured against the ground truth, and `base_error_rate` (the share of
+    wrong matches in the whole alignment) is reported next to them, because a
+    flag that marked every match would score exactly that rate: a flag is
+    useful only when its `precision_lift` over the base rate is positive
+    (F3, review/review-consistency.md).
+
+    `flagged_errors` and `errors` are the raw sums, so a caller can pool the
+    ratio over several alignments instead of averaging per-record ratios
+    (F8).
     """
     gt = ground_truth.as_pairs()
     dropped = set(kinds)
@@ -431,9 +483,16 @@ def flag_quality(
         and (m.source_id, m.target_id) not in flagged_keys
     )
     total_errors = flagged_errors + missed_errors
+    matches = alignment.match_count
+    precision = flagged_errors / len(flagged_keys) if flagged_keys else 0.0
+    base_error_rate = total_errors / matches if matches else 0.0
     return {
+        "matches": float(matches),
         "flagged": float(len(flagged_keys)),
+        "flagged_errors": float(flagged_errors),
         "errors": float(total_errors),
-        "error_precision": flagged_errors / len(flagged_keys) if flagged_keys else 0.0,
+        "error_precision": precision,
         "error_recall": flagged_errors / total_errors if total_errors else 0.0,
+        "base_error_rate": base_error_rate,
+        "precision_lift": precision - base_error_rate,
     }

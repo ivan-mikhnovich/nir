@@ -7,6 +7,15 @@ post-processing stages are inherited verbatim.
 BM25 catches exact and partial lexical matches (where StringEquiv excels),
 embeddings catch semantic correspondences (where BERT excels).  The union
 of both candidate sets is sent to the LLM for final binary classification.
+
+Two measurement-relevant properties:
+
+* The union is truncated to `total_k = min(top_k + bm25_k, 10)`, so with the
+  experimental `top_k = bm25_k = 5` the LLM receives **10** candidates, not 5;
+  the retrieval ceiling must be quoted for 10 (finding 3.8).
+* Retrieval encodes the taxonomies with `description_mode="name_only"`, while
+  the prompt uses the C/CP/CC representation.  The paper applies one
+  representation to both stages (finding 3.9/F10).
 """
 
 from __future__ import annotations

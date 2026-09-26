@@ -6,6 +6,10 @@ repeats one configuration several times on a few pairs and reports the spread of
 F1.  It never writes into `results/<approach>/`, so the published cache is left
 alone; the summary lands in a single file next to it.
 
+Each run reports its request count and retries, so the cost model of the note
+(`|S|` requests per mode and pair, `O(k·|S|)` tokens) can be checked against a
+real run rather than estimated.
+
 Usage:
     uv run python -m src.runners.repeats --repeats 3
     uv run python -m src.runners.repeats --pairs cmt:confOf conference:confOf --mode concept
@@ -73,10 +77,13 @@ def repeat_pair(
             "recall": metrics.recall,
             "matches": prediction.match_count,
             "api_time": matcher.last_timing.get("api_time", 0.0),
+            "requests": matcher.last_timing.get("requests", 0),
+            "retries": matcher.last_timing.get("retries", 0),
         })
         print(f"  {pair} {mode} run {i + 1}: F1={metrics.f1:.4f} "
               f"(P={metrics.precision:.3f}, R={metrics.recall:.3f}, "
-              f"{prediction.match_count} matches)")
+              f"{prediction.match_count} matches, "
+              f"requests={matcher.last_timing.get('requests', 0)})")
     f1s = [r["f1"] for r in runs]
     return {
         "pair": pair,

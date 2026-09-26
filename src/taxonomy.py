@@ -62,7 +62,11 @@ class Taxonomy:
         return [node.name]
 
     def get_ancestors(self, node_id: str) -> set[str]:
-        """Return every strict ancestor of a node, tolerating cycles."""
+        """Return every strict ancestor of a node, tolerating cycles.
+
+        A cycle must not make a node its own ancestor, so the starting node is
+        removed from the result even when the traversal reaches it again.
+        """
         node = self.nodes.get(node_id)
         seen: set[str] = set()
         stack = list(node.parents) if node is not None else []
@@ -74,6 +78,7 @@ class Taxonomy:
             parent = self.nodes.get(current)
             if parent is not None:
                 stack.extend(parent.parents)
+        seen.discard(node_id)
         return seen
 
     def get_textual_description(self, node_id: str) -> str:

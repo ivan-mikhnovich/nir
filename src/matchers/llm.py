@@ -1,9 +1,32 @@
 """LLM-based taxonomy matcher — LLMs4OM framework (arXiv 2404.10317).
 
-Binary classification prompting (yes/no per candidate pair) with
-three concept representations (C, CP, CC) and cardinality filtering.
+Binary classification prompting (yes/no per candidate pair) with three concept
+representations (C, CP, CC) and cardinality filtering.
 
-One API call per source node (k candidate pairs per call).
+Cost model.  One API request carries all k candidate judgements of one source
+node (a JSON array, see `_classify_source_candidates`), so a pair costs |S|
+requests per representation and 3·|S| requests in total; k does not enter the
+request count.  The token count is O(k·|S|), because every request contains k
+candidate descriptions.  `_classify_all_parallel` records the exact request
+count in `last_timing["requests"]`.
+
+Deliberate deviations from the paper:
+
+* The paper verbalises one (source, candidate) pair per request; here the k
+  pairs of a source node are batched into one request.
+* The paper's high-precision step `S_ir > 0.9` (force a match when the
+  retrieval similarity is high) is NOT implemented: `retrieve_candidates`
+  computes the similarities, `_postprocess` ignores them.
+* Retrieval uses the full textual description for both sides, while the prompt
+  uses the C/CP/CC representation; the paper applies one representation to
+  both stages.
+* Every representation starts from name + attributes + comment + `Disjoint
+  with`; CP adds one shortest ancestor chain, CC the child names.  C is
+  therefore not name-only.
+
+An ensemble over the three representations is this work's own addition
+(`ensemble_candidates`); LLMs4OM itself evaluates single representations and
+has no ensemble.
 """
 
 from __future__ import annotations
@@ -12,15 +35,31 @@ import json
 import os
 import string
 import time
+from collections.abc import Iterable
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
+from statistics import mean
 
 from openai import OpenAI
 
-from src.matchers.embedding import EmbeddingMatcher
+from src.matching_rules import Candidate, greedy_injective
 from src.taxonomy import Alignment, TaxonMatch, Taxonomy
 
 KODIKROUTER_BASE = "https://api.kodikrouter.ru/v1"
+
+# The three concept representations of LLMs4OM §3, step 1.
+ENSEMBLE_MODES: tuple[str, ...] = ("concept", "concept-parent", "concept-children")
+
+# A target must be voted for by at least this many representations to be kept.
+ENSEMBLE_MIN_VOTES = 2
+
+# LLMs4OM step 1: the confidence cut on the "yes" class.
+CONFIDENCE_THRESHOLD = 0.7
+
+# Confidence of the embedding fallback used when a request fails.  It must
+# stay above CONFIDENCE_THRESHOLD, otherwise the fallback candidate is dropped
+# again by `_postprocess` and the failure silently becomes an empty cell.
+FALLBACK_CONFIDENCE = 0.75
 
 
 @dataclass
@@ -41,15 +80,90 @@ class PairJudgement:
     candidate_id: str
     match: bool
     confidence: float
+    fallback: bool = False  # True when the judgement came from the embedding fallback.
+
+
+def ensemble_candidates(
+    per_mode: dict[str, Iterable[Candidate]],
+    min_votes: int = ENSEMBLE_MIN_VOTES,
+) -> list[Candidate]:
+    """Combine per-representation predictions into one 1:1 candidate list.
+
+    A target is accepted for a source node only when at least `min_votes` of
+    the representations vote for it.  The accepted candidates carry the mean
+    confidence of their voters and are then reduced to an injective mapping by
+    `greedy_injective`, so the ensemble never reuses a source or a target and
+    does not depend on the input order.  Only the predictions of the single
+    representations are read — no API request is made — so the ensemble can be
+    recomputed from cached per-mode predictions.
+    """
+    votes: dict[tuple[str, str], list[float]] = {}
+    for candidates in per_mode.values():
+        for src, tgt, conf in candidates:
+            votes.setdefault((src, tgt), []).append(conf)
+
+    accepted: list[Candidate] = [
+        (src, tgt, mean(confs))
+        for (src, tgt), confs in votes.items()
+        if len(confs) >= min_votes
+    ]
+    return greedy_injective(accepted)
+
+
+def aggregate_mode_f1(
+    per_pair_modes: dict[str, dict[str, float]],
+    per_pair_ensemble: dict[str, float] | None = None,
+) -> dict[str, float]:
+    """Summarise per-pair, per-mode F1 into published aggregation rules.
+
+    `mean_over_modes` averages the three representations, per pair and then
+    over pairs.  `loo_mode_selection` picks, for every pair, the representation
+    with the best mean over the *other* pairs and applies it to that pair, so
+    the pair's own ground truth never selects its representation.
+    `oracle_max` is the per-pair maximum over the representations; it needs the
+    pair's own ground truth and is therefore an oracle, not a deployable rule.
+    `ensemble` is added when the per-pair ensemble F1 values are given.
+    """
+    pairs = sorted(per_pair_modes)
+    if not pairs:
+        return {}
+    modes = sorted({m for d in per_pair_modes.values() for m in d})
+
+    mean_over_modes = mean(
+        mean(per_pair_modes[p][m] for m in modes if m in per_pair_modes[p])
+        for p in pairs
+    )
+
+    loo_values: list[float] = []
+    for held_out in pairs:
+        others = [p for p in pairs if p != held_out]
+        best_mode = max(
+            modes,
+            key=lambda m: mean(per_pair_modes[p][m] for p in others if m in per_pair_modes[p]),
+        )
+        loo_values.append(per_pair_modes[held_out].get(best_mode, 0.0))
+
+    aggregates = {
+        "mean_over_modes": mean_over_modes,
+        "loo_mode_selection": mean(loo_values),
+        "oracle_max": mean(max(per_pair_modes[p].values()) for p in pairs),
+        "n_pairs": len(pairs),
+    }
+    if per_pair_ensemble is not None:
+        values = [per_pair_ensemble[p] for p in pairs if p in per_pair_ensemble]
+        aggregates["ensemble"] = mean(values) if values else 0.0
+    return aggregates
 
 
 class LLMMatcher:
     """LLM-based ontology matching via LLMs4OM framework.
 
     1. Concept representation (C, CP, CC) with preprocessing.
-    2. Embedding retrieval (top-k candidates).
-    3. Binary classification per source node (one API call per node).
-    4. Post-processing: confidence threshold + cardinality filtering.
+    2. Embedding retrieval (top-k candidates, full descriptions).
+    3. Binary classification per source node (one API request per node).
+    4. Post-processing: confidence threshold + cardinality filtering (1:1).
+    5. Optional ensemble over the three representations
+       (`ensemble_candidates`), free of API calls once the modes are cached.
 
     Constructor accepts model, api_key, base_url for flexibility.
     """
@@ -76,10 +190,24 @@ class LLMMatcher:
         self.max_workers = max_workers
         self.use_structured_output = use_structured_output
 
-        self._embed_matcher = EmbeddingMatcher(model_name="sentence-transformers/all-MiniLM-L6-v2")
+        # The MiniLM matcher and its model are created on first use, so a
+        # BM25-only run never loads a model (see the `_embed_matcher` property).
+        self._embed_matcher_instance = None
         self._embed_cache: dict[tuple[str, str], dict[str, list[tuple[str, float]]]] = {}
 
         self.last_timing: dict[str, float] = {}
+        self._retry_count = 0  # Retries issued by the last classification sweep.
+
+    @property
+    def _embed_matcher(self):
+        """MiniLM matcher for candidate retrieval, created on first access."""
+        if self._embed_matcher_instance is None:
+            from src.matchers.embedding import EmbeddingMatcher
+
+            self._embed_matcher_instance = EmbeddingMatcher(
+                model_name="sentence-transformers/all-MiniLM-L6-v2"
+            )
+        return self._embed_matcher_instance
 
     # ── Concept representations (LLMs4OM §3, step 1) ─────────────────────
 
@@ -89,7 +217,13 @@ class LLMMatcher:
         node_id: str,
         mode: str = "concept",
     ) -> str:
-        """Build a preprocessed text description for one LLMs4OM input type."""
+        """Build a preprocessed text description for one LLMs4OM input type.
+
+        Every mode starts from the node name plus all characteristics that are
+        available — attributes, comment and `Disjoint with` targets — so C is
+        not name-only.  `concept-parent` appends one shortest ancestor chain
+        and `concept-children` the child names; neither replaces the base part.
+        """
         node = tax.nodes.get(node_id)
         if node is None:
             return f"[Unknown: {node_id}]"
@@ -133,7 +267,14 @@ class LLMMatcher:
     def retrieve_candidates(
         self, source: Taxonomy, target: Taxonomy
     ) -> dict[str, list[tuple[str, float]]]:
-        """Pre-compute top-k target candidates via embedding cosine similarity."""
+        """Pre-compute top-k target candidates via embedding cosine similarity.
+
+        Both sides are encoded with `description_mode="full"`, so retrieval and
+        prompting use different texts (the prompt uses C/CP/CC; the paper uses
+        one representation for both stages).  The returned similarities are
+        kept for the ceiling analysis; the LLMs4OM high-precision step
+        (`S_ir > 0.9`) that would consume them is not implemented.
+        """
         cache_key = (source.name, target.name)
         if cache_key in self._embed_cache:
             return self._embed_cache[cache_key]
@@ -250,6 +391,7 @@ Output ONLY a JSON object with a "decisions" array. Each entry: {{"pair": <index
                     raise
                 delay = min(self.RETRY_BASE_DELAY * (2 ** attempt), self.RETRY_MAX_DELAY)
                 attempt += 1
+                self._retry_count += 1
                 if attempt <= 5 or attempt % 5 == 0:
                     print(f"    Retry {attempt} for {source.nodes[source_id].name} "
                           f"in {delay:.0f}s: {e}", flush=True)
@@ -345,6 +487,7 @@ Output ONLY a JSON object with a "decisions" array. Each entry: {{"pair": <index
 
         src_ids_sorted = sorted(source.nodes.keys())
         all_judgements: list[PairJudgement] = []
+        self._retry_count = 0
 
         # Build task list: (source_id, candidate_ids).
         tasks: list[tuple[str, list[str]]] = []
@@ -353,6 +496,9 @@ Output ONLY a JSON object with a "decisions" array. Each entry: {{"pair": <index
             if not candidates:
                 continue
             tasks.append((src_id, [cid for cid, _ in candidates]))
+
+        # One request per source node with at least one candidate.
+        self.last_timing["requests"] = len(tasks)
 
         api_t0 = time.perf_counter()
 
@@ -392,12 +538,15 @@ Output ONLY a JSON object with a "decisions" array. Each entry: {{"pair": <index
                                     f"with the same error. First error: {first_failures[0]}"
                                 ) from e
 
-                    # Fallback: top embedding candidate with low confidence.
+                    # Fallback: top embedding candidate; the confidence is
+                    # above CONFIDENCE_THRESHOLD so the candidate survives
+                    # `_postprocess` instead of becoming a silent empty cell.
                     if cand_ids:
                         best_id = cand_ids[0]
                         judgements = [PairJudgement(
                             source_id=src_id, candidate_id=best_id,
-                            match=True, confidence=0.5,
+                            match=True, confidence=FALLBACK_CONFIDENCE,
+                            fallback=True,
                         )]
                     else:
                         judgements = []
@@ -413,6 +562,8 @@ Output ONLY a JSON object with a "decisions" array. Each entry: {{"pair": <index
         pbar.close()
 
         api_time = time.perf_counter() - api_t0
+        self.last_timing["judgements"] = len(all_judgements)
+        self.last_timing["retries"] = self._retry_count
         return all_judgements, api_time
 
     def match(
@@ -464,20 +615,21 @@ Output ONLY a JSON object with a "decisions" array. Each entry: {{"pair": <index
         judgements: list[PairJudgement],
         source: Taxonomy,
     ) -> list[LLMMatchResult]:
-        """LLMs4OM post-processing: confidence threshold + cardinality 1:1."""
-        yes_pairs = [j for j in judgements if j.match and j.confidence > 0.7]
-        yes_pairs.sort(key=lambda j: j.confidence, reverse=True)
+        """LLMs4OM post-processing: confidence threshold + cardinality 1:1.
 
-        used_sources: set[str] = set()
-        used_targets: set[str] = set()
-        assigned: dict[str, tuple[str, float]] = {}
-
-        for j in yes_pairs:
-            if j.source_id in used_sources or j.candidate_id in used_targets:
-                continue
-            used_sources.add(j.source_id)
-            used_targets.add(j.candidate_id)
-            assigned[j.source_id] = (j.candidate_id, j.confidence)
+        Step 1 keeps the "yes" judgements above `CONFIDENCE_THRESHOLD`; the
+        paper's high-precision step `S_ir > 0.9` is not implemented (see the
+        module docstring).  Step 3 reduces the survivors to a 1:1 mapping with
+        `greedy_injective`, whose tie-break is the source and target id: the
+        result therefore does not depend on the order in which the parallel
+        classifications finished, unlike the previous arrival-order greedy.
+        """
+        candidates: list[Candidate] = [
+            (j.source_id, j.candidate_id, j.confidence)
+            for j in judgements
+            if j.match and j.confidence > CONFIDENCE_THRESHOLD
+        ]
+        assigned = {src: (tgt, conf) for src, tgt, conf in greedy_injective(candidates)}
 
         results: list[LLMMatchResult] = []
         for src_id in sorted(source.nodes.keys()):
@@ -497,55 +649,49 @@ Output ONLY a JSON object with a "decisions" array. Each entry: {{"pair": <index
         self,
         source: Taxonomy,
         target: Taxonomy,
+        mode_results: dict[str, list[LLMMatchResult]] | None = None,
     ) -> tuple[Alignment, list[LLMMatchResult]]:
-        """Ensemble of three representations (C, CP, CC) — majority vote."""
-        modes = ["concept", "concept-parent", "concept-children"]
-        all_results: dict[str, list[LLMMatchResult]] = {}
-        total_api = 0.0
+        """Ensemble of the three representations via `ensemble_candidates`.
 
-        for i, mode in enumerate(modes):
-            if i > 0:
-                # Cooldown between modes to avoid rate limiting.
-                time.sleep(3.0)
-            _, results = self.match(source, target, mode=mode)
-            all_results[mode] = results
-            total_api += self.last_timing.get("api_time", 0.0)
+        Runs the three representations itself when `mode_results` is not given
+        (three sweeps, the last one's timing), otherwise it combines the
+        predictions passed in — the demo path and the cache recomputation use
+        that form and make no API calls at all.
+        """
+        if mode_results is None:
+            mode_results = {}
+            for i, mode in enumerate(ENSEMBLE_MODES):
+                if i > 0:
+                    # Cooldown between modes to avoid rate limiting.
+                    time.sleep(3.0)
+                _, results = self.match(source, target, mode=mode)
+                mode_results[mode] = results
 
-        aggregated: list[LLMMatchResult] = []
-        for src_id in sorted(source.nodes.keys()):
-            votes: dict[str, tuple[int, float]] = {}
-            for mode in modes:
-                r = next((r for r in all_results[mode] if r.source_id == src_id), None)
-                if r and r.target_id:
-                    prev = votes.get(r.target_id, (0, 0.0))
-                    votes[r.target_id] = (prev[0] + 1, prev[1] + r.confidence)
-
-            if votes:
-                best_tgt = max(votes, key=lambda k: (votes[k][0], votes[k][1]))
-                count, sum_conf = votes[best_tgt]
-                aggregated.append(LLMMatchResult(
-                    source_id=src_id, target_id=best_tgt,
-                    confidence=sum_conf / count,
-                ))
-            else:
-                aggregated.append(LLMMatchResult(
-                    source_id=src_id, target_id="", confidence=0.0,
-                ))
+        per_mode: dict[str, list[Candidate]] = {
+            mode: [
+                (r.source_id, r.target_id, r.confidence)
+                for r in results if r.target_id
+            ]
+            for mode, results in mode_results.items()
+        }
+        selected = ensemble_candidates(per_mode)
 
         alignment = Alignment(
             source=source.name,
             target=target.name,
             matches=[
-                TaxonMatch(
-                    source_id=r.source_id, target_id=r.target_id,
-                    confidence=r.confidence,
-                )
-                for r in aggregated if r.target_id
+                TaxonMatch(source_id=src, target_id=tgt, confidence=conf)
+                for src, tgt, conf in selected
             ],
         )
-        self.last_timing = {
-            "embed_time": self.last_timing.get("embed_time", 0.0),
-            "api_time": total_api,
-            "total": total_api + self.last_timing.get("embed_time", 0.0),
+        results_by_source = {
+            src: LLMMatchResult(source_id=src, target_id=tgt, confidence=conf)
+            for src, tgt, conf in selected
         }
+        aggregated = [
+            results_by_source.get(
+                src_id, LLMMatchResult(source_id=src_id, target_id="", confidence=0.0)
+            )
+            for src_id in sorted(source.nodes.keys())
+        ]
         return alignment, aggregated

@@ -4,6 +4,12 @@ Extends LLMMatcher from llm.py.  Uses BM25 instead of BERT embeddings
 for candidate retrieval — catches exact and partial lexical matches
 like StringEquiv, but allows partial overlap ("Author" ↔ "AuthorNotReviewer").
 LLM does final binary classification and cardinality filtering.
+
+A source node whose best lexical score is zero keeps an empty candidate list:
+it is dropped before classification, so it issues no request and can never be
+matched.  In the published runs this is 22.8 % of the ground-truth sources
+(see the retrieval ceiling report), which is why the request count of a
+BM25-only run is below `|S|` per mode.
 """
 
 from __future__ import annotations

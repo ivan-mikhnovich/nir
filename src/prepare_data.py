@@ -4,8 +4,10 @@ from pathlib import Path
 import sys
 
 from src.data_loader import (
-    load_oaei_conference,
+    SCENARIO_SUFFIX,
+    check_synthetic_variations,
     generate_synthetic_variations,
+    load_oaei_conference,
     save_taxonomy,
     save_alignments,
 )
@@ -62,6 +64,21 @@ def main():
 
     save_alignments(all_synth_alignments, synth_dir / "synthetic_alignments.json")
     print(f"\nSaved synthetic data to {synth_dir}/")
+
+    # -- Self-check of the generator ---------------------------------------
+    print("\n" + "=" * 60)
+    print("Step 3: Self-check of the synthetic generator")
+    print("=" * 60)
+    rows = check_synthetic_variations(base_tax, seeds=(42, 43, 44))
+    print(f"{'variant':<16s} {'suffix':>6s} {'nodes':>6s} {'GT':>5s} "
+          f"{'names':>6s} {'parents':>8s} {'attrs':>6s}")
+    print("-" * 60)
+    for row in rows:
+        print(f"{row['variant']:<16s} {SCENARIO_SUFFIX[row['scenario']]:>6s} "
+              f"{row['nodes']:>6d} {row['gt_matches']:>5d} {row['names']:>6d} "
+              f"{row['parents']:>8d} {row['attributes']:>6d}")
+    print(f"\n{len(rows)} variants checked: every scenario mutates the "
+          f"taxonomy and every variant name is unique.")
 
     # -- Summary -----------------------------------------------------------
     print("\n" + "=" * 60)

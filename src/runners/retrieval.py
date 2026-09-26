@@ -4,10 +4,16 @@ The LLM only classifies the candidates a retriever hands it, so a ground-truth
 pair that never enters the candidate set cannot be recovered, whatever the model
 does.  Measuring recall@k of the ground truth therefore bounds the F1 that any
 LLM configuration can reach, and answers the sensitivity-to-top-k question
-without a single API call.
+without a single API call.  The bound is optimistic on purpose: it assumes the
+classifier keeps every recalled candidate (precision 1.0), which is why it is
+reported as an upper bound and not as a reachable score (finding 3.8).
 
-The three retrievers of the experiments are compared: MiniLM cosine similarity
-over the full node description, BM25 over the class name, and their union.
+The three retrievers of the experiments are compared — MiniLM cosine similarity
+over the full node description, BM25 over the class name, and their union.  The
+union of the hybrid does **not** have `top_k` candidates: it keeps the top-`top_k`
+embedding candidates and adds the top-`bm25_k` lexical ones, truncated to
+`total_k = min(top_k + bm25_k, 10)`, so the reported ceiling is quoted for the
+number it really sends (`EXPERIMENT_K`).
 
 Usage:
     uv run python -m src.runners.retrieval
@@ -32,8 +38,22 @@ DEFAULT_OUT = Path("results/consistency/retrieval.json")
 # Candidate-set sizes to measure.
 KS: tuple[int, ...] = (1, 2, 3, 5, 10)
 
-# The experiments run with top-k = 5, so the ceiling is quoted for that size.
-RUN_TOP_K = 5
+# The experiments run with top-k = 5 for every retriever.  `HybridLLMMatcher`
+# unions the top-`top_k` embedding candidates with the top-`bm25_k` lexical ones
+# and truncates to `total_k = min(top_k + bm25_k, 10)`, so with the experimental
+# `bm25_k = top_k = 5` it hands the LLM **10** candidates, not 5, and its ceiling
+# must be quoted for k = 10 (findings 3.8).  Keep in sync with
+# `src.matchers.hybrid.HybridLLMMatcher.__init__`.
+EXPERIMENT_TOP_K = 5
+EXPERIMENT_K: dict[str, int] = {
+    "embedding-MiniLM": EXPERIMENT_TOP_K,
+    "bm25": EXPERIMENT_TOP_K,
+    "hybrid": min(EXPERIMENT_TOP_K + EXPERIMENT_TOP_K, 10),
+}
+
+# Label of the reconstructed ceiling: it can be reached only when every kept
+# candidate is a true positive, i.e. at precision 1.0.
+CEILING_LABEL = "upper bound reachable only at precision 1.0"
 
 
 def retriever_factories() -> dict[str, Callable[[int], LLMMatcher]]:
@@ -72,7 +92,11 @@ def uncovered_targets(
 
 
 def f1_ceiling(recall: float) -> float:
-    """Best F1 reachable with the given recall when precision is perfect."""
+    """Upper bound on F1 at the given recall, reached only at precision 1.0.
+
+    With recall fixed, F1 = 2·P·R/(P+R) grows monotonically in P, so the value at
+    P = 1.0 is a ceiling nothing in the experiment can exceed.
+    """
     return 2 * recall / (1 + recall) if recall > 0 else 0.0
 
 
@@ -80,18 +104,21 @@ def print_report(results: dict[str, dict], summary: dict[str, dict]) -> None:
     """Print recall@k per retriever and the implied F1 ceiling."""
     print("Candidate-set recall of the ground truth (mean over 21 pairs)")
     header = (f"{'retriever':<20}" + "".join(f"{'k=' + str(k):>8}" for k in KS)
-              + f"{'no cand':>9}{'F1 ceil @5':>12}")
+              + f"{'sent k':>8}{'no cand':>9}{'F1 ceil*':>10}")
     print(header)
     print("-" * len(header))
     for name, s in summary.items():
         row = "".join(f"{s['recall'][k]:>8.3f}" for k in KS)
-        print(f"{name:<20}{row}{s['uncovered']:>9.2f}{s['ceiling']:>12.3f}")
+        print(f"{name:<20}{row}{s['sent_k']:>8}{s['uncovered']:>9.2f}{s['ceiling']:>10.3f}")
+    print(f"* F1 ceiling = {CEILING_LABEL}; `sent k` is the number of candidates "
+          "the retriever actually hands the LLM.")
 
-    print("\nPairs with the weakest candidate coverage at top-k = 5")
+    print("\nPairs with the weakest candidate coverage, per retriever at its own k")
     for name, per_pair in results.items():
-        worst = sorted(per_pair.items(), key=lambda kv: kv[1][f"recall@{RUN_TOP_K}"])[:3]
-        text = ", ".join(f"{pair}={v[f'recall@{RUN_TOP_K}']:.2f}" for pair, v in worst)
-        print(f"  {name:<20}{text}")
+        k = summary[name]["sent_k"]
+        worst = sorted(per_pair.items(), key=lambda kv: kv[1][f"recall@{k}"])[:3]
+        text = ", ".join(f"{pair}={v[f'recall@{k}']:.2f}" for pair, v in worst)
+        print(f"  {name:<20}k={k:<4}{text}")
 
 
 def main() -> None:
@@ -120,12 +147,16 @@ def main() -> None:
             uncovered.append(uncovered_targets(candidates, gt_map))
         results[name] = per_pair
         recall = {k: mean(v[f"recall@{k}"] for v in per_pair.values()) for k in KS}
+        sent_k = EXPERIMENT_K[name]
         summary[name] = {
             "recall": recall,
             "uncovered": mean(uncovered),
-            "ceiling": f1_ceiling(recall[RUN_TOP_K]),
+            "sent_k": sent_k,
+            "ceiling": f1_ceiling(recall[sent_k]),
+            "ceiling_label": CEILING_LABEL,
         }
-        print(f"{name}: recall@{RUN_TOP_K} = {recall[RUN_TOP_K]:.3f}, "
+        print(f"{name}: sends {sent_k} candidates, "
+              f"recall@{sent_k} = {recall[sent_k]:.3f}, "
               f"no candidates for {summary[name]['uncovered']:.1%} of ground-truth sources")
 
     print()

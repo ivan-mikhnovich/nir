@@ -1,8 +1,10 @@
 """String-equivalence baseline for taxonomy matching.
 
 Simple lowercase label matching — OAEI official lower bound.
-For each source node, matches to the first target node with
-identical (lowercased) label, if any.
+For each source node, matches to the target node with an identical
+(lowercased) label; when several target nodes share that label the candidate
+with the smallest node id wins (deterministic, independent of the order in
+which the ontology was parsed — finding 1.15).
 """
 
 import time
@@ -28,9 +30,10 @@ class StringEquivMatcher:
         matches: list[TaxonMatch] = []
         for sid, src_node in source.nodes.items():
             key = src_node.name.strip().lower()
-            candidates = tgt_index.get(key, [])
+            # Explicit tie-break: smallest target id wins, so the result does
+            # not depend on the insertion order of `target.nodes`.
+            candidates = sorted(tgt_index.get(key, []))
             if candidates:
-                # Take first match (deterministic).
                 matches.append(TaxonMatch(
                     source_id=sid,
                     target_id=candidates[0],

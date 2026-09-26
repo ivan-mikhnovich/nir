@@ -12,6 +12,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+from ..matching_rules import Candidate, greedy_injective
 from ..taxonomy import Alignment, TaxonMatch, Taxonomy
 
 
@@ -257,10 +258,13 @@ class GNNMatcher:
         target: Taxonomy,
         threshold: float = 0.5,
     ) -> Alignment:
-        """Match two taxonomies.
+        """Match two taxonomies with the shared 1-to-1 rule.
 
-        Returns 1-to-1 greedy matching: for each source node, pick the
-        best unmatched target node above the similarity threshold.
+        Candidates are every (source, target) pair above the similarity
+        threshold; `matching_rules.greedy_injective` then keeps the best
+        candidates such that no source and no target is used twice
+        (findings 2.1/1.10: this method used to exclude only targets, so a
+        source could appear many times).
         """
         if self.model is None:
             raise RuntimeError(
@@ -283,28 +287,18 @@ class GNNMatcher:
 
         sim = sim.cpu().numpy()
 
-        # Greedy 1-to-1 matching.
-        matches: list[TaxonMatch] = []
-        used_tgt: set[int] = set()
-        # Sort source nodes by confidence descending.
-        candidates: list[tuple[float, int, int]] = []
-        for i in range(len(src_ids)):
-            for j in range(len(tgt_ids)):
-                candidates.append((float(sim[i, j]), i, j))
-        candidates.sort(key=lambda x: x[0], reverse=True)
-
-        for score, i, j in candidates:
-            if j in used_tgt or score < threshold:
-                continue
-            matches.append(TaxonMatch(
-                source_id=src_ids[i],
-                target_id=tgt_ids[j],
-                confidence=score,
-            ))
-            used_tgt.add(j)
+        candidates: list[Candidate] = [
+            (src_ids[i], tgt_ids[j], float(sim[i, j]))
+            for i in range(len(src_ids))
+            for j in range(len(tgt_ids))
+        ]
+        selected = greedy_injective(candidates, threshold=threshold)
 
         return Alignment(
             source=source.name,
             target=target.name,
-            matches=matches,
+            matches=[
+                TaxonMatch(source_id=src, target_id=tgt, confidence=conf)
+                for src, tgt, conf in selected
+            ],
         )
