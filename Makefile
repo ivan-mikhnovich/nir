@@ -1,5 +1,5 @@
 .PHONY: all download prepare-data run-embedding run-string-equiv run-llm run-llm-deepseek \
-        run-llm-local compare compare-full docx lint viewer viz clean
+        run-llm-local compare compare-full consistency docx lint viewer viz clean
 
 # This hack prevents creation of ugly `__pycache__` directories
 # in the source tree.
@@ -70,6 +70,11 @@ results/comparison.xlsx:
 # LLM НЕ запускает (защита от случайных расходов).
 compare-full:
 	uv run -m src.runners.compare --run --all-pairs
+
+# Проверка согласованности: целостность 7 онтологий OAEI + согласованность
+# всех кэшированных маппингов, плюс эффект фильтра по флагам на F1.  Мгновенно.
+consistency:
+	uv run -m src.runners.consistency
 
 # ── Документация ─────────────────────────────────────────────────────────
 
