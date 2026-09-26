@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-27T02:17:19+03:00",
+  "generated_at": "2026-10-03T19:46:24+03:00",
   "sources": {
     "code_constant": "значение взято из литерала исходника, файл и символ указаны в origin.",
     "file_mtime": "число записей и крайние даты изменения файлов results/<подход>/*.json.",
@@ -13,6 +13,7 @@
     "gnn_matcher": "src/matchers/gnn.py"
   },
   "non_result_dirs": [
+    "cls-violit-demo",
     "consistency",
     "viz"
   ],
@@ -42,11 +43,11 @@
           "source": "file_mtime"
         },
         "newest_mtime": {
-          "value": "2026-09-27 00:11:47",
+          "value": "2026-09-27 02:41:48",
           "source": "file_mtime"
         },
         "oldest_mtime": {
-          "value": "2026-09-27 00:11:46",
+          "value": "2026-09-27 02:41:48",
           "source": "file_mtime"
         },
         "api_requests": {
@@ -101,11 +102,11 @@
           "source": "file_mtime"
         },
         "newest_mtime": {
-          "value": "2026-09-27 00:11:48",
+          "value": "2026-09-27 02:41:48",
           "source": "file_mtime"
         },
         "oldest_mtime": {
-          "value": "2026-09-27 00:11:47",
+          "value": "2026-09-27 02:41:48",
           "source": "file_mtime"
         },
         "api_requests": {
@@ -160,11 +161,11 @@
           "source": "file_mtime"
         },
         "newest_mtime": {
-          "value": "2026-09-27 00:11:52",
+          "value": "2026-09-27 02:41:48",
           "source": "file_mtime"
         },
         "oldest_mtime": {
-          "value": "2026-09-27 00:11:49",
+          "value": "2026-09-27 02:41:48",
           "source": "file_mtime"
         },
         "api_requests": {
@@ -219,11 +220,11 @@
           "source": "file_mtime"
         },
         "newest_mtime": {
-          "value": "2026-09-27 00:11:53",
+          "value": "2026-09-27 02:41:48",
           "source": "file_mtime"
         },
         "oldest_mtime": {
-          "value": "2026-09-27 00:11:52",
+          "value": "2026-09-27 02:41:48",
           "source": "file_mtime"
         },
         "api_requests": {
@@ -345,11 +346,11 @@
           "source": "file_mtime"
         },
         "newest_mtime": {
-          "value": "2026-09-27 00:07:22",
+          "value": "2026-09-27 02:41:48",
           "source": "file_mtime"
         },
         "oldest_mtime": {
-          "value": "2026-09-26 23:48:16",
+          "value": "2026-09-27 02:41:48",
           "source": "file_mtime"
         },
         "api_requests": {
@@ -567,11 +568,11 @@
           "source": "file_mtime"
         },
         "newest_mtime": {
-          "value": "2026-09-27 00:14:35",
+          "value": "2026-09-27 02:41:48",
           "source": "file_mtime"
         },
         "oldest_mtime": {
-          "value": "2026-09-27 00:14:34",
+          "value": "2026-09-27 02:41:48",
           "source": "file_mtime"
         },
         "api_requests": {
@@ -759,11 +760,11 @@
           "source": "file_mtime"
         },
         "newest_mtime": {
-          "value": "2026-09-27 02:17:01",
+          "value": "2026-09-27 02:41:48",
           "source": "file_mtime"
         },
         "oldest_mtime": {
-          "value": "2026-09-27 00:42:36",
+          "value": "2026-09-27 02:41:48",
           "source": "file_mtime"
         },
         "api_requests": {
@@ -897,11 +898,11 @@
           "source": "file_mtime"
         },
         "newest_mtime": {
-          "value": "2026-09-27 02:17:01",
+          "value": "2026-09-27 02:41:48",
           "source": "file_mtime"
         },
         "oldest_mtime": {
-          "value": "2026-09-27 00:18:54",
+          "value": "2026-09-27 02:41:48",
           "source": "file_mtime"
         },
         "api_requests": {
@@ -1035,11 +1036,11 @@
           "source": "file_mtime"
         },
         "newest_mtime": {
-          "value": "2026-09-27 02:17:01",
+          "value": "2026-09-27 02:41:48",
           "source": "file_mtime"
         },
         "oldest_mtime": {
-          "value": "2026-09-27 01:16:38",
+          "value": "2026-09-27 02:41:48",
           "source": "file_mtime"
         },
         "api_requests": {
@@ -1173,11 +1174,11 @@
           "source": "file_mtime"
         },
         "newest_mtime": {
-          "value": "2026-09-27 02:17:01",
+          "value": "2026-09-27 02:41:48",
           "source": "file_mtime"
         },
         "oldest_mtime": {
-          "value": "2026-09-27 00:52:20",
+          "value": "2026-09-27 02:41:48",
           "source": "file_mtime"
         },
         "api_requests": {
@@ -1264,11 +1265,11 @@
           "source": "file_mtime"
         },
         "newest_mtime": {
-          "value": "2026-09-27 00:11:53",
+          "value": "2026-09-27 02:41:48",
           "source": "file_mtime"
         },
         "oldest_mtime": {
-          "value": "2026-09-27 00:11:53",
+          "value": "2026-09-27 02:41:48",
           "source": "file_mtime"
         },
         "api_requests": {

@@ -9,8 +9,12 @@ list), and the result must not depend on the order of the matches.
 from __future__ import annotations
 
 import random
+from dataclasses import asdict
+
+import pytest
 
 from src.metrics import evaluate_1to1
+from src.runners.consistency import aggregate, check_all_alignments
 from src.taxonomy import Alignment, TaxonMatch
 
 
@@ -77,3 +81,51 @@ def test_two_sources_matched_to_one_ground_truth_pair_count_once():
     assert metrics.true_positives == 1
     assert metrics.total_predicted == 1
     assert metrics.f1 == 1.0
+
+
+@pytest.mark.parametrize(
+    ("reference_sizes", "expected_precision", "expected_recall", "cut_precision", "cut_recall"),
+    [
+        ((1, 4), 0.75, 0.6, 1.0, 0.4),
+        ((0, 0), 0.0, 0.0, 0.0, 0.0),
+    ],
+)
+def test_pooled_threshold_metrics_count_all_reference_pairs(
+    taxonomy, reference_sizes, expected_precision, expected_recall, cut_precision, cut_recall,
+):
+    """Pooling weights unequal references and retains missed pairs after a cut."""
+    taxonomies, cached, references = {}, {"test": {}}, []
+    predictions = [
+        [("s0", "t0", 0.9), ("sX", "tX", 0.6)],
+        [("s0", "t0", 0.9), ("s1", "t1", 0.6)],
+    ]
+    for (source, target), size, pairs in zip(
+        (("a", "b"), ("c", "d")), reference_sizes, predictions,
+    ):
+        taxonomies[source] = taxonomy({f"s{i}": [] for i in (0, 1, 2, 3, "X")})
+        taxonomies[target] = taxonomy({f"t{i}": [] for i in (0, 1, 2, 3, "X")})
+        reference = alignment(
+            source, target, [(f"s{i}", f"t{i}", 1.0) for i in range(size)],
+        )
+        references.append(asdict(reference))
+        prediction = alignment(source, target, pairs)
+        pair = f"{source}↔{target}"
+        cached["test"][pair] = {
+            "pair": pair,
+            "source": source,
+            "target": target,
+            "f1": evaluate_1to1(prediction, reference).f1,
+            "match_pairs": asdict(prediction)["matches"],
+        }
+
+    reports, skipped = check_all_alignments(taxonomies, cached, references, 0.7)
+    assert skipped == 0
+    summary = aggregate(reports)["test"]
+    precision = summary["threshold_sweep_pooled_precision"]
+    recall = summary["threshold_sweep_pooled_recall"]
+    assert precision["0.00"] == pytest.approx(expected_precision)
+    assert recall["0.00"] == pytest.approx(expected_recall)
+    assert precision["0.70"] == pytest.approx(cut_precision)
+    assert recall["0.70"] == pytest.approx(cut_recall)
+    assert precision["0.99"] == 0.0
+    assert recall["0.99"] == 0.0

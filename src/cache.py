@@ -34,7 +34,8 @@ PAIR_SEPARATOR = "↔"
 # Subdirectories of `results/` that hold derived artefacts, not matcher results.
 VIZ_DIR = "viz"
 CONSISTENCY_DIR = "consistency"
-NON_RESULT_DIRS = frozenset({VIZ_DIR, CONSISTENCY_DIR})
+DEMO_EMBEDDINGS_DIR = "cls-violit-demo"
+NON_RESULT_DIRS = frozenset({VIZ_DIR, CONSISTENCY_DIR, DEMO_EMBEDDINGS_DIR})
 
 
 def pair_key(a: str, b: str) -> str:

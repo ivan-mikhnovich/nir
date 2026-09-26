@@ -6,3 +6,4 @@ __pycache__
 **/.~lock*
 /results/viz/
 /results/comparison.xlsx
+/results/gnn/fold-*.pt

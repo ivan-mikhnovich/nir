@@ -2,7 +2,7 @@
 """Генерирует изображения для презентации НИР.
 
 Запускается из Makefile перед компиляцией Beamer.
-Готовые изображения не перегенерируются.
+При каждом запуске перегенерирует три изображения.
 """
 
 import os
@@ -23,7 +23,6 @@ IMAGES_DIR = os.path.join(SCRIPT_DIR, "images")
 
 def _make_comparison_six_pairs(path: str) -> None:
     """Столбчатая диаграмма: F1 всех подходов на шести LLM-парах."""
-    # Данные — лучший режим (исключая ensemble) для каждого LLM-подхода.
     pairs = [
         "cmt\n↔\nconfOf",
         "cmt\n↔\nconference",
@@ -35,44 +34,42 @@ def _make_comparison_six_pairs(path: str) -> None:
 
     labels = [
         "StringEquiv",
-        "LaBSE\n(emb.)",
-        "MiniLM\n(emb.)",
-        "GPT-4.1-nano",
-        "DeepSeek V4 Flash",
-        "BM25 + DS",
-        "BM25 + MiniLM + DS",
+        "LaBSE\n(без порога)",
+        "ruRoberta-large\n(порог)",
+        "GNN",
+        "LLM: BM25+DS\n(ансамбль)",
+        "LLM: гибрид+DS\n(ансамбль)",
     ]
 
-    # F1 per approach per pair.
+    # F1 per approach per pair (единое правило 1:1; порог по leave-one-pair-out;
+    # LLM — ансамбль «не менее двух из трёх»).
     data = {
-        "StringEquiv":        [0.533, 0.375, 0.737, 1.000, 0.552, 0.457],
-        "LaBSE (emb.)":       [0.308, 0.450, 0.367, 0.432, 0.586, 0.439],
-        "MiniLM (emb.)":      [0.308, 0.450, 0.367, 0.432, 0.586, 0.463],
-        "GPT-4.1-nano":       [0.667, 0.640, 0.643, 0.889, 0.647, 0.577],
-        "DeepSeek V4 Flash":  [0.750, 0.632, 0.762, 0.941, 0.600, 0.550],
-        "BM25 + DS":          [0.533, 0.471, 0.762, 1.000, 0.667, 0.487],
-        "BM25 + MiniLM + DS": [0.750, 0.632, 0.600, 0.842, 0.625, 0.564],
+        "StringEquiv":            [0.533, 0.375, 0.737, 1.000, 0.552, 0.457],
+        "LaBSE (без порога)":     [0.359, 0.500, 0.367, 0.432, 0.552, 0.463],
+        "ruRoberta-large (порог)":[0.533, 0.444, 0.737, 1.000, 0.687, 0.500],
+        "GNN":                    [0.359, 0.400, 0.327, 0.432, 0.586, 0.390],
+        "LLM: BM25+DS (ансамбль)":[0.429, 0.375, 0.778, 0.933, 0.667, 0.424],
+        "LLM: гибрид+DS (ансамбль)":[0.667, 0.588, 0.667, 0.875, 0.667, 0.514],
     }
 
     n_pairs = len(pairs)
     n_groups = len(labels)
     x = np.arange(n_pairs)
-    width = 0.11
+    width = 0.13
     offsets = np.linspace(
         -(n_groups - 1) * width / 2,
         (n_groups - 1) * width / 2,
         n_groups,
     )
 
-    # Цветовая схема: baseline → embedding → LLM.
+    # Цветовая схема: baseline → embedding → GNN → LLM.
     colors = [
         "#95A5A6",  # StringEquiv (grey).
-        "#3498DB",  # LaBSE.
-        "#2980B9",  # MiniLM (darker blue).
-        "#27AE60",  # GPT.
-        "#2ECC71",  # DeepSeek.
-        "#E67E22",  # BM25 (orange).
-        "#F39C12",  # Hybrid (yellow).
+        "#3498DB",  # LaBSE raw.
+        "#1F618D",  # ruRoberta-large с порогом.
+        "#8E44AD",  # GNN.
+        "#E67E22",  # BM25 + DS.
+        "#27AE60",  # Гибрид + DS.
     ]
 
     fig, ax = plt.subplots(figsize=(14, 5.5))
@@ -92,6 +89,12 @@ def _make_comparison_six_pairs(path: str) -> None:
                     ha="center", fontsize=6.5, fontweight="bold",
                 )
 
+    ax.set_title(
+        "F1 на шести показательных парах: единое правило 1:1, "
+        "порог по leave-one-pair-out, LLM — ансамбль «не менее двух из трёх»",
+        fontsize=10,
+    )
+
     ax.set_xticks(x)
     ax.set_xticklabels(pairs, fontsize=9)
     ax.set_ylabel("F1", fontsize=11)
@@ -99,7 +102,7 @@ def _make_comparison_six_pairs(path: str) -> None:
     ax.yaxis.set_major_formatter(ticker.FuncFormatter(lambda y, _: f"{y:.1f}"))
 
     ax.legend(
-        loc="upper left", fontsize=7.5, ncol=2,
+        loc="upper left", fontsize=7.5, ncol=3,
         framealpha=0.9, edgecolor="#ccc",
     )
     ax.spines["top"].set_visible(False)
@@ -185,7 +188,7 @@ def _make_matching_diagram(path: str) -> None:
     # Render via dot (GraphViz).
     if shutil.which("dot"):
         subprocess.run(
-            ["dot", "-Tpng", f"-Gdpi=180", "-o", path, dot_path],
+            ["dot", "-Tpng", "-Gdpi=180", "-o", path, dot_path],
             check=True,
         )
         print(f"Сгенерирован: {os.path.relpath(path, SCRIPT_DIR)}")
@@ -254,7 +257,7 @@ def _make_gnn_architecture(path: str) -> None:
 
     if shutil.which("dot"):
         subprocess.run(
-            ["dot", "-Tpng", f"-Gdpi=150", "-o", path, dot_path],
+            ["dot", "-Tpng", "-Gdpi=150", "-o", path, dot_path],
             check=True,
         )
         print(f"Сгенерирован: {os.path.relpath(path, SCRIPT_DIR)}")
@@ -267,22 +270,13 @@ def main() -> None:
     os.makedirs(IMAGES_DIR, exist_ok=True)
 
     path_6 = os.path.join(IMAGES_DIR, "comparison_six_pairs.png")
-    if not os.path.exists(path_6):
-        _make_comparison_six_pairs(path_6)
-    else:
-        print(f"Уже существует: {os.path.relpath(path_6, SCRIPT_DIR)}")
+    _make_comparison_six_pairs(path_6)
 
     path_m = os.path.join(IMAGES_DIR, "matching_diagram.png")
-    if not os.path.exists(path_m):
-        _make_matching_diagram(path_m)
-    else:
-        print(f"Уже существует: {os.path.relpath(path_m, SCRIPT_DIR)}")
+    _make_matching_diagram(path_m)
 
     path_g = os.path.join(IMAGES_DIR, "gnn_architecture.png")
-    if not os.path.exists(path_g):
-        _make_gnn_architecture(path_g)
-    else:
-        print(f"Уже существует: {os.path.relpath(path_g, SCRIPT_DIR)}")
+    _make_gnn_architecture(path_g)
 
 
 if __name__ == "__main__":

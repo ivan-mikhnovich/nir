@@ -92,9 +92,7 @@ def print_orientation_audit(
         for pair, entry in sorted(pairs.items()):
             for record in cached_records(entry).values():
                 expected = canonical.get(pair)
-                # Metric-only records (GNN, GNN baseline) carry no direction at
-                # all: nothing to check here, and nothing to check in them
-                # either (review F9 — the cache stores no match list).
+                # Records without stored endpoints cannot be orientation-checked.
                 if expected is None or "source" not in record or "target" not in record:
                     continue
                 if (record["source"], record["target"]) == expected:
@@ -278,9 +276,9 @@ def aggregate(alignments: dict[str, dict]) -> dict[str, dict]:
     what a flag that marked everything would score — is reported next to
     them, with the lift over it (F3).
 
-    The threshold sweep is reported both as the mean over records and pooled
-    over matches: pooled precision is Σ true positives / Σ predicted, the
-    number the note quotes for the unthresholded run (REVIEW.md 1.8).
+    The threshold sweep is reported both as the mean over records and pooled:
+    pooled precision is Σ true positives / Σ predicted sources, and pooled
+    recall is Σ true positives / Σ reference pairs.
     """
     summary: dict[str, dict] = {}
     for approach, records in sorted(alignments.items()):
@@ -300,10 +298,10 @@ def aggregate(alignments: dict[str, dict]) -> dict[str, dict]:
         pooled_precision: dict[str, float] = {}
         pooled_recall: dict[str, float] = {}
         sweep_matches: dict[str, int] = {}
+        gold = sum(v["gt_matches"] for v in values)
         for k in keys:
             hits = sum(v["threshold_sweep"][k]["precision"] * v["threshold_sweep"][k]["sources"]
                        for v in values)
-            gold = sum(v["threshold_sweep"][k]["recall"] * v["gt_matches"] for v in values)
             predicted = sum(v["threshold_sweep"][k]["matches"] for v in values)
             evaluated = sum(v["threshold_sweep"][k]["sources"] for v in values)
             sweep_matches[k] = predicted
@@ -396,7 +394,7 @@ def aggregate(alignments: dict[str, dict]) -> dict[str, dict]:
 
 
 def aggregate_by_pair(alignments: dict[str, dict]) -> dict[str, dict]:
-    """Best mode per pair, comparable with the published comparison table.
+    """Diagnostic per-pair maximum over cached modes, including ensembles.
 
     Every approach picks its best mode per pair by the F1 of the leave-one-out
     thresholded prediction, then the result is averaged over the pairs.  That
@@ -588,8 +586,8 @@ def print_alignments(summary: dict[str, dict]) -> None:
 
 
 def print_by_pair(by_pair: dict[str, dict]) -> None:
-    """Print the best-mode-per-pair table with leave-one-out thresholds."""
-    print("\nBest mode per pair (comparable with the published comparison table)")
+    """Print diagnostic per-pair maxima, not a deployable LLM comparison."""
+    print("\nDiagnostic per-pair maxima (LLM mode selection is ORACLE, not deployable)")
     header = (f"{'approach':<22}{'pairs':>6}{'F1 raw':>9}{'F1 LOO':>9}"
               f"{'P@LOO':>8}{'R@LOO':>8}  thresholds")
     print(header)

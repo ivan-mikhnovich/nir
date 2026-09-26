@@ -9,7 +9,7 @@ IMAGES_SCRIPT := generate_images.py
 
 all: $(PDF)
 
-# Генерируем изображения перед компиляцией (скрипт сам проверяет кеш).
+# Перегенерируем три изображения перед каждой компиляцией PDF.
 $(PDF): $(TEX) $(IMAGES_SCRIPT)
 	uv run $(IMAGES_SCRIPT)
 	$(LATEX) $(LATEX_FLAGS) $(TEX)

@@ -64,3 +64,18 @@ def test_every_shipped_cache_uses_the_canonical_direction():
     canonical = cache.canonical_directions(raw)
     misoriented = cache.misoriented_records(canonical)
     assert misoriented == {}, f"записи с чужим направлением: {misoriented}"
+
+
+def test_demo_embeddings_do_not_enter_matcher_results(tmp_path, monkeypatch):
+    """Embedding-id lists must not break result discovery or orientation audits."""
+    monkeypatch.setattr(cache, "RESULTS_DIR", tmp_path)
+    demo = tmp_path / "cls-violit-demo"
+    demo.mkdir()
+    (demo / "model.ids.json").write_text(json.dumps(["node-a", "node-b"]), encoding="utf-8")
+    results = tmp_path / "llm-bm25"
+    results.mkdir()
+    saved = record("a", "b", [("s", "t", 0.9)])
+    (results / "a_b.json").write_text(json.dumps(saved), encoding="utf-8")
+
+    assert cache.load_all_cached() == {"llm-bm25": {"a↔b": saved}}
+    assert cache.misoriented_records({"a↔b": ("a", "b")}) == {}
