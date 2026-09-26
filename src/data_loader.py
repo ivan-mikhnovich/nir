@@ -373,6 +373,50 @@ def load_taxonomy(path: str | Path) -> Taxonomy:
     return tax
 
 
+def load_taxonomies(data_dir: str | Path) -> dict[str, Taxonomy]:
+    """Load all processed taxonomy JSON files from a directory."""
+    data_dir = Path(data_dir)
+    taxonomies: dict[str, Taxonomy] = {}
+    for f in sorted(data_dir.glob("*.json")):
+        if f.name == "alignments.json":
+            continue
+        tax = load_taxonomy(f)
+        taxonomies[tax.name] = tax
+    return taxonomies
+
+
+def load_alignments(path: str | Path) -> list[dict]:
+    """Load a raw alignment list (or ground-truth file) from JSON."""
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def find_gt(src_name: str, tgt_name: str, alignments_raw: list[dict]) -> Alignment | None:
+    """Find ground-truth alignment, trying both source↔target orderings."""
+    for al_data in alignments_raw:
+        s = al_data["source"]
+        t = al_data["target"]
+        if (s == src_name and t == tgt_name) or (s == tgt_name and t == src_name):
+            matches = [
+                TaxonMatch(source_id=m["source_id"], target_id=m["target_id"],
+                           confidence=m.get("confidence", 1.0))
+                for m in al_data["matches"]
+            ]
+            # If we matched the reverse direction, swap source/target in matches.
+            if s == tgt_name and t == src_name:
+                matches = [
+                    TaxonMatch(source_id=m.target_id, target_id=m.source_id,
+                               confidence=m.confidence)
+                    for m in matches
+                ]
+            return Alignment(
+                source=src_name,
+                target=tgt_name,
+                matches=matches,
+            )
+    return None
+
+
 def save_alignments(alignments: list[Alignment], path: str | Path) -> None:
     """Save alignments to a JSON file."""
     data = [

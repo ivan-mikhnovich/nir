@@ -4,22 +4,11 @@ Usage:
     uv run python -m src.runners.string_equiv
 """
 
-import json
 from pathlib import Path
 
-from src.data_loader import load_taxonomy
+from src.data_loader import load_alignments, load_taxonomies, load_taxonomy
 from src.metrics import evaluate_1to1
 from src.matchers.string_equiv import StringEquivMatcher
-
-
-def load_taxonomies(data_dir: Path) -> dict:
-    taxonomies: dict = {}
-    for f in sorted(data_dir.glob("*.json")):
-        if f.name == "alignments.json":
-            continue
-        tax = load_taxonomy(f)
-        taxonomies[tax.name] = tax
-    return taxonomies
 
 
 def make_gt(make_gt_for_al_data):
@@ -40,8 +29,7 @@ def make_gt(make_gt_for_al_data):
 def main() -> None:
     data_proc = Path("data/processed")
     taxonomies = load_taxonomies(data_proc / "oaei")
-    with open(data_proc / "oaei" / "alignments.json", encoding="utf-8") as f:
-        alignments_raw = json.load(f)
+    alignments_raw = load_alignments(data_proc / "oaei" / "alignments.json")
     matcher = StringEquivMatcher()
 
     # ── OAEI ──
