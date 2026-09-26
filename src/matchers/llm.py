@@ -130,7 +130,7 @@ class LLMMatcher:
 
     # ── Retrieval (LLMs4OM §3, step 2) ───────────────────────────────────
 
-    def _get_top_k_targets(
+    def retrieve_candidates(
         self, source: Taxonomy, target: Taxonomy
     ) -> dict[str, list[tuple[str, float]]]:
         """Pre-compute top-k target candidates via embedding cosine similarity."""
@@ -430,7 +430,7 @@ Output ONLY a JSON object with a "decisions" array. Each entry: {{"pair": <index
         t_start = time.perf_counter()
 
         # Step 1: retrieval.
-        top_k_map = self._get_top_k_targets(source, target)
+        top_k_map = self.retrieve_candidates(source, target)
         embed_time = time.perf_counter() - t_start
         self.last_timing["embed_time"] = embed_time
 

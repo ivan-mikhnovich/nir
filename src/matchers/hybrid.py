@@ -1,7 +1,7 @@
 """Hybrid LLM matcher with BM25 + embedding candidate retrieval.
 
 Extends LLMMatcher from llm.py.  Only the candidate retrieval step
-(`_get_top_k_targets`) is overridden — the LLM classification and
+(`retrieve_candidates`) is overridden — the LLM classification and
 post-processing stages are inherited verbatim.
 
 BM25 catches exact and partial lexical matches (where StringEquiv excels),
@@ -31,7 +31,7 @@ class HybridLLMMatcher(LLMMatcher):
 
     # ── Hybrid retrieval ────────────────────────────────────────────────
 
-    def _get_top_k_targets(
+    def retrieve_candidates(
         self, source: Taxonomy, target: Taxonomy,
     ) -> dict[str, list[tuple[str, float]]]:
         """Pre-compute top-k candidates via BM25 + embedding union.

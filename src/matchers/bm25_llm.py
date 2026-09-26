@@ -26,7 +26,7 @@ class BM25LLMMatcher(LLMMatcher):
 
     # ── BM25-only retrieval ────────────────────────────────────────────
 
-    def _get_top_k_targets(
+    def retrieve_candidates(
         self, source: Taxonomy, target: Taxonomy,
     ) -> dict[str, list[tuple[str, float]]]:
         """Pre-compute top-k candidates via BM25 lexical search.
