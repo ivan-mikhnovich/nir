@@ -124,7 +124,7 @@ provenance:
 # Конвертирует note.md в Word (.docx) с сохранением формул LaTeX как OMML.
 # Требуется pandoc ≥ 3.0.  Использует note-reference.docx для стилей (Times New Roman).
 docx:
-	pandoc note.md -o note.docx --reference-doc=note-reference.docx
+	pandoc note.md -o note.docx --reference-doc=note-reference.docx --lua-filter=note-tables.lua
 
 # ── Визуализация ─────────────────────────────────────────────────────────
 

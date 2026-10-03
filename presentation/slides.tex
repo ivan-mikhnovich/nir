@@ -43,7 +43,7 @@
 }
 
 \title{Разработка средств автоматического отображения\\между таксономиями и проверки их согласованности}
-\subtitle{Embedding-based \enspace\textbullet\enspace LLM (LLMs4OM) \enspace\textbullet\enspace GraphSAGE \enspace\textbullet\enspace проверка согласованности \enspace\textbullet\enspace OAEI 2025}
+\subtitle{Эмбеддинги \enspace\textbullet\enspace LLM и Jev \enspace\textbullet\enspace GraphSAGE \enspace\textbullet\enspace проверка согласованности \enspace\textbullet\enspace OAEI~2025}
 \author{Михнович Иван Вадимович}
 \institute{НИУ ВШЭ \enspace\textbullet\enspace МОАД \enspace\textbullet\enspace 1-й курс}
 \date{Санкт-Петербург, 2026 г.}
@@ -231,10 +231,11 @@
       Оказалось что \texttt{name\_only} на OAEI работает лучше, чем имя + путь.}
 
     \vspace{0.5em}
-    \item \structure{LLM-based (LLMs4OM)}
+    \item \structure{Retrieval + оценка пар (LLM / Jev)}
 
-      {\small DeepSeek-v4-flash / GPT-4.1-mini.  Бинарная классификация
-      пар-кандидатов при помощи LLM (yes/no).  Три представления: C, CP, CC.}
+      {\small DeepSeek-v4-flash / GPT-4.1-mini: бинарная классификация
+      кандидатов, представления C/CP/CC. Дополнительный эксперимент Jev:
+      вероятности эквивалентности без генерации текстового ответа.}
 
     \vspace{0.5em}
     \item \structure{GraphSAGE (GNN)}
@@ -298,7 +299,7 @@
           у MiniLM, 0{,}95 у rubert-base и ruRoberta-large
         \item Единый порог не переносится: у LaBSE 680 из 986 пар слабее 0{,}7,
           у ruRoberta-large сходства лежат в 0{,}73--1{,}0
-        \item Лучший средний F1 работы~--- ruRoberta-large с порогом 0{,}677 против
+        \item Лучший эмбеддинговый F1~--- ruRoberta-large с порогом 0{,}677 против
           0{,}663 у StringEquiv
       \end{itemize}
   \end{columns}
@@ -591,6 +592,52 @@
   \end{columns}
 \end{frame}
 
+% Дополнительный эксперимент: Jev через OpenRouter.
+\begin{frame}{Jev: вероятности вместо генерации ответа}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+      \structure{\large Что заменили}
+      \begin{itemize}
+        \item Прежний hybrid retrieval и тексты C/CP/CC
+        \item Jev 1.13 через OpenRouter: отдельная вероятность
+          эквивалентности для каждого кандидата (\texttt{Noul})
+        \item Порог, затем тот же глобальный отбор 1:1
+        \item 21 пара; эталон отложенной пары не выбирает порог
+      \end{itemize}
+      \vspace{0.3em}
+      \structure{\large Наблюдаемые расходы}
+      \begin{itemize}
+        \item 3648 запросов, без ошибок и fallback
+        \item Весь бенчмарк: \textbf{\$0{,}1293}
+        \item Медиана запроса: 0{,}273 с; p95: 0{,}367 с
+      \end{itemize}
+    \column{0.48\textwidth}
+      \structure{\large Средний F1 по 21 паре}
+      \vspace{0.2em}
+      \begin{tabular}{@{}lcc@{}}
+        \toprule
+        Режим & Порог 0{,}7 & LOO-порог \\
+        \midrule
+        C & 0{,}448 & 0{,}612 \\
+        CP & 0{,}287 & \textbf{0{,}690} \\
+        CC & 0{,}328 & 0{,}590 \\
+        Ансамбль & 0{,}393 & 0{,}658 \\
+        \bottomrule
+      \end{tabular}
+      \vspace{0.3em}
+      \begin{itemize}
+        \item LOO-выбор режима и порога тоже выбирает CP;
+          порог 0{,}25 во всех разбиениях
+        \item StringEquiv: 0{,}663; ruRoberta: 0{,}677
+        \item \alert{Превосходство не подтверждено}:
+          оба $p_{\rm Holm}=1{,}0$ (новая семья: девять сравнений)
+      \end{itemize}
+  \end{columns}
+  \vspace{0.2em}
+  {\scriptsize Один новый прогон; старые LLM-кэши не обеспечивают
+  идеально контролируемого сравнения. Источник: \texttt{results/jev-experiment.json}.}
+\end{frame}
+
 % --- 9. Итоговая таблица подходов ---
 \begin{frame}{Итоговая таблица: шесть показательных пар}
   \centering
@@ -598,36 +645,36 @@
 
   \begin{tabular}{@{}lccccc@{}}
     \toprule
-    \textbf{Пара} & \textbf{StringEquiv} & \textbf{LaBSE} & \textbf{ruRoberta} & \textbf{GNN} & \textbf{Гибрид + DS} \\
-     & & (без порога) & (с порогом) & (без порога) & (ансамбль) \\
+    \textbf{Пара} & \textbf{StringEquiv} & \textbf{ruRoberta} & \textbf{GNN} & \textbf{Гибрид + DS} & \textbf{Jev} \\
+     & & (LOO-порог) & (без порога) & (ансамбль) & (LOO: CP) \\
     \midrule
     cmt $\leftrightarrow$ confOf
-      & 0{,}533 & 0{,}359 & 0{,}533 & 0{,}359 & 0{,}667 \\
+      & 0{,}533 & 0{,}533 & 0{,}359 & 0{,}667 & 0{,}556 \\
     cmt $\leftrightarrow$ conference
-      & 0{,}375 & 0{,}500 & 0{,}444 & 0{,}400 & 0{,}588 \\
+      & 0{,}375 & 0{,}444 & 0{,}400 & 0{,}588 & 0{,}545 \\
     confOf $\leftrightarrow$ conference
-      & 0{,}737 & 0{,}367 & 0{,}737 & 0{,}327 & 0{,}667 \\
+      & 0{,}737 & 0{,}737 & 0{,}327 & 0{,}667 & 0{,}696 \\
     cmt $\leftrightarrow$ edas
-      & \textbf{1{,}000} & 0{,}432 & 1{,}000 & 0{,}432 & 0{,}875 \\
+      & \textbf{1{,}000} & 1{,}000 & 0{,}432 & 0{,}875 & 0{,}800 \\
     confOf $\leftrightarrow$ ekaw
-      & 0{,}552 & 0{,}552 & 0{,}687 & 0{,}586 & 0{,}667 \\
+      & 0{,}552 & 0{,}687 & 0{,}586 & 0{,}667 & 0{,}789 \\
     conference $\leftrightarrow$ ekaw
-      & 0{,}457 & 0{,}463 & 0{,}500 & 0{,}390 & 0{,}514 \\
+      & 0{,}457 & 0{,}500 & 0{,}390 & 0{,}514 & 0{,}600 \\
     \bottomrule
   \end{tabular}
 
   \vspace{0.6em}
-  {\footnotesize LLM~--- один фиксированный гибридный ансамбль «не менее двух из трёх»;
-  эмбеддинги~--- под единым правилом 1:1, порог по leave-one-pair-out.
-  Макро-F1 по 21 паре: StringEquiv 0{,}663, гибрид 0{,}645,
-  ruRoberta-large с порогом 0{,}677.}
+  {\footnotesize Генеративная LLM~--- фиксированный гибридный ансамбль;
+  Jev~--- выбор режима и порога по другим 20 парам, без эталона оцениваемой пары.
+  Макро-F1: StringEquiv 0{,}663, гибрид 0{,}645,
+  ruRoberta с порогом 0{,}677, Jev 0{,}690.}
 
   \vspace{0.5em}
   \begin{itemize}
-    \item LLM \alert{не} обходит не-LLM подходы в среднем: лучший ансамбль 0{,}645 ниже
-      и baseline (0{,}663), и ruRoberta-large с порогом (0{,}677)
-    \item На cmt$\leftrightarrow$conference гибрид выше строк:
-      0{,}375 $\to$ 0{,}588; на cmt$\leftrightarrow$edas ниже: 1{,}000 $\to$ 0{,}875
+    \item В прежнем LLM-прогоне лучший ансамбль 0{,}645 ниже
+      StringEquiv (0{,}663) и ruRoberta с порогом (0{,}677).
+    \item Jev после LOO: 0{,}690; разница со StringEquiv $+0{,}0267$,
+      $p_{\rm Holm}=1{,}0$. Больший средний F1 не доказывает превосходство.
     \item GNN без порога: 0{,}333 против MiniLM 0{,}349;
       с порогом: 0{,}667 против 0{,}653. Значимость не проверялась.
   \end{itemize}
@@ -651,14 +698,14 @@
       при смене правила и порога
 
     \vspace{0.25em}
-    \item \structure{Калибровка порога повышает измеренный F1}: $0{,}285$--$0{,}360$ без порога
-      против $0{,}636$--$0{,}677$ с порогом по схеме leave-one-pair-out; лучший результат
-      работы~--- ruRoberta-large, $0{,}677$
+    \item \structure{Калибровка порога повышает измеренный F1 эмбеддингов}:
+      $0{,}285$--$0{,}360$ без порога против $0{,}636$--$0{,}677$ после LOO;
+      лучший эмбеддинговый результат~--- ruRoberta-large, $0{,}677$
 
     \vspace{0.25em}
-    \item \structure{Измеренные различия со строковым baseline}:
-      гибридный ансамбль $-0{,}01784$, ruRoberta с порогом $+0{,}01403$;
-      оба $p_{\rm Holm}=1{,}0$ в семействе из 12 сравнений
+    \item \structure{Jev: новый эксперимент принятия решений}:
+      LOO-выбор режима и порога даёт $0{,}690$; весь прогон стоит \$0{,}1293.
+      Превосходство над StringEquiv, ruRoberta и гибридной LLM не подтверждено
 
     \vspace{0.25em}
     \item \structure{Recall ретривера не равен качеству классификации}:
@@ -686,9 +733,9 @@
       чувствительность классификатора к $k$ не измерена
 
     \vspace{0.3em}
-    \item \structure{Разброс генерации LLM} измерен на двух парах:
-      размах трёх прогонов достигает $0{,}217$; полного набора повторов
-      и доказательства снижения дисперсии ансамблем нет
+    \item \structure{Повторы ограничены}: разброс генерации LLM измерен на двух
+      парах (размах до $0{,}217$); Jev~--- один полный прогон.
+      Устойчивость нового результата и снижение дисперсии ансамблем не доказаны
 
     \vspace{0.3em}
     \item \structure{Pair-LOO не равен ontology-LOO}: в первом знакомые онтологии
@@ -715,8 +762,8 @@
       на нём GNN-архитектуры (GraphSAGE, GAT) и масштабирование LLM через blocking
 
     \vspace{0.3em}
-    \item \structure{Анализ ошибок и устойчивости LLM}: повторные прогоны для оценки разброса,
-      систематические паттерны, ансамблирование режимов
+    \item \structure{Анализ ошибок и устойчивости LLM/Jev}: повторные прогоны,
+      перенос на другой домен; затем сравнение с открытыми моделями решений
   \end{itemize}
 \end{frame}
 
@@ -1108,6 +1155,73 @@
     Измерены выбранные методы и влияние постобработки.
     Ограничения не выдаются за выполненные эксперименты.
   \end{block}
+\end{frame}
+
+% Приложение: воспроизводимость дополнительного эксперимента Jev.
+\begin{frame}{Jev: что зафиксировано в эксперименте?}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+      \structure{\large Схема решения}
+      \begin{itemize}
+        \item MiniLM top-5 + BM25 top-5: до десяти кандидатов;
+          прежние тексты C/CP/CC
+        \item Один запрос на исходный класс; \texttt{Noul}
+          оценивает каждую пару независимо
+        \item Эквивалентность, не связанность и не подкласс/надкласс
+        \item Все вероятности $\to$ порог $\to$ отбор 1:1;
+          без fallback
+      \end{itemize}
+    \column{0.48\textwidth}
+      \structure{\large Данные и расходы}
+      \begin{itemize}
+        \item Версия: \texttt{jev-1.13-20260917}
+        \item 1216 исходных узлов по 21 паре, три режима:
+          3648 запросов
+        \item 236 из 258 эталонных пар в кандидатах:
+          pooled recall $0{,}915$
+        \item 3{,}078 млн входных токенов, \$0{,}12927;
+          выход бесплатен, ошибки отсутствуют
+      \end{itemize}
+  \end{columns}
+  \begin{block}{Воспроизводимость}
+    Кандидаты, реальные запросы/ответы, расходы, версии, SHA-256 и исходники:
+    \texttt{experiments/jev/}. Метрики пересчитываются без API.
+  \end{block}
+  {\scriptsize \href{https://openrouter.ai/docs/guides/community/jev}
+  {OpenRouter: Jev Decisions API};
+  \href{https://docs.typesafe.ai/primitives/noul}{TypeSafe: Noul}.}
+\end{frame}
+
+% Приложение: статистика и калибровка вероятностей Jev.
+\begin{frame}{Jev: насколько убедителен результат?}
+  \structure{\large LOO-выбор режима и порога: средний F1 = 0{,}690}
+  \vspace{0.3em}
+  \begin{tabular}{@{}lccc@{}}
+    \toprule
+    Сравнение с Jev & $\Delta$ F1 & 95\% CI разности & $p_{\rm Holm}$ \\
+    \midrule
+    StringEquiv (0{,}663) & $+0{,}0267$ & $[-0{,}0356;\,+0{,}0923]$ & 1{,}0 \\
+    ruRoberta + LOO (0{,}677) & $+0{,}0127$ & $[-0{,}0321;\,+0{,}0546]$ & 1{,}0 \\
+    Гибридная LLM, ансамбль (0{,}645) & $+0{,}0446$ & $[-0{,}0177;\,+0{,}1101]$ & 1{,}0 \\
+    \bottomrule
+  \end{tabular}
+  \vspace{0.3em}
+  \begin{itemize}
+    \item Для каждой отложенной пары режим и порог выбираются по другим
+      20 парам. CP и 0{,}25 выбраны во всех разбиениях; это не oracle.
+    \item Новая семья: девять парных сравнений, совместная поправка Holm.
+      CI~--- bootstrap по парам; пары используют общие онтологии.
+    \item CP: Brier $0{,}0235$ против $0{,}0374$ у постоянного «нет»;
+      ECE по десяти интервалам $0{,}0477$. Метки заданы эталоном,
+      измерение не гарантирует калибровку в другом домене.
+  \end{itemize}
+  \begin{block}{Что можно утверждать}
+    Получен недорогой вариант сопоставления с любопытным средним F1.
+    Доказанного превосходства и оценки устойчивости полного Jev-прогона нет.
+    Следующий шаг~--- повторы и перенос, а не заявление о новом лучшем методе.
+  \end{block}
+  {\scriptsize Источник: \texttt{results/jev-experiment.json};
+  расходы не сравниваются с незафиксированной оплатой старых LLM-запросов.}
 \end{frame}
 
 \end{document}

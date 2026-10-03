@@ -1,0 +1,72 @@
+{
+  "timestamp": "2026-10-03T23:02:29.428850+00:00",
+  "request": {
+    "model": "typesafe/jev-1.13",
+    "state": {
+      "source": "name author",
+      "candidates": [
+        {
+          "index": 0,
+          "description": "name author"
+        },
+        {
+          "index": 1,
+          "description": "name paper"
+        }
+      ]
+    },
+    "questions": {
+      "candidate_0": {
+        "type": "noul",
+        "instructions": "Do source and candidates[0] describe equivalent ontology classes (the same concept), rather than merely related concepts or a subclass/superclass relationship?",
+        "criteria": {
+          "true": "The two classes describe the same concept.",
+          "false": "The classes are different, merely related, or one is a proper subclass of the other."
+        }
+      },
+      "candidate_1": {
+        "type": "noul",
+        "instructions": "Do source and candidates[1] describe equivalent ontology classes (the same concept), rather than merely related concepts or a subclass/superclass relationship?",
+        "criteria": {
+          "true": "The two classes describe the same concept.",
+          "false": "The classes are different, merely related, or one is a proper subclass of the other."
+        }
+      }
+    }
+  },
+  "status_code": 200,
+  "response": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "candidate_0": {
+        "type": "noul",
+        "noul": 0.96
+      },
+      "candidate_1": {
+        "type": "noul",
+        "noul": 0.04
+      }
+    },
+    "usage": {
+      "input_tokens": 465,
+      "output_tokens": 40,
+      "cost": 1.953e-05
+    },
+    "id": "gen-dec-1791068549-YnxG9VxnwKsFyBwOTkhT",
+    "provider": "TypeSafe"
+  },
+  "error": null,
+  "probabilities": [
+    {
+      "source_id": "author",
+      "target_id": "author",
+      "probability": 0.96
+    },
+    {
+      "source_id": "author",
+      "target_id": "paper",
+      "probability": 0.04
+    }
+  ],
+  "latency_seconds": 0.47638245299458504
+}
