@@ -1,0 +1,138 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{hse-theme}[2026/10/04 Official HSE presentation surfaces]
+
+\RequirePackage{fontspec}
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+
+% Цвета взяты из объектов официального шаблона НИУ ВШЭ.
+\definecolor{hsenavy}{HTML}{102D69}
+\definecolor{hsebody}{HTML}{0E2D69}
+\definecolor{hseclosingblue}{HTML}{0F2D69}
+\definecolor{hseblue}{HTML}{234A9B}
+\definecolor{hsecyan}{HTML}{11A0D7}
+\definecolor{hsegreen}{HTML}{029C63}
+\definecolor{hseorange}{HTML}{FBAE40}
+\definecolor{hsered}{HTML}{E61F3D}
+\definecolor{hsegray}{HTML}{A4A3A4}
+\definecolor{hselightgray}{HTML}{F2F2F2}
+% Более тёмные оттенки палитры предназначены для текста на белом фоне.
+\colorlet{good}{hsegreen!70!black}
+\colorlet{amber}{hseorange!55!black}
+\colorlet{accent}{hsered!80!black}
+
+% HSE Sans отсутствует на рабочей машине; Arial сохраняет нейтральный рисунок и кириллицу.
+\IfFontExistsTF{HSE Sans}{%
+  \setsansfont{HSE Sans}\newfontfamily\cyrillicfontsf{HSE Sans}%
+}{%
+  \IfFontExistsTF{Arial}{%
+    \setsansfont{Arial}\newfontfamily\cyrillicfontsf{Arial}%
+  }{%
+    \setsansfont{Noto Sans}\newfontfamily\cyrillicfontsf{Noto Sans}%
+  }%
+}
+\usefonttheme{professionalfonts}
+\setbeamercolor{normal text}{fg=hsebody,bg=white}
+\setbeamercolor{structure}{fg=hsenavy}
+\setbeamercolor{frametitle}{fg=hsenavy,bg=white}
+\setbeamercolor{title}{fg=hsenavy,bg=white}
+\setbeamercolor{subtitle}{fg=hsebody,bg=white}
+\setbeamercolor{author}{fg=hsebody,bg=white}
+\setbeamercolor{institute}{fg=hsebody,bg=white}
+\setbeamercolor{date}{fg=hsebody,bg=white}
+\setbeamercolor{page number in head/foot}{fg=hsenavy,bg=white}
+\setbeamercolor{block title}{fg=hsenavy,bg=hselightgray}
+\setbeamercolor{block body}{fg=hsebody,bg=white}
+\setbeamercolor{block title alerted}{fg=accent,bg=hselightgray}
+\setbeamercolor{block body alerted}{fg=hsebody,bg=white}
+\setbeamercolor{block title example}{fg=good,bg=hselightgray}
+\setbeamercolor{block body example}{fg=hsebody,bg=white}
+\setbeamerfont{normal text}{size=\fontsize{10.5}{12.5}\selectfont}
+\setbeamerfont{itemize/enumerate body}{size=\fontsize{10.5}{12.5}\selectfont}
+\setbeamerfont{itemize/enumerate subbody}{size=\fontsize{10.5}{12.5}\selectfont}
+\setbeamerfont{frametitle}{size=\fontsize{15}{18}\selectfont,series=\mdseries}
+\setbeamerfont{title}{size=\fontsize{20}{24}\selectfont,series=\mdseries}
+\setbeamerfont{subtitle}{size=\fontsize{11.5}{14}\selectfont,series=\mdseries}
+\setbeamerfont{author}{size=\fontsize{11.5}{14}\selectfont}
+\setbeamerfont{institute}{size=\fontsize{10.5}{13}\selectfont}
+\setbeamerfont{date}{size=\fontsize{9.5}{12}\selectfont}
+\setbeamerfont{page number in head/foot}{size=\fontsize{11}{13}\selectfont}
+\setbeamerfont{block title}{size=\fontsize{10.5}{12.5}\selectfont,series=\bfseries}
+\setbeamersize{text margin left=7.7mm,text margin right=7.7mm}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{frametitle continuation}{}
+\setbeamertemplate{background canvas}{\color{white}\rule{\paperwidth}{\paperheight}}
+\setbeamertemplate{itemize item}{\raisebox{0.15ex}{\scriptsize\textbullet}}
+\setbeamertemplate{itemize subitem}{\raisebox{0.15ex}{\scriptsize\textbullet}}
+\setbeamertemplate{blocks}[default]
+\AtBeginDocument{\usebeamerfont{normal text}}
+
+% Короткое название презентации задаётся необязательным аргументом команды title.
+\newcommand{\hseheadertext}{\insertshorttitle}
+\newcommand{\hseframenumber}{\insertframenumber}
+\setbeamertemplate{headline}{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=12.5mm,dp=0mm]{normal text}%
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=north west,inner sep=0pt] at
+        ([xshift=.04242\paperwidth,yshift=-.06771\paperheight]current page.north west)
+        {\includegraphics[width=.03677\paperwidth]{images/hse-logo-mark-blue.png}};
+      \node[anchor=north west,inner sep=0pt,text width=.65\paperwidth,align=left,
+        text=hsenavy,font=\fontsize{8.5}{10}\selectfont] at
+        ([xshift=.0938\paperwidth,yshift=-.06771\paperheight]current page.north west)
+        {\hseheadertext};
+      \node[anchor=north east,inner sep=0pt,text=hsenavy] at
+        ([xshift=-.058\paperwidth,yshift=-.078\paperheight]current page.north east)
+        {\usebeamerfont{page number in head/foot}\hseframenumber};
+    \end{tikzpicture}%
+  \end{beamercolorbox}%
+}
+\setbeamertemplate{frametitle}{%
+  \vskip1mm%
+  \begin{beamercolorbox}[wd=\textwidth,sep=0pt]{frametitle}%
+    \usebeamerfont{frametitle}\strut\insertframetitle\strut\par%
+    \ifx\insertframesubtitle\@empty\else%
+      {\usebeamerfont{subtitle}\insertframesubtitle\par}%
+    \fi%
+  \end{beamercolorbox}%
+  \vskip2mm%
+}
+% Пустая нижняя область отделяет содержимое от края страницы.
+\setbeamertemplate{footline}{\vskip4mm}
+
+% Изображения извлечены побайтно из официального файла 02_HSE_Presentation_Shablon_ru.pptx.
+\setbeamertemplate{title page}{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north west,inner sep=0pt] at (current page.north west)
+      {\includegraphics[width=\paperwidth,height=\paperheight]{images/hse-title-background.jpg}};
+    \node[anchor=north west,inner sep=0pt] at
+      ([xshift=.08316\paperwidth,yshift=-.14030\paperheight]current page.north west)
+      {\includegraphics[width=.07271\paperwidth]{images/hse-logo-full-blue.png}};
+    \node[anchor=north west,inner sep=0pt,text width=.66\paperwidth,align=left,text=hsebody] at
+      ([xshift=.17019\paperwidth,yshift=-.1732\paperheight]current page.north west)
+      {\usebeamerfont{institute}\insertinstitute};
+    \node[anchor=north west,inner sep=0pt,text width=.80\paperwidth,align=left,text=hsenavy] at
+      ([xshift=.08431\paperwidth,yshift=-.35063\paperheight]current page.north west)
+      {\usebeamerfont{title}\inserttitle\par
+       \ifx\insertsubtitle\@empty\else
+         \vspace{4mm}{\usebeamerfont{subtitle}\insertsubtitle\par}
+       \fi};
+    \node[anchor=north west,inner sep=0pt,text width=.80\paperwidth,align=left,text=hsebody] at
+      ([xshift=.08431\paperwidth,yshift=-.79\paperheight]current page.north west)
+      {\usebeamerfont{author}\insertauthor};
+    \node[anchor=north west,inner sep=0pt,text width=.80\paperwidth,align=left,text=hsebody] at
+      ([xshift=.08431\paperwidth,yshift=-.90245\paperheight]current page.north west)
+      {\usebeamerfont{date}\insertdate};
+  \end{tikzpicture}%
+}
+
+% Команда используется внутри plain-кадра с явным заголовком для закладки PDF.
+\newcommand{\hseclosing}[1]{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[hseclosingblue] (current page.south west) rectangle (current page.north east);
+    \node[anchor=center,inner sep=0pt] at (current page.center)
+      {\includegraphics[width=.14764\paperwidth]{images/hse-logo-full-white.png}};
+    \node[anchor=center,inner sep=0pt,text width=.80\paperwidth,align=center,
+      text=white,font=\fontsize{19}{23}\selectfont] at
+      ([yshift=-.255\paperheight]current page.center) {#1};
+  \end{tikzpicture}%
+}

@@ -7,9 +7,9 @@ digraph matching {
         fontsize=13, margin="0.15,0.10"]
   edge [color="#909090", penwidth=1.1, arrowhead=none]
 
-  // ── Source (left) ──
+  // Source taxonomy.
   subgraph cluster_src {
-    label="CMT"
+    label="Таксономия A (пример)"
     style=dashed
     color="#5ba3d9"
     fontsize=14
@@ -27,9 +27,9 @@ digraph matching {
     s_Person -> s_Reviewer
   }
 
-  // ── Target (right) ──
+  // Target taxonomy.
   subgraph cluster_tgt {
-    label="ConfOf"
+    label="Таксономия B (пример)"
     style=dashed
     color="#d95b5b"
     fontsize=14
@@ -47,7 +47,7 @@ digraph matching {
     t_Human -> t_Committee
   }
 
-  // ── Match edges ──
+  // Class correspondences.
   edge [color="#2ca02c", penwidth=2.0, style=dashed, arrowhead=none]
   s_Paper  -> t_Paper
   s_Poster -> t_Poster

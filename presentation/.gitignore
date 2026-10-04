@@ -1,4 +1,5 @@
-/images
+/images/*
+!/images/hse-*
 *.aux
 *.log
 *.nav

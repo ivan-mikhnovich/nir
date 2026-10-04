@@ -6,11 +6,13 @@ LATEX := lualatex
 LATEX_FLAGS := -interaction=nonstopmode -halt-on-error
 
 IMAGES_SCRIPT := generate_images.py
+THEME := hse-theme.sty
+HSE_ASSETS := $(wildcard images/hse-*)
 
 all: $(PDF)
 
-# Перегенерируем три изображения перед каждой компиляцией PDF.
-$(PDF): $(TEX) $(IMAGES_SCRIPT)
+# Перегенерируем две схемы перед каждой компиляцией PDF.
+$(PDF): $(TEX) $(IMAGES_SCRIPT) $(THEME) $(HSE_ASSETS)
 	uv run $(IMAGES_SCRIPT)
 	$(LATEX) $(LATEX_FLAGS) $(TEX)
 	$(LATEX) $(LATEX_FLAGS) $(TEX)

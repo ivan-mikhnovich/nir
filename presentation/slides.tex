@@ -1,1227 +1,924 @@
-\documentclass[aspectratio=169,9pt]{beamer}
+\documentclass[aspectratio=169,11pt]{beamer}
 
+\usepackage{lmodern}
 \usepackage{fontspec}
 \usepackage{polyglossia}
 \setmainlanguage{russian}
 \setotherlanguage{english}
 \tracinglostchars=3
-
+\defaultfontfeatures{Ligatures=TeX}
 \setmainfont{Noto Serif}
 \setsansfont{Noto Sans}
-\setmonofont{Noto Sans Mono}
-
+\setmonofont{Noto Sans Mono}[Scale=MatchLowercase]
 \usepackage{mathtools}
-\usepackage[labelfont=bf, labelsep=period]{caption}
 \usepackage{booktabs}
-\usepackage{colortbl}
 \usepackage{graphicx}
 \usepackage{appendixnumberbeamer}
+\usepackage{qrcode}
+\usepackage{hse-theme}
 \graphicspath{{images/}}
+\hypersetup{bookmarksopen=true,bookmarksnumbered=false,bookmarksdepth=0,
+  pdftitle={Разработка средств автоматического отображения между таксономиями и проверки их согласованности},
+  pdfauthor={Иван Михнович},colorlinks=true,urlcolor=hseblue}
 
-% Тема и цвета.
-\usetheme{Berlin}
-\usecolortheme{default}
-
-% Пользовательские цвета.
-\definecolor{good}{HTML}{1E8449}
-\definecolor{amber}{HTML}{B8860B}
-\definecolor{accent}{HTML}{C0392B}
-
-% Убираем навигационные символы.
-\setbeamertemplate{navigation symbols}{}
-\setbeamertemplate{frametitle continuation}{}
-
-% Хедер/футер.
-\setbeamertemplate{headline}{}
-\setbeamertemplate{footline}{
-  \hfill%
-  \usebeamercolor[fg]{page number in head/foot}%
-  \usebeamerfont{page number in head/foot}%
-  \insertframenumber~/ \inserttotalframenumber%
-  \hspace{1em}%
-  \vspace{0.5em}%
-}
-
-\title{Разработка средств автоматического отображения\\между таксономиями и проверки их согласованности}
-\subtitle{Эмбеддинги \enspace\textbullet\enspace LLM и Jev \enspace\textbullet\enspace GraphSAGE \enspace\textbullet\enspace проверка согласованности \enspace\textbullet\enspace OAEI~2025}
+\title[Сопоставление таксономий]{Разработка средств автоматического\\
+отображения между таксономиями\\и проверки их согласованности}
+\subtitle{Курсовой проект}
 \author{Михнович Иван Вадимович}
-\institute{НИУ ВШЭ \enspace\textbullet\enspace МОАД \enspace\textbullet\enspace 1-й курс}
+\institute{НИУ ВШЭ --- Санкт-Петербург\\Магистратура «Машинное обучение и анализ данных»}
 \date{Санкт-Петербург, 2026 г.}
 
 \begin{document}
 
-% --- 1. Титульный слайд ---
-{
-\setbeamertemplate{footline}{}
+% Слайд 1.
+\renewcommand{\hseheadertext}{Сопоставление таксономий}
 \begin{frame}[plain]
+  \pdfbookmark[0]{1. Разработка средств автоматического отображения между таксономиями и проверки их согласованности}{slide-1}
   \titlepage
 \end{frame}
-}
 
-% --- 1a. Что изменилось после первой защиты ---
-\begin{frame}{Что изменилось после первой защиты}
-  \begin{itemize}
-    \item \structure{Единое правило отбора пар для всех подходов}: раньше эмбеддинговые
-      подходы давали по одному соответствию на \emph{исходный} узел, GNN-матчер~---
-      на \emph{целевой}, а LLM~--- жадно-инъективное отображение 1:1, и колонки
-      сравнительной таблицы были несопоставимы. Теперь все подходы проходят через
-      одно правило, а варианты правила вынесены в отдельную абляцию
-
-    \vspace{0.3em}
-    \item \structure{Честная агрегация LLM}: раньше строка LLM была максимумом по трём
-      представлениям, выбранным по эталону оцениваемой пары. Теперь публикуются числа
-      без выбора по паре: среднее по режимам, выбор режима по схеме leave-one-pair-out
-      и ансамбль по правилу «не менее двух из трёх»
-
-    \vspace{0.3em}
-    \item \structure{Проверяемый негативный результат по GNN}: конфигурация и сиды
-      сохраняются, матчер оценки исправлен, добавлен протокол с полностью отложенной
-      онтологией
-
-    \vspace{0.3em}
-    \item \structure{Полный перепрогон}: все подходы пересчитаны на тех же 21 паре,
-      числа сведены в один набор артефактов; проверки согласованности, метрики и
-      правила отбора покрыты юнит-тестами в \texttt{tests/}
-  \end{itemize}
+% Слайд 2.
+\renewcommand{\hseheadertext}{Сопоставление таксономий}
+\begin{frame}{Задачи: сопоставление и согласованность}
+  \pdfbookmark[0]{2. Задачи: сопоставление и согласованность}{slide-2}
+  \begin{block}{Таксономия}
+    Классы и отношения между подклассами и их надклассами.
+    Возможны несколько родителей: это граф без циклов, не обязательно дерево.
+  \end{block}
+  \begin{enumerate}
+    \item \textbf{Сопоставление:} найти классы с одинаковым смыслом.
+      Не каждый класс обязан получить соответствие.
+    \item \textbf{Проверка согласованности:} найти ошибки в иерархиях
+      и проверить, не противоречат ли найденные соответствия отношениям
+      подчинения и ограничениям несовместимости классов.
+  \end{enumerate}
 \end{frame}
 
-% --- 2. Постановка задачи ---
-\begin{frame}{Постановка задачи}
-  \begin{columns}[T,onlytextwidth]
-    \column{0.45\textwidth}
-      \structure{\large Таксономии}
-      \vspace{0.3em}
-
-      \begin{itemize}
-        \item Т.н. <<дерево классификатора>>
-        \item Узлы~--- классы (например, \texttt{Document}, \texttt{Paper})
-        \item Рёбра~--- отношение «is-a» (\texttt{subClassOf})
-        \item В общем случае DAG, а не дерево
-        \item Можно рассматривать как частный случай онтологии
-      \end{itemize}
-
-    \column{0.52\textwidth}
-      \structure{\large Сопоставление таксономий}
-      \begin{itemize}
-        \item Даны две таксономии \texttt{A} и \texttt{B}
-        \item Нужно найти соответствия между их классами
-        \item Один и тот же концепт~--- разные имена, разная иерархия
-        \item Результат: alignment = список матчей (1:1)
-      \end{itemize}
-
-      \vspace{0.3em}
-      \structure{\large Сложность}
-      \begin{itemize}
-        \item Синонимы: \texttt{Person} $\leftrightarrow$ \texttt{Human}
-        \item Разная гранулярность: \texttt{Paper} $\leftrightarrow$ \texttt{FullPaper}?
-        \item Отсутствие общей лексики в текстовых описаниях узлов ~--- нужно понимать смысл написанного
-      \end{itemize}
-  \end{columns}
-
-  \vspace{0.3em}
-  \footnotesize
-  \structure{Вторая половина темы:} проверить согласованность~--- как внутри каждой
-  таксономии, так и в найденном отображении.
-\end{frame}
-
-% --- 3. Пример мэтчинга (диаграмма) ---
-{
-\setbeamertemplate{footline}{}
-\begin{frame}[plain]
+% Слайд 3.
+\renewcommand{\hseheadertext}{Сопоставление таксономий}
+\begin{frame}{Пример сопоставления двух таксономий}
+  \pdfbookmark[0]{3. Пример сопоставления двух таксономий}{slide-3}
   \begin{center}
-    \includegraphics[width=0.80\textwidth,height=0.85\textheight,keepaspectratio]{matching_diagram.png}
+    \includegraphics[width=\textwidth,height=40mm,keepaspectratio]{matching_diagram.png}
   \end{center}
+  \textbf{Условный пример.} Серые линии — подчинение;
+  зелёный пунктир — предполагаемые соответствия.
 \end{frame}
-}
 
-% --- 4. Данные: OAEI 2025 Conference Track ---
+% Слайд 4.
+\renewcommand{\hseheadertext}{Сопоставление таксономий}
+\begin{frame}{Практическая польза: поиск по нескольким базам}
+  \pdfbookmark[0]{4. Практическая польза: поиск по нескольким базам}{slide-4}
+  Исследователь ищет сведения о \textbf{муковисцидозе}
+  в разных биомедицинских базах. В каждой базе свои коды заболеваний.
+  \begin{center}
+    \begin{tabular}{@{}c@{\hspace{8mm}}c@{\hspace{8mm}}c@{}}
+      \textbf{Disease Ontology} & & \textbf{Mondo} \\
+      \texttt{DOID:1485} & $\longleftrightarrow$ & \texttt{MONDO:0009061} \\
+      cystic fibrosis & & cystic fibrosis
+    \end{tabular}
+  \end{center}
+  \begin{block}{Польза сопоставления}
+    Соответствие позволяет по запросу об одном заболевании находить сведения
+    в базах, использующих разные коды.
+  \end{block}
+  Совпадение имён позволяет автоматически предложить пару;
+  специалист сверяет определения заболеваний.
+  \par\smallskip
+  {\fontsize{8}{10}\selectfont
+    \href{https://doi.org/10.1093/genetics/iyaf215}{Vasilevsky et al., Mondo: integrating disease terminology across communities.}}
+\end{frame}
+
+% Слайд 5.
+\renewcommand{\hseheadertext}{Часть I. Сопоставление таксономий}
 \begin{frame}{Данные: OAEI 2025 Conference Track}
-  \begin{columns}[T,onlytextwidth]
-    \column{0.48\textwidth}
-      \structure{\large OAEI (Ontology Alignment Evaluation Initiative)}
-      \begin{itemize}
-        \item Ежегодное соревнование по ontology matching
-        \item Conference Track~--- семь онтологий про научные конференции
-        \item 21 референсный alignment (ground truth)
-        \item Онтологии были урезаны до таксономий путём уничтожения всех связей кроме \texttt{subClassOf}
-        \item 29--140 узлов в каждой онтологии
-      \end{itemize}
-
-    \column{0.48\textwidth}
-      \structure{\large Synthetic data}
-      \begin{itemize}
-        \item Четыре сценария на базе cmt: exact, synonym, structural, attribute
-        \item Использовались для GNN-аугментации
-      \end{itemize}
-  \end{columns}
+  \pdfbookmark[0]{5. Данные: OAEI 2025 Conference Track}{slide-5}
+  \textbf{OAEI 2025 Conference Track}: открытый набор для сопоставления онтологий.
+  \begin{itemize}
+    \item Семь онтологий, описывающих научные конференции;
+      21 пара с внешним эталоном.
+    \item Извлечены классы и подчинение, имена, комментарии,
+      объявленная несовместимость и часть атрибутов.
+    \item Оцениваются 258 загруженных эталонных связей классов.
+      Сопоставление свойств не рассматривается.
+  \end{itemize}
+  \begin{block}{Обоснование и ограничение}
+    Есть иерархии классов и эталон для оценки.
+    Но небольшие данные одной области не представляют все виды таксономий.
+  \end{block}
 \end{frame}
 
-% --- 5. Список онтологий
-\begin{frame}{Данные: OAEI 2025 Conference Track (продолжение)}
-  \structure{\large Список онтологий}
-  \vspace{0.3em}
-
-  \begin{tabular}{@{}ll@{}r@{}}
-    \toprule
-    Код & Название & Кол-во узлов \\
-    \midrule
-    cmt & Conference Management Tool & 29 \\
-    confOf & Conference Offerings & 38 \\
-    conference & Conference & 59 \\
-    edas & EDAS & 103 \\
-    ekaw & EKAW & 73 \\
-    iasted & IASTED & 140 \\
-    sigkdd & SIGKDD & 49 \\
-    \bottomrule
-  \end{tabular}
-
-  \vspace{0.5em}
-  \alert{Разный размер, разная лексика, разная структура.}
+% Слайд 6.
+\renewcommand{\hseheadertext}{Часть I. Сопоставление таксономий}
+\begin{frame}{Оценка качества и StringEquiv}
+  \pdfbookmark[0]{6. Оценка качества и StringEquiv}{slide-6}
+  \begin{itemize}
+    \item \textbf{Точность $P$:} доля найденных пар, подтверждённых эталоном.
+    \item \textbf{Полнота $R$:} доля эталонных пар, которые найдены.
+    \item \textbf{$F_1=2PR/(P+R)$:} объединяет точность и полноту.
+  \end{itemize}
+  \textbf{Средний $F_1$:} сначала оценка каждой пары таксономий,
+  затем среднее с одинаковым весом среди всех пар таксономий.
+  \begin{block}{Baseline: StringEquiv}
+    Точное совпадение обработанных имён без учёта регистра.
+    Используются тот же эталон и то же усреднение.
+  \end{block}
+  \alert{Сложность метода не гарантирует преимущество над строковым совпадением.}
 \end{frame}
 
-% --- 6. Метрики ---
-\begin{frame}{Метрики оценки}
-  \begin{columns}[T,onlytextwidth]
-    \column{0.48\textwidth}
-      \structure{\large Основная метрика: F1}
-      \vspace{0.3em}
-
-      \begin{itemize}
-        \item 1:1 matching (жадно-инъективное правило отбора)
-        \item Precision = TP / (TP + FP)
-        \item Recall = TP / (TP + FN)
-        \item F1 = гармоническое среднее
-      \end{itemize}
-
-      \vspace{0.5em}
-      \structure{\large Дополнительные метрики}
-      \begin{itemize}
-        \item Precision и Recall отдельно
-        \item True Positives (количество правильных пар)
-        \item Predicted count vs. Ground Truth count
-      \end{itemize}
-
-    \column{0.48\textwidth}
-      \structure{\large Baseline: StringEquiv}
-      \vspace{0.3em}
-
-      \begin{itemize}
-        \item Точное совпадение имён классов без учёта регистра букв
-        \item Официальный lower bound OAEI
-        \item Если имена совпадают~--- матч
-        \item На некоторых парах онтологий достигает F1 = 1{,}0
-        \item Ломается на синонимах и любых различиях в лексике
-      \end{itemize}
-
-      \vspace{0.5em}
-      \begin{center}
-        \color{amber}\large
-        Любой разумный подход к этой задаче должен быть не хуже, чем StringEquiv
-      \end{center}
-  \end{columns}
+% Слайд 7.
+\renewcommand{\hseheadertext}{Часть I. Сопоставление таксономий}
+\begin{frame}{Три способа оценить соответствие}
+  \pdfbookmark[0]{7. Три способа оценить соответствие}{slide-7}
+  \begin{block}{Эмбеддинги по тексту узла}
+    Эмбеддинг --- числовой вектор описания класса.\par
+    Близость векторов служит оценкой сходства классов.
+  \end{block}
+  \begin{block}{Эмбеддинги + LLM}
+    Сначала отбираются кандидаты, затем модель оценивает:\par
+    «Обозначают ли эти классы одно и то же понятие?»
+  \end{block}
+  \begin{block}{Эмбеддинги + графовая информация}
+    Siamese GraphSAGE применяет сеть с общими весами к двум графам.
+    Представление класса учитывает его имя и соседние классы.
+  \end{block}
 \end{frame}
 
-% --- 7. Подходы (обзор) ---
-\begin{frame}{Подходы}
+% Слайд 8.
+\renewcommand{\hseheadertext}{Часть I. Сопоставление таксономий}
+\begin{frame}{Эмбеддинги: текст, сходство и порог}
+  \pdfbookmark[0]{8. Эмбеддинги: текст, сходство и порог}{slide-8}
   \begin{enumerate}
-    \item \structure{Embedding-based}
-
-      {\small BERT (LaBSE, MiniLM, ruRoberta, rubert) + cosine similarity.\\
-      Результаты сильно зависят от того, какой текст мы извлекаем из узлов.\\
-      Оказалось что \texttt{name\_only} на OAEI работает лучше, чем имя + путь.}
-
-    \vspace{0.5em}
-    \item \structure{Retrieval + оценка пар (LLM / Jev)}
-
-      {\small DeepSeek-v4-flash / GPT-4.1-mini: бинарная классификация
-      кандидатов, представления C/CP/CC. Дополнительный эксперимент Jev:
-      вероятности эквивалентности без генерации текстового ответа.}
-
-    \vspace{0.5em}
-    \item \structure{GraphSAGE (GNN)}
-
-      {\small Siamese GraphSAGE на MiniLM-фичах, leave-one-pair-out CV.\\
-      Без порога: GNN 0{,}333 против MiniLM 0{,}349;
-      с калибровкой: 0{,}667 против 0{,}653; парного теста нет.}
-
-    \vspace{0.5em}
-    \item \structure{Ablation study: правило отбора и ретриверы}
-
-      {\small Правило отбора пар влияет на F1 сильнее выбора модели: на одних и тех же
-      эмбеддингах MiniLM \texttt{argmax} даёт 0{,}309, жадно-инъективное 1:1~--- 0{,}349,
-      \texttt{dedupe}~--- 0{,}497, а оно же с порогом 0{,}5--0{,}7~--- 0{,}559--0{,}660.
-      Ретриверы под честной агрегацией: BM25~--- 0{,}624, MiniLM~--- 0{,}602,
-      гибрид~--- \textbf{0{,}645} (лучший LLM-результат, но ниже строкового baseline 0{,}663).}
+    \item Имя класса преобразуется в вектор предобученной моделью.
+    \item Косинусное сходство вычисляется для всех пар классов.
+    \item Жадный отбор: пары по убыванию оценки, каждый класс используется один раз.
+    \item Слабые пары удаляются. Порог выбирается для модели по другим 20 парам.
   \end{enumerate}
+  \begin{block}{Что сравнивается}
+    LaBSE, MiniLM, ruRoberta-large и rubert-base.
+    В проверке MiniLM полное описание дало меньший F1, чем имя.
+    Причина отдельно не установлена; поиск кандидатов — другая задача.
+  \end{block}
 \end{frame}
 
-% --- 8. Embedding-based подход ---
-\begin{frame}{Embedding-based: BERT + cosine similarity}
-  \begin{columns}[T,onlytextwidth]
-    \column{0.48\textwidth}
-      \structure{\large Схема}
-      \begin{enumerate}
-        \item Имя класса $\to$ sentence-transformer $\to$ эмбеддинг
-        \item Cosine similarity каждого source-узла со всеми target-узлами
-        \item 1:1 greedy matching по убыванию сходства
-        \item Четыре модели: LaBSE, MiniLM, ruRoberta-large, rubert-base
-      \end{enumerate}
-
-      \vspace{0.2em}
-      \structure{\large Интересное наблюдение}
-      \begin{itemize}
-        \item Полное описание узла (путь, атрибуты, несовместимости) \alert{ухудшает} F1:
-          0{,}309 у одного имени против 0{,}211 в полном описании (MiniLM)
-      \end{itemize}
-
-    \column{0.48\textwidth}
-      \structure{\large Результаты под единым правилом 1:1 (21 пара)}
-      \vspace{0.2em}
-
-      {\scriptsize
-      \begin{tabular}{@{}lccc@{}}
-        \toprule
-        Модель & Dim & Без порога & С порогом \\
-        \midrule
-        LaBSE & 768 & 0{,}360 & 0{,}636 \\
-        MiniLM & 384 & 0{,}349 & 0{,}653 \\
-        ruRoberta-large & 1024 & 0{,}299 & \textbf{0{,}677} \\
-        rubert-base & 768 & 0{,}285 & 0{,}646 \\
-        \midrule
-        StringEquiv & --- & 0{,}663 & --- \\
-        \bottomrule
-      \end{tabular}}
-
-      \vspace{0.2em}
-      \structure{\large Порог калибруется под модель}
-      \begin{itemize}
-        \item Схема leave-one-pair-out: 0{,}70--0{,}90 у LaBSE, 0{,}80--0{,}90
-          у MiniLM, 0{,}95 у rubert-base и ruRoberta-large
-        \item Единый порог не переносится: у LaBSE 680 из 986 пар слабее 0{,}7,
-          у ruRoberta-large сходства лежат в 0{,}73--1{,}0
-        \item Лучший эмбеддинговый F1~--- ruRoberta-large с порогом 0{,}677 против
-          0{,}663 у StringEquiv
-      \end{itemize}
-  \end{columns}
-\end{frame}
-
-% --- 9. LLM-based подход ---
-\begin{frame}{LLM-based: адаптация LLMs4OM}
-  \begin{columns}[T,onlytextwidth]
-    \column{0.48\textwidth}
-      \structure{\large Адаптация LLMs4OM (arXiv 2404.10317)}
-      \begin{enumerate}
-        \item MiniLM: полное описание; эмбеддинговая часть гибрида: имя.
-          Один запрос на узел со всеми кандидатами
-        \item C: имя, атрибуты, комментарий, несовместимости;
-          CP добавляет цепочку предков, CC~--- детей
-        \item Самооценка LLM $>0{,}7$ (не вероятность), затем отбор 1:1
-        \item Ансамбль~--- наше расширение; шаг статьи $S_{ir}>0{,}9$ не реализован
-      \end{enumerate}
-
-      \vspace{0.5em}
-      \structure{\large Модели}
-      \begin{itemize}
-        \item \textbf{GPT-4.1-mini} (OpenAI-совместимый API)
-        \item \textbf{DeepSeek-v4-flash} (DeepSeek Platform)
-      \end{itemize}
-
-    \column{0.48\textwidth}
-      \structure{\large Агрегация режимов: средний F1, 21 пара}
-      \vspace{0.2em}
-
-      {\scriptsize
-      \begin{tabular}{@{}lcccc@{}}
-        \toprule
-        Конфигурация & Среднее & LOO & Ансамбль & \textit{max} \\
-        \midrule
-        BM25 + DeepSeek & 0{,}604 & 0{,}651 & 0{,}624 & \textit{0{,}685} \\
-        MiniLM + DeepSeek & 0{,}559 & 0{,}593 & 0{,}602 & \textit{0{,}636} \\
-        MiniLM + GPT & 0{,}546 & 0{,}585 & 0{,}575 & \textit{0{,}604} \\
-        Гибрид + DeepSeek & 0{,}620 & 0{,}644 & \textbf{0{,}645} & \textit{0{,}708} \\
-        \bottomrule
-      \end{tabular}}
-
-      \vspace{0.2em}
-      \begin{itemize}
-        \item Публикуются только правила без выбора по эталону пары: среднее по режимам,
-          выбор режима по leave-one-pair-out, ансамбль «не менее двух из трёх»
-        \item Курсивный столбец \textit{max}~--- верхняя граница (режим выбирается по
-          эталону пары), как результат не заявляется
-        \item Лучший ансамбль~--- гибрид 0{,}645, это \alert{ниже} baseline 0{,}663
-      \end{itemize}
-
-      \vspace{0.1em}
-      {\scriptsize \textbf{Стоимость:} 3648 обращений на конфигурацию (1365~--- у BM25).}
-  \end{columns}
-\end{frame}
-
-% --- 10. Главный результат: LLM vs baselines (график) ---
-\begin{frame}[plain]
-  \begin{center}
-    \includegraphics[width=0.92\textwidth,height=0.90\textheight,keepaspectratio]{comparison_six_pairs.png}
-  \end{center}
-\end{frame}
-
-% --- 11. LLM vs StringEquiv: анализ ---
-\begin{frame}{LLM vs StringEquiv: анализ}
-  \structure{\large Фиксированный гибридный ансамбль: отдельные пары}
-
-  \vspace{0.4em}
-  \begin{tabular}{@{}lccc@{}}
-    \toprule
-    Пара & StringEquiv & Гибрид + DeepSeek & $\Delta$ F1 (абс.) \\
-    \midrule
-    cmt $\leftrightarrow$ confOf & 0{,}533 & 0{,}667 & +0{,}133 \\
-    cmt $\leftrightarrow$ conference & 0{,}375 & 0{,}588 & +0{,}213 \\
-    confOf $\leftrightarrow$ conference & 0{,}737 & 0{,}667 & $-0{,}070$ \\
-    cmt $\leftrightarrow$ edas & \textbf{1{,}000} & 0{,}875 & $-0{,}125$ \\
-    confOf $\leftrightarrow$ ekaw & 0{,}552 & 0{,}667 & +0{,}115 \\
-    conference $\leftrightarrow$ ekaw & 0{,}457 & 0{,}514 & +0{,}057 \\
-    \bottomrule
-  \end{tabular}
-
-  \vspace{0.4em}
-  \begin{itemize}
-    \item Один ансамбль для всех пар: «не менее двух из трёх», без выбора по эталону.
-    \item Макро-F1 по 21 паре: гибрид 0{,}645 против StringEquiv 0{,}663,
-      $\Delta=-0{,}01784$; $p_{\rm raw}=0{,}919$, $p_{\rm Holm}=1{,}0$.
-      Для вывода используется Holm по семейству из 12 сравнений.
-    \item На cmt$\leftrightarrow$conference: 0{,}375 $\to$ 0{,}588;
-      на cmt$\leftrightarrow$edas: 1{,}000 $\to$ 0{,}875. Это наблюдения,
-      а не доказательство причины различий.
-  \end{itemize}
-\end{frame}
-
-% --- 7. BM25 ablation ---
-\begin{frame}{Ablation study: ретриверы при честной агрегации}
-  \begin{columns}[T,onlytextwidth]
-    \column{0.50\textwidth}
-      \structure{\large Что проверили}
-      \begin{itemize}
-        \item \textbf{BM25}: лексический ретривер + DeepSeek
-        \item \textbf{MiniLM}: эмбеддинговый ретривер + DeepSeek / GPT
-        \item \textbf{Гибрид}: union top-K (MiniLM + BM25) + DeepSeek
-      \end{itemize}
-
-      \vspace{0.4em}
-      \structure{\large Результат (ансамбль $\geq$2 из 3)}
-      \begin{itemize}
-        \item Гибрид~--- 0{,}645, BM25~--- 0{,}624, MiniLM+DS~--- 0{,}602,
-          MiniLM+GPT~--- 0{,}575
-        \item Тесты \emph{среднего по режимам}, не ансамблей:
-          гибрид минус BM25 $+0{,}017$, BM25 минус MiniLM $+0{,}045$;
-          оба $p_{\rm Holm}=1{,}0$ (семейство из 12 сравнений)
-      \end{itemize}
-
-    \column{0.46\textwidth}
-      \structure{\large Интерпретация}
-      \begin{itemize}
-        \item По числу пар единственный лучший ансамбль: гибрид 7/21, BM25 6/21,
-          DeepSeek(MiniLM) 3/21, GPT 3/21, ещё две пары~--- ничья
-        \item Recall кандидатов зависит от ретривера; вклад лексики и структуры
-          отдельно не изолирован
-        \item Размах повторных прогонов одной пары достигает 0{,}217;
-          это не оценка неопределённости разности макро-F1
-      \end{itemize}
-
-      \vspace{0.2em}
-      \begin{center}
-        \color{amber}\large
-        Агрегация и ретривер~--- разные факторы сравнения
-      \end{center}
-  \end{columns}
-\end{frame}
-
-% --- 8. GNN: архитектура ---
-\begin{frame}[plain]
-  \begin{center}
-    \includegraphics[width=0.90\textwidth,height=0.88\textheight,keepaspectratio]{gnn_architecture.png}
-  \end{center}
-\end{frame}
-
-% --- 9. GNN: обучение и результат ---
-\begin{frame}{GraphSAGE: как обучали и что получилось}
-  \begin{columns}[T,onlytextwidth]
-    \column{0.52\textwidth}
-      \structure{\large Идея}
-      \begin{itemize}
-        \item MiniLM знает \textbf{имя} класса (\texttt{Paper})
-        \item GNN добавляет знание о \textbf{соседях} (\texttt{Document $>$ Paper})
-        \item Гипотеза: структура графа помогает сопоставлению
-      \end{itemize}
-
-      \vspace{0.3em}
-      \structure{\large Как обучали}
-      \begin{itemize}
-        \item Правильная пара (\texttt{Paper}$\leftrightarrow$\texttt{Paper}):
-          цель~--- косинус $\to$ 1{,}0
-        \item Случайная пара (\texttt{Paper}$\leftrightarrow$\texttt{Reviewer}):
-          цель~--- косинус $\to$ 0{,}0
-        \item Три случайных негатива на каждый позитив
-        \item 21 фолд leave-one-pair-out: 20 пар учим, одну проверяем
-      \end{itemize}
-
-    \column{0.44\textwidth}
-      \structure{\large Итог (средний F1 по 21 паре)}
-
-      {\scriptsize
-      \begin{tabular}{@{}lcc@{}}
-        \toprule
-        Подход & Без порога & С порогом \\
-        \midrule
-        MiniLM & 0{,}349 & 0{,}653 \\
-        GraphSAGE (pair-LOO) & 0{,}333 & 0{,}667 \\
-        \midrule
-        \texttt{--linear} & 0{,}314 & --- \\
-        \texttt{--no-synthetic} & 0{,}345 & --- \\
-        \texttt{ontology-loo} & 0{,}318 & --- \\
-        \bottomrule
-      \end{tabular}}
-
-      \vspace{0.3em}
-      \structure{\large Границы интерпретации}
-      \begin{itemize}
-        \item Без порога GNN ниже MiniLM, с калибровкой~--- выше;
-          парного теста этой разницы нет.
-        \item Малый объём данных и различия структуры~--- возможные объяснения,
-          а не установленные причины.
-        \item Pair-LOO сохраняет знакомые онтологии; ontology-LOO
-          отдельно проверяет полностью отложенную онтологию.
-      \end{itemize}
-  \end{columns}
-\end{frame}
-
-% --- 9a. Проверка согласованности ---
-\begin{frame}{Частичная структурная проверка}
-  \begin{columns}[T,onlytextwidth]
-    \column{0.46\textwidth}
-      \structure{\large Что проверяется}
-      \begin{itemize}
-        \item \textbf{Внутри таксономии}: циклы «is-a», совпадающие метки, несовместимость класса с собственным предком, обрыв ссылки на родителя, отсутствие пути к корню
-        \item \textbf{В отображении}: инъективность 1:1, противоречие объявленной несовместимости, несохранение подчинения
-      \end{itemize}
-
-      \vspace{0.4em}
-      \structure{\large Целостность таксономий}
-      \begin{itemize}
-        \item Семь онтологий, 491 класс~--- ноль флагов; это не доказательство OWL-согласованности
-        \item Самопроверка на испорченной таксономии срабатывает по всем пяти видам
-      \end{itemize}
-
-    \column{0.50\textwidth}
-      \structure{\large Флаги отображений}\par
-      {\scriptsize Эмбеддинги: 21 запись без порога; StringEquiv: 21 запись.
-      LLM: 84 записи (21 пара $\times$ C/CP/CC/ENS), после фильтра уверенности.
-      Суммы не сравнивают одинаковую фильтрацию.}
-      \begin{tabular}{@{}lrr@{}}
-        \toprule
-        Подход & несовм. & несохр. \\
-        \midrule
-        LaBSE & 92 & 555 \\
-        MiniLM & 98 & 595 \\
-        ruRoberta-large & 84 & 601 \\
-        rubert-base & 104 & 633 \\
-        \midrule
-        DeepSeek + гибрид & 0 & 17 \\
-        DeepSeek + BM25 & 0 & 15 \\
-        DeepSeek + MiniLM & 2 & 22 \\
-        GPT-4.1-mini & 51 & 161 \\
-        StringEquiv & 0 & 2 \\
-        \bottomrule
-      \end{tabular}
-
-      \vspace{0.4em}
-      {\footnotesize Пример: \texttt{confof\#Paper} и \texttt{confof\#Poster} объявлены
-      несовместимыми, но LaBSE на паре confOf$\leftrightarrow$ekaw отправляет их в
-      \texttt{ekaw\#Paper} и \texttt{ekaw\#Poster\_Paper}, а второй~--- потомок первого}
-  \end{columns}
-\end{frame}
-
-% --- 9b. Калибровка порога и потолок отбора ---
-\begin{frame}{Калибровка порога и потолок отбора кандидатов}
-  \begin{columns}[T,onlytextwidth]
-    \column{0.50\textwidth}
-      \structure{\large Порог уверенности, средний F1}
-      {\footnotesize
-      \begin{tabular}{@{}lccc@{}}
-        \toprule
-        Модель & без & с & порог \\
-        \midrule
-        LaBSE & 0{,}360 & 0{,}636 & 0{,}70--0{,}90 \\
-        MiniLM & 0{,}349 & 0{,}653 & 0{,}80--0{,}90 \\
-        ruRoberta-large & 0{,}299 & \textbf{0{,}677} & 0{,}95 \\
-        rubert-base & 0{,}285 & 0{,}646 & 0{,}95 \\
-        \midrule
-        StringEquiv & 0{,}663 & --- & --- \\
-        \bottomrule
-      \end{tabular}}
-
-      \vspace{0.3em}
-      \structure{\large Парные тесты: Holm, 12 сравнений}
-      \begin{itemize}
-        \item LaBSE с порогом минус без: $+0{,}276$,
-          $p_{\rm Holm}=2{,}29\cdot10^{-5}$
-        \item ruRoberta с порогом минус StringEquiv: $+0{,}01403$,
-          $p_{\rm Holm}=1{,}0$
-        \item Гибридный ансамбль минус StringEquiv: $-0{,}01784$,
-          $p_{\rm Holm}=1{,}0$
-      \end{itemize}
-
-    \column{0.48\textwidth}
-      \structure{\large Полнота кандидатов, recall@$k$}
-      {\footnotesize
-      \begin{tabular}{@{}lccccc@{}}
-        \toprule
-        Ретривер & 1 & 2 & 3 & 5 & 10 \\
-        \midrule
-        MiniLM & 0{,}56 & 0{,}66 & 0{,}75 & 0{,}78 & 0{,}87 \\
-        BM25 & 0{,}69 & 0{,}72 & 0{,}72 & 0{,}73 & 0{,}73 \\
-        BM25 + эмбед. & \textbf{0{,}81} & 0{,}87 & 0{,}91 & \textbf{0{,}93} & 0{,}96 \\
-        \bottomrule
-      \end{tabular}}
-
-      \vspace{0.3em}
-      \begin{itemize}
-        \item Измерен recall кандидатов, не качество LLM при разных $k$
-        \item В основных прогонах гибрид: $k=10$, остальные: $k=5$;
-          сравнение не изолирует только тип ретривера
-        \item Пропущенные кандидаты ограничивают recall; разрыв с итоговым F1
-          не доказывает единственную причину ошибок
-      \end{itemize}
-  \end{columns}
-\end{frame}
-
-% Дополнительный эксперимент: Jev через OpenRouter.
-\begin{frame}{Jev: вероятности вместо генерации ответа}
-  \begin{columns}[T,onlytextwidth]
-    \column{0.48\textwidth}
-      \structure{\large Что заменили}
-      \begin{itemize}
-        \item Прежний hybrid retrieval и тексты C/CP/CC
-        \item Jev 1.13 через OpenRouter: отдельная вероятность
-          эквивалентности для каждого кандидата (\texttt{Noul})
-        \item Порог, затем тот же глобальный отбор 1:1
-        \item 21 пара; эталон отложенной пары не выбирает порог
-      \end{itemize}
-      \vspace{0.3em}
-      \structure{\large Наблюдаемые расходы}
-      \begin{itemize}
-        \item 3648 запросов, без ошибок и fallback
-        \item Весь бенчмарк: \textbf{\$0{,}1293}
-        \item Медиана запроса: 0{,}273 с; p95: 0{,}367 с
-      \end{itemize}
-    \column{0.48\textwidth}
-      \structure{\large Средний F1 по 21 паре}
-      \vspace{0.2em}
-      \begin{tabular}{@{}lcc@{}}
-        \toprule
-        Режим & Порог 0{,}7 & LOO-порог \\
-        \midrule
-        C & 0{,}448 & 0{,}612 \\
-        CP & 0{,}287 & \textbf{0{,}690} \\
-        CC & 0{,}328 & 0{,}590 \\
-        Ансамбль & 0{,}393 & 0{,}658 \\
-        \bottomrule
-      \end{tabular}
-      \vspace{0.3em}
-      \begin{itemize}
-        \item LOO-выбор режима и порога тоже выбирает CP;
-          порог 0{,}25 во всех разбиениях
-        \item StringEquiv: 0{,}663; ruRoberta: 0{,}677
-        \item \alert{Превосходство не подтверждено}:
-          оба $p_{\rm Holm}=1{,}0$ (новая семья: девять сравнений)
-      \end{itemize}
-  \end{columns}
-  \vspace{0.2em}
-  {\scriptsize Один новый прогон; старые LLM-кэши не обеспечивают
-  идеально контролируемого сравнения. Источник: \texttt{results/jev-experiment.json}.}
-\end{frame}
-
-% --- 9. Итоговая таблица подходов ---
-\begin{frame}{Итоговая таблица: шесть показательных пар}
-  \centering
-  \footnotesize
-
-  \begin{tabular}{@{}lccccc@{}}
-    \toprule
-    \textbf{Пара} & \textbf{StringEquiv} & \textbf{ruRoberta} & \textbf{GNN} & \textbf{Гибрид + DS} & \textbf{Jev} \\
-     & & (LOO-порог) & (без порога) & (ансамбль) & (LOO: CP) \\
-    \midrule
-    cmt $\leftrightarrow$ confOf
-      & 0{,}533 & 0{,}533 & 0{,}359 & 0{,}667 & 0{,}556 \\
-    cmt $\leftrightarrow$ conference
-      & 0{,}375 & 0{,}444 & 0{,}400 & 0{,}588 & 0{,}545 \\
-    confOf $\leftrightarrow$ conference
-      & 0{,}737 & 0{,}737 & 0{,}327 & 0{,}667 & 0{,}696 \\
-    cmt $\leftrightarrow$ edas
-      & \textbf{1{,}000} & 1{,}000 & 0{,}432 & 0{,}875 & 0{,}800 \\
-    confOf $\leftrightarrow$ ekaw
-      & 0{,}552 & 0{,}687 & 0{,}586 & 0{,}667 & 0{,}789 \\
-    conference $\leftrightarrow$ ekaw
-      & 0{,}457 & 0{,}500 & 0{,}390 & 0{,}514 & 0{,}600 \\
-    \bottomrule
-  \end{tabular}
-
-  \vspace{0.6em}
-  {\footnotesize Генеративная LLM~--- фиксированный гибридный ансамбль;
-  Jev~--- выбор режима и порога по другим 20 парам, без эталона оцениваемой пары.
-  Макро-F1: StringEquiv 0{,}663, гибрид 0{,}645,
-  ruRoberta с порогом 0{,}677, Jev 0{,}690.}
-
-  \vspace{0.5em}
-  \begin{itemize}
-    \item В прежнем LLM-прогоне лучший ансамбль 0{,}645 ниже
-      StringEquiv (0{,}663) и ruRoberta с порогом (0{,}677).
-    \item Jev после LOO: 0{,}690; разница со StringEquiv $+0{,}0267$,
-      $p_{\rm Holm}=1{,}0$. Больший средний F1 не доказывает превосходство.
-    \item GNN без порога: 0{,}333 против MiniLM 0{,}349;
-      с порогом: 0{,}667 против 0{,}653. Значимость не проверялась.
-  \end{itemize}
-
-\end{frame}
-
-% --- 10. Выводы ---
-\begin{frame}{Выводы}
+% Слайд 9.
+\renewcommand{\hseheadertext}{Часть I. Сопоставление таксономий}
+\begin{frame}{Языковые модели: от кандидатов к решению}
+  \pdfbookmark[0]{9. Языковые модели: от кандидатов к решению}{slide-9}
   \begin{enumerate}
-    \item \structure{Частичная структурная проверка реализована}:
-      ноль флагов на 491 классе семи онтологий не доказывает OWL-согласованность
-
-    \vspace{0.25em}
-    \item \structure{Есть структурные предупреждения в отображениях}:
-      сырые эмбеддинги и уже фильтрованные LLM проверены с разной агрегацией;
-      преимущества над калиброванными эмбеддингами не установлено
-
-    \vspace{0.25em}
-    \item \structure{Правило отбора существенно меняет F1}: на одних и тех же
-      эмбеддингах MiniLM $0{,}309 \to 0{,}349 \to 0{,}497 \to 0{,}559 \to 0{,}660$
-      при смене правила и порога
-
-    \vspace{0.25em}
-    \item \structure{Калибровка порога повышает измеренный F1 эмбеддингов}:
-      $0{,}285$--$0{,}360$ без порога против $0{,}636$--$0{,}677$ после LOO;
-      лучший эмбеддинговый результат~--- ruRoberta-large, $0{,}677$
-
-    \vspace{0.25em}
-    \item \structure{Jev: новый эксперимент принятия решений}:
-      LOO-выбор режима и порога даёт $0{,}690$; весь прогон стоит \$0{,}1293.
-      Превосходство над StringEquiv, ruRoberta и гибридной LLM не подтверждено
-
-    \vspace{0.25em}
-    \item \structure{Recall ретривера не равен качеству классификации}:
-      для гибрида использовано $k=10$, для остальных $k=5$; эффект не изолирован
-
-    \vspace{0.25em}
-    \item \structure{Результат GNN зависит от порога}: $0{,}333$ против MiniLM $0{,}349$
-      без порога, $0{,}667$ против $0{,}653$ с калибровкой; парного теста нет
+    \item \textbf{Кандидаты.} Для каждого исходного класса ищем возможные
+      соответствия в другой таксономии: MiniLM — по близости эмбеддингов,
+      BM25 — по совпадениям слов в названиях классов.
+      Гибрид объединяет результаты обоих поисков.
+    \item \textbf{Описание узла.} Для исходного класса и кандидатов:
+      C — имя и доступные сведения о классе; CP добавляет предков,
+      CC — непосредственных детей.
+    \item \textbf{Проверка эквивалентности.} GPT-4.1-mini и DeepSeek-v4-flash
+      указывают, эквивалентны ли классы, и дают численную оценку уверенности.
+      Jev возвращает вероятность эквивалентности без текстового ответа.
   \end{enumerate}
+  Затем применяются порог и ограничение один к одному.
+  \medskip
+
+  {\fontsize{9}{11}\selectfont
+    \href{https://doi.org/10.1007/978-3-031-78952-6_3}{LLMs4OM: ESWC 2024 Satellite Events, Springer, 2025.}}
 \end{frame}
 
-% --- 10a. Ограничения ---
-\begin{frame}{Ограничения}
+% Слайд 10.
+\renewcommand{\hseheadertext}{Часть I. Сопоставление таксономий}
+\begin{frame}{GraphSAGE: эмбеддинги и связи между классами}
+  \pdfbookmark[0]{10. GraphSAGE: эмбеддинги и связи между классами}{slide-10}
+  \begin{enumerate}
+    \item Имена классов преобразуются в фиксированные эмбеддинги MiniLM.
+    \item Графовая сеть объединяет признаки класса и соседних классов.
+      Обе таксономии обрабатываются одной сетью с общими параметрами.
+    \item Обучение: эталонные соответствия остальных 20 пар и синтетические
+      примеры. Сходство эталонных пар повышается, случайных отрицательных — уменьшается.
+    \item Полученные векторы сравниваются по косинусному сходству;
+      затем применяются отбор один к одному и порог.
+  \end{enumerate}
+  Это адаптация графового представления узлов к сопоставлению таксономий.
+  \medskip
+
+  {\fontsize{9}{11}\selectfont
+    Hamilton, Ying, Leskovec.\par
+    \href{https://papers.nips.cc/paper_files/paper/2017/hash/5dd9db5e033da9c6fb5ba83c7a7ebea9-Abstract.html}{\textit{Inductive Representation Learning on Large Graphs}}, NIPS 2017.}
+\end{frame}
+
+% Слайд 11.
+\renewcommand{\hseheadertext}{Часть I. Сопоставление таксономий}
+\begin{frame}{Результаты на всех 21 парах}
+  \pdfbookmark[0]{11. Результаты на всех 21 парах}{slide-11}
+  Средний $F_1$; правило решения указано для каждой строки.
+  \par\smallskip
+  \begin{tabular}{@{}p{0.34\textwidth}p{0.49\textwidth}r@{}}
+    \toprule
+    Метод & Как принимается решение & $F_1$ \\
+    \midrule
+    StringEquiv & Совпадение имён & 0{,}663 \\
+    ruRoberta-large & Выбор порога & 0{,}677 \\
+    MiniLM & Выбор порога & 0{,}653 \\
+    GraphSAGE & Обучение и выбор порога & 0{,}667 \\
+    DeepSeek + гибрид & Голосование по C, CP, CC & 0{,}645 \\
+    DeepSeek + BM25 & Выбор C, CP или CC & 0{,}651 \\
+    Jev & Выбор C, CP или CC и порога & 0{,}690 \\
+    \bottomrule
+  \end{tabular}
+  \par\smallskip
+  Порог и вариант описания выбираются на остальных 20 парах,
+  без эталона оцениваемой пары.
+  \par\smallskip
+
+  \textbf{Превосходство сложных методов над StringEquiv
+  статистически не подтверждено.}
+\end{frame}
+
+% Слайд 12.
+\renewcommand{\hseheadertext}{Часть II. Проверка согласованности}
+\begin{frame}{Проверка согласованности: два уровня}
+  \pdfbookmark[0]{12. Проверка согласованности: два уровня}{slide-12}
+  \begin{columns}[T,onlytextwidth]
+    \column{0.48\textwidth}
+      \begin{block}{Таксономия}
+        Проверяем, что указанные родители существуют и цепочка родителей
+        ведёт к корню (классу без родителей).\par
+        Ищем циклы, одинаковые имена и несовместимость класса с предком.
+      \end{block}
+    \column{0.48\textwidth}
+      \begin{block}{Отображение}
+        Проверяются ограничение один к одному, объявленная несовместимость
+        и сохранение подчинения.
+      \end{block}
+  \end{columns}
+  \begin{exampleblock}{Пример предупреждения}
+    Если Автор --- подкласс Участника, проверяем такое же отношение
+    между их образами. Отсутствие связи в цели — предупреждение,
+    не обязательно ошибка.
+  \end{exampleblock}
+  \alert{Ограничение: полный логический вывод по OWL не выполняется.}
+\end{frame}
+
+% Слайд 13.
+\renewcommand{\hseheadertext}{Часть II. Проверка согласованности}
+\begin{frame}{Что дали структурные проверки}
+  \pdfbookmark[0]{13. Что дали структурные проверки}{slide-13}
   \begin{itemize}
-    \item \structure{Проверки согласованности неполны}: формального вывода нет, полнота ограничена
-      несовместимостью, объявленной в самих онтологиях
-
-    \vspace{0.3em}
-    \item \structure{Эмбеддинговые модели не дообучались}: использованы предобученные,
-      резерв дообучения под задачу не исчерпан
-
-    \vspace{0.3em}
-    \item \structure{Измерен только recall ретривера при разных $k$}:
-      основные LLM-прогоны~--- гибрид $k=10$, остальные $k=5$;
-      чувствительность классификатора к $k$ не измерена
-
-    \vspace{0.3em}
-    \item \structure{Повторы ограничены}: разброс генерации LLM измерен на двух
-      парах (размах до $0{,}217$); Jev~--- один полный прогон.
-      Устойчивость нового результата и снижение дисперсии ансамблем не доказаны
-
-    \vspace{0.3em}
-    \item \structure{Pair-LOO не равен ontology-LOO}: в первом знакомые онтологии
-      остаются в обучении; отдельная ontology-LOO-абляция даёт F1 $0{,}318$ без порога.
-      Общие семь онтологий создают зависимость пар, не учтённую парными тестами
-
-    \vspace{0.3em}
-    \item \structure{Синтетические вариации}~--- та же онтология с переименованными
-      идентификаторами; новых концептов они не добавляют
+    \item Семь таксономий, 491 класс: нарушений реализованных проверок не найдено.
+    \item На специально изменённых данных самопроверка обнаруживает нарушения.
+    \item Исторический анализ отображений охватывает 483 записи; Jev в него не входит.
   \end{itemize}
+  \begin{block}{Удаление всех помеченных соответствий}
+    LaBSE без порога: $F_1$ вырос с $0{,}360$ до $0{,}419$.\par
+    StringEquiv: $F_1$ снизился с $0{,}663$ до $0{,}657$.
+  \end{block}
+  \textbf{Вывод:} отчёт выявляет подозрительные пары, но автоматическое удаление
+  помогает не каждому методу. Совместный эффект с подобранным порогом не измерен.
 \end{frame}
 
-% --- 11. Направления для дальнейшей работы ---
-\begin{frame}{Направления для дальнейшей работы}
-  \begin{itemize}
-    \item \structure{Формальный вывод поверх реализованных проверок}: reasoner (HermiT, Pellet)
-      для OWL-аксиом + LLM-проверка подозрительных связей
-
-    \vspace{0.3em}
-    \item \structure{Пробная интеграция лучших решений в проприетарную ГИС}
-
-    \vspace{0.3em}
-    \item \structure{Бо́льший датасет}: синтетика через LLM, полный OntoFarm —
-      на нём GNN-архитектуры (GraphSAGE, GAT) и масштабирование LLM через blocking
-
-    \vspace{0.3em}
-    \item \structure{Анализ ошибок и устойчивости LLM/Jev}: повторные прогоны,
-      перенос на другой домен; затем сравнение с открытыми моделями решений
-  \end{itemize}
+% Слайд 14.
+\renewcommand{\hseheadertext}{Сопоставление таксономий}
+\begin{frame}{Выводы и границы исследования}
+  \pdfbookmark[0]{14. Выводы и границы исследования}{slide-14}
+  \begin{enumerate}
+    \item Реализованы сопоставление классов и \textbf{частичная структурная диагностика};
+      предупреждения проверяющего скрипта не заменяют логическую проверку онтологии.
+    \item \textbf{Постобработка существенно меняет результат}:
+      LaBSE $0{,}360 \to 0{,}636$ после выбора порога на других парах.
+      StringEquiv оказался очень сильным бейзлайном для выбранных данных.
+    \item \textbf{Общего преимущества сложных методов не установлено}:
+      результаты ограничены одним доменом и выбранными протоколами.
+  \end{enumerate}
+  \begin{block}{Что остаётся открытым}
+    Дообучение текстовых моделей; полный логический вывод.\par
+    Как меняется $F_1$ при изменении числа кандидатов для LLM?\par
+    Повторяются ли результаты Jev при новых запусках и сохраняется ли качество
+    в других предметных областях?
+  \end{block}
 \end{frame}
 
-% --- 12. Спасибо ---
-{
-\setbeamertemplate{footline}{}
+% Слайд 15.
+\renewcommand{\hseheadertext}{Сопоставление таксономий}
 \begin{frame}[plain]
-  \begin{center}
-    \vspace{2cm}
-    {\usebeamercolor[fg]{structure}\fontsize{36}{42}\selectfont Спасибо за внимание!}\\[1cm]
-  \end{center}
+  \pdfbookmark[0]{15. Спасибо за внимание!}{slide-15}
+  \hseclosing{Спасибо за внимание!}
 \end{frame}
-}
 
-% Резервные слайды не входят в нумерацию основного доклада.
+% Слайд 16.
+\begin{frame}[plain]
+  \pdfbookmark[0]{16. Код и материалы проекта}{slide-16}
+  \begin{tikzpicture}[remember picture,overlay]
+    \fill[hseclosingblue] (current page.south west) rectangle (current page.north east);
+    \node[anchor=center,inner sep=2mm,fill=white,text=hseclosingblue] at
+      ([yshift=.10\paperheight]current page.center)
+      {\qrcode[height=35mm]{https://github.com/ivan-mikhnovich/nir}};
+    \node[anchor=center,inner sep=0pt,text=white,
+      font=\fontsize{19}{23}\selectfont] at
+      ([yshift=-.255\paperheight]current page.center)
+      {\href{https://github.com/ivan-mikhnovich/nir}{\textcolor{white}{https://github.com/ivan-mikhnovich/nir}}};
+  \end{tikzpicture}
+\end{frame}
+
+% Резервные кадры имеют отдельную нумерацию.
 \appendix
-\setbeamertemplate{footline}{
-  \hfill%
-  \usebeamercolor[fg]{page number in head/foot}%
-  \usebeamerfont{page number in head/foot}%
-  Приложение~\insertframenumber~/ \inserttotalframenumber%
-  \hspace{1em}%
-  \vspace{0.5em}%
-}
+\renewcommand{\hseframenumber}{A\insertframenumber}
 
-% Приложение: проверенные работы по сопоставлению таксономий.
-\begin{frame}{Литература: лексика, структура и семантические векторы}
-  \begin{columns}[T,onlytextwidth]
-    \column{0.48\textwidth}
-      \structure{\large Aanen et al., 2015}
-      \begin{itemize}
-        \item Товарные категории: WordNet и выбор смысла названия
-        \item Сходство путей предков: общие понятия и порядок их следования
-        \item Порог позволяет не назначать слабое соответствие
-      \end{itemize}
-      \begin{block}{Результат на шести направлениях}
-        Средний F1: $0{,}242 \to 0{,}391$ относительно Park--Kim (+62\%).
-        Порог выбран на эталоне каждого направления; это не LOO.
-      \end{block}
-      {\scriptsize \href{https://personal.eur.nl/frasincar/papers/ESWA2015a/eswa2015a.pdf}
-      {Automated Product Taxonomy Mapping in an E-commerce Environment}}
-    \column{0.48\textwidth}
-      \structure{\large Wu et al., AAAI 2016}
-      \begin{itemize}
-        \item Китайский $\to$ английский: кандидаты через BabelNet
-        \item Веб-контекст $\to$ двуязычная тематическая модель BiBTM
-        \item Ранжирование по косинусу тематических векторов
-      \end{itemize}
-      \begin{block}{Результат: MRR, не F1}
-        JD.com $\to$ eBay: $0{,}597$; Dmoz $\to$ Yahoo: $0{,}719$.
-        С BiLDA в той же схеме: $0{,}553$ и $0{,}679$.
-        MRR оценивает позицию правильного кандидата.
-      \end{block}
-      {\scriptsize \href{https://ojs.aaai.org/index.php/AAAI/article/download/9979/9838}
-      {Cross-Lingual Taxonomy Alignment with Bilingual Biterm Topic Model}}
-  \end{columns}
-  \vspace{0.5em}
-  {\footnotesize Здесь: StringEquiv~--- простой лексический baseline;
-  BERT~--- семантические векторы; путь в тексте и GNN~--- варианты контекста.
-  Числа разных датасетов и метрик не образуют общий рейтинг.}
-\end{frame}
-
-% Приложение: исходный фреймворк и реализованная адаптация.
-\begin{frame}{Литература: LLMs4OM и наша адаптация}
-  \begin{columns}[T,onlytextwidth]
-    \column{0.48\textwidth}
-      \structure{\large Giglou et al., 2024: LLMs4OM}
-      \begin{itemize}
-        \item Отбор кандидатов, затем бинарное решение LLM
-        \item Представления концепта C, с родителями CP, с детьми CC
-        \item 20 задач OAEI разных доменов, семь LLM
-      \end{itemize}
-      {\small
-      \begin{tabular}{@{}lrr@{}}
-        \toprule
-        Задача & LLMs4OM & OAEI-2023 \\
-        \midrule
-        DOID--ORDO & 0{,}898 & 0{,}755 \\
-        SNOMED--FMA & 0{,}256 & 0{,}785 \\
-        \bottomrule
-      \end{tabular}}
-      \par\vspace{0.4em}
-      {\footnotesize F1 лучших выбранных конфигураций авторов;
-      справа~--- лучший результат OAEI-2023.
-      Это не наши пары Conference и не фиксированный ансамбль.}
-      \par\vspace{0.5em}
-      {\scriptsize \href{https://arxiv.org/abs/2404.10317}
-      {LLMs4OM: Matching Ontologies with Large Language Models}}
-    \column{0.48\textwidth}
-      \structure{\large Что реализовано здесь}
-      \begin{itemize}
-        \item Идея retrieval $\to$ LLM сохранена
-        \item Другие модели; embedding, BM25 и гибридный retrieval
-        \item Один запрос на исходный узел со списком кандидатов
-        \item Уверенность~--- число в JSON, а не вероятность токена
-        \item Голосование C/CP/CC~--- наше расширение; шаг статьи
-          $S_{ir}>0{,}9$ не реализован
-      \end{itemize}
-      \begin{block}{Не точное воспроизведение статьи}
-        На Conference: гибридный ансамбль $0{,}645$,
-        StringEquiv $0{,}663$. Общего преимущества LLM не установлено.
-      \end{block}
-  \end{columns}
-\end{frame}
-
-% Приложение: постановка задачи и границы вклада.
-\begin{frame}{Таксономии или онтологии? Что является результатом?}
+% Слайд A1.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{Замечания комиссии на первой защите}
+  \pdfbookmark[0]{A1. Замечания комиссии на первой защите}{slide-A1}
   \begin{itemize}
-    \item \structure{Исходные данные~--- OWL-онтологии OAEI}, не «голые деревья».
-      Рассматриваются классы и граф is-a; используются также доступные
-      названия, атрибуты, комментарии и объявленная несовместимость.
-    \item \structure{Вход matcher-а}: две иерархии в JSON, возможны несколько
-      родителей. Корректный граф должен быть ациклическим.
-    \item \structure{Выход}: частичное соответствие классов с оценками уверенности,
-      не более одного партнёра у каждого класса; отдельно~--- отчёт о флагах.
-    \item \structure{Результат сохраняется} в JSON-кэше \texttt{results/},
-      поле \texttt{match\_pairs}. Эталон \texttt{alignments.json}
-      нужен для оценки и калибровки, не для решения отложенной пары.
-  \end{itemize}
-  \begin{block}{Вклад в рамках НИР, не новая постановка задачи}
-    Экспериментальный прототип, адаптация существующих методов, сравнение
-    по общему протоколу, анализ постобработки и частичные структурные проверки.
-    Сопоставления свойств и полного логического вывода нет.
-  \end{block}
-\end{frame}
-
-% Приложение: сильный baseline и ложные соответствия.
-\begin{frame}{Почему StringEquiv силён, а порог нужен?}
-  \begin{columns}[T,onlytextwidth]
-    \column{0.48\textwidth}
-      \structure{\large Почему совпадают названия}
-      \begin{itemize}
-        \item Один домен: организация научных конференций
-        \item Эквивалентные классы часто имеют одинаковые метки
-        \item StringEquiv: precision $0{,}883$, recall $0{,}551$,
-          F1 $0{,}663$ (средние по 21 паре)
-        \item Не распознаёт синонимы и перевод;
-          общие аббревиатуры могут совпадать
-      \end{itemize}
-    \column{0.48\textwidth}
-      \structure{\large Почему возникают ошибки}
-      \begin{itemize}
-        \item У \texttt{Reviewer} может не быть эквивалента среди
-          \texttt{Paper} и \texttt{Conference}
-        \item Жадный отбор сортирует все пары по сходству:
-          принимается пара с двумя свободными узлами
-        \item Конфликты могут оставить менее похожего партнёра;
-          без порога получается слишком много предсказаний
-        \item Порог допускает отказ. Высокое сходство
-          не доказывает эквивалентность
-      \end{itemize}
-  \end{columns}
-  \begin{block}{Почему не отказаться от LLM вообще?}
-    На одних парах гибрид лучше строк, на других хуже.
-    Отсутствие преимущества в этом эксперименте не означает
-    ненужность LLM на других данных.
-  \end{block}
-\end{frame}
-
-% Приложение: метрики и калибровка без эталона оцениваемой пары.
-\begin{frame}{Как выбирается порог без подсказки из эталона?}
-  \begin{enumerate}
-    \item Откладываем одну пару онтологий из 21.
-    \item Для каждого порога считаем средний F1 на остальных 20 парах.
-    \item Выбираем лучший порог для данной модели и применяем к отложенной паре.
-    \item Повторяем для всех пар; усредняем 21 полученный F1.
-  \end{enumerate}
-  \begin{block}{Leave-one-pair-out, не обучение BERT}
-    Эталоны остальных пар участвуют в выборе порога.
-    Эталон отложенной пары нужен только для оценки после выбора.
-    Веса sentence-transformer-моделей не изменяются.
-  \end{block}
-  \[
-    P=\frac{TP}{TP+FP},\qquad R=\frac{TP}{TP+FN},\qquad
-    F_1=\frac{2PR}{P+R}.
-  \]
-  {\footnotesize Основные таблицы~--- средние метрик по парам (macro).
-  Pooled-метрики считаются по суммарным TP/FP/FN и могут отличаться.
-  Подбор лучшего порога на самой оцениваемой паре дал бы оптимистичную оценку.}
-\end{frame}
-
-% Приложение: статистическое превосходство и ограничения выборки.
-\begin{frame}{Лучший средний F1 означает надёжно лучший метод?}
-  \begin{columns}[T,onlytextwidth]
-    \column{0.48\textwidth}
-      \structure{\large ruRoberta с порогом против StringEquiv}
-      \begin{itemize}
-        \item Средние: $0{,}677$ против $0{,}663$
-        \item Средняя разница: $+0{,}014$
-        \item Восемь побед, четыре ничьи, девять поражений
-        \item Bootstrap-интервал разницы:
-          $[-0{,}020;\,+0{,}051]$ (95\%), включает ноль
-        \item Wilcoxon: $p=0{,}644$; $p_{\rm Holm}=1{,}00$
-      \end{itemize}
-    \column{0.48\textwidth}
-      \structure{\large Как читать эти числа}
-      \begin{itemize}
-        \item Большие выигрыши на нескольких парах могут поднять среднее,
-          не давая устойчивого превосходства
-        \item Значимость превосходства не установлена;
-          равенство методов тоже не доказано
-        \item Семейство из 12 сравнений: поправка Холма
-        \item 21 пара использует общие семь онтологий;
-          эта зависимость в парных тестах не учтена
-      \end{itemize}
-  \end{columns}
-  \begin{block}{Что подтвердилось в использованном протоколе}
-    После поправки значимы эффект порога LaBSE относительно результата без порога
-    и отставание BM25-LLM от строкового baseline в среднем по C/CP/CC.
-    Перенос выводов на новый домен не проверен.
-  \end{block}
-\end{frame}
-
-% Приложение: что действительно проверяет эксперимент с GNN.
-\begin{frame}{Почему GraphSAGE не доказал пользу структуры?}
-  \begin{columns}[T,onlytextwidth]
-    \column{0.48\textwidth}
-      \structure{\large Наблюдение}
-      \begin{tabular}{@{}lrr@{}}
-        \toprule
-        Метод & Без порога & LOO-порог \\
-        \midrule
-        MiniLM & 0{,}349 & 0{,}653 \\
-        GraphSAGE & 0{,}333 & 0{,}667 \\
-        \bottomrule
-      \end{tabular}
-      \par\vspace{0.6em}
-      \begin{itemize}
-        \item Исходные признаки~--- MiniLM, без его дообучения
-        \item Обучали GraphSAGE и контрольную LinearSiamese
-        \item Loss: косинус правильных пар $\to 1$,
-          случайных отрицательных $\to 0$
-        \item Парного теста разницы после калибровки нет
-      \end{itemize}
-    \column{0.48\textwidth}
-      \structure{\large Ограничения реализации}
-      \begin{itemize}
-        \item Рёбра превращены в неориентированные:
-          отдельные роли родителя и ребёнка не передаются
-        \item Loss не оптимизирует непосредственно итоговый жадный отбор и F1
-        \item Эквивалентные классы могут иметь разное окружение
-        \item Мало эталонных соответствий: 258
-      \end{itemize}
-      \begin{block}{Причины не установлены}
-        Эти ограничения могут объяснять результат, но причинного эксперимента нет.
-        «Структура бесполезна» из этих чисел не следует.
-      \end{block}
-  \end{columns}
-\end{frame}
-
-% Приложение: потолок retrieval и потери последующих этапов.
-\begin{frame}{Почему высокий recall@k не гарантирует итоговый recall?}
-  \begin{block}{Условный пример: десять эталонных соответствий}
-    Ретривер предложил девять правильных кандидатов.
-    LLM отвергла три из них; ещё два потерялись при последующем отборе.
-    Осталось четыре: $R_{\rm retrieval}=0{,}9$, $R_{\rm final}=0{,}4$.
-  \end{block}
-  \[
-    \text{retrieval}\ \longrightarrow\ \text{LLM}\ \longrightarrow\
-    \text{порог и отбор 1:1},\qquad R_{\rm final}\leq R_{\rm retrieval}.
-  \]
-  {\footnotesize Неравенство относится к одной и той же паре и набору кандидатов,
-  если итоговые соответствия выбираются только из него.}
-  \vspace{0.6em}
-  \begin{itemize}
-    \item Гибрид: recall@5 $0{,}927$, recall@10 $0{,}956$;
-      MiniLM@5 $0{,}783$, BM25@5 $0{,}730$
-    \item В основных LLM-прогонах: гибрид до десяти кандидатов, остальные до пяти
-    \item Развёртка $k$ оценивает retrieval; качество итогового LLM-matcher-а
-      при разных $k$ не измерено
-    \item Разницу гибрида и BM25 нельзя целиком приписать объединению retriever-ов:
-      бюджет кандидатов также различается
+    \item Не представлена проверка согласованности — вторая задача работы.
+    \item Сравнение LLM со StringEquiv не показывает убедительного преимущества:
+      прежние средние $0{,}550$ и $0{,}548$ почти совпадают.
+    \item На первой защите заявленный порог сходства $0{,}5$ не применялся в коде.
+    \item Нет дообучения текстовых моделей и анализа итогового качества при разных $k$.
+    \item Не раскрыта стоимость API-запросов на больших таксономиях.
   \end{itemize}
 \end{frame}
 
-% Приложение: конкретные примеры структурных флагов.
-\begin{frame}{Какой конфликт обнаруживает проверка согласованности?}
-  \begin{columns}[T,onlytextwidth]
-    \column{0.48\textwidth}
-      \structure{\large Объявленная несовместимость}
-      \[
-        A\perp B,\qquad A\leftrightarrow X,\quad B\leftrightarrow Y,
-        \qquad Y\sqsubseteq X.
-      \]
-      \begin{itemize}
-        \item Несовместимые исходные классы сопоставлены
-          с классами, связанными подчинением
-        \item Код помечает оба соответствия как
-          \texttt{disjointness-violation} (error)
-        \item Проверяются объявленные несовместимости обеих таксономий
-      \end{itemize}
-    \column{0.48\textwidth}
-      \structure{\large Несохранение подчинения}
-      \[
-        \text{Статья}\sqsubseteq\text{Документ},
-      \]
-      \[
-        \text{Статья}\leftrightarrow\texttt{Paper},\qquad
-        \text{Документ}\leftrightarrow\texttt{Person}.
-      \]
-      \begin{itemize}
-        \item Если Paper не потомок Person, ставится
-          \texttt{subsumption-violation} (warning)
-        \item Не обязательно инверсия: нужная связь может просто отсутствовать
-        \item Это не доказывает ошибку соответствия при неполных данных
-      \end{itemize}
-  \end{columns}
-  \begin{block}{Флаг~--- не остановка программы}
-    Error/warning~--- уровни записи в отчёте.
-    Проверка сама не удаляет соответствия; семантический фильтр исследован отдельно.
-    Полный OWL-reasoner не используется.
-  \end{block}
-\end{frame}
-
-% Приложение: избыточные проверки и пределы структурной диагностики.
-\begin{frame}{Что гарантирует отсутствие флагов?}
+% Слайд A2.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{Что изменилось}
+  \pdfbookmark[0]{A2. Что изменилось}{slide-A2}
   \begin{itemize}
-    \item \structure{Не правильность сопоставления}: два класса можно перепутать,
-      не создав ни одного из проверяемых структурных конфликтов.
-    \item \structure{Не OWL-согласованность}: проверены граф и объявленная
-      несовместимость, не все аксиомы и их логические следствия.
-    \item \structure{Циклы возможны в JSON}: списки родителей допускают
-      $A\to B\to A$; загрузчик не гарантирует DAG.
-    \item \structure{Достижимость любого корня избыточна}, если граф конечен,
-      ацикличен и все родители существуют. Корни определены как узлы без родителей;
-      оторванная ветка может стать новым корнем и пройти проверку.
-    \item \structure{Одинаковые названия не всегда ошибка}: это warning,
-      контекстное различие классов не устанавливается.
-    \item \structure{Инъективность результатов обеспечена отбором}.
-      Её проверка полезна для произвольного Alignment, но ноль нарушений
-      не является независимым доказательством качества.
+    \item Добавлены структурные проверки и измерен эффект удаления помеченных пар.
+      Это только частичная диагностика, но не полный логический вывод.
+    \item Вместо выборки отдельных пар — результаты всего набора из 21 пары
+      и парные статистические сравнения.
+    \item Эмбеддинговый порог выбирается по другим парам; веса текстовых моделей
+      не меняются.
+    \item У LLM зафиксировано голосование либо выбор режима по другим парам:
+      лучший режим по эталону оцениваемой пары не используется.
+    \item Добавлен отдельный эксперимент Jev с журналом запросов и расходов.
   \end{itemize}
-  {\footnotesize Путь к заранее заданному множеству допустимых корней был бы
-  другим условием; в этой работе такого требования нет.}
 \end{frame}
 
-% Приложение: фактическая единица API-запроса и масштабирование.
-\begin{frame}{Сколько запросов нужно и как масштабировать LLM?}
-  \begin{columns}[T,onlytextwidth]
-    \column{0.48\textwidth}
-      \structure{\large В нашей реализации}
-      \begin{itemize}
-        \item Один запрос на исходный узел со списком до $k$ кандидатов
-        \item Для C/CP/CC~--- не более $3n$ первичных запросов;
-          ансамбль объединяет ответы без нового вызова
-        \item Retry увеличивает число попыток; пустой список кандидатов
-          позволяет пропустить запрос
-        \item $k$ увеличивает объём промпта и стоимость обработки,
-          но не число первичных запросов на узел
-      \end{itemize}
-    \column{0.48\textwidth}
-      \structure{\large Где остаётся стоимость}
-      \begin{itemize}
-        \item $n$ исходных, $m$ целевых узлов:
-          полный перебор эмбеддинговых сходств~--- $O(nm)$
-        \item Проверяется до $O(kn)$ пар-кандидатов на режим,
-          сгруппированных в запросы
-        \item Blocking или индекс для поиска соседей могут уменьшить поиск;
-          это направление работы, не измеренное ускорение
-        \item Большие таксономии экспериментально не проверены
-      \end{itemize}
-  \end{columns}
-  \begin{block}{Ограничение надёжности API}
-    При сбое предусмотрен резервный эмбеддинговый ответ с уверенностью $0{,}75$.
-    Его происхождение не сохранено в конечном кэше: долю fallback восстановить нельзя.
-    Не каждый ответ с $0{,}75$ является резервным.
-  \end{block}
-\end{frame}
-
-% Приложение: честный ответ о незакрытых замечаниях.
-\begin{frame}{Какие замечания и вопросы остаются открытыми?}
+% Слайд A3.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{Что не было сделано}
+  \pdfbookmark[0]{A3. Что не было сделано}{slide-A3}
   \begin{itemize}
-    \item \structure{Дообучение sentence-transformer-моделей не выполнено}.
+    \item Дообучение sentence-transformer-моделей не проведено.
       Обучение GraphSAGE не заменяет этот эксперимент.
-    \item \structure{Итоговая чувствительность LLM к top-k не измерена}.
-      Есть только развёртка recall ретривера.
-    \item \structure{Нет экспериментального сравнения с AML, LogMap
-      и классическими taxonomy-matcher-ами}.
-      Новую постановку задачи или превосходство над областью не заявляем.
-    \item \structure{Нет проверки переноса на новый предметный домен}.
-      Ontology-LOO для GNN откладывает одну онтологию того же Conference-домена.
-    \item \structure{Нет полного набора повторных LLM-прогонов},
-      доказательства снижения дисперсии ансамблем и парного теста GNN после порога.
-    \item \structure{Нет логического ремонта отображения}.
-      Сочетание калиброванного порога с семантическим фильтром отдельно не оценено.
+    \item При разных $k$ измерена полнота отбора кандидатов,
+      но не итоговое качество LLM. Бюджеты основных методов различаются.
+    \item Масштабирование на больших таксономиях не проверено экспериментально.
+    \item Нет полного OWL-вывода, логического ремонта отображения и оценки
+      совместного эффекта порога со структурным фильтром.
+    \item Нет сравнения с AML и LogMap, переноса в другой предметный домен
+      и полного набора повторных LLM/Jev-прогонов.
   \end{itemize}
-  \begin{block}{Какой вывод защищается}
-    Реализованы сопоставление и частичная структурная проверка.
-    Измерены выбранные методы и влияние постобработки.
-    Ограничения не выдаются за выполненные эксперименты.
+\end{frame}
+
+% Слайд A4.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{Размеры загруженных таксономий}
+  \pdfbookmark[0]{A4. Размеры загруженных таксономий}{slide-A4}
+  \begin{center}
+    \begin{tabular}{lr}
+      \toprule
+      Онтология & Число классов \\
+      \midrule
+      \texttt{cmt} & 29 \\
+      \texttt{confOf} & 38 \\
+      \texttt{conference} & 59 \\
+      \texttt{edas} & 103 \\
+      \texttt{ekaw} & 73 \\
+      \texttt{iasted} & 140 \\
+      \texttt{sigkdd} & 49 \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  Семь онтологий выбраны из трека, поскольку для них доступны все 21 попарный эталон.
+\end{frame}
+
+% Слайд A5.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{От онтологий к таксономиям: что сохранено}
+  \pdfbookmark[0]{A5. От онтологий к таксономиям: что сохранено}{slide-A5}
+  \begin{itemize}
+    \item Основа модели --- именованные классы и явное подчинение.
+      Сохранены также комментарии, объявленная несовместимость и прямые ограничения свойств из \texttt{equivalentClass}.
+    \item Вложенные выражения OWL и ограничения свойств из \texttt{subClassOf} не интерпретируются.
+      Это упрощение модели, а не удаление всех связей кроме подчинения.
+    \item Эталон: 305 исходных связей, из них 46 относятся к свойствам.
+      Из 259 классовых связей загружено 258: загрузчик сохраняет последнее соответствие повторяющегося источника.
+  \end{itemize}
+  \alert{Эталон допускает несколько соответствий, а основные предсказания ограничены 1:1.
+    Поэтому полнота может быть ограничена самой постановкой.}
+\end{frame}
+
+% Слайд A6.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{OAEI: обоснование выбора и границы}
+  \pdfbookmark[0]{A6. OAEI: обоснование выбора и границы}{slide-A6}
+  \begin{itemize}
+    \item \textbf{Проверяемая постановка.} В одном открытом наборе есть иерархии классов и внешний эталон соответствий.
+    \item \textbf{Стандартный ориентир.} OAEI --- устоявшаяся площадка оценки сопоставления онтологий;
+      здесь рассматривается только её классовая часть.
+    \item \textbf{Не доказательство оптимального выбора.} Систематическое сравнение с наборами,
+      специально созданными для сопоставления таксономий, в работе не проводилось.
+  \end{itemize}
+  \begin{block}{Граница переноса результатов}
+    Перенос на другие области не измерен. Наш протокол отличается
+    от официальной сводки OAEI по загрузке эталона, ограничению 1:1 и усреднению.
   \end{block}
 \end{frame}
 
-% Приложение: воспроизводимость дополнительного эксперимента Jev.
-\begin{frame}{Jev: что зафиксировано в эксперименте?}
-  \begin{columns}[T,onlytextwidth]
-    \column{0.48\textwidth}
-      \structure{\large Схема решения}
-      \begin{itemize}
-        \item MiniLM top-5 + BM25 top-5: до десяти кандидатов;
-          прежние тексты C/CP/CC
-        \item Один запрос на исходный класс; \texttt{Noul}
-          оценивает каждую пару независимо
-        \item Эквивалентность, не связанность и не подкласс/надкласс
-        \item Все вероятности $\to$ порог $\to$ отбор 1:1;
-          без fallback
-      \end{itemize}
-    \column{0.48\textwidth}
-      \structure{\large Данные и расходы}
-      \begin{itemize}
-        \item Версия: \texttt{jev-1.13-20260917}
-        \item 1216 исходных узлов по 21 паре, три режима:
-          3648 запросов
-        \item 236 из 258 эталонных пар в кандидатах:
-          pooled recall $0{,}915$
-        \item 3{,}078 млн входных токенов, \$0{,}12927;
-          выход бесплатен, ошибки отсутствуют
-      \end{itemize}
-  \end{columns}
-  \begin{block}{Воспроизводимость}
-    Кандидаты, реальные запросы/ответы, расходы, версии, SHA-256 и исходники:
-    \texttt{experiments/jev/}. Метрики пересчитываются без API.
-  \end{block}
-  {\scriptsize \href{https://openrouter.ai/docs/guides/community/jev}
-  {OpenRouter: Jev Decisions API};
-  \href{https://docs.typesafe.ai/primitives/noul}{TypeSafe: Noul}.}
+% Слайд A7.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{Синтетические проверки на основе CMT}
+  \pdfbookmark[0]{A7. Синтетические проверки на основе CMT}{slide-A7}
+  \textbf{Основа:} \texttt{cmt}, 29 классов. Небольшую иерархию удобно осмотреть;
+  в сохранённой модели не обнаружены циклы. Это практическое обоснование, но не доказательство оптимальности.
+  \begin{itemize}
+    \item \textbf{Точная копия (exact):} новые идентификаторы, те же классы и структура.
+    \item \textbf{Замена имён (synonym):} частичная словарная замена без разбиения составных имён.
+    \item \textbf{Изменение структуры (structural):} один лист получает более высокого предка как родителя.
+    \item \textbf{Изменение атрибутов (attribute):} меняются имеющиеся атрибуты или добавляются новые.
+      У CMT исходных извлечённых атрибутов нет: здесь проверяется их добавление.
+  \end{itemize}
 \end{frame}
 
-% Приложение: статистика и калибровка вероятностей Jev.
-\begin{frame}{Jev: насколько убедителен результат?}
-  \structure{\large LOO-выбор режима и порога: средний F1 = 0{,}690}
-  \vspace{0.3em}
-  \begin{tabular}{@{}lccc@{}}
+% Слайд A8.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{Синтетика: проверка LLM и обучение GNN}
+  \pdfbookmark[0]{A8. Синтетика: проверка LLM и обучение GNN}{slide-A8}
+  \begin{block}{Отдельная проверка языковой модели}
+    Четыре сценария на CMT проверяют поведение при заданных изменениях.
+    Эти результаты не заменяют оценку на 21 реальной паре.
+  \end{block}
+  \begin{block}{Дополнение обучающих данных графовой нейросети (GNN)}
+    Тот же генератор применяется не только к CMT, а к онтологиям-источникам обучающих пар:
+    обычно к шести, в одном разбиении --- к пяти. Оцениваемая пара исключается из обучения.
+  \end{block}
+  \alert{Двенадцать записей на онтологию не означают двенадцать независимых примеров:
+    точные копии и словарные замены повторяются, а атрибуты не входят в признаки GNN.}
+\end{frame}
+
+% Слайд A9.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{Кандидаты: три варианта отбора}
+  \pdfbookmark[0]{A9. Кандидаты: три варианта отбора}{slide-A9}
+  \begin{description}
+    \item[MiniLM.] Пять ближайших целей по полному описанию узла,
+      независимо от режима C/CP/CC в запросе.
+    \item[BM25.] До пяти целей с положительной оценкой совпадения слов имени.
+      Если таких целей нет, запрос к классификатору не отправляется.
+    \item[Гибрид.] Пять целей MiniLM по имени класса и до пяти новых целей BM25;
+      в объединении не более десяти целей. Этот вариант используется и для Jev.
+  \end{description}
+  \begin{alertblock}{Сравнение не изолирует один фактор}
+    Меняются алгоритм, текст для эмбеддингов и бюджет кандидатов.
+    Представление для отбора отдельно не оптимизировалось.
+    Качество списка измеряется долей правильных пар, попавших в него.
+    F1 сравнивает уже выбранные соответствия с эталоном.
+  \end{alertblock}
+\end{frame}
+
+% Слайд A10.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{Три правила отбора соответствий}
+  \pdfbookmark[0]{A10. Три правила отбора соответствий}{slide-A10}
+  \begin{description}
+    \item[\texttt{argmax}.] Для каждого исходного класса берётся цель с максимальной оценкой.
+      Одна цель может быть выбрана несколько раз.
+    \item[\texttt{greedy\_injective}.] Все пары просматриваются по убыванию оценки.
+      Пара принимается, если оба класса ещё свободны; можно выбрать не ближайшую цель.
+    \item[\texttt{dedupe\_by\_target}.] Сначала выполняется \texttt{argmax},
+      затем среди исходных классов с общей целью остаётся пара с наибольшей оценкой.
+      Замена на следующую цель не ищется.
+  \end{description}
+  \begin{block}{Порог для эмбеддингов}
+    Выбор по среднему F1 остальных 20 пар; при равенстве берётся меньший порог.
+    Сохраняются оценки не ниже порога, без нового назначения целей.
+  \end{block}
+\end{frame}
+
+% Слайд A11.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{Модели текста: идентификаторы и назначение}
+  \pdfbookmark[0]{A11. Модели текста: идентификаторы и назначение}{slide-A11}
+  \begin{tabular}{@{}lr@{}}
     \toprule
-    Сравнение с Jev & $\Delta$ F1 & 95\% CI разности & $p_{\rm Holm}$ \\
+    Идентификатор модели & Размерность \\
     \midrule
-    StringEquiv (0{,}663) & $+0{,}0267$ & $[-0{,}0356;\,+0{,}0923]$ & 1{,}0 \\
-    ruRoberta + LOO (0{,}677) & $+0{,}0127$ & $[-0{,}0321;\,+0{,}0546]$ & 1{,}0 \\
-    Гибридная LLM, ансамбль (0{,}645) & $+0{,}0446$ & $[-0{,}0177;\,+0{,}1101]$ & 1{,}0 \\
+    \texttt{sentence-transformers/LaBSE} & 768 \\
+    \texttt{sentence-transformers/all-MiniLM-L6-v2} & 384 \\
+    \texttt{ai-forever/ruRoberta-large} & 1024 \\
+    \texttt{DeepPavlov/rubert-base-cased} & 768 \\
     \bottomrule
   \end{tabular}
-  \vspace{0.3em}
   \begin{itemize}
-    \item Для каждой отложенной пары режим и порог выбираются по другим
-      20 парам. CP и 0{,}25 выбраны во всех разбиениях; это не oracle.
-    \item Новая семья: девять парных сравнений, совместная поправка Holm.
-      CI~--- bootstrap по парам; пары используют общие онтологии.
-    \item CP: Brier $0{,}0235$ против $0{,}0374$ у постоянного «нет»;
-      ECE по десяти интервалам $0{,}0477$. Метки заданы эталоном,
-      измерение не гарантирует калибровку в другом домене.
+    \item LaBSE --- мультиязычный энкодер; MiniLM --- компактный энкодер для предварительного отбора и исходных признаков графовой сети.
+    \item ruRoberta-large и rubert-base позволяют проверить русскоязычные предобученные модели на этих данных.
+    \item Это сравнение доступных реализаций, не доказательство оптимальности набора моделей. Выбор по данному бенчмарку не проверен на независимых данных.
   \end{itemize}
-  \begin{block}{Что можно утверждать}
-    Получен недорогой вариант сопоставления с любопытным средним F1.
-    Доказанного превосходства и оценки устойчивости полного Jev-прогона нет.
-    Следующий шаг~--- повторы и перенос, а не заявление о новом лучшем методе.
+\end{frame}
+
+% Слайд A12.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{Эмбеддинги: текст и порог меняют результат}
+  \pdfbookmark[0]{A12. Эмбеддинги: текст и порог меняют результат}{slide-A12}
+  \begin{tabular}{@{}lrr@{}}
+    \toprule
+    Модель & Без порога & Порог по другим 20 парам \\
+    \midrule
+    LaBSE & 0{,}360 & 0{,}636 \\
+    MiniLM & 0{,}349 & 0{,}653 \\
+    ruRoberta-large & 0{,}299 & 0{,}677 \\
+    rubert-base & 0{,}285 & 0{,}646 \\
+    \bottomrule
+  \end{tabular}
+  \begin{block}{Отдельная проверка текста: MiniLM, правило argmax}
+    Только имя: $F_1=0{,}309$; полное описание: $F_1=0{,}211$.
+    Здесь иное правило отбора, поэтому эти числа не совпадают с таблицей.
   \end{block}
-  {\scriptsize Источник: \texttt{results/jev-experiment.json};
-  расходы не сравниваются с незафиксированной оплатой старых LLM-запросов.}
+  Одинаковое число косинусного сходства у разных моделей не означает одинаковое
+  качество отбора. Поэтому порог выбирается для каждой модели отдельно.
+\end{frame}
+
+% Слайд A13.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{Кандидаты: полнота списка и число k}
+  \pdfbookmark[0]{A13. Кандидаты: полнота списка и число k}{slide-A13}
+  Полнота кандидатов --- доля эталонных пар, попавших в предварительный список.
+  \medskip
+  \begin{tabular}{@{}lrr@{}}
+    \toprule
+    Отбор & $k=5$ & $k=10$ \\
+    \midrule
+    MiniLM, полное описание & 0{,}783 & 0{,}866 \\
+    BM25 & 0{,}730 & 0{,}733 \\
+    Гибрид & 0{,}927 & 0{,}956 \\
+    \bottomrule
+  \end{tabular}
+  \begin{itemize}
+    \item Это качество подбора кандидатов и, по сути, «потолок» для окончательного качества отображения.
+    \item Если правильной цели нет в списке, классификатор не сможет её выбрать.
+    \item В историческом прогоне: до пяти кандидатов у MiniLM и BM25,
+      до десяти у гибрида. Итоговая чувствительность LLM к $k$ не измерена.
+  \end{itemize}
+\end{frame}
+
+% Слайд A14.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{LLM и Jev: различия протоколов}
+  \pdfbookmark[0]{A14. LLM и Jev: различия протоколов}{slide-A14}
+  \begin{description}
+    \item[Исторические LLM.] \texttt{gpt-4.1-mini} и \texttt{deepseek-v4-flash}:
+      один запрос на исходный класс со списком кандидатов;
+      положительное решение и указанная моделью уверенность строго выше $0{,}7$, затем отбор один к одному.
+    \item[Jev.] \texttt{typesafe/jev-1.13-20260917}:
+      отдельный вопрос об эквивалентности для каждой пары;
+      вероятность строго выше выбранного порога, затем отбор один к одному.
+      Порог и представление выбираются на остальных 20 парах.
+  \end{description}
+  \begin{itemize}
+    \item Ансамбль требует совпадения не менее двух из трёх выходов C/CP/CC.
+    \item Исторический кэш не хранит все кандидаты и происхождение резервных решений; журнал Jev сохраняет все вероятности до отбора.
+    \item Различаются время сбора и инструкция. Эффект только архитектуры модели не изолирован; статистические семьи анализируются отдельно.
+  \end{itemize}
+\end{frame}
+
+% Слайд A15.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{GraphSAGE: общие параметры двух ветвей}
+  \pdfbookmark[0]{A15. GraphSAGE: общие параметры двух ветвей}{slide-A15}
+  \begin{enumerate}
+    \item Фиксированные векторы MiniLM по имени класса: размерность 384.
+    \item Один слой GraphSAGE объединяет признаки класса и соседей.
+      Одна и та же сеть с общими весами обрабатывает обе онтологии.
+    \item После остаточной связи и выходной проекции получаются векторы размерности 384.
+    \item Нормированные векторы сравниваются по косинусному сходству; применяется общий отбор один к одному.
+  \end{enumerate}
+  \begin{block}{Что сеть видит и чего не различает}
+    Рёбра «родитель--ребёнок» сделаны неориентированными,
+    добавлены петли; используется нормировка $D^{-1/2}AD^{-1/2}$.
+    Направление подчинения не выделено в отдельный тип ребра.
+    MiniLM при обучении графовой сети не дообучается.
+  \end{block}
+\end{frame}
+
+% Слайд A16.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{GraphSAGE: поток данных в двух ветвях}
+  \pdfbookmark[0]{A16. GraphSAGE: поток данных в двух ветвях}{slide-A16}
+  \begin{center}
+    \includegraphics[width=\textwidth,height=40mm,keepaspectratio]{gnn_architecture.png}
+  \end{center}
+  Имена классов превращаются в фиксированные признаки MiniLM.
+  Связи графа поступают в GraphSAGE отдельно. Обе ветви используют общие параметры сети.
+\end{frame}
+
+% Слайд A17.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{GraphSAGE: обучение и протоколы}
+  \pdfbookmark[0]{A17. GraphSAGE: обучение и протоколы}{slide-A17}
+  \begin{itemize}
+    \item Цель обучения: косинусное сходство близко к единице для эталонной пары
+      и к нулю для случайной отрицательной пары; три отрицательных примера на один положительный.
+    \item Среднеквадратичная ошибка, Adam, 60 эпох;
+      $lr=0{,}003$, dropout $=0{,}5$, weight decay $=0{,}0001$;
+      начальное состояние генератора $42$.
+    \item Отложены метки одной пары; обучение на остальных 20 и синтетике.
+      Оцениваемые онтологии остаются в других обучающих парах.
+  \end{itemize}
+  \begin{alertblock}{Проверка полностью отложенной онтологии}
+    В \texttt{ontology-loo} она исключена из реальных и синтетических обучающих данных.
+    Каждая пара оценивалась дважды, но сводка хранит только позднюю оценку:
+    21 значение, а не среднее 42 оценок. Это не проверка другого предметного домена.
+  \end{alertblock}
+\end{frame}
+
+% Слайд A18.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{LLMs4OM: публикация и адаптация}
+  \pdfbookmark[0]{A18. LLMs4OM: публикация и адаптация}{slide-A18}
+  \begin{block}{Первичный источник}
+    Babaei Giglou, D'Souza, Engel, Auer.\par
+    \href{https://doi.org/10.1007/978-3-031-78952-6_3}{\textit{LLMs4OM: Matching Ontologies with Large Language Models}}.\par
+    The Semantic Web: ESWC 2024 Satellite Events,\par
+    LNCS 15344, pp.~25--35, Springer, 2025.
+  \end{block}
+  \begin{itemize}
+    \item Сохранена схема «отбор кандидатов $\to$ бинарная оценка пар» и режимы C/CP/CC.
+    \item Изменены модели, описание для отбора и организация запросов;
+      вместо вероятности токена используется оценка уверенности из JSON-ответа.
+    \item Ансамбль добавлен в этой работе; высокоточный шаг статьи $S_{ir}>0{,}9$ не реализован.
+  \end{itemize}
+\end{frame}
+
+% Слайд A19.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{LLM: среднее, выбор описания и голосование}
+  \pdfbookmark[0]{A19. LLM: среднее, выбор описания и голосование}{slide-A19}
+  \begin{tabular}{@{}lrrr@{}}
+    \toprule
+    Классификатор и отбор & Среднее режимов & Выбор режима & Голосование \\
+    \midrule
+    DeepSeek + гибрид & 0{,}620 & 0{,}644 & 0{,}645 \\
+    DeepSeek + BM25 & 0{,}604 & 0{,}651 & 0{,}624 \\
+    DeepSeek + MiniLM & 0{,}559 & 0{,}593 & 0{,}602 \\
+    GPT-4.1-mini + MiniLM & 0{,}545 & 0{,}585 & 0{,}575 \\
+    \bottomrule
+  \end{tabular}
+  \medskip
+  \begin{itemize}
+    \item Все числа — средний F1 по 21 паре; выбор режима использует остальные 20 пар.
+    \item Голосование требует согласия не менее двух из трёх представлений.
+    \item Гибридное голосование против StringEquiv: десять побед,
+      одиннадцать поражений; $0{,}645$ против $0{,}663$.
+    \item Сравнение способов отбора меняет также описание и число кандидатов:
+      эффект одного алгоритма поиска не изолирован.
+  \end{itemize}
+\end{frame}
+
+% Слайд A20.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{Статистика: когда различия убедительны}
+  \pdfbookmark[0]{A20. Статистика: когда различия убедительны}{slide-A20}
+  \begin{tabular}{@{}lrrl@{}}
+    \toprule
+    Сравнение со StringEquiv & $\Delta F1$ & $p$ с поправкой & 95\% интервал \\
+    \midrule
+    ruRoberta с порогом & $+0{,}014$ & 1{,}00 & $[-0{,}020; +0{,}051]$ \\
+    Гибридное голосование & $-0{,}018$ & 1{,}00 & $[-0{,}104; +0{,}061]$ \\
+    BM25, среднее режимов & $-0{,}059$ & 0{,}013 & $[-0{,}087; -0{,}031]$ \\
+    \bottomrule
+  \end{tabular}
+  \medskip
+  \begin{itemize}
+    \item Интервалы: повторные выборки пар (bootstrap).
+      $p$: критерий Уилкоксона с поправкой Холма на 12 сравнений.
+    \item Здесь BM25 — среднее по описаниям ($F_1=0{,}604$),
+      не выбор описания ($0{,}651$) из основной таблицы.
+    \item Для GraphSAGE с порогом отдельного парного теста нет.
+    \item Пары зависимы через общие онтологии; это не учтено.
+      Отсутствие значимости не доказывает равенство.
+  \end{itemize}
+\end{frame}
+
+% Слайд A21.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{Графовая модель: результат зависит от порога}
+  \pdfbookmark[0]{A21. Графовая модель: результат зависит от порога}{slide-A21}
+  \begin{tabular}{@{}lrr@{}}
+    \toprule
+    Метод & Без порога & Порог по другим парам \\
+    \midrule
+    GraphSAGE & 0{,}333 & 0{,}667 \\
+    Предобученные признаки MiniLM & 0{,}349 & 0{,}653 \\
+    \bottomrule
+  \end{tabular}
+  \medskip
+  \begin{itemize}
+    \item После калибровки сохранённого парного теста нет.
+      Польза информации о структуре графа или её бесполезность не доказаны.
+    \item Контроли без порога: без синтетики $0{,}345$;
+      линейная модель без графовых свёрток $0{,}314$.
+    \item В основном обучении откладывается пара, но её онтологии
+      присутствуют в других обучающих парах.
+  \end{itemize}
+\end{frame}
+
+% Слайд A22.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{Какие структурные конфликты обнаруживаются?}
+  \pdfbookmark[0]{A22. Какие структурные конфликты обнаруживаются?}{slide-A22}
+  \begin{block}{Объявленная несовместимость}
+    $A\perp B$, но их образы связаны подчинением: $Y\sqsubseteq X$.
+    Например, несовместимые \texttt{cmt\#Person} и \texttt{cmt\#Preference}
+    у LaBSE переходят в \texttt{confof\#Person} и его потомка \texttt{Volunteer}.
+  \end{block}
+  \begin{block}{Несохранение подчинения}
+    Для исходной связи «Автор — подкласс Участника» у сопоставленных классов
+    в цели не найдено соответствующее подчинение. Это предупреждение:
+    связь могла быть пропущена при описании целевой онтологии.
+  \end{block}
+  Флаги записываются в отчёт. Удаление помеченных соответствий — отдельный эксперимент.
+\end{frame}
+
+% Слайд A23.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{Количество предупреждений}
+  \pdfbookmark[0]{A23. Количество предупреждений}{slide-A23}
+  \begin{tabular}{@{}lrrr@{}}
+    \toprule
+    Метод & Записей & Несовместимость & Подчинение \\
+    \midrule
+    LaBSE без порога & 21 & 92 & 555 \\
+    MiniLM без порога & 21 & 98 & 595 \\
+    ruRoberta без порога & 21 & 84 & 601 \\
+    rubert без порога & 21 & 104 & 633 \\
+    DeepSeek + гибрид & 84 & 0 & 17 \\
+    DeepSeek + BM25 & 84 & 0 & 15 \\
+    DeepSeek + MiniLM & 84 & 2 & 22 \\
+    GPT-4.1-mini & 84 & 51 & 161 \\
+    StringEquiv & 21 & 0 & 2 \\
+    \bottomrule
+  \end{tabular}
+  \par\medskip
+  LLM: 84 записи с порогом;
+  эмбеддинги: 21 запись без порога. Jev в эти 483 записи не входит.
+  Несовместимость — ошибки; подчинение — предупреждения.
+\end{frame}
+
+% Слайд A24.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{Удаление помеченных пар: эффект на F1}
+  \pdfbookmark[0]{A24. Удаление помеченных пар: эффект на F1}{slide-A24}
+  \begin{tabular}{@{}lrrr@{}}
+    \toprule
+    Метод & До фильтра & Только ошибки & Все флаги \\
+    \midrule
+    LaBSE & 0{,}360 & 0{,}341 & 0{,}419 \\
+    MiniLM & 0{,}349 & 0{,}331 & 0{,}418 \\
+    ruRoberta & 0{,}299 & 0{,}265 & 0{,}322 \\
+    GraphSAGE & 0{,}333 & 0{,}319 & 0{,}399 \\
+    DeepSeek + гибрид & 0{,}626 & 0{,}626 & 0{,}618 \\
+    StringEquiv & 0{,}663 & 0{,}663 & 0{,}657 \\
+    \bottomrule
+  \end{tabular}
+  \medskip
+  \begin{itemize}
+    \item У LLM здесь среднее по 84 записям, а не результат одного ансамбля.
+    \item У эмбеддингов флаги охватывают 70--77\% ошибочных пар;
+      доля ошибок среди помеченных — 86--89\%, при исходных 78--83\%.
+    \item Помечаются и верные пары. Совместный эффект с калиброванным порогом не измерен.
+  \end{itemize}
+\end{frame}
+
+% Слайд A25.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{Границы структурной диагностики}
+  \pdfbookmark[0]{A25. Границы структурной диагностики}{slide-A25}
+  \begin{itemize}
+    \item Не гарантирует правильность сопоставления или согласованность всех OWL-аксиом.
+      Полный механизм логического вывода (reasoner) не используется.
+    \item У класса с несовместимыми требованиями не может быть объектов.
+      OWL допускает такой класс, пока не утверждается существование его объекта.
+    \item Совпадающие метки — предупреждение, не логическая ошибка.
+    \item Путь к любому автоматически найденному корню избыточен
+      в конечном ациклическом графе с правильными ссылками.
+      Оторванная ветвь может стать новым корнем.
+    \item Нулевые нарушения взаимной однозначности отражают сохранённые результаты:
+      у эмбеддингов и LLM работает отбор, у StringEquiv коллизий не возникло.
+  \end{itemize}
+  Самопроверка обнаружила все пять предусмотренных видов нарушений.
+\end{frame}
+
+% Слайд A26.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{Jev: протокол, журнал и расходы}
+  \pdfbookmark[0]{A26. Jev: протокол, журнал и расходы}{slide-A26}
+  \begin{itemize}
+    \item Jev возвращает вероятность ответа «да» на вопрос об эквивалентности пары;
+      обычная LLM указывает оценку уверенности числом в тексте ответа.
+    \item Сохранены кандидаты гибридного поиска и представления класса
+      без иерархии, с родителями и с детьми; инструкция уточняет эквивалентность.
+    \item Вероятности сохраняются до порога и глобального отбора.
+      Во всех разбиениях выбраны родители и порог $0{,}25$ по остальным 20 парам.
+    \item Один полный прогон: 3648 успешных запросов, без резервных ответов;
+      расходы $\$0{,}1293$, медиана $0{,}273$ с, 95-й процентиль $0{,}367$ с.
+  \end{itemize}
+  \href{https://openrouter.ai/docs/guides/community/jev}{OpenRouter: Jev Decisions API};
+  \href{https://docs.typesafe.ai/primitives/noul}{TypeSafe: Noul}.
+\end{frame}
+
+% Слайд A27.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{Jev: выбор описания и порога}
+  \pdfbookmark[0]{A27. Jev: выбор описания и порога}{slide-A27}
+  \begin{tabular}{@{}lrr@{}}
+    \toprule
+    Представление & Порог $0{,}7$ & Порог по другим парам \\
+    \midrule
+    Без иерархии & 0{,}448 & 0{,}612 \\
+    С родителями & 0{,}287 & 0{,}690 \\
+    С детьми & 0{,}328 & 0{,}590 \\
+    Голосование & 0{,}393 & 0{,}658 \\
+    \bottomrule
+  \end{tabular}
+  \medskip
+  \begin{itemize}
+    \item Совместный выбор представления и порога также даёт $0{,}690$.
+    \item В кандидатах 236 из 258 эталонных пар; суммарная полнота $0{,}915$.
+      Это не итоговая полнота и не среднее полноты по парам.
+    \item Для представления с родителями: Brier $0{,}0235$ против
+      $0{,}0374$ у постоянного отрицательного ответа; ECE $0{,}0477$.
+      Эти меры ошибки вероятностей не гарантируют перенос калибровки.
+  \end{itemize}
+\end{frame}
+
+% Слайд A28.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{Jev: статистические ограничения}
+  \pdfbookmark[0]{A28. Jev: статистические ограничения}{slide-A28}
+  \begin{tabular}{@{}lrl@{}}
+    \toprule
+    База сравнения & Разница F1 & 95\% интервал \\
+    \midrule
+    StringEquiv & $+0{,}027$ & $[-0{,}036; +0{,}092]$ \\
+    ruRoberta с порогом & $+0{,}013$ & $[-0{,}032; +0{,}055]$ \\
+    Гибридное голосование LLM & $+0{,}045$ & $[-0{,}018; +0{,}110]$ \\
+    \bottomrule
+  \end{tabular}
+  \medskip
+  \begin{itemize}
+    \item Во всех трёх сравнениях $p_{\rm Holm}=1{,}00$.
+      Новая семья из девяти сравнений отделена от 12 исторических.
+    \item При фиксированном пороге $0{,}7$ одиночные представления Jev
+      уступают соответствующим историческим LLM-режимам: $p_{\rm Holm}\leq0{,}0046$.
+    \item Исторические списки кандидатов и происхождение резервных ответов
+      не сохранены; эффект только замены модели не изолирован.
+    \item Один прогон, общий домен и зависимость пар ограничивают вывод.
+      Структурные флаги Jev не оценивались.
+  \end{itemize}
+\end{frame}
+
+% Слайд A29.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{Предшествующие работы}
+  \pdfbookmark[0]{A29. Предшествующие работы}{slide-A29}
+  \begin{itemize}
+    \item \textbf{Aanen et al., Expert Systems with Applications, 2015.}
+      Сопоставление товарных таксономий: лексика WordNet и пути предков.
+    \item \textbf{Wu et al., AAAI 2016.}
+      Межъязыковое сопоставление таксономий через двуязычные тематические векторы.
+    \item \textbf{Hertling, Paulheim, K-CAP 2023: OLaLa.}
+      Языковая модель оценивает пары после предварительного отбора.
+  \end{itemize}
+  \begin{block}{Место этой работы}
+    Адаптация и сравнение известных идей: строковая база, семантические векторы,
+    языковые модели и графовая сеть. Новый алгоритм и превосходство над областью не заявляются.
+  \end{block}
+\end{frame}
+
+% Слайд A30.
+\renewcommand{\hseheadertext}{Дополнительные материалы}
+\begin{frame}{GraphSAGE: почему один слой?}
+  \pdfbookmark[0]{A30. GraphSAGE: почему один слой?}{slide-A30}
+  \begin{itemize}
+    \item Глубина таксономий — от двух до шести рёбер.
+      Один слой учитывает непосредственных соседей, три — связи на расстоянии до трёх рёбер.
+    \item Дополнительная проверка: 21 разбиение с одной отложенной парой,
+      60 эпох, seed 42. Изменено только число слоёв; остальные параметры прежние.
+  \end{itemize}
+  \begin{center}
+    \begin{tabular}{@{}lrr@{}}
+      \toprule
+      Среднее по 21 паре, без порога & Один слой & Три слоя \\
+      \midrule
+      F1 & \textbf{0{,}333} & 0{,}223 \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+  \textbf{Результат:} три слоя хуже на 19 парах, на двух результат тот же;
+  улучшений нет.
+  \par\smallskip
+  Оптимальность одного слоя не доказана: два слоя и калибровка порога
+  для трёх слоёв не проверялись.
 \end{frame}
 
 \end{document}
