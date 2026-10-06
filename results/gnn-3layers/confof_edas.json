@@ -1,0 +1,221 @@
+{
+  "pair": "confOf\u2194edas",
+  "approach": "gnn",
+  "source": "confOf",
+  "target": "edas",
+  "f1": 0.23076923076923078,
+  "precision": 0.15789473684210525,
+  "recall": 0.42857142857142855,
+  "matches": 6,
+  "total_predicted": 38,
+  "total_gt": 14,
+  "match_pairs": [
+    {
+      "source_id": "confof#Country",
+      "target_id": "edas#Country",
+      "confidence": 0.9999997019767761
+    },
+    {
+      "source_id": "confof#Topic",
+      "target_id": "edas#AccommodationPlace",
+      "confidence": 0.9999737739562988
+    },
+    {
+      "source_id": "confof#Author",
+      "target_id": "edas#Author",
+      "confidence": 0.9999719262123108
+    },
+    {
+      "source_id": "confof#Reception",
+      "target_id": "edas#Reception",
+      "confidence": 0.9999681711196899
+    },
+    {
+      "source_id": "confof#Camera_Ready_event",
+      "target_id": "edas#RejectedPaper",
+      "confidence": 0.9999440312385559
+    },
+    {
+      "source_id": "confof#Organization",
+      "target_id": "edas#AcademiaOrganization",
+      "confidence": 0.999940037727356
+    },
+    {
+      "source_id": "confof#Submission_event",
+      "target_id": "edas#AcceptedPaper",
+      "confidence": 0.9999136924743652
+    },
+    {
+      "source_id": "confof#Science_Worker",
+      "target_id": "edas#PersonalReviewHistory",
+      "confidence": 0.9997855424880981
+    },
+    {
+      "source_id": "confof#Reviewing_event",
+      "target_id": "edas#Call",
+      "confidence": 0.9997677803039551
+    },
+    {
+      "source_id": "confof#Member_PC",
+      "target_id": "edas#ComputerArchitectureTopic",
+      "confidence": 0.9997650980949402
+    },
+    {
+      "source_id": "confof#Poster",
+      "target_id": "edas#PendingPaper",
+      "confidence": 0.999727725982666
+    },
+    {
+      "source_id": "confof#University",
+      "target_id": "edas#GovernmentOrganization",
+      "confidence": 0.9997240900993347
+    },
+    {
+      "source_id": "confof#Reviewing_results_event",
+      "target_id": "edas#ReviewQuestion",
+      "confidence": 0.9997150897979736
+    },
+    {
+      "source_id": "confof#Chair_PC",
+      "target_id": "edas#ComputerNetworksOpticalTopic",
+      "confidence": 0.9995926022529602
+    },
+    {
+      "source_id": "confof#Trip",
+      "target_id": "edas#ComputerNetworksSensorTopic",
+      "confidence": 0.9995633363723755
+    },
+    {
+      "source_id": "confof#Scholar",
+      "target_id": "edas#PersonalPublicationHistory",
+      "confidence": 0.9995570182800293
+    },
+    {
+      "source_id": "confof#Tutorial",
+      "target_id": "edas#WelcomeTalk",
+      "confidence": 0.9995388984680176
+    },
+    {
+      "source_id": "confof#Person",
+      "target_id": "edas#Person",
+      "confidence": 0.9995359182357788
+    },
+    {
+      "source_id": "confof#Banquet",
+      "target_id": "edas#WirelessCommunicationsTopic",
+      "confidence": 0.9993988275527954
+    },
+    {
+      "source_id": "confof#Working_event",
+      "target_id": "edas#FreeTimeBreak",
+      "confidence": 0.9993892312049866
+    },
+    {
+      "source_id": "confof#Short_paper",
+      "target_id": "edas#WithdrawnPaper",
+      "confidence": 0.9991940259933472
+    },
+    {
+      "source_id": "confof#Volunteer",
+      "target_id": "edas#WeekRejectRating",
+      "confidence": 0.9989993572235107
+    },
+    {
+      "source_id": "confof#Administrative_event",
+      "target_id": "edas#Paper",
+      "confidence": 0.9989768266677856
+    },
+    {
+      "source_id": "confof#Student",
+      "target_id": "edas#TextualReviewQuestion",
+      "confidence": 0.9989426136016846
+    },
+    {
+      "source_id": "confof#Participant",
+      "target_id": "edas#TPCMember",
+      "confidence": 0.9988671541213989
+    },
+    {
+      "source_id": "confof#Assistant",
+      "target_id": "edas#Attendee",
+      "confidence": 0.9985947012901306
+    },
+    {
+      "source_id": "confof#City",
+      "target_id": "edas#NGO",
+      "confidence": 0.9983683824539185
+    },
+    {
+      "source_id": "confof#Registration_of_participants_event",
+      "target_id": "edas#ConferenceDinner",
+      "confidence": 0.9981633424758911
+    },
+    {
+      "source_id": "confof#Conference",
+      "target_id": "edas#ClosingTalk",
+      "confidence": 0.9975789189338684
+    },
+    {
+      "source_id": "confof#Administrator",
+      "target_id": "edas#Place",
+      "confidence": 0.9969696402549744
+    },
+    {
+      "source_id": "confof#Workshop",
+      "target_id": "edas#Workshop",
+      "confidence": 0.9968991279602051
+    },
+    {
+      "source_id": "confof#Member",
+      "target_id": "edas#AccpetIfRoomRating",
+      "confidence": 0.9957640171051025
+    },
+    {
+      "source_id": "confof#Company",
+      "target_id": "edas#DiningPlace",
+      "confidence": 0.9919808506965637
+    },
+    {
+      "source_id": "confof#Social_event",
+      "target_id": "edas#SocialEvent",
+      "confidence": 0.9888414144515991
+    },
+    {
+      "source_id": "confof#Event",
+      "target_id": "edas#OrganizationalMeeting",
+      "confidence": 0.9832406640052795
+    },
+    {
+      "source_id": "confof#Contribution",
+      "target_id": "edas#SlideSet",
+      "confidence": 0.9561823010444641
+    },
+    {
+      "source_id": "confof#Paper",
+      "target_id": "edas#ActivePaper",
+      "confidence": 0.9455302953720093
+    },
+    {
+      "source_id": "confof#Regular",
+      "target_id": "edas#CallForManuscripts",
+      "confidence": 0.8284307718276978
+    }
+  ],
+  "seed": 42,
+  "config": {
+    "seed": 42,
+    "embedder": "sentence-transformers/all-MiniLM-L6-v2",
+    "hidden_dim": 384,
+    "out_dim": 384,
+    "num_layers": 3,
+    "dropout": 0.5,
+    "epochs": 60,
+    "lr": 0.003,
+    "weight_decay": 0.0001,
+    "neg_ratio": 3,
+    "synthetic_seeds": 3,
+    "linear": false,
+    "fold_mode": "pair-loo",
+    "fold": "pair confOf\u2194edas"
+  }
+}

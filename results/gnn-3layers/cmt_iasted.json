@@ -1,0 +1,176 @@
+{
+  "pair": "cmt\u2194iasted",
+  "approach": "gnn",
+  "source": "cmt",
+  "target": "iasted",
+  "f1": 0.0606060606060606,
+  "precision": 0.034482758620689655,
+  "recall": 0.25,
+  "matches": 1,
+  "total_predicted": 29,
+  "total_gt": 4,
+  "match_pairs": [
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.9999340176582336
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "iasted#Author",
+      "confidence": 0.9999333024024963
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "iasted#Person",
+      "confidence": 0.9999308586120605
+    },
+    {
+      "source_id": "cmt#Preference",
+      "target_id": "iasted#City",
+      "confidence": 0.9999235272407532
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "iasted#Final_manuscript",
+      "confidence": 0.9999068975448608
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "iasted#One_conference_day",
+      "confidence": 0.9998917579650879
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "iasted#State",
+      "confidence": 0.9998548626899719
+    },
+    {
+      "source_id": "cmt#ExternalReviewer",
+      "target_id": "iasted#Tutorial_speaker",
+      "confidence": 0.9997380971908569
+    },
+    {
+      "source_id": "cmt#Rejection",
+      "target_id": "iasted#Value_added_tax",
+      "confidence": 0.9997066259384155
+    },
+    {
+      "source_id": "cmt#Administrator",
+      "target_id": "iasted#Delegate",
+      "confidence": 0.9996991157531738
+    },
+    {
+      "source_id": "cmt#Meta-Reviewer",
+      "target_id": "iasted#Tax",
+      "confidence": 0.9996862411499023
+    },
+    {
+      "source_id": "cmt#Meta-Review",
+      "target_id": "iasted#Review",
+      "confidence": 0.999525785446167
+    },
+    {
+      "source_id": "cmt#PaperFullVersion",
+      "target_id": "iasted#Credit_card",
+      "confidence": 0.9994712471961975
+    },
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "iasted#Speaker",
+      "confidence": 0.9993799924850464
+    },
+    {
+      "source_id": "cmt#Co-author",
+      "target_id": "iasted#Introduction",
+      "confidence": 0.9992085099220276
+    },
+    {
+      "source_id": "cmt#AuthorNotReviewer",
+      "target_id": "iasted#Session_chair",
+      "confidence": 0.9990507364273071
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "iasted#One_day_presenter",
+      "confidence": 0.9990257024765015
+    },
+    {
+      "source_id": "cmt#PaperAbstract",
+      "target_id": "iasted#Mailing_list",
+      "confidence": 0.9987637400627136
+    },
+    {
+      "source_id": "cmt#Bid",
+      "target_id": "iasted#Hotel_registration_form",
+      "confidence": 0.9976660013198853
+    },
+    {
+      "source_id": "cmt#Acceptance",
+      "target_id": "iasted#Sponzorship",
+      "confidence": 0.9970653057098389
+    },
+    {
+      "source_id": "cmt#ProgramCommittee",
+      "target_id": "iasted#Plenary_lecture",
+      "confidence": 0.9961045980453491
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "iasted#Departure_tax",
+      "confidence": 0.9949597716331482
+    },
+    {
+      "source_id": "cmt#User",
+      "target_id": "iasted#Technical_commitee",
+      "confidence": 0.993701696395874
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeChair",
+      "target_id": "iasted#Video_cassette_player",
+      "confidence": 0.9879150986671448
+    },
+    {
+      "source_id": "cmt#Decision",
+      "target_id": "iasted#Transparency",
+      "confidence": 0.9858379364013672
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "iasted#Book_proceeding",
+      "confidence": 0.9855166673660278
+    },
+    {
+      "source_id": "cmt#ConferenceChair",
+      "target_id": "iasted#Sponsor",
+      "confidence": 0.9376329183578491
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "iasted#IASTED_non_member",
+      "confidence": 0.912839412689209
+    },
+    {
+      "source_id": "cmt#AssociatedChair",
+      "target_id": "iasted#Conference_Hiker",
+      "confidence": 0.8821735382080078
+    }
+  ],
+  "seed": 42,
+  "config": {
+    "seed": 42,
+    "embedder": "sentence-transformers/all-MiniLM-L6-v2",
+    "hidden_dim": 384,
+    "out_dim": 384,
+    "num_layers": 3,
+    "dropout": 0.5,
+    "epochs": 60,
+    "lr": 0.003,
+    "weight_decay": 0.0001,
+    "neg_ratio": 3,
+    "synthetic_seeds": 3,
+    "linear": false,
+    "fold_mode": "pair-loo",
+    "fold": "pair cmt\u2194iasted"
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "pair": "cmt\u2194confOf",
+  "approach": "gnn",
+  "source": "cmt",
+  "target": "confOf",
+  "f1": 0.20512820512820515,
+  "precision": 0.13793103448275862,
+  "recall": 0.4,
+  "matches": 4,
+  "total_predicted": 29,
+  "total_gt": 10,
+  "match_pairs": [
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "confof#Submission_event",
+      "confidence": 0.9999223947525024
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "confof#Reviewing_event",
+      "confidence": 0.9999161958694458
+    },
+    {
+      "source_id": "cmt#Person",
+      "target_id": "confof#Person",
+      "confidence": 0.999874472618103
+    },
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "confof#Chair_PC",
+      "confidence": 0.9998490810394287
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "confof#Reviewing_results_event",
+      "confidence": 0.999828577041626
+    },
+    {
+      "source_id": "cmt#Rejection",
+      "target_id": "confof#Paper",
+      "confidence": 0.9997886419296265
+    },
+    {
+      "source_id": "cmt#Preference",
+      "target_id": "confof#Country",
+      "confidence": 0.999737560749054
+    },
+    {
+      "source_id": "cmt#AssociatedChair",
+      "target_id": "confof#Member_PC",
+      "confidence": 0.9997124671936035
+    },
+    {
+      "source_id": "cmt#Acceptance",
+      "target_id": "confof#Short_paper",
+      "confidence": 0.9995884895324707
+    },
+    {
+      "source_id": "cmt#Administrator",
+      "target_id": "confof#Administrator",
+      "confidence": 0.9992917776107788
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "confof#Member",
+      "confidence": 0.9992495775222778
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "confof#Banquet",
+      "confidence": 0.9986752271652222
+    },
+    {
+      "source_id": "cmt#AuthorNotReviewer",
+      "target_id": "confof#Student",
+      "confidence": 0.9985588192939758
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "confof#Topic",
+      "confidence": 0.998349666595459
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "confof#Administrative_event",
+      "confidence": 0.9977142810821533
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "confof#Author",
+      "confidence": 0.9975576400756836
+    },
+    {
+      "source_id": "cmt#Bid",
+      "target_id": "confof#Company",
+      "confidence": 0.9971216917037964
+    },
+    {
+      "source_id": "cmt#Meta-Reviewer",
+      "target_id": "confof#Regular",
+      "confidence": 0.9968177080154419
+    },
+    {
+      "source_id": "cmt#ExternalReviewer",
+      "target_id": "confof#Volunteer",
+      "confidence": 0.996056318283081
+    },
+    {
+      "source_id": "cmt#Co-author",
+      "target_id": "confof#Science_Worker",
+      "confidence": 0.991751492023468
+    },
+    {
+      "source_id": "cmt#ConferenceChair",
+      "target_id": "confof#Registration_of_participants_event",
+      "confidence": 0.9772133827209473
+    },
+    {
+      "source_id": "cmt#PaperAbstract",
+      "target_id": "confof#Contribution",
+      "confidence": 0.9695004820823669
+    },
+    {
+      "source_id": "cmt#PaperFullVersion",
+      "target_id": "confof#Poster",
+      "confidence": 0.9471578598022461
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "confof#Participant",
+      "confidence": 0.5774756669998169
+    },
+    {
+      "source_id": "cmt#User",
+      "target_id": "confof#Scholar",
+      "confidence": 0.06820276379585266
+    },
+    {
+      "source_id": "cmt#Meta-Review",
+      "target_id": "confof#Camera_Ready_event",
+      "confidence": 0.06276080012321472
+    },
+    {
+      "source_id": "cmt#ProgramCommittee",
+      "target_id": "confof#Assistant",
+      "confidence": 0.0581849068403244
+    },
+    {
+      "source_id": "cmt#Decision",
+      "target_id": "confof#Event",
+      "confidence": 0.012500584125518799
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeChair",
+      "target_id": "confof#Trip",
+      "confidence": 0.010073758661746979
+    }
+  ],
+  "seed": 42,
+  "config": {
+    "seed": 42,
+    "embedder": "sentence-transformers/all-MiniLM-L6-v2",
+    "hidden_dim": 384,
+    "out_dim": 384,
+    "num_layers": 3,
+    "dropout": 0.5,
+    "epochs": 60,
+    "lr": 0.003,
+    "weight_decay": 0.0001,
+    "neg_ratio": 3,
+    "synthetic_seeds": 3,
+    "linear": false,
+    "fold_mode": "pair-loo",
+    "fold": "pair cmt\u2194confOf"
+  }
+}

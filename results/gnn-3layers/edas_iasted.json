@@ -1,0 +1,546 @@
+{
+  "pair": "edas\u2194iasted",
+  "approach": "gnn",
+  "source": "edas",
+  "target": "iasted",
+  "f1": 0.0819672131147541,
+  "precision": 0.04854368932038835,
+  "recall": 0.2631578947368421,
+  "matches": 5,
+  "total_predicted": 103,
+  "total_gt": 19,
+  "match_pairs": [
+    {
+      "source_id": "edas#Person",
+      "target_id": "iasted#Person",
+      "confidence": 0.9999895691871643
+    },
+    {
+      "source_id": "edas#Reception",
+      "target_id": "iasted#Coctail_reception",
+      "confidence": 0.9999809265136719
+    },
+    {
+      "source_id": "edas#Excursion",
+      "target_id": "iasted#Renting",
+      "confidence": 0.9999634027481079
+    },
+    {
+      "source_id": "edas#Place",
+      "target_id": "iasted#City",
+      "confidence": 0.999962568283081
+    },
+    {
+      "source_id": "edas#Workshop",
+      "target_id": "iasted#Place",
+      "confidence": 0.99991774559021
+    },
+    {
+      "source_id": "edas#Document",
+      "target_id": "iasted#Document",
+      "confidence": 0.9999169111251831
+    },
+    {
+      "source_id": "edas#ComputerNetworksManagementTopic",
+      "target_id": "iasted#Session_chair",
+      "confidence": 0.9998923540115356
+    },
+    {
+      "source_id": "edas#Country",
+      "target_id": "iasted#State",
+      "confidence": 0.999854564666748
+    },
+    {
+      "source_id": "edas#SatelliteAndSpaceCommunicationsTopic",
+      "target_id": "iasted#Tutorial",
+      "confidence": 0.9998311400413513
+    },
+    {
+      "source_id": "edas#NGO",
+      "target_id": "iasted#Simulating",
+      "confidence": 0.9998012781143188
+    },
+    {
+      "source_id": "edas#ConferenceVenuePlace",
+      "target_id": "iasted#Conference_hall",
+      "confidence": 0.9997987747192383
+    },
+    {
+      "source_id": "edas#Author",
+      "target_id": "iasted#Author",
+      "confidence": 0.9997570514678955
+    },
+    {
+      "source_id": "edas#ContactInformation",
+      "target_id": "iasted#Presentation",
+      "confidence": 0.9997513890266418
+    },
+    {
+      "source_id": "edas#Conference",
+      "target_id": "iasted#One_conference_day",
+      "confidence": 0.999737560749054
+    },
+    {
+      "source_id": "edas#GovernmentOrganization",
+      "target_id": "iasted#Modelling",
+      "confidence": 0.9997270107269287
+    },
+    {
+      "source_id": "edas#AcademiaOrganization",
+      "target_id": "iasted#Research",
+      "confidence": 0.9997120499610901
+    },
+    {
+      "source_id": "edas#ClosingTalk",
+      "target_id": "iasted#Introduction_of_speaker",
+      "confidence": 0.9996917247772217
+    },
+    {
+      "source_id": "edas#WirelessCommunicationsTopic",
+      "target_id": "iasted#Welcome_address",
+      "confidence": 0.9996667504310608
+    },
+    {
+      "source_id": "edas#WelcomeTalk",
+      "target_id": "iasted#Student_non_speaker",
+      "confidence": 0.9995560050010681
+    },
+    {
+      "source_id": "edas#IndustryOrganization",
+      "target_id": "iasted#Transport_vehicle",
+      "confidence": 0.9995217323303223
+    },
+    {
+      "source_id": "edas#TravelGrant",
+      "target_id": "iasted#Car",
+      "confidence": 0.9994978308677673
+    },
+    {
+      "source_id": "edas#CallForPapers",
+      "target_id": "iasted#Camera_ready_manuscript_deadline",
+      "confidence": 0.9994737505912781
+    },
+    {
+      "source_id": "edas#TalkEvent",
+      "target_id": "iasted#Introduction",
+      "confidence": 0.9994567632675171
+    },
+    {
+      "source_id": "edas#Organization",
+      "target_id": "iasted#Sponsor_state",
+      "confidence": 0.999453067779541
+    },
+    {
+      "source_id": "edas#DiningPlace",
+      "target_id": "iasted#Session_room",
+      "confidence": 0.9994365572929382
+    },
+    {
+      "source_id": "edas#CommunicationsTopic",
+      "target_id": "iasted#Technic_activity",
+      "confidence": 0.9994251132011414
+    },
+    {
+      "source_id": "edas#CallForReviews",
+      "target_id": "iasted#Speaker_lecture",
+      "confidence": 0.9993994832038879
+    },
+    {
+      "source_id": "edas#MedicineTopic",
+      "target_id": "iasted#Payment_document",
+      "confidence": 0.9993237257003784
+    },
+    {
+      "source_id": "edas#ConferenceSession",
+      "target_id": "iasted#Conference_days",
+      "confidence": 0.9993211627006531
+    },
+    {
+      "source_id": "edas#CADTopic",
+      "target_id": "iasted#Van",
+      "confidence": 0.9993033409118652
+    },
+    {
+      "source_id": "edas#ComputerNetworksSensorTopic",
+      "target_id": "iasted#Delegate",
+      "confidence": 0.9992998242378235
+    },
+    {
+      "source_id": "edas#Review",
+      "target_id": "iasted#Review",
+      "confidence": 0.9991756081581116
+    },
+    {
+      "source_id": "edas#SocialEvent",
+      "target_id": "iasted#Presenter_city",
+      "confidence": 0.9991737604141235
+    },
+    {
+      "source_id": "edas#FreeTimeBreak",
+      "target_id": "iasted#Book_proceeding",
+      "confidence": 0.9991620779037476
+    },
+    {
+      "source_id": "edas#CallForManuscripts",
+      "target_id": "iasted#Accepting_manuscript",
+      "confidence": 0.9991211891174316
+    },
+    {
+      "source_id": "edas#PaperPresentation",
+      "target_id": "iasted#Receiving_manuscript",
+      "confidence": 0.9991008043289185
+    },
+    {
+      "source_id": "edas#CommunicationTheoryTopic",
+      "target_id": "iasted#Worker_non_speaker",
+      "confidence": 0.9990328550338745
+    },
+    {
+      "source_id": "edas#CoffeeBreak",
+      "target_id": "iasted#Time_zone",
+      "confidence": 0.9990175366401672
+    },
+    {
+      "source_id": "edas#AcademicEvent",
+      "target_id": "iasted#Sponsor_city",
+      "confidence": 0.9990160465240479
+    },
+    {
+      "source_id": "edas#ComputerNetworksTopic",
+      "target_id": "iasted#Technical_commitee",
+      "confidence": 0.998969554901123
+    },
+    {
+      "source_id": "edas#Attendee",
+      "target_id": "iasted#Sponsor",
+      "confidence": 0.9989673495292664
+    },
+    {
+      "source_id": "edas#ComputerNetworksOpticalTopic",
+      "target_id": "iasted#Brief_introduction_for_Session_chair",
+      "confidence": 0.9989283084869385
+    },
+    {
+      "source_id": "edas#RadioCommunicationsTopic",
+      "target_id": "iasted#Video_presentation",
+      "confidence": 0.9987171292304993
+    },
+    {
+      "source_id": "edas#MealMenu",
+      "target_id": "iasted#Cheque",
+      "confidence": 0.998321533203125
+    },
+    {
+      "source_id": "edas#OrganizationalMeeting",
+      "target_id": "iasted#Shuttle_bus",
+      "confidence": 0.9982320070266724
+    },
+    {
+      "source_id": "edas#NumericalReviewQuestion",
+      "target_id": "iasted#Student_registration_fee",
+      "confidence": 0.9981361627578735
+    },
+    {
+      "source_id": "edas#SingleLevelConference",
+      "target_id": "iasted#Trip_city",
+      "confidence": 0.997922956943512
+    },
+    {
+      "source_id": "edas#RatedPapers",
+      "target_id": "iasted#Value_added_tax",
+      "confidence": 0.9977890253067017
+    },
+    {
+      "source_id": "edas#MealBreak",
+      "target_id": "iasted#Publication",
+      "confidence": 0.9976022839546204
+    },
+    {
+      "source_id": "edas#AccpetIfRoomRating",
+      "target_id": "iasted#Author_attendee_book_registration_fee",
+      "confidence": 0.9973890781402588
+    },
+    {
+      "source_id": "edas#PersonalPublicationHistory",
+      "target_id": "iasted#Author_information_form",
+      "confidence": 0.9973693490028381
+    },
+    {
+      "source_id": "edas#ConferenceDinner",
+      "target_id": "iasted#Cd_proceening",
+      "confidence": 0.9960252046585083
+    },
+    {
+      "source_id": "edas#Programme",
+      "target_id": "iasted#Viza",
+      "confidence": 0.9959414601325989
+    },
+    {
+      "source_id": "edas#ReviewQuestion",
+      "target_id": "iasted#Tip",
+      "confidence": 0.9954146146774292
+    },
+    {
+      "source_id": "edas#Topic",
+      "target_id": "iasted#Conference_state",
+      "confidence": 0.9954092502593994
+    },
+    {
+      "source_id": "edas#SlideSet",
+      "target_id": "iasted#Bank_transfer",
+      "confidence": 0.9953933954238892
+    },
+    {
+      "source_id": "edas#TwoLevelConference",
+      "target_id": "iasted#Double_hotel_room",
+      "confidence": 0.9951683878898621
+    },
+    {
+      "source_id": "edas#ComputerNetworksSwitchingTopic",
+      "target_id": "iasted#Overhead_projector",
+      "confidence": 0.994946300983429
+    },
+    {
+      "source_id": "edas#ReviewRating",
+      "target_id": "iasted#Reviewer",
+      "confidence": 0.9936983585357666
+    },
+    {
+      "source_id": "edas#MealEvent",
+      "target_id": "iasted#Dinner_banquet",
+      "confidence": 0.9936489462852478
+    },
+    {
+      "source_id": "edas#TextualReviewQuestion",
+      "target_id": "iasted#Author_attendee_cd_registration_fee",
+      "confidence": 0.9928877353668213
+    },
+    {
+      "source_id": "edas#PublishedPaper",
+      "target_id": "iasted#Refusing_manuscript",
+      "confidence": 0.9928764700889587
+    },
+    {
+      "source_id": "edas#TPCMember",
+      "target_id": "iasted#Author_cd_proceedings_included",
+      "confidence": 0.9924823045730591
+    },
+    {
+      "source_id": "edas#Call",
+      "target_id": "iasted#Invitation_letter",
+      "confidence": 0.9915432929992676
+    },
+    {
+      "source_id": "edas#ReviewForm",
+      "target_id": "iasted#Registration_fee",
+      "confidence": 0.9912950992584229
+    },
+    {
+      "source_id": "edas#AccommodationPlace",
+      "target_id": "iasted#Single_hotel_room",
+      "confidence": 0.9902248382568359
+    },
+    {
+      "source_id": "edas#ConferenceEvent",
+      "target_id": "iasted#Activity",
+      "confidence": 0.9885618686676025
+    },
+    {
+      "source_id": "edas#Paper",
+      "target_id": "iasted#Final_manuscript",
+      "confidence": 0.9885340332984924
+    },
+    {
+      "source_id": "edas#BreakEvent",
+      "target_id": "iasted#Coffee_break",
+      "confidence": 0.9869745969772339
+    },
+    {
+      "source_id": "edas#Reviewer",
+      "target_id": "iasted#Nonauthor_registration_fee",
+      "confidence": 0.9859381914138794
+    },
+    {
+      "source_id": "edas#CryptographyTopic",
+      "target_id": "iasted#Credit_card",
+      "confidence": 0.9808096289634705
+    },
+    {
+      "source_id": "edas#PendingPaper",
+      "target_id": "iasted#Registration",
+      "confidence": 0.9805415868759155
+    },
+    {
+      "source_id": "edas#MeetingRoomPlace",
+      "target_id": "iasted#Full_day_tour",
+      "confidence": 0.9767068028450012
+    },
+    {
+      "source_id": "edas#RejectRating",
+      "target_id": "iasted#Departure",
+      "confidence": 0.9740014672279358
+    },
+    {
+      "source_id": "edas#WeekRejectRating",
+      "target_id": "iasted#Nonmember_registration_fee",
+      "confidence": 0.9729678630828857
+    },
+    {
+      "source_id": "edas#NonAcademicEvent",
+      "target_id": "iasted#Social_program",
+      "confidence": 0.9726834893226624
+    },
+    {
+      "source_id": "edas#Sponsorship",
+      "target_id": "iasted#Presenter_state",
+      "confidence": 0.9722509384155273
+    },
+    {
+      "source_id": "edas#OperatingTopicsystems",
+      "target_id": "iasted#Sponzorship",
+      "confidence": 0.9702974557876587
+    },
+    {
+      "source_id": "edas#ActivePaper",
+      "target_id": "iasted#Money",
+      "confidence": 0.97026127576828
+    },
+    {
+      "source_id": "edas#AntennasTopic",
+      "target_id": "iasted#Card",
+      "confidence": 0.9655150175094604
+    },
+    {
+      "source_id": "edas#Presenter",
+      "target_id": "iasted#Author_book_proceedings_included",
+      "confidence": 0.9648762941360474
+    },
+    {
+      "source_id": "edas#SecurityTopic",
+      "target_id": "iasted#Currency",
+      "confidence": 0.9000176787376404
+    },
+    {
+      "source_id": "edas#WithdrawnPaper",
+      "target_id": "iasted#Video_cassette_player",
+      "confidence": 0.8748762011528015
+    },
+    {
+      "source_id": "edas#AcceptRating",
+      "target_id": "iasted#Hotel_fee",
+      "confidence": 0.8614040613174438
+    },
+    {
+      "source_id": "edas#SignalProcessingTopic",
+      "target_id": "iasted#Plenary_lecture",
+      "confidence": 0.8143104910850525
+    },
+    {
+      "source_id": "edas#AcceptedPaper",
+      "target_id": "iasted#Record_of_attendance",
+      "confidence": 0.755206286907196
+    },
+    {
+      "source_id": "edas#RejectedPaper",
+      "target_id": "iasted#Transparency",
+      "confidence": 0.7198882699012756
+    },
+    {
+      "source_id": "edas#MicroelectronicsTopic",
+      "target_id": "iasted#Listener",
+      "confidence": 0.42038625478744507
+    },
+    {
+      "source_id": "edas#PerformanceTopic",
+      "target_id": "iasted#IASTED_member",
+      "confidence": 0.38975563645362854
+    },
+    {
+      "source_id": "edas#MultimediaTopic",
+      "target_id": "iasted#IASTED_non_member",
+      "confidence": 0.36270245909690857
+    },
+    {
+      "source_id": "edas#ParallelAndDistributedComputingTopic",
+      "target_id": "iasted#Conference_Hiker",
+      "confidence": 0.3459246754646301
+    },
+    {
+      "source_id": "edas#ComputerArchitectureTopic",
+      "target_id": "iasted#Hotel_presenter",
+      "confidence": 0.288380891084671
+    },
+    {
+      "source_id": "edas#TestOnlyTopic",
+      "target_id": "iasted#One_day_presenter",
+      "confidence": 0.24793384969234467
+    },
+    {
+      "source_id": "edas#PersonalReviewHistory",
+      "target_id": "iasted#Lecture",
+      "confidence": 0.21904079616069794
+    },
+    {
+      "source_id": "edas#PersonalHistory",
+      "target_id": "iasted#Activity_after_conference",
+      "confidence": 0.0590180940926075
+    },
+    {
+      "source_id": "edas#MobileComputingTopic",
+      "target_id": "iasted#Computer",
+      "confidence": 0.044605039060115814
+    },
+    {
+      "source_id": "edas#PowerlineTransmissionTopic",
+      "target_id": "iasted#Worker_lecturer",
+      "confidence": 0.041044026613235474
+    },
+    {
+      "source_id": "edas#SessionChair",
+      "target_id": "iasted#Deadline",
+      "confidence": 0.035262882709503174
+    },
+    {
+      "source_id": "edas#ComputerNetworksMeasurementsTopic",
+      "target_id": "iasted#Student_lecturer",
+      "confidence": 0.025371819734573364
+    },
+    {
+      "source_id": "edas#ConferenceChair",
+      "target_id": "iasted#Lecturer",
+      "confidence": 0.024592407047748566
+    },
+    {
+      "source_id": "edas#ComputerNetworksAapplicationsTopic",
+      "target_id": "iasted#Non_speaker",
+      "confidence": 0.019674763083457947
+    },
+    {
+      "source_id": "edas#ComputerNetworksEnterpriseTopic",
+      "target_id": "iasted#Mailing_list",
+      "confidence": 0.01855567842721939
+    },
+    {
+      "source_id": "edas#ComputerNetworksSecurityTopic",
+      "target_id": "iasted#Registation_deadline",
+      "confidence": 0.01689525879919529
+    }
+  ],
+  "seed": 42,
+  "config": {
+    "seed": 42,
+    "embedder": "sentence-transformers/all-MiniLM-L6-v2",
+    "hidden_dim": 384,
+    "out_dim": 384,
+    "num_layers": 3,
+    "dropout": 0.5,
+    "epochs": 60,
+    "lr": 0.003,
+    "weight_decay": 0.0001,
+    "neg_ratio": 3,
+    "synthetic_seeds": 3,
+    "linear": false,
+    "fold_mode": "pair-loo",
+    "fold": "pair edas\u2194iasted"
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "pair": "cmt\u2194ekaw",
+  "approach": "gnn",
+  "source": "cmt",
+  "target": "ekaw",
+  "f1": 0.32432432432432434,
+  "precision": 0.20689655172413793,
+  "recall": 0.75,
+  "matches": 6,
+  "total_predicted": 29,
+  "total_gt": 8,
+  "match_pairs": [
+    {
+      "source_id": "cmt#Person",
+      "target_id": "ekaw#Person",
+      "confidence": 0.9999815821647644
+    },
+    {
+      "source_id": "cmt#Author",
+      "target_id": "ekaw#Paper_Author",
+      "confidence": 0.9999279379844666
+    },
+    {
+      "source_id": "cmt#Conference",
+      "target_id": "ekaw#Conference_Banquet",
+      "confidence": 0.9998811483383179
+    },
+    {
+      "source_id": "cmt#Document",
+      "target_id": "ekaw#Document",
+      "confidence": 0.9998419284820557
+    },
+    {
+      "source_id": "cmt#Rejection",
+      "target_id": "ekaw#Rejected_Paper",
+      "confidence": 0.999793529510498
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeChair",
+      "target_id": "ekaw#Workshop_Paper",
+      "confidence": 0.9997854232788086
+    },
+    {
+      "source_id": "cmt#Bid",
+      "target_id": "ekaw#Conference_Trip",
+      "confidence": 0.9997668266296387
+    },
+    {
+      "source_id": "cmt#ExternalReviewer",
+      "target_id": "ekaw#Late-Registered_Participant",
+      "confidence": 0.9997377395629883
+    },
+    {
+      "source_id": "cmt#ConferenceMember",
+      "target_id": "ekaw#Agency_Staff_Member",
+      "confidence": 0.9997282028198242
+    },
+    {
+      "source_id": "cmt#ProgramCommitteeMember",
+      "target_id": "ekaw#PC_Member",
+      "confidence": 0.9996908903121948
+    },
+    {
+      "source_id": "cmt#AuthorNotReviewer",
+      "target_id": "ekaw#SC_Member",
+      "confidence": 0.9996047019958496
+    },
+    {
+      "source_id": "cmt#PaperAbstract",
+      "target_id": "ekaw#Poster_Paper",
+      "confidence": 0.9994926452636719
+    },
+    {
+      "source_id": "cmt#Meta-Reviewer",
+      "target_id": "ekaw#Neutral_Review",
+      "confidence": 0.99944007396698
+    },
+    {
+      "source_id": "cmt#Co-author",
+      "target_id": "ekaw#Multi-author_Volume",
+      "confidence": 0.9992080926895142
+    },
+    {
+      "source_id": "cmt#AssociatedChair",
+      "target_id": "ekaw#PC_Chair",
+      "confidence": 0.999139130115509
+    },
+    {
+      "source_id": "cmt#Chairman",
+      "target_id": "ekaw#Session_Chair",
+      "confidence": 0.999126672744751
+    },
+    {
+      "source_id": "cmt#Review",
+      "target_id": "ekaw#Review",
+      "confidence": 0.9988439083099365
+    },
+    {
+      "source_id": "cmt#PaperFullVersion",
+      "target_id": "ekaw#Regular_Paper",
+      "confidence": 0.9988380670547485
+    },
+    {
+      "source_id": "cmt#Reviewer",
+      "target_id": "ekaw#Negative_Review",
+      "confidence": 0.9982153177261353
+    },
+    {
+      "source_id": "cmt#ConferenceChair",
+      "target_id": "ekaw#OC_Chair",
+      "confidence": 0.9981067776679993
+    },
+    {
+      "source_id": "cmt#Decision",
+      "target_id": "ekaw#Web_Site",
+      "confidence": 0.9956125020980835
+    },
+    {
+      "source_id": "cmt#Administrator",
+      "target_id": "ekaw#Proceedings_Publisher",
+      "confidence": 0.9929917454719543
+    },
+    {
+      "source_id": "cmt#SubjectArea",
+      "target_id": "ekaw#Research_Topic",
+      "confidence": 0.9921464920043945
+    },
+    {
+      "source_id": "cmt#Meta-Review",
+      "target_id": "ekaw#Positive_Review",
+      "confidence": 0.9879358410835266
+    },
+    {
+      "source_id": "cmt#ProgramCommittee",
+      "target_id": "ekaw#Tutorial",
+      "confidence": 0.9865731596946716
+    },
+    {
+      "source_id": "cmt#Paper",
+      "target_id": "ekaw#Paper",
+      "confidence": 0.9846688508987427
+    },
+    {
+      "source_id": "cmt#Acceptance",
+      "target_id": "ekaw#Regular_Session",
+      "confidence": 0.975278377532959
+    },
+    {
+      "source_id": "cmt#Preference",
+      "target_id": "ekaw#Invited_Talk",
+      "confidence": 0.9643491506576538
+    },
+    {
+      "source_id": "cmt#User",
+      "target_id": "ekaw#Student",
+      "confidence": 0.03626402094960213
+    }
+  ],
+  "seed": 42,
+  "config": {
+    "seed": 42,
+    "embedder": "sentence-transformers/all-MiniLM-L6-v2",
+    "hidden_dim": 384,
+    "out_dim": 384,
+    "num_layers": 3,
+    "dropout": 0.5,
+    "epochs": 60,
+    "lr": 0.003,
+    "weight_decay": 0.0001,
+    "neg_ratio": 3,
+    "synthetic_seeds": 3,
+    "linear": false,
+    "fold_mode": "pair-loo",
+    "fold": "pair cmt\u2194ekaw"
+  }
+}
